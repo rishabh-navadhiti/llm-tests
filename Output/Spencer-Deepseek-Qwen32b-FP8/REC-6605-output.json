@@ -1,0 +1,90 @@
+Okay, so I need to help transform the given doctor-patient conversation into a structured patient visit note using the provided JSON template. Let me start by understanding the task step by step.
+
+First, I'll look at the JSON template provided. It has several sections like Patient Name, Chief Complaint, HPI Spencer, Musculoskeletal, Imaging Results, Assessment, and Plan. Each section has specific instructions on what information to extract and how to format it.
+
+Looking at the medical transcript, there are two conversations: one with the patient about his left small finger and another with a child named Gianna regarding her fingers. However, the instructions specify to focus on the first conversation since the second seems to be a different patient.
+
+Starting with the Patient Name section, the instruction is to only include the patient's name. From the transcript, the doctor mentions "He's a right-hand dominant designer." So the patient's name isn't explicitly stated, but perhaps it's inferred from the context. Wait, actually, the first conversation starts with "... and has left it into a 2021. He's a right-hand dominant designer." It seems like the patient's name isn't provided, so according to the template, if the information is absent, we use the default value, which is "-".
+
+Next is the Chief Complaint. The patient is here for evaluation of his left small finger. So the chief complaint is "Evaluation of left small finger."
+
+Moving on to HPI Spencer, which requires onset, duration, location, and severity. The patient states he noticed locking and catching about two years ago. So onset is two years ago, duration is ongoing, location is left small finger, and severity isn't explicitly mentioned, so we might just note the symptoms without severity.
+
+For Musculoskeletal, we need to extract the physical examination findings verbatim. The doctor mentions: "left small finger skin is purging. In fact, without erythema, he has a moderate tenderness to palpation. Um, at the small finger aim of fluid is nodule that is triggering that excellent range of motion overall. Um, well-healed trigger finger incisions to the middle finger." Wait, "purging" might be a typo. Considering clinical judgment, it's more likely "purgative" or perhaps "purging" as in exuding, but that doesn't make much sense. Alternatively, it could be "parched" or "pale." But without more context, it's hard to correct. The instruction says to correct only when context strongly supports it. Since I'm unsure, I'll leave it as "purging" but note that it might be a typo.
+
+Imaging Results: The doctor mentions "X-rays are normal for reduced the finger." That seems like a typo. It should probably be "X-rays are normal for the finger." So the imaging result is "X-rays are normal for the finger."
+
+Assessment: We need to list current medical conditions. From the conversation, the patient has a trigger finger on the left small finger. So the assessment is "Left small finger trigger finger."
+
+Plan: The plan includes treatment recommendations and follow-up. The doctor says the plan will be "planned trigger." That seems incomplete. Wait, the transcript says: "X-rays are normal for reduced the finger plan will be, uh, planned trigger." It seems like the doctor is saying the plan is to perform a trigger finger release surgery. So the plan would be to proceed with surgery. Additionally, the doctor mentions that the patient is not having any other triggers today, so no further action on other fingers.
+
+Putting it all together, I'll structure each section according to the template, ensuring that each key is correctly filled with the extracted information. If any information is missing, I'll use the default value specified in the template.
+
+I need to make sure the JSON structure is correct, with each object having the title, key, content, default, and instruction as per the template. The content should be an array, even if it's a single item. Also, I must avoid any grammatical errors and ensure proper punctuation.
+
+Let me double-check each section:
+
+1. Patient Name: No name provided, so default "-".
+2. Chief Complaint: "Evaluation of left small finger."
+3. HPI Spencer: Onset two years ago, duration ongoing, location left small finger, severity not specified.
+4. Musculoskeletal: Extracted verbatim, noting possible typo.
+5. Imaging Results: Corrected to "X-rays are normal for the finger."
+6. Assessment: "Left small finger trigger finger."
+7. Plan: Proceed with trigger finger release surgery.
+
+I think that covers all sections. Now, I'll format this into the required JSON structure, ensuring each content is an array and the overall structure matches the template exactly.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Evaluation of left small finger"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["Onset: Two years ago", "Duration: Ongoing", "Location: Left small finger", "Severity: Not specified"],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Left small finger skin is purging. In fact, without erythema, he has a moderate tenderness to palpation. Um, at the small finger aim of fluid is nodule that is triggering that excellent range of motion overall. Um, well-healed trigger finger incisions to the middle finger."],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-rays are normal for the finger"],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Left small finger trigger finger"],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \u201cskin is intact\u201d or \u201cno tenderness to palpation.\u201d- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Proceed with trigger finger release surgery on the left small finger."],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider\u2019s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., \u201creturn to clinic in 6 to 8 weeks.\u201d Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]
+```

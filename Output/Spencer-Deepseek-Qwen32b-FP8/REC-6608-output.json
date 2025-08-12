@@ -1,0 +1,82 @@
+Okay, so I need to help transform the given medical transcript into a structured patient visit note using the provided JSON template. Let me start by understanding the task step by step.
+
+First, I'll look at the JSON template provided. It has several sections, each with a title, key, content, default, and instruction. My job is to fill in the content for each section based on the medical transcript.
+
+Looking at the transcript, it's a conversation between a doctor and a patient. The doctor mentions that the injection didn't offer relief, and the patient wants to know what's going on. The exam findings include hypopigmentation at the dorsal aspect of the CMC joint, consistent with previous injection. There's also a positive finger stain and grind test. The plan is to recommend a trial of dig verban's injection and follow up in six weeks.
+
+Now, I'll go through each section of the JSON template and extract the necessary information.
+
+1. **Patient Name**: The transcript doesn't mention the patient's name, so I'll use the default "-".
+
+2. **Chief Complaint**: The patient's main concern is the lack of relief from the injection. So, the chief complaint is "Injection did not offer any relief."
+
+3. **HPI Spencer**: This section requires onset, duration, location, and severity. The transcript doesn't provide specific details about when the symptoms started or how long they've been present. It only mentions the injection didn't help, so I'll use the default "-".
+
+4. **Musculoskeletal**: The physical exam findings are hypopigmentation at the dorsal aspect of the CMC joint, positive finger stain, and positive grind. I'll list these verbatim as per the instruction.
+
+5. **Imaging Results**: There's no mention of imaging in the transcript, so I'll use the default "-".
+
+6. **Assessment**: The current issue is the lack of relief from the injection. So, the assessment is "Injection did not offer any relief."
+
+7. **Plan**: The doctor recommends a trial of dig verban's injection and follow-up in six weeks. I'll structure this into a list as per the instructions.
+
+I need to ensure that all sentences are correctly punctuated and that there are no grammatical errors. Also, I must maintain the exact structure of the JSON template without adding any extra commentary.
+
+Let me double-check each section to make sure I haven't missed anything. The musculoskeletal section needs to be verbatim, so I'll copy the exact phrases from the transcript. The plan should be in a conversational tone, mentioning the injection and follow-up time.
+
+I think that's all. Now, I'll structure the JSON accordingly, making sure each section is filled correctly with the extracted information or defaults where necessary.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Injection did not offer any relief."],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Hypopigmentation at the dorsal aspect of the CMC joint, consistent with previous injection.", "Positive finger stain and grind."],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["-"],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Injection did not offer any relief."],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \u201cskin is intact\u201d or \u201cno tenderness to palpation.\u201d- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Recommend trial of dig verban's injection.", "Return to clinic in six weeks for follow-up."],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider\u2019s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., \u201creturn to clinic in 6 to 8 weeks.\u201d Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]
+```

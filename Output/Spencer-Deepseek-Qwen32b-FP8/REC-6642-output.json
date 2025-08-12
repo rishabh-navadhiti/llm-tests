@@ -1,0 +1,84 @@
+Okay, so I need to help transform the given medical transcript into a structured patient visit note using the provided JSON template. Let me start by understanding the task step by step.
+
+First, I'll look at the JSON template provided. It has several sections, each with a title, key, content, default, and instruction. My job is to fill in the content for each section based on the medical transcript, making sure to follow the instructions precisely.
+
+Looking at the transcript, it's a conversation between two doctors discussing a patient named Nadeem Nemi. The conversation includes details about his medical history, current complaints, physical examination findings, imaging results, assessment, and the plan of action.
+
+Starting with the first section, "Patient Name" (key: PATIENT_NAME). The instruction says to only return the patient's name. From the transcript, the patient is referred to as "Nadeem Nemi." So, I'll add that to the content.
+
+Next is "Chief Complaint" (key: CHIEF_COMPLAINT). The instruction is to provide only the patient's chief complaint without additional details. The transcript mentions that he presents for evaluation of bilateral thumb pain, which has worsened since 2019, especially over the last six months. So, the chief complaint is bilateral thumb pain.
+
+Moving on to "HPI Spencer" (key: HPI_SPENCER). The instruction is to include onset, duration, location, and severity. The patient states the pain has worsened since 2019, particularly in the last six months. The location is bilateral thumbs, and the severity is significant, limiting his activities. So, I'll structure this information accordingly.
+
+The "Musculoskeletal" section (key: MUSCULOSKELETAL_VERBATIM) requires verbatim extraction of physical examination findings. The transcript mentions bilateral upper extremity skin is clean, dry, and intact. No significant soft tissue swelling, positive Grin, positive shoulder sign, no triggering of any digits with the thumb, and dot NCTS. I'll list these as they are.
+
+For "Imaging Results" (key: IMAGING_RESULTS), the transcript describes X-rays showing severe joint space neovasculitis in the metacarpal joint with osteophytosis, Z deformity, hyperextension at the MCP joint, and calcific arteriogram noted on the right. The left is the same except without the calcific arteriogram. I'll summarize these findings.
+
+The "Assessment" (key: ASSESSMENT_SPENCER) should list current medical conditions. The patient has bilateral thumb CMC arthritis with progression, bilateral carpal tunnel, and right cubital tunnel. These are the active conditions relevant to the visit.
+
+Finally, the "Plan" (key: PLAN_SPENCER_) needs to be a scribe-style summary. The plan includes steroid injections for the thumbs, discussion about their temporary nature and possible rebound pain. The patient is doing well with carpal and cubital tunnels, so observation is recommended with possible nerve studies. Follow-up is scheduled in two months. I'll structure this into a list of actions and instructions.
+
+I need to ensure that each section follows the instructions, uses proper medical terminology, and avoids any unnecessary details. Also, I must maintain the JSON structure exactly as provided, using the correct keys and ensuring the content is accurate and concise.
+
+I should double-check each section to make sure I haven't missed any details from the transcript and that the information is correctly formatted. For example, in the imaging results, I need to ensure that the findings are accurately described without adding any interpretations beyond what's stated.
+
+Additionally, I should verify that the assessment only includes active conditions and that the plan clearly outlines all recommended actions and follow-up instructions. It's important to use the correct terminology and structure each section as specified to ensure seamless integration into the medical record system.
+
+After reviewing all sections, I'll compile the JSON array, making sure each object follows the template exactly. This includes using the correct keys, providing the content as lists where required, and applying the default values only when necessary.
+
+Finally, I'll proofread the JSON to ensure there are no grammatical errors and that the structure is valid. This will help in avoiding any parsing issues when the JSON is processed further.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Nadeem Nemi"],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Bilateral thumb pain"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["Onset: Since 2019, worsened over the last six months", "Duration: Ongoing", "Location: Bilateral thumbs", "Severity: Significant pain limiting activities"],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Bilateral upper extremity skin is clean, dry, and intact", "No significant soft tissue swelling", "Positive Grin", "Positive shoulder sign", "No triggering of any digits with the thumb", "Dot NCTS"],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-rays demonstrate severe joint space neovasculitis in the metacarpal joint with osteophytosis", "Z deformity with hyperextension at the MCP joint", "Calcific arteriogram noted on the right", "Left hand shows similar findings except without calcific arteriogram"],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Bilateral thumb CMC arthritis with progression", "Bilateral carpal tunnel", "Right cubital tunnel"],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \u201cskin is intact\u201d or \u201cno tenderness to palpation.\u201d- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Trial of steroid injections for bilateral thumb CMC arthritis", "Discussion about temporary nature of steroids and possible rebound pain", "Observation for bilateral carpal tunnel and right cubital tunnel", "Consider nerve studies if symptoms re-exist", "Follow-up in two months"],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider\u2019s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., \u201creturn to clinic in 6 to 8 weeks.\u201d Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]
+```

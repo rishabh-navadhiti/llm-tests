@@ -1,0 +1,106 @@
+Okay, so I need to process this medical transcript and turn it into a structured patient visit note using the provided JSON template. Let me start by understanding the task.
+
+First, the user provided a JSON template with specific sections like Patient Name, Chief Complaint, HPI Spencer, etc. Each section has a key, content, default, and instructions. My job is to extract the relevant information from the transcript and fill in the JSON accordingly.
+
+Looking at the transcript, it's a conversation between a doctor and patients. There are four patients mentioned: Chaz Thomas, Meesha Senuda, Grace Twan, and Josefina Marcial. Each has their own follow-up discussion.
+
+Starting with Chaz Thomas. His chief complaint is about his splint. He took it off because someone else's blood got on it. So the chief complaint should be about the splint issue. For HPI Spencer, I need onset, duration, location, and severity. He took the splint off yesterday, so onset is yesterday, duration is recent, location is the splint area, severity is mild as he's tolerating well but has some pain.
+
+Next, Musculoskeletal findings: the laceration is clean, dry, intact with sutures. Sutures were removed today, tolerating well. Limited flexion is noted. So I'll list those as verbatim.
+
+Imaging Results: None mentioned for Chaz, so default to "-".
+
+Assessment: Active symptoms are the splint issue and limited flexion. So I'll list those.
+
+Plan: Sutures removed, transition to removable splint, hand therapy, follow-up in two weeks.
+
+Moving on to Meesha Senuda. Her chief complaint is about her splint and ongoing sensitivity and stiffness. HPI: She's been wearing the splint, symptoms improving but still present. On exam, limited flexion at DIP, stiffness, hypersensitivity. So HPI would note the duration and improvement.
+
+Musculoskeletal: Limited flexion, stiffness, hypersensitivity.
+
+Imaging: None, so default.
+
+Assessment: Sensitivity and stiffness in PIP, limited flexion in DIP.
+
+Plan: Discontinue splint, home exercises, follow-up in six weeks.
+
+Grace Twan's case: She's here for MRI review. Her chief complaint is about the mass and other pains. HPI: Symptoms are worsening, systemic. Exam unchanged, MRI results mentioned but not detailed.
+
+Musculoskeletal: No specific findings mentioned, so default.
+
+Imaging: MRI results are there but not detailed, so default.
+
+Assessment: Worsening symptoms, systemic.
+
+Plan: Discuss with Dr. Sidlow, follow-up in three months.
+
+Josefina Marcial: Her chief complaint is about her right hand pain after injection and wanting a left injection. HPI: Pain improved, left is 50% better. Exam: Bilateral wrist issues, arthritis.
+
+Musculoskeletal: Moderate tenosynovitis, ulnar prominence, limited motion.
+
+Imaging: X-rays show ulnar prominence and arthritis.
+
+Assessment: Right wrist improvement, left wrist arthritis.
+
+Plan: Observation, night splints, home exercises, possible injection if no improvement.
+
+Now, I need to structure each patient's note according to the JSON template. Each section must be filled with the extracted info, using defaults where info is missing. I have to ensure the JSON structure matches exactly, with the same keys and order.
+
+I should also check for any grammatical errors and ensure clarity and professionalism. Since the user mentioned using Python for parsing, the JSON must be valid and correctly formatted.
+
+I think I've covered all the patients and their respective sections. Now, I'll compile the JSON accordingly, making sure each patient's data is correctly placed under their respective keys and sections.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Chaz Thomas", "Meesha Senuda", "Grace Twan", "Josefina Marcial"],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Follow-up for splint removal and concerns about blood exposure", "Follow-up for splint use and ongoing sensitivity and stiffness", "Follow-up for MRI review and injection effects", "Follow-up for right hand pain after injection and left wrist concerns"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["Onset: Yesterday; Duration: Recent; Location: Splint area; Severity: Mild pain with limited flexion", "Onset: Ongoing; Duration: Recent; Location: PIP joint; Severity: Improving sensitivity and stiffness", "Onset: Recent; Duration: Ongoing; Location: Diffuse; Severity: Worsening systemic symptoms", "Onset: Last week; Duration: Recent; Location: Right hand; Severity: 80% improvement; Left wrist: 50% better"],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Laceration clean, dry, intact with sutures; sutures removed today; tolerating well; limited flexion", "Limited flexion at DIP joint; stiffness; hypersensitivity distally", "No specific findings mentioned", "Moderate tenosynovitis at DRUJ; ulnar prominence bilaterally; limited motion bilaterally"],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["-", "-", "-", "X-rays show significant ulnar prominence and DRUJ arthritis; right wrist: ulna-lunate arthritis"],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Splint-related concerns; limited flexion", "Sensitivity and stiffness in PIP; limited flexion in DIP", "Worsening systemic symptoms", "Right wrist improvement post-injection; left wrist arthritis"],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \u201cskin is intact\u201d or \u201cno tenderness to palpation.\u201d- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Sutures removed today; transition to removable splint; hand therapy; follow-up in two weeks", "Discontinue splint; home exercise program; follow-up in six weeks", "Discuss with Dr. Sidlow; follow-up in three months", "Observation; night splints; home exercise program; consider injection if no improvement"],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider\u2019s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., \u201creturn to clinic in 6 to 8 weeks.\u201d Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]
+```

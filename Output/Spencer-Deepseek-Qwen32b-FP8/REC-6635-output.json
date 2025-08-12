@@ -1,0 +1,72 @@
+Alright, I need to process the given medical transcript and convert it into a structured patient visit note using the provided JSON template. Let me go through each section step by step.
+
+First, the patient's name isn't explicitly mentioned in the transcript. The doctor refers to the patient as "he," but there's no name provided. So, I'll use the default value of "-".
+
+Next, the chief complaint. The patient mentions pain and stiffness in the index finger after a laceration. So, the chief complaint should be "Index finger pain and stiffness following laceration."
+
+For the HPI Spencer section, I need to extract the onset, duration, location, and severity. The injury occurred on 7-16-25, so the onset is that date. The duration isn't explicitly stated, but since the patient is seeking evaluation now, I'll note it as "Ongoing." The location is the left index finger PIP joint. The severity includes pain and stiffness, with limited flexion to 10 degrees.
+
+Moving on to Musculoskeletal findings. The doctor's examination notes a well-healing laceration without sutures, a stiff PIP joint with limited flexion, moderate swelling, and no sensory tenderness. I'll list these verbatim as per the instruction.
+
+Imaging Results: The doctor mentions that X-rays were normal, so I'll note that as "Normal X-rays."
+
+For the Assessment, the main issue is the stiff index finger PIP joint with limited motion and swelling. I'll list this as the current condition.
+
+Finally, the Plan section. The doctor recommends hand therapy and a follow-up in four weeks. I'll structure this into a list with these two points.
+
+I need to ensure all sections are filled correctly, using the default "-" where information is missing. Also, I'll maintain the JSON structure exactly as provided, ensuring no extra commentary or markdown.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Index finger pain and stiffness following laceration"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["Onset: 7-16-25", "Duration: Ongoing", "Location: Left index finger PIP joint", "Severity: Pain and stiffness with limited flexion to 10 degrees"],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Left upper extremity: Laceration well-healing without sutures", "Stiff index finger PIP able to flex only about 10 degrees actively", "Moderate soft tissue swelling", "No sensory tenderness to palpation", "Excellent range of motion of the remaining digit"],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["Normal X-rays"],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Stiff index finger PIP joint with limited motion and swelling"],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \u201cskin is intact\u201d or \u201cno tenderness to palpation.\u201d- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Recommend hand therapy for stiff index finger PIP joint", "Return to clinic in 4 weeks for follow-up evaluation"],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider\u2019s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., \u201creturn to clinic in 6 to 8 weeks.\u201d Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]
+```

@@ -1,0 +1,82 @@
+Okay, so I need to process this medical transcript and turn it into a structured patient visit note using the provided JSON template. Let me start by understanding the task.
+
+First, the user provided a JSON template with specific sections like Patient Name, Chief Complaint, HPI Spencer, etc. Each section has a key, content, default value, and instructions. My job is to extract information from the given medical transcript and fill in the JSON accordingly.
+
+Looking at the transcript, it's a conversation between a doctor and a patient. The doctor mentions the patient is doing well overall but still has some stickiness in her arm. She doesn't like putting her hand on the ground but feels better. There's less numbness and tingling, but she's moving great. On exam, there's a mild scar, mild pillar pain, full type, no painful active extension. Some discomfort with hands-on-the-ground activity. The plan is to advance activity, tolerate bearing, recommend a home exercise program, and follow up in three months.
+
+Now, I'll go through each section of the template one by one.
+
+1. **Patient Name**: The transcript doesn't mention the patient's name, so I'll use the default "-".
+
+2. **Chief Complaint**: The main issue is stickiness in the arm. So, "Stickiness in arm" fits here.
+
+3. **HPI Spencer**: This should include onset, duration, location, and severity. The patient says she's doing well overall but still has stickiness. She's feeling better with less numbness and tingling. So, I'll note that she's improving with less symptoms but still has stickiness.
+
+4. **Musculoskeletal**: The exam findings are mild scar, mild pillar pain, full type, no painful active extension, discomfort with hands-on-the-ground. I'll list these verbatim as per instructions.
+
+5. **Imaging Results**: There's no mention of imaging, so default to "-".
+
+6. **Assessment**: The current issues are stickiness in the arm, mild pillar pain, and discomfort with certain activities. I'll list these as separate points.
+
+7. **Plan**: The plan includes advancing activity, tolerating bearing, home exercise program, and follow-up in three months. I'll structure this into a list with each point clearly stated.
+
+I need to ensure that each section follows the instructions precisely, using the correct medical terminology and structure. Also, I must avoid any grammatical errors and maintain a professional tone.
+
+Let me double-check each section to make sure I didn't miss anything. For example, in the HPI, I included the improvement and current symptoms. In the Plan, I made sure to mention the follow-up time as specified.
+
+I think that's all. Now, I'll format the JSON accordingly, making sure it matches the template exactly.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Stickiness in arm"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["Patient reports improvement in symptoms with less numbness and tingling, but still experiences stickiness in arm."],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Mild scar, mild pillar pain, full type, no painful active extension, discomfort with hands-on-the-ground activity."],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["-"],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Stickiness in arm", "Mild pillar pain", "Discomfort with hands-on-the-ground activity."],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Advance activity as tolerated.", "Recommend home exercise program for pillar pain.", "Follow-up in three months."],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]
+```

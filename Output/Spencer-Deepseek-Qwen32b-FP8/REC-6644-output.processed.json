@@ -1,0 +1,81 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Cathy Smith",
+      "Brigitte Metman",
+      "Samar Actrion"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Increasing pain and deformity in fingers",
+      "Burning sensation from mid-palm to mid-forearm",
+      "Bilateral hand pain worsening over four years"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Onset: Increasing pain and deformity in DIP joints and trapeziometic carpal joints",
+      "Duration: Recent worsening",
+      "Location: Fingers and trapeziometic carpal joints",
+      "Severity: Moderate to severe pain"
+    ],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Diffuse angulation and deformity at DIP joints, moderate tenderness and dislocation",
+      "Erythema and edema at the wrist, no tenderness",
+      "Mild tenderness diffusely to the hand, stiff left thumb MCP joint"
+    ],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "Joint space narrowing at DIP joints",
+      "Normal x-rays",
+      "Deferred x-rays"
+    ],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Bilateral thumb CMC arthritis",
+      "DIP arthritis",
+      "Unclear due to peripheral neuropathy",
+      "Bilateral carpal tunnel syndrome"
+    ],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Trial of steroid injections, splints, follow-up in six weeks",
+      "Nerve studies, neurology consult, night splints, follow-up after studies",
+      "Repeat nerve studies, night splints, follow-up after studies"
+    ],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]

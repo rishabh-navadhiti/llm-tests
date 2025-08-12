@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Cathy Smith",
+      "Brigitte Metman",
+      "Samar Actrion"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Increasing pain and deformity in fingers",
+      "Burning pain from mid-palm to mid-forearm",
+      "Progressively worsening bilateral hand pain"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Onset: Gradual, over time; Duration: Progressive over months to years; Location: Bilateral DIP joints, trapeziometacarpal joints, right hand; Severity: Moderate to severe pain, with functional limitation including inability to flex right small finger DIP joint"
+    ],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "bilateral upper extremities, there is a diffuse angulation and deformity at the DIP joints, moderate tenderness and dislocation diffusely to them. She is unable to flex at the right small finger DIP secondary to the arthritis, but there is some remained flexion and extension of the remaining DIP joints. Moderate tenderness and dislocation of the trapeziometacarpal joints. Mild shoulder sign, no tenderness or inflammation at the A1 pulleys. incisions will heal. Min- minimal scar, some continued tenderness and dislocation at the A1 pony incision. No tenderness or inflammation at the dorsal hand incision, but there is some scar appearance there. Full fist moderate soft tissue swelling, uh, in the left space especially. Excellent range of motion overall. Some continued pain with motion. right upper extremity, skin is clean, dry, and intact. There is some erythema, uh...... and edema at the wrist. There is no specific tenderness to palpation, got NCTS though unable to flex enough for a Phalen's. bilateral abrasion of the skin is clean, dry and intact without erythema or ecchymosis. Mild tenderness to palpation diffusely to the hand. Excellent range of motion except for the left thumb is stiff at the, uh, MCP joint. No tenderness or palpation of the left thumb A1 fully. Got PCTS."
+    ],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays are three views of the right hand, three views of the left hand demonstrate a variable joint space narrowing at the DIP joints diffusely as compared to the 2002 images. This is progressed at all digits except the left small finger DIP, which is fused with stable hardware. There is moderate joint space narrowing of the trapeziometacarpal joint. X-rays are normal."
+    ],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Bilateral DIP joint arthritis with progressive deformity and functional limitation",
+      "Trapeziometacarpal joint arthritis causing significant pain",
+      "Right upper extremity skin is intact",
+      "No tenderness to palpation",
+      "Right hand CMC joint arthritis",
+      "Bilateral carpal tunnel syndrome",
+      "Peripheral neuropathy with new-onset burning pain in right hand",
+      "Persistent post-surgical tenderness and scarring at A1 pulley site"
+    ],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \"skin is intact\" or \"no tenderness to palpation.\"- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation.'"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Recommend trial of steroid injections for bilateral thumb CMC arthritis, with discussion of potential rebound pain and temporary relief.",
+      "Discussed that there is no way to prevent worsening of DIP joint arthritis on imaging, but pain can be managed with splints, which are worn for comfort rather than necessity.",
+      "Recommend considering DIP joint fusion at a time of patient’s choosing.",
+      "Continue hand therapy, with patient expressing dissatisfaction with current therapy provider; transition of care to Jack is approved.",
+      "Return to clinic in six weeks for follow-up.",
+      "For Brigitte Metman: Recommend nerve conduction studies and neurology consult due to muddied clinical picture in the setting of pre-existing peripheral neuropathy.",
+      "Recommend night splints for right wrist.",
+      "Return to clinic after nerve studies.",
+      "For Samar Actrion: Recommend repeat nerve studies as there is no documented progression of symptoms despite clinical concern.",
+      "Recommend night splints for bilateral carpal tunnel syndrome.",
+      "Return to clinic after nerve studies."
+    ],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]

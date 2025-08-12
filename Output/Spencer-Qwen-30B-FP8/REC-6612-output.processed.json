@@ -1,0 +1,79 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "She"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Achiness in wrist and limited motion with electric sensation in ulnar and dorsal aspects of hand with prolonged hand use"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Onset: Chronic; Duration: Ongoing; Location: Wrist, ulnar and dorsal aspects of hand; Severity: Mild to moderate achiness, intermittent electric sensation with hand use"
+    ],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Exam is unchanged"
+    ],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "No evidence of carpal tunnel. There is perhaps some evidence of ulnar nerve compression at Guyon's canal, but she is not symptomatic in that distribution."
+    ],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Right wrist achiness with limited motion, stable",
+      "Electric sensation in ulnar and dorsal aspects of hand with hand use",
+      "No evidence of carpal tunnel",
+      "Possible ulnar nerve compression at Guyon's canal, asymptomatic in distribution",
+      "Cervical radiculopathy under evaluation",
+      "Right upper extremity skin is intact",
+      "No tenderness to palpation"
+    ],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation.'"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Patient is doing well and continuing to gain strength.",
+      "Advanced activity is recommended, and she has tolerated advanced laboring.",
+      "Carpal tunnel diagnosis can be deleted from the plan.",
+      "Nerve studies have been reviewed and show no evidence of carpal tunnel.",
+      "There is possible evidence of ulnar nerve compression at Guyon's canal, but the patient is not symptomatic in that distribution.",
+      "Continue to monitor for any changes in symptoms.",
+      "Refer to urology consult for evaluation of cervical radiculopathy.",
+      "Return to clinic in six weeks for follow-up.",
+      "Patient is cleared for full duty starting 9-1-2025."
+    ],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "conversation": "... have their medical conditions taken care of. She had, had her knee replaced. Um... And wants to know how things look. She notes that her synovitis is much improve- improved. Her rheumatologist added an injection, which has made a big difference. She has also started an infusion for her osteoporosis. She wants to talk about, um, total wrist arthroplasty on the right side. She feels like she is significantly limited in all things by her... wrist pain. She is here for evaluation and treatment. On exam-",
+        "speaker": "doctor",
+        "start_time": "0.059"
+    },
+    {
+        "conversation": "Okay.",
+        "speaker": "patient",
+        "start_time": "51.659"
+    },
+    {
+        "conversation": "Exam mostly unchanged, except you can delete the large, poorly defined nodule. Um... The imaging you can leave all the same. And then regarding the bilateral wrist arthritis, she is interested in right total wrist arthroplasty. Her synovitis is down and her knee has recovered enough that she would like to start planning plan OR wrist rescue procedure.",
+        "speaker": "doctor",
+        "start_time": "66.86"
+    }
+]

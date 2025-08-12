@@ -1,0 +1,90 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Chaz Thomas",
+      "Meesha Senuda",
+      "Grace Twan",
+      "Charles Shaw",
+      "Josefina Marcial"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Follow-up for laceration repair",
+      "Follow-up for hand stiffness and sensitivity",
+      "MRI review and follow-up for mass and systemic symptoms",
+      "Follow-up for hand laceration",
+      "Follow-up for post-injection pain and bilateral wrist arthritis"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Onset: yesterday; Duration: recent; Location: right hand laceration; Severity: mild to moderate pain with limited flexion",
+      "Onset: ongoing; Duration: weeks; Location: PIP and DIP joints; Severity: mild to moderate stiffness and sensitivity",
+      "Onset: recent; Duration: ongoing; Location: mass in hand; Severity: improved after injection",
+      "Onset: recent; Duration: days; Location: proximal nail fold laceration; Severity: mild",
+      "Onset: post-injection; Duration: 1 week; Location: right hand; Severity: severe initially, now 80% improved"
+    ],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Laceration, clean dry and intact with sutures. Sutures removed today, patient tolerating well without apparent complication. Excellent, thumbs up but some pain, limited flexion.",
+      "Significantly limited flexion at the DIP joint. PIP with a sensation of stiffness but able to flex at least to 90 degrees, minimal tenosynovitis distally, some hypersensitivity distally.",
+      "Exam is unchanged.",
+      "Mild laceration to the proximal nail folds. Incentive, he can protect it within the asterisks.",
+      "Bilateral upper extremity skin clean, dry, intact without erythema or ecchymosis. Moderate tenosynovitis at the DRUJ. Bilateral wrist: some prominence of the ulna bilaterally. Limited motion bilaterally."
+    ],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "Three views of the left wrist demonstrate significant ulnar prominence and DRUJ arthritis consistent with her rheumatoid state.",
+      "Three views of the right wrist demonstrate significant ulna-lunate arthritis."
+    ],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Right hand laceration status post suture removal with residual pain and limited flexion.",
+      "Persistent PIP and DIP joint stiffness with hypersensitivity.",
+      "Mass resolved almost entirely after IM Kenalog injection.",
+      "Mild laceration to proximal nail folds with healing.",
+      "Bilateral wrist arthritis with ulnar prominence and limited motion; right hand improved post-injection."
+    ],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \"skin is intact\" or \"no tenderness to palpation.\"- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation.'"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Sutures removed today. Recommend transition to removable splint. Initiate hand therapy. Return to clinic in two weeks for follow-up and range of motion check.",
+      "Recommend discontinuing splint entirely; okay to continue wearing at night. Return to clinic in six weeks for follow-up. Recommend home exercise program for strengthening. Patient defers formal therapy; this is reasonable.",
+      "MRI results reviewed. Continue medical management. Discuss with Dr. Sidlow regarding medical control. Worsening systemic symptoms noted. Return to clinic in three months or sooner if excisional biopsy is desired.",
+      "Continue to protect laceration with soft dressings. Dressing should remain clean and dry. Return to clinic in one week for wound check and dressing change.",
+      "Right hand: recommend observation for now. Left hand: review x-rays and clinical scenario. Not tried conservative treatments. Recommend trial of night splints and home exercise program. Consider injection if no improvement."
+    ],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]

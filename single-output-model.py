@@ -19,7 +19,7 @@ VLLM_API_URL = "http://localhost:8000/v1/completions"  # vLLM OpenAI-style API e
 
 
 TRANSCRIPT_PATH = "/workspace/llm-tests/transcripts/Spencer/REC-6645.json"
-TEMPLATE_PATH = "/workspace/llm-tests/doctor-template-specialized.json"
+TEMPLATE_PATH = "/workspace/llm-tests/templates/doctor-template-specialized.json"
 PROMPT_PATH = "/workspace/llm-tests/prompt-v1.txt"
 OUTPUT_PATH = "/workspace/llm-tests/Output/testing/REC-6645-mistral.json"
 

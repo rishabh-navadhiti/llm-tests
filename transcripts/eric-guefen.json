@@ -1,0 +1,27 @@
+[
+    {
+        "conversation": "... is here today for follow-up. He states that he is having pain on both of his thumbs. He, uh, started having a recurrence of his right thumb symptoms a few weeks ago, it feels like, into the last time. It's getting stiff and swollen, but it's not moving particularly well. He is also having pain at the left thumb there, so along the radial border. It starts at the wrist and goes all the way to the tip of his thumb. Um-",
+        "speaker": "doctor",
+        "start_time": "0.119"
+    },
+    {
+        "conversation": "Is that the same computer I did?",
+        "speaker": "patient",
+        "start_time": "30.159"
+    },
+    {
+        "conversation": "Yes.",
+        "speaker": "doctor",
+        "start_time": "32.719"
+    },
+    {
+        "conversation": "Can you tell me to come over with a big sticker that I can put on the inside of my laptop?",
+        "speaker": "patient",
+        "start_time": "34.759"
+    },
+    {
+        "conversation": "Uh, on exam, we'll do left upper extremity. Skin is clean, dry and intact without antimeric hemolysis. Moderate tenderness on palpation of the radial stone. Very positive digital palpations, um, positive pain with resisted thumb extension, able to give a thumbs up, et cetera, et cetera. And then, on the right, moderate tenderness on palpation of the thumb. A1 pulley, there is nodule there that is triggering them. Um, previous x-rays reviewed, it will be planned De Quervains. Recommend home exercise program. Um, and then regarding the trigger, he had excellent but temporary relief from his first injection. We will give him another today, return to clinic in three months for follow-up.",
+        "speaker": "doctor",
+        "start_time": "39.559"
+    }
+]

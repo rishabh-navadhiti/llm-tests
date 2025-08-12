@@ -1,0 +1,198 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Mr. Hutchinson"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Persistent pain and swelling at the medial border of the PAP joint"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [
+      "Mr. Hutchinson is a follow-up patient who reports that he is doing much better since his last visit, with no side effects from steroid therapy. However, his symptoms remain unresolved. He continues to experience pain and swelling localized to the medial border of the PAP joint. Although joint motion has improved, it remains abnormal. The area of swelling and redness has become isolated to this specific region. The patient is seeking clarification regarding the underlying cause of his persistent symptoms. Imaging studies were performed: an x-ray was deferred, and an ultrasound revealed a hyperechoic lesion at the PAP joint, consistent with either calcification or crystals. Further evaluation with MRI is recommended to better characterize the lesion and guide diagnosis."
+    ],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format. End the sentence with period. Avoid direct speech and avoid talking in first person."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [
+      "No past medical history found"
+    ],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events. Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc. Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits."
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": [
+      "No current medications found"
+    ],
+    "default": "No current medications found.",
+    "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [
+      "No family history found"
+    ],
+    "default": "No family history found",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found.\""
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [
+      "No social history"
+    ],
+    "default": "No social history",
+    "instruction": "What is the social history of this patient"
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [
+      "No allergies found"
+    ],
+    "default": "No allergies found",
+    "instruction": "What is the allergies of this patient"
+  },
+  {
+    "title": "HEENT",
+    "key": "SOAP_ROS_HEENT",
+    "content": [
+      "Eyes: No visual loss, blurred vision, double vision. Ears, Nose, Throat: No hearing loss, sneezing, congestion, runny nose, or sore throat."
+    ],
+    "default": "Eyes: No visual loss, blurred vision, double vision. Ears, Nose, Throat: No hearing loss, sneezing, congestion, runny nose or sore throat.",
+    "instruction": "Return 'Normal' if no information is present"
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "CARDIOVASCULAR",
+    "key": "SOAP_ROS_CARDIOVASCULAR",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "Respiratory",
+    "key": "SOAP_ROS_RESPIRATORY",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "GASTROINTESTINAL",
+    "key": "SOAP_ROS_GASTROINTESTINAL",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "GENITOURINARY",
+    "key": "SOAP_ROS_GENITOURINARY",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "NEUROLOGICAL",
+    "key": "SOAP_ROS_NEUROLOGICAL",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "MUSCULOSKELETAL",
+    "key": "SOAP_ROS_MUSCULOSKELETAL",
+    "content": [
+      "Pain and swelling localized to the medial border of the PAP joint. Motion improved but not normal. No deformities or instability noted."
+    ],
+    "default": "Normal",
+    "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+  },
+  {
+    "title": "Hematologic",
+    "key": "SOAP_ROS_HEMATOLOGIC",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "Lymphatic",
+    "key": "SOAP_ROS_LYMPHATIC",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "Psychiatric",
+    "key": "SOAP_ROS_PSYCHIATRIC",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "Eye",
+    "key": "SOAP_PE_EYES",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "General",
+    "key": "SOAP_PHYSICAL_EXAM_GENERAL",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+   

@@ -1,0 +1,298 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Curtis Carton"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Right wrist pain following a fall while playing basketball."
+    ],
+    "default": "-"
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [
+      "Curtis Carton presented to urgent care with right upper extremity pain starting after a fall during a basketball game on 07-22-25. He experienced immediate pain, swelling, and limited motion upon impact. An X-ray performed at urgent care revealed an intra-articular distal radius fracture."
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [
+      "None relevant to the current complaint."
+    ],
+    "default": "No past medical history found"
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": [
+      "Not mentioned in the conversation."
+    ],
+    "default": "No current medications found."
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [
+      "Not mentioned in the conversation."
+    ],
+    "default": "No family history found"
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [
+      "Marketing professional, right-hand dominant."
+    ],
+    "default": "No social history"
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [
+      "Not mentioned in the conversation."
+    ],
+    "default": "No allergies found"
+  },
+  {
+    "title": "HEENT",
+    "key": "SOAP_ROS_HEENT",
+    "content": [
+      "Normal."
+    ],
+    "default": "Eyes: No visual loss, blurred vision, double vision. Ears, Nose, Throat: No hearing loss, sneezing, congestion, runny nose or sore throat."
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [
+      "Right upper extremity skin is clean, dry, and intact with ecchymosis on the volar aspect."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "CARDIOVASCULAR",
+    "key": "SOAP_ROS_CARDIOVASCULAR",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Respiratory",
+    "key": "SOAP_ROS_RESPIRATORY",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "GASTROINTESTINAL",
+    "key": "SOAP_ROS_GASTROINTESTINAL",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "GENITOURINARY",
+    "key": "SOAP_ROS_GENITOURINARY",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "NEUROLOGICAL",
+    "key": "SOAP_ROS_NEUROLOGICAL",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "MUSCULOSKELETAL",
+    "key": "SOAP_ROS_MUSCULOSKELETAL",
+    "content": [
+      "Limited wrist motion secondary to pain. Limited pronation secondary to pain."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Hematologic",
+    "key": "SOAP_ROS_HEMATOLOGIC",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Lymphatic",
+    "key": "SOAP_ROS_LYMPHATIC",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Psychiatric",
+    "key": "SOAP_ROS_PSYCHIATRIC",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Eye",
+    "key": "SOAP_PE_EYES",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "General",
+    "key": "SOAP_PHYSICAL_EXAM_GENERAL",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Head",
+    "key": "SOAP_PE_HEAD",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Ears",
+    "key": "SOAP_PE_EARS",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Nose",
+    "key": "SOAP_PE_NOSE",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Throat",
+    "key": "SOAP_PE_THROAT",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Neck",
+    "key": "SOAP_PHYSICAL_EXAM_NECK",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Heart",
+    "key": "SOAP_PE_HEART",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Lungs",
+    "key": "SOAP_PE_LUNGS",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Abdomen",
+    "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "MUSCULOSKELETAL",
+    "key": "SOAP_PHYSICAL_EXAM_MUSCULOSKELETAL",
+    "content": [
+      "Excellent range of motion over the fingers. Limited wrist motion secondary to pain. Limited pronation secondary to pain."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Neurological",
+    "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Psychiatric",
+    "key": "SOAP_PE_PSYCHIATRIC",
+    "content": [
+      "Normal."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [
+      "Not mentioned in the conversation."
+    ],
+    "default": "No Immunizations found"
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [
+      "X-rays show an intra-articular distal radius fracture involving the radial styloid."
+    ],
+    "default": "No lab results found"
+  },
+  {
+    "title": "Assessment and Plan",
+    "key": "SOAP_ASSESSMENT_PLAN",
+    "content": [
+      "Diagnosis: Intra-articular distal radius fracture involving the radial styloid. Treatment plan: Protect with a short-arm cast. Follow-up in 10 days with repeat X-rays."
+    ],
+    "default": "No assessment or plan."
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [
+      "Return to clinic in 10 days for follow-up with repeat X-rays."
+    ],
+    "default": "No follow up"
+  }
+]

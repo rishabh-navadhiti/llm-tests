@@ -1,0 +1,17 @@
+[
+    {
+        "conversation": "N. Kalinski. K-A-L-I-N-S-K-I. Uh, we'll add that he underwent a left middle finger trigger finger injection on 10-22-24. He has had recurrence.",
+        "speaker": "doctor",
+        "start_time": "0.099"
+    },
+    {
+        "conversation": "Mm-hmm.",
+        "speaker": "patient",
+        "start_time": "27.299"
+    },
+    {
+        "conversation": "Uh, okay, let's keep the exam the same. We can remove the imaging review for the plan. He has had recurrence of his left middle finger trigger finger. We elected to try an injection, which was performed today. He will return to clinic if he has any recurrence.",
+        "speaker": "doctor",
+        "start_time": "54.86"
+    }
+]

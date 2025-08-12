@@ -1,0 +1,21 @@
+python -m venv qwen-venv
+source qwen3/qwen-venv/bin/activate
+
+
+pip install torch torchvision
+pip install transformers accelerate
+pip install bitsandbytes
+pip install einops
+pip install requests
+pip install wheel
+pip install flash-attn --no-build-isolation
+
+
+
+python3 qwen3/qwen30b-hf.py
+
+
+rsync -av --exclude='qwen-venv' runpod:/workspace/llm-tests/ ~/Documents
+
+
+

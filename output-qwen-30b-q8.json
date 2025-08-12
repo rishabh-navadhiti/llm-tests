@@ -1,0 +1,110 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Mr. Hutchinson"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Persistent pain and swelling in the medial border of the PAP joint"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [
+      "Mr. Hutchinson is a follow-up patient who reports that he is doing much better since his last visit, with no side effects from the steroid treatment. However, his symptoms of pain and swelling persist. The area of swelling and redness has localized to the medial border of the PAP joint. He notes that joint motion has improved but remains abnormal. He is seeking clarification on the underlying cause of his ongoing symptoms. Diagnostic imaging includes an ultrasound that revealed a hyperechoic lesion at the PAP joint, consistent with either calcification or crystals. The plan includes deferring plain radiography and recommending an MRI for further evaluation to determine the nature of the lesion and guide management."
+    ],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format End the sentence with period. Avoid direct speech and avoid talking in first person."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [
+      "No past medical history found"
+    ],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, date, and outcomes."
+  },
+  {
+    "title": "Assessment and Plan",
+    "key": "SOAP_ASSESSMENT_PLAN",
+    "content": [
+      "Assessment: The patient presents with persistent pain and swelling localized to the medial border of the PAP joint, despite improvement in motion and absence of steroid side effects. Ultrasound findings reveal a hyperechoic lesion at the PAP joint, suggestive of either calcification or crystals, raising concern for conditions such as calcium pyrophosphate dihydrate (CPPD) crystal arthritis or a calcific tendinopathy. The differential diagnosis includes crystal-induced arthropathy, osteoarthritis with secondary calcification, or a localized soft tissue calcification. No definitive diagnosis has been established. The lack of resolution despite prior treatment warrants further investigation.\n\nPlan: An MRI is recommended to further characterize the lesion at the PAP joint, assess surrounding soft tissues, and differentiate between calcific deposits, crystal deposition, or other structural abnormalities. Plain radiography has been deferred based on the ultrasound findings and the need for higher-resolution imaging. No new medications or interventions are initiated at this time. Patient education regarding the diagnostic workup and possible etiologies has been provided. No referrals or procedural interventions are currently indicated. The focus remains on imaging-guided evaluation to determine the underlying cause and guide definitive treatment."
+    ],
+    "default": "No assessment or plan.",
+    "instruction": "Assessment:Provide a detailed note of the patient's current health status based on the information gathered during the visit. This should include:Diagnosis or Differential Diagnosis: List the primary diagnosis or possible diagnoses based on the assessment. Include a differential diagnosis if there is uncertainty or multiple potential causes.Pertinent Positive and Negative Findings: Highlight key findings from the patient's history, physical examination, and diagnostic tests that support the diagnosis or influence the treatment plan.Severity or Progression: Describe the severity of the condition, if applicable, and any changes observed since the last visit.Comorbidities: Note any other existing medical conditions that may impact the patient's current health status or treatment plan.Plan:Detail the healthcare provider's plan of action to manage the patient's condition. This should include:Treatment Plan: Specify the interventions or treatments recommended for the patient, such as medications, procedures, therapies, lifestyle modifications, or referrals to specialists.Medication Management: Detail any new medications prescribed, changes to existing medications, or discontinuation of medications. Include dosage, frequency, route of administration, and duration of treatment.Patient Education: Provide information to the patient regarding their condition, the treatment plan, potential side effects of medications, and instructions for self-care or symptom management.Referrals: If necessary, refer the patient to other healthcare providers or specialists for further evaluation or management of specific aspects of their care.Counseling or Support Services: Recommend any counseling services, support groups, or resources that may benefit the patient in coping with their condition or treatment.and don't include any related to follow up in the plan"
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [
+      "Next Appointment: Schedule follow-up after MRI results are available. Review and Adjustments: Plan to review imaging findings and adjust treatment plan accordingly based on diagnosis."
+    ],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:Next Appointment: Schedule the next appointment for [date/time].Review and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [
+      "No lab results found"
+    ],
+    "default": "No lab results found",
+    "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [
+      "No Immunizations found"
+    ],
+    "default": "No Immunizations found",
+    "instruction": "What is the immunizations of this patient"
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [
+      "No lab results found"
+    ],
+    "default": "No lab results found",
+    "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [
+      "No Immunizations found"
+    ],
+    "default": "No Immunizations found",
+    "instruction": "What is the immunizations of this patient"
+  },
+  {
+    "title": "Assessment and Plan",
+    "key": "SOAP_ASSESSMENT_PLAN",
+    "content": [
+      "Assessment: The patient presents with persistent pain and swelling localized to the medial border of the PAP joint, despite improvement in motion and absence of steroid side effects. Ultrasound findings reveal a hyperechoic lesion at the PAP joint, suggestive of either calcification or crystals, raising concern for conditions such as calcium pyrophosphate dihydrate (CPPD) crystal arthritis or a calcific tendinopathy. The differential diagnosis includes crystal-induced arthropathy, osteoarthritis with secondary calcification, or a localized soft tissue calcification. No definitive diagnosis has been established. The lack of resolution despite prior treatment warrants further investigation.\n\nPlan: An MRI is recommended to further characterize the lesion at the PAP joint, assess surrounding soft tissues, and differentiate between calcific deposits, crystal deposition, or other structural abnormalities. Plain radiography has been deferred based on the ultrasound findings and the need for higher-resolution imaging. No new medications or interventions are initiated at this time. Patient education regarding the diagnostic workup and possible etiologies has been provided. No referrals or procedural interventions are currently indicated. The focus remains on imaging-guided evaluation to determine the underlying cause and guide definitive treatment."
+    ],
+    "default": "No assessment or plan.",
+    "instruction": "Assessment:Provide a detailed note of the patient's current health status based on the information gathered during the visit. This should include:Diagnosis or Differential Diagnosis: List the primary diagnosis or possible diagnoses based on the assessment. Include a differential diagnosis if there is uncertainty or multiple potential causes.Pertinent Positive and Negative Findings: Highlight key findings from the patient's history, physical examination, and diagnostic tests that support the diagnosis or influence the treatment plan.Severity or Progression: Describe the severity of the condition, if applicable, and any changes observed since the last visit.Comorbidities: Note any other existing medical conditions that may impact the patient's current health status or treatment plan.Plan:Detail the healthcare provider's plan of action to manage the patient's condition. This should include:Treatment Plan: Specify the interventions or treatments recommended for the patient, such as medications, procedures, therapies, lifestyle modifications, or referrals to specialists.Medication Management: Detail any new medications prescribed, changes to existing medications, or discontinuation of medications. Include dosage, frequency, route of administration, and duration of treatment.Patient Education: Provide information to the patient regarding their condition, the treatment plan, potential side effects of medications, and instructions for self-care or symptom management.Referrals: If necessary, refer the patient to other healthcare providers or specialists for further evaluation or management of specific aspects of their care.Counseling or Support Services: Recommend any counseling services, support groups, or resources that may benefit the patient in coping with their condition or treatment.and don't include any related to follow up in the plan"
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [
+      "Next Appointment: Schedule follow-up after MRI results are available. Review and Adjustments: Plan to review imaging findings and adjust treatment plan accordingly based on diagnosis."
+    ],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:Next Appointment: Schedule the next appointment for [date/time].Review and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]

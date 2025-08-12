@@ -1,0 +1,27 @@
+[
+    {
+        "conversation": "... uh, Mr. Jacob Kogan who is here today for follow-up. He states that he is doing okay overall. He is having a lot of pain. This is a really interesting case. We should talk about it later.",
+        "speaker": "doctor",
+        "start_time": "0.079"
+    },
+    {
+        "conversation": "His name is also dead in this file. I've never heard Joseph Allen before.",
+        "speaker": "nurse",
+        "start_time": "9.979"
+    },
+    {
+        "conversation": "Oh, really? Wow. Um, we should... Yeah, we should talk about this case. Give me one second let me finish dictating and I will tell you-",
+        "speaker": "doctor",
+        "start_time": "12.779"
+    },
+    {
+        "conversation": "Okay.",
+        "speaker": "nurse",
+        "start_time": "22.039"
+    },
+    {
+        "conversation": "... about it. Um, he's having a lot of pain and he is having increasing contraction. He wants to know what's going on. On exam, incision is well-healed, no remaining open areas. There is a significant progression of his cords and nodules consistent with his Dupuytren's disease. There is a 30-degree contracture at the MCP joint. Um... Uh, plan will be recommend home exercise program and hand therapy. Um... Um, return to clinic in six weeks for follow-up with video visit for range-of-motion check. Consider treatment of the Dupuytren's with ibex about 10.",
+        "speaker": "doctor",
+        "start_time": "22.059"
+    }
+]

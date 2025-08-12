@@ -1,0 +1,335 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "John Doe"
+    ],
+    "default": "-",
+    "instruction": "Extract only the patient's full name. If no patient name is explicitly stated, use the default value. Do not invent a name."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Thumb pain"
+    ],
+    "default": "-",
+    "instruction": "State the patient's primary reason for visit concisely. Avoid direct quotes, additional context, or filler. End with a period."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [
+      "Recurrence of right thumb symptoms starting a few weeks ago, stiffness, swelling, limited movement. Left thumb pain along radial border, starting at wrist extending to thumb tip."
+    ],
+    "default": "-",
+    "instruction": "Summarize the patient's current illness. Include symptom onset, duration, severity, modifying factors, and prior treatments. Use precise medical terminology and complete sentences. Do not use direct speech, filler words, or first-person phrasing. Ensure medical terminology and grammar are correct. End each sentence with a period."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [
+      "None"
+    ],
+    "default": "No past medical history found",
+    "instruction": "List all relevant prior diagnoses, surgeries, and hospitalizations not related to the current complaint. Maintain a professional tone. Do not include current issues or treatment plans. End each sentence with a period."
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": [
+      "None"
+    ],
+    "default": "No current medications found.",
+    "instruction": "List all current medications. Include name (generic/brand if known), dose, route, frequency, and duration. Format clearly. If none, use default. End each item with a period."
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [
+      "None"
+    ],
+    "default": "No family history found",
+    "instruction": "Mention relevant family medical conditions. Specify relationship and age at diagnosis if provided. If no family history is stated, return the default. End each sentence with a period."
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [
+      "None"
+    ],
+    "default": "No social history",
+    "instruction": "Include occupation, living situation, and habits (e.g., smoking, alcohol, drug use, relevant sexual history). Use professional language. End each sentence with a period."
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [
+      "None"
+    ],
+    "default": "No allergies found",
+    "instruction": "List all mentioned medication, food, or environmental allergies. If none, return the default. End each item with a period."
+  },
+  {
+    "title": "HEENT",
+    "key": "SOAP_ROS_HEENT",
+    "content": [
+      "Eyes: No visual loss, blurred vision, double vision. Ears, Nose, Throat: No hearing loss, sneezing, congestion, runny nose or sore throat."
+    ],
+    "default": "Eyes: No visual loss, blurred vision, double vision. Ears, Nose, Throat: No hearing loss, sneezing, congestion, runny nose or sore throat.",
+    "instruction": "Summarize patient-reported symptoms for HEENT. If no relevant info, use the default. Do not fabricate details. End each sentence with a period."
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Document specific physical exam findings related to skin. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Cardiovascular",
+    "key": "SOAP_ROS_CARDIOVASCULAR",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Summarize patient-reported cardiovascular symptoms. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Respiratory",
+    "key": "SOAP_ROS_RESPIRATORY",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Summarize patient-reported respiratory symptoms. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Gastrointestinal",
+    "key": "SOAP_ROS_GASTROINTESTINAL",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Summarize patient-reported gastrointestinal symptoms. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Genitourinary",
+    "key": "SOAP_ROS_GENITOURINARY",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Summarize patient-reported genitourinary symptoms. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Neurological",
+    "key": "SOAP_ROS_NEUROLOGICAL",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Summarize patient-reported neurological symptoms. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Summarize patient-reported constitutional symptoms (e.g., fever, fatigue, weight changes). Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "SOAP_ROS_MUSCULOSKELETAL",
+    "content": [
+      "Right thumb: Recurrent pain, stiffness, swelling, limited movement. Left thumb: Pain along radial border, starting at wrist extending to thumb tip."
+    ],
+    "default": "Normal",
+    "instruction": "Summarize patient-reported musculoskeletal symptoms or injuries. This section is for Review of Systems (patient-reported). Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Hematologic",
+    "key": "SOAP_ROS_HEMATOLOGIC",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Summarize patient-reported hematologic symptoms. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Lymphatic",
+    "key": "SOAP_ROS_LYMPHATIC",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Summarize patient-reported lymphatic symptoms. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Psychiatric",
+    "key": "SOAP_ROS_PSYCHIATRIC",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Summarize patient-reported psychiatric concerns. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Eye",
+    "key": "SOAP_PE_EYES",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Document specific physical exam findings for eyes. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "General",
+    "key": "SOAP_PHYSICAL_EXAM_GENERAL",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Document general physical exam findings and vital signs. If not specified, return 'Normal'. End each sentence with a period."
+  },
+  {
+    "title": "Head",
+    "key": "SOAP_PE_HEAD",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Document specific physical exam findings for the head. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Ears",
+    "key": "SOAP_PE_EARS",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Document specific physical exam findings for ears. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Nose",
+    "key": "SOAP_PE_NOSE",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Document specific physical exam findings for nose. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Throat",
+    "key": "SOAP_PE_THROAT",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Document specific physical exam findings for throat. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Neck",
+    "key": "SOAP_PHYSICAL_EXAM_NECK",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Document specific physical exam findings for the neck. Return 'Normal' if not mentioned. End each sentence with aperiod."
+  },
+  {
+    "title": "Heart",
+    "key": "SOAP_PE_HEART",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Document specific physical exam findings for the heart. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Lungs",
+    "key": "SOAP_PE_LUNGS",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Document specific physical exam findings for lungs. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Abdomen",
+    "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Document specific physical exam findings for the abdomen. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "MUSCULOSKELETAL",
+    "key": "SOAP_PHYSICAL_EXAM_MUSCULOSKELETAL",
+    "content": [
+      "Right thumb: Moderate tenderness on palpation of the radial stone. Positive digital palpations, pain with resisted thumb extension. Right thumb: Moderate tenderness on palpation of the thumb. A1 pulley, nodule causing triggering."
+    ],
+    "default": "Normal",
+    "instruction": "Document specific physical exam findings for the musculoskeletal system. This section is for Physical Exam (objective findings). Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Neurological",
+    "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Document specific physical exam findings for the neurological system. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Psychiatric",
+    "key": "SOAP_PE_PSYCHIATRIC",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Document specific physical exam findings for the psychiatric examination. Return 'Normal' if not mentioned. End each sentence with a period."
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [
+      "None"
+    ],
+    "default": "No Immunizations found",
+    "instruction": "List all mentioned vaccinations, including type and date if available. If none, use the default. End each item with a period."
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [
+      "None"
+    ],
+    "default": "No lab results found",
+    "instruction": "Include only completed lab tests: type, date, and result. Do not list recommended or pending labs. Do not repeat diagnoses. End each item with a period."
+  },
+  {
+    "title": "Assessment and Plan",
+    "key": "SOAP_ASSESSMENT_PLAN",
+    "content": [
+      "Diagnosis: Trigger finger (De Quervain's tenosynovitis) in both thumbs. Assessment: Home exercise program recommended. Treatment: Second corticosteroid injection given. Follow-up: Return to clinic in three months for evaluation."
+    ],
+    "default": "No assessment or plan.",
+    "instruction": "Provide a structured summary of diagnosis, reasoning, and treatment plan. Exclude all follow-up instructions. End each sentence with a period."
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [
+      "Return to clinic in three months for evaluation."
+    ],
+    "default": "No follow up",
+    "instruction": "Document all follow-up timing, purpose, and review plans. Do not include assessment or treatment details. End each sentence with a period."
+  }
+]

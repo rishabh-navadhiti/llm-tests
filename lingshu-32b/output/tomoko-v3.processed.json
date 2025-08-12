@@ -1,0 +1,209 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "She"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Stickiness in her arm."
+    ],
+    "default": "-"
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [
+      "The patient reports experiencing stickiness in her arm and discomfort with hands-on-the-ground activity. She also mentions less numbness and tingling compared to previous visits."
+    ]
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": []
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": []
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": []
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": []
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": []
+  },
+  {
+    "title": "HEENT",
+    "key": "SOAP_ROS_HEENT",
+    "content": []
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [
+      "Incision site shows mild scarring."
+    ],
+    "default": "Normal"
+  },
+  {
+    "title": "CARDIOVASCULAR",
+    "key": "SOAP_ROS_CARDIOVASCULAR",
+    "content": []
+  },
+  {
+    "title": "Respiratory",
+    "key": "SOAP_ROS_RESPIRATORY",
+    "content": []
+  },
+  {
+    "title": "GASTROINTESTINAL",
+    "key": "SOAP_ROS_GASTROINTESTINAL",
+    "content": []
+  },
+  {
+    "title": "GENITOURINARY",
+    "key": "SOAP_ROS_GENITOURINARY",
+    "content": []
+  },
+  {
+    "title": "NEUROLOGICAL",
+    "key": "SOAP_ROS_NEUROLOGICAL",
+    "content": [
+      "Less numbness and tingling reported."
+    ]
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": []
+  },
+  {
+    "title": "MUSCULOSKELETAL",
+    "key": "SOAP_ROS_MUSCULOSKELETAL",
+    "content": [
+      "Discomfort with hands-on-the-ground activity."
+    ]
+  },
+  {
+    "title": "Hematologic",
+    "key": "SOAP_ROS_HEMATOLOGIC",
+    "content": []
+  },
+  {
+    "title": "Lymphatic",
+    "key": "SOAP_ROS_LYMPHATIC",
+    "content": []
+  },
+  {
+    "title": "Psychiatric",
+    "key": "SOAP_ROS_PSYCHIATRIC",
+    "content": []
+  },
+  {
+    "title": "Eye",
+    "key": "SOAP_PE_EYES",
+    "content": []
+  },
+  {
+    "title": "General",
+    "key": "SOAP_PHYSICAL_EXAM_GENERAL",
+    "content": []
+  },
+  {
+    "title": "Head",
+    "key": "SOAP_PE_HEAD",
+    "content": []
+  },
+  {
+    "title": "Ears",
+    "key": "SOAP_PE_EARS",
+    "content": []
+  },
+  {
+    "title": "Nose",
+    "key": "SOAP_PE_NOSE",
+    "content": []
+  },
+  {
+    "title": "Throat",
+    "key": "SOAP_PE_THROAT",
+    "content": []
+  },
+  {
+    "title": "Neck",
+    "key": "SOAP_PHYSICAL_EXAM_NECK",
+    "content": []
+  },
+  {
+    "title": "Heart",
+    "key": "SOAP_PE_HEART",
+    "content": []
+  },
+  {
+    "title": "Lungs",
+    "key": "SOAP_PE_LUNGS",
+    "content": []
+  },
+  {
+    "title": "Abdomen",
+    "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+    "content": []
+  },
+  {
+    "title": "MUSCULOSKELETAL",
+    "key": "SOAP_PHYSICAL_EXAM_MUSCULOSKELETAL",
+    "content": [
+      "Full range of motion without painful active extension."
+    ]
+  },
+  {
+    "title": "Neurological",
+    "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+    "content": []
+  },
+  {
+    "title": "Psychiatric",
+    "key": "SOAP_PE_PSYCHIATRIC",
+    "content": []
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": []
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": []
+  },
+  {
+    "title": "Assessment and Plan",
+    "key": "SOAP_ASSESSMENT_PLAN",
+    "content": [
+      "The patient is making progress with reduced numbness and tingling, improved mobility, and tolerating bearing activities.",
+      "Recommend continued home exercise program targeting pillar pain."
+    ]
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [
+      "Schedule a follow-up appointment in three months."
+    ]
+  }
+]

@@ -1,0 +1,101 @@
+Okay, so I need to help transform the given medical transcript into a structured patient visit note using the provided JSON template. Let me start by understanding the task step by step.
+
+First, I'll look at the JSON template provided. It has several sections, each with a title, key, content, default, and instruction. My job is to fill in the content for each section based on the medical transcript, following the instructions closely.
+
+Looking at the transcript, it's a conversation between a doctor and a patient. The doctor is discussing the patient's left wrist pain and some masses. The patient is Precious Myles Garrett, a right-hand dominant children's social worker. She's been treated by Dr. Ishimori and has diagnoses related to wrist cysts and osteophytes. The doctor's examination findings and imaging results are detailed, and the plan includes night splints and follow-up.
+
+Now, I'll go through each section of the JSON template and extract the necessary information.
+
+1. **Patient Name**: The patient's name is clearly stated as Precious Myles Garrett. So, I'll put that in the content.
+
+2. **Chief Complaint**: The main issue is her left wrist pain. The transcript mentions she presents for evaluation of left wrist pain, so that's the chief complaint.
+
+3. **HPI Spencer**: This section requires onset, duration, location, and severity. From the transcript, the pain is more bothersome than the masses, wakes her up at night, and has been constant. So, I'll note that the pain is constant, waking her at night, located in the left wrist, and is bothersome.
+
+4. **Musculoskeletal**: The physical exam findings are detailed. The left upper extremity skin is clean without anthraea maracunasis. There's a pea-sized mass over the first dorsal compartment, mobile and non-tender. Another mass at the dorsal ulnar aspect of the thumb MCP joint, non-mobile, minimally tender. Range of motion is excellent, no tenderness at A1 point, no locking or catching. I'll list these verbatim as per the instruction.
+
+5. **Imaging Results**: The transcript mentions x-rays showing an osteophyte at the thumb MCP joint and an ultrasound showing a bony avulsion fragment versus osteophyte and a retinacular cyst. I'll include these findings.
+
+6. **Assessment**: The current issues are left wrist pain, left first dorsal compartment wrist cyst, and left thumb MCP joint osteophyte. I'll list these as per the instructions, using simple terms.
+
+7. **Plan**: The plan includes recommending night splints, observing the masses, and following up in six weeks. I'll structure this into a list with each point clearly stated.
+
+I need to ensure that each section follows the instructions precisely. For example, in the HPI Spencer section, I only mention onset, duration, location, and severity without additional details. In the Musculoskeletal section, I extract the exam findings verbatim without changes.
+
+I also need to watch out for any grammatical errors and ensure proper punctuation. The final JSON should be correctly formatted, matching the template exactly without any extra commentary.
+
+Let me double-check each section to make sure I haven't missed anything. For instance, in the Plan section, the follow-up time is mentioned as six weeks, so I'll include that. Also, the imaging results are correctly noted from the transcript.
+
+I think that's all. Now, I'll structure the JSON accordingly, ensuring each key has the correct content and follows the specified format.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Precious Myles Garrett"],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Left wrist pain"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["The pain is constant, waking her at night, located in the left wrist, and is bothersome."],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Left upper extremity skin is clean without anthraea maracunasis.",
+      "Pea-sized mass over the first dorsal compartment, mobile and non-tender.",
+      "Mass at the dorsal ulnar aspect of the thumb MCP joint, non-mobile, minimally tender.",
+      "Excellent range of motion at the thumb MCP.",
+      "No tenderness at the A1 point, no locking or catching."
+    ],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays show an osteophyte at the thumb MCP joint.",
+      "Ultrasound demonstrates a bony avulsion fragment versus osteophyte at the dorsal aspect of the MCP joint of the thumb and a retinacular cyst in the wrist."
+    ],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Left wrist pain",
+      "Left first dorsal compartment wrist cyst",
+      "Left thumb MCP joint osteophyte"
+    ],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \u201cskin is intact\u201d or \u201cno tenderness to palpation.\u201d- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Recommend night splints for wrist pain.",
+      "Observe the masses as they are not currently bothersome.",
+      "Follow-up in six weeks."
+    ],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider\u2019s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., \u201creturn to clinic in 6 to 8 weeks.\u201d Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]
+```

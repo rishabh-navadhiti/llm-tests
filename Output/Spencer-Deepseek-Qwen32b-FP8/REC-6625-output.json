@@ -1,0 +1,86 @@
+Okay, so I need to process this medical transcript and turn it into a structured patient visit note using the provided JSON template. Let me start by understanding the task.
+
+First, the user provided a JSON template with specific sections like Patient Name, Chief Complaint, HPI Spencer, etc. Each section has a key, content, default value, and instructions. My job is to extract the relevant information from the transcript and fill in the JSON accordingly.
+
+Looking at the transcript, the doctor is talking about Mr. Parviz Mikael. So, the patient's name is Parviz Mikael. That goes into the PATIENT_NAME section.
+
+Next, the Chief Complaint. The patient says he has no pain and wants to know what's going on. So, the chief complaint is that he has no pain and is seeking an update.
+
+For HPI Spencer, the instructions say to include onset, duration, location, and severity. But in the transcript, the doctor doesn't mention when the symptoms started or how long they've been present. So, I'll use the default value of "-".
+
+Moving on to Musculoskeletal. The doctor mentions that the pin sites are clean, dry, and intact without erythema or ecchymosis. There's no significant tenderness except for parthenonic carpal stable alignment and stiff fingers. I need to extract this verbatim as per the instructions.
+
+Imaging Results: The X-rays are the same as the last time. So, that's what I'll put there.
+
+Assessment: The patient has no pain, but there's stiff fingers and parthenonic carpal stable alignment. I need to list these as current medical conditions without any exam findings or historical info.
+
+Plan: The doctor's plan includes continuing plexal ligament split, reviewing X-rays, and returning to the clinic in 10 days for follow-up. They might remove the pins or repeat X-rays and transition to a phenylplastic splint. Also, they're going to see Eliza Cherian. I need to summarize this in a conversational tone, using numbers where necessary.
+
+I should make sure each section follows the instructions precisely, using the default if information isn't present. Also, I need to avoid any grammatical errors and ensure proper punctuation.
+
+Let me double-check each section:
+
+- Patient Name: Parviz Mikael
+- Chief Complaint: No pain, seeking update
+- HPI Spencer: Default "-"
+- Musculoskeletal: Extracted verbatim
+- Imaging Results: X-rays same as last time
+- Assessment: Stiff fingers, parthenonic carpal alignment
+- Plan: Continue treatment, follow-up in 10 days, etc.
+
+Everything seems to fit. Now, I'll structure this into the JSON format as specified, making sure the order and keys match exactly.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Parviz Mikael"],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["No pain, seeking update on condition."],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Pin sites clean, dry, and intact without erythema or ecchymosis. No significant tenderness except for parthenonic carpal stable alignment and stiff fingers."],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-rays are the same as the last time."],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Stiff fingers", "Parthenonic carpal stable alignment"],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \u201cskin is intact\u201d or \u201cno tenderness to palpation.\u201d- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Continue plexal ligament split.", "Review X-rays and continue plexal ligament split.", "Return to clinic in 10 days for follow-up with likely pin removal or repeat X-rays transition to phenylplastic splint.", "Consult with Eliza Cherian."],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider\u2019s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., \u201creturn to clinic in 6 to 8 weeks.\u201d Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]
+```

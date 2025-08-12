@@ -1,0 +1,84 @@
+Okay, so I need to help transform the given medical transcript into a structured patient visit note using the provided JSON template. Let me start by understanding the task step by step.
+
+First, I'll look at the JSON template provided. It has several sections, each with a title, key, content, default, and instruction. My job is to fill in the content for each section based on the medical transcript, making sure to follow the instructions closely.
+
+Looking at the medical transcript, it's a conversation between a doctor and a patient named Nicole Coffee. The doctor mentions that she's a previous patient with a new condition, specifically pain in her left index finger that's been bothering her for a few months. She mentions it got worse and hasn't improved, and she's interested in getting an injection. The doctor then describes the physical exam findings, including tenderness, triggering, and normal X-rays. The plan is to do a trigger release without an injection.
+
+Now, I'll go through each section of the JSON template and extract the necessary information.
+
+1. **Patient Name**: The patient's name is Nicole Coffee. I'll make sure to only include her name as per the instruction.
+
+2. **Chief Complaint**: The main issue is pain in the left index finger. I'll state this without additional details.
+
+3. **HPI Spencer**: This section requires onset, duration, location, and severity. From the transcript, the pain started a few months ago, is in the left index finger, and has worsened without improvement.
+
+4. **Musculoskeletal**: The physical exam findings include tenderness, triggering, and normal X-rays. I'll list these verbatim as per the instruction.
+
+5. **Imaging Results**: The X-rays are normal, so I'll note that.
+
+6. **Assessment**: The current condition is left index finger pain with triggering. I'll list this as the active issue.
+
+7. **Plan**: The plan is to perform a trigger release without an injection and follow up in 6 to 8 weeks. I'll structure this as a list with clear, conversational sentences.
+
+I need to ensure that each section is filled accurately, using the correct medical terminology and following the instructions precisely. If any information is missing, I'll use the default value, which is usually a dash.
+
+Let me double-check each section to make sure I haven't missed anything. For example, in the HPI Spencer section, I included onset, duration, location, and severity. In the Plan, I made sure to mention the trigger release and the follow-up time as specified.
+
+I also need to ensure that the JSON structure is correct, with each object in the array matching the template exactly. No extra commentary or markdown should be included, just the JSON array.
+
+Finally, I'll review the JSON for any grammatical errors or formatting issues to ensure it's ready for seamless integration into the system.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Nicole Coffee"],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Pain in left index finger"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["Onset: A few months ago", "Duration: Ongoing without improvement", "Location: Left index finger", "Severity: Worse over time"],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Left upper extremity skin is clean, dry, and tacky without erythema", "Acute moderate tenderness on left index finger with an A1 polii", "Walking catching", "Triggering on index finger", "Excellent range of motion overall", "Able to give a thumbs up"],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-rays of the finger are normal"],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Left index finger pain with triggering"],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \u201cskin is intact\u201d or \u201cno tenderness to palpation.\u201d- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Perform trigger release without injection", "Follow-up in 6 to 8 weeks"],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider\u2019s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., \u201creturn to clinic in 6 to 8 weeks.\u201d Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]
+```

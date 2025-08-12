@@ -19,7 +19,7 @@ VLLM_API_URL = "http://localhost:8000/v1/chat/completions"  # Changed to chat co
 
 # CONFIG — change as needed
 INPUT_DIR = Path("/workspace/llm-tests/transcripts/Spencer")
-OUTPUT_DIR = Path("/workspace/llm-tests/Output/Spencer-Qwen-30B-FP8")
+OUTPUT_DIR = Path("/workspace/llm-tests/Output/Spencer-Deepseek-Qwen32b-FP8")
 TEMPLATE_PATH = Path("/workspace/llm-tests/templates/doctor-template-specialized.json")
 PROMPT_PATH = Path("/workspace/llm-tests/prompt-v1.txt")
 

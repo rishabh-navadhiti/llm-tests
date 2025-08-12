@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Chaz Thomas",
+      "Meesha Senuda",
+      "Grace Twan",
+      "Josefina Marcial"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Follow-up for splint removal and concerns about blood exposure",
+      "Follow-up for splint use and ongoing sensitivity and stiffness",
+      "Follow-up for MRI review and injection effects",
+      "Follow-up for right hand pain after injection and left wrist concerns"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Onset: Yesterday; Duration: Recent; Location: Splint area; Severity: Mild pain with limited flexion",
+      "Onset: Ongoing; Duration: Recent; Location: PIP joint; Severity: Improving sensitivity and stiffness",
+      "Onset: Recent; Duration: Ongoing; Location: Diffuse; Severity: Worsening systemic symptoms",
+      "Onset: Last week; Duration: Recent; Location: Right hand; Severity: 80% improvement; Left wrist: 50% better"
+    ],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Laceration clean, dry, intact with sutures; sutures removed today; tolerating well; limited flexion",
+      "Limited flexion at DIP joint; stiffness; hypersensitivity distally",
+      "No specific findings mentioned",
+      "Moderate tenosynovitis at DRUJ; ulnar prominence bilaterally; limited motion bilaterally"
+    ],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "-",
+      "-",
+      "-",
+      "X-rays show significant ulnar prominence and DRUJ arthritis; right wrist: ulna-lunate arthritis"
+    ],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Splint-related concerns; limited flexion",
+      "Sensitivity and stiffness in PIP; limited flexion in DIP",
+      "Worsening systemic symptoms",
+      "Right wrist improvement post-injection; left wrist arthritis"
+    ],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Sutures removed today; transition to removable splint; hand therapy; follow-up in two weeks",
+      "Discontinue splint; home exercise program; follow-up in six weeks",
+      "Discuss with Dr. Sidlow; follow-up in three months",
+      "Observation; night splints; home exercise program; consider injection if no improvement"
+    ],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]

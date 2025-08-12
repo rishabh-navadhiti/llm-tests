@@ -1,0 +1,78 @@
+Okay, so I need to process this medical transcript and turn it into a structured patient visit note using the provided JSON template. Let me start by understanding the template structure and the instructions.
+
+First, the template has several sections: Patient Name, Chief Complaint, HPI Spencer, Musculoskeletal, Imaging Results, Assessment, and Plan. Each section has specific instructions on what to include and how to format it.
+
+Looking at the transcript, it seems like there are multiple patients discussed. The first part talks about a patient with finger issues, then Kathy Smith, Brigitte Metman, and Samar Actrion. But the instructions say to only return the patient's name, so I need to extract each patient's name correctly.
+
+For the Chief Complaint, I should only include the main issue without extra details. So for the first patient, it's about her fingers, specifically increasing pain and deformity in DIP joints. Kathy Smith's complaint is about her hand therapy not being effective. Brigitte has burning pain in her forearm, and Samar has worsening bilateral hand pain.
+
+The HPI Spencer section needs onset, duration, location, and severity. The first patient mentions increasing pain and deformity diffusely in DIP joints, so I'll note that. Kathy's HPI isn't explicitly detailed, so I'll use the default "-". Brigitte's pain started over the last month, and Samar's has been worsening for four years, peaking in the last three weeks.
+
+Musculoskeletal findings are extracted verbatim. The first patient has diffuse angulation, moderate tenderness, etc. Kathy has some tenderness and scars. Brigitte has erythema and edema. Samar has mild tenderness and stiff MCP joint.
+
+Imaging Results: The first patient's X-rays show joint space narrowing. Kathy's X-rays are normal. Brigitte's X-rays are normal too. Samar's X-rays are deferred.
+
+Assessment should list current conditions. The first patient has DIP arthritis and thumb CMC arthritis. Kathy is recovering from surgery. Brigitte has peripheral neuropathy and possible wrist issue. Samar has bilateral carpal tunnel.
+
+Plan includes treatments and follow-ups. Steroid injections, splints, therapy continuation, nerve studies, night splints, and follow-up appointments.
+
+I need to make sure each section follows the template exactly, using the correct keys and structure. Also, ensure that any missing information uses the default value "-".
+
+I should double-check for any grammatical errors and ensure the JSON is properly formatted without any extra text. Each patient's data should be correctly mapped to their respective sections in the JSON array.
+
+Finally, I'll compile all this into the required JSON structure, ensuring each object matches the template's keys and instructions precisely.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Kathy Smith", "Brigitte Metman", "Samar Actrion"],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Increasing pain and deformity in DIP joints", "Unhappy with hand therapy", "Burning pain in forearm", "Worsening bilateral hand pain"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["Increasing pain and deformity diffusely in DIP joints", "-", "Burning pain over the last month", "Progressively worsening bilateral hand pain"],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Diffuse angulation and deformity at DIP joints, moderate tenderness and dislocation", "Minimal scar, some continued tenderness to palpation at A1 pulley incision", "Erythema and edema at wrist", "Mild tenderness to palpation diffusely through the hand"],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-rays show joint space narrowing at DIP joints", "X-rays normal", "X-rays normal", "X-rays deferred"],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["DIP arthritis", "Recovering from surgery", "Peripheral neuropathy", "Bilateral carpal tunnel syndrome"],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \u201cskin is intact\u201d or \u201cno tenderness to palpation.\u201d- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Trial of steroid injections, splints, consider DIP fusion", "Continue therapy", "Nerve studies, neurology consult, night splints", "Repeat nerve studies, night splints"],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider\u2019s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., \u201creturn to clinic in 6 to 8 weeks.\u201d Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]
+```

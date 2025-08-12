@@ -1,0 +1,76 @@
+Alright, I need to process the given medical transcript and convert it into a structured patient visit note using the provided JSON template. Let me go through each step carefully.
+
+First, I'll review the JSON template to understand the structure and what each section requires. The template has several sections like Patient Name, Chief Complaint, HPI Spencer, Musculoskeletal, Imaging Results, Assessment, and Plan. Each section has specific instructions on what information to include and how to format it.
+
+Looking at the medical transcript, there are three conversation entries. The doctor mentions the patient's name, N. Kalinski, and the procedure done. The patient responds with an affirmation, and the doctor continues discussing the treatment plan.
+
+Starting with the Patient Name section, I need to extract only the patient's name. The doctor says, "N. Kalinski. K-A-L-I-N-S-K-I." So, the patient's name is N. Kalinski. I'll make sure to format it correctly without any additional details.
+
+Next is the Chief Complaint. The doctor states that the patient has had a recurrence of his left middle finger trigger finger. So, the chief complaint is the recurrence of the trigger finger. I'll phrase it concisely without extra context.
+
+For the HPI Spencer section, the template asks for onset, duration, location, and severity. The transcript mentions the injection was done on 10-22-24, and there's a recurrence. However, the exact onset and duration aren't provided. Since this information is missing, I'll use the default value of "-".
+
+Moving on to Musculoskeletal, the template requires verbatim extraction of the physical examination findings. The transcript doesn't mention any specific findings, so this section will remain empty as per the instructions.
+
+Imaging Results are also not discussed in the conversation, so I'll use the default "-".
+
+In the Assessment section, I need to list the patient's current medical conditions. The main issue is the recurrence of the left middle finger trigger finger. I'll phrase it simply as "Left middle finger trigger finger recurrence."
+
+Finally, the Plan section requires a summary of the healthcare provider's actions. The doctor performed an injection and instructed the patient to return if there's any recurrence. I'll list this as two points: the injection and the follow-up instruction.
+
+I'll ensure that all sections follow the template's structure, using the correct keys and formatting. Any missing information will use the default values specified. I'll also check for proper punctuation and avoid any grammatical errors to maintain professionalism.
+
+After compiling all the information, I'll structure it into the JSON format as specified, making sure each section aligns with the template's order and instructions. This will allow for seamless integration and further processing, such as parsing into an array of objects using Python.
+</think>
+
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["N. Kalinski"],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Recurrence of left middle finger trigger finger"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["-"],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Left middle finger trigger finger recurrence"],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \u201cskin is intact\u201d or \u201cno tenderness to palpation.\u201d- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Performed left middle finger trigger finger injection today.", "Patient instructed to return to clinic if recurrence occurs."],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider\u2019s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., \u201creturn to clinic in 6 to 8 weeks.\u201d Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]

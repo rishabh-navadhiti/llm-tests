@@ -15,16 +15,17 @@ MODEL_NAME = os.getenv("VLLM_MODEL_NAME")
 if MODEL_NAME is None:
     raise ValueError("VLLM_MODEL_NAME is not set")
 
-VLLM_API_URL = "http://localhost:8000/v1/completions"
+VLLM_API_URL = "http://localhost:8000/v1/chat/completions"  # Changed to chat completions endpoint
 
 # CONFIG — change as needed
 INPUT_DIR = Path("/workspace/llm-tests/transcripts/Spencer")
-OUTPUT_DIR = Path("/workspace/llm-tests/Output/testing")
+OUTPUT_DIR = Path("/workspace/llm-tests/Output/Spencer-Qwen-30B-FP8")
 TEMPLATE_PATH = Path("/workspace/llm-tests/templates/doctor-template-specialized.json")
 PROMPT_PATH = Path("/workspace/llm-tests/prompt-v1.txt")
 
-MAX_NEW_TOKENS = 10000
+MAX_TOKENS = 10000
 TEMPERATURE = 0.1
+REQUEST_TIMEOUT = 600  # seconds
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -59,58 +60,94 @@ def load_transcript(file_path: Path) -> str:
         return f.read().strip()
 
 
-def prepare_prompt_string(prompt: str, template: str, transcript: str) -> str:
-    return f"""{prompt}
-
-OUTPUT TEMPLATE:
-{template}
-
-Medical Transcript to Process:
-{transcript}
-
-Return ONLY valid JSON matching the template format. No explanatory text before or after the JSON."""
-
-
-def generate_response_vllm(prompt_string: str) -> str:
-    logger.info("🚀 Sending request to vLLM API...")
+def generate_response_vllm(system_prompt: str, template: str, transcript: str) -> str:
+    """Send chat prompt to vLLM chat API and return the raw text content."""
+    logger.info("🚀 Sending request to chat API...")
+    show_gpu_memory("before request")
     start_time = time.time()
+
+    # Put the template and strict instructions into the system message, transcript into user message.
+    system_content = (
+        system_prompt
+        + "\n\nTEMPLATE_JSON (use exactly this structure; return only JSON matching the template):\n"
+        + template
+        + "\n\nINSTRUCTION: Return only valid JSON (array/object) that exactly matches the template. "
+        + "Do NOT include any extra commentary, explanation, or surrounding markdown/code fences."
+    )
+
+    messages = [
+        {"role": "system", "content": system_content},
+        {"role": "user", "content": f"Medical Transcript to Process:\n\n{transcript}"},
+    ]
 
     payload = {
         "model": MODEL_NAME,
-        "prompt": prompt_string,
-        "max_tokens": MAX_NEW_TOKENS,
+        "messages": messages,
+        "max_tokens": MAX_TOKENS,
         "temperature": TEMPERATURE,
         "top_p": 0.9 if TEMPERATURE > 0 else 1.0,
     }
 
-    response = requests.post(VLLM_API_URL, json=payload)
-    response.raise_for_status()
-    data = response.json()
+    headers = {"Content-Type": "application/json"}
 
-    output_text = data["choices"][0]["text"]
+    try:
+        resp = requests.post(VLLM_API_URL, json=payload, headers=headers, timeout=REQUEST_TIMEOUT)
+        resp.raise_for_status()
+    except requests.RequestException as e:
+        logger.error(f"Request to chat API failed: {e}")
+        raise
+
+    data = resp.json()
+    # standard chat response shape: choices[0].message.content
+    try:
+        output_text = data["choices"][0]["message"]["content"]
+    except Exception:
+        # fallback for other servers: choices[0].text
+        output_text = data.get("choices", [{}])[0].get("text", "")
     gen_time = time.time() - start_time
     logger.info(f"✅ Received response in {gen_time:.2f}s")
-
+    show_gpu_memory("after request")
     return output_text.strip()
 
 
 def extract_json(response: str) -> Optional[dict]:
+    """
+    Robustly try to find & parse the first valid JSON object/array in `response`.
+    """
+    if not response or not response.strip():
+        return None
+
+    # direct attempt
     try:
         return json.loads(response)
     except json.JSONDecodeError:
         pass
 
-    patterns = [
-        r"\{.*\}",
-        r"```json\s*(\{.*?\})\s*```",
-        r"```\s*(\{.*?\})\s*```",
-    ]
+    # try to locate JSON-like substrings
+    for start_char in ("[", "{"):
+        starts = [m.start() for m in re.finditer(re.escape(start_char), response)]
+        for start in starts:
+            for end in range(len(response) - 1, start, -1):
+                if response[end] not in ("}", "]"):
+                    continue
+                candidate = response[start : end + 1]
+                try:
+                    return json.loads(candidate)
+                except json.JSONDecodeError:
+                    continue
 
-    for pattern in patterns:
-        matches = re.findall(pattern, response, re.DOTALL)
-        for match in matches:
+    # fallback patterns
+    patterns = [
+        r"```json\s*(\{.*?\}|\[.*?\])\s*```",
+        r"```\s*(\{.*?\}|\[.*?\])\s*```",
+        r"(\{.*\})",
+        r"(\[.*\])",
+    ]
+    for p in patterns:
+        matches = re.findall(p, response, re.DOTALL)
+        for m in matches:
             try:
-                return json.loads(match)
+                return json.loads(m)
             except json.JSONDecodeError:
                 continue
 
@@ -142,9 +179,13 @@ def main():
     for transcript_file in INPUT_DIR.glob("*.json"):
         logger.info(f"📄 Processing: {transcript_file.name}")
         transcript = load_transcript(transcript_file)
-        prompt_string = prepare_prompt_string(prompt, template, transcript)
 
-        response = generate_response_vllm(prompt_string)
+        try:
+            response = generate_response_vllm(prompt, template, transcript)
+        except Exception as e:
+            logger.error(f"Generation failed for {transcript_file.name}: {e}")
+            continue
+
         json_data = extract_json(response)
 
         base_filename = transcript_file.stem

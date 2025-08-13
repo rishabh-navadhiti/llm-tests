@@ -16,7 +16,7 @@ declare -A MODELS=(
   ["mistral-nemo"]="mistralai/Mistral-Nemo-Instruct-2407"
   ["deepseek-qwen14b"]="deepseek-ai/DeepSeek-R1-Distill-Qwen-14B"
   ["deepseek-redhat-30B"]="RedHatAI/DeepSeek-R1-Distill-Qwen-32B-FP8-dynamic"
-  ["gemma-redhat-27b"]="RedHatAI/gemma-3-27b-it-FP8-dynamic"
+  ["gemma-redhat-27b"]="google/gemma-3-27b-it"
   ["medgemma-27b"]="google/medgemma-27b-text-it"
   
 

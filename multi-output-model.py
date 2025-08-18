@@ -19,12 +19,12 @@ VLLM_API_URL = "http://localhost:8000/v1/chat/completions"  # Changed to chat co
 
 # CONFIG — change as needed
 INPUT_DIR = Path("/workspace/llm-tests/transcripts/Spencer")
-OUTPUT_DIR = Path("/workspace/llm-tests/Output/Spencer-Deepseek-Qwen32b-FP8")
-TEMPLATE_PATH = Path("/workspace/llm-tests/templates/doctor-template-specialized.json")
+OUTPUT_DIR = Path("/workspace/llm-tests/Output/Qwen32b-FP8-updatedHPI")
+TEMPLATE_PATH = Path("/workspace/llm-tests/templates/doctor-template-specialized-v2.json")
 PROMPT_PATH = Path("/workspace/llm-tests/prompt-v1.txt")
 
 MAX_TOKENS = 10000
-TEMPERATURE = 0.1
+TEMPERATURE = 1
 REQUEST_TIMEOUT = 600  # seconds
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")

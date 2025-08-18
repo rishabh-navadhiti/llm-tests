@@ -1,0 +1,71 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Spencer"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Index finger pain and stiffness"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "The patient is a left-hand dominant artist who works on miniatures for stop-motion films. He presents with ongoing index finger pain and stiffness that began on July 16, 2025, after he lacerated his left index finger while using a chisel. He reports that the chisel slipped while he was working on a hard piece of wood, resulting in a deep laceration. He sought care at urgent care, where the wound was irrigated and sutured. The sutures were removed approximately 14 days after the injury. At the time of suture removal, the wound reopened. Since then, he has experienced persistent stiffness in the index finger PIP joint. He has been unable to fully flex the joint, with active flexion limited to about 10 degrees. There is no reported history of infection, systemic symptoms, or prior hand injuries. The symptoms have not improved with time and are now impacting his ability to perform fine motor tasks required for his work."
+    ],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a coherent paragraph in clinical note style. Include only the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Do not include exam findings, imaging results, or any objective measurements. Maintain chronological order and use full sentences. Include information only if explicitly stated in the transcript. Do not add assumptions, inferred limitations, or negatives unless explicitly stated."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Left upper extremity in- a laceration well-healing, um, without sutures. A very stiff index finger PIP able to flex only about 10 degrees actively at this time. Moderate soft tissue swelling, no sensory tenderness to palpation. Excellent range of motion of the remaining digit."
+    ],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays are normal."
+    ],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Left index finger PIP joint stiffness post-laceration",
+      "Well-healing laceration without sutures",
+      "Moderate soft tissue swelling",
+      "No tenderness to palpation",
+      "Right upper extremity Skin is intact."
+    ],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation.'"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Recommend hand therapy for left index finger PIP joint stiffness.",
+      "X-rays were obtained and are normal.",
+      "Return to clinic in four weeks for follow-up and assessment of motion."
+    ],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]

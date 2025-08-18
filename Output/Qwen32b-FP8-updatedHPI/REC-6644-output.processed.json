@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Cathy Smith"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Follow-up for hand pain and swelling, dissatisfaction with hand therapy, and desire to return to Jack for care"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Cathy Smith is a follow-up patient presenting with ongoing hand pain and swelling. She reports that she is doing okay overall but is not particularly thrilled with her hand therapy. She has been experiencing continued pain and swelling, particularly in the left hand, with mild soft tissue swelling noted. There is some continued tenderness and dislocation at the A1 pulley incision site, though no tenderness or inflammation at the dorsal hand incision. The incisions are healing with minimal scarring. She has full fist formation and excellent range of motion overall, though there is some continued pain with motion. She expresses a desire to return to Jack for continued care."
+    ],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a coherent paragraph in clinical note style. Include only the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Do not include exam findings, imaging results, or any objective measurements. Maintain chronological order and use full sentences. Include information only if explicitly stated in the transcript. Do not add assumptions, inferred limitations, or negatives unless explicitly stated."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "incisions will heal. Min- minimal scar, some continued tenderness and dislocation at the A1 pony incision. No tenderness or inflammation at the dorsal hand incision, but there is some scar appearance there. Um, full fist moderate soft tissue swelling, uh, in the left space especially. Excellent range of motion overall. Some continued pain with motion."
+    ],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays are normal."
+    ],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Right upper extremity Skin is intact.",
+      "No tenderness to palpation.",
+      "Continued tenderness and dislocation at the A1 pony incision.",
+      "Mild soft tissue swelling in the left space.",
+      "Excellent range of motion overall.",
+      "Some continued pain with motion."
+    ],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Continue therapy.",
+      "Return to clinic in six weeks for follow-up.",
+      "Discussed patient’s dissatisfaction with current therapy and desire to transition care back to Jack.",
+      "No further imaging or interventions planned at this time.",
+      "Monitor for healing and symptom progression."
+    ],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]

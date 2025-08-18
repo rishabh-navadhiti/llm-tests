@@ -1,0 +1,71 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Spencer"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Increasing numbness and tingling in the right hand"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "The patient is a woman here for reevaluation following completion of chemotherapy for lymphoma. She reports increased numbness and tingling in her right hand, which has been worsening over time. She states she has been staying home more due to her recent treatment and notes that she recently burned her right thumb, which has further impaired her ability to feel objects and perform tasks such as putting on earrings. She has been minimizing phone use as a result. The symptoms have progressed to the point where she now requires evaluation and treatment. She has a history of a prior injection in the right small finger in 2015 and is requesting another injection today."
+    ],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a coherent paragraph in clinical note style. Include only the patient\u2019s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Do not include exam findings, imaging results, or any objective measurements. Maintain chronological order and use full sentences. Include information only if explicitly stated in the transcript. Do not add assumptions, inferred limitations, or negatives unless explicitly stated."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Moderate tenderness of the right small finger. A one foley. There is triggering there. There is a nodule there. Um, excellent range of motion overall. Uh,.pcgs are normal."
+    ],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-ray is clear."
+    ],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Right small finger triggering with palpable nodule",
+      "Right hand numbness and tingling",
+      "Right thumb sensory deficit secondary to burn",
+      "Right upper extremity skin is intact"
+    ],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \u201cskin is intact\u201d or \u201cno tenderness to palpation.\u201d- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Recommending another injection in the right small finger today given the persistence of triggering and the patient's history of prior successful injection in 2015.",
+      "Plan for carpal tunnel: recommend night splints for symptom relief.",
+      "Low threshold for nerve conduction studies to evaluate for underlying peripheral nerve involvement.",
+      "Patient will return to clinic in two months for follow-up evaluation."
+    ],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider\u2019s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., \u201creturn to clinic in 6 to 8 weeks.\u201d Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]

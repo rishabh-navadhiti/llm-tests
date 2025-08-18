@@ -1,0 +1,88 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Stephanie Humphrey",
+      "Terrance Rodski",
+      "Amit Jaini",
+      "David Schechter"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Left wrist pain",
+      "Right middle finger trigger finger",
+      "Right small finger pain, swelling, and deformity",
+      "Right wrist pain"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Miss Stephanie Humphrey, a right hand dominant horticulturalist, is status post trip and fall on 6/21/25. She presents with left wrist pain that began after the fall, which was painful initially and slightly improved. She sought urgent care, where X-rays showed no fractures and she was diagnosed with a sprain. She subsequently traveled to Massachusetts, where increased humidity exacerbated her pain, prompting her to seek further evaluation and treatment. On exam, left upper extremity skin is clean and intact without erythema or hematomesis. No specific tendon inflammation. Mild tendon inflammation over the ECU tendon. Pain with pronation and supination. No evidence of ECU tendon subluxation. Excellent range of motion overall. X-rays are normal. Plan includes left ECU tendonitis and left ulnar-sided wrist pain. Trial of hand therapy recommended. MRI recommended for further evaluation. Return to clinic after MRI.",
+      "Terrance Rodski is scheduled for a right middle finger trigger finger injection.",
+      "Amit Jaini, a left-hand dominant music manager, presents for evaluation of his right small finger pain, swelling, and deformity that began on 8/2/25 after a basketball injury. He had immediate pain, swelling, and limited motion. He was referred by Dr. Andrew Weiss and saw him, who ordered X-rays showing a fracture. The finger was rotated, prompting referral to this office. On exam, right upper extremity skin shows moderate ecchymosis to the small finger. There is obvious malrotation and shortening of the proximal phalanx of the small finger. Limited flexion and extension. Able to initiate a thumbs up. X-rays confirm a shortened, rotated fracture of the proximal phalanx of the small finger. Plan includes closed reduction percutaneous pinning, to be performed tomorrow.",
+      "David Schechter, a right hand dominant pain medicine physician, presents with right wrist pain that began around early 2024 without any history of trauma, injury, or injection. The pain is intermittent and has not worsened recently, but is consistently painful in certain positions, particularly with supination and flexion. On exam, right upper extremity skin is clean, dry, and intact without erythema or hematomesis. Mild tendinopathy at the ECU tendon. No evidence of ECU subluxation. X-rays are normal. Four views of the hand with Rolando show mild joint space narrowing at the thumb MCP joint. Plan will be determined based on Dr. De La George's notes."
+    ],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a coherent paragraph in clinical note style. Include only the patient\u2019s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Do not include exam findings, imaging results, or any objective measurements. Maintain chronological order and use full sentences. Include information only if explicitly stated in the transcript. Do not add assumptions, inferred limitations, or negatives unless explicitly stated."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Left upper extremity skin is clean and intact without erythema or hematomesis. No specific tendon inflammation. Mild tendon inflammation over the ECU tendon. Pain with pronation and supination. No evidence of ECU tendon subluxation. Excellent range of motion overall.",
+      "Right upper extremity skin, moderate ecchymosis to the small finger. There is obvious malrotation of the small finger. There is shortening of the small finger proximal phalanx. Limited small finger flexion-extension, able to initiate a thumbs up.",
+      "Right upper extremity skin is clean, dry and intact without erythema or hematomesis. Some ulnar-sided display mild tendinopathation at the ECU tendon. No evidence of ECU subluxation."
+    ],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays are normal through these, the wrist, left wrist.",
+      "X-rays are three views, demonstrated shortened rotated fracture of the small finger proximal phalanx.",
+      "X-rays are normal. Four views of the hand with Rolando. Mild joint space narrowing at the thumb MCP joint."
+    ],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Left ECU tendonitis",
+      "Left ulnar-sided wrist pain",
+      "Right middle finger trigger finger",
+      "Right small finger proximal phalanx fracture with malrotation and shortening",
+      "Right wrist pain, likely related to ECU tendinopathy",
+      "Right upper extremity Skin is intact.",
+      "No tenderness to palpation.",
+      "Right upper extremity Skin is intact."
+    ],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as \u201cskin is intact\u201d or \u201cno tenderness to palpation.\u201d- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "For Stephanie Humphrey: Left ECU tendonitis and left ulnar-sided wrist pain. Recommend trial of hand therapy. Recommend MRI for further evaluation. Return to clinic in 6 to 8 weeks after MRI.",
+      "For Terrance Rodski: Right middle finger trigger finger injection to be performed.",
+      "For Amit Jaini: Plan includes closed reduction percutaneous pinning for the fractured right small finger proximal phalanx, to be performed tomorrow. Post-op care instructions will be provided.",
+      "For David Schechter: Right wrist pain likely due to ECU tendinopathy. Plan will be determined based on Dr. De La George’s notes. Follow-up appointment will be scheduled after review."
+    ],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider\u2019s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., \u201creturn to clinic in 6 to 8 weeks.\u201d Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]

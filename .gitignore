@@ -1,2 +1,10 @@
 llm-venv
+eval-venv
+**/eval-venv/
+
+
+
 __pycache__/
+*.pyc
+*.pyo
+*.pyd

@@ -1,55 +1,77 @@
 import os
 import json
 
-SCORES_DIR = "/Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-Qwen-30B"
-OUTPUT_FILE = "eval_result/Eval-Deepseek-Qwen32b/Eval-Qwen-30B.md"
+# 📂 Directory containing evaluation JSON files
+INPUT_DIR = "/Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-Deepseek-Qwen32b"
+OUTPUT_FILE = "/Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-Deepseek-Qwen32b/Deepseek-Qwen32B-Report.md"
+MODEL_NAME = "Deepseek-Qwen32B"
 
-def json_to_markdown(file_path, record_name):
-    """Convert a single JSON score file into markdown string."""
-    with open(file_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+def process_eval_files(input_dir, output_file):
+    records_summary = []
+    all_percentages = []
 
-    md = []
-    title = record_name.replace("-eval", "")
-    md.append(f"# {title} Score\n")
+    with open(output_file, "w", encoding="utf-8") as md:
+        for filename in sorted(os.listdir(input_dir)):
+            if filename.endswith("-eval.json"):
+                file_path = os.path.join(input_dir, filename)
+                with open(file_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
 
-    # Table header
-    md.append("| Title | Score (0-5)| Justification |")
-    md.append("|-------|-------|---------------|")
+                # Extract record id (strip "-eval.json")
+                record_id = filename.replace("-eval.json", "")
 
-    for field, content in data["field_scores"].items():
-        title = field
-        score = content.get("score", "")
-        justification = content.get("justification", "").replace("\n", " ")
-        md.append(f"| {title} | {score} | {justification} |")
+                md.write(f"# {record_id}\n\n")
 
-    # Totals
-    md.append(f"\n**Total Score:** {data.get('total_score', '')}/35")
-    md.append(f"\n**Percentage:** {data.get('percentage', '')}%\n")
+                # Table header
+                md.write("| Title | Score | Justification |\n")
+                md.write("|-------|-------|---------------|\n")
 
-    # Summary
-    summary = data.get("overall_summary", "")
-    if summary:
-        md.append(f"**Overall Summary:** {summary}\n")
+                # Field scores
+                for field, details in data["field_scores"].items():
+                    score = details.get("score", "")
+                    justification = details.get("justification", "").replace("\n", " ")
+                    md.write(f"| {field} | {score} | {justification} |\n")
 
-    md.append("\n---\n\n")  # Separator between records
-    return "\n".join(md)
+                # Totals and summary
+                total_score = data.get("total_score", 0)
+                percentage = data.get("percentage", 0)
+                overall_summary = data.get("overall_summary", "")
 
+                md.write(f"\n**Total Score:** {total_score}\n\n")
+                md.write(f"**Percentage:** {percentage}\n\n")
+                md.write(f"**Overall Summary:** {overall_summary}\n\n")
+                md.write("---\n\n")
 
-def main():
-    all_markdown = []
-    for filename in sorted(os.listdir(SCORES_DIR)):
-        if filename.endswith(".json"):
-            record_name = os.path.splitext(filename)[0]  # e.g. REC-6612
-            file_path = os.path.join(SCORES_DIR, filename)
-            all_markdown.append(json_to_markdown(file_path, record_name))
+                # Keep track for final summary
+                records_summary.append((record_id, total_score, percentage))
 
-    # Write combined markdown
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as out:
-        out.write("\n".join(all_markdown))
+                # Collect numeric percentage (strip % if present)
+                if isinstance(percentage, str) and percentage.endswith("%"):
+                    try:
+                        percentage_value = float(percentage.strip("%"))
+                        all_percentages.append(percentage_value)
+                    except ValueError:
+                        pass
+                elif isinstance(percentage, (int, float)):
+                    all_percentages.append(float(percentage))
 
-    print(f"✅ Markdown report generated: {OUTPUT_FILE}")
+        # Final summary section
+        md.write(f"## {MODEL_NAME} SUMMARY\n\n")
+        md.write("| Record ID | Total Score | Percentage |\n")
+        md.write("|-----------|-------------|-------------|\n")
 
+        for rec_id, total, perc in records_summary:
+            md.write(f"| {rec_id} | {total} | {perc} |\n")
+
+        # Compute average rating
+        if all_percentages:
+            avg_percentage = sum(all_percentages) / len(all_percentages)
+            rating_out_of_10 = round(avg_percentage / 10, 1)  # e.g. 82% → 8.2 / 10
+        else:
+            avg_percentage = 0
+            rating_out_of_10 = 0
+
+        md.write(f"\n**Overall Performance Rating: {rating_out_of_10} / 10**\n")
 
 if __name__ == "__main__":
-    main()
+    process_eval_files(INPUT_DIR, OUTPUT_FILE)

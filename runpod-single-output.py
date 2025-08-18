@@ -14,18 +14,23 @@ load_dotenv()  # reads .env file and loads variables
 MODEL_NAME = os.getenv("VLLM_MODEL_NAME")
 if MODEL_NAME is None:
     raise ValueError("VLLM_MODEL_NAME is not set")
+# Environment variables
+RUNPOD_API_URL = "https://api.runpod.ai/v2/b5uysn6yflwwg7/run"  # Replace with your pod endpoint
+RUNPOD_API_KEY = os.getenv("RUNPOD_API_KEY")
+
+if RUNPOD_API_KEY is None:
+    raise ValueError("RUNPOD_API_KEY not set in environment variables")
+
+# VLLM_API_URL = "http://localhost:8000/v1/chat/completions"   # vLLM OpenAI-style API endpoint
 
 
-VLLM_API_URL = "http://localhost:8000/v1/chat/completions"   # vLLM OpenAI-style API endpoint
-
-
-TRANSCRIPT_PATH = "/workspace/llm-tests/transcripts/Spencer/tomoko.json"
-TEMPLATE_PATH = "/workspace/llm-tests/templates/doctor-template-specialized.json"
-PROMPT_PATH = "/workspace/llm-tests/prompt-v1.txt"
-OUTPUT_PATH = "/workspace/llm-tests/Output/testing/tomoko-deepseek.json"
+TRANSCRIPT_PATH = "/Users/rish/Development/runpod dev/llm-tests/transcripts/Spencer/REC-6613.json"
+TEMPLATE_PATH = "/Users/rish/Development/runpod dev/llm-tests/templates/doctor-template-specialized.json"
+PROMPT_PATH = "/Users/rish/Development/runpod dev/llm-tests/prompt-v1.txt"
+OUTPUT_PATH = "/Users/rish/Development/runpod dev/llm-tests/Output/testing/REC-6613-medgemma.json"
 
 MAX_TOKENS = 10000
-TEMPERATURE = 0.1
+TEMPERATURE = 0.5
 REQUEST_TIMEOUT = 600  # seconds (adjust if you expect very long responses)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -66,7 +71,6 @@ def load_files() -> tuple[str, str, str]:
     logger.info("✅ All files loaded successfully")
     return system_prompt, template_json, transcript
 
-
 def generate_response_vllm(system_prompt: str, template: str, transcript: str) -> str:
     """Send chat prompt to llama.cpp / vLLM chat API and return the raw text content."""
     logger.info("🚀 Sending request to chat API...")
@@ -87,34 +91,43 @@ def generate_response_vllm(system_prompt: str, template: str, transcript: str) -
         {"role": "user", "content": f"Medical Transcript to Process:\n\n{transcript}"},
     ]
 
-    payload = {
-        "model": MODEL_NAME,
-        "messages": messages,
-        "max_tokens": MAX_TOKENS,
-        "temperature": TEMPERATURE,
-        "top_p": 0.9 if TEMPERATURE > 0 else 1.0,
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {RUNPOD_API_KEY}",
     }
 
-    headers = {"Content-Type": "application/json"}
+    payload = {
+        "input": {
+            "prompt": json.dumps(messages, ensure_ascii=False),
+            "max_tokens": MAX_TOKENS,
+            "temperature": TEMPERATURE,
+        }
+    }
 
     try:
-        resp = requests.post(VLLM_API_URL, json=payload, headers=headers, timeout=REQUEST_TIMEOUT)
+        resp = requests.post(
+            RUNPOD_API_URL,
+            headers=headers,
+            json=payload,
+            timeout=REQUEST_TIMEOUT,
+        )
         resp.raise_for_status()
-    except requests.RequestException as e:
-        logger.error(f"Request to chat API failed: {e}")
-        raise
+        data = resp.json()
 
-    data = resp.json()
-    # standard chat response shape: choices[0].message.content
-    try:
-        output_text = data["choices"][0]["message"]["content"]
-    except Exception:
-        # fallback for other servers: choices[0].text
-        output_text = data.get("choices", [{}])[0].get("text", "")
-    gen_time = time.time() - start_time
-    logger.info(f"✅ Received response in {gen_time:.2f}s")
-    show_gpu_memory("after request")
-    return output_text.strip()
+        # Different pods return slightly different keys; adapt if needed
+        if "output" in data:
+            if isinstance(data["output"], dict):
+                output_text = data["output"].get("text", "")
+            else:
+                output_text = str(data["output"])
+        else:
+            output_text = json.dumps(data)
+
+        return output_text.strip()
+
+    except Exception as e:
+        print(f"[Error] RunPod request failed: {e}")
+        return ""
 
 
 def extract_json(response: str) -> Optional[any]:
@@ -182,7 +195,7 @@ def save_outputs(raw_response: str, json_data: Optional[any] = None) -> None:
 def main():
     total_start = time.time()
 
-    logger.info(f"🚀 Processing with chat model {MODEL_NAME} @ {VLLM_API_URL}")
+    logger.info(f"🚀 Processing with chat model {MODEL_NAME} @ {RUNPOD_API_URL}")
     system_prompt, template, transcript = load_files()
     try:
         response = generate_response_vllm(system_prompt, template, transcript)

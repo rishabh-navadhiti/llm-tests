@@ -19,10 +19,10 @@ if MODEL_NAME is None:
 VLLM_API_URL = "http://localhost:8000/v1/chat/completions"   # vLLM OpenAI-style API endpoint
 
 
-TRANSCRIPT_PATH = "/workspace/llm-tests/transcripts/Spencer/REC-6635.json"
+TRANSCRIPT_PATH = "/workspace/llm-tests/transcripts/Spencer/REC-6627.json"
 TEMPLATE_PATH = "/workspace/llm-tests/templates/doctor-template-specialized-v2.json"
 PROMPT_PATH = "/workspace/llm-tests/prompt-v1.txt"
-OUTPUT_PATH = "/workspace/llm-tests/Output/testing/REC-6635-qwenHPI.json"
+OUTPUT_PATH = "/workspace/llm-tests/Output/Medgemma-updatedHPI/REC-6627-output.json"
 
 MAX_TOKENS = 10000
 TEMPERATURE = 1

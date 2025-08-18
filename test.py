@@ -1,8 +1,15 @@
 import requests
 
-VLLM_API_URL = "http://localhost:8000/v1/completions"  # Change if needed
-MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.3"            # Replace with your model name
+import os
+from dotenv import load_dotenv
 
+load_dotenv()  # reads .env file and loads variables
+
+MODEL_NAME = os.getenv("VLLM_MODEL_NAME")
+if MODEL_NAME is None:
+    raise ValueError("VLLM_MODEL_NAME is not set")          # Replace with your model name
+
+VLLM_API_URL = "http://localhost:8000/v1/completions"  # Change if needed
 def test_vllm_api():
     payload = {
         "model": MODEL_NAME,

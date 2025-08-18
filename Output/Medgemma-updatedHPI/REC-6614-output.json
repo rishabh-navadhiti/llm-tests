@@ -1,0 +1,71 @@
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Precious Myles Garrett"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Left wrist pain"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Patient is a right-hand dominant social worker presenting for evaluation of left wrist pain. The pain is described as more bothersome than the masses and wakes her up at night. She has been treated by Dr. Ishimori for left first dorsal compartment wrist cyst, left thumb MCP osteophyte, and bilateral thumb MCP joint issues. The masses have been constant recently, previously fluctuating in size. She saw her rheumatologist who obtained x-rays and an ultrasound of the wrist. She is here for evaluation and treatment."
+    ],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a coherent paragraph in clinical note style. Include only the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Do not include exam findings, imaging results, or any objective measurements. Maintain chronological order and use full sentences. Include information only if explicitly stated in the transcript. Do not add assumptions, inferred limitations, or negatives unless explicitly stated."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "left upper extremity skin is clean during check without anthraea maracunasis. There is a pea-sized mass over the first dorsal compartment. No tenderness or location over the mass. It is mobile and non-tender. Negative Finklestein, no pain with resisted thumb extension. Um, there is a mass at the dorsal ulnar aspect of the thumb MCP joint that is non-mobile and very minimally tender, excellent range of motion at the thumb MCP. No tenderness or location at the A1 point, no locking or catching."
+    ],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "Outside x-rays show an osteophyte noted at the thumb MCP joint. Ultrasound demonstrates a bony avulsion fragment versus osteophyte at the dorsal aspect of the MCP joint of the thumb. Ultrasound of the wrist demonstrates a retinacular cyst, superficial to the first dorsal compartment sheath."
+    ],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Left first dorsal compartment wrist cyst",
+      "Left thumb MCP osteophyte",
+      "Left wrist retinacular cyst",
+      "Right upper extremity Skin is intact.",
+      "No tenderness to palpation."
+    ],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.Rules- Only include active symptoms or conditions relevant to the current visit.- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).- Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”- Do not include any exam findings or historical medical information.- Return only the current issue(s) as a list.- If skin is intact say 'Right upper extremity Skin is intact.'. - If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "We will plan for carpal tunnel release. Recommend night splints for the wrist pain. Regarding the masses, they are not currently bothering her, so we recommend observation for now. Aspiration versus biopsy of the wrist mass will be considered if it becomes symptomatic. Return to clinic in 6 to 8 weeks for follow-up."
+    ],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.RULESReturn in multiples sentence in listsUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]
+```

@@ -2,7 +2,7 @@ llm-venv
 eval-venv
 **/eval-venv/
 
-.env
+.env-local
 
 __pycache__/
 *.pyc

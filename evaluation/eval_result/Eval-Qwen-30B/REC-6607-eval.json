@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The transcript does not contain the patient's name. The candidate provided 'She', which is not a name and completely incorrect for this field. The benchmark provides 'Susan Shell', which is also not in the transcript, but the candidate's output is still an incorrect patient name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "The benchmark provides 'Wrist pain', which is concise. The candidate adds 'Right' and 'limiting daily activities' which, while true from the transcript, are considered additional details or context beyond a simple chief complaint, violating the instruction to provide 'only the patient's chief complaint without any additional details or context'."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "The candidate's HPI only describes onset, duration, location, and severity of wrist pain, completely missing the broader context and details present in the benchmark's comprehensive HPI narrative. The benchmark includes crucial information about knee replacement, synovitis, osteoporosis, and the overall reason for the visit, which the candidate omits entirely."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "The benchmark for this field is '-', indicating no relevant musculoskeletal findings should be documented. The candidate provides a verbatim quote from the doctor related to exam findings ('Exam mostly unchanged, except you can delete the large, poorly defined nodule.'). While the content is verbatim from the transcript, it contradicts the benchmark's expectation for this field."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "The candidate's content 'The imaging you can leave all the same.' is a verbatim extract from the transcript. The benchmark simplifies this to 'Imaging mostly unchanged'. The meaning is preserved, but there's a minor wording difference compared to the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "The benchmark lists 'Bilateral wrist arthritis' and 'Synovitis'. The candidate includes these (with 'Improved synovitis' which is more precise to transcript) but also adds 'Right wrist pain with significant functional limitation', 'Right knee replacement status post', and 'Osteoporosis on infusion therapy'. While these added items are factually present in the transcript, they are not included in the benchmark's concise assessment, leading to a significant content mismatch from the ground truth."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "The candidate hallucinates a specific follow-up time ('6 to 8 weeks') that is not present in the provided transcript. It also includes the osteoporosis infusion therapy in the plan which the benchmark does not, and misses the 'Plan OR Risks' phrase that is in the benchmark."
+    }
+  },
+  "total_score": 13,
+  "percentage": 37.14,
+  "overall_summary": "The candidate note struggled significantly in matching the content and scope of the benchmark note, especially in the HPI and Assessment sections, where it either missed substantial details or included information that diverged from the benchmark's concise nature. It also exhibited hallucination by adding a follow-up time not present in the transcript. While it showed good verbatim extraction for the 'Imaging Results' and some factual accuracy in 'Chief Complaint', these were often presented with extra details or in a format that did not align with the benchmark or its own instructions for conciseness. The 'Patient Name' field was completely incorrect."
+}

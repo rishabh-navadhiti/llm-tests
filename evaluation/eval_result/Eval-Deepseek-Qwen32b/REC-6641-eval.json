@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "The candidate correctly identified 'Kathy Smith' but incorrectly included names of other patients ('Brigitte Metman', 'Samar Actrion') who are not the subject of this specific note, indicating a failure to adhere to single-patient context."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "For Kathy Smith, the candidate identified 'Unhappy with hand therapy' which is a secondary complaint, but missed the primary chief complaints of 'Swelling and pain in hand' and 'Follow up for hand surgery'. It also incorrectly included chief complaints for other patients discussed in the transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "The candidate completely failed to extract the HPI relevant to Kathy Smith, instead providing HPI details for other patients. It did not capture her current status (doing okay overall, still swelling and pain) or her dissatisfaction with therapy, failing to meet the instruction for onset, duration, location, and severity for Kathy Smith."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "The candidate correctly extracted a verbatim phrase ('Minimal scar, some continued tenderness to palpation at A1 pulley incision') relevant to Kathy Smith. However, it missed several other significant verbatim findings for Kathy Smith (e.g., incisions well healed, full fist, moderate soft tissue swelling, excellent range of motion, continued pain with motion) and included irrelevant findings from other patients."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "For Kathy Smith, no imaging results were discussed in her section of the transcript, which is correctly represented by '-' in the benchmark. The candidate incorrectly listed imaging results pertinent to other patients, making the information irrelevant and incorrect for this patient's note."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "The candidate included 'Recovering from surgery' which is conceptually similar to 'Status post hand surgery'. However, it failed to include 'Swelling' and 'Pain' as active issues for Kathy Smith. It also incorrectly included assessments for other patients."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "The candidate correctly identified 'Continue therapy' for Kathy Smith. However, it completely missed the crucial specifics of 'Return to Jack for hand therapy' and 'Return to clinic in 6 weeks'. It also incorrectly included plans for other patients."
+    }
+  },
+  "total_score": 8,
+  "percentage": 22.857142857142858,
+  "overall_summary": "The candidate note demonstrated a significant misunderstanding of context by generating content for multiple patients present in the transcript rather than focusing solely on the patient relevant to the benchmark note (Kathy Smith). This led to substantial irrelevant information being included in almost every field. For the actual patient, the note was consistently incomplete, missing critical details in the HPI, Chief Complaint, Musculoskeletal exam, Assessment, and Plan fields. While it managed to extract a few accurate fragments for the target patient, the overall performance is severely impacted by this fundamental error in scope and content selection."
+}

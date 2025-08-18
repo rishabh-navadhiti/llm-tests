@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Perfect match with the benchmark and accurately extracts the patient's name from the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Identical to the benchmark and accurately reflects the chief complaint mentioned in the transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "The candidate note attempts to fulfill its instruction by providing 'Onset', 'Duration', and 'Severity', but these details ('Unknown', 'Not specified') are not present in the transcript and are therefore hallucinations. The benchmark correctly extracts only the information provided: 'He reports left ring finger trigger finger'."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Both the candidate and benchmark notes correctly indicate that no musculoskeletal findings were dictated in the transcript, adhering to the instruction to return empty if no information is found."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "The candidate note hallucinates imaging results ('Shutter vein was not detected') for the current patient (Kevin Clancy) by incorrectly attributing information related to a *different* patient (David) mentioned by the nurse. The benchmark correctly indicates no imaging results for Kevin Clancy."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Perfect match with the benchmark, accurately listing the two conditions discussed for the patient in the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The candidate note accurately captures the primary plan items (injection, home exercise program, formal therapy threshold). However, it hallucinates a follow-up time of '6 to 8 weeks' which is not present in the transcript and differs from the benchmark's '2 weeks'. While the benchmark's time is also not in the transcript, the candidate is penalized for deviating from the ground truth benchmark and potentially misinterpreting an example in its own instruction as a default."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate note demonstrates strong performance in extracting straightforward information like patient name, chief complaint, and assessment findings. It correctly identifies the absence of musculoskeletal exam details. However, significant weaknesses are observed in fields requiring contextual understanding and strict adherence to factual extraction. The model hallucinates unstated details in the HPI based on an overly specific instruction and incorrectly attributes imaging results pertaining to another patient. The plan section, while largely accurate in content, introduces a follow-up time not present in the transcript and differing from the benchmark, highlighting a potential over-reliance on instructional examples when actual information is absent."
+}

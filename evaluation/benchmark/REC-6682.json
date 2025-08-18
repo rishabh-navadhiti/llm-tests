@@ -1,0 +1,113 @@
+[
+    {
+        "content": [
+            "N. Kalinski"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            [
+                {
+                    "score": 0.5552248954772949,
+                    "time": "0.099"
+                }
+            ]
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Left middle finger trigger finger"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [
+                {
+                    "score": 0.5905211567878723,
+                    "time": "0.099"
+                },
+                {
+                    "score": 0.5441595911979675,
+                    "time": "54.86"
+                }
+            ]
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "He underwent a left middle finger trigger finger injection on 10-22-24. He has had recurrence of his left middle finger trigger finger. He will return to clinic if he has any recurrence."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6754416823387146,
+                    "time": "0.099"
+                },
+                {
+                    "score": 0.6174696683883667,
+                    "time": "54.86"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            []
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            []
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Trigger finger of the left middle finger"
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.5782493948936462,
+                    "time": "0.099"
+                },
+                {
+                    "score": 0.530832052230835,
+                    "time": "54.86"
+                }
+            ]
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Left middle finger trigger finger injection. Return to clinic if he has any recurrence."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6701093912124634,
+                    "time": "0.099"
+                },
+                {
+                    "score": 0.695783257484436,
+                    "time": "54.86"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

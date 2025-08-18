@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient name 'Nadeem Nemi' is perfectly captured and adheres to the instruction of only returning the patient's name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The chief complaint 'Bilateral thumb pain' is accurately identified and adheres to the instruction to provide only the chief complaint without additional details."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "While the candidate note correctly extracts the onset, duration, location, and severity, it misses a minor but relevant detail from the transcript and benchmark: 'He is not having any numbness and tingling'. The format is also significantly different from the narrative style of the benchmark, adhering to its own specific instruction for structured output."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate note accurately captures the musculoskeletal findings verbatim from the transcript, including 'Bilateral upper extremity skin is clean, dry, and intact', which is more accurate to the transcript than the benchmark's 'Right upper extremity Skin'."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "The candidate note misses several key details from the imaging results, including 'of the right hand, three views', 'Calcific arteriogram is noted', and 'Left hand x-ray findings are the same as the right hand, except no calcific arteriogram.' These are significant omissions."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "The candidate note only lists 'Bilateral thumb CMC arthritis (progressed)' and misses two other active conditions mentioned in the transcript and benchmark: 'Right cubital tunnel syndrome' and 'Bilateral carpal tunnel syndrome'. The instruction to not include 'skin is intact' and then to include it if found is contradictory, but even following the primary instruction (only active conditions), these were missed."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The candidate note misses one specific recommendation: 'Consider nerve studies if symptoms re-emerge.' This is a minor but notable omission in the plan."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note performed well in accurately extracting the patient's name and chief complaint, and exceptionally well in the verbatim musculoskeletal section, even correcting a discrepancy found in the benchmark. However, it struggled with comprehensive detail extraction for longer and more complex fields like HPI, Imaging Results, and Assessment, leading to multiple missing details. The adherence to its own internal instructions sometimes resulted in format differences from the benchmark (HPI) or significant content omissions (Assessment). The plan also missed a minor detail."
+}

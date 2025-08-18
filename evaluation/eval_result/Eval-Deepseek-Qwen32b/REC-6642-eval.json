@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The PATIENT_NAME is a perfect, exact match to the benchmark and the transcript, fully adhering to instructions."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The CHIEF_COMPLAINT is a perfect, exact match to the benchmark and accurately reflects the patient's chief complaint from the transcript, adhering to instructions."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "The candidate note perfectly adheres to its specific instruction to only provide Onset, Duration, Location, and Severity. It accurately extracts these details from the transcript, even though the benchmark included additional information not requested by the candidate's instruction."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate note meticulously extracts all musculoskeletal findings verbatim from the transcript, precisely following its instruction. The benchmark note incorrectly provides no information for this field."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "The candidate note accurately summarizes all imaging findings, including the specific details for both the right and left hands, and correctly interprets the instruction regarding the calcific arteriogram deletion. Minor phrasing differences do not alter the factual content."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "The candidate note accurately identifies and lists the core medical conditions. It correctly includes 'with progression' for CMC arthritis as dictated, which the benchmark missed. It also correctly excludes the normal finding 'skin is intact' based on its primary instruction, demonstrating adherence despite a contradictory secondary instruction for that specific phrase."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "The candidate note accurately captures most aspects of the plan. It misses one minor detail regarding the patient's understanding that the procedure would be done today. Otherwise, the content and structure are excellent and align with the instructions."
+    }
+  },
+  "total_score": 34,
+  "percentage": 97.14,
+  "overall_summary": "The candidate note demonstrates exceptional accuracy and adherence to specific instructions for almost all fields. It consistently extracted precise details from the transcript, often matching or even improving upon the benchmark's accuracy (e.g., MUSCULOSKELETAL_VERBATIM and ASSESSMENT_SPENCER). The few minor discrepancies were largely due to strict adherence to its own detailed instructions (HPI_SPENCER, ASSESSMENT_SPENCER) or very minor omissions (PLAN_SPENCER_). Overall, the note is of very high quality and clinically relevant."
+}

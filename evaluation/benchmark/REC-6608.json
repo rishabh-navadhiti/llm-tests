@@ -1,0 +1,181 @@
+[
+    {
+        "content": [
+            "Sandra Herrara"
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": false,
+                    "generic": true,
+                    "missingContent": false,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "-"
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-06T16:58:32.007Z",
+                "to": [
+                    "Sandra Herrara"
+                ],
+                "version": 1
+            }
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Follow up for hand pain"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            []
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "She reports previous injection did not offer any relief. She wants to know what is going on."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.5583317279815674,
+                    "time": "0.059"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "There is some hypopigmentation at the dorsal aspect of the carpometacarpal joint consistent with previous injection",
+            "Mild tenderness to palpation over the first dorsal compartment",
+            "Positive Finkelstein",
+            "Still a positive Grind",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Hypopigmentation at the dorsal aspect of the CMC during consistent with previous injection. Mild over the first dorsal compartment positive finger stain, still a positive grind."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-06T16:58:48.959Z",
+                "to": [
+                    "There is some hypopigmentation at the dorsal aspect of the carpometacarpal joint consistent with previous injection",
+                    "Mild tenderness to palpation over the first dorsal compartment",
+                    "Positive Finkelstein",
+                    "Still a positive Grind",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            [
+                {
+                    "score": 0.7426999807357788,
+                    "time": "0.059"
+                }
+            ]
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            []
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Pain in hand"
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            []
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Her previous injection offered no relief",
+            "Recommend trial of de Quervain's injection",
+            "Return to clinic in 6 weeks for followup",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Return to clinic in 6 weeks.",
+                    "Recommend trial of dig verban's injection."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-06T16:58:59.375Z",
+                "to": [
+                    "Her previous injection offered no relief",
+                    "Recommend trial of de Quervain's injection",
+                    "Return to clinic in 6 weeks for followup",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [],
+            [
+                {
+                    "score": 0.5060485005378723,
+                    "time": "0.059"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

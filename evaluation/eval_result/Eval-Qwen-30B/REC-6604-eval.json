@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "The candidate note transcribed 'Nicole Coffee' which is what was dictated. The benchmark note reflects a human correction to 'Nicole Kaffee'. Given the benchmark's history shows 'Coffee' was the original, and the candidate accurately captured the dictated name, it's a very minor difference from the corrected benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate 'Pain in left index finger' and benchmark 'Left index finger pain' convey the exact same meaning. The difference is only in wording order, preserving meaning and adhering to instructions."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "The candidate strictly followed its internal instruction to only provide Onset, Duration, Location, and Severity. While accurate for those specific points, it missed significant clinically relevant details from the transcript present in the benchmark's comprehensive HPI (e.g., prior shoulder appointment, Dr. Almadroa's recommendation for observation, and the patient's request for an injection). This is a partial adherence to the broader context of an HPI and misses multiple important details compared to the benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate note perfectly adhered to its instruction 'Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim.' and accurately extracted the musculoskeletal exam findings exactly as dictated in the transcript. The benchmark note, conversely, introduced minor rephrasing and corrections not present in the original dictation (e.g., changing 'walking' to 'locking', adding 'intact' and 'ecchymosis', omitting 'tacky' and 'Acute')."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "The candidate note 'X-rays are three views of the finger are normal.' is a perfect verbatim match to the transcript. The benchmark added 'left index' which, while clinically appropriate, was not explicitly dictated."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "The first assessment item 'Left index finger triggering with A1 pulley involvement' is clinically sound and consistent with the transcript. However, the second item 'Right upper extremity Skin is intact.' is a complete hallucination (no mention of right upper extremity in transcript) and directly contradicts the candidate's own instruction to 'Do not include normal findings such as “skin is intact”. The conflicting internal instruction led to a major error."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "The candidate correctly identified that the patient is not having the injection and the X-ray results. 'Plan is to proceed with trigger point management' is a reasonable interpretation of 'plan trigger'. However, 'Patient was educated on the condition and treatment plan' is an inference not explicitly stated in the transcript. Crucially, 'Follow-up in 6 to 8 weeks' is a major hallucination with no mention of any follow-up time in the transcript."
+    }
+  },
+  "total_score": 18,
+  "percentage": 51.42857142857143,
+  "overall_summary": "The candidate note demonstrates strong performance in fields requiring verbatim extraction or direct factual recall, often outperforming the benchmark in adherence to verbatim instructions (e.g., MUSCULOSKELETAL_VERBATIM, IMAGING_RESULTS). However, it struggles significantly with fields requiring synthesis or interpretation according to standard clinical note practices (HPI, Assessment, Plan), largely due to rigid adherence to overly specific or conflicting internal instructions, leading to critical omissions and factual hallucinations (e.g., missing key HPI details, hallucinating a right upper extremity skin finding, and fabricating a follow-up time)."
+}

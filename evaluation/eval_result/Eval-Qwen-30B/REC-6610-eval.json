@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 2,
+      "justification": "While 'Stephanie Humphrey' is correctly identified, the candidate note includes names of three other patients (Terrance Rodski, Amit Jaini, David Schechter) who are not relevant to this specific clinical note, which is focused on Stephanie Humphrey as per the benchmark. This dilutes the accuracy for a single-patient note."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "The chief complaint for Stephanie Humphrey ('Left wrist pain') is accurate. However, the candidate note includes chief complaints for three other patients, which are extraneous and irrelevant to the scope of this single-patient note, similar to the PATIENT_NAME issue."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The HPI for Stephanie Humphrey (first entry) accurately extracts the Onset, Duration, Location, and Severity, adhering perfectly to the specific instruction for this field ('only mention that, and nothing else'). However, the note includes HPIs for two other patients, making it deviate significantly from a single patient's clinical note, thus preventing a higher score."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "The candidate note correctly extracts the verbatim musculoskeletal findings for Stephanie Humphrey from the transcript, which the benchmark incorrectly marked as empty. So, the candidate's content for Stephanie is factually correct and verbatim according to the transcript and instructions. However, it includes verbatim exams for two other patients, which are irrelevant for a single patient note, leading to a deduction."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "The imaging results for Stephanie Humphrey ('X-rays of the left wrist show no fractures, normal alignment') are mostly accurate but slightly less detailed than the benchmark (e.g., missing specific mention of 'urgent care' X-rays). Crucially, the candidate also includes imaging results for two other patients, significantly impacting the relevance for a single-patient note."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "The assessment for Stephanie Humphrey ('Left ECU tendonitis with ulnar-sided wrist pain,' 'Right upper extremity skin is intact.', 'No tenderness to palpation.') correctly identifies her conditions and follows the specific, sometimes conflicting, instructions (Rule 7) for including 'normal findings' as per the benchmark. However, assessments for other patients are included, which is extraneous and lowers the score."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The plan for Stephanie Humphrey is comprehensive, accurate, and aligns well with the benchmark, even adding relevant diagnostic context as per the field's instruction. Despite the high quality of content for Stephanie, the candidate includes plans for three other patients and additional administrative instructions not related to Stephanie's plan, which is a major deviation from a single-patient note."
+    }
+  },
+  "total_score": 18,
+  "percentage": 51.43,
+  "overall_summary": "The candidate note demonstrates a strong ability to extract and format specific clinical details for individual fields, often adhering closely to the detailed instructions provided for each section. For the patient Stephanie Humphrey, the content extracted was largely accurate and well-structured, and in some cases, more complete or precise than the benchmark (e.g., Musculoskeletal Verbatim). However, the primary and consistent weakness across almost all fields is the failure to constrain the output to a single patient. The note includes information for all patients mentioned in the transcript, which significantly detracts from its quality and utility as a focused clinical record for a single individual as implied by the benchmark's structure. This led to penalties despite the strong performance on content extraction for the relevant patient."
+}

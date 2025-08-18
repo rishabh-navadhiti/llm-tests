@@ -1,0 +1,103 @@
+[
+    {
+        "content": [
+            "Kevin Clancy"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Left ring finger trigger finger"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [
+                {
+                    "score": 0.5517125129699707,
+                    "time": "0.059"
+                }
+            ]
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "He reports left ring finger trigger finger."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.5139419436454773,
+                    "time": "0.059"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            []
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            []
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Left ring finger trigger finger",
+            "Plantar tendonitis"
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.5517125129699707,
+                    "time": "0.059"
+                }
+            ],
+            [
+                {
+                    "score": 0.7764528393745422,
+                    "time": "20.779"
+                }
+            ]
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Left ring finger trigger finger injection.\nHome exercise program for plantar tendonitis. Low threshold for formal therapy is no improvement.\nReturn to clinic in 2 weeks."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.5388917922973633,
+                    "time": "0.059"
+                },
+                {
+                    "score": 0.6186994314193726,
+                    "time": "20.779"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

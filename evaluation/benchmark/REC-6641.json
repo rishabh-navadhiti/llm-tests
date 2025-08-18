@@ -1,0 +1,78 @@
+[
+    {
+        "content": [
+            "Kathy Smith"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Swelling and pain in hand",
+            "Follow up for hand surgery"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [],
+            []
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "Kathy Smith is here today for follow-up. She states she is doing okay overall but still experiences some swelling and pain. She is not satisfied with her hand therapy and wishes to return to Jack. "
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            []
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "Incisions well healed. Minimal scar. Some continued tenderness to palpation at the A1 pulley incision. No tendon desquamation at the dorsal hand. Full fist. Moderate soft tissue swelling in the left space especially. Excellent range of motion overall. Some continued pain with motion."
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            []
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            []
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Status post hand surgery",
+            "Swelling",
+            "Pain"
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [],
+            [],
+            []
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Continue therapy. Return to Jack for hand therapy. Return to clinic in 6 weeks."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            []
+        ],
+        "title": "Plan"
+    }
+]

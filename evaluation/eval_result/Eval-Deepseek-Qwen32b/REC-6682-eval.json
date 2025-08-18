@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Perfect match in factual content and adherence to instructions."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "The candidate added 'Recurrence of' which is a detail more suited for the HPI, whereas the chief complaint itself, as per the benchmark, is the 'Left middle finger trigger finger'."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "The candidate completely failed to extract any HPI information from the transcript, despite relevant details regarding past injection, recurrence, and follow-up being present in the conversation."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Both the candidate and benchmark notes correctly indicate that no verbatim musculoskeletal exam findings were dictated, which aligns with the doctor's instruction to 'keep the exam the same' without dictating new findings. The empty list is an acceptable representation."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both notes correctly indicate that no imaging results were to be included, aligning with the doctor's statement to 'remove the imaging review for the plan'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Similar to the Chief Complaint, the candidate included 'recurrence' in the assessment. While factually correct, the assessment typically focuses on the core diagnosis ('Trigger finger of the left middle finger') rather than historical context, making the benchmark more concise and accurate for this field."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "The candidate accurately captured all plan details, including the fact that the injection was performed today and the follow-up instructions. The use of a list also aligns with the candidate's own instructions for this field."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.28571428571429,
+  "overall_summary": "The candidate note demonstrated strong performance in accurately identifying the patient's name, and correctly noting the absence of dictated musculoskeletal exam findings and imaging results. It also excelled in extracting and formatting the plan details. However, it critically failed in generating the History of Present Illness (HPI), omitting all relevant information. Furthermore, for the Chief Complaint and Assessment fields, the candidate included descriptive details like 'recurrence' which, while factual, are generally considered HPI content rather than the concise chief complaint or the direct medical diagnosis, leading to minor inaccuracies in those fields compared to the benchmark."
+}

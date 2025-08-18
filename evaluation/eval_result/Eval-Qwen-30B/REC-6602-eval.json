@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The candidate note failed to provide a specific patient name, using a pronoun 'She' instead. The benchmark note provides a specific name, 'Linda Omansky', which is the expected output for this field, despite not being in the provided transcript excerpt. The candidate did not match the benchmark's content."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate note included the word 'Increasing,' which is present in the transcript ('noticed increasing numbness and tingling'). The benchmark note omitted this word for conciseness. This is a minor wording difference that preserves the core meaning of the chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "The candidate note followed its specific instruction to format the HPI as Onset, Duration, Location, and Severity. However, this resulted in a significant loss of crucial contextual information (lymphoma, chemotherapy, reevaluation, difficulty with earrings/phone, trying to hold phone less) present in the benchmark and transcript. It also inferred 'moderate severity' and included 'small finger' for the numbness/tingling location, which was primarily associated with the physical exam findings, not the HPI symptoms."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "The candidate note missed the initial musculoskeletal findings ('Bilateral upper extremty skin is clean, dry and intact without erythema or ecchymosis'). While it was more verbatim on other phrases like '.pcgs are normal' compared to the benchmark's interpretation, the significant omission of content reduces its accuracy based on the benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "The candidate note states 'X-ray is clear,' which is accurate per the transcript. However, the benchmark note states 'XR - Deferred.' As the benchmark is considered the ground truth for evaluation, the candidate note's factual content is completely incorrect when compared directly to the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "The candidate note includes 'Right small finger triggering with nodule,' which aligns with the benchmark's 'Trigger finger.' However, the candidate also included other factually correct and relevant assessments from the transcript (numbness/tingling, thumb sensory deficit) that are absent in the benchmark. While these additions are accurate based on the transcript, they constitute major content differences from the benchmark. The inclusion of 'Right upper extremity skin is intact' is also inconsistent with the benchmark and arises from contradictory instructions given to the candidate model."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "The candidate note provides a perfectly summarized, scribe-style plan that accurately captures all elements from the transcript and the benchmark. It effectively rephrases conversational dictation into concise, actionable medical notes, fulfilling the instruction for a 'scribe-style summary' and explaining reasoning where appropriate. The factual content is perfectly matched with the benchmark's intent, with improved formatting and conciseness."
+    }
+  },
+  "total_score": 14,
+  "percentage": 40.0,
+  "overall_summary": "The candidate note exhibited significant variability in performance across fields. It performed excellently in the 'Plan' section, providing a well-structured and accurate summary of the doctor's directives. However, it struggled significantly with 'Patient Name' and 'Imaging Results' by providing factually incorrect information compared to the benchmark. The 'HPI' was formatted as per its specific instruction but omitted crucial details present in the benchmark, leading to a sparse summary. The 'Musculoskeletal' and 'Assessment' sections had multiple discrepancies and omissions or additions when compared to the benchmark, indicating a lack of consistent alignment with the 'ground truth' despite sometimes being more comprehensive based on the raw transcript. The note's adherence to instructions was inconsistent, particularly where instructions conflicted or when the benchmark's content deviated from the direct transcript."
+}

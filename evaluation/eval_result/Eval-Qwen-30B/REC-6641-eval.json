@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient's name is perfectly matched and adheres to instructions."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "The candidate missed a key chief complaint, 'Follow up for hand surgery', and added 'worsening over time' which is more of a detail than a concise chief complaint for a follow-up visit, going against the instruction to avoid additional details or context."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "The candidate completely hallucinated the HPI for Kathy Smith, providing an 'Onset, duration, location, severity' description that belongs to a different patient from the transcript, rather than the actual follow-up context for Kathy Smith. This is entirely incorrect."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "While a portion of the musculoskeletal exam for Kathy Smith is correctly extracted verbatim, the candidate includes a significant amount of irrelevant and factually incorrect information from another patient's exam, which is a major error in attribution and content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "The candidate completely fabricated imaging results for Kathy Smith. No imaging was mentioned for her in the transcript; the provided details belong to a different patient."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "The candidate incorrectly listed conditions belonging to other patients ('Bilateral thumb CMC arthritis', 'Progressive DIP joint arthritis', 'Right small finger DIP joint ankylosis') as Kathy Smith's assessment. It also included exam findings and 'normal' findings ('Skin is intact', 'No tenderness to palpation') despite instructions to exclude them (though the instruction was contradictory for normal findings, the primary intent is clear)."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "The candidate correctly identified the core plan elements (continue therapy, return to Jack, return in 6 weeks) but padded the section with irrelevant details like reassessments and patient reports that belong in the HPI or objective exam, not the plan of action, diluting the quality of the section."
+    }
+  },
+  "total_score": 11,
+  "percentage": 31.42857142857143,
+  "overall_summary": "The candidate note performed poorly, primarily due to significant factual inaccuracies stemming from misattributing information from other patients discussed in the transcript to Kathy Smith. This was evident in the HPI, Musculoskeletal exam, Imaging Results, and Assessment sections, where large portions of the content were irrelevant or incorrect for the patient. While the Patient Name was perfect, and core elements of the Chief Complaint and Plan were accurate, the pervasive errors in key clinical sections severely impacted the overall quality and reliability of the note. The model struggled to isolate information pertinent to a single patient when multiple patient encounters were present in the transcript and also failed to consistently adhere to instructions (e.g., excluding normal findings or not including exam details in the plan)."
+}

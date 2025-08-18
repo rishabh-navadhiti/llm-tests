@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "The candidate note transcribed the name as 'Nicole Coffee' which was dictated in the transcript. However, the benchmark note, which is the ground truth, corrected the spelling to 'Nicole Kaffee'. This is a minor spelling difference but deviates from the established benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate note states 'Pain in left index finger' while the benchmark states 'Left index finger pain'. Both accurately capture the chief complaint, with only a minor wording difference. The meaning is perfectly preserved."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "The candidate note adhered strictly to its internal instruction to only provide Onset, Duration, Location, and Severity. While accurate for these specific points, it missed significant clinically relevant details present in the benchmark note and transcript, such as the patient's prior shoulder appointment, Dr. Almadroa's previous recommendation for observation, and the patient's current request for an injection. This constitutes multiple missing details compared to the comprehensive benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate note performed exceptionally well, providing a highly verbatim transcription of the musculoskeletal exam findings as dictated. It even included 'Able to give a thumbs up' which was dictated but missing from the benchmark, and maintained verbatim phrasing like 'tacky' and 'walking catching' where the benchmark showed slight interpretation/standardization. This perfectly aligns with its instruction to be verbatim."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "The candidate note states 'X-rays of the finger are normal'. The benchmark note is more detailed and closer to the transcript, stating 'Three views of the left index finger X-rays are normal.'. The candidate missed the detail 'three views' and the implicit 'left index'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "The candidate note provided 'Left index finger pain with triggering'. While factually correct, the benchmark provided two separate, clinically distinct items: 'Left index finger pain' and 'Trigger finger'. The candidate's combined statement is less precise in terms of typical medical assessment structure, but still conveys the core issues."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "The candidate note includes 'Follow-up in 6 to 8 weeks', which is a significant hallucination as this detail was not mentioned anywhere in the transcript. Additionally, 'Perform trigger release without injection' is an interpretation; the transcript states 'plan trigger' and 'She is not having the injection. We will do this today.' The benchmark accurately reflects the dictated information without adding unsubstantiated details."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "The candidate note demonstrates mixed performance. It achieved excellent accuracy in the 'MUSCULOSKELETAL_VERBATIM' field by adhering strictly to its verbatim instruction, even surpassing the benchmark's fidelity to the transcript in some aspects. However, its performance was significantly hindered by crucial omissions in 'HPI_SPENCER' due to an overly restrictive internal instruction, and a major hallucination in 'PLAN_SPENCER_' regarding follow-up details not present in the transcript. Other fields showed minor discrepancies in wording or completeness compared to the benchmark, indicating room for improvement in consistently capturing all relevant details and avoiding fabrication."
+}

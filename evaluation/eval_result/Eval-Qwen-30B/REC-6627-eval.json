@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The CANDIDATE_NOTE returned an empty content array for PATIENT_NAME, completely failing to extract the patient's name, which is not mentioned in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 0,
+      "justification": "The CANDIDATE_NOTE returned an empty content array for CHIEF_COMPLAINT, failing to extract the chief complaint (bilateral hand numbness and tingling, and burning pain) from the transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "The CANDIDATE_NOTE returned an empty content array for HPI_SPENCER, completely failing to extract any details regarding the onset, duration, location, or severity of the illness, as present in the transcript and benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "The CANDIDATE_NOTE returned an empty content array for MUSCULOSKELETAL_VERBATIM, failing to extract any physical examination findings verbatim as instructed. The transcript clearly contains relevant information."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "The CANDIDATE_NOTE returned an empty content array for IMAGING_RESULTS, failing to extract the imaging information (X-rays deferred secondary to pregnancy) from the transcript."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "The CANDIDATE_NOTE returned an empty content array for ASSESSMENT_SPENCER, completely failing to provide any assessment of the patient's condition (bilateral carpal tunnel syndrome) as present in the transcript and benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 0,
+      "justification": "The CANDIDATE_NOTE returned an empty content array for PLAN_SPENCER_, completely failing to extract any part of the treatment plan, recommendations, or follow-up instructions as clearly detailed in the transcript and benchmark."
+    }
+  },
+  "total_score": 0,
+  "percentage": 0.0,
+  "overall_summary": "The candidate note performed extremely poorly, returning empty content arrays for all 7 fields. It failed to extract any relevant information from the provided transcript, resulting in a total score of 0 out of 35. This indicates a complete lack of functional extraction capability for this specific input."
+}

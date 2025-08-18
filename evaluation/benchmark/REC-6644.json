@@ -1,0 +1,81 @@
+[
+    {
+        "content": [
+            "Cathy Smith"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Follow up hand pain and swelling"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            []
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "Cathy Smith is here today for follow-up. She states she is doing okay overall. She still has some swelling and pain in her hand. She is not thrilled with her hand therapy and wants to know if she can return to Jack."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            []
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "Incisions well healed. Minimal scar, some continued tenderness and dislocation at the A1 pulley incision. No tenderness or inflammation at the dorsal hand incision, but there is some scar appearance there. Full fist, moderate soft tissue swelling in the left space especially. Excellent range of motion overall. Some continued pain with motion."
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            []
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            []
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Hand swelling",
+            "Hand pain"
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [],
+            [
+                {
+                    "score": 0.5233271718025208,
+                    "time": "0.059"
+                }
+            ]
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Continue therapy. Transition care with Jack.",
+            "Return to clinic in 6 weeks."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [],
+            []
+        ],
+        "title": "Plan"
+    }
+]

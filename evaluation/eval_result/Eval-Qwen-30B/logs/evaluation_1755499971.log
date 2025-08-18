@@ -1,0 +1,64 @@
+2025-08-18 12:22:51,456 - INFO - Logging initialized. Log file: eval_result/Eval-Qwen-30B/logs/evaluation_1755499971.log
+2025-08-18 12:22:51,456 - INFO - Starting medical notes evaluation
+2025-08-18 12:22:51,456 - INFO - Configuration:
+2025-08-18 12:22:51,457 - INFO -   - Benchmark directory: benchmark
+2025-08-18 12:22:51,457 - INFO -   - Candidate directory: ../Output/Spencer-Qwen-30B-FP8
+2025-08-18 12:22:51,457 - INFO -   - Transcript directory: ../transcripts/Spencer
+2025-08-18 12:22:51,457 - INFO -   - Output directory: eval_result/Eval-Qwen-30B
+2025-08-18 12:22:51,457 - INFO -   - Model: gemini-2.5-flash
+2025-08-18 12:22:51,457 - INFO - Created output directory: eval_result/Eval-Qwen-30B
+2025-08-18 12:22:51,457 - INFO - Gemini model 'gemini-2.5-flash' initialized successfully
+2025-08-18 12:22:51,457 - INFO - Loading evaluation prompt from: eval_prompt.txt
+2025-08-18 12:22:51,457 - INFO - Loaded prompt (2762 characters)
+2025-08-18 12:22:51,457 - INFO - Found 20 benchmark files to process
+2025-08-18 12:22:51,457 - INFO - Processing 1/20: REC-6627
+2025-08-18 12:23:03,609 - INFO - ✅ Successfully evaluated REC-6627 → eval_result/Eval-Qwen-30B/REC-6627-eval.json
+2025-08-18 12:23:03,609 - INFO - Processing 2/20: REC-6607
+2025-08-18 12:23:35,456 - INFO - ✅ Successfully evaluated REC-6607 → eval_result/Eval-Qwen-30B/REC-6607-eval.json
+2025-08-18 12:23:35,456 - INFO - Processing 3/20: REC-6610
+2025-08-18 12:24:14,312 - INFO - ✅ Successfully evaluated REC-6610 → eval_result/Eval-Qwen-30B/REC-6610-eval.json
+2025-08-18 12:24:14,312 - INFO - Processing 4/20: REC-6682
+2025-08-18 12:24:40,272 - INFO - ✅ Successfully evaluated REC-6682 → eval_result/Eval-Qwen-30B/REC-6682-eval.json
+2025-08-18 12:24:40,272 - INFO - Processing 5/20: REC-6641
+2025-08-18 12:24:58,296 - INFO - ✅ Successfully evaluated REC-6641 → eval_result/Eval-Qwen-30B/REC-6641-eval.json
+2025-08-18 12:24:58,296 - INFO - Processing 6/20: REC-6639
+2025-08-18 12:25:37,174 - INFO - ✅ Successfully evaluated REC-6639 → eval_result/Eval-Qwen-30B/REC-6639-eval.json
+2025-08-18 12:25:37,175 - INFO - Processing 7/20: REC-6642
+2025-08-18 12:26:04,960 - INFO - ✅ Successfully evaluated REC-6642 → eval_result/Eval-Qwen-30B/REC-6642-eval.json
+2025-08-18 12:26:04,960 - INFO - Processing 8/20: REC-6635
+2025-08-18 12:26:34,568 - INFO - ✅ Successfully evaluated REC-6635 → eval_result/Eval-Qwen-30B/REC-6635-eval.json
+2025-08-18 12:26:34,568 - INFO - Processing 9/20: REC-6622
+2025-08-18 12:26:51,986 - INFO - ✅ Successfully evaluated REC-6622 → eval_result/Eval-Qwen-30B/REC-6622-eval.json
+2025-08-18 12:26:51,986 - INFO - Processing 10/20: REC-6614
+2025-08-18 12:27:26,813 - INFO - ✅ Successfully evaluated REC-6614 → eval_result/Eval-Qwen-30B/REC-6614-eval.json
+2025-08-18 12:27:26,813 - INFO - Processing 11/20: REC-6602
+2025-08-18 12:28:08,147 - INFO - ✅ Successfully evaluated REC-6602 → eval_result/Eval-Qwen-30B/REC-6602-eval.json
+2025-08-18 12:28:08,148 - INFO - Processing 12/20: REC-6625
+2025-08-18 12:28:36,083 - INFO - ✅ Successfully evaluated REC-6625 → eval_result/Eval-Qwen-30B/REC-6625-eval.json
+2025-08-18 12:28:36,084 - INFO - Processing 13/20: REC-6605
+2025-08-18 12:29:15,819 - INFO - ✅ Successfully evaluated REC-6605 → eval_result/Eval-Qwen-30B/REC-6605-eval.json
+2025-08-18 12:29:15,819 - INFO - Processing 14/20: REC-6613
+2025-08-18 12:29:46,987 - INFO - ✅ Successfully evaluated REC-6613 → eval_result/Eval-Qwen-30B/REC-6613-eval.json
+2025-08-18 12:29:46,987 - INFO - Processing 15/20: REC-6644
+2025-08-18 12:30:09,736 - INFO - ✅ Successfully evaluated REC-6644 → eval_result/Eval-Qwen-30B/REC-6644-eval.json
+2025-08-18 12:30:09,736 - INFO - Processing 16/20: REC-6645
+2025-08-18 12:30:45,670 - INFO - ✅ Successfully evaluated REC-6645 → eval_result/Eval-Qwen-30B/REC-6645-eval.json
+2025-08-18 12:30:45,670 - INFO - Processing 17/20: REC-6612
+2025-08-18 12:31:35,006 - INFO - ✅ Successfully evaluated REC-6612 → eval_result/Eval-Qwen-30B/REC-6612-eval.json
+2025-08-18 12:31:35,006 - INFO - Processing 18/20: REC-6604
+2025-08-18 12:32:04,354 - INFO - ✅ Successfully evaluated REC-6604 → eval_result/Eval-Qwen-30B/REC-6604-eval.json
+2025-08-18 12:32:04,354 - INFO - Processing 19/20: REC-6608
+2025-08-18 12:32:37,165 - INFO - ✅ Successfully evaluated REC-6608 → eval_result/Eval-Qwen-30B/REC-6608-eval.json
+2025-08-18 12:32:37,165 - INFO - Processing 20/20: REC-6632
+2025-08-18 12:33:00,350 - INFO - ✅ Successfully evaluated REC-6632 → eval_result/Eval-Qwen-30B/REC-6632-eval.json
+2025-08-18 12:33:00,351 - INFO - ==================================================
+2025-08-18 12:33:00,351 - INFO - EVALUATION COMPLETE
+2025-08-18 12:33:00,351 - INFO - ==================================================
+2025-08-18 12:33:00,351 - INFO - Total files processed: 20
+2025-08-18 12:33:00,352 - INFO - Successful evaluations: 20
+2025-08-18 12:33:00,352 - INFO - Failed evaluations: 0
+2025-08-18 12:33:00,352 - INFO - Missing candidates: 0
+2025-08-18 12:33:00,352 - INFO - Missing transcripts: 0
+2025-08-18 12:33:00,352 - INFO - Success rate: 100.0%
+2025-08-18 12:33:00,352 - INFO - Total time: 608.89 seconds
+2025-08-18 12:33:00,352 - INFO - Average time per file: 30.44 seconds

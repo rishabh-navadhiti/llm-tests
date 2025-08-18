@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Perfect match for the patient's name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Perfect match for the chief complaint, adhering to instructions."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "The candidate's HPI format (Onset, Duration, Location, Severity) deviated from the benchmark's narrative style. More critically, it omitted key factual details from the transcript and benchmark, specifically the patient's denial of numbness and tingling, while including an interpretive 'gradual' onset not explicitly stated."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "The benchmark note explicitly shows '-' (empty) for this field, indicating no content is expected. The candidate note, despite having an instruction for verbatim extraction, provided detailed content. While the extracted content is factually present in the transcript, its presence in this field constitutes a major content difference from the benchmark's expected empty state."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "The candidate note contained factual inaccuracies and significant deviations in content. It misidentified 'neovasculitis' as 'narrowing' and provided a verbatim quote of an edit instruction ('except you can delete the \"calcific arteriogram is noted\"') instead of summarizing the actual findings for the left hand, as seen in the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "The candidate captured the main conditions (CMC arthritis, cubital/carpal tunnel) and correctly noted the progression of CMC arthritis. It included 'Right upper extremity Skin is intact' which matches the benchmark, despite paradoxical instructions within the candidate's own prompt. However, it hallucinated 'No tenderness to palpation', which was not stated in the transcript or present in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "The candidate accurately captured all the key elements of the plan, including injections, discussion about steroids, observation for carpal/cubital tunnel, consideration of nerve studies, and follow-up. There are minor wording differences (e.g., 'nerve conduction studies' vs 'nerve studies', 'agrees to the treatment plan' vs 'understands we would do this today') but the meaning and completeness are well-preserved."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60.0,
+  "overall_summary": "The candidate note performed well on straightforward information extraction for patient demographics and chief complaint. However, it struggled significantly with more complex fields like HPI and Imaging Results, demonstrating factual inaccuracies and an inability to correctly summarize or interpret medical information as per the benchmark. The 'MUSCULOSKELETAL_VERBATIM' field was incorrectly populated against the benchmark's empty expectation. The Assessment and Plan sections showed moderate performance, with some minor over-inclusions/hallucinations in Assessment, but generally strong coherence in the Plan section."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The candidate note perfectly matched the patient's name as provided in the benchmark note and transcript, adhering to the instruction."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The candidate note accurately identified 'Bilateral thumb pain' as the chief complaint, matching the benchmark and following the instruction to provide only the complaint without additional context."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The candidate followed its instruction to extract Onset, Duration, Location, and Severity, which is a different format than the narrative benchmark. While it correctly identified most of these details, it missed the important HPI detail 'He is not having any numbness and tingling' which was present in the benchmark and transcript. This constitutes missing a minor detail."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "The instruction for this field was to extract 'physical examination finding' verbatim. While the candidate did extract the initial physical exam findings verbatim, it incorrectly included subsequent X-ray findings. X-ray results are not physical examination findings, leading to a significant categorical error for this field, despite being verbatim from the transcript's dictated flow."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "The candidate note contained multiple inaccuracies compared to the benchmark and transcript. It missed 'three views' for the right hand X-ray, incorrectly changed 'neovasculitis with metacarpal' to 'narrowing', and misrepresented the 'calcific arteriogram' findings by implying its absence for both hands, whereas it was noted for the right hand in the transcript and benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "The candidate correctly identified the primary medical conditions. However, it hallucinated 'No tenderness to palpation', which was neither mentioned in the transcript nor implicitly derived. While it included 'Right upper extremity skin is intact' based on a conflicting internal instruction, the hallucination is a significant error."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "The candidate accurately captured most of the key plan points, including injections, discussion of steroid nature/rebound pain, observation for carpal/cubital tunnel, and consideration of nerve studies. It followed its instruction to use '6 to 8 weeks' for follow-up, despite the transcript saying '2 months'. There was minor redundancy in the injection points and a minor unstated addition ('Patient advised to monitor symptoms')."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "The candidate note demonstrated proficiency in extracting straightforward information such as patient name and chief complaint. However, its performance significantly declined in fields requiring nuanced content filtering, strict adherence to field scope, or accurate interpretation of complex medical details. The model struggled with distinguishing physical exam findings from imaging results (Musculoskeletal field), introduced factual inaccuracies/hallucinations (Imaging Results, Assessment), and sometimes prioritized its own formatting instructions over comprehensive factual content from the transcript (HPI). While it captured the essence of the plan, minor additions and redundancies were noted."
+}

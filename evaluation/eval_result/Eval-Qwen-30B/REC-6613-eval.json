@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient's name is accurately extracted and matches the benchmark exactly, adhering to the instruction."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate note accurately identifies the chief complaint but includes 'Evaluation of,' which is an unnecessary addition compared to the concise benchmark and the instruction to avoid additional details."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "The candidate note strictly adheres to its internal instruction to only provide Onset, Duration, Location, and Severity. While these specific details are accurate, this narrow instruction leads to a significant amount of the HPI content present in the benchmark note being omitted (e.g., fluctuation of masses, seeing rheumatologist, prior imaging), resulting in multiple missing factual details compared to the benchmark's comprehensive HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "The benchmark note explicitly lists '-' for this field, indicating no relevant musculoskeletal findings should be extracted for the note. The candidate, however, includes a detailed verbatim section of the musculoskeletal exam. This is a complete factual mismatch with the benchmark's ground truth for this specific field, despite the content being present in the transcript and the candidate following its instruction to extract verbatim. The benchmark implies this information should not be in this section."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "The content is almost identical to the benchmark, with only minor wording/tense differences ('show' vs 'showed', 'demonstrates' vs 'demonstrated', 'noted at' vs 'at') that do not alter the factual meaning."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "The candidate note accurately identifies the wrist cyst and thumb osteophyte, and correctly includes the 'intact skin' and 'no tenderness' by adhering to specific override instructions. However, it completely misses 'Bilateral hand pain,' which is present in the benchmark and mentioned in the transcript as a diagnosis."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The candidate note captures the main elements of the plan. However, it includes additional contextual sentences not present in the benchmark, slightly deviates in wording ('or' vs 'versus'), and fails to adhere to the instruction to 'User numbers instead of word where necessary' by writing 'six weeks' instead of '6 weeks'."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60.0,
+  "overall_summary": "The candidate note demonstrated strong accuracy in extracting the patient's name and imaging results with only minor deviations. However, its performance was significantly impacted by its handling of the 'HPI_SPENCER' and 'MUSCULOSKELETAL_VERBATIM' fields. For HPI, while it adhered to its internal instruction for specific attributes (onset, duration, etc.), it omitted substantial narrative content present in the benchmark, leading to a fragmented HPI. For Musculoskeletal, despite correctly extracting verbatim content from the transcript as per its instruction, it completely contradicted the benchmark, which indicated no content for this field, resulting in a hallucination relative to the established ground truth. In 'Assessment' and 'Plan', the candidate missed some key details and exhibited minor formatting/wording inconsistencies and adherence issues with specific instructions (e.g., numerical formatting), respectively."
+}

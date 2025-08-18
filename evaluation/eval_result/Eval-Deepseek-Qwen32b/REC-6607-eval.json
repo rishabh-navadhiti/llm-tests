@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The candidate note completely failed to identify the patient's name, which is a critical piece of information. The benchmark note correctly identifies 'Susan Shell' despite it not being explicitly mentioned in the provided transcript, implying it's either pre-filled or derived from other context not provided here."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The chief complaint 'Wrist pain' is accurate. However, the candidate added 'significantly limiting activities', which, while factually correct from the transcript, adds a detail that the instruction explicitly asked to avoid ('without any additional details or context'). The benchmark kept it concise as 'Wrist pain'."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "The candidate note failed to extract any HPI information. Even according to its own strict instruction ('Onset, duration, location and severity on the illness'), it should have captured at least the location (right wrist) and severity ('significantly limited by her wrist pain') from the transcript. The benchmark note provides a comprehensive and accurate HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "The candidate note completely failed to provide musculoskeletal physical examination findings as explicitly instructed ('What is the physical examination finding... Must be verbatim.'). Instead, it included a diagnosis ('Bilateral wrist arthritis') and a plan ('Right total wrist arthroplasty planned'), neither of which are physical exam findings. The benchmark correctly left this field blank, as the only exam mention ('Exam mostly unchanged, except you can delete the large, poorly defined nodule') was to be deleted or was not suitable for a verbatim entry here."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "The candidate note completely missed the imaging results. The doctor explicitly stated, 'The imaging you can leave all the same,' which the benchmark accurately summarized as 'Imaging mostly unchanged'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "The candidate note correctly identified 'Bilateral wrist arthritis' and 'Synovitis', and accurately noted 'Synovitis (improved)'. However, it failed to include 'Osteoporosis' as a current medical condition, despite the patient actively receiving an infusion for it. This is a significant omission given the instruction to list all relevant 'current medical conditions'."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "While the candidate correctly identified the primary treatment plan ('Plan for right total wrist arthroplasty.'), it hallucinated a follow-up time ('Follow-up in 6 to 8 weeks') that was not mentioned in the transcript. The phrase 'Discuss procedure and benefits with patient' is also an inference not directly stated by the doctor in the provided transcript. Hallucinating information significantly detracts from the note's reliability."
+    }
+  },
+  "total_score": 7,
+  "percentage": 20.0,
+  "overall_summary": "The candidate note performed poorly across multiple fields. It completely failed to extract critical information for Patient Name, HPI, and Imaging Results. Significant inaccuracies and hallucinations were present in the Musculoskeletal Exam (listing diagnoses/plans instead of exam findings) and the Plan (inventing a follow-up time). While it correctly identified the Chief Complaint and partially captured the Assessment, the pervasive omissions and hallucinations indicate a lack of robust information extraction and adherence to field-specific instructions."
+}

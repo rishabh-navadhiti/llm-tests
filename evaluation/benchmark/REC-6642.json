@@ -1,0 +1,152 @@
+[
+    {
+        "content": [
+            "Nadeem Nemi"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            [
+                {
+                    "score": 0.5556737184524536,
+                    "time": "0.019"
+                }
+            ]
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Bilateral thumb pain"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [
+                {
+                    "score": 0.6020451784133911,
+                    "time": "14.939"
+                }
+            ]
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "He reports his bilateral thumb pain has worsened significantly since 2019, most notably over the last six months. He denies any numbness or tingling, but reports significant pain and limitation in his thumbs."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6589550971984863,
+                    "time": "14.939"
+                },
+                {
+                    "score": 0.559755265712738,
+                    "time": "93.959"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            []
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "Three view X-rays of the right hand demonstrated severe joint space neovasculitis of the metacarpal joint with osteophytosis, a Z deformity with hyperextension at the MCP joint, and calcific arteriogram.  Three view X-rays of the left hand demonstrated severe joint space neovasculitis of the metacarpal joint with osteophytosis and a Z deformity with hyperextension at the MCP joint."
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [
+                {
+                    "score": 0.7341017127037048,
+                    "time": "14.939"
+                }
+            ]
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Right upper extremity Skin is intact.",
+            "Right cubital tunnel syndrome",
+            "Bilateral carpal tunnel syndrome",
+            "Bilateral thumb CMC arthritis"
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [],
+            [
+                {
+                    "score": 0.5112055540084839,
+                    "time": "14.939"
+                }
+            ],
+            [
+                {
+                    "score": 0.5786461234092712,
+                    "time": "14.939"
+                },
+                {
+                    "score": 0.521338939666748,
+                    "time": "93.959"
+                }
+            ],
+            [
+                {
+                    "score": 0.6394619941711426,
+                    "time": "14.939"
+                },
+                {
+                    "score": 0.5726529359817505,
+                    "time": "93.959"
+                }
+            ]
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Trial of injections for bilateral thumb CMC arthritis. Discussed the temporary nature of steroid injections and the possibility of rebound pain. He understands the procedure will be done today.",
+            "Observation for carpal tunnel and cubital tunnel syndrome. Consider nerve studies if symptoms re-emerge.",
+            "Return to clinic in 2 months."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.5826528072357178,
+                    "time": "14.939"
+                },
+                {
+                    "score": 0.5825064778327942,
+                    "time": "93.959"
+                }
+            ],
+            [
+                {
+                    "score": 0.5467450618743896,
+                    "time": "14.939"
+                },
+                {
+                    "score": 0.5593122243881226,
+                    "time": "93.959"
+                }
+            ],
+            [
+                {
+                    "score": 0.742666482925415,
+                    "time": "128.419"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "The candidate correctly identified 'Chaz Thomas'. However, the benchmark note is structured for a single patient, implying only one patient name is expected. The candidate provided a list of all patients mentioned in the transcript, which, while factually correct for the entire transcript, deviates from the implied single-patient context of the benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "The benchmark states the chief complaint concisely as 'Follow-up'. The candidate provided 'Follow-up for splint removal and concerns about blood exposure'. The instruction for this field was to provide 'only the patient's chief complaint without any additional details or context', which the candidate failed to fully adhere to by adding extra context."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "The candidate's instruction for HPI was to provide 'Onset, duration, location and severity'. While the candidate attempted to follow this format, the content provided ('Onset: Yesterday; Duration: Recent; Location: Splint area; Severity: Mild pain with limited flexion') significantly deviates from the narrative HPI provided in the benchmark and the transcript. Specifically, 'Mild pain with limited flexion' is an exam finding, not part of the HPI, and 'Duration' and 'Location' are inferences not explicitly stated in the HPI section of the transcript for Chaz Thomas."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "The candidate's output 'Laceration clean, dry, intact with sutures; sutures removed today; tolerating well; limited flexion' differs from the benchmark 'Laceration, clean dry and intact with sutures. Excellent, thumbs up but some pain, limited flexion.' The candidate correctly includes 'sutures removed today; tolerating well' which were dictated but missing from the benchmark. However, the candidate omits 'Excellent, thumbs up but some pain' which is present in the benchmark. Due to these discrepancies, it's a partial match against the benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both the candidate and benchmark correctly indicate no imaging results ('-') for this patient."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "The candidate's assessment ('Splint-related concerns; limited flexion') is entirely different from the benchmark's ('Right upper extremity Skin is intact.', 'No tenderness to palpation.'). While the benchmark's content contains a potential factual error from the transcript ('No tenderness to palpation' vs 'some pain'), the evaluation is strictly against the benchmark as the ground truth. Therefore, the candidate's output is considered a major content difference."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The candidate incorrectly included 'Sutures removed today' as part of the plan. This was an exam finding from the transcript, not a plan item. The rest of the plan items ('transition to removable splint; hand therapy; follow-up in two weeks') are consistent with the benchmark and transcript. The inclusion of an incorrect detail lowers the score."
+    }
+  },
+  "total_score": 20,
+  "percentage": 57.14,
+  "overall_summary": "The candidate note achieved varying levels of accuracy across the fields. It performed well in identifying the patient and the absence of imaging results. However, it struggled significantly with the 'HPI Spencer' and 'Assessment Spencer' fields, where its content and format deviated substantially from the benchmark, indicating issues with instruction adherence and factual mapping. The 'Chief Complaint', 'Musculoskeletal Verbatim', and 'Plan Spencer' fields had minor inaccuracies or omissions compared to the benchmark, preventing perfect scores. The candidate's internal contradictions in instructions for 'Assessment' also highlighted difficulties in defining expected output."
+}

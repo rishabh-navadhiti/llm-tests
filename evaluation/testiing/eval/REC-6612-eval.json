@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The transcript does not contain the patient's name. While the candidate correctly avoids hallucinating, the benchmark explicitly provides 'Susan Oakes' as the expected ground truth. Therefore, the candidate's empty content is a complete mismatch with the benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The candidate accurately identifies the main symptoms discussed by the patient as chief complaints: 'Achiness in wrist, limited motion, and electric sensations in hand'. This aligns well with the transcript where these issues are brought up as concerns. The benchmark is slightly less comprehensive by omitting the electric sensations, which the patient explicitly asks about."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The candidate attempts to adhere strictly to its instruction to only include Onset, Duration, Location, and Severity, which it does accurately for the symptoms themselves. However, it misses other factual content present in the benchmark, such as the patient's general well-being, difficulties, the fact she finally had nerve studies, and her specific inquiry about the nerve study results. This makes the HPI less comprehensive than the benchmark's factual content."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate precisely extracts 'Exam findings are unchanged' verbatim from the transcript, adhering perfectly to its instruction to provide verbatim physical examination findings. The benchmark's content '-' is inaccurate as the doctor did dictate specific information for this section."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "The candidate incorrectly states 'Nerve study results pending'. The transcript clearly indicates that the nerve studies have been performed, and the doctor reviews and discusses their findings (e.g., 'no evidence of carpal tunnel'). Therefore, the results are available, not pending."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "The candidate provides a factually accurate list of current medical conditions/assessments derived from the transcript, including 'Wrist achiness and limited motion', 'Electric sensations in hand', 'Possible ulnar nerve compression', and 'Cervical radiculopathy'. While the benchmark's final content for this field is empty, which is a direct mismatch, the candidate's output is relevant and adheres to its instruction to generate a list of conditions. The score is a 4 because while factually correct and following its own instructions, the benchmark's empty state implies a possible nuance or convention not fully captured, or it's a benchmark error, making a 'perfect' match complex."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "The candidate identifies the key action items accurately (activity, urology consult, follow-up, full duty). It correctly captures 'Urology consult' where the benchmark has a factual error ('Neurology consult'). However, the candidate significantly misses crucial details related to the 'discussion or education provided' and 'relevant findings or explanations discussed' as per its own instructions. Specifically, the candidate omits the detailed review of the nerve study results, including the findings of no carpal tunnel and the discussion about the ulnar nerve compression that will be watched. This makes the plan summary incomplete."
+    }
+  },
+  "total_score": 20,
+  "percentage": 57.14,
+  "overall_summary": "The candidate note demonstrates strong performance in extracting verbatim information where instructed and providing an accurate chief complaint. It struggled significantly with fields where the benchmark provided specific data not present in the transcript (Patient Name) or where its own instructions led to missing factual content compared to the more comprehensive benchmark (HPI, Plan). A notable factual error was identified in the Imaging Results. The candidate successfully adhered to its own formatting instructions for HPI and Assessment, producing factually correct content for those specific criteria, even when the benchmark's content was conflicting or empty."
+}

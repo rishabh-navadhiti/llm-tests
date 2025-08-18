@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "The candidate note includes 'Mr.' which is not present in the benchmark, although the core patient name is correct. The instruction implied to only return the name itself without titles."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Perfect match with the benchmark note and accurately reflects the chief complaint from the transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "The candidate note returned '-', indicating no information, while the benchmark correctly extracted 'He reports left ring finger trigger finger' from the transcript, which is the HPI for the patient."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "The instruction for this field specifically asks for 'physical examination finding... Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim.' The doctor did not dictate any physical examination findings. 'Plantar tendonitis' is a diagnosis/assessment, not a physical exam finding. Therefore, the candidate note's inclusion of 'Plantar tendonitis' is incorrect for this specific field, while the benchmark correctly uses '-'"
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both the candidate and benchmark notes correctly indicate no imaging results relevant to Kevin Clancy, as the mentioned imaging finding was for 'David'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "The candidate note missed one of the two primary assessments. It only listed 'Left ring finger trigger finger' and failed to include 'Plantar tendonitis', which was clearly stated by the doctor."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "The candidate note is missing significant details from the plan. It omitted the 'Left ring finger trigger finger injection' and the 'Return to clinic in 2 weeks' follow-up, only capturing the plan for plantar tendonitis."
+    }
+  },
+  "total_score": 17,
+  "percentage": 48.57,
+  "overall_summary": "The candidate note performed well in identifying the chief complaint and correctly noting the absence of relevant imaging results. However, it significantly struggled with the HPI, Musculoskeletal exam findings (hallucinating/misclassifying information), Assessment, and Plan fields. There were critical omissions in the Assessment and Plan, and the HPI was completely missed. The inclusion of 'Mr.' in the patient name was a minor deviation from the strict benchmark. Overall, the note suffers from significant factual incompleteness and misinterpretation of field instructions."
+}

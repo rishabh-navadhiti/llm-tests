@@ -1,0 +1,245 @@
+[
+    {
+        "content": [
+            "Susan Oakes"
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": false,
+                    "generic": true,
+                    "missingContent": false,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "-"
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-06T18:31:20.712Z",
+                "to": [
+                    "Susan Oakes"
+                ],
+                "version": 1
+            }
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Follow-up for wrist achiness and limited motion."
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            []
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "8.6.2025",
+            "She is here today for followup.  She states that she is doing okay overall.  She states that the life is difficult at the moment but she finally had her nerve studies.  She continues to have the same sort of achiness in her wrist and limited motion, but this is stable and does not really limit her.  She does get some electric sensation to the ulnar and dorsal aspects of her hand when she is using her hands a lot.  She wants to know what this is and if the nerve studies showed anything.",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "She reports doing okay overall, though life is currently difficult. She recently had nerve studies done. She continues to experience the same achiness in her wrist and limited motion, which is stable and not significantly limiting.  She experiences electric sensations in the ulnar and dorsal aspects of her hand with frequent hand use. She is inquiring about the results of her nerve studies. "
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-06T18:31:35.080Z",
+                "to": [
+                    "8.6.2025",
+                    "She is here today for followup.  She states that she is doing okay overall.  She states that the life is difficult at the moment but she finally had her nerve studies.  She continues to have the same sort of achiness in her wrist and limited motion, but this is stable and does not really limit her.  She does get some electric sensation to the ulnar and dorsal aspects of her hand when she is using her hands a lot.  She wants to know what this is and if the nerve studies showed anything.",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.7009009122848511,
+                    "time": "0.079"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            []
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "Nerve study results"
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [
+                {
+                    "score": 0.5422866940498352,
+                    "time": "0.079"
+                }
+            ]
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Right upper extremity Skin is intact.",
+                    "Electric sensations in the ulnar and dorsal aspects of the hand",
+                    "Wrist pain",
+                    " No tenderness to palpation. ",
+                    "Limited wrist motion"
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-06T18:32:33.412Z",
+                "to": [
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [],
+            [
+                {
+                    "score": 0.5759165287017822,
+                    "time": "0.079"
+                }
+            ],
+            [
+                {
+                    "score": 0.5366597175598145,
+                    "time": "0.079"
+                }
+            ],
+            [],
+            []
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Regarding the wrist",
+            "She is doing well",
+            "She is continuing to gain strength",
+            "Recommend advance activity as tolerated",
+            "Advanced weightbearing",
+            "",
+            "And then you can delete the carpal tunnel",
+            "",
+            "Regarding the cervical radiculopathy",
+            "Reviewed the nerve studies",
+            "There is no evidence of carpal tunnel",
+            "There is perhaps some evidence of ulnar nerve compression of Guyon's canal, but she is not symptomatic in that distribution, we will watch this for now",
+            "Recommend neurology consult for evaluation of radiculopathy",
+            "Return to clinic in 6 weeks for followup",
+            "",
+            "Disability Okay for full duty starting 9/1/2025",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Regarding the wrist: She is doing well and continuing to gain strength. Recommend advanced activity, as she has tolerated advanced laboring. Delete the carpal tunnel diagnosis. Regarding the cervical radiculopathy: Review the nerve studies. There is no evidence of carpal tunnel, but there is possible evidence of ulnar nerve compression at Guyon's canal, though she is not symptomatic in that distribution. This will be monitored. Recommend a urology consult for evaluation of radiculopathy. Return to clinic in 6 weeks.  Disability: Okay for full duty starting 9-1-2025."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-06T18:32:16.084Z",
+                "to": [
+                    "Regarding the wrist",
+                    "She is doing well",
+                    "She is continuing to gain strength",
+                    "Recommend advance activity as tolerated",
+                    "Advanced weightbearing",
+                    "",
+                    "And then you can delete the carpal tunnel",
+                    "",
+                    "Regarding the cervical radiculopathy",
+                    "Reviewed the nerve studies",
+                    "There is no evidence of carpal tunnel",
+                    "There is perhaps some evidence of ulnar nerve compression of Guyon's canal, but she is not symptomatic in that distribution, we will watch this for now",
+                    "Recommend neurology consult for evaluation of radiculopathy",
+                    "Return to clinic in 6 weeks for followup",
+                    "",
+                    "Disability Okay for full duty starting 9/1/2025",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.8338841795921326,
+                    "time": "0.079"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

@@ -1,0 +1,107 @@
+[
+    {
+        "content": [
+            "Stephanie Humphrey"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Left wrist pain"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [
+                {
+                    "score": 0.6840603351593018,
+                    "time": "8.599"
+                }
+            ]
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "She reports left wrist pain that began after a trip and fall on 06/21/2025 while leaving Groundlings.  The pain initially started after the fall and improved slightly. She then went to urgent care, where X-rays showed no fractures, and she was diagnosed with a sprain.  Her pain increased with humidity during a trip to Massachusetts, prompting her current visit for evaluation and treatment."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.5924010872840881,
+                    "time": "8.599"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            []
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "Left wrist X-rays taken at urgent care showed no fractures.Current left wrist X-rays are normal."
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [
+                {
+                    "score": 0.6849675178527832,
+                    "time": "8.599"
+                }
+            ]
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Right upper extremity Skin is intact.",
+            "Left ECU tendonitis",
+            "Left ulnar-sided wrist pain",
+            "No tenderness to palpation."
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [],
+            [
+                {
+                    "score": 0.6878291964530945,
+                    "time": "8.599"
+                }
+            ],
+            [
+                {
+                    "score": 0.6818130612373352,
+                    "time": "8.599"
+                }
+            ],
+            []
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Recommend trial of hand therapy.",
+            "Return to clinic after MRI.",
+            "Recommend MRI for further evaluation."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [],
+            [],
+            []
+        ],
+        "title": "Plan"
+    }
+]

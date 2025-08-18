@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Perfect match in factual content and adherence to instructions. The patient's name is accurately extracted."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Perfect match in factual content and adherence to instructions. The chief complaint is accurately identified without additional details."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "While the candidate followed its internal instruction to focus on Onset, Duration, Location, and Severity, it significantly deviates from the benchmark's comprehensive narrative HPI. It is missing several important details present in the benchmark, such as the fluctuation of the masses and the patient consulting a rheumatologist who ordered imaging."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "The benchmark note explicitly states '-' for this field, indicating no relevant content or that the information should not be included here as per the ground truth. The candidate note, however, provides a detailed verbatim transcription of musculoskeletal exam findings. This constitutes a complete mismatch with the benchmark, even though the candidate's content is factually present in the transcript. The benchmark is considered the ground truth."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Minor wording and formatting differences, such as the omission of 'Outside' for X-rays and merging ultrasound findings into a single sentence. However, all factual content from the benchmark is present, and the meaning is perfectly preserved."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "The candidate accurately identifies the two primary medical conditions (Left first dorsal compartment wrist cyst and Left thumb MCP joint osteophyte) with only minor wording differences ('joint'). It omits 'Bilateral hand pain' which is in the benchmark (though its clarity in the transcript is ambiguous). The candidate correctly omits 'Right upper extremity Skin is intact' (which has a factual laterality error in the benchmark) and 'No tenderness to palpation', which are generally considered normal exam findings, not primary diagnoses for an assessment list. Given the core conditions are present and some benchmark items are debatable, this is a strong match."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "The candidate missed a critical and explicit instruction from the doctor regarding the plan: 'Consider aspiration versus biopsy of the wrist mass.' This is a significant omission, although other plan items are well-captured and presented in a conversational tone."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "The candidate note performed well on straightforward fields like Patient Name and Chief Complaint. It accurately extracted Imaging Results with minor formatting differences. The Assessment section captured the primary diagnoses effectively, despite some questionable content in the benchmark. However, the note significantly struggled with the HPI, providing a highly condensed version due to its restrictive internal instructions, and critically failed on the Musculoskeletal Verbatim section by providing content where the benchmark specified none. A major omission was also noted in the Plan field, where a key medical procedure was missed. The internal instructions for the candidate sometimes led to deviations from the benchmark's expected output, which impacted scoring negatively where the benchmark was considered absolute ground truth."
+}

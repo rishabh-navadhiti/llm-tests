@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient's name 'N. Kalinski' is accurately extracted and perfectly matches the benchmark note."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate note includes 'Recurrence of' in the chief complaint, which is factually accurate but makes the Chief Complaint slightly less concise than the benchmark's 'Left middle finger trigger finger'. The core meaning is preserved."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "The candidate note adhered to its internal instruction to only provide Onset, Duration, Location, and Severity. However, this instruction severely limited the content, leading to the omission of crucial historical details (previous injection date) and contextual information (current recurrence, future follow-up) that are essential components of a comprehensive HPI as present in the benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The transcript did not contain any new dictated musculoskeletal exam findings. The candidate correctly returned an empty array, adhering perfectly to the instruction 'If not information is found, please return empty.'"
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "The doctor explicitly stated, 'We can remove the imaging review for the plan.' The candidate accurately captured this as 'No imaging review performed,' which is a perfect factual representation and more explicit than the benchmark's '-'. The key name difference (IMAGING_RESULTS vs IMAGING_GEORGE) is noted but not penalized as the content is being evaluated."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "While 'Recurrence of left middle finger trigger finger' is an acceptable assessment, the candidate hallucinated 'Right upper extremity Skin is intact.' This finding was not dictated by the doctor in the transcript. Furthermore, its inclusion directly violates the candidate's own instruction 'Do not include normal findings such as “skin is intact”.' This is a major factual error and a self-contradiction."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "The candidate incorrectly included historical HPI/assessment details ('Patient underwent left middle finger trigger finger injection on 10-22-24.', 'He has had recurrence of symptoms.') in the plan section. Critically, it hallucinated the follow-up time '6 to 8 weeks'; the doctor only stated 'He will return to clinic if he has any recurrence.' This constitutes major content differences and a significant hallucination."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71428571428571,
+  "overall_summary": "The candidate note demonstrated accuracy in extracting patient demographics and correctly identifying absent information for musculoskeletal exam and imaging. However, it exhibited significant weaknesses in clinical content fields, particularly HPI, Assessment, and Plan. The HPI was overly restricted by its internal instruction, leading to critical omissions. The Assessment and Plan sections suffered from hallucinations (e.g., 'Right upper extremity Skin is intact' and '6 to 8 weeks' follow-up) and included details that were out of scope for the respective sections (e.g., historical HPI in the Plan). The note struggled with distinguishing between different sections of a clinical note and maintaining factual accuracy based solely on the transcript, especially when its own instructions were contradictory or overly restrictive."
+}

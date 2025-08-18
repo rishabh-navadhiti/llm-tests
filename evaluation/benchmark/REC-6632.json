@@ -1,0 +1,100 @@
+[
+    {
+        "content": [
+            "Greta Griswana"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Forearm pain, thumb pain"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [
+                {
+                    "score": 0.620316207408905,
+                    "time": "1.86"
+                },
+                {
+                    "score": 0.5268980264663696,
+                    "time": "113.459"
+                }
+            ]
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "Greta Griswana is here for follow-up. She reports her forearm pain is better, but her thumb pain is severe. She wants to know what she can do to alleviate her thumb pain. She mentioned her daughter's wedding was this weekend, and she did not have to do a lot with her hand. The pain is better, but overall it is the same."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6361844539642334,
+                    "time": "1.86"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "Right upper extremity Significant tendinous location of the trapeziometacarpal joint, very positive grind. No tenderness with A1 pulley. Some tenderness with U&R imminence."
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            [
+                {
+                    "score": 0.5705549120903015,
+                    "time": "1.86"
+                }
+            ]
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "X-rays reviewed. It shows planned arthritis."
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [
+                {
+                    "score": 0.5809075832366943,
+                    "time": "1.86"
+                },
+                {
+                    "score": 0.5533627867698669,
+                    "time": "113.459"
+                }
+            ]
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Planned arthritis"
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            []
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Trial of steroid injection. Talked about temporary nature, talked about procedure and postoperative protocol. Return to clinic in 8 weeks."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            []
+        ],
+        "title": "Plan"
+    }
+]

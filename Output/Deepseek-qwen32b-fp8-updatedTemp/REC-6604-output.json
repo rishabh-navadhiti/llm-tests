@@ -1,0 +1,72 @@
+Okay, so I need to process this medical transcript and create a structured patient visit note using the provided JSON template. Let me go through each section step by step.
+
+First, the Patient Name. The transcript mentions Nicole Coffee, so that's straightforward. I'll extract her full name exactly as it appears.
+
+Next is the Chief Complaint. The doctor says she's here for pain in the left index finger. That's clear, so I'll note that without any extra details.
+
+Moving on to the History of Present Illness (HPI Spencer). The transcript mentions that Nicole has had pain for a few months, noticed it when she came in for a shoulder appointment, and it's gotten worse. She wants an injection now. I'll summarize this into a coherent paragraph, focusing on onset, duration, and progression without adding any interpretations.
+
+For the Musculoskeletal examination, the doctor notes tenderness on the left index finger with an A1 pulley, triggering, and good range of motion. I'll extract this verbatim as per the instructions.
+
+Imaging Results are mentioned as X-rays of the finger being normal. I'll include that exactly as stated.
+
+The Assessment should list active problems. From the transcript, the main issues are pain in the left index finger, triggering, and tenderness. I'll present these as a concise list.
+
+Finally, the Plan. The doctor decides to do a trigger finger injection today, and the X-rays are normal. I'll include these as the plan, making sure to follow the exact wording from the transcript.
+
+I need to ensure that each section follows the template strictly, using the correct keys and defaults where necessary. Also, I must avoid any grammatical errors and maintain a professional tone throughout.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Nicole Coffee"],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Pain in left index finger."],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["Nicole Coffee reports pain in her left index finger for the past few months. She initially noticed it during a previous visit for a shoulder issue. The pain has worsened and has not improved, prompting her to seek further evaluation and inquire about an injection."],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Left upper extremity skin is clean, dry, and tacky without erythema. Acute moderate tenderness on left index finger with an A1 pulley. There is walking catching. There is triggering on index finger. Excellent range of motion overall. Able to give a thumbs up."],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-rays of the finger are normal."],
+    "default": "-",
+    "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Pain in left index finger", "Triggering of index finger", "Tenderness on left index finger with A1 pulley."],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Plan to perform trigger finger injection today.", "X-rays of the finger are normal."],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."
+  }
+]
+```

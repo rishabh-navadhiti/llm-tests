@@ -19,12 +19,12 @@ VLLM_API_URL = "http://localhost:8000/v1/chat/completions"  # Changed to chat co
 
 # CONFIG — change as needed
 INPUT_DIR = Path("/workspace/llm-tests/transcripts/Spencer")
-OUTPUT_DIR = Path("/workspace/llm-tests/Output/Deepseek-qwen32b-updatedTemp")
+OUTPUT_DIR = Path("/workspace/llm-tests/Output/Deepseek-qwen32b-fp8-updatedTemp")
 TEMPLATE_PATH = Path("/workspace/llm-tests/templates/doctor-template-specialized-v2.json")
 PROMPT_PATH = Path("/workspace/llm-tests/prompt-v1.txt")
 
 MAX_TOKENS = 10000
-TEMPERATURE = 1
+TEMPERATURE = 0.6  # Changed from 1 to 0.6
 REQUEST_TIMEOUT = 600  # seconds
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -66,18 +66,19 @@ def generate_response_vllm(system_prompt: str, template: str, transcript: str) -
     show_gpu_memory("before request")
     start_time = time.time()
 
-    # Put the template and strict instructions into the system message, transcript into user message.
-    system_content = (
+    # Everything goes into the user message - no system prompt
+    user_content = (
         system_prompt
         + "\n\nTEMPLATE_JSON (use exactly this structure; return only JSON matching the template):\n"
         + template
         + "\n\nINSTRUCTION: Return only valid JSON (array/object) that exactly matches the template. "
         + "Do NOT include any extra commentary, explanation, or surrounding markdown/code fences."
+        + "\n\nMedical Transcript to Process:\n\n"
+        + transcript
     )
 
     messages = [
-        {"role": "system", "content": system_content},
-        {"role": "user", "content": f"Medical Transcript to Process:\n\n{transcript}"},
+        {"role": "user", "content": user_content}
     ]
 
     payload = {

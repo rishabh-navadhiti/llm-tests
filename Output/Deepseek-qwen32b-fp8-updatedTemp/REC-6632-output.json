@@ -1,0 +1,76 @@
+Okay, so I need to process this medical transcript and create a structured patient visit note using the provided JSON template. Let me go through each part step by step.
+
+First, looking at the transcript, I see multiple conversations. The first one is from the doctor mentioning "Greta Griswana" as the patient. She's here for a follow-up, and her forearm pain is better, but her thumb pain is severe. So, the patient name should be Greta Griswana. I'll note that under PATIENT_NAME.
+
+Next, the chief complaint. The patient mentions her thumb pain is killing her, so the chief complaint should be "Thumb pain." That's straightforward.
+
+For the History of Present Illness (HPI), I need to summarize what's given. Greta's forearm pain has improved, but her thumb pain is worse. She's seeking options for relief. On exam, the right thumb's trapeziometacarpal joint has a positive grind test. No tenderness at A1 pulley, but some at U&R. X-rays show planned arthritis, and a steroid injection is recommended. I should structure this into a coherent paragraph without adding any extra info.
+
+Moving to Musculoskeletal findings, the doctor notes the positive grind test at the trapeziometacarpal joint, no tenderness at A1 pulley, and some tenderness at U&R. I'll list these verbatim as they are.
+
+Imaging Results: The X-rays showed planned arthritis. So, I'll note "X-rays show planned arthritis."
+
+Assessment should include the active problems. From the transcript, it's thumb pain, trapeziometacarpal joint grind test positive, and planned arthritis. I'll list these as separate points.
+
+The Plan includes a steroid injection, discussing its temporary nature and procedure, and a follow-up in eight weeks. I'll structure this as bullet points, exactly as mentioned.
+
+I also notice that there are other patients mentioned, like Nancy Presante and Jackson Garcia, but since the instructions are to focus on the first patient, I'll ignore them unless they're part of the same visit, which they don't seem to be.
+
+I need to ensure that all sections follow the template exactly, using the correct keys and defaults where necessary. For sections without info, I'll use the default "-". Also, I must avoid any markdown and keep the JSON structure precise.
+
+Finally, I'll review everything to make sure there are no grammatical errors and that the JSON is correctly formatted. I'll double-check each section against the template to ensure compliance.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Greta Griswana"],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Thumb pain"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["Greta Griswana is here for follow-up. She reports improvement in forearm pain but severe thumb pain. She seeks options for relief. On examination, the right thumb demonstrates a positive grind test at the trapeziometacarpal joint. No tenderness at the A1 pulley, but some tenderness at U&R. X-rays reveal planned arthritis, and a steroid injection is recommended."],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Positive grind test at the trapeziometacarpal joint of the right thumb. No tenderness at the A1 pulley. Some tenderness at U&R."],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-rays show planned arthritis."],
+    "default": "-",
+    "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Thumb pain", "Positive grind test at trapeziometacarpal joint", "Planned arthritis"],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Trial of steroid injection", "Discussion of temporary nature, procedure, and postoperative protocol", "Return to clinic in eight weeks for follow-up if symptoms persist."],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."
+  }
+]
+```

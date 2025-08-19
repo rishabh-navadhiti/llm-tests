@@ -1,0 +1,79 @@
+Okay, so I need to process this medical transcript into a structured patient visit note using the provided JSON template. The user has given a detailed template with specific instructions for each section. Let me go through each part step by step.
+
+First, looking at the transcript, there are multiple patients mentioned: Chaz Thomas, Meesha Senuda, Grace Twan, Charles Shaw, and Josefina Marcial. Each has their own section in the conversation. Since the template is structured for each patient individually, I need to extract each patient's information separately.
+
+Starting with Chaz Thomas. His name is explicitly mentioned, so that's straightforward for the PATIENT_NAME. His chief complaint is about follow-up after taking off his splint. The HPI Spencer section should include his history of present illness. He took off the splint because someone else's blood got on it, and he's concerned about what to do next. The exam findings for musculoskeletal include the laceration being clean, dry, and intact with sutures removed, tolerating well, some pain, and limited flexion. Imaging results aren't mentioned, so it's a default. The assessment would be the laceration healing and pain with limited flexion. The plan includes sutures today, transition to a removable splint, hand therapy, and follow-up in two weeks.
+
+Next, Meesha Senuda. Her name is clear. She's here for a follow-up, doing okay, wearing a splint, and has some sensitivity and stiffness in the PIP joint. Her exam shows limited flexion at the DIP joint, stiffness, minimal tenosynovitis, hypersensitivity. No imaging done. Assessment is PIP stiffness and DIP joint limitations. The plan is to discontinue the splint, continue wearing at night, home exercises, and follow-up in six weeks.
+
+Grace Twan is next. She's here for MRI review. Her exam is unchanged, and the MRI shows a mass that improved with Kenalog. The assessment is systemic symptoms and mass. The plan is to talk to Dr. Sidlow, follow-up in three months, and consider biopsy.
+
+Charles Shaw is mentioned briefly, but the note says his note was already done, so we can skip him unless more info is needed, but the transcript doesn't provide details.
+
+Josefina Marcial has right hand pain after injection, now 80% better, and left wrist issues. Her exam shows bilateral tenosynovitis, ulnar prominence, limited motion. X-rays show ulnar prominence and arthritis. The plan is observation, night splints, home exercises, and possible injection if no improvement.
+
+I need to make sure each section is filled correctly, using the exact terms from the transcript without adding anything. For each patient, I'll create a JSON object with the respective details. If any info is missing, I'll use the default value specified in the template.
+
+I also need to ensure that the JSON structure matches exactly, with each key corresponding correctly. No extra commentary, just the JSON array with each patient's data as per the template.
+
+I should double-check for any grammatical errors and ensure proper medical terminology. Also, if any abbreviations or terms are unclear, I should interpret based on context but only correct if strongly supported.
+
+Finally, I'll compile all this into the required JSON format, making sure each patient's data is correctly placed under their respective keys without any deviations from the template structure.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": "Chaz Thomas",
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": "Follow-up after removing splint.",
+    "default": "-",
+    "instruction": "Patient is here for follow-up after removing splint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": "Chaz Thomas is here for a follow-up after removing his splint yesterday due to someone else's blood getting on it. He is seeking advice on what to do next.",
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": "Laceration clean, dry, and intact with sutures. Sutures removed today, tolerating well without complication. Some pain and limited flexion.",
+    "default": "",
+    "instruction": "Physical examination findings related to Musculoskeletal."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": "-",
+    "default": "-",
+    "instruction": "No imaging results mentioned."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Laceration healing well",
+      "Pain with limited flexion"
+    ],
+    "default": "-",
+    "instruction": "Active problems or conditions relevant to this visit."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": "Sutures removed today. Transition to removable splint. Initiate hand therapy. Follow-up in two weeks.",
+    "default": "-",
+    "instruction": "Doctor's plan as dictated."
+  }
+]
+```

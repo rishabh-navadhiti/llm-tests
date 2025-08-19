@@ -1,0 +1,76 @@
+Okay, so I'm trying to help this user who's a seasoned medical scribe. They need to transform a doctor-patient conversation into a structured patient visit note using a specific SOAP template. The user provided a JSON template and a medical transcript, and they want the output in a very precise JSON format.
+
+First, I need to understand the structure of the JSON template. It has several sections like Patient Name, Chief Complaint, HPI Spencer, etc. Each section has a title, key, content, default, and instruction. My job is to extract information from the transcript and fill these sections accordingly.
+
+Looking at the transcript, I notice there are two patients mentioned: one is a male with a left small finger issue, and the other is a child named Gianna Saborio. The user's instruction says to extract the patient's name exactly as it appears. So, for the first patient, the name isn't explicitly mentioned, so I should use the default "-". For Gianna, her name is clearly stated, so that goes into the patient name section.
+
+Next, the Chief Complaint. For the first patient, the main issue is the left small finger, so the chief complaint is "Evaluation of left small finger." For Gianna, she's here for a follow-up, so her chief complaint is "Follow-up for tethering with flexion of fingers."
+
+Moving on to HPI Spencer. For the first patient, the history includes noticing locking and catching two years ago, reluctance to come in due to previous surgeries, and current symptoms. I need to summarize this into a coherent paragraph. For Gianna, her history is about tethering and wanting to know treatment options, so that's her HPI.
+
+The Musculoskeletal section requires verbatim extraction of physical exam findings. For the first patient, the exam notes include skin purging, tenderness, a nodule, and well-healed incisions. For Gianna, the exam mentions sutures, range of motion, and adherence of the incision.
+
+Imaging Results: The first patient had X-rays that were normal, so I note that. Gianna's transcript doesn't mention imaging, so I use the default "-".
+
+Assessment should list active problems. For the first patient, it's trigger finger and status post surgery. For Gianna, it's tethering and status post surgery.
+
+The Plan section needs to capture exactly what the doctor dictates. For the first patient, the plan is trigger finger surgery. For Gianna, it's activity advancement, avoiding discomfort, school return, and a follow-up video visit.
+
+I need to ensure each section follows the template's instructions, uses proper medical terminology, and avoids any inferred information. Also, the JSON must be correctly formatted without any extra text or markdown.
+
+I think I've covered all sections, but I should double-check each part to make sure nothing's missed and that the JSON structure matches exactly what the user provided. It's crucial to maintain the order and format precisely as specified to ensure seamless integration with their processing systems.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Evaluation of left small finger"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["The patient is a right-hand dominant designer who first noticed locking and catching in his left small finger approximately two years ago. He avoided seeking treatment due to prior surgery for other trigger fingers but now seeks evaluation for this finger."],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Left small finger skin is purging without erythema, moderate tenderness to palpation. A small nodule is present at the metacarpophalangeal joint, triggering excellent range of motion. Well-healed trigger finger incisions to the middle finger."],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-rays normal for the finger."],
+    "default": "-",
+    "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Trigger finger (left small finger)", "Status post trigger finger surgery (middle finger)"],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Planned trigger finger surgery for the left small finger."],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."
+  }
+]
+```

@@ -1,0 +1,76 @@
+Okay, so I need to help process this medical transcript into a structured patient visit note using the provided JSON template. Let me start by understanding the task.
+
+First, I'll look at the JSON template provided. It has several sections like Patient Name, Chief Complaint, HPI Spencer, etc. Each section has specific instructions on what to extract from the transcript.
+
+Looking at the transcript, I see it's a conversation between a doctor and a patient. The doctor mentions several points: the patient had a knee replacement, her synovitis has improved with an injection, she's started an infusion for osteoporosis, and she wants to discuss total wrist arthroplasty because of significant wrist pain. The exam notes mention bilateral wrist arthritis and an interest in surgery.
+
+Starting with the Patient Name section. The instructions say to extract the patient's full name exactly as it appears. But in the transcript, the patient isn't named. The doctor refers to "she," but no name is given. So, I'll put a dash here.
+
+Next, the Chief Complaint. It should be a brief statement without extra details. The patient mentions wrist pain and wanting to discuss wrist arthroplasty. So, I'll phrase it as "Wrist pain and interest in total wrist arthroplasty."
+
+For the HPI Spencer section, I need a coherent paragraph summarizing the history. The patient had a knee replacement, synovitis improved with an injection, started an infusion for osteoporosis, and now has significant wrist pain limiting her activities. I'll structure this into a clear, concise paragraph.
+
+The Musculoskeletal section requires verbatim extraction of physical exam findings. The doctor mentions bilateral wrist arthritis. I'll note that.
+
+Imaging Results: The transcript doesn't mention any imaging results, so I'll use the default dash.
+
+Assessment should list active problems. From the transcript, the issues are synovitis (improved), bilateral wrist arthritis, and osteoporosis. I'll list these as separate points.
+
+Finally, the Plan section. The doctor mentions planning for wrist arthroplasty and follow-up. I'll note that the patient is planning for the procedure and will follow up as needed.
+
+I need to make sure all sections follow the template exactly, using the correct keys and structure. Also, ensure no grammatical errors and proper punctuation. I'll double-check each section against the instructions to make sure nothing is missed or incorrectly inferred.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient's full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient's name from context, doctor names, or other people mentioned. If the patient's name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Wrist pain and interest in total wrist arthroplasty"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["The patient reports significant wrist pain, which is limiting her daily activities. She has a history of knee replacement and synovitis, which has improved with recent injections. She has also started an infusion for osteoporosis. She is now interested in discussing total wrist arthroplasty to address her wrist pain."],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient's history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Bilateral wrist arthritis"],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Synovitis (improved)", "Bilateral wrist arthritis", "Osteoporosis"],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Plan for right total wrist arthroplasty", "Follow-up as needed"],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."
+  }
+]
+```

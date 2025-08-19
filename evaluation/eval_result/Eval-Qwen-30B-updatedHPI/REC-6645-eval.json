@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient's name is accurately extracted and matches the benchmark perfectly."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The chief complaint is accurately extracted and matches the benchmark perfectly."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "The candidate note includes extraneous past medical history and details about current treatment (injections during this visit) that should not be part of the HPI paragraph. It also adds a negative statement ('No prior trauma or acute injury was reported') not explicitly stated in the transcript, violating the instruction to only include explicitly stated information. The benchmark is more concise and adheres to HPI conventions."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate note provides a perfect verbatim transcription of the musculoskeletal exam findings from the transcript, adhering strictly to the instruction 'Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim.' The benchmark note deviates slightly from verbatim."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "The candidate note incorrectly transcribes 'neovasculitis' as 'narrowing,' which is a significant factual error in medical terminology. It also omits 'three views' and 'with metacarpal' which were present in the transcript. These are multiple missing/incorrect details."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "The candidate note accurately identifies the three main medical conditions. It also includes 'progression of disease' which is directly stated in the transcript ('his arthritis has progressed') making it more complete than the benchmark. While it includes 'Right upper extremity skin is intact,' which contradicts a general instruction about normal findings, it aligns with a specific (and contradictory) instruction given for this field and also matches the benchmark's inclusion of this detail (though 'Right' instead of 'bilateral' is a minor deviation from the transcript)."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The candidate note generally covers the key aspects of the plan (injections, observation for carpal/cubital tunnel, nerve studies). The follow-up time of '6 to 8 weeks' is an acceptable interpretation of '2 months'. However, the candidate adds 'Patient to contact clinic if symptoms worsen prior to follow-up appointment,' which is not explicitly stated in the transcript and is a minor hallucination/addition to the plan."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note performed strongly in extracting patient demographic information and verbatim musculoskeletal exam findings. However, it struggled significantly with the HPI and Imaging Results sections, introducing extraneous information/hallucinations in the HPI and factual inaccuracies in Imaging. The Assessment was good, and the Plan was mostly accurate but included an unstated instruction."
+}

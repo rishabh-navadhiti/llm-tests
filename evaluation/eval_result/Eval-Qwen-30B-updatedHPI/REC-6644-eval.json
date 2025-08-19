@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient's name 'Cathy Smith' perfectly matches the benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "The candidate's chief complaint includes excessive detail about patient dissatisfaction and desire for care transition, which are typically HPI details, not concise chief complaints. This violates the instruction to provide only the chief complaint without additional context."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "The candidate incorrectly included extensive physical exam findings (e.g., 'mild soft tissue swelling noted', 'tenderness and dislocation at the A1 pulley incision site', 'full fist formation and excellent range of motion') within the HPI section, which explicitly violates the instruction 'Do not include exam findings, imaging results, or any objective measurements.' This constitutes a major content deviation from the benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "While largely verbatim, the candidate includes disfluencies ('Um', 'uh') present in the raw transcript but not in the clean benchmark. More significantly, it uses 'will heal' instead of 'well healed' and 'pony' instead of 'pulley', which are minor but important inaccuracies when compared to the human-corrected benchmark (ground truth). This reflects missing or incorrect minor details."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "The candidate hallucinated imaging results ('X-rays are normal.') for this patient. The transcript does not mention any imaging for Cathy Smith, and the benchmark correctly indicates no imaging. This is completely fabricated content."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "The candidate completely failed to provide a list of medical conditions or assessments, instead listing various physical exam findings. It also included normal findings ('Right upper extremity Skin is intact.', 'No tenderness to palpation.') which the benchmark explicitly excluded for conciseness. This output is entirely incorrect for an assessment section."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "While some plan items are accurate ('Continue therapy.', 'Return to clinic in six weeks for follow-up.'), the candidate included two hallucinatory/inferential statements ('No further imaging or interventions planned at this time.', 'Monitor for healing and symptom progression.') that were not dictated by the physician for this patient. Additionally, the 'transition care' point is more verbose than the concise benchmark, indicating multiple minor details that are incorrect or represent minor hallucinations."
+    }
+  },
+  "total_score": 13,
+  "percentage": 37.14,
+  "overall_summary": "The candidate note performed poorly, scoring only 37.14%. It struggled significantly with content accuracy and adherence to field-specific instructions, particularly in distinguishing between patient history, exam findings, assessment, and plan. Major errors included incorporating exam findings into the HPI and Assessment sections, and hallucinating imaging results and elements of the plan not dictated in the conversation. While the patient name was perfect, and the musculoskeletal section was close, these strengths were overshadowed by substantial inaccuracies and outright fabrications in other critical sections."
+}

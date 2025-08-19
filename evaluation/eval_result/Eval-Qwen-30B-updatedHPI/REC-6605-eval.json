@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The patient's name 'Spencer' is not mentioned in the transcript for the first patient. The benchmark correctly indicates this by having a placeholder ('-'). The candidate's inclusion of 'Spencer' is a hallucination or an inference from the field key names, not from the spoken transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The candidate note perfectly matches the benchmark and accurately extracts the chief complaint 'Left small finger locking and catching' from the transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "The candidate's HPI is comprehensive and accurately reflects details from the transcript, including 'right-hand dominant designer' and 'no other triggering episodes', which are not present in the benchmark. The main minor issue is the inclusion of 'Spencer' as the patient's name when it's not explicitly stated in the transcript for this patient. The benchmark also includes an inference about symptoms impacting the patient's job, which the candidate correctly omits based on its instruction not to infer."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate note strictly adheres to its instruction to extract the information verbatim from the doctor's dictation. While the benchmark provides a more clinically interpreted phrasing, the candidate's output is an exact match to the spoken words, fulfilling its specific instruction."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "The candidate accurately extracts 'X-rays are normal' from the transcript. The benchmark adds 'of the left small finger', which is a contextual inference not explicitly stated in the transcript for the imaging result itself. The candidate's output is factually correct based on the explicit dictation, making it a minor difference in specificity rather than accuracy."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "While the primary diagnosis 'Left small finger trigger finger with palpable nodule' is largely correct, the candidate includes two subsequent points that are factually incorrect based on the transcript and contradict its own instructions ('Right upper extremity Skin is intact' is wrong as the transcript refers to the left hand, and 'No tenderness to palpation' is explicitly contradicted by 'moderate tenderness to palpation' in the transcript). This makes a significant portion of the assessment inaccurate."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "The candidate note's plan is largely fabricated or incorrectly derived. The transcript for the first patient only clearly states 'planned trigger' (implying surgical release). The candidate hallucinates 'observation and non-surgical options', 'avoid repetitive gripping activities', 'gradual return to activity', '6 to 8 weeks for re-evaluation', and 'discuss potential for surgical intervention if symptoms persist or worsen'. Most of these details are not present in the transcript for the first patient, or are incorrectly pulled from the second patient's plan and misrepresented."
+    }
+  },
+  "total_score": 20,
+  "percentage": 57.14,
+  "overall_summary": "The candidate note demonstrates mixed performance. It excels in fields requiring verbatim extraction (Musculoskeletal) and accurately captures chief complaint. The HPI is detailed and largely accurate, though it incorrectly adds a patient name not present in the transcript. However, the note significantly struggles with the Assessment and Plan sections, fabricating details, contradicting itself, and misattributing information from a different patient encounter in the transcript. The handling of the patient's name is also a notable factual error."
+}

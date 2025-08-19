@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The `PATIENT_NAME` field is completely empty in the `CANDIDATE_NOTE`, whereas the `BENCHMARK_NOTE` correctly identifies the patient as 'Jedediah Voltz'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The `CANDIDATE_NOTE` includes 'Left index finger pain and stiffness', adding 'Left' compared to the `BENCHMARK_NOTE`'s 'Index finger pain and stiffness'. While 'left' is implied clinically, it's a minor wording difference from the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The candidate's HPI paragraph is generally accurate but misses several specific details present in the benchmark, such as 'Status post chisel versus index finger', 'Dorsal index finger proximal interphalangeal laceration', and the visit date '8.6.2025'."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "While the candidate adhered to its instruction to be verbatim, the `BENCHMARK_NOTE` represents the corrected ground truth. The candidate includes filler words ('um'), uses abbreviations ('PIP') where the benchmark expands them, and has minor wording differences ('sensory tenderness' vs 'specific tenderness', 'digit' vs 'digits') compared to the benchmark's refined content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "The `CANDIDATE_NOTE`'s content 'X-rays are normal.' is a perfect and exact match to the `BENCHMARK_NOTE`."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "The candidate's assessment ('Left index finger PIP stiffness', 'Left index finger laceration, healing') is factually accurate and even more clinically precise (adding 'PIP' and 'healing') than the benchmark ('Stiff left index finger', 'Laceration of the left index finger'). However, it is not an exact word-for-word match to the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "The candidate missed a key detail ('Plan proximal interphalangeal') present in the benchmark. Additionally, it copied a likely transcription error from the transcript ('image motion' instead of 'range of motion') which the benchmark correctly interpreted and refined."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60.0,
+  "overall_summary": "The candidate note demonstrates strong performance in directly extracting information when it aligns with the benchmark (e.g., Imaging Results). However, it struggles in fields requiring interpretation, summarization, or correction of raw transcript data to match the clinically refined `BENCHMARK_NOTE`. Significant omissions (Patient Name, part of Plan) and inclusion of transcription errors/less refined phrasing (Musculoskeletal, Plan) indicate areas for improvement in transforming raw dictation into a polished clinical note."
+}

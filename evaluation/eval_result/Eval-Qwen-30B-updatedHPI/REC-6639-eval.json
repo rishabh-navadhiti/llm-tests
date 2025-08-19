@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The candidate note perfectly matches the benchmark note for the patient's name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "The benchmark note is more concise and adheres better to the instruction to provide 'only the patient's chief complaint without any additional details or context.' The candidate note adds 'for hand laceration and splint removal,' which provides extra context beyond the simple chief complaint of 'Follow-up.'"
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "The candidate note includes significant exam findings ('The laceration is clean, dry, and intact with sutures in place. Sutures were removed today, and he is tolerating the procedure well without complications.') which explicitly violates the instruction 'Do not include exam findings, imaging results, or any objective measurements.' The benchmark note correctly focuses only on the patient's subjective history and complaints."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate note is a precise verbatim extraction of what the doctor stated under the 'On exam' section, aligning perfectly with the instruction to 'Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim.' The benchmark note omitted a part of the dictated exam findings that were stated as part of the exam."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both the candidate and benchmark notes correctly indicate no imaging results for this patient."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "The candidate note correctly identifies and lists the key active issues from the transcript: 'Limited flexion of the right hand', 'Post-surgical suture site healing well', and 'Mild pain at the laceration site'. It also correctly includes 'Right upper extremity Skin is intact' per the explicit instruction. The benchmark note missed active issues (limited flexion, mild pain) and incorrectly included a detail not mentioned in the transcript ('No tenderness to palpation')."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "The candidate note captures all key plan elements, including the more complete follow-up instruction ('for follow-up and range of motion check') which is more aligned with a 'conversational tone' as per instructions. The inclusion of 'Sutures were removed today' reflects an action taken during the visit, which is a reasonable interpretation given the contradictory statements in the transcript (sutures removed vs. sutured in today)."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note performed well in fields requiring verbatim extraction and identifying active issues in the assessment, providing more comprehensive details where appropriate compared to the benchmark. However, it significantly underperformed in the HPI by including objective exam findings, violating a key instruction. The Chief Complaint was also slightly over-detailed compared to the benchmark's conciseness. Overall, the note shows strong potential but needs refinement in adhering to specific content exclusion rules for HPI."
+}

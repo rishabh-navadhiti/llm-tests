@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The candidate note identified the patient name as 'Spencer', which is completely incorrect. The benchmark and transcript clearly indicate the patient is 'Kathy Smith'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 0,
+      "justification": "The candidate note provided the chief complaint for the first patient discussed in the transcript (DIP joint pain), not for Kathy Smith. Kathy Smith's chief complaint was swelling and pain in hand, and follow-up for hand surgery."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "The candidate note summarized the HPI for the first patient with DIP arthritis, not Kathy Smith. Kathy Smith's HPI was related to her post-surgical follow-up and dissatisfaction with hand therapy."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "The candidate note extracted the musculoskeletal exam findings for the first patient (DIP joints, trapeziometic carpal joint), not for Kathy Smith. The benchmark accurately reflected Kathy Smith's post-surgical exam findings."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "The candidate note provided imaging results for the first patient with DIP/CMC arthritis. No imaging was mentioned for Kathy Smith in the transcript, which the benchmark correctly indicated with '-'. Thus, this is completely incorrect for the intended patient."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "The candidate note listed assessments for the first patient (DIP/CMC arthritis), not for Kathy Smith, whose assessment was post-hand surgery, swelling, and pain. The information provided is completely irrelevant to Kathy Smith."
+    },
+    "PLAN_SPENCER_": {
+      "score": 0,
+      "justification": "The candidate note detailed the plan for the first patient (steroid injections, DIP fusion, splint use, etc.), not for Kathy Smith. Kathy Smith's plan involved continuing therapy, returning to Jack for hand therapy, and a 6-week follow-up. The information provided is completely incorrect for the intended patient."
+    }
+  },
+  "total_score": 0,
+  "percentage": 0.0,
+  "overall_summary": "The candidate note performed extremely poorly, scoring 0 across all fields. It consistently extracted information pertaining to a different patient (the first patient discussed in the transcript regarding DIP/CMC arthritis) instead of the intended patient, Kathy Smith. This resulted in every field containing factually incorrect or irrelevant information for the target patient. The model failed to identify and focus on the correct patient's segment within the provided transcript."
+}

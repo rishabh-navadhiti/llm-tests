@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "The `BENCHMARK_NOTE` includes 'Susan Shell' for the patient's name. The `CANDIDATE_NOTE` provides an empty content list `[]`. While the name is not present in the transcript, the benchmark is considered the ground truth, making the candidate note's complete omission a major content difference."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 0,
+      "justification": "The `BENCHMARK_NOTE` correctly identifies 'Wrist pain' as the chief complaint, which is clearly stated in the transcript ('significant limited in all things by her... wrist pain'). The `CANDIDATE_NOTE` completely failed to extract this information, resulting in empty content."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "The `BENCHMARK_NOTE` provides a detailed HPI based on the transcript, covering the knee replacement, improved synovitis, osteoporosis infusion, and interest in wrist arthroplasty. The `CANDIDATE_NOTE` is completely empty for this section, missing all relevant details from the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The `BENCHMARK_NOTE` has '-' for this field, indicating no specific verbatim musculoskeletal findings to report. The `CANDIDATE_NOTE` has an empty content list `[]`, which effectively conveys the same meaning of no specific findings being captured or needing to be noted. Despite the doctor's comment about deleting a nodule (which is an instruction to modify a previous note, not a new finding to report), both notes align on presenting an empty/default state for this field."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "The `BENCHMARK_NOTE` states 'Imaging mostly unchanged', accurately reflecting the doctor's comment 'The imaging you can leave all the same'. The `CANDIDATE_NOTE` is completely empty for this field, missing this factual information."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "The `BENCHMARK_NOTE` correctly identifies 'Bilateral wrist arthritis' and 'Synovitis' as assessment points, which are mentioned in the transcript. The `CANDIDATE_NOTE` is completely empty for this section, failing to extract any of the conditions."
+    },
+    "PLAN_SPENCER_": {
+      "score": 0,
+      "justification": "The `BENCHMARK_NOTE` correctly lists several plan details, including interest in total wrist arthroplasty and planning for the procedure. This information is directly from the transcript. The `CANDIDATE_NOTE` is completely empty for this section, missing all plan details."
+    }
+  },
+  "total_score": 6,
+  "percentage": 17.14,
+  "overall_summary": "The candidate note performed very poorly across most fields. It completely failed to extract crucial information for Chief Complaint, HPI, Imaging Results, Assessment, and Plan, all of which were clearly stated in the transcript and present in the benchmark. While it functionally matched the benchmark's empty entry for Musculoskeletal findings, and missed the Patient Name (which was in the benchmark but not the transcript), its inability to process and summarize the core clinical conversation into the designated fields is a significant weakness."
+}

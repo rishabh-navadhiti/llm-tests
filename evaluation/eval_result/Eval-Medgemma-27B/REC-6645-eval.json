@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The candidate note perfectly matches the benchmark for the patient's name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The candidate note perfectly matches the benchmark for the chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "The candidate included demographic information ('right-handed male retiree') in the HPI, which is outside the specified scope of the HPI section (onset, duration, location, severity, etc.) as per the instructions, even though it is factually correct from the transcript. Minor wording differences preserved meaning."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "The candidate note includes 'bilateral' instead of 'Right' and adds 'Um, dot NCTS.', deviating from the benchmark note. While the candidate is more verbatim to the raw transcript, the benchmark note is considered the ground truth after human review, making these differences a factual discrepancy against the benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "The candidate included filler words ('Um, moderate... no') and a direct instruction from the doctor ('you can delete the \"calcific arterio-\"') instead of interpreting it as a clinical finding ('except no calcific arteriogram'), which is a minor factual misrepresentation/lack of interpretation compared to the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "The candidate missed including 'Right upper extremity Skin is intact' from the benchmark, which, despite potentially contradictory instructions, was present in the human-reviewed benchmark as an expected item for this field."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "The candidate note provided all factual content for the plan accurately and comprehensively. It also correctly adhered to the instruction to return the plan in a numbered list format, which the benchmark did not."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note performed well on direct factual extraction tasks like Patient Name and Chief Complaint, and excelled in the Plan section by providing comprehensive details and correctly following the specified formatting instructions, even outperforming the benchmark in instruction adherence. However, it struggled with interpretation and scope adherence in the HPI, Imaging Results, and Assessment sections, often including verbatim transcript elements or omitting details not present in the benchmark, despite the benchmark being designated as the ground truth. The MUSCULOSKELETAL_VERBATIM field highlights a conflict between verbatim extraction (which the candidate performed perfectly according to instruction) and adherence to the benchmark's edited content."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient's name 'Greta Griswana' is perfectly matched in both the candidate and benchmark notes."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "The benchmark lists 'Forearm pain, thumb pain'. The candidate only states 'Right thumb pain'. The doctor explicitly mentioned both 'forearm pain is better' and 'thumb pain is killing her', so the forearm pain, even if improving, was part of the chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "The candidate captures the primary complaint and patient's inquiry but significantly misses key HPI details regarding the daughter's wedding and its impact on the patient's hand use and overall pain status. This constitutes multiple missing details."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "The candidate's content is nearly verbatim but misses the initial phrase 'Right upper extremity' which was part of the doctor's dictation for the exam findings. This is a minor omission from the verbatim requirement."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "The candidate's 'X-rays reviewed. It will be planned arthritis.' is an excellent match to the doctor's 'X-rays reviewed. It'll be planned arthritis.' and the benchmark's 'X-rays reviewed. It shows planned arthritis.' The candidate's wording is arguably closer to the verbatim spoken word."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "The candidate completely misses the key assessment/diagnosis 'Planned arthritis' derived from the X-rays, which is present in the benchmark. Instead, it provides a list of exam findings and normal findings ('Right upper extremity Skin is intact.', 'No tenderness to palpation.'), which directly contradicts the instruction 'Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”'. This is a complete misinterpretation of the instruction and a fabrication of irrelevant details."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "The candidate correctly identifies the steroid injection and follow-up. However, it includes 'the potential need for surgical intervention,' which was not mentioned by the doctor in the plan dictation. This constitutes a minor hallucination, leading to a score of 2."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60.0,
+  "overall_summary": "The candidate note demonstrated proficiency in extracting basic patient information and accurately transcribing verbatim sections for musculoskeletal and imaging findings. However, its performance significantly declined in more interpretative and summarization tasks. It missed crucial details in the HPI, completely failed to identify the correct assessment, and introduced hallucinations in the plan, indicating a weakness in synthesizing information and adhering to complex, sometimes conflicting, instructions."
+}

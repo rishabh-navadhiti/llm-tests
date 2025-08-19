@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 3,
+      "justification": "The benchmark note, as the ground truth, corrected the spelling from the dictated \"Coffee\" to \"Kaffee\". The candidate note retained the uncorrected spelling from the transcript, resulting in a factual inaccuracy compared to the benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate's 'Pain in left index finger' and the benchmark's 'Left index finger pain' convey the exact same meaning, with only minor wording differences."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "The candidate note misses two significant pieces of information from the transcript: the pain 'has gotten worse' and the patient 'wants to know if she can have an injection now'. It also misinterprets 'It was bothering her when she came in for her shoulder appointment' as 'The pain worsened prior to a shoulder appointment'. Additionally, it uses 'Dr. Almadroa' while the benchmark, as the corrected ground truth, uses 'Dr. Dellamaggiora'."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "While the candidate note adhered to its internal instruction to be verbatim, it does not match the benchmark. The benchmark, as the corrected ground truth, cleaned up filler words and corrected dictated inaccuracies such as 'tacky' to 'intact', 'A1 polii' to 'A1 pulley', and 'walking catching' to 'locking and catching'. The candidate note retains these uncorrected details and fillers, leading to multiple discrepancies when compared to the benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "The candidate note is verbatim from the transcript. The benchmark adds 'left index finger' for greater clarity, which is consistent with the overall context of the note. This is a minor wording difference, and the core meaning remains preserved."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Both notes correctly identify the patient's conditions. However, the benchmark uses the more concise and standard medical diagnosis 'Trigger finger' compared to the candidate's 'Left index finger triggering', which is slightly less formal but still conveys the correct information."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "The candidate note includes a clear hallucination: 'Patient education provided regarding the procedure', which is not mentioned in the transcript. Additionally, it interprets 'plan trigger' as 'plan trigger finger release', which is an addition not explicitly dictated, whereas the benchmark maintains the more direct 'Plan trigger'."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60.0,
+  "overall_summary": "The candidate note demonstrates moderate performance, with several fields showing good accuracy while others exhibit significant shortcomings. Strengths include accurately capturing the chief complaint and adequately extracting imaging results. However, the note struggles with the HPI and Plan sections, missing crucial details and introducing hallucinations. The Musculoskeletal section, while following its verbatim instruction, deviates significantly from the corrected benchmark, highlighting a conflict between direct transcription and clinical accuracy/correction. The patient's name and assessment also show minor discrepancies compared to the benchmark's refined content."
+}

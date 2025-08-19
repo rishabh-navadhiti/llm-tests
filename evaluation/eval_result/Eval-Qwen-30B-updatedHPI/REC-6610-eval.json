@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "The candidate correctly identified 'Stephanie Humphrey'. However, it also included other patient names from the transcript, which is extraneous given the benchmark note focuses on a single patient. This represents a partial adherence to instructions for a single-patient note."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate correctly identified 'Left wrist pain' for Stephanie Humphrey. Similar to the patient name field, it included chief complaints for other patients mentioned in the transcript, making it less precise for a single patient's note. This is a minor formatting difference where meaning for the specific patient is preserved."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "The candidate's HPI section for Stephanie Humphrey severely violated its own instruction: 'Do not include exam findings, imaging results, or any objective measurements.' It included extensive exam findings, imaging results, and even plan details. While the historical HPI content itself was largely accurate, the inclusion of inappropriate content types makes the section's overall composition fundamentally incorrect. This constitutes a major content difference."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "The benchmark note for this field is '-'. The candidate provided detailed verbatim musculoskeletal examination findings from the transcript. Although the candidate's extracted content is factually accurate from the transcript, it directly contradicts the benchmark's empty content for this field. As the benchmark is the ground truth, this is a major content difference."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "The candidate's imaging results ('X-rays are normal through these, the wrist, left wrist.') only included the current X-ray findings. It missed the detail about the urgent care X-rays ('Left wrist X-rays taken at urgent care showed no fractures') which was present in the transcript and included in the benchmark. This represents a missing minor detail."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "The candidate's assessment for Stephanie Humphrey perfectly matched all items in the benchmark, including 'Right upper extremity Skin is intact.' and 'No tenderness to palpation.' even though the former appears to be a factual error (should be 'Left' based on the transcript) that the benchmark included. Since the benchmark is considered the ground truth, a perfect match to it earns a score of 5."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "The candidate included an introductory sentence summarizing the assessment ('For Stephanie Humphrey: Left ECU tendonitis and left ulnar-sided wrist pain.'), which is not part of the plan in the benchmark. More critically, the candidate hallucinated the follow-up time ('in 6 to 8 weeks') for 'Return to clinic after MRI', a detail not present in the transcript, likely due to its own instruction. This combination of an additional detail and a minor hallucination warrants a score of 2."
+    }
+  },
+  "total_score": 20,
+  "percentage": 57.14,
+  "overall_summary": "The candidate note demonstrated mixed performance. It accurately extracted specific factual details and perfectly matched the benchmark for the Assessment section, even replicating a potential error from the benchmark. However, it significantly underperformed in the HPI section by failing to adhere to instructions regarding content inclusion, and for the Musculoskeletal section by providing content where the benchmark expected none. A minor hallucination was also noted in the Plan section. The note also broadly extracted information for all patients in some fields, rather than focusing on a single patient as implied by the benchmark structure, leading to extraneous information."
+}

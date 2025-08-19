@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The candidate note perfectly matches the benchmark note for the patient's name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The candidate note perfectly matches the benchmark note for the chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The candidate note includes descriptive patient information ('Miss Stephanie Humphrey is a right hand dominant horticulturalist') which is not present in the benchmark's HPI. It also omits 'while leaving Groundlings' which is in the benchmark. These are considered missing or incorrect minor details when strictly comparing to the benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "The benchmark note explicitly states '-' for this field, indicating no content is expected. The candidate note, however, provides detailed musculoskeletal findings verbatim from the transcript. As the benchmark is considered the ground truth, this content is completely incorrect relative to the benchmark's expectation for this specific field."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "The candidate note only includes the current X-ray results ('X-rays are normal through these, the wrist, left wrist'). It misses the crucial detail about the urgent care X-rays showing no fractures, which is present in the benchmark ('Left wrist X-rays taken at urgent care showed no fractures'). This constitutes multiple missing details."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "The candidate note correctly identifies 'Left ECU tendonitis' and 'Left ulnar-sided wrist pain'. However, it omits 'Right upper extremity Skin is intact.' and 'No tenderness to palpation.' which are present in the benchmark. These are multiple missing details when compared strictly to the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The candidate note includes 'Recommend RE full.' which is absent in the benchmark, even though it is present in the transcript. While the phrasing for return to clinic differs slightly ('Patient to return to clinic after MRI' vs 'Return to clinic after MRI'), the addition of 'RE full' makes it not a perfect match to the benchmark's factual content, categorizing it as incorrect minor details compared to the benchmark."
+    }
+  },
+  "total_score": 20,
+  "percentage": 57.14,
+  "overall_summary": "The candidate note demonstrated strong accuracy for basic fields like patient name and chief complaint. However, its performance was significantly impacted by inconsistencies when compared to the benchmark note, which serves as the ground truth. Several fields, particularly 'Musculoskeletal', 'Imaging Results', 'Assessment', and 'Plan', either omitted information present in the benchmark or included details that, while accurate to the transcript, were not present in the benchmark. This highlights a need for better alignment with the specific content expectations of the benchmark for these complex fields."
+}

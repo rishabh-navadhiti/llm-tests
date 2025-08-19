@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The candidate note hallucinates \"Spencer\" as the patient's name. The patient's name is not explicitly mentioned in the transcript, and \"Spencer\" appears to refer to the doctor based on field names, making this completely incorrect for the patient."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate note accurately identifies the core chief complaint but adds \"following laceration,\" which provides HPI context and makes it slightly less concise than a standard chief complaint, as seen in the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "The candidate note includes accurate details about the HPI but violates instructions by including an exam finding (\"limited to about 10 degrees of active flexion\") and negatives not explicitly stated in the HPI section of the transcript (\"no reported history of infection, numbness, or tingling\"). It also incorrectly uses \"Spencer\" as the patient's name."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate note provides a near-perfect verbatim transcription of the musculoskeletal exam findings, including filler words like 'um,' which adheres strictly to the instruction to 'Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim.'"
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Perfect match in factual content with the benchmark note."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "The candidate note includes multiple exam findings (\"Moderate soft tissue swelling\", \"No tenderness to palpation\") and a hallucinated normal finding (\"Right upper extremity Skin is intact.\"), which directly violates the explicit instruction to \"Do not include any exam findings or historical medical information\" and \"Do not include normal findings\" in the assessment."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "The candidate note accurately captures all key plan elements (hand therapy, 4-week follow-up with motion assessment). It also appropriately includes the detail about normal X-rays, which is relevant information and reasoning from the doctor's discussion, aligning with the instruction to 'Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.'"
+    }
+  },
+  "total_score": 22,
+  "percentage": 62.857142857142854,
+  "overall_summary": "The candidate note demonstrates strong performance in transcribing verbatim sections and extracting imaging results. However, it significantly struggles with adhering to specific instructions for certain fields, particularly HPI and Assessment, where it includes prohibited information (exam findings, normal findings, hallucinations) and misidentifies the patient's name. While it captures the core content of the plan, the overall adherence to strict formatting and inclusion rules is inconsistent, leading to a moderate overall score."
+}

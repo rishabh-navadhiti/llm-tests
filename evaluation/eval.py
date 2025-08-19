@@ -10,9 +10,9 @@ import google.generativeai as genai
 # -------------------------------
 PROMPT_PATH = "eval_prompt.txt"
 BENCHMARK_DIR = "benchmark"
-CANDIDATE_DIR = "../Output/Spencer-Qwen-30B-FP8"
+CANDIDATE_DIR = "../Output/Medgemma-updatedHPI"
 TRANSCRIPT_DIR = "../transcripts/Spencer"
-OUTPUT_DIR = "eval_result/Eval-Qwen-30B"
+OUTPUT_DIR = "/Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-Medgemma-27B"
 # PROMPT_PATH = "/Users/rish/Development/runpod dev/llm-tests/evaluation/eval_prompt.txt"
 # BENCHMARK_DIR = "/Users/rish/Development/runpod dev/llm-tests/evaluation/testiing/bnch"
 # CANDIDATE_DIR = "/Users/rish/Development/runpod dev/llm-tests/evaluation/testiing/op"

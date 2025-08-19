@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient's name, 'Precious Myles Garrett', is perfectly matched between the candidate and benchmark notes."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The chief complaint, 'Left wrist pain', is perfectly matched between the candidate and benchmark notes."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The candidate note states 'The masses have been stable in size over time' which is less precise than the benchmark's 'used to fluctuate in size but are now constant', as per the transcript. It also states 'ultrasound of the wrist' instead of 'ultrasound of the anterior wrist' (from 'front of the wrist' in transcript). These are minor factual details missed or slightly misphrased."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "The candidate note provides detailed verbatim musculoskeletal exam findings, which are factually accurate from the transcript and follow its own instruction. However, the benchmark note for this field is explicitly empty ('-'), indicating a major content difference from the expected ground truth. While the content is correct from the transcript, it does not match the benchmark's expectation for this specific field."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "There are minor wording and tense differences ('show' vs. 'showed', 'MCP joint of the thumb' vs. 'thumb MCP joint') but the factual content and meaning are preserved."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "The candidate note incorrectly generalizes 'Bilateral thumb and MCP joint osteophytes' when the transcript refers to 'masses' for the bilateral issues, and a specific osteophyte was listed separately. While 'Left first dorsal compartment retinacular cyst' is more specific due to imaging, the benchmark uses the initially stated 'wrist cyst'. The 'osteophytes' vs 'masses' difference is a factual inaccuracy."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "The candidate note misses some specificity for night splints ('for the left wrist' vs. 'regarding the masses'). It also includes more detailed patient discussions and reasoning, which aligns with its specific instructions but makes it more verbose and slightly redundant (two points related to observation) compared to the concise benchmark."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.42857142857143,
+  "overall_summary": "The candidate note performed well in extracting fundamental information such as patient name and chief complaint, and accurately transcribed imaging results with only minor stylistic differences. However, its performance was significantly impacted by a divergence from the benchmark's expected content in the Musculoskeletal section, where it provided detailed exam findings while the benchmark was empty. Additionally, there were minor factual inaccuracies or imprecise phrasing in the HPI and Assessment sections, particularly concerning the nature of the bilateral thumb and MCP joint issues. The candidate's adherence to its own detailed instructions for the Plan section led to a more verbose output compared to the benchmark's conciseness."
+}

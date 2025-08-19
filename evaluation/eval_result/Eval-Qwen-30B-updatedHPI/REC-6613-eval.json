@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Perfect match in factual content with the benchmark note."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Perfect match in factual content with the benchmark note."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "The candidate note is mostly accurate but omits 'Dr. Ishimori' and uses 'left wrist' instead of the benchmark's 'front of her wrist' for the ultrasound. It includes additional introductory details from the transcript which are not present in the benchmark, representing minor wording differences, but the core meaning is preserved."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "The benchmark note explicitly lists '-' (empty) for this field. The candidate note, however, provides extensive verbatim content from the transcript regarding musculoskeletal findings. While this content is present in the transcript and aligns with the field's instruction to extract verbatim if information is found, it represents a major content difference when strictly compared to the benchmark's designated empty field. This is a significant divergence from the 'ground truth' benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "The factual content of the imaging results is identical to the benchmark. The only differences are minor variations in verb tense (e.g., 'show' vs 'showed', 'demonstrates' vs 'demonstrated')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "The candidate correctly identified some diagnoses but inaccurately interpreted 'bilateral' as 'Bilateral osteophytes' when the benchmark specifies 'Bilateral hand pain'. This is a significant incorrect detail, as it represents a different medical condition. Minor wording difference in 'MCP joint osteophyte' vs 'MCP osteophyte' is negligible."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The candidate note provides good contextualization for some plan points (e.g., 'for carpal tunnel symptoms', 'The masses are not currently bothersome; therefore,'). However, it includes an inferred condition for aspiration/biopsy ('if symptoms develop or if there is progression') that was not explicitly stated by the doctor in the transcript. This constitutes an incorrect minor detail or minor hallucination."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note demonstrates strong performance in accurately extracting basic patient demographic information and chief complaint. It captures the essence of the HPI and Imaging results well, with only minor linguistic differences. However, the note significantly deviates in the Musculoskeletal section by populating a field that the benchmark explicitly marked as empty, indicating a mismatch in expected content. Furthermore, in the Assessment and Plan sections, the model shows a tendency to infer or add details not explicitly stated in the transcript, leading to factual inaccuracies or minor hallucinations when compared to the strict ground truth of the benchmark. This highlights a need for improvement in adhering to the exact scope and content specified by the benchmark, even when transcript information might suggest otherwise for a verbatim field, and in avoiding unsubstantiated inferences."
+}

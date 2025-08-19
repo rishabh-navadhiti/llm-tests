@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "The BENCHMARK_NOTE includes 'Linda Omansky' as the patient's name, which is considered the ground truth. The CANDIDATE_NOTE left this field empty, resulting in a major content difference as the patient's name is a critical identifier."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "The BENCHMARK_NOTE concisely states 'Numbness and tingling in the right hand'. The CANDIDATE_NOTE adds 'Reevaluation for' which provides additional context not typically included in a chief complaint, thus deviating from the benchmark's more focused and concise phrasing."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The CANDIDATE_NOTE's HPI is largely accurate but contains minor wording differences (e.g., 'recently' vs 'just', 'less frequently' vs 'less') and notably omits the concluding sentence 'She is here for evaluation and treatment' which is present in both the transcript and BENCHMARK_NOTE. The BENCHMARK_NOTE also includes a date not in the transcript, but the candidate's instructions for HPI prevented adding such information, hence no penalty for its absence."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "While the CANDIDATE_NOTE attempts to be verbatim as per its instructions, it deviates significantly from the BENCHMARK_NOTE's interpreted and corrected content. Specifically, 'A one foley' (candidate) differs from 'A1 pulley' (benchmark), and '.pcgs are normal' (candidate) differs from '.PCTS' (benchmark). The benchmark's content, despite being a correction/interpretation from the transcript, is the target ground truth, making the candidate's verbatim (but different) content incorrect in this comparison."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "The BENCHMARK_NOTE states 'XR - Deferred.', while the CANDIDATE_NOTE states 'X-ray is clear.' These are factually contradictory statements. Although the candidate verbatim matches the transcript ('X-ray is clear'), the benchmark is the ground truth for evaluation, indicating a major content difference."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "The CANDIDATE_NOTE's assessment is largely incorrect and fails to adhere to its own instructions. It includes symptoms ('Right hand numbness and tingling', 'Right thumb burn') and exam findings ('Right small finger nodule') not intended for an 'assessment' section as per typical note style or the benchmark's concise 'Trigger finger.'. Crucially, it includes 'Right upper extremity Skin is intact.' and 'No tenderness to palpation.', both of which are either normal findings explicitly meant to be excluded by one of its own rules, or factually incorrect given the transcript's 'Moderate tenderness'."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The CANDIDATE_NOTE's plan captures the main points but introduces additional phrasing and interpretations not present in the BENCHMARK_NOTE or transcript (e.g., 'administer a steroid injection today' instead of 'she would like another today', 'suspected carpal tunnel syndrome', 'if symptoms persist or worsen'). It also violates its own instruction to 'User numbers instead of word where necessary' by writing 'two months' instead of '2 months'."
+    }
+  },
+  "total_score": 13,
+  "percentage": 37.14,
+  "overall_summary": "The candidate note performed poorly, scoring only 37.14%. It struggled significantly with factual accuracy and adherence to the benchmark, particularly in fields like Patient Name, Imaging Results, and Assessment where content was either entirely missing, factually incorrect compared to the benchmark, or included irrelevant details. While the candidate sometimes adhered more strictly to verbatim transcription (Musculoskeletal, Imaging) it was penalized when the benchmark itself was a corrected/interpreted version, highlighting a conflict in evaluation criteria. The HPI and Plan sections showed minor deviations in phrasing and included some inferences not present in the benchmark, further reducing scores."
+}

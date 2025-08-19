@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The candidate's output 'Spencer' for the patient's name is a hallucination and completely incorrect. The patient's name is not mentioned in the transcript, and the benchmark provides 'Eliza Asherian'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The candidate's chief complaint 'Bilateral hand numbness, tingling, and burning pain' is a perfect match to the benchmark and accurately reflects the information in the transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "The candidate's HPI is comprehensive and accurately captures all key factual details from the transcript and the benchmark's corrected HPI. Minor differences include the inference of 'corticosteroid' for injections (benchmark only states 'injections') and a slightly redundant concluding sentence. The overall meaning is preserved."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "The candidate includes filler words ('Um...', 'uh,') from the transcript that the benchmark (which represents the human-corrected ground truth) explicitly cleaned up. It also misses 'Bilateral upper extremities' as a separate line as presented in the benchmark, and combines the findings into a single block instead of distinct lines, deviating from the benchmark's structured format."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "The candidate includes 'it'll be planned carpal tunnel' in the imaging results, which is present in the transcript but explicitly excluded from this section in the benchmark note, indicating a scope mismatch with the ground truth."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "The candidate correctly identifies 'Bilateral carpal tunnel syndrome'. However, it incorrectly includes 'Right upper extremity Skin is intact.' and 'No tenderness to palpation.'. The benchmark's content for this field does not include these normal findings, and the instruction explicitly states 'Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”'. Furthermore, 'No tenderness to palpation.' is a hallucination as it is not present in the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The candidate missed a significant detail included in the benchmark's plan: 'She has already been wearing splints without enough improvement to be able to sleep through the night'. While the candidate's phrasing is generally good, this omission and the inference of 'corticosteroid' (not in transcript or benchmark) result in a score reduction."
+    }
+  },
+  "total_score": 19,
+  "percentage": 54.28,
+  "overall_summary": "The candidate note performed moderately, accurately identifying the chief complaint and providing a largely correct HPI. However, it struggled with adherence to the precise scope and formatting of several fields as defined by the benchmark, frequently including extraneous information (e.g., 'IMAGING_RESULTS') or omitting key details (e.g., 'PLAN_SPENCER_'). Significant issues include a hallucinated patient name and inaccuracies in the 'ASSESSMENT_SPENCER' field, where it included normal findings and a hallucination despite explicit instructions to avoid them (and contradiction in instructions, but evaluated against benchmark's final content)."
+}

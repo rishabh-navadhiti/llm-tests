@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The candidate note completely failed to extract the patient's name, providing an empty content array."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 0,
+      "justification": "The candidate note completely failed to extract the chief complaint, providing an empty content array."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "The candidate note completely failed to extract any History of Present Illness information, providing an empty content array."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Both the benchmark and candidate correctly indicate that no musculoskeletal findings were mentioned in the transcript. The candidate followed its instruction to return empty."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both the benchmark and candidate correctly indicate that no imaging results were mentioned in the transcript. The candidate providing an empty content array aligns with the benchmark's '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "The candidate note completely failed to identify any of the assessment items, providing an empty content array."
+    },
+    "PLAN_SPENCER_": {
+      "score": 0,
+      "justification": "The candidate note completely failed to extract any of the plan details, providing an empty content array."
+    }
+  },
+  "total_score": 10,
+  "percentage": 28.57,
+  "overall_summary": "The candidate note performed very poorly, demonstrating a significant inability to extract key clinical information. It failed to identify the patient's name, chief complaint, HPI, assessment, and plan, rendering the note largely unusable. The only correct extractions were for fields where no information was present in the transcript (Musculoskeletal and Imaging Results), which is a minimal positive."
+}

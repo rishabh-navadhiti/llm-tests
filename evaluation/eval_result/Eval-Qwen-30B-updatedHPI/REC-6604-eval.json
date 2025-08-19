@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "The candidate note used 'Nicole Coffee' which is directly from the transcript. The benchmark note corrected the spelling to 'Nicole Kaffee'. While the candidate accurately transcribed, the benchmark represents the corrected ground truth, making this a minor factual difference."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate note stated 'Pain in left index finger' which is slightly different wording from the benchmark's 'Left index finger pain'. Both accurately convey the chief complaint, representing a minor wording difference."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "The candidate note accurately summarizes the HPI, including details like 'previous patient', 'new condition', and correctly identifies 'Dr. Almadroa' as per the transcript. The benchmark incorrectly names the doctor as 'Dr. Dellamaggiora' and includes a date not present in the HPI portion of the transcript. The candidate's summary is factually superior and adheres to the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate note perfectly adheres to the 'verbatim' instruction for this field, reproducing the doctor's dictation exactly, including filler words and informal phrasing. The benchmark note significantly rephrased and added details not present in the transcript (e.g., 'intact', 'ecchymosis', 'to palpation') and omitted some dictated content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "The candidate note is a perfect verbatim match to the transcript's description of the imaging results. The benchmark note added 'left index finger' which was an inference not explicitly stated in the dictation for the imaging results."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "The candidate correctly identified 'Left index finger triggering with A1 pulley involvement'. However, it hallucinates 'Right upper extremity Skin is intact' and 'No tenderness to palpation', which directly contradicts the transcript's findings of 'left upper extremity' and 'Acute moderate tenderness on left index finger'. This represents major factual errors despite potentially following its own conflicting instructions."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "The candidate note accurately states 'The patient will not receive an injection at this time'. However, it significantly hallucinates additional plan details such as 'manage the condition conservatively with close observation', 'patient was educated', and 'Follow-up in 6 to 8 weeks'. None of these crucial plan details are mentioned in the transcript."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note performed exceptionally well in accurately transcribing verbatim sections (Musculoskeletal, Imaging) and capturing the essence of the HPI, even outperforming the benchmark in these areas by adhering more closely to the raw transcript. However, its performance severely degraded in the Assessment and Plan sections due to significant hallucination and factual errors, particularly in the Assessment where it contradicted exam findings and hallucinated findings for the wrong side. The candidate also struggled with following instructions for the Assessment section, which appeared to be contradictory within its own prompt."
+}

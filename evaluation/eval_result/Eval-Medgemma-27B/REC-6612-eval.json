@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The candidate note completely omits the patient's name, 'Susan Oakes', which is present in the benchmark note and considered the ground truth."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 0,
+      "justification": "The candidate note fails to identify and include the chief complaint, 'Follow-up for wrist achiness and limited motion', which is a key piece of information present in the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The candidate note captures the core symptoms (wrist achiness, limited motion, electric sensation, inquiry about nerve studies) accurately. However, it misses several minor details present in the benchmark, such as 'She is doing okay overall', 'life is difficult at the moment', and the explicit mention of her finally having the nerve studies. The benchmark's HPI is more comprehensive."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Both the candidate note and the benchmark correctly indicate that no specific, detailed musculoskeletal verbatim findings were dictated in the transcript ('-') or were to be included for this field ('[]')."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "The candidate note completely misses the 'Nerve study results' which are explicitly mentioned in the transcript as needing to be pulled in and are present in the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "The benchmark note's final 'content' for the Assessment field is empty (`[]`). The candidate note, however, generates a list of conditions ('Right wrist achiness', 'Limited right wrist motion', 'Right hand electric sensation'), which is a direct mismatch to the benchmark's empty state for this specific field."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "The candidate note has multiple discrepancies compared to the benchmark. It omits 'She is doing well' and 'Advanced weightbearing' from the wrist plan. Crucially, it states 'urology consult' instead of the benchmark's 'neurology consult' for radiculopathy, which is considered a major factual error as per the benchmark being the ground truth. It also adds 'to 8 weeks' to the follow-up time, which is not in the benchmark ('6 weeks'). These constitute major content differences and a significant factual error relative to the benchmark."
+    }
+  },
+  "total_score": 9,
+  "percentage": 25.71,
+  "overall_summary": "The AI-generated clinical note performed poorly against the benchmark. It failed to capture essential information for fields like Patient Name, Chief Complaint, and Imaging Results, resulting in zero scores for these sections. A significant factual error was observed in the Plan section (urology vs. neurology consult) when strictly evaluated against the benchmark, despite the transcript's ambiguity. The Assessment section was also marked down due to the candidate generating content where the benchmark specified an empty field. While the Musculoskeletal field was perfect and the HPI showed partial accuracy, the numerous critical omissions and factual inaccuracies led to a very low overall score."
+}

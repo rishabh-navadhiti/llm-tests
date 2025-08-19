@@ -2,34 +2,34 @@
   "field_scores": {
     "PATIENT_NAME": {
       "score": 0,
-      "justification": "The CANDIDATE_NOTE returned an empty content array for PATIENT_NAME, completely failing to extract the patient's name, which is not mentioned in the transcript."
+      "justification": "The CANDIDATE_NOTE returned an empty content array. While the patient's name is not in the transcript, the benchmark note provides it, indicating an expectation for this information to be present. The candidate completely failed to generate any content for this field."
     },
     "CHIEF_COMPLAINT": {
       "score": 0,
-      "justification": "The CANDIDATE_NOTE returned an empty content array for CHIEF_COMPLAINT, failing to extract the chief complaint (bilateral hand numbness and tingling, and burning pain) from the transcript."
+      "justification": "The CANDIDATE_NOTE returned an empty content array. The chief complaint ('bilateral hand numbness and tingling as well as burning pain') is clearly stated in the transcript. The candidate completely failed to extract this information."
     },
     "HPI_SPENCER": {
       "score": 0,
-      "justification": "The CANDIDATE_NOTE returned an empty content array for HPI_SPENCER, completely failing to extract any details regarding the onset, duration, location, or severity of the illness, as present in the transcript and benchmark."
+      "justification": "The CANDIDATE_NOTE returned an empty content array. Critical HPI details such as onset date (July 1, 2025), comparison to previous pregnancy, OB referral, and prior splinting for sleep improvement were explicitly mentioned in the transcript. The candidate completely failed to extract any of these details, violating the instructions to mention onset, duration, location, and severity."
     },
     "MUSCULOSKELETAL_VERBATIM": {
       "score": 0,
-      "justification": "The CANDIDATE_NOTE returned an empty content array for MUSCULOSKELETAL_VERBATIM, failing to extract any physical examination findings verbatim as instructed. The transcript clearly contains relevant information."
+      "justification": "The CANDIDATE_NOTE returned an empty content array. The transcript clearly provided verbatim musculoskeletal exam findings ('bilateral upper extremity skin is clean, dry, and intact without erythema or ecchymosis. Um... Got PCTS, uh, some decreased sensation to the middle fingers, noted'). The candidate completely failed to extract any content, let alone verbatim as required."
     },
     "IMAGING_RESULTS": {
       "score": 0,
-      "justification": "The CANDIDATE_NOTE returned an empty content array for IMAGING_RESULTS, failing to extract the imaging information (X-rays deferred secondary to pregnancy) from the transcript."
+      "justification": "The CANDIDATE_NOTE returned an empty content array. Imaging information ('X-rays deferred secondary to pregnancy') was explicitly stated in the transcript. The candidate completely failed to extract this information."
     },
     "ASSESSMENT_SPENCER": {
       "score": 0,
-      "justification": "The CANDIDATE_NOTE returned an empty content array for ASSESSMENT_SPENCER, completely failing to provide any assessment of the patient's condition (bilateral carpal tunnel syndrome) as present in the transcript and benchmark."
+      "justification": "The CANDIDATE_NOTE returned an empty content array. The assessment/diagnosis ('bilateral carpal tunnel syndrome') was clearly stated in the transcript. The candidate completely failed to extract this medical condition as instructed."
     },
     "PLAN_SPENCER_": {
       "score": 0,
-      "justification": "The CANDIDATE_NOTE returned an empty content array for PLAN_SPENCER_, completely failing to extract any part of the treatment plan, recommendations, or follow-up instructions as clearly detailed in the transcript and benchmark."
+      "justification": "The CANDIDATE_NOTE returned an empty content array. The transcript contained a detailed plan including recommendations for injections, discussion of risks, immediate action (doing them today), and follow-up instructions (return in three months if symptoms persist postpartum). The candidate completely failed to generate any plan content."
     }
   },
   "total_score": 0,
   "percentage": 0.0,
-  "overall_summary": "The candidate note performed extremely poorly, returning empty content arrays for all 7 fields. It failed to extract any relevant information from the provided transcript, resulting in a total score of 0 out of 35. This indicates a complete lack of functional extraction capability for this specific input."
+  "overall_summary": "The candidate note performed extremely poorly, returning an empty content array for all fields. This indicates a complete failure to extract any relevant information from the provided transcript, resulting in a total score of 0. There were no strengths identified, as no content was generated for evaluation against the benchmark or instructions."
 }

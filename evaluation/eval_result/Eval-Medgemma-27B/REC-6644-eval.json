@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The candidate note identified the patient as 'Spencer' instead of the correct patient 'Cathy Smith' based on the transcript. This is a complete hallucination of the patient's name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 0,
+      "justification": "The candidate provided the chief complaint for a different patient (related to DIP joint pain), not Cathy Smith. Cathy Smith's chief complaint was related to 'Follow up hand pain and swelling'."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "The HPI provided by the candidate describes the history of a different patient (with DIP and trapeziometic carpal joint issues), not Cathy Smith. The information is entirely irrelevant to the target patient."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "The musculoskeletal findings listed are for a different patient (describing DIP and trapeziometic carpal joint angulation/deformity), not Cathy Smith, whose exam findings included 'incisions well healed' and 'A1 pulley incision' details."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "The imaging results provided are for a different patient (detailing DIP joint space narrowing from 2002 images), not Cathy Smith, for whom no imaging results were dictated in the relevant section of the transcript."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "The assessment lists conditions (DIP and trapeziometic carpal joint arthritis, DIP joint fusion) relevant to a different patient, not Cathy Smith. Cathy Smith's assessment should have been 'Hand swelling' and 'Hand pain'."
+    },
+    "PLAN_SPENCER_": {
+      "score": 0,
+      "justification": "The plan details interventions for CMC and DIP arthritis (steroid injections, fusion consideration) which are for a different patient, not Cathy Smith. Cathy Smith's plan was to 'Continue therapy. Transition care with Jack. Return to clinic in 6 weeks.'"
+    }
+  },
+  "total_score": 0,
+  "percentage": 0.0,
+  "overall_summary": "The candidate note completely failed to extract information for the intended patient, Cathy Smith. Instead, all fields contain information pertaining to a different patient discussed earlier in the transcript. This resulted in zero factual accuracy for any of the fields for the target patient."
+}

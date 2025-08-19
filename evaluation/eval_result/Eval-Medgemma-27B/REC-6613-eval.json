@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The candidate note perfectly matches the benchmark for the patient's name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The candidate note perfectly matches the benchmark for the chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The candidate omits a relevant detail present in the benchmark and transcript regarding the rheumatologist ordering X-rays and an ultrasound. It also states the patient 'has been treated by Dr. Ishimori for' diagnoses, whereas the transcript indicates these are simply her diagnoses, which is a minor misinterpretation."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "The benchmark explicitly provides '-' for this field, indicating no content is expected or relevant. The candidate, however, includes extensive verbatim musculoskeletal exam findings, which is a major content difference from the benchmark's expected output."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "There are minor wording differences ('noted' vs 'showed') and a minor formatting difference (comma usage) compared to the benchmark, but the factual content and meaning are perfectly preserved."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "The candidate includes 'Left wrist pain' instead of the benchmark's 'Bilateral hand pain.' While 'Left wrist pain' is supported by the transcript's chief complaint, it does not match the benchmark's specific content for this field. The remaining items are consistent."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The candidate provides a more comprehensive plan by including additional details directly from the transcript (e.g., 'carpal tunnel', 'reviewed clinical scenario and images', 'not bothering her'). However, it inaccurately states '6 to 8 weeks' for follow-up, whereas the transcript and benchmark clearly state '6 weeks', which is a minor factual discrepancy."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate note demonstrates strong performance in accurately extracting basic patient information and chief complaint. It also effectively captured the imaging results with only minor phrasing differences. However, the note significantly deviated in the Musculoskeletal section by providing content when the benchmark expected none. Additionally, in the HPI and Plan sections, while often more detailed with information from the transcript, the candidate introduced minor factual inaccuracies or missed details (e.g., previous imaging orders, specific follow-up timeframe). The Assessment also showed a minor discrepancy in the description of pain compared to the benchmark. The model sometimes followed its own specific instructions even when they led to content differences from the benchmark, indicating a potential misalignment in instruction sets."
+}

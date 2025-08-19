@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The candidate note hallucinates the patient's name as 'Spencer', which is incorrect. The transcript does not provide the patient's name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The candidate note 'Increasing numbness and tingling in the right hand' accurately captures the chief complaint from the transcript, including the 'increasing' detail, which is a perfect match in factual content."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The candidate note accurately summarizes most of the HPI details. However, it omits the date ('8.6.2025') present in the benchmark. Additionally, it includes information about the prior injection and the patient's request for another injection, which, while historical, is more typically placed in the plan/assessment rather than strictly HPI as per the instruction 'Do not include exam findings, imaging results, or any objective measurements' (even though 'treatments received' is allowed, the specific request for a new injection leans more towards plan)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "The candidate note fails significantly in providing a verbatim transcription as per the instructions. It misses 'Bilateral upper extremities' and 'Skin is clean, dry and intact without erythema or ecchymosis'. Crucially, it misinterprets 'A1 pulley' as 'A one foley' and '.PCTS' as '.pcgs are normal', indicating major transcription errors."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "The candidate note states 'X-ray is clear.' which is verbatim from the transcript. However, the BENCHMARK_NOTE (ground truth) has corrected this to 'XR - Deferred.'. Since the evaluation is against the benchmark, the candidate note's content is a major factual difference compared to the benchmark, resulting in a low score."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "The candidate note's assessment is much broader than the benchmark's ('Trigger finger.'). While it includes relevant conditions like 'Right hand numbness and tingling' and 'Right thumb sensory deficit secondary to burn', which are supported by the transcript, it also includes an exam finding ('palpable nodule') which goes against the instruction 'Do not include any exam findings'. The inclusion of 'Right upper extremity skin is intact' is contradictory to the general instruction 'Do not include normal findings', even though there's a specific override for 'skin is intact' if present, the benchmark does not include it."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "The candidate note perfectly captures all the elements of the plan from the transcript. It rephrases the information into conversational and coherent sentences while preserving all factual content and adhering to the instruction's stylistic requirements."
+    }
+  },
+  "total_score": 17,
+  "percentage": 48.57,
+  "overall_summary": "The candidate note demonstrated strong performance in summarizing the Chief Complaint and the Plan, accurately extracting and rephrasing information while adhering to specified instructions. However, it performed poorly in identifying the patient's name, which was a hallucination. The musculoskeletal exam section contained significant verbatim errors and omissions. The HPI was mostly accurate but missed a date and included a detail that was slightly out of scope based on the benchmark. The Imaging Results, while transcript-accurate, diverged from the benchmark's corrected content. The Assessment was broader than the benchmark and included an exam finding, indicating inconsistency with instructions and benchmark scope."
+}

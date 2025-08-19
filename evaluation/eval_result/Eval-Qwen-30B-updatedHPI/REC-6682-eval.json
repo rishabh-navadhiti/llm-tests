@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The `CANDIDATE_NOTE` perfectly matches the `BENCHMARK_NOTE` for the patient's name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The `CANDIDATE_NOTE` includes 'Recurrence of left middle finger trigger finger' while the `BENCHMARK_NOTE` is 'Left middle finger trigger finger'. The candidate's wording is slightly more detailed than a concise chief complaint but preserves the core meaning."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "The `CANDIDATE_NOTE` captures the essential HPI facts (past injection, recurrence) but adds verbose phrasing ('The patient is a N. Kalinski who reports') and an inference not explicitly stated in the transcript ('He is now being evaluated for further management...'), violating its own instruction. Crucially, it omits the last sentence present in the `BENCHMARK_NOTE`'s HPI ('He will return to clinic if he has any recurrence.'), which, while arguably a plan item, is part of the 'ground truth' benchmark for this field. This constitutes a missing detail and a minor hallucination/inference."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Both the `CANDIDATE_NOTE` (empty list) and `BENCHMARK_NOTE` ('-') correctly indicate that no specific musculoskeletal exam findings were dictated in the transcript."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both notes correctly reflect that no imaging review was performed, as explicitly stated in the transcript ('We can remove the imaging review for the plan.'). Note: Assuming 'IMAGING_GEORGE' in benchmark corresponds to 'IMAGING_RESULTS' in candidate."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "The `CANDIDATE_NOTE` correctly identifies the primary assessment ('Recurrence of left middle finger trigger finger'). However, it inappropriately includes 'Right upper extremity Skin is intact,' which is a normal finding and explicitly goes against the candidate's own instruction 'Do not include normal findings such as “skin is intact”.' This is a minor hallucination/factual error not supported by the transcript as an assessment."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "The `CANDIDATE_NOTE` accurately includes the injection performed and the removal of imaging review. However, it adds a redundant and out-of-place assessment statement ('The patient has had a recurrence of left middle finger trigger finger.') and hallucinates a specific timeframe ('in 6 to 8 weeks') for the follow-up not mentioned in the transcript. The `BENCHMARK_NOTE` is concise and accurate, directly reflecting the dictated plan without hallucinated details."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.42857142857143,
+  "overall_summary": "The candidate note demonstrated good accuracy for basic information like patient name and fields with no dictated content. However, it struggled with complex sections like HPI, Assessment, and Plan. It frequently included redundant or inferred information, and notably hallucinated specific details (e.g., follow-up timeframe, normal exam findings) that were not present in the transcript, often going against general instructions for clinical note quality, despite sometimes being prompted by contradictory specific instructions within its own format. This led to a lower score in these critical clinical sections."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient's name 'Kevin Clancy' perfectly matches the benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The chief complaint 'Left ring finger trigger finger' perfectly matches the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The candidate's HPI 'Patient presents for a left ring finger trigger finger injection' describes the reason for the visit/procedure rather than the history of the illness itself. The benchmark's 'He reports left ring finger trigger finger' is more aligned with the HPI concept, even if minimal due to lack of detail in the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Both the candidate (empty list) and the benchmark ('-') correctly indicate that no musculoskeletal findings were mentioned in the transcript. The candidate followed its own instruction to return empty."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both the candidate (empty list) and the benchmark ('-') correctly indicate that no relevant imaging results were mentioned for this patient in the transcript. The candidate followed its own instruction to return empty."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "The assessment accurately lists 'Left ring finger trigger finger' and 'Plantar tendonitis', perfectly matching the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The candidate covers the injection and plantar tendonitis plan accurately, albeit with slightly different wording. However, it misses the 'Return to clinic in 2 weeks' follow-up instruction present in the benchmark. While this specific follow-up was not explicitly stated in the transcript for the patient, the evaluation is based on comparison to the benchmark which is considered the ground truth."
+    }
+  },
+  "total_score": 31,
+  "percentage": 88.57,
+  "overall_summary": "The candidate note demonstrated strong performance in identifying the patient's name, chief complaint, and assessment, perfectly matching the benchmark. It also correctly omitted musculoskeletal and imaging findings as there was no information in the transcript. However, it struggled with the HPI by including a procedural aspect. The 'Plan' section was largely correct but missed a follow-up instruction present in the benchmark, resulting in a lower score for that field."
+}

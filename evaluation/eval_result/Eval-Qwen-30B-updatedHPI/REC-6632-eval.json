@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient's name is correctly identified as 'Greta Griswana', matching the benchmark exactly."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "The candidate note only lists 'Thumb pain' as the chief complaint. The transcript explicitly mentions 'forearm pain is better' and 'thumb pain is killing her', indicating both were chief complaints. The candidate missed 'Forearm pain'."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "The candidate note contains significant hallucinated details not present in the transcript (e.g., pain began gradually, no previous management, denies trauma, no systemic symptoms, no other joints involved). It also incorrectly includes an exam finding ('localized to the right upper extremity, specifically at the trapeziometacarpal joint') in the HPI, violating instructions. It also missed the relevant HPI detail about the daughter's wedding."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "The candidate note is mostly verbatim but omits 'Right upper extremity' which was stated at the beginning of the musculoskeletal exam findings in the transcript ('it's her right upper termine. Significant...'). This is a minor omission from an otherwise verbatim section."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "The candidate note rephrases 'planned arthritis' as 'degenerative joint disease (osteoarthritis)' and adds 'at the trapeziometacarpal joint', which was not explicitly stated in the imaging results given by the doctor. The benchmark accurately reflected the doctor's 'planned arthritis' statement."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "While 'Right trapeziometacarpal joint osteoarthritis' is a plausible diagnosis derived from the context, the candidate note includes three additional points that violate the instructions: 'Right upper extremity Skin is intact' (normal finding), 'No tenderness to palpation' (normal finding, and partially contradicted by specific tenderness in other areas), and 'Tenderness to palpation at trapeziometacarpal joint' (an exam finding, not an assessment/diagnosis)."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "The candidate note accurately captures all elements of the plan from the transcript, including the steroid injection, discussion of temporary nature, procedure/postoperative protocol, and the 8-week follow-up with the contingency 'if symptoms persist'. The phrasing aligns well with the conversational style requested."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "The candidate note demonstrates strong performance in extracting specific verbatim details, particularly for the patient's name and the comprehensive treatment plan. However, it struggles significantly with adherence to specific instructions for the HPI and Assessment sections, leading to notable hallucinations (HPI) and the inclusion of exam/normal findings (Assessment) despite explicit negative constraints. There were also minor inaccuracies in the Chief Complaint and Imaging Results due to omissions or non-verbatim interpretations. Overall, the model needs substantial improvement in following nuanced instructions and differentiating between subjective history, objective findings, and diagnostic assessments."
+}

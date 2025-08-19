@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The candidate accurately extracted the patient's name as 'Kathy Smith', matching the benchmark and transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "The candidate's chief complaint is overly detailed, including elements like 'dissatisfaction with hand therapy, and desire to return to Jack for care' which are better suited for the HPI. This violates the instruction to provide 'only the patient's chief complaint without any additional details or context'. The benchmark provides a more concise and appropriate chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "The candidate incorrectly includes extensive physical exam findings within the HPI section. This directly violates the instruction: 'Do not include exam findings, imaging results, or any objective measurements.' This is a major factual error in terms of section content."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate meticulously followed the 'verbatim' instruction, accurately extracting the doctor's dictated words, including fillers ('Um,') and medically misspoken terms ('pony incision' instead of 'pulley', 'tendon salvation' instead of 'tendon desquamation'). While the benchmark corrects these, the candidate adhered perfectly to the explicit instruction for verbatim extraction, making it a perfect match to the instruction."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "The candidate hallucinated 'X-rays are normal' for Kathy Smith. No imaging results were mentioned for this specific patient in the provided transcript segment. This is completely incorrect and fabricated information."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "The candidate's assessment section is largely incorrect and violates multiple instructions. It includes normal findings ('Skin is intact', 'No tenderness to palpation', 'Excellent range of motion') and exam findings ('tenderness to palpation at the A1 pulley incision') which are explicitly forbidden by the primary rule 'Do not include normal findings...Do not include any exam findings'. It also completely missed a key assessment point present in the benchmark ('Status post hand surgery'). Although there were some conflicting instructions, the primary intent of 'active symptoms or conditions' was not met."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "The candidate accurately captured all essential elements of the plan, including continuing therapy, transitioning care to Jack, and returning to clinic in six weeks. The minor rephrasing ('Transition care to Jack' vs 'Return to Jack for hand therapy') preserves the original meaning perfectly."
+    }
+  },
+  "total_score": 19,
+  "percentage": 54.28,
+  "overall_summary": "The candidate note demonstrated proficiency in extracting verbatim musculoskeletal exam findings and accurately capturing the patient's name and plan. However, it exhibited significant weaknesses in adhering to instructions for other fields. The Chief Complaint was overly detailed, the HPI incorrectly included exam findings, and a major hallucination occurred in the Imaging Results. The Assessment section was particularly problematic, failing to identify core conditions and including numerous irrelevant details, indicating a misunderstanding or misapplication of field-specific rules. The inconsistent performance suggests a need for improved instruction adherence and factual accuracy, especially concerning hallucinations and content placement."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The candidate note incorrectly identified the patient's name as 'Spencer', which is likely the doctor's name, not the patient's. The transcript does not mention the patient's name, and the benchmark uses a placeholder name 'Susan Oakes'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "The candidate note includes 'intermittent electric sensations' as part of the chief complaint. While mentioned as a symptom, the primary chief complaint for the follow-up, as per the transcript and benchmark, is 'wrist achiness and limited motion'. Including secondary symptoms makes the chief complaint less concise and accurate for its intended purpose."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "The candidate note incorrectly includes 'Her physical exam findings are unchanged from prior visits' and 'She continues to gain strength and has tolerated advanced activity and laboring without issue'. The instructions explicitly state 'Do not include exam findings... or any objective measurements'. The benchmark correctly omits these details. This represents multiple missing details OR minor hallucination by including prohibited content."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate note correctly returned an empty array, indicating no verbatim musculoskeletal findings were dictated, which aligns with the transcript and the instruction 'If not information is found, please return empty'. The benchmark also correctly indicated no specific content with '-'."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "The candidate note accurately provides the specific details of the nerve study results as dictated in the transcript ('No evidence of carpal tunnel. There is perhaps some evidence of ulnar nerve compression at Guyon's canal, though the patient is not symptomatic in that distribution.'). This is a perfect and more detailed match compared to the benchmark's general 'Nerve study results'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "The benchmark's content for this field is completely empty, which is incorrect. The candidate note correctly identifies most relevant conditions/symptoms (5 points). However, it incorrectly includes 'Right upper extremity skin is intact' and 'No tenderness to palpation'. These are not verbatim from the transcript and contradict the primary instruction to 'Do not include normal findings' in the assessment of medical conditions. While there's a contradictory instruction at the end, the initial rule and the nature of an 'assessment' section dictate their exclusion. This constitutes a minor hallucination/incorrect detail based on a strict interpretation of the instructions and the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "The candidate note accurately captures all key elements of the plan from the transcript. However, there are minor wording differences, such as 'rehabilitation' instead of 'laboring' and using words ('six', 'September') instead of numbers ('6', '9-1') for dates, despite the instruction to 'User numbers instead of word where necessary'."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60.0,
+  "overall_summary": "The candidate note demonstrated good factual accuracy in several key areas such as Imaging Results and Musculoskeletal findings. However, its performance was significantly hindered by a critical error in identifying the patient's name and by failing to strictly adhere to instructions in the HPI and Assessment fields, particularly regarding the exclusion of exam findings and the inclusion of non-primary details in the Chief Complaint. The Plan section was largely accurate but showed minor deviations in wording and formatting from instructions."
+}

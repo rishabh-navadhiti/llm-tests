@@ -18,7 +18,7 @@
     "key": "HPI_SPENCER",
     "content": [],
     "default": "-",
-    "instruction": "Summarize the History of Present Illness (HPI) as a coherent paragraph in clinical note style. Include only the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Do not include exam findings, imaging results, or any objective measurements. Maintain chronological order and use full sentences. Include information only if explicitly stated in the transcript. Do not add assumptions, inferred limitations, or negatives unless explicitly stated."
+    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
   },
   {
     "title": "Musculoskeletal",

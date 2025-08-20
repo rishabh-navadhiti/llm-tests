@@ -1,0 +1,70 @@
+<think>
+Alright, so I need to process this medical transcript into a structured patient visit note using the provided JSON template. Let me go through each part step by step.
+
+First, looking at the transcript, the patient's name isn't explicitly mentioned anywhere. The doctor refers to her as "she" but doesn't provide a full name. So, according to the template instructions, I should return "-" for the Patient Name field since there's no explicit mention.
+
+Next is the Chief Complaint. The patient mentions increasing numbness and tingling in her right hand and difficulty feeling things due to a burn on her right thumb. So, combining these, the chief complaint would be about the numbness and tingling in the right hand, especially after the burn.
+
+Moving on to the History of Present Illness (HPI Spencer). The patient was diagnosed with lymphoma and just finished chemotherapy. Because of this, she's been at home more and noticed the symptoms. She also burned her thumb, making it harder to feel things and perform tasks like putting earrings on. She's trying to hold her phone less. So, I'll summarize this into a coherent paragraph focusing on onset, duration, location, severity, etc.
+
+For Musculoskeletal findings, the exam notes include bilateral upper extremity skin being clean, dry, intact without erythema or ecchymosis. There's moderate tenderness of the right small finger with triggering and a nodule. Range of motion is excellent, and pcgs are normal. The X-ray was clear.
+
+Imaging Results specifically mention an X-ray that's clear, so I'll note that as "X-ray clear."
+
+The Assessment should list the active problems. From the transcript, we have numbness and tingling in the right hand, a burn on the right thumb, a trigger finger in the right small finger (status post injection in 2015), and carpal tunnel syndrome.
+
+Finally, the Plan includes another injection for the trigger finger, recommending night splints for carpal tunnel, low threshold for nerve studies, and a follow-up in two months. I'll list these as per the instructions, ensuring each is explicitly mentioned.
+
+I need to make sure all entries are correctly formatted in JSON, using the exact keys and structure provided. Also, double-checking for any grammatical errors or clarity issues to ensure professionalism and accuracy.
+</think>json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Increasing numbness and tingling in her right hand, difficulty feeling things due to burned right thumb."],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["The patient, diagnosed with lymphoma and recently completed chemotherapy, reports increased numbness and tingling in her right hand. She has been at home more due to her condition and noticed these symptoms. Additionally, she burned her right thumb, exacerbating difficulty feeling objects and performing tasks like putting earrings on. She is trying to hold her phone less."],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Bilateral upper extremity skin is clean, dry, and intact without erythema or ecchymosis. Moderate tenderness of the right small finger with triggering and a nodule. Excellent range of motion overall. PCGS are normal."],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-ray clear."],
+    "default": "-",
+    "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Numbness and tingling of the right hand", "Burned right thumb", "Trigger finger (right small finger) - status post injection in 2015", "Carpal tunnel syndrome"],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Another injection for trigger finger in the right small finger", "Recommend night splints for carpal tunnel syndrome", "Low threshold for nerve studies", "Return to clinic in two months for follow-up."],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."
+  }
+]

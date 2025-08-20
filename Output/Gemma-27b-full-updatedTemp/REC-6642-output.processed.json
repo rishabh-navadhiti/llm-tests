@@ -2,9 +2,7 @@
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": [
-      "Nadeem Nemi"
-    ],
+    "content": [],
     "default": "-",
     "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
   },
@@ -21,7 +19,7 @@
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
     "content": [
-      "The patient is a right-handed male retiree with a history of bilateral carpal tunnel and right cubital tunnel. He presents today for evaluation of bilateral thumb pain, which has significantly worsened since he was last seen in 2019, most notably over the last six months. He denies any numbness and tingling but reports significant pain and feeling limited by his thumbs."
+      "The patient is a right-handed male retiree with a history of bilateral carpal tunnel and right cubital tunnel, and bilateral thumb CMC arthritis. He presents with worsening bilateral thumb pain, which has significantly increased since his last visit in 2019, most notably over the last six months. He denies numbness and tingling, but reports limited function in his thumbs."
     ],
     "default": "-",
     "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
@@ -30,7 +28,7 @@
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
     "content": [
-      "On exam, bilateral upper extremty skin is clean, dry and intact. Um, no significant soft tissue swelling, positive Grin, positive shoulder sign, no triggering of any digits with the thumb, um, dot NCTS."
+      "On exam, bilateral upper extremty skin is clean, dry and intact. Um, no significant soft tissue swelling, positive Grin, positive shoulder sign, no triggering of any digits with the thumb"
     ],
     "default": "",
     "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
@@ -39,7 +37,7 @@
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
     "content": [
-      "X-rays three views of the right hand demonstrate severe joint space narrowing at the metacarpal joint with osteophytosis. There is evidence of a Z deformity with hyperextension at the MCP joint. Calcific arteriogram is noted. The left hand is the same, except you can delete \"the calcific arteriogram is noted.\""
+      "X-rays three views of the right hand demonstrate severe joint space narrowing at the metacarpal joint with osteophytosis. There is evidence of a Z deformity with hyperextension at the MCP joint. Calcific arteriogram is noted. The left is the same, except you can delete the \"calcific arterio-\""
     ],
     "default": "-",
     "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
@@ -48,10 +46,11 @@
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "- Bilateral carpal tunnel",
-      "- Right cubital tunnel",
-      "- Bilateral thumb CMC arthritis",
-      "- Thumb pain"
+      "Bilateral carpal tunnel",
+      "Right cubital tunnel",
+      "Bilateral thumb CMC arthritis",
+      "Severe joint space narrowing",
+      "Z deformity"
     ],
     "default": "-",
     "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
@@ -60,7 +59,7 @@
     "title": "Plan",
     "key": "PLAN_SPENCER_",
     "content": [
-      "Recommend a trial of injections for bilateral thumb CMC arthritis. Discussed the temporary nature of steroids and potential rebound pain. He understands and agrees to proceed with injections today. Recommend observation for the carpal tunnel and cubital tunnel. Consider nerve studies if symptoms re-exist. Return to clinic in two months for follow-up."
+      "Recommend trial of injections. Discussed the temporary nature of steroids and rebound pain. He understands. Observation for carpal tunnel and cubital tunnel. Consider nerve studies if symptoms re-exist. Return to clinic in two months for follow-up."
     ],
     "default": "-",
     "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."

@@ -21,7 +21,7 @@
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
     "content": [
-      "The patient, a right hand dominant horticulturalist, presented for evaluation of left wrist pain that began after a trip and fall on 6/21/25 while leaving Groundlings. She reports the pain was initially painful, but then improved slightly. She was evaluated at urgent care where X-rays revealed no fractures and was diagnosed with a sprain. Her pain increased with humidity while in Massachusetts, prompting her to seek further evaluation and treatment."
+      "The patient, Stephanie Humphrey, is a right hand dominant horticulturalist who presents for evaluation of left wrist pain that began after a trip and fall while leaving Groundlings on 6/21/25. She states the pain was present immediately after the fall and improved slightly. She was evaluated at urgent care where X-rays showed no fractures and she was diagnosed with a sprain. Her pain increased with humidity while in Massachusetts, prompting her to seek further evaluation."
     ],
     "default": "-",
     "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
@@ -30,7 +30,7 @@
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
     "content": [
-      "left upper extremity skin is clean and intact without erythema or hematemosis. No specific tendon inflammation. Mild tendon inflammation over the ECU tendon. There is pain with pro-supination. No evidence of subluxation of the ECU tendon. Excellent range of motion overall."
+      "Mild tendon inflammation over the ECU tendon. There is pain with pro-supination. No evidence of ECU subluxation."
     ],
     "default": "",
     "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
@@ -39,7 +39,7 @@
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
     "content": [
-      "X-rays are normal through these, the wrist, left wrist."
+      "X-rays normal"
     ],
     "default": "-",
     "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
@@ -48,8 +48,8 @@
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "- Left ECU tendonitis",
-      "- Left ulnar-sided wrist pain"
+      "Left ECU tendonitis",
+      "Left ulnar-sided wrist pain"
     ],
     "default": "-",
     "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."

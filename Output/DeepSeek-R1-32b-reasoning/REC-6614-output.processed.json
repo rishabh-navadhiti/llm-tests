@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Precious Myles Garrett"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Left wrist pain"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Precious Myles Garrett, a right-hand dominant children's social worker, presents for evaluation of left wrist pain. The pain is more bothersome than the masses and wakes her at night. She desires to know what can be done about it. She has diagnoses of a left first dorsal compartment wrist cyst, left thumb MCP osteophyte, and bilateral thumb and MCP joint issues. The masses used to fluctuate in size but are now constant. She saw a rheumatologist who performed x-rays and an ultrasound of the front of the wrist."
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "On exam, there is a pea-sized mass over the first dorsal compartment, non-tender and mobile. Another mass at the dorsal ulnar aspect of the thumb MCP joint is non-mobile, minimally tender, with excellent range of motion. No tenderness at the A1 point, no locking or catching."
+    ],
+    "default": ""
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays show an osteophyte at the thumb MCP joint. Ultrasound demonstrates a bony avulsion fragment versus osteophyte at the MCP joint and a retinacular cyst superficial to the first dorsal compartment sheath."
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Left wrist pain",
+      "Left first dorsal compartment cyst",
+      "Left thumb MCP joint osteophyte",
+      "Bilateral thumb and MCP joint masses."
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Recommend night splints for carpal tunnel. Observation recommended for the masses. Follow-up in six weeks."
+    ],
+    "default": "-"
+  }
+]

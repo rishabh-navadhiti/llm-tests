@@ -12,7 +12,7 @@
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
     "content": [
-      "Left ring finger trigger finger"
+      "Trigger finger"
     ],
     "default": "-",
     "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
@@ -44,7 +44,7 @@
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "- Left ring finger trigger finger"
+      "Trigger finger"
     ],
     "default": "-",
     "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
@@ -53,7 +53,7 @@
     "title": "Plan",
     "key": "PLAN_SPENCER_",
     "content": [
-      "Left ring finger trigger finger injection only."
+      "Injection only for left ring finger trigger finger."
     ],
     "default": "-",
     "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."

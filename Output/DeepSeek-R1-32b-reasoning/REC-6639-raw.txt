@@ -1,0 +1,99 @@
+<think>
+Alright, so I need to transform the given medical transcript into a structured patient visit note using the provided JSON template. Let me start by carefully reading through the transcript to extract all necessary information.
+
+First, I'll look for the patient names. The transcript mentions four patients: Chaz Thomas, Meesha Senuda, Grace Twan, and Josefina Marcial. Each of them has their own section in the conversation, so I'll need to process each one separately.
+
+Next, for each patient, I'll extract their chief complaint. Chaz is here for a follow-up after having his splint off because someone else's blood got on it. Meesha is also a follow-up, dealing with sensitivity and stiffness in her PIP joint. Grace came for MRI review regarding her mass and other aches. Josefina is here after an injection in her right hand that caused more pain than before, and she's considering treatment for her left hand as well.
+
+Moving on to the HPI Spencer section, I'll summarize each patient's history. Chaz took off his splint due to contamination and is experiencing some pain with limited flexion. Meesha has been wearing her splint but still experiences stiffness and sensitivity in her PIP joint. Grace had an injection that helped her mass but is now dealing with worsening systemic symptoms. Josefina's right hand improved after the injection, but she's looking into options for her left wrist arthritis.
+
+For the Musculoskeletal findings, I'll extract what was noted during the physical exams. Chaz's laceration was clean, dry, and intact with sutures removed. Meesha had limited flexion at the DIP joint and some stiffness. Grace's exam was unchanged. Josefina showed moderate tenosynovitis and ulnar prominence bilaterally.
+
+Imaging results are mentioned for Josefina, showing ulnar prominence and arthritis in both wrists. The others either didn't have imaging mentioned or it was deferred.
+
+In the Assessment section, I'll list each patient's active problems. Chaz has a laceration with sutures removed and some pain. Meesha has PIP joint stiffness. Grace has worsening systemic symptoms. Josefina has DRUJ arthritis and ulnar prominence.
+
+Finally, the Plan section includes the doctor's recommendations for each patient. Chaz is transitioning to a removable splint and starting hand therapy. Meesha is discontinuing her splint and continuing exercises. Grace needs follow-up with Dr. Sidlow and possible biopsy. Josefina is on a home exercise program and considering further treatments for her left wrist.
+
+I'll make sure each section follows the template instructions, using the correct keys and ensuring that all information is accurately captured without adding any assumptions. If any details are missing, I'll use the default value as specified.
+</think>json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Chaz Thomas", "Meesha Senuda", "Grace Twan", "Josefina Marcial"],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Follow-up after splint removal due to contamination.",
+      "Follow-up for PIP joint sensitivity and stiffness.",
+      "MRI review for mass and aches/pains.",
+      "Right hand pain after injection, considering left wrist treatment."
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Chaz Thomas took off his splint due to contamination and is now experiencing pain with limited flexion.",
+      "Meesha Senuda reports improvement in PIP joint symptoms but still experiences stiffness and sensitivity.",
+      "Grace Twan had an injection that reduced her mass but is now experiencing worsening systemic symptoms.",
+      "Josefina Marcial's right hand improved after injection, now considering treatment for left wrist arthritis."
+    ],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Laceration clean, dry, intact with sutures removed.",
+      "Limited flexion at DIP joint, stiffness in PIP.",
+      "Exam unchanged.",
+      "Moderate tenosynovitis, ulnar prominence bilaterally."
+    ],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-rays show ulnar prominence and DRUJ arthritis bilaterally."],
+    "default": "-",
+    "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "- Laceration with sutures removed",
+      "- Pain with limited flexion"
+    ],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Transition to removable splint.",
+      "Initiate hand therapy.",
+      "Return in two weeks for follow-up.",
+      "Discontinue splint use.",
+      "Continue home exercise program.",
+      "Return in six weeks.",
+      "Discuss with Dr. Sidlow.",
+      "Return in three months.",
+      "Trial of night splints and exercises.",
+      "Consider injection if no improvement."
+    ],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."
+  }
+]

@@ -4,25 +4,25 @@ import subprocess
 import logging
 from pathlib import Path
 import re
-from typing import Optional
+from typing import Optional, Dict, Any
 import requests
 import os
 from dotenv import load_dotenv
 
 load_dotenv()  # reads .env file and loads variables
 
-OLLAMA_MODEL_NAME = "gemma3:27b-it-fp16"
+OLLAMA_MODEL_NAME = "gemma3:27b-it-fp16"  # Correct Gemma 3 model name
 OLLAMA_API_URL = "http://localhost:11434/api/generate"  # local server
 
 # CONFIG — change as needed
 INPUT_DIR = Path("/workspace/llm-tests/transcripts/Spencer")
-OUTPUT_DIR = Path("/workspace/llm-tests/Output/gemma3-27b-it-fp16")
+OUTPUT_DIR = Path("/workspace/llm-tests/Output/Gemma-27b-full-updatedTemp")
 TEMPLATE_PATH = Path("/workspace/llm-tests/templates/doctor-template-specialized-v2.json")
 PROMPT_PATH = Path("/workspace/llm-tests/prompt-v1.txt")
 
-MAX_TOKENS = 12000  # Gemma 3 has 128K context window, can handle much longer responses
-TEMPERATURE = 0.3  # Lower than default for medical documentation consistency
-REQUEST_TIMEOUT = 600  # seconds
+MAX_TOKENS = 8192  # Conservative limit for stability
+TEMPERATURE = 0.7  # Lower for more consistent JSON output
+REQUEST_TIMEOUT = 600  # Reduced timeout
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -33,7 +33,7 @@ def show_gpu_memory(note: str = "") -> None:
     try:
         output = subprocess.check_output(
             ["nvidia-smi", "--query-gpu=memory.used,memory.total", "--format=csv,nounits,noheader"],
-            timeout=10,
+            timeout=5,
         )
         for i, line in enumerate(output.decode().strip().split("\n")):
             used, total = map(int, line.split(","))
@@ -41,6 +41,30 @@ def show_gpu_memory(note: str = "") -> None:
             logger.info(f"📊 GPU {i} Memory {note}: {used} MiB / {total} MiB ({usage_pct:.1f}%)")
     except Exception as e:
         logger.debug(f"Could not read GPU memory: {e}")
+
+
+def test_ollama_connection() -> bool:
+    """Test if Ollama is running and model is available."""
+    try:
+        # Test basic connection
+        resp = requests.get("http://localhost:11434/api/tags", timeout=10)
+        if resp.status_code != 200:
+            logger.error("❌ Ollama server not responding")
+            return False
+            
+        models = resp.json().get("models", [])
+        available_models = [model["name"] for model in models]
+        
+        if OLLAMA_MODEL_NAME not in available_models:
+            logger.error(f"❌ Model {OLLAMA_MODEL_NAME} not found. Available: {available_models}")
+            return False
+            
+        logger.info(f"✅ Ollama connection OK, model {OLLAMA_MODEL_NAME} available")
+        return True
+        
+    except Exception as e:
+        logger.error(f"❌ Failed to connect to Ollama: {e}")
+        return False
 
 
 def load_template_and_prompt() -> tuple[str, str]:
@@ -63,16 +87,33 @@ def load_template_and_prompt() -> tuple[str, str]:
 def load_transcript(file_path: Path) -> str:
     """Load transcript from a specific file."""
     with open(file_path, "r", encoding="utf-8") as f:
-        return f.read().strip()
+        content = f.read().strip()
+    
+    # If it's a JSON file, try to extract transcript content
+    if file_path.suffix.lower() == '.json':
+        try:
+            data = json.loads(content)
+            # Try common transcript fields
+            for field in ['transcript', 'text', 'content', 'body']:
+                if field in data:
+                    return str(data[field])
+            # If no specific field, return the whole JSON as string
+            return json.dumps(data, indent=2)
+        except json.JSONDecodeError:
+            # If not valid JSON, return as-is
+            pass
+    
+    return content
 
 
-def generate_response_ollama(system_prompt: str, template: str, transcript: str) -> str:
-    """Send prompt to Ollama GPT-OSS 120B API and return extracted response."""
-    logger.info("🚀 Sending request to Ollama GPT-OSS API...")
+def generate_response_ollama(system_prompt: str, template: str, transcript: str, filename: str) -> str:
+    """Send prompt to Ollama API and return extracted response."""
+    logger.info(f"🚀 Sending request to Ollama for {filename}...")
     show_gpu_memory("before request")
     start_time = time.time()
 
-    prompt_text = (
+    # Old-style prompt instructions
+    full_prompt = (
         system_prompt
         + "\n\nTEMPLATE_JSON (use exactly this structure; return only JSON matching the template):\n"
         + template
@@ -85,18 +126,20 @@ def generate_response_ollama(system_prompt: str, template: str, transcript: str)
 
     payload = {
         "model": OLLAMA_MODEL_NAME,
-        "prompt": prompt_text,
-        "temperature": TEMPERATURE,
-        "max_tokens": MAX_TOKENS,
-        "top_p": 0.95,  # Gemma 3 default
-        "top_k": 64,    # Gemma 3 default
-        "stop": ["<end_of_turn>"],  # Gemma 3 stop token
-        "stream": False,  # Disable streaming to get complete response
+        "prompt": full_prompt,
+        "options": {
+            "temperature": TEMPERATURE,
+            "top_p": 0.9,
+            "top_k": 40,
+            "num_predict": MAX_TOKENS,
+        },
+        "stream": False
     }
 
     headers = {"Content-Type": "application/json"}
 
     try:
+        logger.info(f"📤 Sending request (prompt length: {len(full_prompt)} chars)...")
         resp = requests.post(
             OLLAMA_API_URL,
             json=payload,
@@ -104,201 +147,230 @@ def generate_response_ollama(system_prompt: str, template: str, transcript: str)
             timeout=REQUEST_TIMEOUT,
         )
         resp.raise_for_status()
+        logger.info(f"📥 Received response (status: {resp.status_code})")
+    except requests.Timeout:
+        logger.error(f"❌ Request timeout after {REQUEST_TIMEOUT}s for {filename}")
+        raise
     except requests.RequestException as e:
-        logger.error(f"Request to Ollama API failed: {e}")
+        logger.error(f"❌ Request failed for {filename}: {e}")
         raise
 
-    # Dump raw response immediately for debugging
-    raw_dump_path = OUTPUT_DIR / f"{Path('temp').stem}.raw.txt"
-    raw_dump_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(raw_dump_path, "w", encoding="utf-8") as f:
-        f.write(resp.text)
-    logger.info(f"✅ Raw Ollama response dumped to {raw_dump_path}")
-
-    # Parse the response
+    # Parse response
     try:
         response_data = resp.json()
-        
-        # Handle streaming response format (multiple JSON objects)
-        if isinstance(response_data, str):
-            # If response is a string, try to parse multiple JSON objects
-            response_parts = []
-            for line in response_data.strip().split('\n'):
-                line = line.strip()
-                if line:
-                    try:
-                        part = json.loads(line)
-                        if 'response' in part:
-                            response_parts.append(part['response'])
-                    except json.JSONDecodeError:
-                        continue
-            output_text = ''.join(response_parts)
-        else:
-            # Single response object
-            output_text = response_data.get("response", "")
-            
-        # If output_text is still empty, try alternative parsing
+        output_text = response_data.get("response", "").strip()
         if not output_text:
-            # Try to parse line by line from raw text
-            response_parts = []
-            for line in resp.text.strip().split('\n'):
-                line = line.strip()
-                if line:
-                    try:
-                        part = json.loads(line)
-                        if 'response' in part and part['response']:
-                            response_parts.append(part['response'])
-                    except json.JSONDecodeError:
-                        continue
-            output_text = ''.join(response_parts)
-            
+            logger.error("❌ Empty response from Ollama")
+            return ""
     except json.JSONDecodeError as e:
-        logger.error(f"Failed to parse response JSON: {e}")
-        # Fallback: return raw text
-        output_text = resp.text
+        logger.error(f"❌ Failed to parse Ollama response JSON: {e}")
+        return resp.text
 
     gen_time = time.time() - start_time
-    logger.info(f"✅ Received response in {gen_time:.2f}s")
+    logger.info(f"✅ Generated response in {gen_time:.2f}s (length: {len(output_text)} chars)")
     show_gpu_memory("after request")
     
-    return output_text.strip()
+    return output_text
 
 
-def extract_json(response: str) -> Optional[any]:
-    """Extract first valid JSON object/array from Ollama output."""
+def extract_json_from_response(response: str) -> Optional[Dict[Any, Any]]:
+    """Extract JSON from model response with multiple strategies."""
     if not response or not response.strip():
+        logger.warning("⚠️ Empty response")
         return None
 
-    # Clean up the response - remove any non-JSON text
     response = response.strip()
     
-    # Look for JSON object or array patterns
-    json_patterns = [
-        r'\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}',  # Simple object pattern
-        r'\[[^\[\]]*(?:\[[^\[\]]*\][^\[\]]*)*\]',  # Simple array pattern
-    ]
+    # Strategy 1: Clean up markdown and try direct parse first
+    cleaned = response
+    # Remove markdown code blocks
+    cleaned = re.sub(r'```json\s*|\s*```', '', cleaned)
+    cleaned = cleaned.strip()
     
-    for pattern in json_patterns:
-        matches = re.findall(pattern, response, re.DOTALL)
-        for match in matches:
-            try:
-                return json.loads(match)
-            except json.JSONDecodeError:
-                continue
-    
-    # Try to find JSON between braces more aggressively
-    brace_level = 0
-    start_idx = -1
-    
-    for i, char in enumerate(response):
-        if char == '{':
-            if brace_level == 0:
-                start_idx = i
-            brace_level += 1
-        elif char == '}':
-            brace_level -= 1
-            if brace_level == 0 and start_idx >= 0:
-                candidate = response[start_idx:i+1]
-                try:
-                    return json.loads(candidate)
-                except json.JSONDecodeError:
-                    continue
-    
-    # Try to find JSON array
-    bracket_level = 0
-    start_idx = -1
+    try:
+        return json.loads(cleaned)
+    except json.JSONDecodeError:
+        pass
+
+    # Strategy 2: Find complete JSON arrays first (priority for your use case)
+    bracket_count = 0
+    start_pos = -1
     
     for i, char in enumerate(response):
         if char == '[':
-            if bracket_level == 0:
-                start_idx = i
-            bracket_level += 1
+            if bracket_count == 0:
+                start_pos = i
+            bracket_count += 1
         elif char == ']':
-            bracket_level -= 1
-            if bracket_level == 0 and start_idx >= 0:
-                candidate = response[start_idx:i+1]
+            bracket_count -= 1
+            if bracket_count == 0 and start_pos >= 0:
                 try:
-                    return json.loads(candidate)
+                    json_str = response[start_pos:i+1]
+                    parsed = json.loads(json_str)
+                    # Make sure we got a full array, not just partial
+                    if isinstance(parsed, list) and len(parsed) > 0:
+                        return parsed
                 except json.JSONDecodeError:
                     continue
 
-    # Final fallback: try to parse entire response as JSON
-    try:
-        return json.loads(response)
-    except json.JSONDecodeError:
-        logger.warning("⚠️ Could not parse JSON from response.")
-        logger.debug(f"Response content: {response[:500]}...")
-        return None
+    # Strategy 3: Find JSON objects (fallback)
+    brace_count = 0
+    start_pos = -1
+    
+    for i, char in enumerate(response):
+        if char == '{':
+            if brace_count == 0:
+                start_pos = i
+            brace_count += 1
+        elif char == '}':
+            brace_count -= 1
+            if brace_count == 0 and start_pos >= 0:
+                try:
+                    json_str = response[start_pos:i+1]
+                    return json.loads(json_str)
+                except json.JSONDecodeError:
+                    continue
+
+    # Strategy 4: More aggressive regex approach for arrays
+    # Look for arrays with nested objects
+    array_pattern = r'\[[\s\S]*?\]'
+    matches = re.findall(array_pattern, response)
+    
+    # Try the longest match first (most likely to be complete)
+    matches.sort(key=len, reverse=True)
+    
+    for match in matches:
+        try:
+            parsed = json.loads(match)
+            if isinstance(parsed, list) and len(parsed) > 0:
+                return parsed
+        except json.JSONDecodeError:
+            continue
+
+    # Strategy 5: Try to find and extract from cleaned response
+    json_match = re.search(r'(\[[\s\S]*\]|\{[\s\S]*\})', cleaned)
+    if json_match:
+        try:
+            return json.loads(json_match.group(1))
+        except json.JSONDecodeError:
+            pass
+
+    logger.warning(f"⚠️ Could not extract JSON. Response preview: {response[:200]}...")
+    return None
 
 
-def save_outputs(output_dir: Path, base_filename: str, raw_response: str, json_data: Optional[any] = None) -> None:
+def save_outputs(output_dir: Path, base_filename: str, raw_response: str, json_data: Optional[Dict[Any, Any]] = None) -> None:
     """Save raw response and processed JSON to output directory."""
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    raw_path = output_dir / f"{base_filename}-output.json"
+    # Save raw response
+    raw_path = output_dir / f"{base_filename}-raw.txt"
     with open(raw_path, "w", encoding="utf-8") as f:
         f.write(raw_response)
-    logger.info(f"✅ Raw output saved: {raw_path}")
+    logger.info(f"💾 Raw output saved: {raw_path}")
 
+    # Save processed JSON
     if json_data is not None:
-        processed_path = output_dir / f"{base_filename}-output.processed.json"
-        with open(processed_path, "w", encoding="utf-8") as f:
+        json_path = output_dir / f"{base_filename}-output.processed.json"
+        with open(json_path, "w", encoding="utf-8") as f:
             json.dump(json_data, f, indent=2, ensure_ascii=False)
-        logger.info(f"✅ JSON output saved: {processed_path}")
+        logger.info(f"💾 JSON output saved: {json_path}")
     else:
-        logger.warning("⚠️ No valid JSON data to save")
+        logger.warning(f"⚠️ No valid JSON extracted for {base_filename}")
+
+
+def process_single_file(transcript_file: Path, system_prompt: str, template: str) -> bool:
+    """Process a single transcript file. Returns True if successful."""
+    filename = transcript_file.stem
+    logger.info(f"📄 Processing: {transcript_file.name}")
+    
+    try:
+        # Load transcript
+        transcript = load_transcript(transcript_file)
+        logger.info(f"📝 Loaded transcript: {len(transcript)} characters")
+        
+        # Skip if transcript is too short
+        if len(transcript) < 50:
+            logger.warning(f"⚠️ Transcript too short, skipping: {transcript_file.name}")
+            return False
+        
+        # Generate response
+        response = generate_response_ollama(system_prompt, template, transcript, filename)
+        
+        if not response:
+            logger.error(f"❌ Empty response for {transcript_file.name}")
+            return False
+            
+        # Extract JSON
+        json_data = extract_json_from_response(response)
+        
+        # Save outputs
+        save_outputs(OUTPUT_DIR, filename, response, json_data)
+        
+        if json_data:
+            logger.info(f"✅ Successfully processed {transcript_file.name}")
+            return True
+        else:
+            logger.error(f"❌ Failed to extract JSON from {transcript_file.name}")
+            return False
+            
+    except Exception as e:
+        logger.error(f"❌ Error processing {transcript_file.name}: {e}")
+        return False
 
 
 def main():
+    """Main processing function."""
     total_start = time.time()
-
-    logger.info(f"🚀 Processing with chat model {OLLAMA_MODEL_NAME} @ {OLLAMA_API_URL}")
-    system_prompt, template = load_template_and_prompt()
     
-    logger.info(f"📁 Processing all transcripts in {INPUT_DIR}")
+    logger.info(f"🚀 Starting Ollama Gemma processing")
+    logger.info(f"📋 Model: {OLLAMA_MODEL_NAME}")
+    logger.info(f"🌐 API: {OLLAMA_API_URL}")
+    logger.info(f"📁 Input: {INPUT_DIR}")
+    logger.info(f"📁 Output: {OUTPUT_DIR}")
 
-    # Process all JSON files in the input directory
-    transcript_files = list(INPUT_DIR.glob("*.json"))
-    if not transcript_files:
-        logger.error(f"❌ No JSON files found in {INPUT_DIR}")
+    # Test connection first
+    if not test_ollama_connection():
+        logger.error("❌ Cannot proceed without Ollama connection")
         return
 
-    logger.info(f"📄 Found {len(transcript_files)} transcript files to process")
+    # Load template and prompt
+    try:
+        system_prompt, template = load_template_and_prompt()
+    except Exception as e:
+        logger.error(f"❌ Failed to load template/prompt: {e}")
+        return
 
-    for transcript_file in transcript_files:
-        logger.info(f"📄 Processing: {transcript_file.name}")
+    # Find transcript files
+    transcript_files = list(INPUT_DIR.glob("*.json")) + list(INPUT_DIR.glob("*.txt"))
+    if not transcript_files:
+        logger.error(f"❌ No transcript files found in {INPUT_DIR}")
+        return
+
+    logger.info(f"📄 Found {len(transcript_files)} files to process")
+
+    # Process files
+    successful = 0
+    failed = 0
+    
+    for i, transcript_file in enumerate(transcript_files, 1):
+        logger.info(f"🔄 Processing file {i}/{len(transcript_files)}")
         
-        try:
-            transcript = load_transcript(transcript_file)
-            logger.info(f"📝 Transcript length: {len(transcript)} characters")
-            
-        except Exception as e:
-            logger.error(f"Failed to load transcript {transcript_file.name}: {e}")
-            continue
-
-        try:
-            response = generate_response_ollama(system_prompt, template, transcript)
-            logger.info(f"📝 Response length: {len(response)} characters")
-            logger.info(f"📝 Response preview: {response[:200]}...")
-            
-        except Exception as e:
-            logger.error(f"Generation failed for {transcript_file.name}: {e}")
-            continue
-
-        # Extract JSON
-        json_data = extract_json(response)
-        
-        if json_data:
-            logger.info("✅ Successfully extracted JSON data")
+        if process_single_file(transcript_file, system_prompt, template):
+            successful += 1
         else:
-            logger.error("❌ Failed to extract valid JSON from response")
-        
-        # Save outputs with base filename
-        base_filename = transcript_file.stem
-        save_outputs(OUTPUT_DIR, base_filename, response, json_data)
+            failed += 1
+            
+        # Add small delay between requests
+        if i < len(transcript_files):
+            time.sleep(2)
 
+    # Summary
     total_time = time.time() - total_start
-    logger.info(f"🎉 All files completed in {total_time:.2f}s ({total_time/60:.2f} mins)")
+    logger.info(f"🎉 Processing complete!")
+    logger.info(f"✅ Successful: {successful}")
+    logger.info(f"❌ Failed: {failed}")
+    logger.info(f"⏱️  Total time: {total_time:.2f}s ({total_time/60:.2f} mins)")
 
 
 if __name__ == "__main__":

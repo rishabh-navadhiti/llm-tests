@@ -40,8 +40,7 @@
     "content": [
       "- Wrist achiness",
       "- Limited wrist motion",
-      "- Ulnar nerve compression of Guyon's canal",
-      "- Cervical radiculopathy"
+      "- Ulnar nerve compression of Guyon's canal"
     ],
     "default": "-",
     "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
@@ -50,13 +49,8 @@
     "title": "Plan",
     "key": "PLAN_SPENCER_",
     "content": [
-      "Pull nerve study results.",
-      "Continue to gain strength.",
-      "Recommend advanced activity, has tolerated advanced laboring.",
-      "Delete carpal tunnel diagnosis.",
-      "Review nerve studies for cervical radiculopathy.",
-      "Watch ulnar nerve compression of Guyon's canal.",
-      "Recommend urology consult for radiculopathy evaluation.",
+      "Review nerve studies.",
+      "Recommend urology consult for evaluation of radiculopathy.",
       "Return to clinic in six weeks for follow-up.",
       "Okay for full duty starting 9-1-2025."
     ],

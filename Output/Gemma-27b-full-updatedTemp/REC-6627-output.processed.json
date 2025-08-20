@@ -23,9 +23,7 @@
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "On exam, bilateral upper extremity skin is clean, dry, and intact without erythema or ecchymosis. Um... Got PCTS, uh, some decreased sensation to the middle fingers, noted."
-    ],
+    "content": [],
     "default": "",
     "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
   },
@@ -40,9 +38,7 @@
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "- Bilateral carpal tunnel syndrome",
-      "- Hand numbness and tingling",
-      "- Burning pain"
+      "- Bilateral carpal tunnel syndrome"
     ],
     "default": "-",
     "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
@@ -51,8 +47,7 @@
     "title": "Plan",
     "key": "PLAN_SPENCER_",
     "content": [
-      "Trial of injections will be initiated today.",
-      "Risks and temporary nature of injections were discussed with the patient.",
+      "Trial of injections.",
       "Return to clinic in three months for followup if symptoms persist postpartum."
     ],
     "default": "-",

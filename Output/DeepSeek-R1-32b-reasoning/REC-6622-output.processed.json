@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Mr. Kevin Clancy"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Left ring finger trigger finger injection"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "-"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Plantar tendonitis"
+    ],
+    "default": ""
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "-"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Trigger finger",
+      "Plantar tendonitis"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Give left ring finger trigger finger injection.",
+      "Recommend home exercise program for plantar tendonitis.",
+      "Low threshold for formal therapy if no improvement."
+    ],
+    "default": "-"
+  }
+]

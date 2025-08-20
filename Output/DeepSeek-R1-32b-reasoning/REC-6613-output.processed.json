@@ -1,0 +1,60 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": "Precious Myles Garrett",
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": "Left wrist pain and masses.",
+    "default": "-",
+    "instruction": "Provide only the chief complaint without additional details."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": "Precious presents with left wrist pain that wakes her at night. She also reports two masses: one at the dorsal radial aspect of her left wrist and another at the dorsal ulnar aspect of her left thumb MCP joint. These masses have been constant in size recently. She saw a rheumatologist who performed X-rays and an ultrasound, but no definitive diagnosis was made. The pain is more bothersome than the masses, and she seeks treatment options.",
+    "default": "-",
+    "instruction": "Summarize the HPI as a single paragraph."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": "Left upper extremity skin is clean, dry, and intact. A pea-sized mass over the first dorsal compartment is mobile and non-tender. Another mass at the thumb MCP joint is non-mobile and minimally tender. No tenderness or issues with Finklestein's test; excellent range of motion.",
+    "default": "",
+    "instruction": "Extract physical examination findings verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": "X-rays show an osteophyte at the thumb MCP joint. Ultrasound indicates a retinacular cyst in the wrist and a bony avulsion fragment or osteophyte at the thumb MCP.",
+    "default": "-",
+    "instruction": "List imaging results as mentioned."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Left wrist pain",
+      "Masses (wrist and thumb)",
+      "Osteophyte",
+      "Retinacular cyst"
+    ],
+    "default": "-",
+    "instruction": "List active problems concisely."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Recommend night splints for carpal tunnel.",
+      "Observe the masses.",
+      "Follow-up in six weeks."
+    ],
+    "default": "-",
+    "instruction": "List the doctor's plan as dictated."
+  }
+]

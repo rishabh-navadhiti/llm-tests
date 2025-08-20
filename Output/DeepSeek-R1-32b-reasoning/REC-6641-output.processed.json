@@ -1,0 +1,80 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Kathy Smith",
+      "Brigitte Metman",
+      "Samar Actrion"
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Follow-up on hand surgery.",
+      "Burning pain in the right wrist related to peripheral neuropathy.",
+      "Bilateral hand pain worsening over four years, worst in the last three weeks."
+    ],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint without additional details."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Kathy Smith reports ongoing swelling and pain in her hands despite therapy. She is not satisfied with her hand therapy progress.",
+      "Brigitte Metman describes burning pain in her right wrist over the past month, different from her baseline peripheral neuropathy symptoms.",
+      "Samar Actrion presents with bilateral hand pain worsening over four years, most severe in the last three weeks. Despite multiple evaluations and normal nerve studies, no definitive diagnosis has been established."
+    ],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness as a single, coherent paragraph."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Kathy Smith: Minimal scar, some continued tenderness to palpation at the A1 pulley incision. Full range of motion with some pain.",
+      "Brigitte Metman: Erythema and edema at the wrist without specific tenderness.",
+      "Samar Actrion: Mild tenderness diffusely through both hands. Left thumb stiff at MCP joint."
+    ],
+    "default": "",
+    "instruction": "Extract physical examination findings related to Musculoskeletal."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "Kathy Smith: X-rays show no significant changes.",
+      "-",
+      "-"
+    ],
+    "default": "-",
+    "instruction": "Extract imaging results explicitly mentioned in the transcript."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Status post hand surgery with persistent symptoms.",
+      "Bilateral thumb CMC arthritis.",
+      "Carpal tunnel syndrome.",
+      "Peripheral neuropathy."
+    ],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment section as a concise list of active problems."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Continue hand therapy. Follow-up in six weeks.",
+      "Recommend nerve studies, night splints, and neurology consult. Follow-up after nerve studies.",
+      "Recommend repeat nerve studies. Start night splints. Follow-up after nerve studies."
+    ],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript."
+  }
+]

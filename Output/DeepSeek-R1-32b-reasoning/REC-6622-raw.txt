@@ -1,0 +1,74 @@
+<think>
+Alright, so I'm trying to help the user by processing a medical transcript and creating a structured patient visit note using the provided JSON template. The user is acting as a seasoned medical scribe, which means they need to ensure accuracy and adherence to the doctor's preferred format.
+
+First, I'll look at the JSON template provided. It has several sections like Patient Name, Chief Complaint, History of Present Illness (HPI), Musculoskeletal findings, Imaging Results, Assessment, and Plan. Each section has specific instructions on what information to extract and how to format it.
+
+Now, looking at the medical transcript, I see multiple entries with conversations from the doctor and nurse. My task is to parse through these conversations to extract relevant information for each JSON field.
+
+Starting with "Patient Name" (PATIENT_NAME), I scan the transcript for any mention of a patient's name. The doctor mentions "Mr. Kevin Clancy," so that should be the patient's name. There's another mention of "David," but since it's from the nurse and not explicitly stated as the patient, I should avoid including it to prevent confusion.
+
+Next is the "Chief Complaint" (CHIEF_COMPLAINT). The doctor says it's a left ring finger trigger finger injection. That seems to be the main issue, so I'll note that as the chief complaint without any additional context.
+
+Moving on to the History of Present Illness (HPI_SPENCER), the transcript doesn't provide detailed information about the onset, duration, or progression of symptoms. Since there's no explicit HPI mentioned, I'll use the default value of "-".
+
+For "Musculoskeletal" findings (MUSCULOSKELETAL_VERBATIM), the doctor mentions plantar tendonitis. That's a musculoskeletal issue, so I'll include that as the physical examination finding.
+
+Imaging Results (IMAGING_RESULTS) aren't discussed in the transcript. There's no mention of any imaging procedures or their results, so I'll use the default "-".
+
+In the Assessment section (ASSESSMENT_SPENCER), the doctor identifies trigger finger and plantar tendonitis. These are active conditions, so I'll list them as such.
+
+Finally, for the Plan (PLAN_SPENCER_), the doctor outlines giving a trigger finger injection and recommending a home exercise program with low threshold for formal therapy if there's no improvement. The nurse mentions a shuttered vein not detected, but without more context, it's unclear if this is part of the plan. So, I'll include only what the doctor explicitly stated.
+
+Throughout this process, I need to ensure that all entries are accurate, using correct medical terminology and proper punctuation. Also, maintaining the JSON structure as specified is crucial for seamless integration into further processing steps.
+</think>json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Mr. Kevin Clancy"],
+    "default": "-"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Left ring finger trigger finger injection"],
+    "default": "-"
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["-"],
+    "default": "-"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Plantar tendonitis"],
+    "default": ""
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["-"],
+    "default": "-"
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Trigger finger",
+      "Plantar tendonitis"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Give left ring finger trigger finger injection.",
+      "Recommend home exercise program for plantar tendonitis.",
+      "Low threshold for formal therapy if no improvement."
+    ],
+    "default": "-"
+  }
+]

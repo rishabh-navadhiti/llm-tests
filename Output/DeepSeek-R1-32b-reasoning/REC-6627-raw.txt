@@ -1,0 +1,74 @@
+<think>
+Okay, so I need to help transform this medical transcript into a structured patient visit note using the provided SOAP template. Let me start by carefully reading through the instructions and the template to understand what each section requires.
+
+First, looking at the JSON template provided, it has several sections: Patient Name, Chief Complaint, HPI Spencer, Musculoskeletal, Imaging Results, Assessment, and Plan. Each has specific instructions on how to extract information from the transcript.
+
+The transcript is a conversation between the doctor and possibly another staff member or patient. The key points I need to extract are:
+
+1. **Patient Name**: The transcript doesn't mention the patient's name explicitly. It refers to "she" but doesn't provide a name. So, according to the instructions, I should return "-".
+
+2. **Chief Complaint**: This should be a concise statement of why the patient is visiting. From the transcript, the chief complaints are bilateral hand numbness, tingling, and burning pain.
+
+3. **HPI Spencer**: This needs a detailed history of the present illness. The transcript mentions that the symptoms started around July 1, 2025, similar to her previous pregnancy but earlier and more intense. She's been seeing her OB and was recommended injections and referred here. She's been wearing splints without enough improvement.
+
+4. **Musculoskeletal**: Extract physical exam findings related to musculoskeletal. The transcript notes bilateral upper extremity skin is clean, dry, intact without erythema or ecchymosis. Decreased sensation to the middle fingers is noted.
+
+5. **Imaging Results**: The doctor deferred X-rays due to pregnancy, planning for carpal tunnel later. No imaging results are mentioned, so default to "-".
+
+6. **Assessment**: Active problems include bilateral carpal tunnel syndrome and decreased sensation in the middle fingers.
+
+7. **Plan**: The plan is to proceed with injections today, discuss risks, and follow up in three months postpartum.
+
+I need to make sure each section follows the template's instructions precisely, using the exact wording from the transcript where necessary. Also, ensure that any missing information uses the default values specified.
+</think>json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["bilateral hand numbness", "tingling", "burning pain"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["The patient presents with bilateral hand numbness, tingling, and burning pain that began around July 1, 2025. She reports similar symptoms at the end of her previous pregnancy, but these are earlier and more intense. She has been seeing her OB, who recommended injections and referred her to this office. She has been wearing splints without sufficient improvement to sleep through the night."],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Bilateral upper extremity skin is clean, dry, and intact without erythema or ecchymosis. Decreased sensation to the middle fingers noted."],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["bilateral carpal tunnel syndrome", "decreased sensation to middle fingers"],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Proceed with injections today", "Discuss risks and temporary nature of treatment", "Follow up in three months postpartum."],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."
+  }
+]

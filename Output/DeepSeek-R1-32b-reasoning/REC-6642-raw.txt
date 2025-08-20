@@ -1,0 +1,76 @@
+<think>
+Alright, let's tackle this problem step by step. I'm a bit new to this, but I'll try my best to understand and follow the instructions given.
+
+First, I need to process the provided medical transcript and convert it into a structured patient visit note using the specified JSON template. The goal is to ensure that all crucial details are captured without the doctor needing to document them personally. 
+
+Looking at the JSON template provided, there are several sections I need to fill out: Patient Name, Chief Complaint, HPI Spencer, Musculoskeletal, Imaging Results, Assessment, and Plan. Each of these has specific instructions on how to extract information from the transcript.
+
+Starting with the "Patient Name" section. The instruction says to extract the patient's full name exactly as it appears in the transcript. If the name isn't mentioned, I should return "-". Scanning through the conversation, I see "Nadeem Nemi- ... at two o'clock on Dr. Almadro's schedule." It looks like the patient's name is Nadeem Nemi, but it's cut off. Since the full name isn't explicitly given, I'll have to return "-".
+
+Next is the "Chief Complaint". This should be a concise statement of why the patient is visiting. From the transcript, the patient presents for evaluation of bilateral thumb pain, which has worsened significantly since 2019, especially over the last six months. So, the chief complaint can be summarized as "Evaluation of bilateral thumb pain."
+
+Moving on to the "HPI Spencer" section. This requires a detailed summary of the History of Present Illness in a single paragraph. The patient is a right-handed male retiree with known bilateral carpal tunnel, right cubital tunnel, and bilateral thumb CMC arthritis. He received injections today and reports worsening pain over the last six months without numbness or tingling. I'll need to structure this into a coherent paragraph, ensuring all mentioned aspects are included.
+
+For "Musculoskeletal", the instruction is to extract verbatim the physical examination findings related to the musculoskeletal system. From the transcript, the exam notes include bilateral upper extremity skin being clean, dry, and intact; no significant soft tissue swelling; positive Grin (I think this might be a typo for "grind" test or something similar), positive shoulder sign, no triggering of any digits with the thumb, and dot NCTS. I'll list these as they are.
+
+Imaging Results need to be extracted exactly as mentioned. The transcript refers to X-rays of the right hand showing moderate joint space neovasculitis (though corrected to severe) with osteophytosis, Z deformity, hyperextension at MCP joint, and calcific arteriogram noted on the right but not the left. I'll include these findings precisely as stated.
+
+The "Assessment" section should be a list of active problems. From the transcript, the patient has bilateral thumb CMC arthritis with progression, bilateral carpal tunnel syndrome, and right cubital tunnel syndrome. These are the main issues needing attention.
+
+Finally, the "Plan" includes the treatments and follow-ups. The doctor recommended a trial of injections, discussed the temporary nature of steroids and rebound pain, scheduled a follow-up in two months, and mentioned considering nerve studies for carpal and cubital tunnels. I'll list these points as they were dictated.
+
+Throughout this process, I need to ensure that all entries are accurate, using proper medical terminology without adding any interpretations or assumptions beyond what's explicitly stated. Also, maintaining the correct JSON structure is crucial for seamless integration into further processing systems.
+
+I think I've covered all the sections based on the transcript. Now, I'll compile these into the required JSON format, making sure to follow the instructions precisely and avoid any grammatical errors.
+</think>json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Evaluation of bilateral thumb pain."],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["The patient is a right-handed male retiree with a history of bilateral carpal tunnel syndrome, right cubital tunnel syndrome, and bilateral thumb CMC arthritis. He presents today for evaluation of worsening bilateral thumb pain since his last visit in 2019, particularly over the past six months. The pain has significantly increased without associated numbness or tingling, leading to functional limitations."],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Bilateral upper extremity skin clean, dry, intact. No significant soft tissue swelling. Positive Grin, positive shoulder sign, no triggering of any digits with the thumb, dot NCTS."],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-rays of the right hand demonstrate severe joint space neovasculitis metacarpal joint with osteophytosis. There is evidence of a Z deformity with hyperextension at the MCP joint. Calcific arteriogram is noted on the right but not the left."],
+    "default": "-",
+    "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Bilateral thumb CMC arthritis with progression", "Bilateral carpal tunnel syndrome", "Right cubital tunnel syndrome"],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Trial of injections for bilateral thumb CMC arthritis", "Discussion about temporary nature of steroid injections and potential rebound pain", "Follow-up in two months", "Consider nerve studies for carpal and cubital tunnels."],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."
+  }
+]

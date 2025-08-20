@@ -1,0 +1,99 @@
+<think>
+Alright, I'm faced with this task where I need to process a medical transcript and convert it into a structured patient visit note using the provided JSON template. Let me break down how I can approach this step by step.
+
+First, I'll start by understanding the structure of the JSON template provided. It has several sections like Patient Name, Chief Complaint, HPI Spencer, Musculoskeletal, Imaging Results, Assessment, and Plan. Each section has specific instructions on what to extract from the transcript.
+
+Looking at the medical transcript, it's a conversation between a doctor and patients, discussing various hand-related issues. The transcript mentions multiple patients: Kathy Smith, Brigitte Metman, and Samar Actrion. Each has their own set of complaints and assessments.
+
+Starting with the first section, Patient Name. The instructions specify that I should extract only the patient's full name if it's explicitly mentioned. If not, use "-". In this transcript, three patients are mentioned: Kathy Smith, Brigitte Metman, and Samar Actrion. So, I'll list all three names under the content array for PATIENT_NAME.
+
+Next, the Chief Complaint. Each patient has a primary issue they're presenting with. For Kathy, it's follow-up on her hand surgery. Brigitte mentions burning pain in her wrist related to peripheral neuropathy. Samar is dealing with worsening bilateral hand pain due to carpal tunnel syndrome. I'll list each of these as separate entries under CHIEF_COMPLAINT.
+
+Moving on to the HPI Spencer section, which requires a summary of each patient's history of present illness. For Kathy, her history includes ongoing swelling and pain after surgery, dissatisfaction with hand therapy, and some tenderness at the incision site. Brigitte's HPI involves recent burning pain in her wrist, different from her usual neuropathy symptoms. Samar has had worsening hand pain over four years, with no clear diagnosis despite previous tests.
+
+For the Musculoskeletal section, I need to extract physical examination findings related to the musculoskeletal system. Kathy has minimal scars and some tenderness. Brigitte shows erythema and edema at the wrist without specific tenderness. Samar has mild tenderness in both hands with limited thumb movement.
+
+Imaging Results require extracting any imaging findings mentioned. Kathy's X-rays show joint space narrowing but no new issues. The others don't have imaging results discussed, so I'll use "-" for them.
+
+The Assessment section lists active problems. Kathy has status post surgery and thumb arthritis. Brigitte has carpal tunnel neuropathy with possible tenosynovitis. Samar has bilateral carpal tunnel syndrome with unresolved nerve studies.
+
+Finally, the Plan section includes treatments or follow-ups. Kathy continues therapy and follows up in six weeks. Brigitte is recommended nerve studies, night splints, and a neurology consult. Samar needs repeat nerve studies, night splints, and follow-up after those studies.
+
+Throughout this process, I need to ensure that each section strictly follows the template's instructions, uses exact phrases from the transcript, and avoids any inferred information. Also, maintaining proper grammar and structure is crucial for clarity and professionalism in the medical note.
+</think>json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Kathy Smith", "Brigitte Metman", "Samar Actrion"],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Follow-up on hand surgery.",
+      "Burning pain in the right wrist related to peripheral neuropathy.",
+      "Bilateral hand pain worsening over four years, worst in the last three weeks."
+    ],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint without additional details."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Kathy Smith reports ongoing swelling and pain in her hands despite therapy. She is not satisfied with her hand therapy progress.",
+      "Brigitte Metman describes burning pain in her right wrist over the past month, different from her baseline peripheral neuropathy symptoms.",
+      "Samar Actrion presents with bilateral hand pain worsening over four years, most severe in the last three weeks. Despite multiple evaluations and normal nerve studies, no definitive diagnosis has been established."
+    ],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness as a single, coherent paragraph."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Kathy Smith: Minimal scar, some continued tenderness to palpation at the A1 pulley incision. Full range of motion with some pain.",
+      "Brigitte Metman: Erythema and edema at the wrist without specific tenderness.",
+      "Samar Actrion: Mild tenderness diffusely through both hands. Left thumb stiff at MCP joint."
+    ],
+    "default": "",
+    "instruction": "Extract physical examination findings related to Musculoskeletal."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "Kathy Smith: X-rays show no significant changes.",
+      "-",
+      "-"
+    ],
+    "default": "-",
+    "instruction": "Extract imaging results explicitly mentioned in the transcript."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Status post hand surgery with persistent symptoms.",
+      "Bilateral thumb CMC arthritis.",
+      "Carpal tunnel syndrome.",
+      "Peripheral neuropathy."
+    ],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment section as a concise list of active problems."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Continue hand therapy. Follow-up in six weeks.",
+      "Recommend nerve studies, night splints, and neurology consult. Follow-up after nerve studies.",
+      "Recommend repeat nerve studies. Start night splints. Follow-up after nerve studies."
+    ],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript."
+  }
+]

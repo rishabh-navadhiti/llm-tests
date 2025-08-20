@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Greta Griswana"
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Thumb pain"
+    ],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Greta Griswana reports improvement in forearm pain but persistent severe thumb pain. She is here for follow-up to address thumb pain."
+    ],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Right upper termine. Significant tendinous location of the trapeziometacarpal joint, very positive grind. No tenderness with A1 pulley. Some tenderness with U&R imminence."
+    ],
+    "default": "",
+    "instruction": "Extract physical examination findings verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays reviewed, planned arthritis."
+    ],
+    "default": "-",
+    "instruction": "Extract imaging results as dictated."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Thumb pain",
+      "Trapeziometacarpal joint abnormality"
+    ],
+    "default": "-",
+    "instruction": "List active problems or conditions."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Trial of steroid injection",
+      "Discussion of procedure and postoperative protocol",
+      "Follow-up in eight weeks."
+    ],
+    "default": "-",
+    "instruction": "Write the doctor's plan as dictated."
+  }
+]

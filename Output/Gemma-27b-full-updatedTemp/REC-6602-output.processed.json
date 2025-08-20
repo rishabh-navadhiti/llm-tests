@@ -24,7 +24,7 @@
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
     "content": [
-      "On exam, uh, bilateral upper extremty skin is clean, dry and intact without erythema or ecchymosis. Moderate tenderness of the right small finger. A one foley. There is triggering there. There is a nodule there. Um, excellent range of motion overall. Uh,.pcgs are normal."
+      "bilateral upper extremty skin is clean, dry and intact without erythema or ecchymosis. Moderate tenderness of the right small finger. A one foley. There is triggering there. There is a nodule there. Um, excellent range of motion overall. Uh,.pcgs are normal."
     ],
     "default": "",
     "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
@@ -42,10 +42,8 @@
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "- Right hand numbness and tingling",
-      "- Right thumb decreased sensation",
-      "- Right small finger triggering",
-      "- Right small finger nodule"
+      "trigger finger",
+      "carpal tunnel"
     ],
     "default": "-",
     "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
@@ -54,7 +52,7 @@
     "title": "Plan",
     "key": "PLAN_SPENCER_",
     "content": [
-      "Injection to right small finger.",
+      "Injection in right small finger today.",
       "Recommend night splints for carpal tunnel.",
       "Low threshold for nerve studies.",
       "Return to clinic in two months for follow-up."

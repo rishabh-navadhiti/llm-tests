@@ -21,7 +21,7 @@
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
     "content": [
-      "The patient is here for a follow-up after taking his splint off yesterday due to blood exposure. He is inquiring about his condition and how things appear. "
+      "The patient is here for a follow-up after getting someone else’s blood on his splint. He wants to know how things look. He removed the splint yesterday."
     ],
     "default": "-",
     "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
@@ -48,8 +48,8 @@
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "- Hand laceration",
-      "- Limited flexion"
+      "Hand pain",
+      "Limited flexion"
     ],
     "default": "-",
     "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
@@ -58,7 +58,10 @@
     "title": "Plan",
     "key": "PLAN_SPENCER_",
     "content": [
-      "Sutures removed today. Recommend transition to removable splint. Recommend initiation of hand therapy. Return to clinic in two weeks for follow-up and range of motion check."
+      "Sutures removed today.",
+      "Recommend transition to removable splint.",
+      "Recommend initiation of hand therapy.",
+      "Return to clinic in two weeks for follow-up and range of motion check."
     ],
     "default": "-",
     "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."

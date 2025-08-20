@@ -19,12 +19,12 @@ VLLM_API_URL = "http://localhost:8000/v1/chat/completions"  # Changed to chat co
 
 # CONFIG — change as needed
 INPUT_DIR = Path("/workspace/llm-tests/transcripts/Spencer")
-OUTPUT_DIR = Path("/workspace/llm-tests/Output/Deepseek-qwen32b-updatedTemp")
+OUTPUT_DIR = Path("/workspace/llm-tests/Output/Gemma-27b-full-updatedTemp")
 TEMPLATE_PATH = Path("/workspace/llm-tests/templates/doctor-template-specialized-v2.json")
 PROMPT_PATH = Path("/workspace/llm-tests/prompt-v1.txt")
 
-MAX_TOKENS = 10000
-TEMPERATURE = 1
+MAX_TOKENS = 6000
+TEMPERATURE = 1.0
 REQUEST_TIMEOUT = 600  # seconds
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -71,8 +71,9 @@ def generate_response_vllm(system_prompt: str, template: str, transcript: str) -
         system_prompt
         + "\n\nTEMPLATE_JSON (use exactly this structure; return only JSON matching the template):\n"
         + template
-        + "\n\nINSTRUCTION: Return only valid JSON (array/object) that exactly matches the template. "
-        + "Do NOT include any extra commentary, explanation, or surrounding markdown/code fences."
+        + "\n\nINSTRUCTION: Fill this JSON template with data extracted from the transcript."
+        + "\n⚠️ CRITICAL: Return ONLY valid JSON that exactly matches the template."
+        + " Do NOT include explanations, commentary, thoughts, or markdown/code fences."
     )
 
     messages = [
@@ -84,8 +85,9 @@ def generate_response_vllm(system_prompt: str, template: str, transcript: str) -
         "model": MODEL_NAME,
         "messages": messages,
         "max_tokens": MAX_TOKENS,
-        "temperature": TEMPERATURE,
-        "top_p": 0.9 if TEMPERATURE > 0 else 1.0,
+        "temperature": TEMPERATURE,   # ✅ slightly creative but safe
+        "top_p": 0.95,                 # ✅ deterministic sampling
+        "top_k": 64, 
     }
 
     headers = {"Content-Type": "application/json"}
@@ -98,16 +100,15 @@ def generate_response_vllm(system_prompt: str, template: str, transcript: str) -
         raise
 
     data = resp.json()
-    # standard chat response shape: choices[0].message.content
     try:
         output_text = data["choices"][0]["message"]["content"]
     except Exception:
-        # fallback for other servers: choices[0].text
         output_text = data.get("choices", [{}])[0].get("text", "")
     gen_time = time.time() - start_time
     logger.info(f"✅ Received response in {gen_time:.2f}s")
     show_gpu_memory("after request")
     return output_text.strip()
+
 
 
 def extract_json(response: str) -> Optional[dict]:

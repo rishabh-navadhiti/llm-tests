@@ -19,13 +19,13 @@ if MODEL_NAME is None:
 VLLM_API_URL = "http://localhost:8000/v1/chat/completions"   # vLLM OpenAI-style API endpoint
 
 
-TRANSCRIPT_PATH = "/workspace/llm-tests/transcripts/Spencer/REC-6627.json"
+TRANSCRIPT_PATH = "/workspace/llm-tests/transcripts/Spencer/REC-6604.json"
 TEMPLATE_PATH = "/workspace/llm-tests/templates/doctor-template-specialized-v2.json"
 PROMPT_PATH = "/workspace/llm-tests/prompt-v1.txt"
-OUTPUT_PATH = "/workspace/llm-tests/Output/Medgemma-updatedHPI/REC-6627-output.json"
+OUTPUT_PATH = "/workspace/llm-tests/Output/testing/REC-6604-gemma.json"
 
-MAX_TOKENS = 10000
-TEMPERATURE = 1
+MAX_TOKENS = 6000
+TEMPERATURE = 0
 REQUEST_TIMEOUT = 600  # seconds (adjust if you expect very long responses)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -66,9 +66,8 @@ def load_files() -> tuple[str, str, str]:
     logger.info("✅ All files loaded successfully")
     return system_prompt, template_json, transcript
 
-
 def generate_response_vllm(system_prompt: str, template: str, transcript: str) -> str:
-    """Send chat prompt to llama.cpp / vLLM chat API and return the raw text content."""
+    """Send chat prompt to vLLM chat API and return raw JSON content."""
     logger.info("🚀 Sending request to chat API...")
     show_gpu_memory("before request")
     start_time = time.time()
@@ -78,8 +77,9 @@ def generate_response_vllm(system_prompt: str, template: str, transcript: str) -
         system_prompt
         + "\n\nTEMPLATE_JSON (use exactly this structure; return only JSON matching the template):\n"
         + template
-        + "\n\nINSTRUCTION: Return only valid JSON (array/object) that exactly matches the template. "
-        + "Do NOT include any extra commentary, explanation, or surrounding markdown/code fences."
+        + "\n\nINSTRUCTION: Fill this JSON template with data extracted from the transcript."
+        + "\n⚠️ CRITICAL: Return ONLY valid JSON that exactly matches the template."
+        + " Do NOT include explanations, commentary, thoughts, or markdown/code fences."
     )
 
     messages = [
@@ -91,30 +91,90 @@ def generate_response_vllm(system_prompt: str, template: str, transcript: str) -
         "model": MODEL_NAME,
         "messages": messages,
         "max_tokens": MAX_TOKENS,
-        "temperature": TEMPERATURE,
-        "top_p": 0.9 if TEMPERATURE > 0 else 1.0,
+        "temperature": 0.7,   # keep deterministic for structured output
+        "top_p": 0.95,
+        "top_k": 64, 
+
+        # "stop": ["```", "</s>"],  # safety cutoff to avoid commentary/markdown
     }
 
     headers = {"Content-Type": "application/json"}
 
     try:
-        resp = requests.post(VLLM_API_URL, json=payload, headers=headers, timeout=REQUEST_TIMEOUT)
+        resp = requests.post(
+            f"{VLLM_API_URL}",  # ensure endpoint correct
+            json=payload,
+            headers=headers,
+            timeout=REQUEST_TIMEOUT,
+        )
         resp.raise_for_status()
     except requests.RequestException as e:
         logger.error(f"Request to chat API failed: {e}")
         raise
 
     data = resp.json()
-    # standard chat response shape: choices[0].message.content
+    # standard OpenAI-style chat response shape
     try:
         output_text = data["choices"][0]["message"]["content"]
     except Exception:
-        # fallback for other servers: choices[0].text
         output_text = data.get("choices", [{}])[0].get("text", "")
+
     gen_time = time.time() - start_time
     logger.info(f"✅ Received response in {gen_time:.2f}s")
     show_gpu_memory("after request")
     return output_text.strip()
+
+
+
+# def generate_response_vllm(system_prompt: str, template: str, transcript: str) -> str:
+#     """Send prompt to vLLM /completions API and return raw text content."""
+#     logger.info("🚀 Sending request to completions API (/v1/completions)...")
+#     show_gpu_memory("before request")
+#     start_time = time.time()
+
+#     # Flatten into one raw prompt string (no roles, just text)
+#     prompt = (
+#         system_prompt
+#         + "\n\nTEMPLATE_JSON (use exactly this structure; return only JSON matching the template):\n"
+#         + template
+#         + "\n\nINSTRUCTION: Fill this JSON template with data extracted from the transcript. "
+#         + "\nReturn ONLY valid JSON matching the template above."
+#         + "Do NOT include any extra commentary, explanation, or surrounding markdown/code fences.\n\n"
+#         + "Medical Transcript to Process:\n\n"
+#         + transcript
+#     )
+
+#     payload = {
+#         "model": MODEL_NAME,
+#         "prompt": prompt,
+#         "max_tokens": MAX_TOKENS,
+#         "temperature": TEMPERATURE,
+#         "top_p": 0.9 if TEMPERATURE > 0 else 1.0,
+#     }
+
+#     headers = {"Content-Type": "application/json"}
+
+#     try:
+#         resp = requests.post(
+#             VLLM_API_URL.replace("/chat/completions", "/completions"),
+#             json=payload,
+#             headers=headers,
+#             timeout=REQUEST_TIMEOUT,
+#         )
+#         resp.raise_for_status()
+#     except requests.RequestException as e:
+#         logger.error(f"Request to completions API failed: {e}")
+#         raise
+
+#     data = resp.json()
+#     # /completions returns choices[0].text
+#     output_text = data.get("choices", [{}])[0].get("text", "")
+
+#     gen_time = time.time() - start_time
+#     logger.info(f"✅ Received response in {gen_time:.2f}s")
+#     show_gpu_memory("after request")
+#     return output_text.strip()
+
 
 
 def extract_json(response: str) -> Optional[any]:

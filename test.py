@@ -1,5 +1,4 @@
 import requests
-
 import os
 from dotenv import load_dotenv
 
@@ -7,28 +6,30 @@ load_dotenv()  # reads .env file and loads variables
 
 MODEL_NAME = os.getenv("VLLM_MODEL_NAME")
 if MODEL_NAME is None:
-    raise ValueError("VLLM_MODEL_NAME is not set")          # Replace with your model name
+    raise ValueError("VLLM_MODEL_NAME is not set")
 
-VLLM_API_URL = "http://localhost:8000/v1/completions"  # Change if needed
+VLLM_API_URL = "http://localhost:8000/v1/chat/completions"
+
 def test_vllm_api():
     payload = {
         "model": MODEL_NAME,
-        "prompt": "Hello world",
+        "messages": [
+            {"role": "system", "content": "You are a helpful AI assistant."},
+            {"role": "user", "content": "Hello world"}
+        ],
         "max_tokens": 20,
         "temperature": 0,
     }
     
     response = requests.post(VLLM_API_URL, json=payload)
     
-    # Print full raw response text
     print("=== RAW RESPONSE ===")
     print(response.text)
     
-    # Optionally parse JSON safely
     try:
         data = response.json()
-        print("\n=== Parsed 'text' field ===")
-        print(data["choices"][0]["text"])
+        print("\n=== Parsed assistant message ===")
+        print(data["choices"][0]["message"]["content"])
     except Exception as e:
         print("\n⚠️ Could not parse JSON:")
         print(e)

@@ -1,0 +1,269 @@
+[
+    {
+        "content": [
+            "Delia Matz"
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": false,
+                    "generic": true,
+                    "missingContent": false,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Math"
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-18T18:25:45.410Z",
+                "to": [
+                    "Delia Matz"
+                ],
+                "version": 1
+            }
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Left wrist stiffness"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [
+                {
+                    "score": 0.6139531135559082,
+                    "time": "0.159"
+                }
+            ]
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "right-hand dominant stay at home mom",
+            "",
+            "Status post trip and fall",
+            "Left distal radius fracture",
+            "Date of injury:  October 2023",
+            "",
+            "Status post open reduction internal fixation, left wrist with Dr. Andrew Rice",
+            "",
+            "She presents today for evaluation of her left wrist stiffness that has persisted since her wrist injury.  She states that at the time of her injury and immediate post-op protocol, she was diagnosed with complex regional pain syndrome and she has made a lot of progress since then, but she is still unable to extend her wrist enough to do a push-up.  She is able to do her Pilates.  She does her Pilates regularly without pain or limitation, slumps and modifications, but she cannot extend enough to do a push-up.  She is here for evaluation and treatment.",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "She presents for evaluation of her left wrist stiffness that has persisted since her left distal radius fracture in October 2023.  She was diagnosed with CRPS at the time of her injury. She has made a lot of progress since then, but she is still unable to extend her wrist enough to do a push-up. She is able to do Pilates regularly without pain or limitation, with slight modifications. She cannot extend her wrist enough to do a push up."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-18T18:25:58.594Z",
+                "to": [
+                    "right-hand dominant stay at home mom",
+                    "",
+                    "Status post trip and fall",
+                    "Left distal radius fracture",
+                    "Date of injury:  October 2023",
+                    "",
+                    "Status post open reduction internal fixation, left wrist with Dr. Andrew Rice",
+                    "",
+                    "She presents today for evaluation of her left wrist stiffness that has persisted since her wrist injury.  She states that at the time of her injury and immediate post-op protocol, she was diagnosed with complex regional pain syndrome and she has made a lot of progress since then, but she is still unable to extend her wrist enough to do a push-up.  She is able to do her Pilates.  She does her Pilates regularly without pain or limitation, slumps and modifications, but she cannot extend enough to do a push-up.  She is here for evaluation and treatment.",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.8045253753662109,
+                    "time": "0.159"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "Incision well healing, minimal scar",
+            "Excellent finger motion without pain",
+            "Full pronation/supination",
+            "Flexion to about 45, extension to about 20",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Incision well healing, minimal scar, excellent finger motion without painful post supination , uh , flexion to about 45 extensions to about 20 ."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-18T18:26:13.602Z",
+                "to": [
+                    "Incision well healing, minimal scar",
+                    "Excellent finger motion without pain",
+                    "Full pronation/supination",
+                    "Flexion to about 45, extension to about 20",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            [
+                {
+                    "score": 0.5006057024002075,
+                    "time": "0.159"
+                }
+            ]
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "X-rays postop, a well healed fracture with stable and intact hardware"
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "X-ray of the left wrist, post-op, showed a well-healed fracture with stable hardware. Plate alignment looks good and the overall reduction looks adequate."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-18T18:26:28.274Z",
+                "to": [
+                    "X-rays postop, a well healed fracture with stable and intact hardware"
+                ],
+                "version": 1
+            }
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [
+                {
+                    "score": 0.6740124225616455,
+                    "time": "0.159"
+                }
+            ]
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "CRPS",
+            "Status post left distal radius fracture"
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [],
+            [
+                {
+                    "score": 0.635886549949646,
+                    "time": "0.159"
+                }
+            ]
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Regarding the left wrist",
+            "Reviewed the x-rays",
+            "The plate alignment looks good and the overall reduction looks adequate",
+            "We discussed that she likely will not have the motion to do a push-up, but I would not limit her more broadly than that",
+            "Recommend advance activity as tolerated",
+            "Advance weightbearing as tolerated",
+            "Return to clinic in 3 months for followup",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Advance activity as tolerated. Return to Pilates.  Return to clinic in 3 months."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-18T18:26:39.514Z",
+                "to": [
+                    "Regarding the left wrist",
+                    "Reviewed the x-rays",
+                    "The plate alignment looks good and the overall reduction looks adequate",
+                    "We discussed that she likely will not have the motion to do a push-up, but I would not limit her more broadly than that",
+                    "Recommend advance activity as tolerated",
+                    "Advance weightbearing as tolerated",
+                    "Return to clinic in 3 months for followup",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            []
+        ],
+        "title": "Plan"
+    }
+]

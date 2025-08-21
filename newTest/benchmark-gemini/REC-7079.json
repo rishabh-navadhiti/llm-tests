@@ -1,0 +1,94 @@
+[
+    {
+        "content": [
+            "Bertha Campos"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Follow up for sutures removal"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [
+                {
+                    "score": 0.5656188130378723,
+                    "time": "0.119"
+                }
+            ]
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "Bertha Campos returned for a follow-up visit to assess her surgical site and discuss suture removal. She reports improvement in her range of motion. She is inquiring about the possibility of having her sutures removed today."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.7608528137207031,
+                    "time": "0.119"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "Incision clean intact with suture, sutures removed today, patient tell well without apparent complication. Near tight fist without pain. Full active extension, there's no evidence of triggering. Moderate ecchymosis to the form consistent with post-operative state."
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            [
+                {
+                    "score": 0.7960771918296814,
+                    "time": "0.119"
+                }
+            ]
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            []
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Right upper extremity Skin is intact.",
+            "No tenderness to palpation."
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [],
+            []
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Sutures removed. Continue range of motion exercises. Return to clinic in 2 weeks."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6180233359336853,
+                    "time": "0.119"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

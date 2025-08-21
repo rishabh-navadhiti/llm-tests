@@ -1,0 +1,159 @@
+[
+    {
+        "content": [
+            "-"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Left index finger injury"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [
+                {
+                    "score": 0.7158205509185791,
+                    "time": "25.959"
+                },
+                {
+                    "score": 0.56972336769104,
+                    "time": "54.13"
+                },
+                {
+                    "score": 0.6048486232757568,
+                    "time": "84.319"
+                },
+                {
+                    "score": 0.6570017337799072,
+                    "time": "114.05"
+                }
+            ]
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "He presents today with his significant other for evaluation of his left index finger injury that occurred on August 15, 2025, when his camping trunk hinge opened on his hand. He reports pain along the motion. There was no deformity or angulation. He went to the emergency room where X-rays were taken that showed a fracture. His left upper extremity skin is intact. He suffered two lacerations along the dorsal aspect of the index finger and the ulnar border of the index finger in the second web spaces that are well approximated with interrupted protein sutures. There is limited flexion and extension of the middle finger at the MCP joint."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6077286005020142,
+                    "time": "25.959"
+                },
+                {
+                    "score": 0.5361301302909851,
+                    "time": "27.889"
+                },
+                {
+                    "score": 0.6016824245452881,
+                    "time": "54.13"
+                },
+                {
+                    "score": 0.518461287021637,
+                    "time": "84.319"
+                },
+                {
+                    "score": 0.6008819341659546,
+                    "time": "114.05"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            []
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "X-rays were taken in the emergency room that showed a fracture. The previous hand X-ray demonstrated a minimally displaced fracture in the small finger."
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [
+                {
+                    "score": 0.5940578579902649,
+                    "time": "47.349"
+                },
+                {
+                    "score": 0.5157408118247986,
+                    "time": "114.05"
+                }
+            ]
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Right upper extremity Skin is intact.",
+            "Fracture",
+            "Lacerations"
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.5104491710662842,
+                    "time": "25.959"
+                },
+                {
+                    "score": 0.5222867727279663,
+                    "time": "47.349"
+                },
+                {
+                    "score": 0.604137122631073,
+                    "time": "54.13"
+                }
+            ],
+            [
+                {
+                    "score": 0.5737451910972595,
+                    "time": "47.349"
+                },
+                {
+                    "score": 0.7006433010101318,
+                    "time": "111.19"
+                }
+            ],
+            [
+                {
+                    "score": 0.5440119504928589,
+                    "time": "114.05"
+                }
+            ]
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Plan: Fracture cast for the index finger crush injury. Continue current antibiotics for a few more days. Protect lacerations with soft dressing under the splint.\n\nPatient education provided regarding risks of sand and infection, and risks of sweating and infection related to Burning Man.\n\nFollow-up care:\nFracture: Return to clinic in 2 weeks.\nLacerations: Return to clinic in 2 weeks."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.7230823636054993,
+                    "time": "114.05"
+                },
+                {
+                    "score": 0.6145504117012024,
+                    "time": "128.449"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

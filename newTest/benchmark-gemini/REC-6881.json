@@ -1,0 +1,310 @@
+[
+    {
+        "content": [
+            "Maria Bautista"
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": false,
+                    "generic": true,
+                    "missingContent": false,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "-"
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-13T17:29:32.866Z",
+                "to": [
+                    "Maria Bautista"
+                ],
+                "version": 1
+            }
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            [
+                {
+                    "score": 0.7186649441719055,
+                    "time": "9.479"
+                },
+                {
+                    "score": 0.7006300091743469,
+                    "time": "107.349"
+                }
+            ]
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Thumb pain",
+            "Middle finger pain and locking"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [
+                {
+                    "score": 0.5051512718200684,
+                    "time": "104.44"
+                }
+            ],
+            [
+                {
+                    "score": 0.598747968673706,
+                    "time": "11.09"
+                }
+            ]
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "8.13.2025",
+            "She is here today for followup.  She states that she is doing very well from a thumb perspective.  She has continued to use her Ciclopirox and wants to know if she needs to keep using it.  She is doing less well in terms of her middle finger.  She states that the injection helps a lot and resolved her symptoms.  It has started locking and catching again.  Of late, it is very painful and she wants to know what is going on.",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "She reports doing very well regarding her thumb pain and inquiring about the need to continue using cycloprox.  She is experiencing more difficulty with her middle finger, noting that a previous injection provided significant but temporary relief. The middle finger has begun locking and catching again, causing significant pain. She is seeking further evaluation and treatment options for her middle finger."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-13T17:29:43.457Z",
+                "to": [
+                    "8.13.2025",
+                    "She is here today for followup.  She states that she is doing very well from a thumb perspective.  She has continued to use her Ciclopirox and wants to know if she needs to keep using it.  She is doing less well in terms of her middle finger.  She states that the injection helps a lot and resolved her symptoms.  It has started locking and catching again.  Of late, it is very painful and she wants to know what is going on.",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6183732748031616,
+                    "time": "0.009"
+                },
+                {
+                    "score": 0.5319247245788574,
+                    "time": "11.09"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "Right upper extremity",
+            "Skin is clean, dry and intact without erythema or ecchymosis",
+            "Moderate tenderness to palpation at the middle finger A1 pulley",
+            "There is triggering there",
+            "There is a nodule there",
+            "No evidence of onychomycosis at the right thumbnail, it is growing in 100% with excellent cosmesis",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Right upper extremity skin is cleaned and intact without erythemohymosis."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-13T17:29:55.216Z",
+                "to": [
+                    "Right upper extremity",
+                    "Skin is clean, dry and intact without erythema or ecchymosis",
+                    "Moderate tenderness to palpation at the middle finger A1 pulley",
+                    "There is triggering there",
+                    "There is a nodule there",
+                    "No evidence of onychomycosis at the right thumbnail, it is growing in 100% with excellent cosmesis",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            [
+                {
+                    "score": 0.9221509099006653,
+                    "time": "84.269"
+                }
+            ]
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [
+                {
+                    "score": 0.7186649441719055,
+                    "time": "9.479"
+                },
+                {
+                    "score": 0.7006300091743469,
+                    "time": "107.349"
+                }
+            ]
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Thumb pain",
+            "Middle finger triggering and locking",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Right upper extremity Skin is intact.",
+                    "Thumb pain",
+                    "Middle finger triggering and locking",
+                    "No tenderness to palpation."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-13T17:30:14.385Z",
+                "to": [
+                    "Thumb pain",
+                    "Middle finger triggering and locking",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6112937927246094,
+                    "time": "84.269"
+                }
+            ],
+            [
+                {
+                    "score": 0.5051512718200684,
+                    "time": "104.44"
+                }
+            ],
+            [
+                {
+                    "score": 0.5249109864234924,
+                    "time": "11.09"
+                }
+            ],
+            []
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Regarding the thumb",
+            "Recommend discontinue Ciclopirox",
+            "Advance activity as tolerated",
+            "",
+            "Regarding the middle finger",
+            "She has had an injection with excellent, but temporary relief",
+            "She would like another, I think this is reasonable, we will do this today",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Continue cycloprox for thumb pain as needed.  Administer injection in the middle finger for pain and triggering.  Activity as tolerated for both thumb and middle finger. Return to clinic in 2 weeks."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-13T17:30:26.320Z",
+                "to": [
+                    "Regarding the thumb",
+                    "Recommend discontinue Ciclopirox",
+                    "Advance activity as tolerated",
+                    "",
+                    "Regarding the middle finger",
+                    "She has had an injection with excellent, but temporary relief",
+                    "She would like another, I think this is reasonable, we will do this today",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6123332381248474,
+                    "time": "0.009"
+                },
+                {
+                    "score": 0.5038478970527649,
+                    "time": "11.09"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

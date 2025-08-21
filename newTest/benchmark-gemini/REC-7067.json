@@ -1,0 +1,156 @@
+[
+    {
+        "content": [
+            "Lindsay Demash"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            [
+                {
+                    "score": 0.5896472930908203,
+                    "time": "72.519"
+                }
+            ]
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Mass or bump at the ulnar border of the index finger DIP joint"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [
+                {
+                    "score": 0.7267948985099792,
+                    "time": "0.079"
+                }
+            ]
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "She noticed a mass or new bump at the ulnar border of her right index finger DIP joint a few weeks ago. She is concerned because it is in a different location than the bumps she gets from her arthritis. It does not limit her, but she wants to make sure everything is okay. She states she is doing well and really turned a corner in May. She feels like she has been making progress since then in her health as well as her wrist. She is able to do more and more with her wrist without pain and has been able to lift some weights. She still gets some clicks and aches and pains in her wrist and shoulder, but it works better."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.7727212905883789,
+                    "time": "0.079"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "Right upper extremity is clean. There is of the dorsal neo at the DIP joint. There is evidence of Heberton and nos throughout. There is a mass at the ulnar border of the joint. I still with Osteophyte. Excellent range of motion. There's still about degrees of DIP collection of the finger without. Incision while healing, will heals, minimal. the extension the call about 3030 supination to 60. Fearful pronation, excellent finger motion, almost to make a light fist."
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            [
+                {
+                    "score": 0.5587682723999023,
+                    "time": "0.079"
+                }
+            ]
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [
+                {
+                    "score": 0.6259454488754272,
+                    "time": "41.81"
+                },
+                {
+                    "score": 0.7006299495697021,
+                    "time": "41.97"
+                },
+                {
+                    "score": 0.6259454488754272,
+                    "time": "42.369"
+                },
+                {
+                    "score": 0.5805084705352783,
+                    "time": "56.2"
+                },
+                {
+                    "score": 0.7006299495697021,
+                    "time": "66.48"
+                },
+                {
+                    "score": 0.7186649441719055,
+                    "time": "86.51"
+                },
+                {
+                    "score": 0.5805084705352783,
+                    "time": "103.68"
+                }
+            ]
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Right upper extremity Skin is intact.",
+            "Mass at the ulnar border of the right index finger DIP joint",
+            "No tenderness to palpation.",
+            "Arthritis"
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6540090441703796,
+                    "time": "21.079"
+                }
+            ],
+            [
+                {
+                    "score": 0.6499748826026917,
+                    "time": "0.079"
+                }
+            ],
+            [],
+            [
+                {
+                    "score": 0.5341504812240601,
+                    "time": "42.77"
+                }
+            ]
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Return to clinic in 6 months.",
+            "Continue advancing activity",
+            "Continue home exercise program"
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.5783863067626953,
+                    "time": "148.72"
+                }
+            ],
+            [],
+            [
+                {
+                    "score": 0.5223492980003357,
+                    "time": "148.72"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

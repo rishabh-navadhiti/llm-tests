@@ -1,0 +1,285 @@
+[
+    {
+        "content": [
+            "David Strugach"
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": false,
+                    "generic": true,
+                    "missingContent": false,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "-"
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-20T22:22:01.173Z",
+                "to": [
+                    "David Strugach"
+                ],
+                "version": 1
+            }
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Bilateral hand contractures"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [
+                {
+                    "score": 0.6122143864631653,
+                    "time": "0.159"
+                }
+            ]
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "right-hand dominant retiree",
+            "",
+            "8.20.2025",
+            "He presents today for evaluation of contracture of his bilateral hands that began many years ago.  He states that he first noticed this on his left hand many years ago and now he is starting to notice it on his right hand.  He notes that the left hand is unable to get flat on the table.  He has significant contracture of the ring finger.  He is here today for evaluation and treatment.",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "He reports the onset of bilateral hand contractures several years ago, initially affecting his left hand. He is now experiencing contractures in his right hand as well. The left hand cannot lie flat on a table, with significant contracture of the little finger.  He seeks evaluation and treatment for these contractures."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-20T22:22:18.440Z",
+                "to": [
+                    "right-hand dominant retiree",
+                    "",
+                    "8.20.2025",
+                    "He presents today for evaluation of contracture of his bilateral hands that began many years ago.  He states that he first noticed this on his left hand many years ago and now he is starting to notice it on his right hand.  He notes that the left hand is unable to get flat on the table.  He has significant contracture of the ring finger.  He is here today for evaluation and treatment.",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6738645434379578,
+                    "time": "0.159"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "Left upper extremity",
+            "Skin is clean, dry and intact without erythema or ecchymosis",
+            "There is significant cord formation and nodules along the ring finger ray consistent with Dupuytren’s disease",
+            "There is a 45-degree contracture at the ring finger metacarpophalangeal joint",
+            "There is about a 10-degree contracture at the ring finger proximal interphalangeal joint",
+            "No measurable contracture at any remaining digits",
+            "",
+            "Right upper extremity",
+            "Skin is clean, dry and intact",
+            "There are nodules and cords along the ring finger ray consistent with Dupuytren’s disease",
+            "Able to get hands flat on the table",
+            "There is no evidence of contracture of the hand",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Left upper extremity skin is cleaner. Without anti American message uh significant chordation and nodules along the way , um . Consistent with dense , there's a 45 degree contracture at the ring finger MP joint , um . There is about a 10 degree contractor at the . Uh , ringing your PIP joint . Uh no measurable contractor at any remaining digits , um . Right upper extremity Skin is intact . There are nodules towards long ring finger ray need to be able to get hands on on the table . There's no evidence of contracture of the um hand ."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-20T22:22:51.853Z",
+                "to": [
+                    "Left upper extremity",
+                    "Skin is clean, dry and intact without erythema or ecchymosis",
+                    "There is significant cord formation and nodules along the ring finger ray consistent with Dupuytren’s disease",
+                    "There is a 45-degree contracture at the ring finger metacarpophalangeal joint",
+                    "There is about a 10-degree contracture at the ring finger proximal interphalangeal joint",
+                    "No measurable contracture at any remaining digits",
+                    "",
+                    "Right upper extremity",
+                    "Skin is clean, dry and intact",
+                    "There are nodules and cords along the ring finger ray consistent with Dupuytren’s disease",
+                    "Able to get hands flat on the table",
+                    "There is no evidence of contracture of the hand",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            [
+                {
+                    "score": 0.7343565225601196,
+                    "time": "0.159"
+                }
+            ]
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "X-rays are normal of bilateral hands"
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "MRI is needed.",
+                    "X-rays are normal."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-20T22:23:11.334Z",
+                "to": [
+                    "X-rays are normal of bilateral hands"
+                ],
+                "version": 1
+            }
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [],
+            []
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Bilateral hands Dupuytren's contracture"
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Right upper extremity Skin is intact.",
+                    "Dupuytren's contracture"
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-20T22:23:23.292Z",
+                "to": [
+                    "Bilateral hands Dupuytren's contracture"
+                ],
+                "version": 1
+            }
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [],
+            []
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Plan Dupuytren’s",
+            "Recommend Xiaflex",
+            "Return to clinic when medication is acquired",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Zylex. Return to clinic when medication is acquired."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-20T22:23:32.545Z",
+                "to": [
+                    "Plan Dupuytren’s",
+                    "Recommend Xiaflex",
+                    "Return to clinic when medication is acquired",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            []
+        ],
+        "title": "Plan"
+    }
+]

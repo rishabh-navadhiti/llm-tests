@@ -12,8 +12,8 @@ rec_ids = [
 ]
 
 BASE_URL = "https://api.physicianassist.com/api/v1"
-AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiNjdhMmY2NDY0YWRjZmU0NDBlOGJlNzUxIiwiZW1haWwiOiJ0ZWNoc3VwcG9ydEBwaHlzaWNpYW5hc3Npc3QuY29tIiwicHJvdmlkZXIiOiJtaWNyb3NvZnQiLCJvcmlnaW4iOiJQT1JUQUwifSwiZXhwIjoxNzU1Nzc2MzM3fQ.3qG_XMVaC0pVHCbR6IRv6BeqyCyf5EnwFM8xebw4PX8"
-DEVICE_ID = "68a6f742936420a5438e1e96"
+AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiNjdhMmY2NDY0YWRjZmU0NDBlOGJlNzUxIiwiZW1haWwiOiJ0ZWNoc3VwcG9ydEBwaHlzaWNpYW5hc3Npc3QuY29tIiwicHJvdmlkZXIiOiJtaWNyb3NvZnQiLCJvcmlnaW4iOiJQT1JUQUwifSwiZXhwIjoxNzU1NzgwMDgxfQ.UojOqRwWBrz7c78_lH_jFFsUHJA6F8lHBMLdPIKThAE"
+DEVICE_ID = "68a705e2936420a5438e1e98"
 
 HEADERS = {
     "accept": "application/json, text/plain, */*",
@@ -126,33 +126,11 @@ def safe_file_write(file_path, data):
         print(f"Traceback: {traceback.format_exc()}")
         return False
 
+# ... keep all your imports, rec_ids, BASE_URL, HEADERS etc. the same ...
 
 def fetch_notes_and_transcripts(rec_ids):
     print(f"Starting processing of {len(rec_ids)} record IDs...")
     print(f"Current working directory: {os.getcwd()}")
-    
-    # Test directory creation and permissions
-    try:
-        test_dirs = ["benchmark-gemini", "transcripts"]
-        for test_dir in test_dirs:
-            if not os.path.exists(test_dir):
-                print(f"Creating directory: {test_dir}")
-                os.makedirs(test_dir, exist_ok=True)
-            
-            # Test write permission
-            test_file = os.path.join(test_dir, "test_write.tmp")
-            try:
-                with open(test_file, "w") as f:
-                    f.write("test")
-                os.remove(test_file)
-                print(f"✓ Directory {test_dir} is writable")
-            except Exception as e:
-                print(f"ERROR: Cannot write to directory {test_dir}: {e}")
-                return
-                
-    except Exception as e:
-        print(f"ERROR: Failed to create directories: {e}")
-        return
 
     success_count = 0
     error_count = 0
@@ -161,42 +139,22 @@ def fetch_notes_and_transcripts(rec_ids):
         print(f"\n{'='*50}")
         print(f"Processing record ID: {rec_id} ({i}/{len(rec_ids)})")
         print(f"{'='*50}")
-        
+
         try:
             # Step 1: Get doctor notes by recording
             url1 = f"{BASE_URL}/doctor_notes/rec/{rec_id}"
             data1 = safe_request('GET', url1, headers=HEADERS)
 
-            if data1 is None:
-                print(f"ERROR: Failed to get initial data for {rec_id}")
-                error_count += 1
-                continue
-
-            print(f"Initial response structure: {list(data1.keys()) if isinstance(data1, dict) else type(data1)}")
-
-            # Check response structure
-            if not isinstance(data1, dict) or "result" not in data1:
-                print(f"ERROR: Invalid response structure for {rec_id}")
-                print(f"Response: {json.dumps(data1, indent=2)[:500]}...")
-                error_count += 1
-                continue
-
-            if "Notes" not in data1["result"]:
-                print(f"ERROR: No 'Notes' field in result for {rec_id}")
-                print(f"Available fields: {list(data1['result'].keys()) if isinstance(data1['result'], dict) else 'Not a dict'}")
+            if data1 is None or "result" not in data1 or "Notes" not in data1["result"]:
+                print(f"ERROR: Invalid response for {rec_id}")
                 error_count += 1
                 continue
 
             note_id = data1["result"]["Notes"].get("_id")
             transcription_id = data1["result"]["Notes"].get("transcription_id")
 
-            if not note_id:
-                print(f"ERROR: No note_id found for {rec_id}")
-                error_count += 1
-                continue
-            
-            if not transcription_id:
-                print(f"ERROR: No transcription_id found for {rec_id}")
+            if not note_id or not transcription_id:
+                print(f"ERROR: Missing IDs for {rec_id}")
                 error_count += 1
                 continue
 
@@ -206,55 +164,48 @@ def fetch_notes_and_transcripts(rec_ids):
             with ThreadPoolExecutor(max_workers=2) as executor:
                 future_notes = executor.submit(fetch_doctor_notes, note_id)
                 future_transcript = executor.submit(fetch_transcription, transcription_id)
-
                 notes = future_notes.result()
                 transcript = future_transcript.result()
 
-            # Validate responses
-            if notes is None:
-                print(f"ERROR: Failed to fetch notes for {rec_id}")
-                error_count += 1
-                continue
-            
-            if transcript is None:
-                print(f"ERROR: Failed to fetch transcript for {rec_id}")
+            if notes is None or transcript is None:
+                print(f"ERROR: Failed fetching data for {rec_id}")
                 error_count += 1
                 continue
 
-            # Extract values with error checking
+            # Extract values
             try:
                 note_text = notes['result']['Notes']['notes']
-            except (KeyError, TypeError) as e:
+            except Exception as e:
                 print(f"ERROR: Cannot extract note text for {rec_id}: {e}")
-                print(f"Notes structure: {json.dumps(notes, indent=2)[:500]}...")
                 error_count += 1
                 continue
 
             try:
                 transcript_text = transcript['result']['Transcriptions']['dialogue_conversation']
-            except (KeyError, TypeError) as e:
+            except Exception as e:
                 print(f"ERROR: Cannot extract transcript text for {rec_id}: {e}")
-                print(f"Transcript structure: {json.dumps(transcript, indent=2)[:500]}...")
                 error_count += 1
                 continue
 
-            # Save files
+            # ⚡ Save the extracted JSONs directly
             note_path = os.path.join("benchmark-gemini", f"REC-{rec_id}.json")
             transcript_path = os.path.join("transcripts", f"REC-{rec_id}.json")
 
-            note_saved = safe_file_write(note_path, {"rec_id": rec_id, "notes": note_text})
-            transcript_saved = safe_file_write(transcript_path, {"rec_id": rec_id, "transcript": transcript_text})
+            os.makedirs("benchmark-gemini", exist_ok=True)
+            os.makedirs("transcripts", exist_ok=True)
 
-            if note_saved and transcript_saved:
-                print(f"✓ Successfully processed {rec_id}")
-                success_count += 1
-            else:
-                print(f"ERROR: Failed to save files for {rec_id}")
-                error_count += 1
+            with open(note_path, "w", encoding="utf-8") as f:
+                f.write(note_text if isinstance(note_text, str) else json.dumps(note_text, indent=4, ensure_ascii=False))
+
+            with open(transcript_path, "w", encoding="utf-8") as f:
+                f.write(transcript_text if isinstance(transcript_text, str) else json.dumps(transcript_text, indent=4, ensure_ascii=False))
+
+            print(f"✓ Successfully processed {rec_id}")
+            success_count += 1
 
         except Exception as e:
             print(f"ERROR: Unexpected error processing {rec_id}: {e}")
-            print(f"Traceback: {traceback.format_exc()}")
+            print(traceback.format_exc())
             error_count += 1
 
     print(f"\n{'='*50}")

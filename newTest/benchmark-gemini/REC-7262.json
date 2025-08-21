@@ -1,0 +1,143 @@
+[
+    {
+        "content": [
+            "Kabe Tahiri"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            [
+                {
+                    "score": 0.6390423774719238,
+                    "time": "3.69"
+                }
+            ]
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Follow up",
+            "New problem: Trigger finger"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [],
+            []
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "Kabe Tahiri is a 1:15-year-old male here for follow-up. His exam is unchanged from previous visits. He reports his neck pain is the same. He has not sought additional treatment for his neck and does not see a reason to. Hoy Berlin is present with his mother for follow-up after a recent trip. He reports discomfort from his long arm waterproof cast, describing it as 'scratchy.' Leonard Freeman presents for evaluation of a new problem. He reports triggering in his right index and middle fingers."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            []
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            []
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "X-rays of the right wrist show increased callus formation at the ulna.",
+            "X-rays of the left wrist show increased callus formation diffusely to the radius and ulna."
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [
+                {
+                    "score": 0.5723739862442017,
+                    "time": "59.9"
+                },
+                {
+                    "score": 0.7477266192436218,
+                    "time": "96.629"
+                }
+            ],
+            [
+                {
+                    "score": 0.5605631470680237,
+                    "time": "59.9"
+                },
+                {
+                    "score": 0.7221453785896301,
+                    "time": "96.629"
+                }
+            ]
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Right upper extremity Skin is intact.",
+            "Trigger finger (right index and middle fingers)",
+            "No tenderness to palpation."
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6886547803878784,
+                    "time": "56.529"
+                },
+                {
+                    "score": 0.5023176074028015,
+                    "time": "61.45"
+                }
+            ],
+            [
+                {
+                    "score": 0.5011070370674133,
+                    "time": "77.29"
+                },
+                {
+                    "score": 0.5416107773780823,
+                    "time": "126.69"
+                },
+                {
+                    "score": 0.6685220003128052,
+                    "time": "157.429"
+                }
+            ],
+            [
+                {
+                    "score": 0.6257607936859131,
+                    "time": "58.97"
+                }
+            ]
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Transition to short arm cast on the left. Wean cast on the right. Recommend an injection for trigger fingers. Return to clinic in 6 weeks for follow-up with repeat x-rays. Consider transition to removable splint on the left."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.5057331323623657,
+                    "time": "61.45"
+                },
+                {
+                    "score": 0.6254833936691284,
+                    "time": "96.629"
+                },
+                {
+                    "score": 0.5926343202590942,
+                    "time": "126.69"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

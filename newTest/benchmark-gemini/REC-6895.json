@@ -1,0 +1,97 @@
+[
+    {
+        "content": [
+            "-"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            [
+                {
+                    "score": 0.7006299495697021,
+                    "time": "30.569"
+                },
+                {
+                    "score": 0.5805084705352783,
+                    "time": "30.86"
+                },
+                {
+                    "score": 0.6259454488754272,
+                    "time": "65.44"
+                }
+            ]
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Follow up"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            []
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "He reports not having much pain. He reports feedback and it feels funny in certain positions."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            []
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "Right upper extremity Skin is intact."
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            []
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "Four view X-ray showed extraarticular stable fracture with minimal healing."
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [
+                {
+                    "score": 0.5256062150001526,
+                    "time": "60.31"
+                }
+            ]
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Right upper extremity Skin is intact.",
+            "No tenderness to palpation."
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [],
+            []
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Continue ulnar gutter splint. \nDown weight-bearing. \nFollow up with splint change. \nTransition to thermoplastic splint. \nTherapy prescription provided. \nReturn to clinic in 3 weeks."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.8140028119087219,
+                    "time": "65.66"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

@@ -1,0 +1,92 @@
+[
+    {
+        "content": [
+            "Walt"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Carpal Tunnel Syndrome"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [
+                {
+                    "score": 0.6207840442657471,
+                    "time": "0.15"
+                }
+            ]
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "He is a police officer and presents with carpal tunnel syndrome. He reports having a busy day and states that he has not had much pain at all. He is inquiring about when the numbness will resolve."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6057878136634827,
+                    "time": "0.15"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "Incision clean, joint type of variant sutures, moderate ecchymosis consistent with postoperative state, good finger motion though not full."
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            []
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            []
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Status post carpal tunnel release"
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.679078996181488,
+                    "time": "0.15"
+                }
+            ]
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Planned post-op endo carpal tunnel. Return to clinic in 4 weeks."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6914594173431396,
+                    "time": "0.15"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

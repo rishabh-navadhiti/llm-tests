@@ -1,0 +1,267 @@
+[
+    {
+        "content": [
+            "Evan Gabbay"
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": false,
+                    "generic": true,
+                    "missingContent": false,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "-"
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-13T17:26:57.001Z",
+                "to": [
+                    "Evan Gabbay"
+                ],
+                "version": 1
+            }
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            [
+                {
+                    "score": 0.6259454488754272,
+                    "time": "62.08"
+                }
+            ]
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Evaluation of falls and wrist pain"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            [
+                {
+                    "score": 0.6191971898078918,
+                    "time": "0.009"
+                },
+                {
+                    "score": 0.6416947245597839,
+                    "time": "71.83"
+                }
+            ]
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "He is here today for evaluation of a new problem.  He is status post 2 falls over the last 2 days, one climbing up a slide and one falling off an electric scooter.  He had pain with extension of his wrist after both incidents that just has not improved.  He is here for evaluation and treatment."
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": false,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "He reports two falls over the last two days, one from a slide and one from an electric scooter. He experienced wrist pain with extension after both falls, which has not improved. He seeks evaluation and treatment."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-13T17:27:06.001Z",
+                "to": [
+                    "He is here today for evaluation of a new problem.  He is status post 2 falls over the last 2 days, one climbing up a slide and one falling off an electric scooter.  He had pain with extension of his wrist after both incidents that just has not improved.  He is here for evaluation and treatment."
+                ],
+                "version": 1
+            }
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.7797831296920776,
+                    "time": "0.009"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "Left upper extremity",
+            "Skin is clean, dry and intact without erythema or ecchymosis",
+            "Significant tenderness to palpation of the dorsal aspect of the left wrist",
+            "Moderate soft tissue swelling",
+            "There is mild ecchymosis",
+            "Excellent finger motion",
+            "Significant pain with the wrist flexion and extension",
+            ""
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Left upper extremity skin is clean, giant intact without erythematic mosis, tension of the dorsal aspect of the left wrist moderate soft tissue swelling there, mild echinosis, significant pain with the wrist and extension."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-13T17:27:20.601Z",
+                "to": [
+                    "Left upper extremity",
+                    "Skin is clean, dry and intact without erythema or ecchymosis",
+                    "Significant tenderness to palpation of the dorsal aspect of the left wrist",
+                    "Moderate soft tissue swelling",
+                    "There is mild ecchymosis",
+                    "Excellent finger motion",
+                    "Significant pain with the wrist flexion and extension",
+                    ""
+                ],
+                "version": 1
+            }
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            [
+                {
+                    "score": 0.7271333336830139,
+                    "time": "62.549"
+                },
+                {
+                    "score": 0.6086975336074829,
+                    "time": "71.83"
+                }
+            ]
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "X-rays 4 views of the left wrist demonstrate a skeletally immature patient with a minimally displaced fracture of the dorsal distal radius"
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "X-rays of the left wrist demonstrate a fracture of the distal radius in an immature patient."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-13T17:27:31.673Z",
+                "to": [
+                    "X-rays 4 views of the left wrist demonstrate a skeletally immature patient with a minimally displaced fracture of the dorsal distal radius"
+                ],
+                "version": 1
+            }
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [
+                {
+                    "score": 0.5642271637916565,
+                    "time": "71.83"
+                },
+                {
+                    "score": 0.6979239583015442,
+                    "time": "82.11"
+                }
+            ]
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Distal radius fracture"
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.628882110118866,
+                    "time": "82.11"
+                }
+            ]
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Return to clinic in 2 weeks for followup with repeat x-rays and cast change"
+        ],
+        "history": [
+            {
+                "comment": "",
+                "correctionType": {
+                    "doctorSpecific": true,
+                    "generic": false,
+                    "missingContent": true,
+                    "notInTranscription": false
+                },
+                "data": [
+                    "Plan: Fracture cast. Return to clinic in 2 weeks for follow-up with repeat X-rays and cast change."
+                ],
+                "ragas": {
+                    "accuracy": 10,
+                    "aesthetics": 10,
+                    "grammar": 10,
+                    "relevance": 10,
+                    "structure": 10
+                },
+                "timestamp": "2025-08-13T17:28:06.181Z",
+                "to": [
+                    "Return to clinic in 2 weeks for followup with repeat x-rays and cast change"
+                ],
+                "version": 1
+            }
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.5232512354850769,
+                    "time": "82.11"
+                },
+                {
+                    "score": 0.7749595046043396,
+                    "time": "95.94"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

@@ -1,0 +1,131 @@
+[
+    {
+        "content": [
+            "Jane Pollock"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            [
+                {
+                    "score": 0.5619787573814392,
+                    "time": "1.159"
+                }
+            ]
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Follow-up"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            []
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "Jane Pollock is here for a follow-up visit. She reports overall well-being but mentions soreness and stiffness without significant pain.  She also reports some bruising and is unsure if it's normal. Her husband is present at the appointment."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.722433865070343,
+                    "time": "1.159"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "Right upper extremity incisions are dry and intact, with sutures. Moderate ecchymosis to the palm consistent with postoperative state. The middle and ring fingers are held in a flexed position, limited fist about 4 centimeters from palm with composite selection, unable to straighten fingers."
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            [
+                {
+                    "score": 0.63185715675354,
+                    "time": "34.11"
+                },
+                {
+                    "score": 0.8583380579948425,
+                    "time": "51.159"
+                }
+            ]
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [
+                {
+                    "score": 0.7006299495697021,
+                    "time": "33.299"
+                },
+                {
+                    "score": 0.7006299495697021,
+                    "time": "33.61"
+                }
+            ]
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Right upper extremity Skin is intact.",
+            "No tenderness to palpation."
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6758013367652893,
+                    "time": "34.11"
+                }
+            ],
+            []
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Return to clinic in 1 week.",
+            "Soft dressing and dressings applied. Return to clinic in 6 days for follow-up to consider suture removal and initiation of therapy."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6524710655212402,
+                    "time": "70.209"
+                },
+                {
+                    "score": 0.7155357599258423,
+                    "time": "79.0"
+                }
+            ],
+            [
+                {
+                    "score": 0.5003528594970703,
+                    "time": "34.11"
+                },
+                {
+                    "score": 0.6568918228149414,
+                    "time": "70.209"
+                },
+                {
+                    "score": 0.6910676956176758,
+                    "time": "79.0"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

@@ -1,0 +1,96 @@
+[
+    {
+        "content": [
+            "-"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Follow-up"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            []
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "He reports doing well overall. He has been soaking his finger and feels things are improving. His fingers are starting to feel more normal, though the middle finger is still pretty sensitive."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.5544732809066772,
+                    "time": "0.039"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "-"
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            []
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "X-rays deferred"
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            []
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Right upper extremity Skin is intact.",
+            "Excellent PIP motion.",
+            "Significant ecchymosis of the middle finger.",
+            "No tenderness to palpation.",
+            "Stiff DIP joint of the middle finger.",
+            "Separation of nail fold from nail bed on the ring finger."
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "Plan for transition to removable splints at that time.",
+            "Return to clinic in 1 week for wound check with repeat X-rays.",
+            "Continue current treatment."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [],
+            [
+                {
+                    "score": 0.5092836618423462,
+                    "time": "0.039"
+                }
+            ],
+            []
+        ],
+        "title": "Plan"
+    }
+]

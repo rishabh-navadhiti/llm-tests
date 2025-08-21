@@ -1,0 +1,100 @@
+[
+    {
+        "content": [
+            "-"
+        ],
+        "key": "PATIENT_NAME",
+        "matches": [
+            []
+        ],
+        "title": "Patient Name"
+    },
+    {
+        "content": [
+            "Trigger finger recurrence on the right side and new triggering on the left side"
+        ],
+        "key": "CHIEF_COMPLAINT",
+        "matches": [
+            []
+        ],
+        "title": "Chief Complaint"
+    },
+    {
+        "content": [
+            "He is presenting for follow-up of his right-sided trigger finger recurrence and new onset of triggering on his left side. He inquired about the possibility of receiving another injection. He reports the symptoms on the right side are the same as on the left.  He would like to defer injection on the right trigger finger today.  He has not had any injections for his left middle finger trigger finger. James She is also here for follow-up after surgery with Doctor Hertz. He is inquiring about the surgical site's appearance."
+        ],
+        "key": "HPI_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6762193441390991,
+                    "time": "0.009"
+                }
+            ]
+        ],
+        "title": "History of Present Illness"
+    },
+    {
+        "content": [
+            "Moderate soft tissue swelling, triggering of the middle finger. There is a nodule there that is triggering that."
+        ],
+        "key": "MUSCULOSKELETAL_VERBATIM",
+        "matches": [
+            []
+        ],
+        "title": "Musculoskeletal"
+    },
+    {
+        "content": [
+            "X-ray showed some fracture healing."
+        ],
+        "key": "IMAGING_GEORGE",
+        "matches": [
+            [
+                {
+                    "score": 0.6804977059364319,
+                    "time": "93.319"
+                }
+            ]
+        ],
+        "title": "Imaging"
+    },
+    {
+        "content": [
+            "Right upper extremity Skin is intact.",
+            "Status post surgery",
+            "Right trigger finger",
+            " No tenderness to palpation. ",
+            "Left trigger finger"
+        ],
+        "key": "ASSESSMENT_SPENCER",
+        "matches": [
+            [],
+            [
+                {
+                    "score": 0.6116743087768555,
+                    "time": "96.529"
+                }
+            ],
+            [],
+            [],
+            []
+        ],
+        "title": "Assessment"
+    },
+    {
+        "content": [
+            "For the right middle finger trigger finger, defer injection today. Considering injection if he wants in the future. For the left middle finger trigger finger, will perform injection today. Recommend continued post-op protocol per Doctor Hertz. Recommend follow-up with Doctor Hertz. Return to clinic in 4 weeks."
+        ],
+        "key": "PLAN_SPENCER",
+        "matches": [
+            [
+                {
+                    "score": 0.6838597655296326,
+                    "time": "0.009"
+                }
+            ]
+        ],
+        "title": "Plan"
+    }
+]

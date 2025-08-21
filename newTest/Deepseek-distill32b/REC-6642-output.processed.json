@@ -1,0 +1,69 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Nadeem Nemi-"
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Evaluation of bilateral thumb pain"
+    ],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "The patient presents for evaluation of bilateral thumb pain, which has worsened since his last visit in 2019 and significantly over the past six months. He reports no numbness or tingling but experiences significant pain limiting his thumbs."
+    ],
+    "default": "-",
+    "instruction": "Summarize HPI with onset, duration, location, severity."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Bilateral upper extremty skin is clean, dry and intact. No significant soft tissue swelling, positive Grin, positive shoulder sign, no triggering of any digits with the thumb."
+    ],
+    "default": "",
+    "instruction": "Extract physical exam findings verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays demonstrate severe joint space neovasculitis with osteophytosis and Z deformity on the right; left shows similar findings without calcific arteriogram."
+    ],
+    "default": "-",
+    "instruction": "Extract imaging results as dictated."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Bilateral thumb CMC arthritis",
+      "Bilateral carpal tunnel syndrome",
+      "Right cubital tunnel syndrome"
+    ],
+    "default": "-",
+    "instruction": "List active conditions."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Administer steroid injections today.",
+      "Discuss steroid effects and rebound pain.",
+      "Follow-up in two months."
+    ],
+    "default": "-",
+    "instruction": "Include treatments and follow-up."
+  }
+]

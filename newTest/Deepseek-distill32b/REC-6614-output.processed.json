@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Precious Myles Garrett"
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Evaluation of left wrist pain"
+    ],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "A right-hand dominant social worker presenting with left wrist pain more bothersome than masses. Pain wakes her at night. Diagnoses include left first dorsal compartment wrist cyst, left thumb MCP osteophyte, and bilateral thumb MCP joint issues. Masses are constant. Seen rheumatologist for x-rays and ultrasound of wrist."
+    ],
+    "default": "-",
+    "instruction": "Summarize HPI with onset, duration, location, severity, treatments, and progression."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Pea-sized mass over first dorsal compartment, non-tender, mobile. Negative Finkelstein. Mass at dorsal ulnar thumb MCP joint, non-mobile, minimally tender. Good range of motion. No tenderness at A1 point, no locking or catching."
+    ],
+    "default": "",
+    "instruction": "Extract physical exam findings verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays show osteophyte at thumb MCP joint. Ultrasound shows bony avulsion fragment/osteophyte at thumb MCP and retinacular cyst in wrist."
+    ],
+    "default": "-",
+    "instruction": "Extract imaging results as dictated."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "- Left wrist pain\n- Left first dorsal compartment wrist cyst\n- Left thumb MCP joint osteophyte\n- Bilateral thumb MCP joint masses"
+    ],
+    "default": "-",
+    "instruction": "List active problems or conditions."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "- Recommend night splints for carpal tunnel\n- Observe masses\n- Follow-up in six weeks"
+    ],
+    "default": "-",
+    "instruction": "Summarize treatments and follow-up."
+  }
+]

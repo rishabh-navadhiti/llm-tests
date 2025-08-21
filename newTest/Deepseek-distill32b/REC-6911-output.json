@@ -1,0 +1,78 @@
+Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by reading through the transcript carefully.
+
+The conversation is from the doctor, and it's about a patient named Walt. The doctor mentions that Walt is a PO1, which I think stands for post-op day 1. He also has carpal tunnel. Walt says he hasn't had much pain but is concerned about when the numbness will resolve. 
+
+Looking at the exam findings, the doctor notes that the incision is clean with joint-type sutures, moderate ecchymosis, which is bruising, and that it's consistent with a postoperative state. The fingers have good motion but not full yet. The plan is for a post-op endo carpal tunnel, and Walt needs to return in 4 weeks.
+
+Now, I'll go through each section of the JSON template to extract the necessary information.
+
+1. **Patient Name**: The transcript explicitly mentions "Walt," so that's straightforward.
+
+2. **Chief Complaint**: The patient's main concern is about numbness resolving, so that's his chief complaint.
+
+3. **HPI Spencer**: The HPI should include onset, duration, etc. Here, Walt is post-op day 1 with carpal tunnel. He reports minimal pain but numbness. So I'll summarize that.
+
+4. **Musculoskeletal**: The exam findings are about the incision, sutures, ecchymosis, and finger motion. I'll list these verbatim as per the instruction.
+
+5. **Imaging Results**: There's no mention of any imaging done, so I'll use the default "-".
+
+6. **Assessment**: The active problems are post-op carpal tunnel and numbness. I'll list these as bullet points.
+
+7. **Plan**: The doctor's plan includes follow-up in 4 weeks and mentions the post-op care, so I'll note that.
+
+I need to make sure each section follows the instructions precisely, using only the information from the transcript without adding anything extra. Also, ensuring proper grammar and medical terminology.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Walt"],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["When will the numbness resolve?"],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["Walt is a post-op day 1 for carpal tunnel surgery. He reports minimal pain but ongoing numbness."],
+    "default": "-",
+    "instruction": "Summarize HPI with onset, duration, etc."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Incision clean with joint-type sutures, moderate ecchymosis, consistent with postoperative state, good finger motion though not full."],
+    "default": "",
+    "instruction": "List exam findings verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "No imaging mentioned."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["- Post-op carpal tunnel", "- Numbness"],
+    "default": "-",
+    "instruction": "List active problems."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Return to clinic in 4 weeks for follow-up."],
+    "default": "-",
+    "instruction": "Note follow-up plan."
+  }
+]
+```

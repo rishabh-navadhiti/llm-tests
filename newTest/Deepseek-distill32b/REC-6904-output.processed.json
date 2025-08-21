@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Jane Pollock"
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Soreness and stiffness in the right upper extremity with some bruising."
+    ],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Jane Pollock reports doing well overall following her surgery. She experiences soreness and stiffness in her right upper extremity, with some bruising noted. She describes her pain as not too severe."
+    ],
+    "default": "-",
+    "instruction": "Summarize HPI with onset, duration, location, severity."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Right upper extremity incisions are dry and intact with sutures. Moderate ecchymosis to the palm consistent with postoperative state. Middle and ring fingers held in flex position, limited fist formation about 4 cm from palm."
+    ],
+    "default": "",
+    "instruction": "Extract physical exam findings verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "-"
+    ],
+    "default": "-",
+    "instruction": "No imaging results mentioned."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Postoperative state of right upper extremity with ecchymosis",
+      "Limited finger movement"
+    ],
+    "default": "-",
+    "instruction": "List active problems."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Remove soft dressing",
+      "Return to clinic in one week for suture removal",
+      "Initiate therapy."
+    ],
+    "default": "-",
+    "instruction": "List doctor's plan verbatim."
+  }
+]

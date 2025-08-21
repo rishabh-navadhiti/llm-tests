@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Greta Griswana"
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Thumb pain"
+    ],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Greta reports her forearm pain has improved, but her thumb pain has worsened."
+    ],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Significant tenderness at the trapeziometacarpal joint with a positive grind."
+    ],
+    "default": "",
+    "instruction": "Extract physical examination findings."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays show planned arthritis."
+    ],
+    "default": "-",
+    "instruction": "Extract imaging results."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Thumb pain with positive grind, likely arthritis."
+    ],
+    "default": "-",
+    "instruction": "List active problems or conditions."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Trial of steroid injection; follow-up in eight weeks."
+    ],
+    "default": "-",
+    "instruction": "Write the doctor's plan."
+  }
+]

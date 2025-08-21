@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "-"
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Recurrence of trigger finger on the right side and new triggering on the left side."
+    ],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint without additional details."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "The patient reports a recurrence of trigger finger on the right side and new triggering on the left side. He is considering another injection but is unsure if it is too soon."
+    ],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness as a single paragraph."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Moderate soft tissue swelling on both sides, triggering of the middle finger, and a nodule causing it."
+    ],
+    "default": "",
+    "instruction": "Extract physical examination findings related to Musculoskeletal."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "-"
+    ],
+    "default": "-",
+    "instruction": "Extract imaging results explicitly mentioned in the transcript."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "- Trigger finger (right middle finger)",
+      "- Trigger finger (left middle finger)"
+    ],
+    "default": "-",
+    "instruction": "Generate a concise list of active problems or conditions."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "- Defer injection on the right side.",
+      "- Proceed with injection on the left side.",
+      "- Recommend follow-up with Doctor Hertz."
+    ],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript."
+  }
+]

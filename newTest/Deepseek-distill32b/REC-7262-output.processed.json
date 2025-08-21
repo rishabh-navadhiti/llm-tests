@@ -1,0 +1,71 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Kabe Tahiri"
+    ],
+    "default": "-",
+    "instruction": "Extracted Kabe Tahiri as explicitly mentioned."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Neck pain follow-up"
+    ],
+    "default": "-",
+    "instruction": "Patient mentions neck issues without seeking further treatment."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Patient reports no change in neck condition since last visit; has not sought further treatment; exam findings remain unchanged; follow-up plan continues as previously established."
+    ],
+    "default": "-",
+    "instruction": "Summarized onset and duration without additional details."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Palpation of ulnar aspect of wrist; limited wrist motion secondary to immobilization; skin excoriations secondary to cast; excellent range of motion in fingers."
+    ],
+    "default": "",
+    "instruction": "Extracted verbatim musculoskeletal findings."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays show increased callus formation at ulna (right); left shows increased callus formation diffusely at radius and ulna."
+    ],
+    "default": "-",
+    "instruction": "Reported imaging findings as dictated."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Neck pain",
+      "Status post wrist immobilization",
+      "Triggering of right index and middle fingers."
+    ],
+    "default": "-",
+    "instruction": "Listed active problems based on discussion."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Transition to short arm cast on left",
+      "Wean on right",
+      "Return in 4 weeks",
+      "Consider removable splint on left",
+      "Perform trigger finger release today."
+    ],
+    "default": "-",
+    "instruction": "Outlined plan exactly as dictated."
+  }
+]

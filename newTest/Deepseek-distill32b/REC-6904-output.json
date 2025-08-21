@@ -1,0 +1,72 @@
+Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by reading through the transcript carefully to extract all the necessary information.
+
+First, looking at the conversation entries, I see that the patient's name is Jane Pollock. That's straightforward, so I'll note that under PATIENT_NAME.
+
+Next, the chief complaint. The patient mentions she's sore and stiff but not too painful, with some bruising. So her main issue is the soreness and stiffness post-surgery. I'll phrase that as "Soreness and stiffness in the right upper extremity with some bruising."
+
+Moving on to the History of Present Illness (HPI). The patient is doing well overall but has these symptoms after her surgery. She's experiencing soreness, stiffness, and bruising, which are part of her recovery. I'll summarize this in a coherent paragraph, focusing on the onset, duration, location, and severity as mentioned.
+
+For the Musculoskeletal examination, the doctor notes that the incisions are dry and intact with sutures. There's moderate ecchymosis to the palm, which is consistent with the postoperative state. The middle and ring fingers are held in a flex position with limited fist formation. I'll extract this verbatim as per the instructions.
+
+Imaging Results aren't mentioned in the transcript, so I'll leave that as the default "-".
+
+In the Assessment section, the active problems are the postoperative state with ecchymosis and limited finger movement. I'll list these as concise points without any additional details.
+
+Finally, the Plan. The doctor plans to remove the soft dressing, return to the clinic in one week for suture removal, and start therapy. I'll list these steps exactly as dictated.
+
+I need to ensure that each section is filled accurately without adding any inferred information. Also, I must maintain proper grammar and punctuation throughout. Let me double-check each section against the transcript to make sure nothing is missed or incorrectly interpreted.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Jane Pollock"],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Soreness and stiffness in the right upper extremity with some bruising."],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["Jane Pollock reports doing well overall following her surgery. She experiences soreness and stiffness in her right upper extremity, with some bruising noted. She describes her pain as not too severe."],
+    "default": "-",
+    "instruction": "Summarize HPI with onset, duration, location, severity."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Right upper extremity incisions are dry and intact with sutures. Moderate ecchymosis to the palm consistent with postoperative state. Middle and ring fingers held in flex position, limited fist formation about 4 cm from palm."],
+    "default": "",
+    "instruction": "Extract physical exam findings verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "No imaging results mentioned."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Postoperative state of right upper extremity with ecchymosis", "Limited finger movement"],
+    "default": "-",
+    "instruction": "List active problems."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Remove soft dressing", "Return to clinic in one week for suture removal", "Initiate therapy."],
+    "default": "-",
+    "instruction": "List doctor's plan verbatim."
+  }
+]
+```

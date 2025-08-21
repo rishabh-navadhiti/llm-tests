@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Walt"
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "When will the numbness resolve?"
+    ],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Walt is a post-op day 1 for carpal tunnel surgery. He reports minimal pain but ongoing numbness."
+    ],
+    "default": "-",
+    "instruction": "Summarize HPI with onset, duration, etc."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Incision clean with joint-type sutures, moderate ecchymosis, consistent with postoperative state, good finger motion though not full."
+    ],
+    "default": "",
+    "instruction": "List exam findings verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "-"
+    ],
+    "default": "-",
+    "instruction": "No imaging mentioned."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "- Post-op carpal tunnel",
+      "- Numbness"
+    ],
+    "default": "-",
+    "instruction": "List active problems."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Return to clinic in 4 weeks for follow-up."
+    ],
+    "default": "-",
+    "instruction": "Note follow-up plan."
+  }
+]

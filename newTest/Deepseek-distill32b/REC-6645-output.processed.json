@@ -1,0 +1,71 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Nadeem Nemi"
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Bilateral thumb pain"
+    ],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "The patient presents for evaluation of bilateral thumb pain, which has worsened since 2019, especially over the last six months. He reports significant pain without numbness or tingling, limiting thumb function."
+    ],
+    "default": "-",
+    "instruction": "Summarize HPI with onset, duration, location, severity, and progression."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Bilateral upper extremity skin is clean, dry and intact. No significant soft tissue swelling, positive grind, positive shoulder sign. No triggering of any digits with the thumb."
+    ],
+    "default": "",
+    "instruction": "Extract physical exam findings verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays demonstrate severe joint space neovasculitis with osteophytosis. Evidence of Z deformity and hyperextension of MCP joint. Calcific arteriogram noted on right; left similar without calcific arteriogram."
+    ],
+    "default": "-",
+    "instruction": "Extract imaging results as dictated."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Bilateral thumb CMC arthritis (progressed)",
+      "Bilateral carpal tunnel syndrome (stable)",
+      "Right cubital tunnel syndrome (stable)"
+    ],
+    "default": "-",
+    "instruction": "List active problems or conditions."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Inject both thumbs with steroid today.",
+      "Discuss temporary relief and rebound pain.",
+      "Recommend observation for carpal and cubital tunnels.",
+      "Consider nerve studies.",
+      "Follow-up in two months."
+    ],
+    "default": "-",
+    "instruction": "Outline treatments and follow-up as dictated."
+  }
+]

@@ -1,0 +1,76 @@
+Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by understanding the structure of the JSON and what each section requires.
+
+First, the JSON has several sections like Patient Name, Chief Complaint, HPI Spencer, Musculoskeletal, Imaging Results, Assessment, and Plan. Each of these has specific instructions on how to extract information from the transcript.
+
+Looking at the transcript, it's a conversation between doctors and a patient. The speakers are doctor_1, doctor_2, doctor_3, and the patient. The conversation is split into multiple parts with timestamps.
+
+Starting with the Patient Name section. The instruction says to extract the patient's full name exactly as it appears. If not present, return "-". Scanning through the transcript, I don't see any mention of a patient's name. The speakers are doctors and a patient, but no name is given. So, I'll put "-" for Patient Name.
+
+Next is the Chief Complaint. It should be a concise statement without additional details. From the transcript, the patient mentions a mass or bump at the ulnar border of her index finger DIP joint. So, the chief complaint is "Mass/bump at ulnar border of index finger DIP joint."
+
+Moving on to HPI Spencer. This needs a summary of the History of Present Illness as a single paragraph. The patient noticed the mass a few weeks ago, it's different from her arthritis bumps, doesn't limit her function, but she wants to ensure everything's okay. So, I'll structure this into a coherent paragraph focusing on onset, duration, location, and concerns.
+
+For Musculoskeletal, I need to extract physical exam findings verbatim. Looking through the transcript, there are mentions of a mass at the ulnar border, evidence of Heberden's nodes, osteophytes, and excellent range of motion. I'll list these as they appear.
+
+Imaging Results require explicit mentions. The transcript doesn't mention any imaging like X-rays or MRIs, so I'll use the default "-".
+
+Assessment should be a list of active problems. From the HPI and exam findings, the issues are mass at DIP joint, Heberden's nodes, and osteoarthritis. These are the active conditions relevant to the visit.
+
+Finally, the Plan section needs to include treatments or follow-ups exactly as dictated. The doctors mention returning to clinic in 6 months for follow-up and continuing home exercises and activity advancement. I'll list these as bullet points.
+
+I need to ensure all sections are filled correctly without adding any inferred information. Each part should strictly follow the instructions and use only what's explicitly stated in the transcript.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Mass/bump at ulnar border of index finger DIP joint"],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["The patient noticed a mass or bump at the ulnar border of her index finger DIP joint a few weeks ago. She is concerned because this is different from the bumps she gets from her arthritis. It does not limit her function but she wants to ensure everything is okay."],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["There is evidence of Heberden's nodes and osteophytes throughout. There is a mass at the ulnar border of the DIP joint with osteophyte. Excellent range of motion with about 90 degrees of DIP collection of the finger without pain."],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Mass at DIP joint", "Heberden's nodes", "Osteoarthritis"],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Continue home exercise program", "Continue advancing activity", "Return to clinic in 6 months for follow-up."],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."
+  }
+]
+```

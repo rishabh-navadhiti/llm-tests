@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Magara"
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Bilateral hand numbness and tingling"
+    ],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Magara, a right-hand dominant retiree, presents with bilateral hand numbness and tingling that began in January 2025 without trauma or injection. Symptoms have awakened her during sleep but improved with nighttime braces. She denies pain or limited motion and seeks evaluation and treatment."
+    ],
+    "default": "-",
+    "instruction": "Summarize HPI with onset, duration, location, severity, mechanism, treatments, and progression."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Bilateral upper extremity skin is clear, intact without rash. Minimal tissue swelling and minimal tenderness to palpation. PCGSI: Right ring finger 1.43, left ring finger 3.61, left hand 2.83, right hand 3.61."
+    ],
+    "default": "",
+    "instruction": "Extract verbatim musculoskeletal exam findings."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "Right hand: Variable joint space narrowing in IP joints, notably thumb MCP joint. Left hand: Severe joint space narrowing at carpometacarpal joint."
+    ],
+    "default": "-",
+    "instruction": "Extract imaging results as dictated."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Bilateral hand numbness and tingling",
+      "Carpal tunnel syndrome",
+      "Peripheral neuropathy"
+    ],
+    "default": "-",
+    "instruction": "List active problems or conditions."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Recommend nerve studies",
+      "Follow-up in 6 to 8 weeks."
+    ],
+    "default": "-",
+    "instruction": "Include treatments, therapies, medications, imaging, education, or follow-up instructions."
+  }
+]

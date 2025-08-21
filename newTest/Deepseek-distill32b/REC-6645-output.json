@@ -1,0 +1,74 @@
+Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by reading through the transcript carefully to extract all the necessary information.
+
+First, looking for the patient's name. The conversation starts with "Nadeem Nemi- ... at two o'clock on Dr. Almadro's schedule." So the patient's name is Nadeem Nemi. I'll note that under PATIENT_NAME.
+
+Next, the chief complaint. The doctor mentions that the patient presents for evaluation of bilateral thumb pain. So the chief complaint is "Bilateral thumb pain."
+
+Moving on to the History of Present Illness (HPI). The patient has bilateral carpal tunnel, right cubital tunnel, and bilateral thumb CMC arthritis. He's getting injections today. His pain has worsened since 2019, especially over the last six months. No numbness or tingling, but a lot of pain limiting his thumbs. On exam, bilateral upper extremity skin is clean, dry, intact. No significant soft tissue swelling, positive grind, positive shoulder sign. No triggering of digits. X-rays show severe joint space neovasculitis, osteophytosis, Z deformity, hyperextension of MCP joint, calcific arteriogram on the right, and similar on the left without the calcific arteriogram.
+
+For the Musculoskeletal section, I need to extract the physical exam findings verbatim. The doctor says: "Bilateral upper extremty skin is clean, dry and intact. Um, no significant soft tissue swelling, positive grind, positive shoulder sign. No triggering of any digits with the thumb."
+
+Imaging Results are mentioned as X-rays showing specific findings. The doctor dictates: "X-rays are three views of the right hand... Uh, demonstrate, um, moderate... no, severe joint space neovasculitis with metacarpal with osteophytosis. Uh, there is evidence of a Z deformity with hyperextension of the MCP joint. Uh, calcific arteriogram is noted. And then the left is the same, except you can delete the \"calcific arterio-\""
+
+For Assessment, the active problems are bilateral thumb CMC arthritis with progression, bilateral carpal tunnel syndrome (stable), and right cubital tunnel syndrome (stable).
+
+The Plan includes injecting both thumbs with steroid today, discussing temporary relief and rebound pain. Recommend observation for carpal and cubital tunnels, consider nerve studies. Follow-up in two months.
+
+I need to make sure each section is filled correctly without adding any extra information. Also, ensure that any unclear terms are clarified if context supports it. For example, "Z deformity" and "calcific arteriogram" seem correct based on context.
+
+Now, I'll structure all this information into the JSON template as specified.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Nadeem Nemi"],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Bilateral thumb pain"],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["The patient presents for evaluation of bilateral thumb pain, which has worsened since 2019, especially over the last six months. He reports significant pain without numbness or tingling, limiting thumb function."],
+    "default": "-",
+    "instruction": "Summarize HPI with onset, duration, location, severity, and progression."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Bilateral upper extremity skin is clean, dry and intact. No significant soft tissue swelling, positive grind, positive shoulder sign. No triggering of any digits with the thumb."],
+    "default": "",
+    "instruction": "Extract physical exam findings verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-rays demonstrate severe joint space neovasculitis with osteophytosis. Evidence of Z deformity and hyperextension of MCP joint. Calcific arteriogram noted on right; left similar without calcific arteriogram."],
+    "default": "-",
+    "instruction": "Extract imaging results as dictated."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Bilateral thumb CMC arthritis (progressed)", "Bilateral carpal tunnel syndrome (stable)", "Right cubital tunnel syndrome (stable)"],
+    "default": "-",
+    "instruction": "List active problems or conditions."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Inject both thumbs with steroid today.", "Discuss temporary relief and rebound pain.", "Recommend observation for carpal and cubital tunnels.", "Consider nerve studies.", "Follow-up in two months."],
+    "default": "-",
+    "instruction": "Outline treatments and follow-up as dictated."
+  }
+]
+```

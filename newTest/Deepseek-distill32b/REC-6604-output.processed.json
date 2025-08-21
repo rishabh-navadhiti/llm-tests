@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Nicole Coffee"
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Pain in left index finger"
+    ],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "The patient reports pain in her left index finger that she has noticed for a few months. It began bothering her during a previous shoulder appointment, where Dr. Almadroa recommended observation. However, the pain has worsened and has not improved. She is now seeking information about whether she can receive an injection."
+    ],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Left upper extremity skin is clean, dry, and tacky without erythema. Acute moderate tenderness on left index finger with an A1 polli. There is walking catching. There is triggering on index finger. Excellent range of motion overall."
+    ],
+    "default": "",
+    "instruction": "Extract physical examination findings related to Musculoskeletal."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays of the finger are normal."
+    ],
+    "default": "-",
+    "instruction": "Extract imaging results explicitly mentioned."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Trigger finger",
+      "Pain in left index finger"
+    ],
+    "default": "-",
+    "instruction": "List active problems or conditions."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "No injection will be given today. Plan to treat trigger finger."
+    ],
+    "default": "-",
+    "instruction": "Write the doctor's plan as dictated."
+  }
+]

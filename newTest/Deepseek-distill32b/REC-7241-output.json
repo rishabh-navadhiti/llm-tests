@@ -1,0 +1,76 @@
+Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by reading through the transcript carefully to extract all the necessary information.
+
+First, looking at the conversation, the doctor mentions a patient who is here for a follow-up with his wife. The patient is having a recurrence of trigger on the right side and new triggering on the left side. He's considering another injection but wants to know if it's too soon. The exam shows moderate soft tissue swelling on both sides, with triggering of the middle finger and a nodule causing it. The doctor defers the plan for the right side but proceeds with an injection on the left. There's also mention of another patient, James, who had surgery with Doctor Hertz and is here for a follow-up. His incision is clean, dry, and intact, with sutures holding the nail plate. He has good PIP motion, and X-rays show some fracture healing. The doctor recommends continued post-op protocol and follow-up with his surgeon.
+
+Now, I'll go through each section of the JSON template to extract the required information.
+
+1. **Patient Name**: The transcript mentions two patients: one referred to as "He" (the primary patient) and another named James. However, since the primary focus seems to be on the first patient discussing trigger fingers, I'll extract his name if mentioned. But in the transcript, only "He" is referred to without a specific name. The other patient is James, but he's mentioned in a different context. Since the instructions specify to extract only if explicitly mentioned and not to infer, I'll return "-" for the patient name.
+
+2. **Chief Complaint**: The patient's main issue is recurrence of trigger on the right and new triggering on the left. So, the chief complaint is about trigger finger recurrence and new onset on the left.
+
+3. **HPI Spencer**: The History of Present Illness should include onset, duration, location, severity, etc. From the transcript, the patient has a recurrence on the right and new triggering on the left. He's considering another injection but is unsure if it's too soon. The exam findings are moderate swelling and triggering with a nodule.
+
+4. **Musculoskeletal**: The physical exam findings are moderate soft tissue swelling on both sides, triggering of the middle finger, and a nodule causing it.
+
+5. **Imaging Results**: The transcript mentions X-rays showing some fracture healing for James, but since we're focusing on the primary patient discussing trigger fingers, there's no imaging result mentioned for him. So, default to "-".
+
+6. **Assessment**: The active problems are trigger finger on both sides (right and left middle finger). So, list these as separate points.
+
+7. **Plan**: The doctor defers the injection on the right but proceeds with it on the left. They also mention WSGM (which I assume is a medical term or abbreviation) and recommend follow-up with Doctor Hertz for James.
+
+Putting it all together, I'll structure each section according to the template, ensuring that all details are accurately captured without adding any assumptions.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Recurrence of trigger finger on the right side and new triggering on the left side."],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint without additional details."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["The patient reports a recurrence of trigger finger on the right side and new triggering on the left side. He is considering another injection but is unsure if it is too soon."],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness as a single paragraph."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Moderate soft tissue swelling on both sides, triggering of the middle finger, and a nodule causing it."],
+    "default": "",
+    "instruction": "Extract physical examination findings related to Musculoskeletal."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "Extract imaging results explicitly mentioned in the transcript."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["- Trigger finger (right middle finger)", "- Trigger finger (left middle finger)"],
+    "default": "-",
+    "instruction": "Generate a concise list of active problems or conditions."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["- Defer injection on the right side.", "- Proceed with injection on the left side.", "- Recommend follow-up with Doctor Hertz."],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript."
+  }
+]
+```

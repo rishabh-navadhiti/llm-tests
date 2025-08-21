@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "-"
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Evaluation of left small finger with locking and catching"
+    ],
+    "default": "-",
+    "instruction": "Provide only the chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Onset two years ago with locking and catching; did not want surgery before but now seeking options."
+    ],
+    "default": "-",
+    "instruction": "Summarize HPI."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Skin purging without erythema; moderate tenderness; nodule at A1 pulley; good ROM; well-healed incisions on middle finger."
+    ],
+    "default": "",
+    "instruction": "Physical exam findings."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays normal."
+    ],
+    "default": "-",
+    "instruction": "Extract imaging results."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Trigger finger (left small finger)",
+      "Status post trigger finger surgery (middle finger)"
+    ],
+    "default": "-",
+    "instruction": "List active problems."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Planned trigger finger surgery."
+    ],
+    "default": "-",
+    "instruction": "Write doctor's plan."
+  }
+]

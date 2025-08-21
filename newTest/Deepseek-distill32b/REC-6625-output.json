@@ -1,0 +1,80 @@
+Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by reading through the transcript carefully.
+
+The conversation is between a doctor and a patient named Mr. Parviz Mikael. He's here for a follow-up visit. The doctor mentions that the patient has no pain and wants to know what's going on. 
+
+Looking at the exam findings, the pin sites are clean, dry, and intact without erythema or ecchymosis. The patient has no significant tenderness except for parthenonic carpal stable alignment and stiff fingers. The X-rays are the same as the last time, so no new findings there.
+
+The plan is to continue with plexal ligament split, review the X-rays, and continue the same treatment. The patient is to return to the clinic in 10 days for follow-up, possibly for pin removal or repeat X-rays, and then transition to a phenylplastic splint. They'll also see Eliza Cherian.
+
+Now, I'll go through each section of the JSON template and extract the necessary information.
+
+1. **Patient Name**: The patient's full name is explicitly mentioned as Mr. Parviz Mikael. So, I'll put that in.
+
+2. **Chief Complaint**: The patient states he has no pain and wants to know what's going on. So, the chief complaint is "No pain; wants to know what is going on."
+
+3. **HPI Spencer**: The History of Present Illness should summarize the patient's history. Since it's a follow-up and he has no pain, I'll note that he's here for follow-up with no pain and no significant tenderness except for stiff fingers.
+
+4. **Musculoskeletal**: The physical exam findings related to musculoskeletal are pin sites being clean, dry, intact without erythema or ecchymosis. No significant tenderness except for stiff fingers.
+
+5. **Imaging Results**: The X-rays are mentioned as being the same as the last time, so I'll state that the X-rays are normal.
+
+6. **Assessment**: The active problems are stiff fingers and status post plexal ligament split.
+
+7. **Plan**: The plan includes continuing plexal ligament split, reviewing X-rays, returning in 10 days for follow-up with possible pin removal or repeat X-rays, transitioning to a phenylplastic splint, and seeing Eliza Cherian.
+
+I need to make sure each section is filled accurately without adding any extra information not present in the transcript. Also, I should ensure proper medical terminology and correct grammar.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["Mr. Parviz Mikael"],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["No pain; wants to know what is going on."],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["Mr. Parviz Mikael is here for follow-up with no pain and no significant tenderness except for stiff fingers."],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Pin sites clean, dry, and intact without erythema or ecchymosis. No significant tenderness except for stiff fingers."],
+    "default": "",
+    "instruction": "Extract physical examination findings related to Musculoskeletal."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-rays normal."],
+    "default": "-",
+    "instruction": "Extract imaging results explicitly mentioned."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Stiff fingers", "Status post plexal ligament split."],
+    "default": "-",
+    "instruction": "List active problems or conditions."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Continue plexal ligament split.", "Review X-rays.", "Return to clinic in 10 days for follow-up with possible pin removal or repeat X-rays.", "Transition to phenylplastic splint.", "See Eliza Cherian."],
+    "default": "-",
+    "instruction": "Write the doctor's plan as dictated."
+  }
+]
+```

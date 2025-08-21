@@ -1,0 +1,72 @@
+Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by reading through the transcript carefully to extract all the necessary information.
+
+First, looking at the conversation, I notice that the patient's name isn't mentioned anywhere. The speakers are labeled as "doctor" and "patient," but no specific names are given. So, according to the template instructions, I should return "-" for the patient name since it's not explicitly mentioned.
+
+Next, the chief complaint. The doctor mentions that the patient is here for evaluation of a new problem, specifically two falls over the last two days. The patient has pain with extension of his wrist after both incidents. So, the chief complaint should be concise, just stating the main issue. I'll go with "Pain with wrist extension after two falls."
+
+Moving on to the History of Present Illness (HPI). The patient had two falls: one climbing a slide and another falling off an electric scooter. After both, he experienced pain with wrist extension that hasn't improved. On examination, the left wrist shows moderate soft tissue swelling, mild erythema, and significant pain with extension. The X-rays show a dorsally displaced fracture of the distal radius. I need to summarize this into a coherent paragraph without adding any interpretations or details not mentioned.
+
+For the musculoskeletal examination findings, the transcript mentions moderate soft tissue swelling, mild erythema, and significant pain with extension. I'll extract this verbatim as per the instructions.
+
+Imaging results are explicitly mentioned: X-rays of the left wrist show a dorsally displaced fracture of the distal radius. I'll include this exactly as stated.
+
+The assessment should list active problems. From the transcript, the main issues are wrist pain after falls and a distal radius fracture. These are both symptom-based and diagnosis-based terms, so they fit into the assessment.
+
+The plan includes applying a cast, following up in 4 weeks, and repeating X-rays and cast change. I'll list these as separate points in the plan section.
+
+I need to make sure all sections are filled correctly, using only the information provided and avoiding any assumptions or additional details. Also, ensuring proper grammar and punctuation throughout.
+</think>
+
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": ["-"],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": ["Pain with wrist extension after two falls."],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": ["The patient reports two falls over the last two days: one while climbing a slide and another falling off an electric scooter. He experienced pain with wrist extension after both incidents, which has not improved. On examination, moderate soft tissue swelling and mild erythema were noted on the dorsal aspect of the left wrist, with significant pain on extension."],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": ["Moderate soft tissue swelling on the dorsal aspect of the left wrist with mild erythema and significant pain on extension."],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": ["X-rays of the left wrist demonstrate a dorsally displaced fracture of the distal radius."],
+    "default": "-",
+    "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": ["Wrist pain after falls", "Distal radius fracture"],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": ["Application of a cast for fracture management", "Follow-up in 4 weeks for repeat X-rays and cast change."],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."
+  }
+]
+```

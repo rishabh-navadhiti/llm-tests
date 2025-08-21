@@ -1,0 +1,93 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Chaz Thomas",
+      "Meesha Senuda",
+      "Grace Twan",
+      "Charles Shaw",
+      "Josefina Marcial"
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Follow-up for splint removal due to contamination",
+      "Sensitivity and stiffness in PIP joint",
+      "MRI review and injection effects",
+      "Follow-up for wound healing",
+      "Pain after injection and left wrist concern"
+    ],
+    "default": "-",
+    "instruction": "Provide only the patient's chief complaint."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Chaz had a laceration with sutures removed; some pain and limited flexion noted.",
+      "Meesha reports improvement in PIP stiffness with splint use but still experiences some sensitivity.",
+      "Grace experienced mass reduction post-injection but now reports worsening systemic symptoms.",
+      "Charles has a mild laceration and is protecting it with dressings.",
+      "Josefina had pain post-injection but is improving; also concerned about left wrist arthritis."
+    ],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Laceration clean, sutures removed; tolerating well with some pain and limited flexion.",
+      "Limited flexion at DIP joint; stiffness at PIP joint; minimal tenosynovitis.",
+      "Exam unchanged.",
+      "Mild laceration to proximal nail folds.",
+      "Bilateral tenosynovitis; ulnar prominence; limited motion."
+    ],
+    "default": "",
+    "instruction": "Physical examination findings related to Musculoskeletal."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "Sutures removed; no imaging mentioned.",
+      "X-ray deferred.",
+      "MRI reviewed.",
+      "New x-rays show ulnar prominence and arthritis.",
+      ""
+    ],
+    "default": "-",
+    "instruction": "Extract imaging results explicitly mentioned."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Laceration healing well; sutures removed; pain; limited flexion.",
+      "PIP stiffness improving; DIP limited flexion.",
+      "Mass reduction post-injection; worsening systemic symptoms.",
+      "Mild laceration healing.",
+      "Right wrist improvement post-injection; left wrist arthritis."
+    ],
+    "default": "-",
+    "instruction": "List active problems or conditions."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Transition to removable splint; initiate hand therapy; return in two weeks.",
+      "Discontinue splint; home exercises; return in six weeks.",
+      "Discuss with Dr. Sidlow; return in three months.",
+      "Protect with dressings; return in one week.",
+      "Trial of night splints; home exercises; consider injection if no improvement."
+    ],
+    "default": "-",
+    "instruction": "Write the doctor's plan as dictated."
+  }
+]

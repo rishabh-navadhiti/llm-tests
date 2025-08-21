@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "Benchmark lists 'Nadeem Nemi' (stated in transcript). Candidate returned '-', missing the explicitly mentioned patient name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match in meaning to benchmark ('Bilateral thumb pain'); only casing differs."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Captures key details (bilateral thumb pain, worsening since 2019, worse in last 6 months, no numbness/tingling, functional limitation) but adds that injections were received today, which is not in the benchmark HPI and is not clearly confirmed; includes extra background details beyond benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Contains the benchmark’s core MSK findings (skin clean/dry/intact, positive grind, positive shoulder sign, no triggering). Minor differences include 'bilateral' vs 'right' and inclusion of extraneous imaging phrases."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Includes severe joint space change, osteophytosis, Z deformity, and MCP hyperextension, but omits the benchmark detail of 'calcific arteriogram noted' on the right and the left-hand exception ('except no calcific arteriogram'), leading to multiple missing details."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Matches the benchmark diagnoses (bilateral thumb CMC arthritis, right cubital tunnel, bilateral carpal tunnel). Adds 'bilateral thumb pain' and omits the normal finding 'skin is intact' from the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Aligns with benchmark plan (trial of injections, counseling on temporary effect/rebound pain, observe carpal/cubital tunnel, consider nerve studies, 2-month follow-up). Adds non-clinical scheduling chatter ('talk next week'/'send a message Friday') and specifies 'today,' which the benchmark did not."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60.0,
+  "overall_summary": "The candidate note captured the chief complaint and most assessment and plan elements well. Major miss was the patient name and omission of key imaging detail (calcific arteriogram). HPI included extra and possibly premature treatment status. Musculoskeletal exam largely matched but included extraneous content. Overall, accurate core content with notable omissions and some unnecessary additions."
+}

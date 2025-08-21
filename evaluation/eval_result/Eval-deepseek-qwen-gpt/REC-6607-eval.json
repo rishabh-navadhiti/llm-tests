@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Transcript does not state the patient's name; candidate appropriately did not invent one. Benchmark includes a name likely from chart—no penalty for info absent from transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Benchmark: 'Wrist pain.' Candidate added 'interest in total wrist arthroplasty,' which is accurate but extends beyond a pure chief complaint; meaning preserved."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures knee replacement, improved synovitis after injection, osteoporosis infusion, wrist pain, and interest in right wrist arthroplasty. Minor inaccuracies/omissions: 'injections' (plural), no 'right' side, omits follow-up context ('here for evaluation and treatment')."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Transcript only states 'Exam mostly unchanged' with no specific MSK findings verbatim. Candidate added 'Bilateral wrist arthritis,' which is not a dictated exam finding."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Transcript indicates imaging unchanged ('leave all the same'); benchmark notes 'Imaging mostly unchanged.' Candidate provided no imaging result, omitting available content."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes 'Bilateral wrist arthritis' and 'Synovitis' (benchmark items) and adds 'Osteoporosis,' which is supported by transcript. Minor wording variation ('improved') but clinically consistent."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Accurately notes plan for right total wrist arthroplasty. Adds 'Follow-up as needed,' which is not dictated, and omits phrasing like 'Plan OR risks/We will proceed.' Partial adherence."
+    }
+  },
+  "total_score": 22,
+  "percentage": 62.86,
+  "overall_summary": "The candidate note captures the core clinical narrative—wrist pain with interest in right total wrist arthroplasty, improved synovitis after injection, and osteoporosis infusion—but misses or alters several specifics. Strengths include generally accurate HPI and assessment. Weaknesses include adding non-dictated elements (MSK exam finding, follow-up), omitting imaging status, and minor inaccuracies in HPI details."
+}

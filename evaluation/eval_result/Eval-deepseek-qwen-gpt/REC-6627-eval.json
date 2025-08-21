@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The transcript does not state the patient's name; candidate appropriately left it unspecified as per instructions. Do not penalize for benchmark-only information."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Meaning matches benchmark exactly: bilateral hand numbness, tingling, and burning pain. Minor phrasing/case differences only."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately captures onset (around July 1, 2025), symptoms, pregnancy context, and splinting with night symptoms. Omits OB referral/recommendation and occupational detail present in benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Content broadly similar but not verbatim: missing '.PCTS', changes wording ('Some' omitted, singular vs plural), and merges lines. Field requires exact dictated phrasing."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Matches benchmark exactly: X-rays deferred secondary to pregnancy."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes correct diagnosis and adds relevant symptom/finding items from the transcript. Extra items are accurate but exceed benchmark’s concise list."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures injections today with risks/temporary nature and 3-month postpartum follow-up if persistent. Omits the note about splints/lack of improvement included in benchmark plan."
+    }
+  },
+  "total_score": 29,
+  "percentage": 82.86,
+  "overall_summary": "The candidate note closely aligns with the benchmark on chief complaint, imaging, and overall plan. The HPI is strong but misses the OB referral detail. The assessment is accurate but more expansive than the benchmark. The main shortfall is the musculoskeletal section, which is not verbatim and omits '.PCTS'. Overall, clinically accurate with minor omissions and formatting deviations."
+}

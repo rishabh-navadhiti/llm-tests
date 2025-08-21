@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Benchmark lists a name, but the transcript does not state the patient's name. Candidate correctly returned '-' per instructions; not penalized for benchmark-only info."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches benchmark ('index finger pain and stiffness'); only case formatting differs."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately captures mechanism, date, urgent care treatment, suture removal and dehiscence, and current symptoms. Minor deviation by adding an exam detail (10 degrees active flexion) into HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Faithfully reflects the dictated exam: well-healing laceration without sutures, very stiff PIP with ~10° active flexion, moderate swelling, no tenderness to palpation, good ROM of remaining digit(s). Factual content aligns with benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'X-rays are normal.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes relevant problems but differs from benchmark: uses 'PIP laceration' without laterality and combines 'pain and stiffness' instead of 'stiff left index finger.' Partial mismatch of terms and specificity."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan elements: recommend hand therapy and return in 4 weeks; also reflects the dictated phrasing about PIP and follow-up."
+    }
+  },
+  "total_score": 32,
+  "percentage": 91.43,
+  "overall_summary": "Strong alignment with the benchmark across most sections. Chief complaint, musculoskeletal exam, imaging, and plan are accurately captured. Minor issue in HPI for including an exam detail, and the assessment lacks laterality and exact phrasing compared to the benchmark."
+}

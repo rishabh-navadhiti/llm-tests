@@ -1,0 +1,105 @@
+{
+    "rec_id": 6605,
+    "notes": [
+        {
+            "content": [
+                "-"
+            ],
+            "key": "PATIENT_NAME",
+            "matches": [
+                []
+            ],
+            "title": "Patient Name"
+        },
+        {
+            "content": [
+                "Left small finger locking and catching"
+            ],
+            "key": "CHIEF_COMPLAINT",
+            "matches": [
+                [
+                    {
+                        "score": 0.5727657079696655,
+                        "time": "0.099"
+                    }
+                ]
+            ],
+            "title": "Chief Complaint"
+        },
+        {
+            "content": [
+                "He reports experiencing locking and catching in his left small finger, which began approximately two years ago. He delayed seeking medical attention due to previous trigger finger surgery but now expresses a desire for treatment. The symptoms are impacting his ability to perform his job as a designer."
+            ],
+            "key": "HPI_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.6543708443641663,
+                        "time": "0.099"
+                    }
+                ]
+            ],
+            "title": "History of Present Illness"
+        },
+        {
+            "content": [
+                "Left small finger skin is purging. No erythema. Moderate tenderness to palpation at the small finger A1 pulley. Nodule palpable. Excellent range of motion overall. Well-healed trigger finger incisions to the middle finger."
+            ],
+            "key": "MUSCULOSKELETAL_VERBATIM",
+            "matches": [
+                [
+                    {
+                        "score": 0.7024556398391724,
+                        "time": "0.099"
+                    }
+                ]
+            ],
+            "title": "Musculoskeletal"
+        },
+        {
+            "content": [
+                "X-rays of the left small finger are normal."
+            ],
+            "key": "IMAGING_GEORGE",
+            "matches": [
+                [
+                    {
+                        "score": 0.6998596787452698,
+                        "time": "0.099"
+                    }
+                ]
+            ],
+            "title": "Imaging"
+        },
+        {
+            "content": [
+                "Trigger finger (left small finger)"
+            ],
+            "key": "ASSESSMENT_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.5937003493309021,
+                        "time": "0.099"
+                    }
+                ]
+            ],
+            "title": "Assessment"
+        },
+        {
+            "content": [
+                "Planned trigger finger release. Return to clinic in 2 weeks."
+            ],
+            "key": "PLAN_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.644649088382721,
+                        "time": "0.099"
+                    }
+                ]
+            ],
+            "title": "Plan"
+        }
+    ]
+}

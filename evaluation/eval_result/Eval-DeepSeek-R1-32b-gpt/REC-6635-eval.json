@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "The transcript does not state the patient's name; the benchmark includes a name likely from EMR. The candidate left it unknown but did not return the instructed placeholder '-'. No penalty for missing name since it is not in the transcript; minor formatting issue."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Benchmark: 'Index finger pain and stiffness.' Candidate: 'Evaluation of stiff index finger following laceration.' It omits 'pain' and adds context about laceration; core idea partially preserved with a missing key detail."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Includes date (7/16/25), mechanism (chisel slip on hard wood), urgent care repair, suture removal at ~14 days with wound reopening, and current stiffness. Minor omissions (e.g., 'does miniatures for stop‑motion films', explicit left index specification) but no added/hallucinated details."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Not verbatim and missing elements. Candidate omitted 'Left upper extremity' and 'Laceration well-healing without sutures,' and changed 'No specific tenderness to palpation' to 'No sensory tenderness to palpation.' Multiple deviations from dictated wording."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Benchmark: 'X-rays are normal.' Candidate: 'X-ray normal.' Identical factual content with acceptable minor wording difference."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Benchmark lists 'Laceration of the left index finger' and 'Stiff left index finger.' Candidate lists 'Index finger PIP laceration' and 'Stiff finger.' Core problems present but missing laterality and specific digit for stiffness."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes 'Recommend hand therapy' and 'Return to clinic in four weeks.' Matches benchmark content but omits the ROM check detail; otherwise accurate."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note captures the main clinical facts, including mechanism, course, imaging, and the core plan. Strengths are accurate HPI chronology and correct imaging and follow-up plan. Weaknesses include omission of 'pain' in the chief complaint, non-verbatim and incomplete musculoskeletal exam, and loss of laterality/specificity in the assessment."
+}

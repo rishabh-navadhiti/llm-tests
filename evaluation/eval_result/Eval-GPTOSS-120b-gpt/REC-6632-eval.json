@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Greta Griswana'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Includes 'Thumb pain' but omits 'Forearm pain' present in the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures follow-up, improved forearm pain, severe thumb pain, and seeking relief. Missing the wedding/context and 'overall the same' details from the benchmark (not penalized if not clearly attributable in transcript), and adds an unstated functional limitation ('significantly limiting'), which is a minor hallucination."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Contains the same exam findings as the benchmark (right upper extremity findings, positive grind, A1 pulley non-tender, some tenderness at U&R eminence). Minor wording/filler differences and the 'termine' vs 'extremity' discrepancy, but factual content aligns."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Notes 'X-rays reviewed' but omits the benchmark’s finding that the X-rays show arthritis."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes the arthritis diagnosis (as 'Trapeziometacarpal joint arthritis') consistent with the benchmark’s 'Planned arthritis' and adds 'Thumb pain' which is accurate but extra."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan: trial steroid injection, counseling on temporary nature/procedure/post-op, and return in 8 weeks. Addition of 'if symptoms persist' is consistent with transcript and does not conflict."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14285714285714,
+  "overall_summary": "The candidate note correctly identifies the patient and captures the core complaint and plan, closely aligning with the benchmark on exam findings and management. Main weaknesses are omission of the forearm component of the chief complaint, a pared-down imaging result lacking the arthritis finding, and an HPI that misses some contextual details while adding a minor unstated functional limitation."
+}

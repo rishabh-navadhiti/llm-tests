@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to transcript: 'Greta Griswana'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate lists only 'Thumb pain' while benchmark includes both 'Forearm pain' and 'thumb pain'. Missing the forearm pain component."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes exam/imaging/plan details (positive grind, X-rays, steroid recommendation) that should not be in HPI and omits contextual detail present in the benchmark (e.g., daughter's wedding, pain overall the same)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Not verbatim: omits 'Right upper extremity' and 'Significant tendinous location', changes 'very positive grind' to 'positive grind', and alters phrasing ('with' A1 pulley, 'U&R imminence')."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Matches benchmark content that X-rays were reviewed and show 'planned arthritis' (minor wording only)."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes correct diagnosis 'Planned arthritis' but also adds a symptom and an exam finding not present in the benchmark assessment."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Accurately captures the dictated plan: trial steroid injection, counseling on temporary nature/procedure/post-op protocol, and return in 8 weeks if symptoms persist."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note correctly identifies the patient, imaging result, and plan. However, the HPI includes objective findings and misses benchmark context, the chief complaint omits forearm pain, and the musculoskeletal section is not verbatim with several wording omissions/changes. Assessment contains the correct diagnosis but includes extra items not in the benchmark."
+}

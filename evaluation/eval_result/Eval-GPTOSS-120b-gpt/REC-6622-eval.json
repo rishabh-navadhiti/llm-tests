@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Kevin Clancy' is explicitly stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate lists 'trigger finger' but omits laterality and digit ('left ring finger'), which are present in the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately includes 'left ring finger trigger finger' but adds plan details (injection), which are not part of HPI in the benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "No musculoskeletal exam findings in transcript; candidate appropriately left it empty, consistent with benchmark's '-' (no data)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging results mentioned; candidate returns '-', matching the benchmark's absence of imaging."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Matches benchmark with both problems: 'Left ring finger trigger finger' and 'Plantar tendonitis.'"
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Captures injection for trigger finger and home exercise program with low threshold for therapy, aligning with benchmark. Benchmark includes 'Return to clinic in 2 weeks' which is not in the transcript; not penalized."
+    }
+  },
+  "total_score": 32,
+  "percentage": 91.43,
+  "overall_summary": "Strong overall alignment with the benchmark. Strengths include accurate patient name, assessment, plan, and acknowledgment of no imaging or MSK findings. Minor weaknesses: chief complaint lacks laterality/digit detail, and HPI includes plan content."
+}

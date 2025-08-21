@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "Benchmark lists 'Nadeem Nemi' from the transcript, while candidate returned '-'. The explicit name was present but omitted."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Candidate 'Evaluation of bilateral thumb pain' matches benchmark 'Bilateral thumb pain' with only benign phrasing differences."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Candidate accurately captures worsening since 2019, notable past six months, denies numbness/tingling, and functional limitation; aligns with benchmark content."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark has no MSK content ('-'), while candidate included exam findings and made minor non-verbatim edits (e.g., phrasing). Content is from transcript but does not match benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Candidate correctly notes severe right-hand findings, Z deformity, and right-only calcific arteriogram and excludes it on the left, matching core benchmark facts. Minor omissions include 'three views' and explicit left-hand severe changes."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Candidate lists bilateral thumb CMC arthritis, bilateral carpal tunnel, and right cubital tunnel, matching benchmark diagnoses. It omits 'Right upper extremity skin is intact' present in benchmark and adds 'with progression.'"
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Candidate includes injections with counseling, follow-up in two months, and considering nerve studies. It omits explicit 'observation' for carpal/cubital tunnel and that injections would be done today, both stated in benchmark."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate note captures the chief complaint, HPI, and most imaging and assessment details accurately. Major miss is the patient name. The musculoskeletal section does not match the benchmark format, and the plan omits observation and same-day injection detail. Overall, clinically consistent but with notable omissions versus the benchmark."
+}

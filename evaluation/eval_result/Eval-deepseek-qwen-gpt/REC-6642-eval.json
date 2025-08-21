@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to transcript: 'Nadeem Nemi' explicitly stated."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches benchmark and transcript: bilateral thumb pain."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately captures worsening since 2019, worse over last 6 months, denies numbness/tingling, significant pain/limitation; includes right-handed retiree and prior conditions as stated. No extraneous exam or imaging details."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Content matches, but not verbatim: punctuation and spelling modified (e.g., 'extremty' corrected to 'extremity', sentence breaks/commas added). Instruction required exact verbatim extraction."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Findings accurately reported for right and left hands (severe joint space change, Z deformity, calcific arteriogram on right only). Minor omission of 'three views' and slight wording differences."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Includes all active diagnoses from benchmark (bilateral thumb CMC arthritis, bilateral carpal tunnel, right cubital tunnel). Excludes normal finding ('skin is intact'), which is appropriate per instructions."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Plan elements present: injection trial with education on temporary nature/rebound pain; observe carpal/cubital tunnel with possible nerve studies; follow-up in 2 months. Minor omissions/wording: did not state 'done today' and did not condition nerve studies on symptom recurrence."
+    }
+  },
+  "total_score": 31,
+  "percentage": 88.57,
+  "overall_summary": "The candidate note closely matches the benchmark with accurate patient name, chief complaint, HPI, assessment, and largely correct imaging and plan. Main deficits are verbatim fidelity in the musculoskeletal exam and minor omissions in imaging (view count) and plan specifics ('today' and conditional nerve studies). Overall, clinically accurate and well-aligned with the transcript."
+}

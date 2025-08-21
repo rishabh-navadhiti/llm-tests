@@ -1,0 +1,92 @@
+{
+    "rec_id": 6897,
+    "notes": [
+        {
+            "content": [
+                "-"
+            ],
+            "key": "PATIENT_NAME",
+            "matches": [
+                []
+            ],
+            "title": "Patient Name"
+        },
+        {
+            "content": [
+                "-"
+            ],
+            "key": "CHIEF_COMPLAINT",
+            "matches": [
+                []
+            ],
+            "title": "Chief Complaint"
+        },
+        {
+            "content": [
+                "He reports doing well overall. He reports not having much pain. He reports having a lot of ecchymosis."
+            ],
+            "key": "HPI_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.5375458002090454,
+                        "time": "0.009"
+                    }
+                ]
+            ],
+            "title": "History of Present Illness"
+        },
+        {
+            "content": [
+                "Incision with varied sutures, moderate ecchymosis."
+            ],
+            "key": "MUSCULOSKELETAL_VERBATIM",
+            "matches": [
+                [
+                    {
+                        "score": 0.5794920921325684,
+                        "time": "0.009"
+                    }
+                ]
+            ],
+            "title": "Musculoskeletal"
+        },
+        {
+            "content": [
+                "-"
+            ],
+            "key": "IMAGING_GEORGE",
+            "matches": [
+                []
+            ],
+            "title": "Imaging"
+        },
+        {
+            "content": [
+                "Right upper extremity Skin is intact.",
+                "No tenderness to palpation."
+            ],
+            "key": "ASSESSMENT_SPENCER",
+            "matches": [
+                [],
+                []
+            ],
+            "title": "Assessment"
+        },
+        {
+            "content": [
+                "Planned post-op endocarpal tunnel. Return to clinic in 4 weeks."
+            ],
+            "key": "PLAN_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.7557252645492554,
+                        "time": "23.6"
+                    }
+                ]
+            ],
+            "title": "Plan"
+        }
+    ]
+}

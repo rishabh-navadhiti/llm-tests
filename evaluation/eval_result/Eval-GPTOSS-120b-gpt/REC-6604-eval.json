@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "Benchmark lists 'Nicole Kaffee' while candidate has 'Nicole Coffee' from the transcript. The benchmark’s corrected spelling is not stated in the transcript, so only a minor penalty is applied."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Semantically identical to the benchmark: left index finger pain."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Captures duration (few months), worsening/not improved, relation to prior shoulder visit/observation, and request for injection. No extraneous details."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Includes the key findings (skin clean/dry, tenderness at A1 pulley, locking/catching, triggering, excellent ROM). Minor wording differences vs benchmark (e.g., 'tacky' vs 'intact', absence of 'no ecchymosis') but core content aligns."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Conveys normal multi-view finger X-rays consistent with the benchmark. Omits 'left index' and differs in phrasing, but meaning preserved; side detail was not explicit in the transcript."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Matches benchmark problems: left index finger pain and trigger finger."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Benchmark plan indicates proceeding with trigger injection today; candidate includes 'She is not having the injection' (contradictory) and adds imaging results within the plan. Multiple deviations from benchmark content."
+    }
+  },
+  "total_score": 29,
+  "percentage": 82.85714285714286,
+  "overall_summary": "The candidate note closely matches the benchmark for chief complaint, HPI, assessment, and generally for musculoskeletal exam and imaging. Main weaknesses are the patient name spelling (likely chart-corrected in the benchmark) and the plan, which contains a contradictory statement and includes imaging details. Overall, clinically accurate with minor wording issues and a significant discrepancy in the plan."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Benchmark lists a name, but the transcript contains no patient name. The candidate correctly returned '-' per instruction; not penalized for benchmark-only information."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Captures wrist achiness and limited motion; adds electric sensations and omits 'follow-up'. Meaning largely preserved with minor differences."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Accurately includes stable wrist achiness/limited motion, electric sensations, and recent nerve studies inquiry. Misses 'life is difficult' and follow-up context; inappropriately adds 'exam is unchanged' (exam detail) not in benchmark HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Verbatim extraction 'Her exam is unchanged.' from transcript; benchmark left this blank, but transcript supports it."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Benchmark notes 'Nerve study results' and transcript includes explicit results (no carpal tunnel; possible ulnar compression). Candidate returned '-', missing available imaging/electrodiagnostic content."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Lists active problems consistent with transcript (wrist achiness/limited motion, paresthesias) and adds relevant diagnoses (possible ulnar compression, cervical radiculopathy). Minor divergence from benchmark's items but clinically aligned."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Matches most plan elements (advance activity, delete carpal tunnel, watch ulnar compression, RTC 6 weeks, full duty date). However, uses 'urology consult' instead of benchmark-corrected 'neurology consult' and 'advanced laboring' vs 'advanced weightbearing'."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note generally captures the key symptoms and much of the plan accurately, with strong verbatim extraction for the musculoskeletal exam. Main shortcomings include omitting imaging/nerve study results, minor omissions/additions in the HPI, and a significant error in the specialty referral (urology vs neurology) within the plan."
+}

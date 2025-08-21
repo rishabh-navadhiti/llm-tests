@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "The transcript explicitly states the patient's name as 'N. Kalinski,' but the candidate returned '-'. This is a major omission of explicit information."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "The chief complaint is clearly 'left middle finger trigger finger' per the transcript and benchmark, but the candidate left it as '-'. Major missing content."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately includes recurrence, prior injection date (10/22/24), and that an injection was performed today. It omits the stated detail that he will return to clinic if recurrence occurs, which appears in the benchmark, resulting in a minor omission."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "No musculoskeletal exam findings were dictated ('keep the exam the same'); benchmark shows none. The candidate appropriately left this empty."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging results were provided, and the doctor stated to remove imaging review. Candidate correctly returned '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Content matches the benchmark semantically: 'Left middle finger trigger finger.'"
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches the benchmark plan: injection performed today and return to clinic if recurrence."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate accurately captured the assessment, plan, and most of the HPI with appropriate restraint and no hallucinations. However, it missed explicitly stated basics—patient name and chief complaint—and omitted a minor follow-up detail in the HPI. Otherwise, formatting and content fidelity were strong for the remaining fields."
+}

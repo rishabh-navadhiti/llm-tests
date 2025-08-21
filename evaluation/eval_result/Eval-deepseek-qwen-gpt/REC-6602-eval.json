@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "Patient name appears in the benchmark ('Linda Omansky') but is not present in the transcript; not penalized for missing name. However, the candidate should have returned '-' per instructions and instead left the field empty."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches benchmark meaning ('Numbness and tingling in the right hand') with only trivial wording differences."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately captures all key elements from the transcript (recent lymphoma chemotherapy completion, increased numbness/tingling in right hand, burned right thumb affecting sensation/earrings, using phone less, here for evaluation). No added or missing clinically relevant details."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Not verbatim: paraphrases and edits wording, omits 'A1 pulley' (stated as 'A one foley' in transcript), alters phrasing for triggering/nodule, and changes '.pcgs/.PCTS' to 'PCGs are normal.' Multiple deviations from dictated text."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Benchmark states 'XR - Deferred.' Candidate reports 'X-ray normal,' which conflicts with the benchmark result."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Benchmark lists only 'Trigger finger.' Candidate adds 'Carpal tunnel syndrome' and 'History of lymphoma,' which are not in the benchmark assessment; includes extra/unconfirmed problems."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Plan elements match the benchmark: repeat injection for right small finger, night splints for carpal tunnel, low threshold for nerve studies, and return in two months. Minor wording differences only."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate note accurately captures the chief complaint, HPI, and plan, aligning closely with the benchmark on those sections. Major weaknesses include non-verbatim musculoskeletal exam documentation, imaging results that contradict the benchmark, and an assessment with unsupported additions. The patient name field was left empty instead of using the required '-' when not present in the transcript."
+}

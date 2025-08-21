@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark patient name ('Stephanie Humphrey')."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches benchmark ('Left wrist pain'); minor casing difference only."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures mechanism, date, laterality, urgent care X-rays with no fracture, sprain diagnosis, and humidity-related exacerbation leading to evaluation. Minor omissions versus benchmark (location 'leaving Groundlings' and trip to 'Massachusetts')."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark lists no content ('-'), whereas candidate includes detailed exam text. Although clinically relevant and transcript-supported, it diverges from the ground-truth content for this field."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Conveys both urgent care X-rays showing no fracture and current left wrist X-rays being normal, consistent with benchmark. Minor wording/context differences (e.g., not explicitly labeling 'urgent care' and 'current' in the first line)."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Includes both key problems ('Left ECU tendonitis' and 'Left ulnar-sided wrist pain') exactly as in the benchmark. Benchmark also lists normal/negative findings not stated in the transcript; not penalized."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes all benchmark plan elements (hand therapy, MRI, return after MRI). Adds an extra diagnostic naming line and omits the unclear 'RE full' from the transcript; minor deviation from benchmark."
+    }
+  },
+  "total_score": 28,
+  "percentage": 80.0,
+  "overall_summary": "Strong alignment on patient identification, chief complaint, HPI core details, imaging findings, assessment, and most of the plan. Primary discrepancy is inclusion of musculoskeletal exam text where the benchmark had none, and minor omissions of contextual details in the HPI and plan."
+}

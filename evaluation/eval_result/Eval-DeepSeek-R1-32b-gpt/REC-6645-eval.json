@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "Correct patient identity; minor formatting discrepancy with trailing hyphen compared to benchmark ('Nadeem Nemi-' vs 'Nadeem Nemi')."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Conveys the same complaint as the benchmark (bilateral thumb pain); wording difference ('Evaluation of') is minor and preserves meaning."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately includes onset/progression (since 2019, worse over last six months), location, and negative numbness/tingling. Slight paraphrase ('limiting his activities' vs 'limited by his thumbs') introduces a minor inference."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Findings largely match, but laterality differs from benchmark ('bilateral' vs 'right'), and includes an extra dictation artifact ('Dot NCTS.') not in the benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Includes most elements (right-hand 3 views, Z deformity, calcific arteriogram on right, left same without calcification) but incorrectly records severity as 'moderate' instead of the corrected 'severe' in the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Captures key problems (bilateral thumb CMC arthritis, bilateral carpal tunnel, right cubital tunnel). Adds 'with progression' and omits 'Right upper extremity Skin is intact' from the benchmark; otherwise aligned."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes trial of injections, observation for carpal/cubital tunnels, consideration of nerve studies, and 2-month follow-up. Omits counseling details on steroid temporality and rebound pain present in the benchmark."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note aligns well with the benchmark on chief complaint, HPI, assessment, and main plan elements. Key weaknesses include the imaging severity error, a laterality mismatch in the musculoskeletal exam versus the benchmark, and omission of counseling details in the plan. Minor wording differences are otherwise acceptable."
+}

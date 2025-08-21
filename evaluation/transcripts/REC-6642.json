@@ -1,0 +1,65 @@
+{
+    "rec_id": 6642,
+    "transcript": [
+        {
+            "conversation": "Nadeem Nemi- ... at two o'clock on Dr. Almadro's schedule. Um... He is an old patient of ours, last seen in 2019.",
+            "speaker": "doctor_1",
+            "start_time": "0.019"
+        },
+        {
+            "conversation": "Okay.",
+            "speaker": "doctor_2",
+            "start_time": "14.279"
+        },
+        {
+            "conversation": "Um, he's a right-handed male retiree, uh, he has bilateral carpal tunnel, right cubital tunnel, bilateral thumb CMC arthritis for which he ge- injections today. Um, he presents today for evaluation of his bilateral thumb- ... uh, pain. He states it has worsened significantly since he was seen in 2019 and most notably over the last six months. He is not having any numbness and tingling, but he is having a lot of pain. He feels like he is limited by his thumbs. On exam, bilateral upper extremty skin is clean, dry and intact. Um, no significant soft tissue swelling, positive Grin, positive shoulder sign, no triggering of any digits with the thumb, um, dot NCTS. X-rays are three views of the right hand... uh, demonstrate, um, moderate... no, severe joint space neovasculitis metacarpal joint with osteophytosis. Uh, there is evidence of a Z deformity with hyperextension at the MCP joint. Uh, calcific arteriogram is noted. And then the left is the same, except you can delete the \"calcific arterio-\" Um-",
+            "speaker": "doctor_1",
+            "start_time": "14.939"
+        },
+        {
+            "conversation": "Calciarteriogram?",
+            "speaker": "doctor_2",
+            "start_time": "93.159"
+        },
+        {
+            "conversation": "Yeah, you can delete \"the calcific arteriogram is noted.\" Uh, there'll be plant arthritis regarding the bilateral thumb CMC arthritis. Um, his arthritis has progressed. Uh, recommend trial of injections. Talked about the temporary nature of steroid, talked about rebound pain. He understands we would do this today. Uh, regarding the carpal tunnel and cubital tunnel, he is doing much better. Recommend observation for now. Consider nerve studies. His symptoms re-exist maybe.",
+            "speaker": "doctor_1",
+            "start_time": "93.959"
+        },
+        {
+            "conversation": "How do you know if it's gonna be that way where we're not going to have enough staff? Because you have to s- I'm, I'm very much against",
+            "speaker": "doctor_2",
+            "start_time": "120.559"
+        },
+        {
+            "conversation": "Um, return to clinic in two months for follow-up and then that is it, my friend.",
+            "speaker": "doctor_1",
+            "start_time": "128.419"
+        },
+        {
+            "conversation": "All right.",
+            "speaker": "doctor_2",
+            "start_time": "135.339"
+        },
+        {
+            "conversation": "I will talk to you next week. I, I don't have any patients yet. Monday that might change though. Um, I'll send you a message on Friday when I know.",
+            "speaker": "doctor_1",
+            "start_time": "135.36"
+        },
+        {
+            "conversation": "Okay. Thank you.",
+            "speaker": "doctor_2",
+            "start_time": "147.679"
+        },
+        {
+            "conversation": "Bye.",
+            "speaker": "doctor_1",
+            "start_time": "149.759"
+        },
+        {
+            "conversation": "Bye.",
+            "speaker": "doctor_2",
+            "start_time": "149.96"
+        }
+    ]
+}

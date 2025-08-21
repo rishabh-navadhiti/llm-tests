@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match with benchmark ('Chaz Thomas'); fully consistent with transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches 'Follow-up'; only casing differs, which is a harmless formatting difference."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes correct reasons for splint removal and desire for guidance, but adds exam/objective details (laceration status, suture removal, pain severity, limited flexion) not appropriate for HPI and not present in the benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Contains all benchmark exam statements and preserves meaning; includes extra transcript phrases ('On exam, um,' and 'Sutures removed today...') not in benchmark, making it close but not a perfect match."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Matches benchmark indicating no imaging results ('-'); consistent with transcript for this patient."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Candidate lists 'laceration, limited flexion, pain' whereas the benchmark assessment documents 'Right upper extremity Skin is intact' and 'No tenderness to palpation.' Marked content mismatch."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes all benchmark plan items and adds extra plan details from the transcript ('It will be sutured in today,' 'range of motion check'). Overall aligned but not an exact match to the benchmark."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note correctly captured the patient name and chief complaint and closely reflected the plan and musculoskeletal exam, though it added some extra verbatim content. The HPI improperly included exam details and an unsupported pain severity, and the assessment diverged significantly from the benchmark. Overall, content accuracy was mixed with strengths in identification and plan elements but weaknesses in HPI discipline and assessment alignment."
+}

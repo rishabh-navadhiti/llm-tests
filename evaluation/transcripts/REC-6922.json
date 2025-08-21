@@ -1,0 +1,55 @@
+{
+    "rec_id": 6922,
+    "transcript": [
+        {
+            "conversation": "Got a few more",
+            "speaker": "doctor",
+            "start_time": "0.079"
+        },
+        {
+            "conversation": ", um .",
+            "speaker": "patient",
+            "start_time": "1.639"
+        },
+        {
+            "conversation": "Mahika Mahendru is here today for follow-up . She said that she's doing well overall . She's tolerating her splint without complaint . Uh , she's having some",
+            "speaker": "doctor",
+            "start_time": "4.489"
+        },
+        {
+            "conversation": "pain around the",
+            "speaker": "patient",
+            "start_time": "13.369"
+        },
+        {
+            "conversation": "joint distal to the splint . It is quite hypersensitive there . On exam , uh , splint is in place . There's mild soft tissue so that there is significant hypersensitivity distal to the splint . The splint is putting a fair amount of pressure , um . On the Uh , dorsal aspect of the",
+            "speaker": "doctor",
+            "start_time": "15.17"
+        },
+        {
+            "conversation": "right ?",
+            "speaker": "patient",
+            "start_time": "54.79"
+        },
+        {
+            "conversation": "is unable to sublux the extensor tendons in the splint . She has excellent PAP",
+            "speaker": "doctor",
+            "start_time": "61.0"
+        },
+        {
+            "conversation": "in the splint . Um , I deferred plan will be",
+            "speaker": "patient",
+            "start_time": "65.8"
+        },
+        {
+            "conversation": "increased pain feels like",
+            "speaker": "doctor",
+            "start_time": "71.16"
+        },
+        {
+            "conversation": "from irritation of mutaneous nerve from pressure on the splint . Um , recommend modification of the splint . Return to clinic Monday if no improvement after modification of the splint . Return to clinic in 3 weeks , of course .",
+            "speaker": "patient",
+            "start_time": "72.309"
+        }
+    ]
+}

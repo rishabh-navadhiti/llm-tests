@@ -1,0 +1,135 @@
+{
+    "rec_id": 6614,
+    "notes": [
+        {
+            "content": [
+                "Precious Myles Garrett"
+            ],
+            "key": "PATIENT_NAME",
+            "matches": [
+                []
+            ],
+            "title": "Patient Name"
+        },
+        {
+            "content": [
+                "Left wrist pain"
+            ],
+            "key": "CHIEF_COMPLAINT",
+            "matches": [
+                [
+                    {
+                        "score": 0.5930806994438171,
+                        "time": "0.219"
+                    },
+                    {
+                        "score": 0.5716302394866943,
+                        "time": "213.919"
+                    }
+                ]
+            ],
+            "title": "Chief Complaint"
+        },
+        {
+            "content": [
+                "Precious Myles Garrett, a right-hand dominant children's social worker, presents for evaluation of left wrist pain. She reports the pain is more bothersome than the masses, waking her up at night. She seeks treatment options.  She was previously treated by Dr. Ishimori for left first dorsal compartment wrist cyst, left thumb MCP osteophyte, and bilateral thumb and MCP joint issues.  The masses used to fluctuate in size but are now constant.  She consulted a rheumatologist who performed x-rays and an ultrasound of the anterior wrist."
+            ],
+            "key": "HPI_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.8145276308059692,
+                        "time": "0.219"
+                    },
+                    {
+                        "score": 0.5479488372802734,
+                        "time": "213.919"
+                    }
+                ]
+            ],
+            "title": "History of Present Illness"
+        },
+        {
+            "content": [
+                "-"
+            ],
+            "key": "MUSCULOSKELETAL_VERBATIM",
+            "matches": [
+                []
+            ],
+            "title": "Musculoskeletal"
+        },
+        {
+            "content": [
+                "Outside x-rays showed an osteophyte at the thumb MCP joint. Ultrasound demonstrated a bony avulsion fragment versus osteophyte at the dorsal aspect of the thumb MCP joint. Ultrasound of the wrist showed a retinacular cyst superficial to the first dorsal compartment sheath."
+            ],
+            "key": "IMAGING_GEORGE",
+            "matches": [
+                [
+                    {
+                        "score": 0.6728352308273315,
+                        "time": "0.219"
+                    }
+                ]
+            ],
+            "title": "Imaging"
+        },
+        {
+            "content": [
+                "Right upper extremity Skin is intact.",
+                "Left first dorsal compartment wrist cyst",
+                "Bilateral thumb and MCP joint masses",
+                "Left thumb MCP osteophyte",
+                "No tenderness to palpation."
+            ],
+            "key": "ASSESSMENT_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.5427979230880737,
+                        "time": "0.219"
+                    }
+                ],
+                [
+                    {
+                        "score": 0.5785441398620605,
+                        "time": "0.219"
+                    }
+                ],
+                [
+                    {
+                        "score": 0.6012629866600037,
+                        "time": "0.219"
+                    }
+                ],
+                [
+                    {
+                        "score": 0.6299827098846436,
+                        "time": "0.219"
+                    }
+                ],
+                []
+            ],
+            "title": "Assessment"
+        },
+        {
+            "content": [
+                "Recommend night splints regarding the masses. Recommend observation for now. Aspiration versus biopsy of the wrist mass. Return to clinic in 6 weeks."
+            ],
+            "key": "PLAN_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.5658998489379883,
+                        "time": "0.219"
+                    },
+                    {
+                        "score": 0.7529622912406921,
+                        "time": "213.919"
+                    }
+                ]
+            ],
+            "title": "Plan"
+        }
+    ]
+}

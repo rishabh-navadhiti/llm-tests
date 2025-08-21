@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 3,
+      "justification": "The transcript does not provide a patient name; the benchmark correctly uses '-'. The candidate left the field empty instead of returning '-', which is a formatting/instruction deviation rather than a factual error."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Benchmark: 'Left small finger locking and catching.' Candidate: 'Evaluation of left small finger.' The candidate misses the key symptom details (locking/catching), reducing specificity of the complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes the transcript: right-hand dominant designer, left small finger locking/catching for ~2 years, delayed care due to prior trigger finger surgeries, now seeking treatment. No extraneous exam/imaging details. Note: the benchmark mentions job impact; this was not stated in the transcript and is not penalized."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Captures the key findings: skin is purging, no erythema, moderate TTP, nodule/triggering, excellent ROM, well-healed middle finger incisions. Minor deviations from benchmark wording and omission of 'at the A1 pulley' and 'palpable' reduce precision."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Candidate: 'X-rays normal.' Benchmark: 'X-rays of the left small finger are normal.' Content is correct but less specific; minor wording difference."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Includes the correct active problem 'Left small finger locking/catching (trigger finger)' but adds non-problem items ('Well-healed trigger finger incisions' and 'Normal imaging results'), which should not appear in Assessment per instructions and are not in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "Benchmark plan: 'Planned trigger finger release. Return to clinic in 2 weeks.' Candidate includes 'Planned trigger finger procedure' (acceptable paraphrase) but adds unrelated steps from a different patient (advance ROM, video visit in one month) and omits the 2-week RTC."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60,
+  "overall_summary": "The candidate accurately captured the HPI and most exam and imaging findings but weakened the chief complaint and assessment with omissions and inappropriate items, respectively. The plan contains significant contamination from a different patient and misses the 2-week follow-up, markedly lowering accuracy. Formatting for the patient name field did not follow the placeholder convention."
+}

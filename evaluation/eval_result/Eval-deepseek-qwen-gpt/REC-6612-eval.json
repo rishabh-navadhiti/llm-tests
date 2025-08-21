@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Transcript does not state a name; candidate correctly returned '-'. Benchmark includes a name not present in the transcript, which should not be penalized."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Benchmark: follow-up for wrist achiness and limited motion. Candidate: wrist pain and numbness/tingling. Misses 'follow-up' and 'limited motion' while adding tingling; multiple deviations from the benchmark focus."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures stable wrist pain/limited motion and electric sensations with use, consistent with transcript. Omits several benchmark details (doing okay overall, life is difficult, nerve studies completed, and inquiry about results)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "No specific MSK findings were dictated beyond 'exam unchanged'; benchmark leaves this section empty. Candidate appropriately left it empty."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Candidate lists nerve study findings (no carpal tunnel; possible ulnar nerve compression at Guyon's canal) exactly as in transcript. Benchmark is generic ('Nerve study results'); meaning preserved but not an exact match."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Benchmark assessment includes wrist pain, electric sensations, and limited wrist motion. Candidate includes wrist pain and numbness/tingling (aligns with electric sensations) but omits limited motion and adds possible ulnar nerve compression not listed in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Includes review nerve studies, advanced activity, urology consult, and 6-week follow-up. Misses several benchmark items: delete carpal tunnel diagnosis, monitor ulnar compression, advanced weightbearing phrasing, and disability plan (full duty 9/1/2025). Also uses 'urology' vs benchmark 'neurology'."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate note captures key HPI elements and nerve study findings, and parts of the plan, but omits multiple benchmark details (notably in HPI and plan) and diverges in chief complaint focus. Strengths include accurate extraction of nerve study results and appropriate handling of absent patient name and MSK exam. Weaknesses are incomplete plan documentation and partial alignment with the benchmark assessment and chief complaint."
+}

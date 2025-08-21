@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Benchmark lists a patient name not present in the transcript; candidate left the field unspecified (unknown). Per instructions, do not penalize for benchmark-only info not in transcript. No hallucinated name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches benchmark meaning exactly: numbness and tingling in the right hand. Only minor casing/wording differences."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures all key elements (post-chemotherapy status, increased right-hand numbness/tingling, right thumb burn, difficulty with earrings, seeking evaluation). Minor deviations include adding 'recent' and implying difficulty holding a phone rather than 'trying to hold her phone less,' and omitting 'at home more.' Overall meaning preserved."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Includes the same findings as benchmark (skin intact, tenderness of right small finger, triggering, nodule, excellent ROM). Minor verbatim/terminology differences ('A one foley' vs 'A1 pulley'; 'pcgs are normal' vs '.PCTS') and formatting differences, but factual content aligns."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Candidate states 'X-ray is clear,' whereas benchmark indicates 'XR - Deferred.' This is a major content discrepancy relative to the ground truth."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark assessment lists only 'Trigger finger.' Candidate adds multiple problems (right hand numbness/tingling, right thumb sensory deficit, carpal tunnel syndrome), which are not in the benchmark assessment. Major divergence."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan: trigger finger injection requested (last in 2015), reasonable to proceed; carpal tunnel plan with night splints; low threshold for nerve studies; return in 2 months. Only minor wording differences."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "Strong alignment on chief complaint and plan; musculoskeletal exam largely consistent with minor terminology differences. HPI is accurate with slight inferential wording. Major mismatches in imaging (candidate: clear vs benchmark: deferred) and assessment (candidate added problems vs benchmark lists only trigger finger) reduced the score."
+}

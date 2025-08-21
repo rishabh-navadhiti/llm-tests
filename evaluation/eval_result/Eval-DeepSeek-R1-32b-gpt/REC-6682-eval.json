@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('N. Kalinski'); explicitly stated in transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Meaning aligns with benchmark ('Left middle finger trigger finger'); candidate adds 'Recurrence of', a minor wording difference."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Includes injection on 10-22-24 and recurrence, but omits the benchmark's statement about returning to clinic if recurrence occurs, which is present in the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "No MSK exam findings in transcript; candidate left blank and benchmark used '-', which are equivalent for absence of content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging results stated; candidate returned '-', matching the benchmark's absence."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Clinically consistent with benchmark (trigger finger of left middle finger); candidate adds 'recurrence', a minor wording difference."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan: injection performed today and return if recurrence."
+    }
+  },
+  "total_score": 31,
+  "percentage": 88.57,
+  "overall_summary": "Strong overall alignment with the benchmark. The candidate accurately captured the patient's name, plan, imaging status, and lack of MSK findings. Minor wording differences in the chief complaint and assessment, and a missed sentence in the HPI regarding follow-up lowered the score slightly. Otherwise, content was factual and clinically relevant."
+}

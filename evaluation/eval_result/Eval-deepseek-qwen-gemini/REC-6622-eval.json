@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "The candidate included 'Mr. Kevin Clancy' which is verbatim from the transcript. The benchmark only included 'Kevin Clancy'. While the benchmark is the ground truth, the candidate followed its instruction to extract exactly from the transcript, and 'Mr.' is a minor wording difference with meaning preserved."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Perfect match in factual content: 'Left ring finger trigger finger' is accurately extracted."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "The candidate's HPI description ('The patient is scheduled to receive a left ring finger trigger finger injection. The procedure will be injection only.') details the *plan* for the patient rather than the history of their present illness. The benchmark correctly captures the chief complaint as the HPI. This is a major content difference due to miscategorization of information."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "The candidate incorrectly identified 'Plantar tendonitis' as a musculoskeletal physical examination finding. In the transcript, 'plantar tendonitis' is stated as a diagnosis or assessment, not a verbatim physical exam observation. The benchmark correctly leaves this field blank, indicating no explicit musculoskeletal verbatim findings were dictated."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Perfect match. Both the benchmark and candidate correctly state '-' as no imaging results were mentioned in the transcript."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "The candidate listed 'Trigger finger' instead of 'Left ring finger trigger finger' as in the benchmark, missing the laterality and specific digit. While 'Plantar tendonitis' was correctly included, the omission of 'Left ring finger' is a missing minor detail for the first diagnosis."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "The candidate's plan is missing significant details. It completely omits the 'Left ring finger trigger finger injection' which was the primary stated plan. It also missed 'for plantar tendonitis' in relation to the 'Home exercise program'. The benchmark includes 'Return to clinic in 2 weeks' which is not in the transcript, and the candidate is not penalized for this absence."
+    }
+  },
+  "total_score": 20,
+  "percentage": 57.14285714285714,
+  "overall_summary": "The candidate note demonstrated strength in accurately identifying the chief complaint and the absence of imaging results. However, it performed poorly in sections requiring contextual understanding, such as HPI, Musculoskeletal Verbatim, and Plan. The HPI incorrectly contained details belonging to the plan, and a diagnosis was misinterpreted as a physical exam finding. The Plan section suffered from significant omissions of key treatment details. While some minor details were missed in the Assessment, the major issues were conceptual miscategorization and critical omissions, resulting in an incomplete and partially inaccurate clinical note."
+}

@@ -18,7 +18,7 @@ Your job:
     
 - For each of the 7 fields, assign a score from 0 to 5
 - For each field, provide a brief, clear `justification` for your score, explaining your reasoning.
-- Always follow the per-field instructions when deciding correctness.
+- Do NOT penalize for the information present in the benchmark that is not available in the transcript Just (Note it in the justification)
 - Do NOT penalize harmless formatting differences unless the instructions require exact wording.
 - Provide a brief `overall_summary` of the candidate note's performance.
 - Your final output **MUST** be a single, valid JSON object. Do not include any text before or after the JSON object.

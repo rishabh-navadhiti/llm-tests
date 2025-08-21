@@ -1,0 +1,40 @@
+{
+    "rec_id": 6635,
+    "transcript": [
+        {
+            "conversation": "... is a left-hand dominant artist who does miniatures for stop-motion films. He presents... He, he's done his post, um... Chisel versus index finger with a dorsal, uh...",
+            "speaker": "doctor",
+            "start_time": "0.079"
+        },
+        {
+            "conversation": "Yep.",
+            "speaker": "patient",
+            "start_time": "29.139"
+        },
+        {
+            "conversation": "Yeah.",
+            "speaker": "doctor",
+            "start_time": "29.219"
+        },
+        {
+            "conversation": "Okay. Very good. Um, I'm just going to go ahead and write that down so I don't forget about it. Uh, you were still, there was still an index finger PIP laceration.",
+            "speaker": "patient",
+            "start_time": "29.559"
+        },
+        {
+            "conversation": "There was still index finger PIP laceration. He presents for evaluation of his index finger pain and stiffness that began after he, uh, lacerated his finger on 7-16-25 while working with a chisel. He states he hit a hard piece of wood and it slipped and cut his finger. He went to urgent care where the wound was irrigated and repaired. The sutures removed about 14 days later. And when they took the stitches out, the wound opened up. Now he is here for evaluation of a stiff finger. On exam, left upper extremity in- a laceration well-healing, um, without sutures. A very stiff index finger PIP able to flex only about 10 degrees actively at this time. Moderate soft tissue swelling, no sensory tenderness to palpation. Excellent range of motion of the remaining digit. Um, plan... Uh, X-ray is deferred. Plan... Oh, no. I think we took X-rays. Um...",
+            "speaker": "doctor",
+            "start_time": "44.2"
+        },
+        {
+            "conversation": "Okay. Then we'll just go ahead and write that down and call it a day.",
+            "speaker": "patient",
+            "start_time": "96.959"
+        },
+        {
+            "conversation": "X-rays are normal. Plan will be... Plan PIP recommend hand therapy. Return to clinic in four weeks for follow-up image motion.",
+            "speaker": "doctor",
+            "start_time": "105.459"
+        }
+    ]
+}

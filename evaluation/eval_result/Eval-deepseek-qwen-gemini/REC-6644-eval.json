@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient's name 'Cathy Smith' is correctly identified and perfectly matches the benchmark and transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 0,
+      "justification": "The candidate note's chief complaint ('Increasing pain and deformity in DIP joints and trapeziometic carpal joints') is for the first patient mentioned in the transcript, not Cathy Smith. Cathy Smith's chief complaint, as per the transcript and benchmark, is related to 'Follow up hand pain and swelling'. This is a complete factual inaccuracy for the specified patient."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "The HPI provided by the candidate note is entirely for the first patient discussed in the transcript (DIP joint issues), not Cathy Smith. It also incorrectly includes exam findings, imaging results, and plan details, which are explicitly excluded by the instructions for HPI. This is a complete failure in patient context and instruction adherence."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "The candidate note incorrectly starts with musculoskeletal findings from the first patient ('Diffuse angulation and deformity at DIP joints, moderate tenderness and dislocation'). However, it then correctly and verbatim includes the musculoskeletal findings for Cathy Smith. The inclusion of irrelevant and incorrect patient data constitutes a major content difference, even though part of it is correct."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "The candidate note provides imaging results for Cathy Smith, but these results ('X-rays of both hands demonstrate variable joint space narrowing at DIP joints...') actually pertain to the first patient mentioned in the transcript. For Cathy Smith, no imaging results were dictated, and the benchmark correctly reflects this with '-'. This is a major hallucination of data for the specified patient."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "The candidate note lists assessments ('Bilateral thumb CMC arthritis', 'DIP arthritis') that are relevant to the first patient in the transcript, not Cathy Smith. Cathy Smith's relevant assessment, implied from her HPI, would be 'Hand swelling' and 'Hand pain' as per the benchmark. This is completely incorrect for the specified patient."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "The candidate note incorrectly includes plan items from the first patient's visit ('Trial of steroid injections', 'Discuss DIP fusion', 'Continue splints for pain management') while also including correct elements for Cathy Smith ('Return to clinic in six weeks for follow-up.'). The additional incorrect information from another patient constitutes a major content difference."
+    }
+  },
+  "total_score": 7,
+  "percentage": 20.0,
+  "overall_summary": "The candidate note performed very poorly due to a consistent and critical error in patient context. While the patient's name was correctly identified, almost all other fields (Chief Complaint, HPI, Imaging Results, Assessment, and parts of Musculoskeletal and Plan) contained information that was entirely irrelevant or factually incorrect for 'Cathy Smith,' instead pulling details from a different patient discussed earlier in the transcript. This demonstrates a severe deficiency in the model's ability to maintain patient-specific context throughout the note generation, leading to significant factual inaccuracies and a failure to adhere to field-specific instructions regarding content relevance and exclusion criteria."
+}

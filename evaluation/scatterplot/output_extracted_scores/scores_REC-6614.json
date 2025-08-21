@@ -1,0 +1,65 @@
+[
+  {
+    "PATIENT_NAME": {
+      "bleu_score": 0.0,
+      "content_similarity": 1.0,
+      "rhetorical_similarity": 1.0,
+      "topic_similarity": 1.0,
+      "content_analysis": 1.0
+    }
+  },
+  {
+    "CHIEF_COMPLAINT": {
+      "bleu_score": 0.0,
+      "content_similarity": 0.921500027179718,
+      "rhetorical_similarity": 0.8810999989509583,
+      "topic_similarity": 0.1209,
+      "content_analysis": 0.6667
+    }
+  },
+  {
+    "HPI_SPENCER": {
+      "bleu_score": 0.6191,
+      "content_similarity": 0.9922999739646912,
+      "rhetorical_similarity": 0.883899986743927,
+      "topic_similarity": 1.0,
+      "content_analysis": 0.9333
+    }
+  },
+  {
+    "MUSCULOSKELETAL_VERBATIM": {
+      "bleu_score": 0.0,
+      "content_similarity": 0.11069999635219574,
+      "rhetorical_similarity": 0.0731000006198883,
+      "topic_similarity": 0.4583,
+      "content_analysis": 0.0
+    }
+  },
+  {
+    "IMAGING_RESULTS": {
+      "bleu_score": 0.6779,
+      "content_similarity": 0.9796000123023987,
+      "rhetorical_similarity": 0.8550000190734863,
+      "topic_similarity": 1.0,
+      "content_analysis": 0.9444
+    }
+  },
+  {
+    "ASSESSMENT_SPENCER": {
+      "bleu_score": 0.5188,
+      "content_similarity": 0.8252999782562256,
+      "rhetorical_similarity": 0.59579998254776,
+      "topic_similarity": 0.0211,
+      "content_analysis": 0.6429
+    }
+  },
+  {
+    "PLAN_SPENCER_": {
+      "bleu_score": 0.2873,
+      "content_similarity": 0.8847000002861023,
+      "rhetorical_similarity": 0.4738999903202057,
+      "topic_similarity": 0.0285,
+      "content_analysis": 0.625
+    }
+  }
+]

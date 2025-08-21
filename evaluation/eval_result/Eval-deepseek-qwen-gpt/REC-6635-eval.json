@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Benchmark lists a name, but the transcript does not state the patient's name. Candidate appropriately did not invent a name (returned no name), which is acceptable given the transcript-only constraint."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match in meaning with the benchmark: 'Index finger pain and stiffness.'"
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Core history (mechanism, date 7/16/25, urgent care repair, suture removal ~14 days later with wound reopening, current stiffness/pain) matches. Minor omissions: the specific occupational detail (miniatures for stop-motion) and descriptive qualifiers like 'dorsal/PIP' not included. No incorrect additions."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Content substantially matches (well-healing laceration, very stiff index finger PIP with ~10° active flexion, moderate swelling, no tenderness, remaining digits with excellent ROM). Minor wording differences ('no sensory tenderness' vs 'no specific tenderness', 'digit' vs 'digits', omission of 'at this time') prevent a perfect verbatim match."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Matches benchmark and transcript: X-rays are normal. Minor phrasing difference is acceptable."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Captures the two active problems (index finger laceration and stiffness). Minor deviations from benchmark include omission of laterality and adding 'PIP' wording, but no false conditions."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Correctly includes hand therapy and return in 4 weeks, but incorrectly adds 'for follow-up imaging,' which is not in the benchmark or clearly supported by the transcript. This constitutes a minor hallucination."
+    }
+  },
+  "total_score": 29,
+  "percentage": 82.85714285714286,
+  "overall_summary": "The candidate note aligns well with the benchmark on chief complaint, imaging, and most of the HPI and exam. Minor omissions and wording differences appear in HPI and musculoskeletal sections. The main deficiency is in the plan, where 'follow-up imaging' was added incorrectly. No unjustified name was introduced, adhering to transcript constraints."
+}

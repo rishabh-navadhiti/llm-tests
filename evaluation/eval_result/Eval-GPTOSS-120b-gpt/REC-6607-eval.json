@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Benchmark lists a specific name, but the transcript does not state the patient's name. The candidate correctly returned '-' per instructions; no penalty for benchmark-only info not present in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "The benchmark chief complaint is 'Wrist pain,' which is explicitly stated in the transcript. The candidate left this field as '-', representing a major omission."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures all key elements from the transcript: improved synovitis after injection, infusion for osteoporosis, prior knee replacement with sufficient recovery, interest in right total wrist arthroplasty, limitation due to wrist pain, and visit purpose. Minor issue: specifies 'right' wrist pain, whereas laterality of pain was not stated."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark leaves this blank; the transcript does not provide a specific musculoskeletal exam finding. The candidate inserted 'Exam mostly unchanged, except you can delete the large, poorly defined nodule,' which is not a musculoskeletal finding and mixes imaging directives."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Transcript indicates imaging status: 'The imaging you can leave all the same' and to remove a 'large, poorly defined nodule'; benchmark summarizes as 'Imaging mostly unchanged.' The candidate returned '-', omitting explicit imaging findings."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes key items from the benchmark—'bilateral wrist arthritis' and 'synovitis.' However, it adds 'right wrist pain' (laterality not specified in transcript), 'knee replacement' (not an active problem), and 'osteoporosis' (not in the benchmark assessment), introducing extra/minor inaccuracies."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Accurately reflects the dictated plan: exam mostly unchanged; imaging unchanged; patient interested in right total wrist arthroplasty; synovitis down; knee recovery sufficient to start planning. Differences such as 'We will proceed' in the benchmark are not penalized since they are not present in the transcript."
+    }
+  },
+  "total_score": 20,
+  "percentage": 57.14,
+  "overall_summary": "The candidate note captures the HPI and plan well, aligning closely with the dictated content. Major shortcomings include missing the clear chief complaint, misplacing non-MSK content in the Musculoskeletal section, and failing to document imaging findings. Assessment includes core items but adds less appropriate/incorrectly specified entries."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Benchmark lists a name, but the transcript does not state the patient's name. The candidate correctly returned '-' per instructions. No penalty for benchmark-only information."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Benchmark chief complaint is 'Wrist pain.' Candidate includes wrist pain but adds extra context about discussing arthroplasty and limitations, making it less concise than the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Candidate captures knee replacement, improved synovitis after injection, osteoporosis infusion, limitation from wrist pain, and interest in right total wrist arthroplasty—consistent with the benchmark. Minor omissions (follow-up context/date) and slight inference specifying 'right wrist pain' prevent a perfect match."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Benchmark has no MSK exam text; transcript only notes 'Exam mostly unchanged.' Candidate added 'Bilateral wrist arthritis,' which is not a verbatim exam finding and belongs to assessment, not MSK exam."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Benchmark indicates imaging mostly unchanged (with deletion of a large, poorly defined nodule). Transcript supports that imaging is unchanged. Candidate returned '-', omitting the stated imaging result."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Candidate includes 'Bilateral wrist arthritis' and 'Synovitis' matching the benchmark, plus 'Wrist pain limiting activities' and 'Osteoporosis (on infusion therapy)' which are supported by the transcript but not listed in the benchmark. Minor scope deviation."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Candidate plan to proceed with evaluation for right total wrist arthroplasty aligns with benchmark planning for right TWA. It omits 'Plan OR risks/We will proceed' phrasing and other details, so not a perfect match."
+    }
+  },
+  "total_score": 22,
+  "percentage": 62.86,
+  "overall_summary": "The candidate note captures the core HPI and assessment items well and aligns with the planned right total wrist arthroplasty. Key weaknesses include adding non-verbatim content to the Musculoskeletal exam, missing the imaging summary, and an over-detailed chief complaint. Strengths are accurate reflection of synovitis improvement, osteoporosis infusion, and interest in wrist arthroplasty."
+}

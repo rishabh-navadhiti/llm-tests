@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark name; inclusion of honorific 'Mr.' is acceptable."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Captures the condition but adds 'injection,' which belongs to plan rather than the complaint. Meaning largely preserved."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "HPI content is missing; benchmark states left ring finger trigger finger. Major omission."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Benchmark has no MSK exam; candidate lists 'Plantar tendonitis,' which is a diagnosis, not verbatim exam findings—fabricated/incorrect for this section."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both indicate no imaging results; matches benchmark and transcript."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes trigger finger and plantar tendonitis, but lacks laterality/digit specificity ('left ring finger') present in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Plan matches: injection for trigger finger, HEP for plantar tendonitis, low threshold for formal therapy. Benchmark also mentions RTC in 2 weeks, which is not in the transcript—no penalty per instructions."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "Accurately captured patient name and most of the plan, with largely correct assessment. Chief complaint slightly conflates plan with complaint. Major issues include missing HPI and inappropriate content in the musculoskeletal section. Imaging appropriately left as none."
+}

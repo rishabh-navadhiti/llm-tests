@@ -1,0 +1,231 @@
+{
+    "rec_id": 7062,
+    "notes": [
+        {
+            "content": [
+                "Jaliya Washington"
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": false,
+                        "generic": true,
+                        "missingContent": false,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "-"
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-18T17:20:30.152Z",
+                    "to": [
+                        "Jaliya Washington"
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "PATIENT_NAME",
+            "matches": [
+                []
+            ],
+            "title": "Patient Name"
+        },
+        {
+            "content": [
+                "Soft tissue swelling"
+            ],
+            "key": "CHIEF_COMPLAINT",
+            "matches": [
+                [
+                    {
+                        "score": 0.5091587901115417,
+                        "time": "0.009"
+                    }
+                ]
+            ],
+            "title": "Chief Complaint"
+        },
+        {
+            "content": [
+                "8.18.2025",
+                "She is here today for followup.  She states that she is doing well overall.  She is noticing some continued soft tissue swelling specifically when she is more active with her hand.  She wants to know if this is normal.  She feels like her sensation has improved significantly.  She had some hypersensitivity 2 weeks ago and the week before, but over the last week that has significantly improved.",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "She reports continued soft tissue swelling, particularly when her hand is more active. She is inquiring about the normalcy of this swelling.  She notes significant improvement in sensation, with hypersensitivity experienced two weeks prior now resolved.  The increased sensitivity had been present for about a week before improving.  The swelling and sensitivity impact her ability to use her hand actively."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-18T17:20:40.864Z",
+                    "to": [
+                        "8.18.2025",
+                        "She is here today for followup.  She states that she is doing well overall.  She is noticing some continued soft tissue swelling specifically when she is more active with her hand.  She wants to know if this is normal.  She feels like her sensation has improved significantly.  She had some hypersensitivity 2 weeks ago and the week before, but over the last week that has significantly improved.",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "HPI_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.7079106569290161,
+                        "time": "0.009"
+                    }
+                ]
+            ],
+            "title": "History of Present Illness"
+        },
+        {
+            "content": [
+                "Incision well healed",
+                "Very minimal scar",
+                "No firmness to the scar",
+                "Excellent range of motion",
+                "Full tight fist without pain",
+                "Able to get hand flat on table",
+                "There is a very slight extension lag less than 5 degrees when compared to her baseline hyperextension",
+                "Sensation decreased but improving to the ulnar border of the digit",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "Incision well healed, very minimal scar, no firmness to the scar. Excellent range of motion, full tight fist without pain , able to get hand flat on the table, there is a very slight extension lag, less than 5 degrees when compared to her baseline . Hyperextension , sensation decreased but improving to the on one of the digit."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-18T17:21:01.200Z",
+                    "to": [
+                        "Incision well healed",
+                        "Very minimal scar",
+                        "No firmness to the scar",
+                        "Excellent range of motion",
+                        "Full tight fist without pain",
+                        "Able to get hand flat on table",
+                        "There is a very slight extension lag less than 5 degrees when compared to her baseline hyperextension",
+                        "Sensation decreased but improving to the ulnar border of the digit",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "MUSCULOSKELETAL_VERBATIM",
+            "matches": [
+                [
+                    {
+                        "score": 0.6382496356964111,
+                        "time": "0.009"
+                    }
+                ]
+            ],
+            "title": "Musculoskeletal"
+        },
+        {
+            "content": [
+                "-"
+            ],
+            "key": "IMAGING_GEORGE",
+            "matches": [
+                []
+            ],
+            "title": "Imaging"
+        },
+        {
+            "content": [
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "Soft tissue swelling",
+                        "Right upper extremity Skin is intact.",
+                        "Decreased sensation in one digit (improving)",
+                        "No tenderness to palpation."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-18T17:21:09.896Z",
+                    "to": [
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "ASSESSMENT_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.5091587901115417,
+                        "time": "0.009"
+                    }
+                ],
+                [],
+                [],
+                []
+            ],
+            "title": "Assessment"
+        },
+        {
+            "content": [
+                "Return to clinic in 3 months.",
+                "Wean splint",
+                "Advance activity",
+                "Advance range of motion"
+            ],
+            "key": "PLAN_SPENCER",
+            "matches": [
+                [],
+                [],
+                [],
+                []
+            ],
+            "title": "Plan"
+        }
+    ]
+}

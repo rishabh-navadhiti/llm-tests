@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The transcript does not mention the patient's name. The candidate correctly returned an empty content array, aligning with the instruction to return '-' if the name is not present. The benchmark includes a name not found in the transcript, which the candidate correctly did not hallucinate."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "The candidate's chief complaint is an exact match to the relevant portion of the transcript and aligns perfectly with the benchmark's meaning."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "The candidate accurately captures the onset, nature, and progression of symptoms, including the previous pregnancy comparison and the impact on sleep due to lack of improvement with splints. However, it omitted the detail about the patient seeing her OB who recommended injections and referred her to this office, which is part of the history of present illness and was included in the benchmark. This is a minor missing detail."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate accurately extracted the musculoskeletal exam findings verbatim from the transcript. It correctly filtered out the ambiguous 'Um... Got PCTS' which was unclear dictation and presented as '.PCTS' in the benchmark. The candidate maintained the integrity of the verbatim instruction."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "The candidate's imaging result is an exact, verbatim match to the transcript and the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "The candidate accurately listed the primary diagnosis ('Bilateral carpal tunnel syndrome') along with key supporting symptoms and findings ('Bilateral hand numbness', 'Tingling', 'Burning pain', 'Decreased sensation to middle fingers'), adhering to the instruction to include both symptom-based and diagnosis-based problems. The benchmark was less complete by only including the diagnosis."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "The candidate accurately summarized the doctor's plan, including the recommendation for injections, discussion of risks, immediate action, and follow-up instructions. It correctly excluded information about past treatments (splinting) that belongs in the HPI rather than the current plan, which the benchmark included."
+    }
+  },
+  "total_score": 34,
+  "percentage": 97.14,
+  "overall_summary": "The candidate note performed exceptionally well, demonstrating strong factual accuracy and adherence to specific field instructions. It accurately extracted most details and summarized complex sections concisely in clinical note style. Minor points of improvement include a slight omission in the HPI regarding the OB referral and injection recommendation. The model correctly handled cases where information was not present in the transcript and accurately filtered out irrelevant or ambiguously dictated information, leading to a very high-quality clinical note."
+}

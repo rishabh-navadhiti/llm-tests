@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both notes correctly return '-' as the patient's name is not stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Benchmark specifies 'Left small finger locking and catching.' Candidate states 'Evaluation of left small finger,' omitting the key symptoms of locking and catching."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Matches the benchmark’s factual content: right-hand dominant designer, left small finger locking/catching for ~2 years, delayed care due to prior trigger finger surgeries, now seeking evaluation. No extraneous inferences. The benchmark’s added job impact is not required from the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Contains core elements (skin purging, no erythema, tenderness, nodule, excellent ROM, well-healed incisions) but is not verbatim and introduces a non-dictated location ('metacarpophalangeal joint') and awkward phrasing ('triggering excellent range of motion'). This deviates from the dictated phrasing and adds a minor hallucination."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Conveys normal X-ray findings consistent with the benchmark; minor wording differences only."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Correctly lists 'Trigger finger (left small finger)' but adds 'Status post trigger finger surgery (middle finger)' despite no ongoing issue being described; the benchmark does not include this."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Accurately captures the planned trigger finger procedure. The benchmark includes a 2-week follow-up, which is not stated in the transcript; per instructions, this omission is not penalized. Wording ('surgery' vs 'release') is a minor difference with preserved meaning."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note aligns well with the benchmark on HPI, imaging, and the core plan, and correctly leaves the patient name blank. The chief complaint is overly generic and misses the key symptoms. The musculoskeletal section is not verbatim and introduces a minor hallucination. Assessment includes an unnecessary 'status post' item. Overall, clinically reasonable with some fidelity and specificity issues."
+}

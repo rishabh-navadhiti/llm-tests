@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The candidate perfectly matched the patient's name as stated in the transcript and benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate included 'after a trip and fall' which is additional context not expected for a concise chief complaint based on the benchmark. The benchmark provided a more direct and concise chief complaint ('Left wrist pain')."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The candidate missed the detail 'while leaving Groundlings'. Additionally, it included 'Stephanie Humphrey, a right-hand dominant horticulturalist' which, while present in the transcript, is generally considered patient demographics or an introductory detail rather than part of the HPI narrative focused strictly on the history of the present illness itself, as implied by the field's instructions. The benchmark was more concise and focused on the HPI narrative."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "The benchmark has '-' for this field, indicating no specific verbatim musculoskeletal findings should be present. The candidate, however, included extensive musculoskeletal exam findings, which are present in the transcript. Despite the candidate's content being largely accurate to the transcript, it represents a major content difference from the benchmark, which is considered the ground truth."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "The candidate only included the current X-ray results ('X-rays of the left wrist are normal'). It missed the historical imaging results from urgent care ('X-rays that showed no fractures'), which are present in both the transcript and the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "The candidate correctly identified and listed the two key assessments ('Left ECU tendonitis', 'Left ulnar-sided wrist pain'). However, the benchmark also included two additional lines ('Right upper extremity Skin is intact.', 'No tenderness to palpation.') which are exam findings, not typical assessments/diagnoses, and one is even for the wrong extremity. While the candidate followed common clinical note standards and the instructions to exclude normal/negative findings, it is penalized for not matching the benchmark's full content as per evaluation rules."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "The candidate perfectly matched the plan items as dictated in the transcript and present in the benchmark. The order difference is a harmless formatting difference."
+    }
+  },
+  "total_score": 22,
+  "percentage": 62.857142857142854,
+  "overall_summary": "The candidate note demonstrated proficiency in extracting direct patient information and the treatment plan. It achieved perfect scores for 'PATIENT_NAME' and 'PLAN_SPENCER_'. However, its performance was weaker in fields requiring more nuanced interpretation or adherence to specific content rules, particularly when the benchmark's content diverged from typical clinical note practices or the AI's own field instructions. Missing historical imaging details and including extraneous information in the HPI led to deductions. A significant penalty was incurred for 'MUSCULOSKELETAL_VERBATIM' where the candidate accurately extracted information from the transcript, but the benchmark was intentionally empty for this field. Similarly, for 'ASSESSMENT_SPENCER', the candidate correctly filtered out non-assessment findings, but the benchmark included them, leading to a lower score based on strict content comparison. This highlights a challenge where the benchmark may not always align with optimal clinical note structure or the explicit instructions provided to the model for specific fields."
+}

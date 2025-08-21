@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match with benchmark ('Cathy Smith')."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Candidate lists 'increasing pain and deformity in DIP and trapeziometacarpal joints,' which reflects a different patient segment. Benchmark is 'Follow up hand pain and swelling.' Only partial overlap on 'pain'; otherwise incorrect focus."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "Candidate HPI mixes another patient's issues (DIP/TMC arthritis) and includes exam, imaging, and plan details, while benchmark HPI states follow-up status, ongoing swelling/pain, dissatisfaction with therapy, and desire to return to Jack. Content and scope do not match."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Candidate partially echoes the benchmark exam but adds unrelated findings from another patient (DIP deformities) and paraphrases rather than verbatim (e.g., omits 'in the left space especially'). Instruction required verbatim extraction."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "Benchmark indicates no imaging for this visit ('-'). Candidate provides hand X-ray findings from a different patient segment, making this incorrect."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "Benchmark assessment is symptom-based ('Hand swelling', 'Hand pain'). Candidate lists 'Bilateral thumb CMC arthritis' and 'DIP arthritis' from another patient, not matching the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Candidate includes the correct follow-up ('Return to clinic in six weeks') but adds unrelated plans (steroid injections, DIP fusion, splints) from another patient. Benchmark plan is 'Continue therapy. Transition care with Jack. Return in 6 weeks.'"
+    }
+  },
+  "total_score": 10,
+  "percentage": 28.57,
+  "overall_summary": "The candidate note correctly captured the patient name and the follow-up interval but largely mixed content from another patient encounter. Chief complaint, HPI, imaging, assessment, and most of the plan are incorrect relative to the benchmark. The musculoskeletal exam contains partial overlap but is not verbatim and includes extraneous findings."
+}

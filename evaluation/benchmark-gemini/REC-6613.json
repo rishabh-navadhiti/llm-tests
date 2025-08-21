@@ -1,0 +1,130 @@
+{
+    "rec_id": 6613,
+    "notes": [
+        {
+            "content": [
+                "Precious Myles Garrett"
+            ],
+            "key": "PATIENT_NAME",
+            "matches": [
+                []
+            ],
+            "title": "Patient Name"
+        },
+        {
+            "content": [
+                "Left wrist pain and masses"
+            ],
+            "key": "CHIEF_COMPLAINT",
+            "matches": [
+                [
+                    {
+                        "score": 0.6183328032493591,
+                        "time": "0.219"
+                    },
+                    {
+                        "score": 0.6617493629455566,
+                        "time": "213.919"
+                    }
+                ]
+            ],
+            "title": "Chief Complaint"
+        },
+        {
+            "content": [
+                "She presents for evaluation of left wrist pain and masses. She reports pain that wakes her up at night. She also has a mass at the dorsal radial aspect of her left wrist, as well as one at the dorsal ulnar aspect of her left thumb MCP joint.  Both masses used to fluctuate in size, but now have remained fairly constant. She saw Dr. Ishimori, her rheumatologist, who ordered X-rays and an ultrasound of the front of her wrist."
+            ],
+            "key": "HPI_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.7068093419075012,
+                        "time": "0.219"
+                    },
+                    {
+                        "score": 0.6061816811561584,
+                        "time": "213.919"
+                    }
+                ]
+            ],
+            "title": "History of Present Illness"
+        },
+        {
+            "content": [
+                "-"
+            ],
+            "key": "MUSCULOSKELETAL_VERBATIM",
+            "matches": [
+                []
+            ],
+            "title": "Musculoskeletal"
+        },
+        {
+            "content": [
+                "Outside X-rays showed an osteophyte at the thumb MCP joint. Ultrasound demonstrated a bony avulsion fragment versus osteophyte at the dorsal aspect of the MCP joint of the thumb. Ultrasound of the wrist demonstrated a retinacular cyst superficial to the first dorsal compartment sheath."
+            ],
+            "key": "IMAGING_GEORGE",
+            "matches": [
+                [
+                    {
+                        "score": 0.5535672903060913,
+                        "time": "0.219"
+                    }
+                ]
+            ],
+            "title": "Imaging"
+        },
+        {
+            "content": [
+                "Right upper extremity Skin is intact.",
+                "Bilateral hand pain",
+                "Left first dorsal compartment wrist cyst",
+                "Left thumb MCP osteophyte",
+                "No tenderness to palpation."
+            ],
+            "key": "ASSESSMENT_SPENCER",
+            "matches": [
+                [],
+                [
+                    {
+                        "score": 0.5165123343467712,
+                        "time": "0.219"
+                    }
+                ],
+                [
+                    {
+                        "score": 0.5189368724822998,
+                        "time": "0.219"
+                    }
+                ],
+                [
+                    {
+                        "score": 0.5356205701828003,
+                        "time": "0.219"
+                    }
+                ],
+                []
+            ],
+            "title": "Assessment"
+        },
+        {
+            "content": [
+                "Recommend night splints. Recommend observation for now for the masses. Consider aspiration versus biopsy of the wrist mass. Return to clinic in 6 weeks."
+            ],
+            "key": "PLAN_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.5086249113082886,
+                        "time": "0.219"
+                    },
+                    {
+                        "score": 0.7198997139930725,
+                        "time": "213.919"
+                    }
+                ]
+            ],
+            "title": "Plan"
+        }
+    ]
+}

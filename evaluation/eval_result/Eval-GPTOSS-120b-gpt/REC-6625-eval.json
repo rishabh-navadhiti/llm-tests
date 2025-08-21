@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark and transcript: 'Parviz Mikael'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Conveys the same meaning as benchmark ('No pain'); minor casing difference only."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Correctly includes follow-up and no pain/clarification request, but adds 'stiffness in his fingers,' which is an exam finding not included in the benchmark HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Captures all benchmark exam findings (clean pin sites, no significant tenderness with stable alignment, stiff fingers). Minor filler words/casing differences do not alter factual content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'X-rays are the same as the last time.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Benchmark lists 'Skin is intact' and 'No tenderness to palpation.' Candidate lists 'stiff fingers' and omits 'no tenderness.' Not penalized for 'skin is intact' since that exact phrase is not in the transcript, but omission of 'no tenderness' and substitution with 'stiff fingers' results in mismatch."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Includes all core benchmark elements (continue splint, transition to phenylplastic splint, referral to Eliza Cherian, return in 10 days). Additional details ('likely pin removal or repeat X-rays') are present in the transcript and do not conflict with the benchmark."
+    }
+  },
+  "total_score": 30,
+  "percentage": 85.71,
+  "overall_summary": "The candidate note accurately captured the patient name, chief complaint, imaging, musculoskeletal exam findings, and plan. The HPI included an exam-only detail (stiff fingers), and the Assessment deviated from the benchmark by omitting 'no tenderness' and adding 'stiff fingers.' Overall factual alignment is strong with minor sectioning/content placement issues."
+}

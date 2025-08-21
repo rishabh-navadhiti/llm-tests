@@ -1,0 +1,291 @@
+{
+    "rec_id": 6602,
+    "notes": [
+        {
+            "content": [
+                "Linda Omansky"
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": false,
+                        "generic": true,
+                        "missingContent": false,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "-"
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T15:57:09.394Z",
+                    "to": [
+                        "Linda Omansky"
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "PATIENT_NAME",
+            "matches": [
+                []
+            ],
+            "title": "Patient Name"
+        },
+        {
+            "content": [
+                "Numbness and tingling in the right hand"
+            ],
+            "key": "CHIEF_COMPLAINT",
+            "matches": [
+                [
+                    {
+                        "score": 0.5446596741676331,
+                        "time": "0.119"
+                    }
+                ]
+            ],
+            "title": "Chief Complaint"
+        },
+        {
+            "content": [
+                "8.6.2025",
+                "She is here today for reevaluation.  She states that she was diagnosed with lymphoma and just completed her chemotherapy.  She has been at home more because of this and has noticed increasing numbness and tingling of her right hand.  She states that she also burned her right thumb and therefore it is much more difficult to feel things and put her earrings on.  She has been trying to hold her phone less.  She is here for evaluation and treatment.",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "She reports increasing numbness and tingling in her right hand. She also reports burning her right thumb, which makes it difficult to feel things and put on earrings. She has been trying to hold her phone less.  She recently completed chemotherapy for lymphoma and has been at home more because of this."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T15:57:21.787Z",
+                    "to": [
+                        "8.6.2025",
+                        "She is here today for reevaluation.  She states that she was diagnosed with lymphoma and just completed her chemotherapy.  She has been at home more because of this and has noticed increasing numbness and tingling of her right hand.  She states that she also burned her right thumb and therefore it is much more difficult to feel things and put her earrings on.  She has been trying to hold her phone less.  She is here for evaluation and treatment.",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "HPI_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.6857479214668274,
+                        "time": "0.119"
+                    }
+                ]
+            ],
+            "title": "History of Present Illness"
+        },
+        {
+            "content": [
+                "Bilateral upper extremities",
+                "Skin is clean, dry and intact without erythema or ecchymosis",
+                "Moderate tenderness to palpation of the right small finger A1 pulley",
+                "There is triggering there",
+                "There is a nodule there",
+                "Excellent range of motion overall",
+                ".PCTS",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "-"
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T15:57:36.670Z",
+                    "to": [
+                        "Bilateral upper extremities",
+                        "Skin is clean, dry and intact without erythema or ecchymosis",
+                        "Moderate tenderness to palpation of the right small finger A1 pulley",
+                        "There is triggering there",
+                        "There is a nodule there",
+                        "Excellent range of motion overall",
+                        ".PCTS",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "MUSCULOSKELETAL_VERBATIM",
+            "matches": [
+                []
+            ],
+            "title": "Musculoskeletal"
+        },
+        {
+            "content": [
+                "XR - Deferred."
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "X-ray is clear"
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T15:57:46.306Z",
+                    "to": [
+                        "XR - Deferred."
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "IMAGING_GEORGE",
+            "matches": [
+                []
+            ],
+            "title": "Imaging"
+        },
+        {
+            "content": [
+                "Trigger finger.",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "Trigger finger.",
+                        "Right upper extremity Skin is intact.",
+                        "Normal percussion of Guyon's canal.",
+                        "Moderate tenderness of the right small finger.",
+                        "Excellent range of motion overall.",
+                        "Nodule in right small finger."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T15:58:10.526Z",
+                    "to": [
+                        "Trigger finger.",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "ASSESSMENT_SPENCER",
+            "matches": [
+                [],
+                [],
+                [],
+                [],
+                [],
+                []
+            ],
+            "title": "Assessment"
+        },
+        {
+            "content": [
+                "Regarding the trigger finger",
+                "Her last injection in her right small finger was in 2015, she would like another today, I think this is reasonable",
+                "",
+                "Plan carpal tunnel",
+                "Recommend night splints",
+                "Low threshold for nerve studies",
+                "Return to clinic in 2 months for followup",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "Plan trigger finger injection in right small finger.",
+                        "Return to clinic in 2 months.",
+                        "Recommend night splints for carpal tunnel.",
+                        "Low threshold for nerve studies."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T15:58:28.634Z",
+                    "to": [
+                        "Regarding the trigger finger",
+                        "Her last injection in her right small finger was in 2015, she would like another today, I think this is reasonable",
+                        "",
+                        "Plan carpal tunnel",
+                        "Recommend night splints",
+                        "Low threshold for nerve studies",
+                        "Return to clinic in 2 months for followup",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "PLAN_SPENCER",
+            "matches": [
+                [],
+                [],
+                [],
+                []
+            ],
+            "title": "Plan"
+        }
+    ]
+}

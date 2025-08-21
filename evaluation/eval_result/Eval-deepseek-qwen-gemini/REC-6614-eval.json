@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The candidate note perfectly matches the patient's name as provided in the benchmark and confirmed by the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate's 'Evaluation of left wrist pain' is factually accurate based on the transcript. However, 'Left wrist pain' (benchmark) is a more concise and standard representation for a chief complaint. The meaning is preserved with a minor wording difference."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "The candidate note is an excellent and near-perfect match to the benchmark, accurately summarizing all HPI details from the transcript. The only negligible difference is 'ultrasound of the wrist' compared to the benchmark's 'ultrasound of the anterior wrist' (from 'front of the wrist' in transcript)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "The benchmark specifies '-' for this field, indicating no content. However, the candidate extracted extensive, factually accurate, and verbatim musculoskeletal findings directly from the transcript, adhering to its specific instruction to extract verbatim findings. Given the benchmark is considered the ground truth, the presence of content where the benchmark indicates none constitutes a major content difference, despite the candidate's accuracy relative to the transcript and its own instructions."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "The candidate accurately extracted all imaging findings. The primary difference is the candidate combining two ultrasound findings into one sentence using 'and', whereas the benchmark separated them. This is a minor formatting/wording difference, but the factual content and meaning are perfectly preserved."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Compared to the benchmark, the candidate note is missing two minor details that were present in the benchmark: 'Right upper extremity Skin is intact' and 'No tenderness to palpation'. While the candidate's omissions align with its own instructions to exclude normal/negative findings, strict adherence to the benchmark as ground truth results in a 'missing details' penalty. The candidate also added 'Left wrist pain' which was not explicitly listed in the benchmark's assessment."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "The candidate's plan is largely accurate and often more comprehensive, including details like 'for carpal tunnel' and 'for follow-up' that were present in the transcript but omitted or less specific in the benchmark. However, the candidate added 'Consider' for aspiration/biopsy, which was not verbatim from the transcript. This is a minor non-verbatim addition."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.28,
+  "overall_summary": "The candidate note demonstrates strong performance in extracting patient information and historical details, achieving perfect scores in Patient Name and HPI. It accurately extracts Chief Complaint and Imaging Results with only minor formatting/wording differences. However, strict adherence to the benchmark as ground truth, even when it conflicts with the candidate's instructions or transcript content, led to significant deductions in the Musculoskeletal Verbatim and Assessment fields. While the candidate often provided more complete or clinically relevant information (e.g., in Assessment and Plan) based on the transcript and its own guidelines, the direct comparison to a benchmark with different content inclusion criteria resulted in lower scores for those specific fields. The plan section was generally well-captured, with only a minor non-verbatim addition."
+}

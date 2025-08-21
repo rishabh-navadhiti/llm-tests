@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches benchmark: Left wrist pain."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures key details (right-hand dominant social worker, pain > masses, nocturnal pain, prior diagnoses, rheumatology imaging). Omits being previously treated by Dr. Ishimori, which is in transcript and benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Benchmark left this section empty. Candidate provides accurate exam details consistent with the transcript, but not a direct match and misses some specifics (e.g., negative Finkelstein, resisted thumb extension)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Conveys all key findings (MCP osteophyte, possible avulsion vs osteophyte, retinacular cyst). Minor omissions of location specificity (dorsal aspect, ‘outside’ x-rays)."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes core problems (left first dorsal compartment cyst, left thumb MCP osteophyte, bilateral thumb/MCP masses). Adds 'left wrist pain' and omits ancillary items in benchmark; not penalized for benchmark-only items not in transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Includes night splints, observation, and 6-week follow-up. Omits 'aspiration vs biopsy of the wrist mass' present in benchmark and transcript; notes splints for carpal tunnel (supported by transcript) rather than 'regarding the masses' in benchmark."
+    }
+  },
+  "total_score": 28,
+  "percentage": 80,
+  "overall_summary": "The candidate note closely matches the benchmark for demographics, chief complaint, HPI, and imaging. The assessment captures the main diagnoses with minor deviations. The plan is generally correct but misses the aspiration/biopsy option. Musculoskeletal exam details are accurate to the transcript but not present in the benchmark, leading to a partial mismatch. Overall, strong fidelity with a few omissions and minor divergences."
+}

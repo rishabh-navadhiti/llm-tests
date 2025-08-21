@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Perfect match, the patient's name 'Chaz Thomas' is accurately extracted."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate provided 'Follow-up after removing splint.' while the benchmark has 'Follow-up'. The instruction specifies 'only the patient's chief complaint without any additional details or context.' The candidate included a minor HPI detail in the chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "The candidate accurately captures the core HPI details: 'Chaz Thomas is here for a follow-up after removing his splint yesterday due to someone else's blood getting on it. He is seeking advice on what to do next.' It slightly rephrases the patient's inquiry but preserves the meaning. It also includes the introductory 'Chaz Thomas is here for a follow-up,' which is present in the transcript but often omitted from HPI. The benchmark provides a more concise HPI focusing only on the specific problem."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate's verbatim extraction 'Laceration clean, dry, and intact with sutures. Sutures removed today, tolerating well without complication. Some pain and limited flexion.' is highly accurate and includes all relevant verbatim details from the transcript, adhering strictly to the instruction."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both the candidate and benchmark correctly state '-' as no imaging results were mentioned for this patient in the transcript."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "The candidate's assessment ('Laceration healing well', 'Pain with limited flexion') accurately reflects the patient's conditions and aligns well with the instruction to exclude normal or negative findings, which the benchmark partially failed to do."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The candidate included 'Sutures removed today' which was part of the physical exam findings, not explicitly dictated as part of the 'plan' section by the doctor. It also simplified 'Return to clinic in two weeks for follow-up and range of motion check' to 'Follow-up in two weeks,' missing a minor detail. The benchmark more accurately captured only the explicit plan items."
+    }
+  },
+  "total_score": 31,
+  "percentage": 88.57,
+  "overall_summary": "The candidate note performed very well, demonstrating strong factual accuracy across most fields. It excelled in verbatim extraction for musculoskeletal findings and generated a clinically relevant assessment. Minor deductions were made for including extraneous details in the chief complaint and the plan, where specific sections of dictation should be strictly adhered to. Overall, the note is of high quality and largely aligns with the benchmark."
+}

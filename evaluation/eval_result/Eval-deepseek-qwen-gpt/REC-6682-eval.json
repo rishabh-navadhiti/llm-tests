@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match with benchmark: 'N. Kalinski' appears verbatim in both."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Content aligns (left middle finger trigger finger) with added 'recurrence' descriptor. Clinically accurate but not a perfect match to benchmark phrasing."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Includes prior injection date (10-22-24) and recurrence, matching benchmark core facts. Omits the follow-up statement included in benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark has no MSK exam content ('-'), while candidate paraphrases 'exam the same' rather than providing verbatim text or leaving blank."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both indicate no imaging results reported ('-'), consistent with transcript note to remove imaging review."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Diagnosis matches (left middle finger trigger finger); candidate adds '(recurrence)'. Accurate but not an exact match to benchmark wording."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan: injection performed today and return to clinic if recurrence occurs."
+    }
+  },
+  "total_score": 28,
+  "percentage": 80,
+  "overall_summary": "The candidate note closely matches the benchmark on name, imaging, and plan, with accurate content for chief complaint, HPI, and assessment but minor wording differences. The main deficiency is the musculoskeletal section, which should have been left blank/verbatim rather than paraphrased."
+}

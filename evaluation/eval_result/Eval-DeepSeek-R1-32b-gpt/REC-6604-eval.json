@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Candidate captured the name exactly as dictated in the transcript ('Nicole Coffee'). The benchmark shows a corrected spelling ('Nicole Kaffee'), which is not in the transcript; per instructions, do not penalize for benchmark-only corrections."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches the benchmark meaning ('Left index finger pain') with only minor wording differences."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately summarizes duration (few months), location, worsening, and request for injection. Minor omissions and paraphrase vs benchmark (no mention of prior observation recommendation; phrased as 'worsened since her shoulder appointment')."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Verbatim capture of the dictated exam including 'tacky' skin, A1 'polii', 'walking catching', triggering, ROM, and thumbs up. Matches benchmark findings without adding or altering content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "States X-rays are normal but omits benchmark details of 'three views' and laterality ('left index finger')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes 'Left index finger pain' and a variant of 'Trigger finger' ('Triggering'), but improperly adds a normal finding ('Excellent range of motion') which should not be in Assessment."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Conflicts with benchmark regarding injection ('No injection today' vs plan to perform injection). Adds 'X-rays of the finger' to plan, which is not listed in the benchmark plan. Transcript language is ambiguous, but overall diverges from benchmark's intended plan."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note captures the core complaint, HPI, and musculoskeletal exam well, with particularly strong verbatim MSK documentation. Imaging details are under-specified, the Assessment includes an inappropriate normal finding, and the Plan diverges from the benchmark regarding the injection and includes an extra item. Name matches the transcript despite a corrected spelling in the benchmark."
+}

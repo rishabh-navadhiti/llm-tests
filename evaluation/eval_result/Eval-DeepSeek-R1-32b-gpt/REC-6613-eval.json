@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches benchmark (‘Left wrist pain and masses’); only punctuation differs."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures key elements (night pain, two masses with locations, stability, rheumatology imaging). Adds an unsupported statement (‘no definitive diagnosis’) and omits rheumatologist’s name and ‘front of wrist’ detail."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Not verbatim and omits several details (A1 pulley findings, resisted thumb extension pain, dorsal ulnar aspect). Benchmark section is empty, but based on transcript, content is paraphrased with missing specifics."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Accurately reflects X-ray osteophyte and ultrasound findings (retinacular cyst; bony avulsion fragment vs osteophyte). Minor location descriptors (dorsal aspect; superficial to first dorsal compartment sheath) are omitted."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes main problems (wrist pain, masses, osteophyte, retinacular cyst) but lacks laterality/anatomic specificity. Not penalized for benchmark-only items not evident in transcript (e.g., bilateral hand pain, right UE skin intact)."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Includes night splints, observation of masses, and 6-week follow-up. Omits ‘consider aspiration vs biopsy of the wrist mass,’ which is present in the benchmark and transcript."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate note accurately captures the patient’s name and chief complaint and summarizes imaging well. HPI is mostly correct but includes an unsupported statement. The musculoskeletal exam is not verbatim and misses key details. The assessment lists core problems but lacks specificity. The plan is largely correct but omits the aspiration/biopsy consideration."
+}

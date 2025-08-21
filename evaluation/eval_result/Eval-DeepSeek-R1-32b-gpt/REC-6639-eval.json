@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 2,
+      "justification": "Includes the correct patient name (Chaz Thomas) but also lists additional patients, violating the single-name requirement."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Contains 'follow-up' for Chaz but adds extra detail and multiple other patients' complaints instead of a single concise chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Mentions correct reason for splint removal but mixes in exam findings (pain/limited flexion) and other patients' histories, diverging from the benchmark focused solely on splint contamination and questions."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Not verbatim and includes findings from multiple patients; changes 'with sutures' to 'with sutures removed' and adds unrelated DIP/PIP and other exam items."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "Benchmark indicates no imaging for this patient, but the candidate reports X-ray findings from another patient."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Candidate lists laceration and pain, whereas the benchmark assessment lists normal findings ('Skin is intact', 'No tenderness'); major mismatch."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Includes the correct plan items for Chaz (removable splint, hand therapy, 2-week follow-up) but adds multiple plans for other patients."
+    }
+  },
+  "total_score": 10,
+  "percentage": 28.57,
+  "overall_summary": "The candidate note frequently blends information from multiple patients instead of focusing on the target patient, leading to incorrect content in most sections. While the plan section contains the correct core items, it is diluted by extraneous entries. Imaging and assessment are notably mismatched with the benchmark. Overall fidelity to the benchmark is low."
+}

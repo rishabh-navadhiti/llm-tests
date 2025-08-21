@@ -1,0 +1,247 @@
+{
+    "rec_id": 6604,
+    "notes": [
+        {
+            "content": [
+                "Nicole Kaffee"
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": false,
+                        "generic": true,
+                        "missingContent": false,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "Nicole Coffee"
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T16:35:09.611Z",
+                    "to": [
+                        "Nicole Kaffee"
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "PATIENT_NAME",
+            "matches": [
+                []
+            ],
+            "title": "Patient Name"
+        },
+        {
+            "content": [
+                "Left index finger pain"
+            ],
+            "key": "CHIEF_COMPLAINT",
+            "matches": [
+                [
+                    {
+                        "score": 0.6110727190971375,
+                        "time": "0.079"
+                    },
+                    {
+                        "score": 0.5809640288352966,
+                        "time": "42.479"
+                    }
+                ]
+            ],
+            "title": "Chief Complaint"
+        },
+        {
+            "content": [
+                "8.6.2025",
+                "She is here today for evaluation of her left index finger.  She states that she has noticed it for a few months.  It was bothering her when she came in for her shoulder appointment, but Dr. Dellamaggiora recommended observation.  She notes that it has gotten worse and has not improved.  She wants to know if she can have an injection now.",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "She reports left index finger pain for a few months. It was present when she saw Dr. Almadroa for her shoulder.  Dr. Almadroa recommended observation for the shoulder. The finger pain has worsened and not improved. She would like to know if she can have an injection."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T16:35:18.866Z",
+                    "to": [
+                        "8.6.2025",
+                        "She is here today for evaluation of her left index finger.  She states that she has noticed it for a few months.  It was bothering her when she came in for her shoulder appointment, but Dr. Dellamaggiora recommended observation.  She notes that it has gotten worse and has not improved.  She wants to know if she can have an injection now.",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "HPI_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.552422285079956,
+                        "time": "0.079"
+                    },
+                    {
+                        "score": 0.6456279158592224,
+                        "time": "20.659"
+                    },
+                    {
+                        "score": 0.6285796761512756,
+                        "time": "42.479"
+                    }
+                ]
+            ],
+            "title": "History of Present Illness"
+        },
+        {
+            "content": [
+                "Left upper extremity",
+                "Skin is clean, dry and intact without erythema or ecchymosis",
+                "Moderate tenderness to palpation at the left index finger A1 pulley",
+                "There is locking and catching",
+                "There is triggering of index finger",
+                "Excellent range of motion overall",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "Left upper extremity skin is clean, dry, and tacky without erythema. Acute moderate tenderness on left index finger with an A1 polii.  There is walking catching. There is triggering on index finger. Excellent range of motion overall. Able to give a thumbs up."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T16:35:35.483Z",
+                    "to": [
+                        "Left upper extremity",
+                        "Skin is clean, dry and intact without erythema or ecchymosis",
+                        "Moderate tenderness to palpation at the left index finger A1 pulley",
+                        "There is locking and catching",
+                        "There is triggering of index finger",
+                        "Excellent range of motion overall",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "MUSCULOSKELETAL_VERBATIM",
+            "matches": [
+                [
+                    {
+                        "score": 0.7664018273353577,
+                        "time": "42.479"
+                    }
+                ]
+            ],
+            "title": "Musculoskeletal"
+        },
+        {
+            "content": [
+                "Three views of the left index finger X-rays are normal."
+            ],
+            "key": "IMAGING_GEORGE",
+            "matches": [
+                [
+                    {
+                        "score": 0.626181423664093,
+                        "time": "42.479"
+                    }
+                ]
+            ],
+            "title": "Imaging"
+        },
+        {
+            "content": [
+                "Left index finger pain",
+                "Trigger finger"
+            ],
+            "key": "ASSESSMENT_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.6110727190971375,
+                        "time": "0.079"
+                    },
+                    {
+                        "score": 0.5809640288352966,
+                        "time": "42.479"
+                    }
+                ],
+                []
+            ],
+            "title": "Assessment"
+        },
+        {
+            "content": [
+                "Plan trigger",
+                "She has not had any injection, we will do this today",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "Plan trigger finger injection.  Return to clinic in 2 weeks."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T16:36:03.779Z",
+                    "to": [
+                        "Plan trigger",
+                        "She has not had any injection, we will do this today",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "PLAN_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.5555153489112854,
+                        "time": "42.479"
+                    }
+                ]
+            ],
+            "title": "Plan"
+        }
+    ]
+}

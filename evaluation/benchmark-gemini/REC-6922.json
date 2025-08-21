@@ -1,0 +1,159 @@
+{
+    "rec_id": 6922,
+    "notes": [
+        {
+            "content": [
+                "Mahika Mahendru"
+            ],
+            "key": "PATIENT_NAME",
+            "matches": [
+                [
+                    {
+                        "score": 0.5170707702636719,
+                        "time": "4.489"
+                    }
+                ]
+            ],
+            "title": "Patient Name"
+        },
+        {
+            "content": [
+                "Follow-up for pain distal to splint"
+            ],
+            "key": "CHIEF_COMPLAINT",
+            "matches": [
+                [
+                    {
+                        "score": 0.6117838025093079,
+                        "time": "15.17"
+                    },
+                    {
+                        "score": 0.5983791351318359,
+                        "time": "61.0"
+                    },
+                    {
+                        "score": 0.6009664535522461,
+                        "time": "65.8"
+                    },
+                    {
+                        "score": 0.6669406890869141,
+                        "time": "72.309"
+                    }
+                ]
+            ],
+            "title": "Chief Complaint"
+        },
+        {
+            "content": [
+                "She is presenting for follow-up and reports doing well overall. She reports tolerating her splint without complaint, but is experiencing some pain around the joint distal to the splint. She describes the area as quite hypersensitive. She reports increased pain, which she believes is from irritation of a cutaneous nerve due to pressure from the splint."
+            ],
+            "key": "HPI_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.6498664617538452,
+                        "time": "15.17"
+                    },
+                    {
+                        "score": 0.5085161924362183,
+                        "time": "61.0"
+                    },
+                    {
+                        "score": 0.5933497548103333,
+                        "time": "72.309"
+                    }
+                ]
+            ],
+            "title": "History of Present Illness"
+        },
+        {
+            "content": [
+                "Splint is in place. Mild soft tissue swelling noted. Significant hypersensitivity distal to the splint. The splint is putting a fair amount of pressure on the dorsal aspect. Unable to sublux the extensor tendons in the splint. Excellent PAP in the splint."
+            ],
+            "key": "MUSCULOSKELETAL_VERBATIM",
+            "matches": [
+                [
+                    {
+                        "score": 0.7147290706634521,
+                        "time": "15.17"
+                    },
+                    {
+                        "score": 0.716847836971283,
+                        "time": "61.0"
+                    },
+                    {
+                        "score": 0.5180531740188599,
+                        "time": "72.309"
+                    }
+                ]
+            ],
+            "title": "Musculoskeletal"
+        },
+        {
+            "content": [
+                "-"
+            ],
+            "key": "IMAGING_GEORGE",
+            "matches": [
+                [
+                    {
+                        "score": 0.5805084705352783,
+                        "time": "1.639"
+                    }
+                ]
+            ],
+            "title": "Imaging"
+        },
+        {
+            "content": [
+                "Right upper extremity Skin is intact.",
+                "No tenderness to palpation.",
+                "Hypersensitivity distal to the splint"
+            ],
+            "key": "ASSESSMENT_SPENCER",
+            "matches": [
+                [],
+                [
+                    {
+                        "score": 0.5026932954788208,
+                        "time": "13.369"
+                    }
+                ],
+                [
+                    {
+                        "score": 0.7357285618782043,
+                        "time": "15.17"
+                    },
+                    {
+                        "score": 0.5122587084770203,
+                        "time": "61.0"
+                    },
+                    {
+                        "score": 0.5753059387207031,
+                        "time": "72.309"
+                    }
+                ]
+            ],
+            "title": "Assessment"
+        },
+        {
+            "content": [
+                "Modify splint. Return to clinic Monday if no improvement after modification of the splint. Return to clinic in 3 weeks."
+            ],
+            "key": "PLAN_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.5539138317108154,
+                        "time": "65.8"
+                    },
+                    {
+                        "score": 0.6876760125160217,
+                        "time": "72.309"
+                    }
+                ]
+            ],
+            "title": "Plan"
+        }
+    ]
+}

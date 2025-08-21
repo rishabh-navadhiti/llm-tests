@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The transcript does not state the patient’s name; the candidate appropriately left it blank as per instruction. The benchmark contains a name likely from external data; per instructions, no penalty for absence when not in transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Meaning aligns with benchmark (wrist achiness and limited motion). Minor differences: candidate adds electric sensations and omits the 'follow-up' context."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Candidate includes nerve study results (no carpal tunnel; possible ulnar compression), which are objective findings placed in the plan/assessment in the benchmark, not in the HPI. Also omits contextual details (doing okay overall; life difficult; inquiry about study results)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Candidate captures the exam statement from the transcript, but the benchmark left this section blank. Minor verbatim deviation ('Exam is unchanged' vs 'Her exam is unchanged')."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Benchmark lists 'Nerve study results' while candidate left this field empty. The transcript references nerve studies; omission leads to a major content gap."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Candidate includes key symptoms (wrist achiness/limited motion; electric sensations), but adds diagnoses (cervical radiculopathy; ulnar nerve compression) not listed in the benchmark assessment. Not penalized for missing normal findings that are not in the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Includes follow-up and work status, and monitoring of ulnar compression. However, it omits several benchmark items (wrist doing well, gaining strength, advance activity/weightbearing, delete carpal tunnel, explicit statement of no carpal tunnel) and lists 'urology consult' instead of benchmark 'neurology consult'."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60,
+  "overall_summary": "The candidate note captures the core symptoms and some plan elements but misses or misplaces several details. HPI includes objective results that belong in plan/assessment, imaging is omitted, and the plan lacks multiple benchmark items and has a specialty mismatch. Strengths include reasonable chief complaint capture and extraction of the unchanged exam statement."
+}

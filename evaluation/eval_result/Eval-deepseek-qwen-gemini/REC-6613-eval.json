@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Perfect match to the benchmark and transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Perfect match to the benchmark and consistent with the transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "The candidate note is good but misses a couple of minor details from the transcript: the masses used to fluctuate in size initially, and that Dr. Ishimori specifically ordered the X-rays and ultrasound. The candidate only states she was 'treated by' Dr. Ishimori."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "While the benchmark is incorrect for this field (missing all information), the candidate's extraction, though present, fails to be truly verbatim as per its own instruction. It consolidates phrases and omits minor words/phrases ('without anything by my diagnosis', 'No tenderness or location over the mass', 'very', 'or location'). This indicates multiple missing/modified details from a verbatim requirement."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "The candidate accurately extracted all imaging results. There are minor wording differences from the transcript and benchmark (e.g., 'X-rays show' vs 'Outside X-rays showed' vs 'outside X-rays are viewed with'), but the meaning is perfectly preserved. The combination of ultrasound findings into one sentence is a formatting choice and does not alter the content."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "The candidate correctly identified the active problems from the transcript and adhered to the instruction by *not* including physical exam findings or negative statements, unlike the benchmark which contains irrelevant physical exam findings and an incorrect laterality ('Bilateral hand pain' instead of 'Left wrist pain'). The candidate's output is superior and factually correct from the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "The candidate accurately captured most of the plan items, including a detail about carpal tunnel syndrome missed by the benchmark. However, it added the phrase 'if symptoms worsen' regarding the aspiration/biopsy of the wrist mass, which was not mentioned in the transcript. This constitutes a minor hallucination/incorrect detail."
+    }
+  },
+  "total_score": 28,
+  "percentage": 80.0,
+  "overall_summary": "The candidate note demonstrates strong performance in accurately extracting patient demographics, chief complaint, and assessment findings, particularly excelling where the benchmark contained errors or irrelevant information (e.g., Assessment field). The HPI and Imaging sections were largely accurate with only minor rephrasing or omissions. However, the candidate significantly underperformed in the Musculoskeletal section, failing to provide a verbatim extraction as instructed, and introduced a minor hallucination in the Plan section. This indicates a need for improvement in adhering to strict verbatim instructions and preventing additions not present in the source transcript."
+}

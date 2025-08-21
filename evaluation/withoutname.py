@@ -56,4 +56,4 @@ def recalc_scores(input_dir, output_md):
 
 
 if __name__ == "__main__":
-    recalc_scores("/Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-Deepseek-Qwen32b", "/Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-Deepseek-Qwen32b/withoutnames.md")
+    recalc_scores("/Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-deepseek-qwen-gpt", "/Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-deepseek-qwen-gpt/withoutnames.md")

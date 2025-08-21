@@ -1,0 +1,259 @@
+{
+    "rec_id": 6627,
+    "notes": [
+        {
+            "content": [
+                "Eliza Asherian"
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": false,
+                        "generic": true,
+                        "missingContent": false,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "-"
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T21:31:15.285Z",
+                    "to": [
+                        "Eliza Asherian"
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "PATIENT_NAME",
+            "matches": [
+                []
+            ],
+            "title": "Patient Name"
+        },
+        {
+            "content": [
+                "Bilateral hand numbness and tingling, and burning pain"
+            ],
+            "key": "CHIEF_COMPLAINT",
+            "matches": [
+                [
+                    {
+                        "score": 0.5402249097824097,
+                        "time": "0.079"
+                    }
+                ]
+            ],
+            "title": "Chief Complaint"
+        },
+        {
+            "content": [
+                "right-hand dominant pharmacist here at Cedars on 5-South",
+                "",
+                "Bilateral carpal tunnel syndrome",
+                "",
+                "8.6.2025",
+                "She presents today for evaluation of her bilateral hand numbness and tingling as well as burning pain that began around July 1, 2025.  She states that she had similar symptoms at the very end of her previous pregnancy, but these are earlier and more intense.  She has been seeing her OB who recommended injections and referred her to this office.",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "She reports bilateral hand numbness, tingling, and burning pain that began around July 1, 2025. She experienced similar symptoms at the end of her last pregnancy, but they are now earlier in the pregnancy and more intense.  She has been consulting her OB, who recommended injections and referred her to this office. The symptoms affect her ability to sleep through the night, even with splinting."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T21:31:35.070Z",
+                    "to": [
+                        "right-hand dominant pharmacist here at Cedars on 5-South",
+                        "",
+                        "Bilateral carpal tunnel syndrome",
+                        "",
+                        "8.6.2025",
+                        "She presents today for evaluation of her bilateral hand numbness and tingling as well as burning pain that began around July 1, 2025.  She states that she had similar symptoms at the very end of her previous pregnancy, but these are earlier and more intense.  She has been seeing her OB who recommended injections and referred her to this office.",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "HPI_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.703729510307312,
+                        "time": "0.079"
+                    }
+                ]
+            ],
+            "title": "History of Present Illness"
+        },
+        {
+            "content": [
+                "Bilateral upper extremities",
+                "Skin is clean, dry and intact without erythema or ecchymosis",
+                ".PCTS",
+                "Some decreased sensation to the middle fingers noted",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "-"
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T21:31:59.306Z",
+                    "to": [
+                        "Bilateral upper extremities",
+                        "Skin is clean, dry and intact without erythema or ecchymosis",
+                        ".PCTS",
+                        "Some decreased sensation to the middle fingers noted",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "MUSCULOSKELETAL_VERBATIM",
+            "matches": [
+                []
+            ],
+            "title": "Musculoskeletal"
+        },
+        {
+            "content": [
+                "X-rays deferred secondary to pregnancy"
+            ],
+            "key": "IMAGING_GEORGE",
+            "matches": [
+                []
+            ],
+            "title": "Imaging"
+        },
+        {
+            "content": [
+                "Bilateral carpal tunnel syndrome",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "Right upper extremity Skin is intact.",
+                        "Carpal tunnel syndrome",
+                        "Decreased sensation to the middle fingers"
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T21:32:18.722Z",
+                    "to": [
+                        "Bilateral carpal tunnel syndrome",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "ASSESSMENT_SPENCER",
+            "matches": [
+                [],
+                [
+                    {
+                        "score": 0.5834832191467285,
+                        "time": "0.079"
+                    }
+                ],
+                []
+            ],
+            "title": "Assessment"
+        },
+        {
+            "content": [
+                "She has already been wearing splints without enough improvement to be able to sleep through the night",
+                "At this point, I recommend trial of injections",
+                "We talked about the risks, we talked about the temporary nature, she understands, we will do them today",
+                "Return to clinic in 3 months for followup if symptoms persist postpartum",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "Planned carpal tunnel injections.  She is currently wearing splints. Return to clinic in 3 months."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T21:32:29.378Z",
+                    "to": [
+                        "She has already been wearing splints without enough improvement to be able to sleep through the night",
+                        "At this point, I recommend trial of injections",
+                        "We talked about the risks, we talked about the temporary nature, she understands, we will do them today",
+                        "Return to clinic in 3 months for followup if symptoms persist postpartum",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "PLAN_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.6621837615966797,
+                        "time": "0.079"
+                    }
+                ]
+            ],
+            "title": "Plan"
+        }
+    ]
+}

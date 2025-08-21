@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "No patient name is stated in the transcript; candidate correctly returned '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches benchmark content ('left small finger locking and catching'); only capitalization differs."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately captures onset (~2 years), location (left small finger), delay due to prior surgeries, and desire for treatment. Benchmark mentions job impact not clearly stated in transcript; no penalty."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Includes all key findings consistent with benchmark: skin noted, no erythema, moderate TTP at A1 pulley (as transcribed), palpable nodule, excellent ROM, well-healed prior incisions. Verbatim style preserved."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Conveys the same result as benchmark: X-rays are normal."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Correctly identifies 'left small finger trigger finger,' matching the benchmark diagnosis."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "Transcript indicates a planned trigger finger release; candidate left the plan as '-' and omitted this. Not penalizing for the benchmark’s 2-week follow-up, which is not clearly stated in the transcript."
+    }
+  },
+  "total_score": 31,
+  "percentage": 88.57,
+  "overall_summary": "Strong alignment with the benchmark for chief complaint, HPI, exam, imaging, and assessment. The primary deficiency is the omission of the documented plan (planned trigger finger release)."
+}

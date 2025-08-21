@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The transcript does not mention a patient name; the candidate correctly returned '-'. The benchmark includes a name not present in the transcript, which should not be penalized per instructions."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "No chief complaint is explicitly stated in the transcript; the candidate appropriately returned '-'. The benchmark’s entry should not be used to penalize absent transcript data."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes that a prior injection provided no relief and the patient seeks to understand the issue, matching the benchmark’s factual content."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Captures all dictated findings verbatim: hypopigmentation at dorsal CMC consistent with prior injection, mild over first dorsal compartment, positive Finkelstein (as dictated 'finger stain'), and positive grind. Differences are minor wording/normalization only."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging results are mentioned in the transcript; both candidate and benchmark appropriately show '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "The transcript does not explicitly state an assessment; the candidate returned '-'. The benchmark’s 'Pain in hand' should not be used to penalize since it is not in the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches the dictated plan: prior injection offered no relief, recommend trial of de Quervain’s injection, and return in six weeks. Minor dictation artifacts preserved, but factual content aligns with the benchmark."
+    }
+  },
+  "total_score": 35,
+  "percentage": 100,
+  "overall_summary": "The candidate note closely adheres to the transcript, avoids hallucinations, and captures key elements accurately. Differences from the benchmark are limited to normalization and inclusion of items not present in the transcript, which were appropriately omitted."
+}

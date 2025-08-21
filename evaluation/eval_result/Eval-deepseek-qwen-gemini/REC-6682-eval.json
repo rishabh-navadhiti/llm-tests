@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The candidate note perfectly extracted the patient's name as 'N. Kalinski', matching the benchmark and transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate note states 'Recurrence of left middle finger trigger finger' while the benchmark states 'Left middle finger trigger finger'. The candidate's version is more specific to the reason for the visit today ('He has had recurrence of his left middle finger trigger finger'), which is factually accurate. The benchmark is a more general diagnosis. This is a minor wording difference, and the meaning is preserved, making it a partial adherence to the benchmark's exact wording but still factually strong."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The candidate note states 'The patient underwent a left middle finger trigger finger injection on 10-22-24. He reports recurrence of symptoms.' The benchmark includes 'He underwent a left middle finger trigger finger injection on 10-22-24. He has had recurrence of his left middle finger trigger finger. He will return to clinic if he has any recurrence.' The candidate rephrased 'He has had recurrence of his left middle finger trigger finger' to 'He reports recurrence of symptoms,' which loses the specific anatomical location ('left middle finger'). While the candidate correctly omits 'He will return to clinic if he has any recurrence' from HPI (as it is a plan detail), the loss of anatomical specificity in the recurrence description constitutes a missing minor detail."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "The candidate note provides 'The exam findings related to musculoskeletal system were reviewed and remained unchanged.' The benchmark is '-'. The transcript states 'Uh, okay, let's keep the exam the same.' The instruction was to extract 'verbatim' and 'Do not change/modify any thing'. The candidate note completely failed to provide verbatim text and instead fabricated a descriptive sentence, which is a major deviation and hallucination from the specific instruction."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both the candidate note and the benchmark correctly state '-' for imaging results. The transcript indicated 'We can remove the imaging review for the plan,' implying no imaging results were to be documented."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "The candidate note states 'Left middle finger trigger finger (recurrence)' and the benchmark states 'Trigger finger of the left middle finger'. The candidate's assessment is more precise by including '(recurrence)', which is explicitly mentioned and crucial in the transcript ('He has had recurrence of his left middle finger trigger finger'). This makes the candidate note factually more complete and relevant for the current visit while still aligning with the core diagnosis."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "The candidate note states 'Performed left middle finger trigger finger injection today. Patient to return to clinic if recurrence occurs.' The benchmark states 'Left middle finger trigger finger injection. Return to clinic if he has any recurrence.' The candidate note is more accurate and complete by including 'today' as specified in the transcript ('which was performed today'). Both notes accurately capture the follow-up plan. The candidate note is a perfect match and even slightly superior in detail retention."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note performed strongly in fields requiring direct extraction or concise summarization (Patient Name, Imaging Results, Assessment, Plan), often providing precise details from the transcript. However, it significantly failed on the 'MUSCULOSKELETAL_VERBATIM' field by fabricating content instead of adhering to the 'verbatim' instruction, resulting in a zero score. The 'HPI_SPENCER' field also showed a minor loss of specificity due to over-summarization. The 'CHIEF_COMPLAINT' was factually correct but varied from the benchmark's more general approach. Overall, the model demonstrates good understanding of clinical context but struggles with strict adherence to 'verbatim' instructions and minor detail retention in more narrative fields."
+}

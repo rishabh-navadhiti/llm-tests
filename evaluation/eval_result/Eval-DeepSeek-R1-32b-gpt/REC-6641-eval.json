@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 2,
+      "justification": "Includes the correct patient name (Kathy Smith) but incorrectly lists two additional patients, violating the single-patient extraction."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Contains the follow-up component for Kathy Smith but omits 'swelling and pain' and adds unrelated complaints from other patients."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Captures swelling/pain and dissatisfaction with therapy, but omits her request to return to Jack and mixes in HPIs for other patients."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Includes minimal scar, A1 tenderness, and pain with motion, but omits key findings (full fist, left-sided swelling, no dorsal tendon desquamation) and adds other patients’ exams."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "Benchmark indicates no imaging; candidate fabricates x-ray results for Kathy Smith."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Lists 'status post hand surgery' but omits explicit 'swelling' and 'pain' and adds unrelated diagnoses (CMC arthritis, CTS, peripheral neuropathy) not in the benchmark for this visit."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Includes continue therapy and 6-week follow-up but omits 'Return to Jack for hand therapy' and mixes in plans for other patients."
+    }
+  },
+  "total_score": 11,
+  "percentage": 31.43,
+  "overall_summary": "The candidate note partially reflects Kathy Smith’s visit but is diluted by inclusion of details from two other patients. It misses key elements (return to Jack), fabricates imaging, and adds unrelated diagnoses. Strengths include partial capture of symptoms and some exam details; however, adherence to single-patient context and exact plan details is poor."
+}

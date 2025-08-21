@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient name 'Kathy Smith' is accurately identified and extracted, matching the benchmark and transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 0,
+      "justification": "The candidate note provides a chief complaint for a different patient (increasing pain and deformity in DIP joints and trapeziometic carpal joints) instead of Kathy Smith's chief complaint of 'Swelling and pain in hand' and 'Follow up for hand surgery'. This is completely incorrect for the specified patient."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "The HPI provided in the candidate note pertains to a different patient described earlier in the transcript, not Kathy Smith. It completely misses Kathy Smith's HPI (follow-up, swelling/pain, dissatisfaction with hand therapy, wish to return to Jack)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "The musculoskeletal exam findings listed by the candidate note are for a different patient (DIP joint deformity, trapeziometic carpal joint issues) and not for Kathy Smith, whose exam noted 'Incisions well healed. Minimal scar. Some continued tenderness to palpation at the A1 pulley incision. No tendon desquamation at the dorsal hand. Full fist. Moderate soft tissue swelling in the left space especially. Excellent range of motion overall. Some continued pain with motion.'"
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "The candidate note hallucinates imaging results for Kathy Smith by taking them from another patient's discussion. The transcript indicates no imaging results were discussed for Kathy Smith, and the benchmark correctly reflects this with '-'. The candidate's output is completely irrelevant for this patient."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "The assessments listed ('Bilateral thumb CMC arthritis', 'DIP arthritis', 'Peripheral neuropathy in carpal tunnel') are all conditions pertaining to other patients discussed in the transcript, not Kathy Smith. Kathy Smith's assessment should reflect 'Status post hand surgery', 'Swelling', and 'Pain'."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "While the candidate correctly identifies 'Continue therapy' and 'Follow-up in six weeks' (implied by 'Return to clinic in six weeks'), it incorrectly includes multiple plan items that belong to other patients (e.g., 'Recommend trial of steroid injections', 'Recommend nerve studies and neurology consult'). This indicates a significant failure in patient context, making most of the output irrelevant for Kathy Smith."
+    }
+  },
+  "total_score": 6,
+  "percentage": 17.14,
+  "overall_summary": "The candidate note performed poorly due to a critical failure in patient identification and context. While it correctly extracted the patient's name, almost all subsequent fields (Chief Complaint, HPI, Musculoskeletal Exam, Imaging Results, Assessment, and most of the Plan) extracted information pertaining to other patients discussed in the long transcript. This severely impacts the clinical utility and accuracy of the note for the intended patient, Kathy Smith."
+}

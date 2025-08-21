@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('Chaz Thomas')."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Captures 'Follow-up' but adds extra detail ('after removing splint'); minor addition beyond benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes the benchmark HPI: removed splint due to someone else’s blood and seeking guidance."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Includes key findings (laceration clean/dry/intact, pain, limited flexion) but omits 'Excellent, thumbs up' and slightly paraphrases; otherwise consistent."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging reported for this patient; matches benchmark '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Candidate lists active problems from transcript ('laceration healing well', 'pain with limited flexion'), whereas benchmark lists normal findings ('skin intact', 'no TTP') not stated in transcript. Not penalizing for missing benchmark-only info, but content does not match."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan (transition to removable splint, hand therapy, RTC in 2 weeks) and appropriately includes 'sutures removed today' from transcript."
+    }
+  },
+  "total_score": 31,
+  "percentage": 88.57,
+  "overall_summary": "Strong alignment with the benchmark across most fields, particularly patient name, HPI, imaging, and plan. Minor over-specificity in chief complaint and small omissions/paraphrasing in musculoskeletal verbatim. Assessment differs from the benchmark but reflects transcript-based active issues."
+}

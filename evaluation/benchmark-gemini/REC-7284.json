@@ -1,0 +1,118 @@
+{
+    "rec_id": 7284,
+    "notes": [
+        {
+            "content": [
+                "-"
+            ],
+            "key": "PATIENT_NAME",
+            "matches": [
+                []
+            ],
+            "title": "Patient Name"
+        },
+        {
+            "content": [
+                "Right middle finger crush injury"
+            ],
+            "key": "CHIEF_COMPLAINT",
+            "matches": [
+                [
+                    {
+                        "score": 0.7083727121353149,
+                        "time": "0.239"
+                    }
+                ]
+            ],
+            "title": "Chief Complaint"
+        },
+        {
+            "content": [
+                "She presents today for evaluation of a right middle finger injury that began on 7-8-25 when her finger was crushed by a dumbbell. She had immediate pain, swelling, and limited motion. She went to urgent care for x-rays that showed a fracture. She was treated with a splint. She had repeat x-rays after 4 weeks, which showed continued fracture, so she continued wearing the splint. She is here today for evaluation and treatment."
+            ],
+            "key": "HPI_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.742460310459137,
+                        "time": "0.239"
+                    }
+                ]
+            ],
+            "title": "History of Present Illness"
+        },
+        {
+            "content": [
+                "-"
+            ],
+            "key": "MUSCULOSKELETAL_VERBATIM",
+            "matches": [
+                []
+            ],
+            "title": "Musculoskeletal"
+        },
+        {
+            "content": [
+                "X-rays from urgent care showed a fracture. Repeat x-rays after 4 weeks showed continued fracture. X-rays today show a fracture of the distal phalanx with stable alignment and good fracture healing."
+            ],
+            "key": "IMAGING_GEORGE",
+            "matches": [
+                [
+                    {
+                        "score": 0.6783004999160767,
+                        "time": "0.239"
+                    }
+                ]
+            ],
+            "title": "Imaging"
+        },
+        {
+            "content": [
+                "Some hematoma noted",
+                "Right upper extremity Skin is intact.",
+                "Fracture of the distal phalanx with stable alignment and good fracture healing",
+                "Some DIP stiffness",
+                "Right middle finger crush injury",
+                "Excellent flexion of the PIP",
+                "No tenderness to palpation.",
+                "Paresthesia at the distal phalanx"
+            ],
+            "key": "ASSESSMENT_SPENCER",
+            "matches": [
+                [],
+                [],
+                [
+                    {
+                        "score": 0.5639057755470276,
+                        "time": "0.239"
+                    }
+                ],
+                [],
+                [
+                    {
+                        "score": 0.7083727121353149,
+                        "time": "0.239"
+                    }
+                ],
+                [],
+                [],
+                []
+            ],
+            "title": "Assessment"
+        },
+        {
+            "content": [
+                "Advanced activity",
+                "Avoid hanging from hands",
+                "Return to clinic in 3 weeks for nail check before wedding."
+            ],
+            "key": "PLAN_SPENCER",
+            "matches": [
+                [],
+                [],
+                []
+            ],
+            "title": "Plan"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark and transcript: 'Greta Griswana'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate lists only 'Thumb pain' while benchmark includes 'Forearm pain, thumb pain'. Omits forearm pain component mentioned in transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures follow-up, improved forearm pain, and severe thumb pain. Omits details in benchmark about wanting guidance for thumb pain and the daughter's wedding/hand use context; overall pain assessment ('better but overall the same') also missing."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Findings largely match (trapeziometacarpal grind positive, no A1 pulley tenderness, some U&R eminence tenderness). Minor transcription discrepancy ('Right upper termine' vs 'Right upper extremity')."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Matches benchmark content: 'X-rays reviewed' showing 'planned arthritis' (wording/meaning preserved)."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark assessment is 'Planned arthritis'. Candidate lists 'Thumb pain' and 'Trapeziometacarpal joint abnormality', which do not match the stated diagnosis."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes steroid injection, discussion of procedure/post-op, and 8-week follow-up. Misses explicit mention of the 'temporary nature' counseling present in benchmark."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note correctly identifies the patient, key exam findings, imaging result, and largely matches the plan. It misses part of the chief complaint, omits several HPI details from the benchmark, and the assessment does not reflect the benchmark diagnosis of planned arthritis. Overall, accurate on exam and imaging, but weaker on chief complaint completeness, HPI richness, and assessment accuracy."
+}

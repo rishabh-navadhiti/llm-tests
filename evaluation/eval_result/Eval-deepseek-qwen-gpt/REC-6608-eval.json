@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "Patient name is not present in the transcript; the candidate appropriately did not invent a name. However, they left the content empty instead of returning '-' as specified, which is a minor formatting deviation."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Candidate states 'Lack of relief from previous injection,' which is explicitly supported by the transcript. The benchmark lists 'Follow up for hand pain,' which is not explicitly stated in the transcript. Meaning is reasonably preserved, but it does not match the benchmark phrasing."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately paraphrases the transcript: prior injection provided no relief and the patient wants evaluation/answers. No extraneous details added."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Key elements were altered/omitted: 'Positive Finkelstein' is missing, and 'Still a positive Grind' was changed to 'Positive finger grind test.' Wording is not verbatim and one finding is omitted."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "No imaging mentioned in transcript; benchmark shows '-'. Candidate left the content empty instead of returning '-', a minor formatting issue."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark assessment is 'Pain in hand.' Candidate lists 'No relief from previous injection' and an exam sign ('Positive finger grind test'), which are not appropriate problem statements and omit 'hand pain.'"
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures the key plan items: trial injection and 6-week follow-up. Spelling reflects transcript mispronunciation ('dig verban's'), and it omits the benchmark's non-action statement that prior injection gave no relief. Overall meaning preserved with minor omissions."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57142857142857,
+  "overall_summary": "The candidate note accurately captured the HPI and the core elements of the plan, but had shortcomings in the musculoskeletal exam (non-verbatim wording and omitted finding) and the assessment (inclusion of an exam sign and omission of 'hand pain'). Minor formatting issues were present for patient name and imaging. Overall, clinically relevant content was mostly preserved, but precision and adherence to verbatim/section conventions need improvement."
+}

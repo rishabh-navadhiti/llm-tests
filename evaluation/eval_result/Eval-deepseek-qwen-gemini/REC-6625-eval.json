@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "The candidate included 'Mr. Parviz Mikael' which is verbatim from the transcript, whereas the benchmark simplified it to 'Parviz Mikael'. This is a minor wording difference, but the meaning and factual content of the patient's name are perfectly preserved."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "The benchmark identifies 'No pain' as the chief complaint, which is explicitly stated in the transcript. The candidate provided 'Wants to know what is going on,' which is also stated but misses the primary chief complaint as identified by the benchmark. This constitutes a significant missing detail."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "The candidate's HPI ('Mr. Parviz Mikael is here for follow-up. He reports no pain and states that he wants to know what is going on.') is highly accurate and comprehensive, including all relevant information from the transcript for HPI. The benchmark is slightly more concise but the candidate's version is also perfectly accurate and provides full context from the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "The candidate included 'for patient' and 'um,' which are present in the transcript but omitted by the benchmark. While the candidate adhered more closely to a 'verbatim' instruction, the evaluation is against the benchmark. These are minor wording differences, and the core factual content remains identical."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "The candidate's imaging results ('X-rays are the same as the last time.') are an exact match to the benchmark's content."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "The candidate's assessment items ('Stiff fingers', 'Plexal ligament split') are entirely different from the benchmark's ('Right upper extremity Skin is intact.', 'No tenderness to palpation.'). While 'Stiff fingers' is a valid assessment from the transcript, 'Plexal ligament split' is a plan item and incorrectly placed in the assessment. The benchmark's items are also not fully verbatim from the transcript for an 'assessment' section. However, as the candidate's content shows major differences and includes an incorrect type of item (plan as assessment) when compared to the benchmark, it receives a low score."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "The candidate's plan is highly comprehensive and accurately captures all key elements from the transcript, including details like 'for follow-up' and 'possibly pin removal or repeat X-rays' which the benchmark either summarized less completely or omitted. The breakdown into separate points is logical and adheres well to a scribe-style summary, reflecting the full doctor's dictation better than the benchmark in some aspects. Despite minor rephrasing, the factual content and completeness are excellent."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.28571428571429,
+  "overall_summary": "The AI-generated note demonstrated strong performance in directly extracting factual content for patient name, HPI, musculoskeletal findings, imaging results, and the detailed plan, often providing more comprehensive and accurate details from the transcript than the benchmark. However, it significantly underperformed in the Chief Complaint by missing a key element and in the Assessment field, where its content was completely different from the benchmark and included an item that was a plan rather than an assessment."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match with benchmark: 'Kathy Smith' is correctly extracted from the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Candidate lists 'increasing pain and deformity in DIP and trapeziometacarpal joints,' which pertains to a different patient. Benchmark chief complaints are 'Swelling and pain in hand' and 'Follow up for hand surgery' for Kathy Smith."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "Content describes another patient's DIP arthritis and includes exam-style details. Benchmark HPI for Kathy is follow-up, doing okay overall, persistent swelling/pain, and dissatisfaction with therapy wanting to return to Jack."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Candidate provides exam findings from a different patient (DIP deformities, trapeziometacarpal tenderness) and paraphrases rather than verbatim. Benchmark shows post-op findings: incisions well healed, minimal scar, A1 pulley incision tenderness, no tendon desquamation at dorsal hand, full fist, moderate swelling (left), excellent ROM, pain with motion."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "Benchmark indicates no imaging for Kathy ('-'). Candidate includes hand X-ray findings from another case, which is incorrect for this visit."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "Candidate lists 'bilateral thumb CMC arthritis,' 'DIP arthritis,' and 'peripheral neuropathy,' which are from other patients. Benchmark assessment for Kathy is 'Status post hand surgery,' 'Swelling,' and 'Pain.'"
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Candidate mixes plans from multiple patients (steroid injections, DIP fusion, nerve studies, neurology consult, night splints). Only 'Continue therapy' and 'Follow-up in six weeks' match. It omits 'Return to Jack for hand therapy.'"
+    }
+  },
+  "total_score": 8,
+  "percentage": 22.86,
+  "overall_summary": "The candidate note correctly identifies the patient name but largely conflates details from multiple patients in the transcript. Chief complaint, HPI, exam, imaging, and assessment do not reflect Kathy Smith's visit. The plan contains some correct elements but is diluted by irrelevant interventions from other cases. Greater focus on patient-specific segmentation is needed."
+}

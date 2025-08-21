@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient's name is not mentioned in the transcript. The candidate correctly returned '-', adhering to its instruction for when the name is not present. The benchmark included a name not explicitly dictated, but the evaluation instructions state not to penalize for information in the benchmark not available in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "The candidate correctly identified 'wrist pain' (achiness) and 'numbness/tingling' (electric sensation). However, it missed 'limited motion' and the overall context of it being a 'follow-up' visit, which were explicitly stated in the transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The candidate captured the main symptoms (stable wrist pain, limited motion, electric sensations). However, it omitted several explicit details from the transcript such as 'life is difficult at the moment,' 'finally had her nerve studies,' and the patient's direct question about the nerve studies. The phrase 'The symptoms have been present without progression' is a good summary but not verbatim, whereas the benchmark includes more verbatim details."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The transcript only states 'Her exam is unchanged' and does not provide any specific verbatim musculoskeletal findings. Both the benchmark ('-') and the candidate ('[]') correctly reflect the absence of specific dictated findings. The formatting difference is minor and aligns with the candidate's default output for this field."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "The candidate accurately extracted the specific nerve study findings explicitly mentioned in the transcript ('no evidence of carpal tunnel syndrome' and 'possible evidence of ulnar nerve compression at Guyon's canal'). The benchmark's entry 'Nerve study results' is very general and less informative, while the candidate provides the actual results as dictated, fulfilling the purpose of the field more effectively."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "The candidate correctly identified and listed the key active problems/conditions based on the transcript: 'Wrist pain,' 'Numbness/tingling in hand,' and 'Possible ulnar nerve compression at Guyon's canal.' These points accurately reflect the patient's symptoms and the doctor's diagnostic impressions. The benchmark's initial empty content for this field is less comprehensive."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "The candidate's plan is significantly abridged and misses multiple key details from the transcript. It omitted the positive status of the wrist ('doing well,' 'continuing to gain strength,' 'advanced weightbearing' tolerated), the instruction to 'delete the carpal tunnel,' the detailed explanation of nerve study findings within the plan (no carpal tunnel, ulnar nerve compression but asymptomatic, watch this for now), and the specific disability information ('Disability, um, okay for full duty starting 9-1-2025'). The candidate only provided a very partial summary of the extensive plan dictated."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note performed well in fields where specific extraction or direct clinical interpretation was required, such as Patient Name, Musculoskeletal Verbatim, Imaging Results, and Assessment. It accurately identified and presented key information in these sections. However, the candidate struggled with the Chief Complaint and History of Present Illness, missing several minor but explicit details. Its most significant weakness was in the Plan section, where it provided a heavily abridged summary, omitting numerous important instructions and details dictated by the doctor, indicating a substantial loss of factual content."
+}

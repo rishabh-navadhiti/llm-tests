@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the benchmark and explicitly stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Identical to the benchmark: 'Left wrist pain and masses.'"
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures key elements (night pain, mass locations, right-hand dominance, Dr. Ishimori) but omits that the masses used to fluctuate and that the rheumatologist ordered X-rays and ultrasound; states masses are constant without noting prior fluctuation."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark is empty, while the candidate provides paraphrased exam findings and omits several dictated elements (e.g., negative Finkelstein, no pain with resisted thumb extension). Not verbatim per instruction and does not match the benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Factual content matches the benchmark (X-ray osteophyte at thumb MCP; ultrasound bony avulsion fragment vs osteophyte at dorsal MCP; wrist ultrasound retinacular cyst). Only minor wording differences."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes two benchmark diagnoses (left first dorsal compartment wrist cyst, left thumb MCP osteophyte) and pain, but differs from 'Bilateral hand pain' and omits other benchmark items ('Skin is intact', 'No tenderness to palpation'). Note: not penalizing for any benchmark details not clearly available in the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Includes core elements (night splints, observe masses, consider aspiration vs biopsy, 6-week follow-up) but adds unsubstantiated qualifiers ('for carpal tunnel syndrome', 'if symptoms worsen') not present in the benchmark or transcript."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note accurately captured the patient name, chief complaint, and imaging findings. The HPI was mostly correct but missed prior size fluctuation and the rheumatologist’s imaging orders. The musculoskeletal exam was not verbatim and included omissions relative to the transcript and did not match the blank benchmark field. The assessment captured key diagnoses but missed additional benchmark items. The plan matched the main actions but included unsupported qualifiers. Overall, good core accuracy with notable omissions and minor additions."
+}

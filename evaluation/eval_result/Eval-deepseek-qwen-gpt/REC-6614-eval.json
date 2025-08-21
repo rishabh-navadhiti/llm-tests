@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark name as stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Meaningfully identical to benchmark ('Left wrist pain'); minor wording ('Evaluation of') does not change the content."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures all key HPI details and chronology; minor omission of the location nuance ('front/anterior' of the wrist) from imaging context."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark is '-', while candidate provides detailed exam text; this is a major mismatch with the ground truth for this field."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Fully matches benchmark imaging findings (thumb MCP osteophyte; bony avulsion fragment vs osteophyte; retinacular cyst superficial to first dorsal compartment)."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes core problems (left wrist cyst, left thumb MCP osteophyte, bilateral thumb/MCP masses). Omits benchmark items 'skin intact' and 'no tenderness to palpation' (exam negatives not clearly required by transcript) and adds 'left wrist pain'; overall content closely aligns."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Contains the main plan elements (observation, aspiration vs biopsy, 6-week follow-up). However, incorrectly attributes night splints to carpal tunnel rather than 'regarding the masses' per benchmark."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note closely matches the benchmark for name, chief complaint, HPI, and imaging. Assessment aligns with the main conditions but includes a minor extra and misses benchmark exam negatives. The plan mostly matches but misattributes the indication for night splints. Musculoskeletal field diverges from the benchmark, which is blank in the ground truth."
+}

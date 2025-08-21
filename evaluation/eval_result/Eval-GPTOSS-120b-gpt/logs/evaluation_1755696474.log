@@ -1,0 +1,84 @@
+2025-08-20 18:57:54,075 - INFO - Logging initialized. Log file: /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/logs/evaluation_1755696474.log
+2025-08-20 18:57:54,075 - INFO - Starting medical notes evaluation
+2025-08-20 18:57:54,076 - INFO - Configuration:
+2025-08-20 18:57:54,076 - INFO -   - Benchmark directory: benchmark
+2025-08-20 18:57:54,076 - INFO -   - Candidate directory: ../Output/Gpt-oss-120b
+2025-08-20 18:57:54,076 - INFO -   - Transcript directory: ../transcripts/Spencer
+2025-08-20 18:57:54,076 - INFO -   - Output directory: /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt
+2025-08-20 18:57:54,076 - INFO -   - Model: gpt-5
+2025-08-20 18:57:54,076 - INFO - Created output directory: /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt
+2025-08-20 18:57:54,149 - INFO - OpenAI model 'gpt-5' initialized successfully
+2025-08-20 18:57:54,149 - INFO - Loading evaluation prompt from: eval_prompt.txt
+2025-08-20 18:57:54,149 - INFO - Loaded prompt (2738 characters)
+2025-08-20 18:57:54,150 - INFO - Found 20 benchmark files to process
+2025-08-20 18:57:54,150 - INFO - Processing 1/20: REC-6627
+2025-08-20 18:59:14,416 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 18:59:14,433 - INFO - ✅ Successfully evaluated REC-6627 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6627-eval.json
+2025-08-20 18:59:14,433 - INFO - Processing 2/20: REC-6607
+2025-08-20 19:00:41,537 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:00:41,544 - INFO - ✅ Successfully evaluated REC-6607 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6607-eval.json
+2025-08-20 19:00:41,544 - INFO - Processing 3/20: REC-6610
+2025-08-20 19:02:06,257 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:02:06,259 - INFO - ✅ Successfully evaluated REC-6610 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6610-eval.json
+2025-08-20 19:02:06,259 - INFO - Processing 4/20: REC-6682
+2025-08-20 19:02:54,416 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:02:54,418 - INFO - ✅ Successfully evaluated REC-6682 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6682-eval.json
+2025-08-20 19:02:54,418 - INFO - Processing 5/20: REC-6641
+2025-08-20 19:03:56,675 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:03:56,678 - INFO - ✅ Successfully evaluated REC-6641 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6641-eval.json
+2025-08-20 19:03:56,678 - INFO - Processing 6/20: REC-6639
+2025-08-20 19:04:57,281 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:04:57,286 - INFO - ✅ Successfully evaluated REC-6639 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6639-eval.json
+2025-08-20 19:04:57,286 - INFO - Processing 7/20: REC-6642
+2025-08-20 19:06:20,968 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:06:20,989 - INFO - ✅ Successfully evaluated REC-6642 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6642-eval.json
+2025-08-20 19:06:20,989 - INFO - Processing 8/20: REC-6635
+2025-08-20 19:07:15,378 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:07:15,381 - INFO - ✅ Successfully evaluated REC-6635 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6635-eval.json
+2025-08-20 19:07:15,381 - INFO - Processing 9/20: REC-6622
+2025-08-20 19:08:17,935 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:08:17,938 - INFO - ✅ Successfully evaluated REC-6622 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6622-eval.json
+2025-08-20 19:08:17,938 - INFO - Processing 10/20: REC-6614
+2025-08-20 19:09:40,069 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:09:40,071 - INFO - ✅ Successfully evaluated REC-6614 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6614-eval.json
+2025-08-20 19:09:40,071 - INFO - Processing 11/20: REC-6602
+2025-08-20 19:10:56,423 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:10:56,481 - INFO - ✅ Successfully evaluated REC-6602 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6602-eval.json
+2025-08-20 19:10:56,481 - INFO - Processing 12/20: REC-6625
+2025-08-20 19:12:01,815 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:12:01,819 - INFO - ✅ Successfully evaluated REC-6625 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6625-eval.json
+2025-08-20 19:12:01,819 - INFO - Processing 13/20: REC-6605
+2025-08-20 19:13:10,563 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:13:10,565 - INFO - ✅ Successfully evaluated REC-6605 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6605-eval.json
+2025-08-20 19:13:10,565 - INFO - Processing 14/20: REC-6613
+2025-08-20 19:14:49,178 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:14:49,180 - INFO - ✅ Successfully evaluated REC-6613 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6613-eval.json
+2025-08-20 19:14:49,180 - INFO - Processing 15/20: REC-6644
+2025-08-20 19:15:34,318 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:15:34,325 - INFO - ✅ Successfully evaluated REC-6644 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6644-eval.json
+2025-08-20 19:15:34,325 - INFO - Processing 16/20: REC-6645
+2025-08-20 19:17:12,013 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:17:12,015 - INFO - ✅ Successfully evaluated REC-6645 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6645-eval.json
+2025-08-20 19:17:12,015 - INFO - Processing 17/20: REC-6612
+2025-08-20 19:18:50,018 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:18:50,019 - INFO - ✅ Successfully evaluated REC-6612 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6612-eval.json
+2025-08-20 19:18:50,020 - INFO - Processing 18/20: REC-6604
+2025-08-20 19:20:15,395 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:20:15,396 - INFO - ✅ Successfully evaluated REC-6604 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6604-eval.json
+2025-08-20 19:20:15,397 - INFO - Processing 19/20: REC-6608
+2025-08-20 19:21:17,266 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:21:17,269 - INFO - ✅ Successfully evaluated REC-6608 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6608-eval.json
+2025-08-20 19:21:17,269 - INFO - Processing 20/20: REC-6632
+2025-08-20 19:22:33,671 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-20 19:22:33,674 - INFO - ✅ Successfully evaluated REC-6632 → /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-GPTOSS-120b-gpt/REC-6632-eval.json
+2025-08-20 19:22:33,674 - INFO - ==================================================
+2025-08-20 19:22:33,675 - INFO - EVALUATION COMPLETE
+2025-08-20 19:22:33,675 - INFO - ==================================================
+2025-08-20 19:22:33,675 - INFO - Total files processed: 20
+2025-08-20 19:22:33,675 - INFO - Successful evaluations: 20
+2025-08-20 19:22:33,675 - INFO - Failed evaluations: 0
+2025-08-20 19:22:33,675 - INFO - Missing candidates: 0
+2025-08-20 19:22:33,675 - INFO - Missing transcripts: 0
+2025-08-20 19:22:33,675 - INFO - Success rate: 100.0%
+2025-08-20 19:22:33,675 - INFO - Total time: 1479.60 seconds
+2025-08-20 19:22:33,675 - INFO - Average time per file: 73.98 seconds

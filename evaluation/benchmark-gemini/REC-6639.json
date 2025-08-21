@@ -1,0 +1,87 @@
+{
+    "rec_id": 6639,
+    "notes": [
+        {
+            "content": [
+                "Chaz Thomas"
+            ],
+            "key": "PATIENT_NAME",
+            "matches": [
+                []
+            ],
+            "title": "Patient Name"
+        },
+        {
+            "content": [
+                "Follow-up"
+            ],
+            "key": "CHIEF_COMPLAINT",
+            "matches": [
+                []
+            ],
+            "title": "Chief Complaint"
+        },
+        {
+            "content": [
+                "He took his splint off yesterday because he got somebody else's blood on it. He wants to know what he can do and how things look."
+            ],
+            "key": "HPI_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.5784228444099426,
+                        "time": "1.62"
+                    }
+                ]
+            ],
+            "title": "History of Present Illness"
+        },
+        {
+            "content": [
+                "Laceration, clean dry and intact with sutures. Excellent, thumbs up but some pain, limited flexion."
+            ],
+            "key": "MUSCULOSKELETAL_VERBATIM",
+            "matches": [
+                []
+            ],
+            "title": "Musculoskeletal"
+        },
+        {
+            "content": [
+                "-"
+            ],
+            "key": "IMAGING_GEORGE",
+            "matches": [
+                []
+            ],
+            "title": "Imaging"
+        },
+        {
+            "content": [
+                "Right upper extremity Skin is intact.",
+                "No tenderness to palpation."
+            ],
+            "key": "ASSESSMENT_SPENCER",
+            "matches": [
+                [],
+                []
+            ],
+            "title": "Assessment"
+        },
+        {
+            "content": [
+                "Transition to removable splint. Initiate hand therapy. Return to clinic in 2 weeks."
+            ],
+            "key": "PLAN_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.6615955233573914,
+                        "time": "1.62"
+                    }
+                ]
+            ],
+            "title": "Plan"
+        }
+    ]
+}

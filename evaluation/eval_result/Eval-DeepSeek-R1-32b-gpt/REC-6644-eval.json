@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "Benchmark identifies the patient as 'Cathy Smith' (explicitly stated in the transcript), while the candidate provides no name. This is a complete omission of the correct patient name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Benchmark: 'Follow up hand pain and swelling.' Candidate: 'Pain and swelling in hands.' Meaning is largely preserved, but the 'follow-up' context and singular vs. plural hand are missing/minor wording differences."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark HPI for Cathy Smith notes she is doing okay overall, still has some swelling and pain, and is not thrilled with therapy, wanting to return to Jack. The candidate instead describes another patient's DIP/CMC arthritis and includes exam findings, which diverges substantially from the benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark MSK: incisions well healed, minimal scar, A1 pulley incision tenderness, no dorsal incision tenderness, full fist, moderate soft tissue swelling (left), excellent ROM, some pain with motion. Candidate lists DIP deformities, trapeziometacarpal tenderness, shoulder sign, etc., which pertain to a different patient and are not the verbatim findings for Cathy Smith."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "Benchmark shows no imaging reported for Cathy Smith ('-'). Candidate reports bilateral hand X-ray findings comparing to 2002 and trapeziometacarpal joint narrowing, which belong to a different case. Completely incorrect for this patient."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark assessment lists symptom-based problems: 'Hand swelling' and 'Hand pain.' Candidate lists 'Bilateral thumb CMC arthritis,' 'DIP arthritis,' and 'Moderate joint space narrowing,' which are from a different patient and do not match the benchmark problems."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Benchmark plan: continue therapy, transition care with Jack, and return in 6 weeks. Candidate includes trial of steroid injections, DIP fusion, and splints (from another case) but does match the 'Return to clinic in six weeks.' Partial overlap only on follow-up timing."
+    }
+  },
+  "total_score": 9,
+  "percentage": 25.71,
+  "overall_summary": "The candidate note appears to conflate multiple patients from the transcript. Aside from a generally similar chief complaint and matching the 6-week follow-up, most sections (HPI, MSK, imaging, assessment, and plan) pull details from other patients rather than Cathy Smith. The HPI includes exam findings and misses the patient’s therapy-related concerns and request to return to Jack. Overall, substantial mismatches with the benchmark’s content."
+}

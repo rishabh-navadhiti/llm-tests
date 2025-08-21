@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "Name correct but includes the honorific 'Mr.' whereas the benchmark lists just 'Parviz Mikael'; minor formatting difference."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate chose 'Wants to know what is going on' while the benchmark uses 'No pain.' Both are stated in the transcript, but it misses the benchmark’s selected complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Matches benchmark content and adds 'here for follow-up' directly from the transcript without adding forbidden elements."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Reflects the dictated exam content accurately; minor filler words present but factual content aligns with the benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'X-rays are the same as the last time.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Benchmark lists 'No tenderness to palpation' and 'Right upper extremity Skin is intact.' The candidate instead lists 'Stiff fingers' and a plan item ('Plexal ligament split'). Note: 'Skin is intact' is not stated in the transcript and is not penalized, but omission of 'no tenderness' and inclusion of a treatment term reduce accuracy."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Captures all plan elements from the benchmark (continue plexal ligament split, review X-rays, likely pin removal or repeat X-rays, transition to phenylplastic splint, referral to Eliza Cherian, and RTC in 10 days) with only minor wording differences."
+    }
+  },
+  "total_score": 29,
+  "percentage": 82.86,
+  "overall_summary": "The candidate note closely matches the benchmark in HPI, MSK exam, imaging, and plan. Minor formatting differences in the patient name and a different selection for chief complaint lowered those sections slightly. The main discrepancy is in the assessment, where the candidate omitted the benchmark’s problems and added a treatment item, reducing alignment. Overall, strong performance with most clinically relevant content correctly captured."
+}

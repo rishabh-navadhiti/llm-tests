@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "Benchmark lists 'Linda Omansky', but the transcript does not mention a patient name. The candidate left the field effectively blank instead of returning '-', which is a minor formatting lapse, but we do not penalize for missing name not present in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Core complaint of right-hand numbness/tingling matches the benchmark. Candidate added burned-thumb/difficulty feeling details, which go beyond the benchmark's concise chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately captures lymphoma with recent chemotherapy, increased right-hand numbness/tingling, burned right thumb causing difficulty with tasks, and trying to hold the phone less. Content aligns with the benchmark without adding unsupported details."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Not verbatim and omits details. Candidate changes phrasing (singular vs plural), omits 'A1 pulley', and renders '.PCTS' as 'PCGS are normal.' Multiple deviations from the benchmark’s exact wording."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Benchmark states 'XR - Deferred.' Candidate reports 'X-ray clear,' which contradicts the benchmark rather than reflecting it."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Benchmark assessment lists only 'Trigger finger.' Candidate adds numbness/tingling, burned thumb, and 'carpal tunnel syndrome' (not stated as an assessment in the benchmark), introducing extra items and a probable inference."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan: trigger finger injection, recommend night splints, low threshold for nerve studies, and return in 2 months. Minor wording differences but identical content."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "The candidate captured the HPI and plan well, and the chief complaint was mostly accurate though slightly expanded. Major issues were non-verbatim musculoskeletal exam documentation, a contradictory imaging result relative to the benchmark, and an assessment that added problems not listed in the benchmark. Patient name was left blank rather than '-', but the transcript did not provide a name."
+}

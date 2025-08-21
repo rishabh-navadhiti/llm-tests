@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to transcript: 'Kathy Smith' is explicitly stated."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Benchmark lists 'Swelling and pain in hand' and 'Follow up for hand surgery'. Candidate gives 'Pain and deformity of the DIP joints,' which pertains to a different patient in the transcript and not this follow-up visit."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Candidate mixes details from another patient (DIP deformity, trapeziometacarpal pain) and includes objective/imaging info contrary to instructions. It only partially aligns with the benchmark by noting dissatisfaction with therapy; it omits 'doing okay overall' and the follow-up context."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Not verbatim and conflates exams from different patients. Contains transcription errors ('A1 pony' vs 'A1 pulley', 'salvation' vs 'desquamation') and adds unrelated findings (DIP deformities, TMC tenderness) not in the benchmark for this patient."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "Benchmark indicates no imaging for this visit ('-'). Candidate includes X-ray findings from another patient, which is incorrect for this encounter."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Candidate includes 'DIP joint arthritis' and 'Trapeziometacarpal arthritis' (from another patient) and misses 'Status post hand surgery'. Only overlaps with 'hand pain' and 'hand swelling'."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Includes correct elements 'continue therapy' and 'return to clinic in six weeks,' but adds unrelated plans (steroid injections, splints, DIP fusion) for a different patient and omits 'Return to Jack'."
+    }
+  },
+  "total_score": 13,
+  "percentage": 37.14,
+  "overall_summary": "The candidate note correctly identifies the patient name but otherwise mixes content from multiple patients in the transcript. Chief complaint, HPI, exam, imaging, assessment, and plan include inappropriate details from another case and deviate from the benchmark. Only the therapy continuation and 6-week follow-up align; most other sections are inaccurate or non-verbatim."
+}

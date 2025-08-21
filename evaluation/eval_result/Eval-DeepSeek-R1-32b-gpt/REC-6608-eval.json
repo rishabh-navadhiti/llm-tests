@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "Benchmark lists a name, but the transcript does not mention it. Candidate left it blank (should have used '-'); minor formatting issue but no factual error given transcript content."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Benchmark: 'Follow up for hand pain.' This is not stated in the transcript. Candidate left it empty (should have used '-'); meaning not contradicted, minor formatting deviation."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Benchmark HPI: prior injection gave no relief and patient wants to know what's going on. Candidate includes exam findings (hypopigmentation, tenderness, tests) which should not be in HPI and omits the concern statement; also misstates 'Finkelstein' as 'finger stain.'"
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Core findings align (CMC hypopigmentation, first dorsal compartment tenderness, positive grind), but 'Finkelstein' is misrendered as 'finger stain' and 'still'/'to palpation' details are missing; not verbatim."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "No imaging mentioned in transcript; benchmark shows '-'. Candidate left it empty rather than '-', preserving meaning with minor formatting issue."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark assessment is 'Pain in hand.' Candidate lists persistence after injection and exam findings (incl. incorrect 'finger stain'), omitting the actual problem; major mismatch."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Benchmark: trial of de Quervain's injection and RTC in 6 weeks; candidate changed to 'dexamethasone injection' (incorrect) and omitted the note that prior injection offered no relief, though RTC timing is correct."
+    }
+  },
+  "total_score": 20,
+  "percentage": 57.14,
+  "overall_summary": "The candidate captured some elements (exam findings broadly and return-to-clinic timing) but made significant errors: exam details were included in HPI, Finkelstein was repeatedly miswritten as 'finger stain,' the assessment omitted 'hand pain' and added exam items, and the plan changed the intended 'de Quervain's injection' to a specific medication. Missing name and chief complaint were acceptable given the transcript but formatting defaults were not followed."
+}

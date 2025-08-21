@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "Matches the benchmark name but includes the honorific 'Mr.'; minor wording difference with identical identity."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Conveys 'No pain' exactly as in the benchmark; punctuation difference only."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Contains the two benchmark HPI facts (no pain; wants to know what is going on) but adds exam/imaging details not present in the benchmark HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Captures the same exam findings as the benchmark (clean pin sites, no significant tenderness, stable alignment, stiff fingers); only minor filler words and formatting differences."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Semantically identical to benchmark: X-rays unchanged from last time."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Major mismatch: benchmark lists 'Skin is intact' and 'No tenderness to palpation,' whereas candidate lists different items ('Follow-up visit,' 'No pain,' 'Stiff fingers,' 'Parthenonic carpal stable alignment')."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Includes continuation of splint/split, X-ray review, 10-day follow-up, and transition to phenylplastic splint, but omits the benchmark's 'Referral to Eliza Cherian.' Adds 'likely pin removal or repeat X-rays,' which is in the transcript but not in the benchmark."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note closely matches the benchmark for name, chief complaint, musculoskeletal exam, and imaging. HPI includes the correct patient-reported details but adds objective findings. The largest discrepancy is in the assessment, which does not reflect the benchmark items. The plan is mostly accurate but misses the referral to Eliza Cherian while adding extra details from the transcript."
+}

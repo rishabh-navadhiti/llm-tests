@@ -1,0 +1,45 @@
+{
+    "rec_id": 6904,
+    "transcript": [
+        {
+            "conversation": "Yes Beautiful . Jane Pollock is here today with her husband for follow-up . She says that she's doing well overall . She is um sore and stiff , but Not Too painful . She has some bruising and what's not if that's normal",
+            "speaker": "doctor",
+            "start_time": "1.159"
+        },
+        {
+            "conversation": "",
+            "speaker": "nurse",
+            "start_time": "33.299"
+        },
+        {
+            "conversation": "",
+            "speaker": "doctor",
+            "start_time": "33.61"
+        },
+        {
+            "conversation": "it's her Right , um . Upper extremity incisions can be dry and intact , uh , with sutures ,",
+            "speaker": "nurse",
+            "start_time": "34.11"
+        },
+        {
+            "conversation": "moderate ecchymosis to the palm consistent with postoperative state . There is uh the middle and ring fingers are hold in a flex position , limited fist about 4 centimeters from palm with composite selection , uh , unable to straighten fingers on the way .",
+            "speaker": "doctor",
+            "start_time": "51.159"
+        },
+        {
+            "conversation": ", And we planned",
+            "speaker": "nurse",
+            "start_time": "67.76"
+        },
+        {
+            "conversation": "to get back the soft dressing , uh , dressings and drive , returned to clinic in . 6 days it's .",
+            "speaker": "doctor",
+            "start_time": "70.209"
+        },
+        {
+            "conversation": ", returned to clinic in one week for follow-up to consider suture removal and initiation of that therapy .",
+            "speaker": "nurse",
+            "start_time": "79.0"
+        }
+    ]
+}

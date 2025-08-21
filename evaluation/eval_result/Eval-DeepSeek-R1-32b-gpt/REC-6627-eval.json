@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Benchmark lists a name not stated in the transcript. Candidate correctly did not fabricate a name; per instruction, do not penalize for benchmark-only info."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches benchmark complaints (bilateral hand numbness, tingling, burning pain) with equivalent wording."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately captures onset (around July 1, 2025), symptom pattern, pregnancy context, OB referral for injections, and splint use with sleep impact. Omits explicit mention of the stated diagnosis in HPI found in benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Core findings match (skin CDI without erythema/ecchymosis; decreased sensation middle fingers) but not verbatim and omits the dictated 'PCTS' noted in benchmark/transcript."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Transcript states 'X-rays deferred secondary to pregnancy,' which appears in the benchmark. Candidate provided no imaging entry."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Includes 'bilateral carpal tunnel syndrome' and adds 'decreased sensation to middle fingers,' both supported by the transcript and clinically relevant."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Includes injections today and risk/temporary nature discussion, but omits splint-related context and alters follow-up by dropping the conditional 'if symptoms persist postpartum.'"
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note captures the chief complaint and HPI well, with accurate onset, pregnancy context, and treatment history. Assessment is appropriate. Key weaknesses are omission of the imaging statement (X-rays deferred), incomplete musculoskeletal verbatim (missing 'PCTS'), and a plan that changes the conditional follow-up and omits splint context. Patient name was appropriately not invented."
+}

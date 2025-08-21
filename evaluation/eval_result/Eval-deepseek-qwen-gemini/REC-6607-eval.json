@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The patient name \"Susan Shell\" is not mentioned in the transcript. The candidate correctly returned an empty content array, which aligns with its instruction to return \"-\" if the name is not present in the transcript. The benchmark includes \"Susan Shell\" which is not derivable from the provided transcript; therefore, the candidate is not penalized for its absence."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "The candidate correctly identified \"Wrist pain\" as the chief complaint, but incorrectly included \"and interest in total wrist arthroplasty.\" While factually derived from the transcript, this adds context beyond a concise chief complaint and goes against its own instruction to avoid \"additional details or context\" for the chief complaint itself."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "The candidate provides a reasonable summary of the HPI. However, it omits several minor factual details explicitly stated in the transcript and present in the benchmark, such as the patient having \"all of her other medical conditions taken care of,\" her desire to \"know how things look\" regarding her knee, and being \"here for evaluation and treatment.\""
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "The candidate incorrectly extracted \"Bilateral wrist arthritis\" as a musculoskeletal exam finding; this is a diagnosis/condition discussed later, not a verbatim physical examination finding from the 'Exam' section. The actual relevant exam finding mentioned was \"Exam mostly unchanged, except you can delete the large, poorly defined nodule,\" which the candidate entirely missed capturing in any form."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "The candidate failed to extract the imaging result mentioned by the doctor: \"The imaging you can leave all the same,\" which correctly implies \"Imaging mostly unchanged\" as noted in the benchmark. The candidate returned an empty field, indicating no imaging results were found."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "The candidate accurately identified all three active problems from the transcript: \"Synovitis (improved)\", \"Bilateral wrist arthritis\", and \"Osteoporosis\". The addition of \"(improved)\" for synovitis is also accurate. The benchmark incorrectly omitted \"Osteoporosis\" which was clearly stated in the transcript as an active condition."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "The candidate accurately identified the core plan of a right total wrist arthroplasty. However, it significantly hallucinates \"Follow-up as needed,\" which is not mentioned anywhere in the transcript. It also misses crucial details about the rationale for proceeding with the plan (synovitis down, knee recovered), which are present in the benchmark and transcript."
+    }
+  },
+  "total_score": 19,
+  "percentage": 54.28571428571429,
+  "overall_summary": "The candidate note demonstrates variable performance across different fields. It performed excellently in `PATIENT_NAME` and `ASSESSMENT_SPENCER` by accurately reflecting or extracting content. However, it showed significant weaknesses in `MUSCULOSKELETAL_VERBATIM` and `IMAGING_RESULTS` by either misinterpreting or missing direct clinical findings. The `PLAN_SPENCER_` field included a significant hallucination, indicating a need for stricter adherence to transcript content. The `HPI_SPENCER` and `CHIEF_COMPLAINT` fields were mostly correct but lacked some minor details or included extraneous information, respectively, indicating room for improved conciseness and completeness."
+}

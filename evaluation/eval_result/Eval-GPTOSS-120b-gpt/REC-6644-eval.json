@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('Cathy Smith'); clearly stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Benchmark: 'Follow up hand pain and swelling.' Candidate: 'Increasing pain and deformity of the DIP joints,' which reflects a different patient segment. Major mismatch in content despite related body region."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark HPI focuses on doing okay overall, persistent swelling/pain, dissatisfaction with therapy, and desire to return to Jack. Candidate HPI describes DIP and thumb CMC arthritis symptoms from another patient and includes an exam-like detail (right small-finger DIP flexion). Major content differences."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark includes post-op hand findings (incisions well healed, minimal scar, A1 pulley incision tenderness, full fist, moderate swelling, excellent ROM, pain with motion). Candidate includes that segment (with minor wording) but also adds unrelated DIP deformity and trapeziometacarpal joint findings from a different patient. Multiple extraneous details reduce accuracy."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "Benchmark: '-' (no imaging for this visit). Candidate provides detailed hand X-ray findings from another patient. Completely incorrect for the benchmarked patient."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark lists 'Hand swelling' and 'Hand pain.' Candidate lists DIP arthritis, thumb CMC arthritis, DIP flexion limitation, and scar tenderness—assessments from other patient segments and not the benchmark items. Major mismatch."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Benchmark plan: continue therapy, transition care with Jack, return in 6 weeks. Candidate includes 'continue therapy' and 'return to clinic in six weeks' but adds unrelated items (steroid injections, splints not needed, consider DIP fusion, 'activity is hard') and omits 'transition care with Jack.' Multiple incorrect additions with partial overlap."
+    }
+  },
+  "total_score": 12,
+  "percentage": 34.29,
+  "overall_summary": "The candidate captured the correct patient name but otherwise mixed content from multiple patients in the transcript, leading to major mismatches in chief complaint, HPI, imaging, assessment, and plan. The musculoskeletal section partially matches but includes extraneous findings. Overall, the note shows poor alignment with the benchmarked patient’s visit."
+}

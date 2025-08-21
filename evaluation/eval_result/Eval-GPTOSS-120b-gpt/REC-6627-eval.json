@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Transcript does not state the patient's name; candidate correctly returned '-'. Benchmark includes a name not present in the transcript, which should not be penalized."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Semantic match to benchmark: bilateral hand numbness, tingling, and burning pain. Only minor capitalization differences."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Includes key elements matching the benchmark (onset ~July 1, 2025; similarity to prior pregnancy but earlier/more intense; OB referral for injections; splints with poor sleep). However, it adds non-HPI items (imaging deferral and plan to inject today), and omits job detail included in benchmark. Not penalized for right-hand dominance which is not in the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Accurately reflects verbatim exam from transcript: clean/dry/intact skin without erythema/ecchymosis; 'Got PCTS'; decreased sensation to middle fingers. Minor wording matches transcript."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Transcript explicitly states 'X-rays deferred secondary to pregnancy,' which the benchmark captures. Candidate returned '-', missing this detail."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Exact diagnostic content match: bilateral carpal tunnel syndrome."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures injections recommended, risks/temporary nature discussed, performing injections today, and follow-up in three months if symptoms persist postpartum. Misses the plan note about ongoing splint use and poor sleep included in the benchmark."
+    }
+  },
+  "total_score": 30,
+  "percentage": 85.71,
+  "overall_summary": "The candidate note closely matches the benchmark on chief complaint, assessment, and musculoskeletal exam, and mostly matches the plan. HPI covers key history but includes non-HPI items (imaging/plan) and omits employment detail. Imaging field missed the explicit 'X-rays deferred secondary to pregnancy.' Overall, solid clinical alignment with a few sectioning and completeness issues."
+}

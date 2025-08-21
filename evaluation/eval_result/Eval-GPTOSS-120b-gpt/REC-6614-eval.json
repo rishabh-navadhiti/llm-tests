@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the benchmark name as stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches 'Left wrist pain'; only capitalization differs, which is inconsequential."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Fully aligns with the benchmark HPI: right-hand dominance, occupation, left wrist pain worse than masses waking her at night, prior care by Dr. Ishimori, diagnoses listed, masses previously fluctuated now constant, and rheumatology imaging. No extra or missing elements."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark shows no content ('-'), whereas the candidate provides a full exam excerpt. Although the content reflects the transcript, it does not match the benchmark’s empty field."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "All imaging findings match the benchmark: osteophyte at thumb MCP on X-ray, ultrasound showing bony avulsion fragment versus osteophyte at dorsal thumb MCP, and wrist ultrasound showing a retinacular cyst superficial to the first dorsal compartment sheath."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Includes some correct problems (left first dorsal compartment wrist cyst, left thumb MCP osteophyte) but omits 'bilateral thumb and MCP joint masses' present in the benchmark and adds items not in the benchmark (retinacular cyst and definitive 'bony avulsion fragment'). Also adds 'left wrist pain,' which is not listed in the benchmark assessment."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Includes night splints, observation, and 6-week follow-up, but misses 'aspiration versus biopsy of the wrist mass' from the benchmark and adds 'plan carpal tunnel,' which is not in the benchmark plan."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note accurately captures the patient name, chief complaint, HPI, and imaging findings. However, it diverges from the benchmark in the musculoskeletal (benchmark had no content), assessment (omits bilateral masses and adds non-benchmark items), and plan (omits aspiration/biopsy and adds carpal tunnel). Overall, strong on history and imaging but weaker alignment in assessment and plan."
+}

@@ -1,0 +1,263 @@
+{
+    "rec_id": 6635,
+    "notes": [
+        {
+            "content": [
+                "Jedediah Voltz"
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": false,
+                        "generic": true,
+                        "missingContent": false,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "-"
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T22:34:00.796Z",
+                    "to": [
+                        "Jedediah Voltz"
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "PATIENT_NAME",
+            "matches": [
+                []
+            ],
+            "title": "Patient Name"
+        },
+        {
+            "content": [
+                "Index finger pain and stiffness"
+            ],
+            "key": "CHIEF_COMPLAINT",
+            "matches": [
+                [
+                    {
+                        "score": 0.6362811923027039,
+                        "time": "44.2"
+                    }
+                ]
+            ],
+            "title": "Chief Complaint"
+        },
+        {
+            "content": [
+                "left-hand dominant artist who does miniatures for stop-motion films",
+                "",
+                "Status post chisel versus index finger",
+                "Date of injury:  7/16/25",
+                "",
+                "Dorsal index finger proximal interphalangeal laceration",
+                "",
+                "8.6.2025",
+                "He presents today for evaluation of his index finger pain and stiffness that began after he lacerated his finger on 7/16/25 while working with a chisel.  He states he hit a hard piece of wood and it slipped and cut his finger.  He went to urgent care where the wound was irrigated and repaired.  The sutures removed about 14 days later and when they took the sutures out, the wound opened up.  Now, he is here for evaluation of a stiff finger.",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": true,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "He is a left-hand dominant artist who does miniatures for stop-motion films. He presents for evaluation of his left index finger pain and stiffness that began after he lacerated his finger on 7-16-25 while working with a chisel. He stated he hit a hard piece of wood, and it slipped and cut his finger.  He went to urgent care, where the wound was irrigated and repaired. The sutures were removed about 14 days later, and when they took the stitches out, the wound opened up. Now he is here for evaluation of a stiff finger."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T22:34:27.207Z",
+                    "to": [
+                        "left-hand dominant artist who does miniatures for stop-motion films",
+                        "",
+                        "Status post chisel versus index finger",
+                        "Date of injury:  7/16/25",
+                        "",
+                        "Dorsal index finger proximal interphalangeal laceration",
+                        "",
+                        "8.6.2025",
+                        "He presents today for evaluation of his index finger pain and stiffness that began after he lacerated his finger on 7/16/25 while working with a chisel.  He states he hit a hard piece of wood and it slipped and cut his finger.  He went to urgent care where the wound was irrigated and repaired.  The sutures removed about 14 days later and when they took the sutures out, the wound opened up.  Now, he is here for evaluation of a stiff finger.",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "HPI_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.7353779077529907,
+                        "time": "0.079"
+                    },
+                    {
+                        "score": 0.6187421083450317,
+                        "time": "44.2"
+                    }
+                ]
+            ],
+            "title": "History of Present Illness"
+        },
+        {
+            "content": [
+                "Left upper extremity",
+                "Laceration well-healing without sutures",
+                "Very stiff index finger proximal interphalangeal joint",
+                "Able to flex only about 10 degrees actively at this time",
+                "Moderate soft tissue swelling",
+                "No specific tenderness to palpation",
+                "Excellent range of motion of the remaining digits",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": false,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "Left upper extremity: Laceration, well-healing, without sutures. Very stiff index finger PIP, able to flex only about 10 degrees actively at this time. Moderate soft tissue swelling. No tenderness to palpation. Excellent range of motion of the remaining digits."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T22:34:52.419Z",
+                    "to": [
+                        "Left upper extremity",
+                        "Laceration well-healing without sutures",
+                        "Very stiff index finger proximal interphalangeal joint",
+                        "Able to flex only about 10 degrees actively at this time",
+                        "Moderate soft tissue swelling",
+                        "No specific tenderness to palpation",
+                        "Excellent range of motion of the remaining digits",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "MUSCULOSKELETAL_VERBATIM",
+            "matches": [
+                [
+                    {
+                        "score": 0.7068055272102356,
+                        "time": "44.2"
+                    }
+                ]
+            ],
+            "title": "Musculoskeletal"
+        },
+        {
+            "content": [
+                "X-rays are normal."
+            ],
+            "key": "IMAGING_GEORGE",
+            "matches": [
+                [
+                    {
+                        "score": 0.7508934736251831,
+                        "time": "105.459"
+                    }
+                ]
+            ],
+            "title": "Imaging"
+        },
+        {
+            "content": [
+                "Laceration of the left index finger",
+                "Stiff left index finger"
+            ],
+            "key": "ASSESSMENT_SPENCER",
+            "matches": [
+                [
+                    {
+                        "score": 0.6190918684005737,
+                        "time": "29.559"
+                    },
+                    {
+                        "score": 0.7135008573532104,
+                        "time": "44.2"
+                    }
+                ],
+                [
+                    {
+                        "score": 0.503139317035675,
+                        "time": "0.079"
+                    },
+                    {
+                        "score": 0.6484702825546265,
+                        "time": "44.2"
+                    }
+                ]
+            ],
+            "title": "Assessment"
+        },
+        {
+            "content": [
+                "Plan proximal interphalangeal",
+                "Recommend hand therapy",
+                "Return to clinic in 4 weeks for followup with range of motion check",
+                ""
+            ],
+            "history": [
+                {
+                    "comment": "",
+                    "correctionType": {
+                        "doctorSpecific": true,
+                        "generic": false,
+                        "missingContent": false,
+                        "notInTranscription": false
+                    },
+                    "data": [
+                        "Return to clinic in 4 weeks.",
+                        "Recommend hand therapy."
+                    ],
+                    "ragas": {
+                        "accuracy": 10,
+                        "aesthetics": 10,
+                        "grammar": 10,
+                        "relevance": 10,
+                        "structure": 10
+                    },
+                    "timestamp": "2025-08-06T22:35:04.883Z",
+                    "to": [
+                        "Plan proximal interphalangeal",
+                        "Recommend hand therapy",
+                        "Return to clinic in 4 weeks for followup with range of motion check",
+                        ""
+                    ],
+                    "version": 1
+                }
+            ],
+            "key": "PLAN_SPENCER",
+            "matches": [
+                [],
+                []
+            ],
+            "title": "Plan"
+        }
+    ]
+}

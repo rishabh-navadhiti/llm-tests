@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "The candidate note correctly identifies that the patient's name is not explicitly mentioned in the transcript and returns '-' as instructed, perfectly matching the benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "The candidate note states 'Evaluation of left small finger', which is a reason for visit, not the primary chief complaint. The transcript clearly indicates the patient 'first noticed locking and catching', which is the actual chief complaint and correctly captured in the benchmark. The candidate missed this key symptom."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "The candidate note accurately summarizes the HPI details from the transcript (right-hand dominant designer, locking/catching 2 years ago, delayed treatment due to previous surgeries, now seeking evaluation). It correctly avoids inferring details (like symptom impact on job) that were not explicitly stated in the transcript, which the benchmark included. This demonstrates strong adherence to instructions."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "The candidate note failed on the 'verbatim' instruction for this section. It incorrectly interprets 'at the small finger aim of fluid is nodule that is triggering that excellent range of motion overall' as 'A small nodule is present at the metacarpophalangeal joint, triggering excellent range of motion'. This modifies the doctor's dictation, changes 'aim of fluid' to an anatomical location not explicitly stated, and misinterprets 'triggering' and 'excellent range of motion' as a combined observation, whereas they are distinct in the transcript. The benchmark correctly parses these details."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "The candidate note states 'X-rays normal for the finger', which is very close to the transcript's 'X-rays are normal for reduced the finger' (likely 'of the finger'). The meaning is preserved, and the wording is nearly verbatim, leading to a strong score despite a minor difference from the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "The candidate correctly identifies 'Trigger finger (left small finger)'. However, it incorrectly includes 'Status post trigger finger surgery (middle finger)'. The instructions state to 'Only include 'status post' conditions if they describe an ongoing issue'. The transcript explicitly mentions 'well-healed trigger finger incisions to the middle finger', implying it's not an ongoing issue relevant to the current assessment, making its inclusion incorrect based on the rubric."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "The candidate note accurately extracts the plan relevant to the first patient ('Planned trigger finger surgery for the left small finger') based on the transcript's 'plan will be, uh, planned trigger'. Crucially, it does not include follow-up information or other details that were stated for the *second* patient in the transcript but not the first, unlike the benchmark note which appears to hallucinate a 2-week follow-up for the first patient. This demonstrates excellent adherence to scope."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The AI-generated note demonstrated a good overall understanding of extracting clinical information, particularly excelling in fields requiring direct extraction and contextual relevance while avoiding hallucination from other patient data in the transcript. This was evident in the HPI, Imaging Results, and Plan sections, where it adhered well to the given instructions. However, the note struggled with precision in the Chief Complaint by being too generic, and most notably in the Musculoskeletal Verbatim section, where it failed to adhere to the strict 'verbatim' instruction, introducing inaccuracies and misinterpretations. The Assessment section also included irrelevant historical information despite clear instructions. Improving verbatim extraction and adhering to specificity guidelines would further enhance its quality."
+}

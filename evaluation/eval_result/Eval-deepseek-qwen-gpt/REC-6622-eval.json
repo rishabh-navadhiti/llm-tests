@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "Name matches but candidate included the honorific 'Mr.', while the benchmark lists just 'Kevin Clancy'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Left ring finger trigger finger'."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures the condition accurately and adds injection scheduling details from the transcript; minor deviation from the benchmark’s succinct phrasing."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Benchmark has no MSK exam data; candidate incorrectly listed 'Plantar tendonitis' (a diagnosis, not a verbatim MSK exam finding)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging results for this patient are in the transcript; candidate correctly returned '-'. (The 'shuttered vein' note pertains to a different patient.)"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes both problems but 'Trigger finger' lacks the benchmark’s specificity (left ring finger). 'Plantar tendonitis' matches."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Included HEP and low threshold for therapy, but omitted the trigger finger injection mentioned in the transcript. Not penalized for missing 'Return to clinic in 2 weeks' since it is not in the transcript."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "The candidate captured the chief complaint and much of the HPI accurately and handled imaging appropriately. However, it misused the Musculoskeletal field, underspecified the assessment by omitting laterality/digit, and notably missed the injection component of the plan."
+}

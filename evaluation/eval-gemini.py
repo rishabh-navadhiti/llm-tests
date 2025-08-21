@@ -3,22 +3,23 @@ import json
 import logging
 import time
 from typing import Dict, Any, Optional
-from openai import OpenAI
+import google.generativeai as genai
+
 # -------------------------------
 # CONFIG
 # -------------------------------
 PROMPT_PATH = "eval_prompt.txt"
 BENCHMARK_DIR = "benchmark"
-CANDIDATE_DIR = "../Output/DeepSeek-R1-32b-reasoning"
+CANDIDATE_DIR = "../Output/Deepseek-qwen32b-fp8-updatedTemp"
 TRANSCRIPT_DIR = "../transcripts/Spencer"
-OUTPUT_DIR = "/Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-DeepSeek-R1-32b-gpt"
+OUTPUT_DIR = "/Users/rish/Development/runpod dev/llm-tests/evaluation/eval_result/Eval-deepseek-qwen-gemini"
 # PROMPT_PATH = "/Users/rish/Development/runpod dev/llm-tests/evaluation/eval_prompt.txt"
 # BENCHMARK_DIR = "/Users/rish/Development/runpod dev/llm-tests/evaluation/testiing/bnch"
 # CANDIDATE_DIR = "/Users/rish/Development/runpod dev/llm-tests/evaluation/testiing/op"
 # TRANSCRIPT_DIR = "/Users/rish/Development/runpod dev/llm-tests/transcripts/Spencer"
 # OUTPUT_DIR = "/Users/rish/Development/runpod dev/llm-tests/evaluation/testiing/eval"
 
-MODEL_NAME = "gpt-5"
+MODEL_NAME = "gemini-2.5-flash"
 
 # Logging configuration
 LOG_LEVEL = logging.INFO
@@ -50,22 +51,22 @@ def setup_logging():
     return logger
 
 # -------------------------------
-# SETUP OPENAI
+# SETUP GEMINI
 # -------------------------------
-def setup_openai(logger: logging.Logger):
-    """Setup OpenAI client with error handling."""
+def setup_gemini(logger: logging.Logger):
+    """Setup Gemini API with error handling."""
     try:
-        api_key = os.environ.get("OPENAI_API_KEY")
+        api_key = os.environ.get("GEMINI_API_KEY")
         if not api_key:
-            raise ValueError("OPENAI_API_KEY environment variable not set")
+            raise ValueError("GEMINI_API_KEY environment variable not set")
         
-        client = OpenAI(api_key=api_key)
-        logger.info(f"OpenAI model '{MODEL_NAME}' initialized successfully")
-        return client
+        genai.configure(api_key=api_key)
+        model = genai.GenerativeModel(MODEL_NAME)
+        logger.info(f"Gemini model '{MODEL_NAME}' initialized successfully")
+        return model
     except Exception as e:
-        logger.error(f"Failed to setup OpenAI: {e}")
+        logger.error(f"Failed to setup Gemini: {e}")
         raise
-
 
 # -------------------------------
 # HELPER FUNCTIONS
@@ -112,7 +113,9 @@ def find_candidate_file(record_id: str, logger: logging.Logger) -> Optional[str]
     """Find candidate file with multiple naming options."""
     candidate_name_options = [
         f"{record_id}-output.processed.json",
-        # f"{record_id}-output.json",
+        f"{record_id}-output.json",
+        f"{record_id}.processed.json",
+        f"{record_id}.json",
     ]
     
     logger.debug(f"Searching for candidate file for record_id: {record_id}")
@@ -158,32 +161,25 @@ def validate_json_response(response_text: str, logger: logging.Logger) -> Dict[s
         logger.error(f"Raw response: {response_text[:500]}...")
         raise
 
-def call_openai_with_retry(client, prompt: str, logger: logging.Logger, max_retries: int = 3) -> str:
-    """Call OpenAI API with retry logic."""
+def call_gemini_with_retry(model, prompt: str, logger: logging.Logger, max_retries: int = 3) -> str:
+    """Call Gemini API with retry logic."""
     for attempt in range(max_retries):
         try:
-            logger.debug(f"Calling OpenAI API (attempt {attempt + 1}/{max_retries})")
-            response = client.chat.completions.create(
-                model=MODEL_NAME,
-                messages=[
-                    {"role": "system", "content": "You are a strict medical note evaluator. Only output valid JSON."},
-                    {"role": "user", "content": prompt}
-                ],
-            )
+            logger.debug(f"Calling Gemini API (attempt {attempt + 1}/{max_retries})")
+            response = model.generate_content(prompt)
             
-            text = response.choices[0].message.content
-            if not text:
-                raise ValueError("Empty response from OpenAI")
+            if not response.text:
+                raise ValueError("Empty response from Gemini")
             
-            logger.debug(f"Received response from OpenAI ({len(text)} chars)")
-            return text
-
+            logger.debug(f"Received response from Gemini ({len(response.text)} chars)")
+            return response.text
+            
         except Exception as e:
-            logger.warning(f"OpenAI API call failed (attempt {attempt + 1}/{max_retries}): {e}")
+            logger.warning(f"Gemini API call failed (attempt {attempt + 1}/{max_retries}): {e}")
             if attempt == max_retries - 1:
-                logger.error("All OpenAI API attempts failed for this request")
+                logger.error(f"All Gemini API attempts failed for this request")
                 raise
-            time.sleep(2 ** attempt)  # exponential backoff
+            time.sleep(2 ** attempt)  # Exponential backoff
 
 # -------------------------------
 # MAIN EVALUATION LOOP
@@ -216,9 +212,9 @@ def main():
         os.makedirs(OUTPUT_DIR, exist_ok=True)
         logger.info(f"Created output directory: {OUTPUT_DIR}")
         
-        # Setup OpenAI
-        client = setup_openai(logger)       
-
+        # Setup Gemini
+        model = setup_gemini(logger)
+        
         # Load the base evaluation prompt
         logger.info(f"Loading evaluation prompt from: {PROMPT_PATH}")
         base_prompt = load_file(PROMPT_PATH, logger)
@@ -281,8 +277,8 @@ def main():
                 full_prompt = "".join(prompt_parts)
                 logger.debug(f"Built prompt ({len(full_prompt)} characters)")
                 
-                # Call OpenAI with retry logic
-                response_text = call_openai_with_retry(client, full_prompt, logger)
+                # Call Gemini with retry logic
+                response_text = call_gemini_with_retry(model, full_prompt, logger)
                 
                 # Parse and validate response
                 eval_result = validate_json_response(response_text, logger)

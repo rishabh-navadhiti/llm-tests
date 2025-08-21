@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Precious Myles Garrett'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Includes 'left wrist pain' but omits 'and masses' present in the benchmark chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Captures all benchmark HPI facts (pain at night, two masses with locations, prior fluctuation now constant, rheumatology visit with X-ray and ultrasound) and adds only transcript-supported details (right-hand dominance, occupation). No extraneous findings."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Candidate provides a detailed verbatim exam from the transcript, whereas the benchmark field is blank. Although accurate to the transcript, it does not match the benchmark content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Fully consistent with benchmark: X-ray osteophyte at thumb MCP; ultrasound shows bony avulsion fragment vs osteophyte at dorsal MCP; wrist ultrasound shows retinacular cyst superficial to first dorsal compartment."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes left wrist pain, first dorsal compartment cyst, and left thumb MCP osteophyte, aligning with benchmark problems. Omits 'bilateral hand pain' and normal findings that appear in the benchmark; the transcript does not clearly support 'bilateral hand pain,' so no penalty for that omission."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Contains night splints, observation, aspiration/biopsy consideration, and 6-week follow-up matching the benchmark. Adds 'plan carpal tunnel' from the transcript, which the benchmark excluded; otherwise aligned."
+    }
+  },
+  "total_score": 28,
+  "percentage": 80,
+  "overall_summary": "Strong performance with exact patient name, accurate HPI, and precise imaging results. Chief complaint missed the masses component, assessment largely aligns but lacks a benchmark-only item, and plan includes an extra transcript-supported element not in the benchmark. Musculoskeletal section accurately transcribed but diverges from the benchmark’s blank field."
+}

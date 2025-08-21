@@ -1,0 +1,20 @@
+{
+    "rec_id": 6897,
+    "transcript": [
+        {
+            "conversation": "One carpal tunnel , he is here today , he says that he's doing well overall . He has not had much pain . He does have a lot of ecchymosis . He wants to know why that on exam , uh , incision . Uh , with varied sutures , um , moderate echinosis , uh ,",
+            "speaker": "doctor",
+            "start_time": "0.009"
+        },
+        {
+            "conversation": "to the break . Thank you so much .",
+            "speaker": "patient",
+            "start_time": "20.799"
+        },
+        {
+            "conversation": "to the arm and hand , um , fingers 1 centimeter from palm gently , um , it'll be planned post-op endocarpal tunnel , return to clinic in 4 weeks for um .",
+            "speaker": "doctor",
+            "start_time": "23.6"
+        }
+    ]
+}

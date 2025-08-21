@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "Matches the benchmark name but includes the honorific 'Miss'; minor wording difference with identical factual content."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Core complaint of left wrist pain matches; candidate adds mechanism ('after a trip and fall'), a minor extra detail beyond the benchmark phrasing."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Fully aligns with the benchmark: mechanism (trip and fall on 06/21/2025 leaving Groundlings), initial improvement, urgent care X-rays with no fracture and sprain diagnosis, worsening with Massachusetts humidity leading to visit."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark has '-', while candidate supplies an exam paragraph and also modifies wording (e.g., 'hematemosis' to 'hematoma', removes filler). Major deviation from benchmark content and from verbatim requirement."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Includes current normal left wrist X-rays, but omits the urgent care X-rays showing no fracture that are present in the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes both key problems ('Left ECU tendonitis', 'Left ulnar-sided wrist pain') matching the benchmark; omits normal findings the benchmark listed, which are minor omissions."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Exactly matches the benchmark plan items: hand therapy, MRI for further evaluation, and return after MRI."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note closely matches the benchmark for patient identity, chief complaint, HPI, assessment diagnoses, and plan. It misses an imaging detail (urgent care X-ray result) and diverges notably on the Musculoskeletal section by providing non-verbatim content where the benchmark had none. Overall, clinically accurate with mostly minor omissions or wording differences."
+}

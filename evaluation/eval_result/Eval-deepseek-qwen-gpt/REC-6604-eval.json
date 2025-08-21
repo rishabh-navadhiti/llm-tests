@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "Candidate lists 'Nicole Coffee' from the transcript, while the benchmark corrects this to 'Nicole Kaffee.' Minor spelling discrepancy; not heavily penalized as the corrected spelling is not explicit in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Meaning matches benchmark ('Left index finger pain') with only minor wording differences."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures duration, location, worsening course, prior shoulder visit, and request for injection. Omits the detail that the prior doctor recommended observation, which is present in the benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Includes most elements but differs from benchmark wording (e.g., 'tacky' vs 'intact', 'walking catching' vs benchmark 'locking and catching') and adds 'Able to give a thumbs up,' which the benchmark excluded. Multiple minor deviations from the benchmark phrasing."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Conveys normal X-rays but omits specifics in the benchmark ('three views,' 'left index finger'). Core finding is correct with missing details."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes 'left index finger pain' and trigger-related diagnosis, consistent with benchmark. Adds an exam finding ('tenderness at A1 pulley') not listed as an assessment item in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Correctly includes plan for trigger finger injection today, aligning with benchmark. Also includes imaging result within the plan, which is extra relative to the benchmark’s plan content."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14285714285715,
+  "overall_summary": "The candidate note accurately captures the main clinical details, including the chief complaint, HPI, and the plan for trigger finger injection. Minor omissions (e.g., prior observation recommendation) and wording mismatches are present, particularly in the musculoskeletal exam. Imaging results are correct but less specific than the benchmark. One organizational issue is inclusion of imaging findings within the plan. Overall, the note is largely accurate with a few detail and phrasing gaps."
+}

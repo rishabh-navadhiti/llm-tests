@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark and explicitly stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Core complaint 'Left wrist pain' matches; added mechanism ('after a trip and fall') is extra but accurate."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures onset, mechanism, date, urgent care visit with negative X-rays/sprain diagnosis, and worsening in Massachusetts; omits minor detail ('while leaving Groundlings') and paraphrases humidity-related worsening."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Largely verbatim MSK exam findings for the left wrist; however, it includes an imaging statement ('X-rays are normal') which is not part of the MSK exam. Benchmark left this field empty, but the transcript supports the included exam details."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Includes current left wrist X-rays normal; misses benchmark detail that urgent care X-rays previously showed no fracture."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Lists 'Left ECU tendonitis' and 'Left ulnar-sided wrist pain' exactly as in the benchmark; excludes unrelated normals."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan: hand therapy trial, MRI for further evaluation, and return after MRI."
+    }
+  },
+  "total_score": 30,
+  "percentage": 85.71428571428571,
+  "overall_summary": "The candidate note closely aligns with the benchmark for patient identification, assessment, and plan. HPI is accurate with minor omissions/paraphrasing. Chief complaint includes a small extra detail. Musculoskeletal exam is largely verbatim but includes an imaging statement. Imaging results are correct but incomplete compared to the benchmark. Overall, strong fidelity with a few minor discrepancies."
+}

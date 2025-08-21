@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "The benchmark, considered the ground truth, spells the patient's last name as 'Kaffee', while the candidate uses 'Coffee'. This is a minor spelling difference for a name, but the meaning is preserved."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "The candidate's 'Pain in left index finger.' is a minor phrasing difference from the benchmark's 'Left index finger pain'. The meaning is preserved, but the benchmark is slightly more concise and typical for a chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "The candidate states 'Dr. Almadroa' which is present in the transcript, but the benchmark (ground truth) has corrected this to 'Dr. Dellamaggiora'. This is a factual inaccuracy compared to the benchmark. The candidate also uses 'shoulder issue' instead of 'shoulder appointment' and 'prompting her to seek further evaluation' instead of 'She is here today for evaluation of her left index finger' as found in the benchmark. The benchmark also includes a date not in the transcript, which is not penalized for the candidate."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "The candidate's content significantly differs from the benchmark, even though it closely matches the transcript. Key discrepancies compared to the benchmark include: 'tacky' vs 'intact'; missing 'or ecchymosis'; 'walking catching' vs 'locking and catching'; and adding 'Able to give a thumbs up.' which is not in the benchmark content. These are substantial factual deviations from the established ground truth of the benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "The candidate's 'X-rays of the finger are normal.' is missing specific details present in the benchmark: 'Three views' and 'left index finger'. While 'finger' is implied, the benchmark makes it explicit and includes the number of views."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "The candidate inappropriately includes 'Tenderness on left index finger with A1 pulley.' which is an exam finding, not an assessment, violating the instruction to avoid exam details. Furthermore, it uses 'Triggering of index finger' (a symptom) instead of the more diagnostic 'Trigger finger' used in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "The candidate paraphrases and interprets the benchmark's two distinct plan lines into one ('Plan to perform trigger finger injection today.' vs 'Plan trigger' and 'She has not had any injection, we will do this today'). More critically, the candidate includes 'X-rays of the finger are normal' in the plan section, whereas the benchmark correctly places imaging results in a separate 'IMAGING_GEORGE' section, indicating a significant structural and categorical error compared to the benchmark's organization."
+    }
+  },
+  "total_score": 17,
+  "percentage": 48.57,
+  "overall_summary": "The candidate note demonstrates reasonable performance in basic information extraction like patient name and chief complaint, although with minor wording variations from the benchmark. However, its performance significantly degrades in more complex fields requiring summarization, factual precision, and adherence to clinical note structure as defined by the benchmark. There are notable discrepancies in factual details (e.g., doctor's name in HPI, musculoskeletal findings), failure to use diagnostic terms in the assessment, and a lack of adherence to the benchmark's categorical separation for imaging results in the plan. The candidate often adhered more closely to the raw transcript than the human-corrected benchmark, which resulted in lower scores due to the benchmark being the designated ground truth."
+}

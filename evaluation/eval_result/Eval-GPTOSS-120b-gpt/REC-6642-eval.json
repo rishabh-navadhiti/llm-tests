@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the transcript ('Nadeem Nemi'); fully aligns with the benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches 'Bilateral thumb pain' from the benchmark; case formatting difference only, meaning identical."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately captures worsening since 2019 (notably past 6 months), denial of numbness/tingling, significant pain/limitation, and relevant history. Minor inaccuracy by stating he 'received injections today' when the transcript indicates injections were planned for today."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Verbatim extraction of the dictated MSK exam (skin intact, no significant swelling, positive grind/shoulder sign, no triggering, 'dot NCTS')."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Includes key right-hand findings (severe joint space changes with osteophytosis and Z deformity) but omits the right-hand 'calcific arteriogram' and all left-hand findings that were explicitly dictated."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Lists bilateral thumb pain, bilateral thumb CMC arthritis, and right cubital tunnel syndrome, but omits bilateral carpal tunnel syndrome which is explicitly stated in the transcript and included in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Accurately summarizes the plan: trial of injections with counseling on temporary effect and rebound pain to be done today; observe carpal/cubital tunnel with consideration of nerve studies; return in 2 months. Only minor wording differences."
+    }
+  },
+  "total_score": 29,
+  "percentage": 82.86,
+  "overall_summary": "The candidate note closely matches the benchmark on patient name, chief complaint, MSK exam, and plan. HPI is largely accurate but slightly overstates that injections were already given. Imaging is under-documented, missing right-hand calcific arteriogram and all left-hand findings. Assessment omits bilateral carpal tunnel syndrome. Overall, clinically sound with a few notable omissions."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('Nadeem Nemi') and explicitly stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('Bilateral thumb pain') with no extraneous details."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Fully aligns with the benchmark’s factual content (worsening since 2019, worse over last 6 months, denies numbness/tingling, pain limiting function). Additional contextual details (right-handed retiree, prior conditions) are accurate and from the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Content largely matches, but candidate states 'Bilateral upper extremity' whereas the benchmark specifies 'Right upper extremity.' This is a factual side discrepancy despite otherwise matching phrasing."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Core findings match the benchmark (severe joint space neovasculitis, metacarpal osteophytosis, Z deformity, calcific arteriogram noted on right only). Minor omissions/wording differences (omits 'three views') prevent a perfect score."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes key diagnoses matching the benchmark (bilateral thumb CMC arthritis, bilateral carpal tunnel, right cubital tunnel) but omits the benchmark item 'Right upper extremity Skin is intact' and adds 'Z deformity of the right hand,' which is not listed in the benchmark assessment."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches the benchmark plan: steroid injections with counseling on temporary effect/rebound pain, observation for carpal/cubital tunnel, consider nerve studies, and follow-up in 2 months. Only minor phrasing differences."
+    }
+  },
+  "total_score": 30,
+  "percentage": 85.71,
+  "overall_summary": "The candidate note closely matches the benchmark, particularly for patient name, chief complaint, HPI, and plan. Minor discrepancies include side designation in the musculoskeletal exam, omission of 'three views' in imaging, and assessment list differences (missing a benchmark item and adding an extra one). Overall, factual content is strong with small variances."
+}

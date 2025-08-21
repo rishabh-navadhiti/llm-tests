@@ -1,0 +1,267 @@
+import requests
+import json
+import os
+from concurrent.futures import ThreadPoolExecutor
+import traceback
+
+rec_ids = [
+    6645, 6642, 6639, 6635, 6632, 6627, 6625, 6622, 6614, 6613,
+    6610, 6608, 6607, 6605, 6604, 6602, 6881, 6883, 6895, 6897, 6904,
+    6911, 6922, 7051, 7060, 7062, 7067, 7074, 7079, 7092, 7284, 7270,
+    7262, 7241, 7220
+]
+
+BASE_URL = "https://api.physicianassist.com/api/v1"
+AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiNjdhMmY2NDY0YWRjZmU0NDBlOGJlNzUxIiwiZW1haWwiOiJ0ZWNoc3VwcG9ydEBwaHlzaWNpYW5hc3Npc3QuY29tIiwicHJvdmlkZXIiOiJtaWNyb3NvZnQiLCJvcmlnaW4iOiJQT1JUQUwifSwiZXhwIjoxNzU1Nzc2MzM3fQ.3qG_XMVaC0pVHCbR6IRv6BeqyCyf5EnwFM8xebw4PX8"
+DEVICE_ID = "68a6f742936420a5438e1e96"
+
+HEADERS = {
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+    "authorization": AUTH_TOKEN,
+    "deviceid": DEVICE_ID,
+    "ngrok-skip-browser-warning": "true",
+    "origin": "https://portal.physicianassist.com",
+    "referer": "https://portal.physicianassist.com/",
+    "sec-ch-ua": '"Google Chrome";v="137", "Chromium";v="137", "Not/A)Brand";v="24"',
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": '"Linux"',
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
+}
+
+
+def safe_request(method, url, **kwargs):
+    """Make a safe HTTP request with error handling"""
+    try:
+        if method.upper() == 'GET':
+            response = requests.get(url, timeout=30, **kwargs)
+        elif method.upper() == 'POST':
+            response = requests.post(url, timeout=30, **kwargs)
+        else:
+            raise ValueError(f"Unsupported HTTP method: {method}")
+        
+        print(f"Request to {url}: Status {response.status_code}")
+        
+        # Check if request was successful
+        if response.status_code not in [200, 201]:
+            print(f"ERROR: HTTP {response.status_code} - {response.text}")
+            return None
+        
+        return response.json()
+    
+    except requests.exceptions.Timeout:
+        print(f"ERROR: Request timeout for {url}")
+        return None
+    except requests.exceptions.ConnectionError as e:
+        print(f"ERROR: Connection error for {url}: {e}")
+        return None
+    except requests.exceptions.RequestException as e:
+        print(f"ERROR: Request exception for {url}: {e}")
+        return None
+    except json.JSONDecodeError as e:
+        print(f"ERROR: Invalid JSON response from {url}: {e}")
+        print(f"Response text: {response.text[:500]}...")
+        return None
+    except Exception as e:
+        print(f"ERROR: Unexpected error for {url}: {e}")
+        print(f"Traceback: {traceback.format_exc()}")
+        return None
+
+
+def fetch_doctor_notes(note_id):
+    """Step 2: Fetch doctor note details"""
+    print(f"Fetching doctor notes for note ID: {note_id}")
+    url = f"{BASE_URL}/doctor_notes/{note_id}"
+    payload = {"data": {"fields_to_return": []}}
+    
+    return safe_request('POST', url, 
+                       headers={**HEADERS, "content-type": "application/json"}, 
+                       json=payload)
+
+
+def fetch_transcription(transcription_id):
+    """Step 3: Fetch transcription details"""
+    print(f"Fetching transcription for transcription ID: {transcription_id}")
+    url = f"{BASE_URL}/transcriptions"
+    payload = {"data": {"transcription_id": transcription_id}}
+    
+    return safe_request('POST', url, 
+                       headers={**HEADERS, "content-type": "application/json"}, 
+                       json=payload)
+
+
+def safe_file_write(file_path, data):
+    """Safely write data to file with error handling"""
+    try:
+        # Check if directory exists and is writable
+        directory = os.path.dirname(file_path)
+        if not os.path.exists(directory):
+            print(f"Directory {directory} does not exist, creating...")
+            os.makedirs(directory, exist_ok=True)
+        
+        if not os.access(directory, os.W_OK):
+            print(f"ERROR: No write permission for directory: {directory}")
+            return False
+        
+        # Write the file
+        with open(file_path, "w", encoding='utf-8') as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+        
+        # Verify file was written
+        if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
+            print(f"✓ Successfully saved to {file_path} ({os.path.getsize(file_path)} bytes)")
+            return True
+        else:
+            print(f"ERROR: File {file_path} was not created or is empty")
+            return False
+            
+    except PermissionError as e:
+        print(f"ERROR: Permission denied writing to {file_path}: {e}")
+        return False
+    except OSError as e:
+        print(f"ERROR: OS error writing to {file_path}: {e}")
+        return False
+    except Exception as e:
+        print(f"ERROR: Unexpected error writing to {file_path}: {e}")
+        print(f"Traceback: {traceback.format_exc()}")
+        return False
+
+
+def fetch_notes_and_transcripts(rec_ids):
+    print(f"Starting processing of {len(rec_ids)} record IDs...")
+    print(f"Current working directory: {os.getcwd()}")
+    
+    # Test directory creation and permissions
+    try:
+        test_dirs = ["benchmark-gemini", "transcripts"]
+        for test_dir in test_dirs:
+            if not os.path.exists(test_dir):
+                print(f"Creating directory: {test_dir}")
+                os.makedirs(test_dir, exist_ok=True)
+            
+            # Test write permission
+            test_file = os.path.join(test_dir, "test_write.tmp")
+            try:
+                with open(test_file, "w") as f:
+                    f.write("test")
+                os.remove(test_file)
+                print(f"✓ Directory {test_dir} is writable")
+            except Exception as e:
+                print(f"ERROR: Cannot write to directory {test_dir}: {e}")
+                return
+                
+    except Exception as e:
+        print(f"ERROR: Failed to create directories: {e}")
+        return
+
+    success_count = 0
+    error_count = 0
+
+    for i, rec_id in enumerate(rec_ids, 1):
+        print(f"\n{'='*50}")
+        print(f"Processing record ID: {rec_id} ({i}/{len(rec_ids)})")
+        print(f"{'='*50}")
+        
+        try:
+            # Step 1: Get doctor notes by recording
+            url1 = f"{BASE_URL}/doctor_notes/rec/{rec_id}"
+            data1 = safe_request('GET', url1, headers=HEADERS)
+
+            if data1 is None:
+                print(f"ERROR: Failed to get initial data for {rec_id}")
+                error_count += 1
+                continue
+
+            print(f"Initial response structure: {list(data1.keys()) if isinstance(data1, dict) else type(data1)}")
+
+            # Check response structure
+            if not isinstance(data1, dict) or "result" not in data1:
+                print(f"ERROR: Invalid response structure for {rec_id}")
+                print(f"Response: {json.dumps(data1, indent=2)[:500]}...")
+                error_count += 1
+                continue
+
+            if "Notes" not in data1["result"]:
+                print(f"ERROR: No 'Notes' field in result for {rec_id}")
+                print(f"Available fields: {list(data1['result'].keys()) if isinstance(data1['result'], dict) else 'Not a dict'}")
+                error_count += 1
+                continue
+
+            note_id = data1["result"]["Notes"].get("_id")
+            transcription_id = data1["result"]["Notes"].get("transcription_id")
+
+            if not note_id:
+                print(f"ERROR: No note_id found for {rec_id}")
+                error_count += 1
+                continue
+            
+            if not transcription_id:
+                print(f"ERROR: No transcription_id found for {rec_id}")
+                error_count += 1
+                continue
+
+            print(f"Found note_id: {note_id}, transcription_id: {transcription_id}")
+
+            # Run Step 2 and Step 3 concurrently
+            with ThreadPoolExecutor(max_workers=2) as executor:
+                future_notes = executor.submit(fetch_doctor_notes, note_id)
+                future_transcript = executor.submit(fetch_transcription, transcription_id)
+
+                notes = future_notes.result()
+                transcript = future_transcript.result()
+
+            # Validate responses
+            if notes is None:
+                print(f"ERROR: Failed to fetch notes for {rec_id}")
+                error_count += 1
+                continue
+            
+            if transcript is None:
+                print(f"ERROR: Failed to fetch transcript for {rec_id}")
+                error_count += 1
+                continue
+
+            # Extract values with error checking
+            try:
+                note_text = notes['result']['Notes']['notes']
+            except (KeyError, TypeError) as e:
+                print(f"ERROR: Cannot extract note text for {rec_id}: {e}")
+                print(f"Notes structure: {json.dumps(notes, indent=2)[:500]}...")
+                error_count += 1
+                continue
+
+            try:
+                transcript_text = transcript['result']['Transcriptions']['dialogue_conversation']
+            except (KeyError, TypeError) as e:
+                print(f"ERROR: Cannot extract transcript text for {rec_id}: {e}")
+                print(f"Transcript structure: {json.dumps(transcript, indent=2)[:500]}...")
+                error_count += 1
+                continue
+
+            # Save files
+            note_path = os.path.join("benchmark-gemini", f"REC-{rec_id}.json")
+            transcript_path = os.path.join("transcripts", f"REC-{rec_id}.json")
+
+            note_saved = safe_file_write(note_path, {"rec_id": rec_id, "notes": note_text})
+            transcript_saved = safe_file_write(transcript_path, {"rec_id": rec_id, "transcript": transcript_text})
+
+            if note_saved and transcript_saved:
+                print(f"✓ Successfully processed {rec_id}")
+                success_count += 1
+            else:
+                print(f"ERROR: Failed to save files for {rec_id}")
+                error_count += 1
+
+        except Exception as e:
+            print(f"ERROR: Unexpected error processing {rec_id}: {e}")
+            print(f"Traceback: {traceback.format_exc()}")
+            error_count += 1
+
+    print(f"\n{'='*50}")
+    print(f"SUMMARY: {success_count} successful, {error_count} errors")
+    print(f"{'='*50}")
+
+
+if __name__ == "__main__":
+    fetch_notes_and_transcripts(rec_ids)
+    print("Processing completed.")

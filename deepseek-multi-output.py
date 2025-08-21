@@ -26,7 +26,7 @@ TEMPLATE_PATH = Path("/workspace/llm-tests/templates/doctor-template-specialized
 PROMPT_PATH = Path("/workspace/llm-tests/prompt-v1.txt")
 
 # Generation parameters - TUNE THESE
-MAX_TOKENS = 6000
+MAX_TOKENS = 2000  # Output JSON should be concise; reduce from 6000
 TEMPERATURE = 0.2  # Lower for more deterministic output (recommended for structured data)
 TOP_P = 0.3        # Lower for more focused sampling (recommended for structured data)
 TOP_K = 40         # Moderate value for diversity control
@@ -35,7 +35,7 @@ PRESENCE_PENALTY = 0.1   # Encourage new content
 
 # Request settings
 REQUEST_TIMEOUT = 600  # seconds
-MAX_CONCURRENT_REQUESTS = 4  # Adjust based on your GPU memory and vLLM settings
+MAX_CONCURRENT_REQUESTS = 16  # Start with 16, can increase to 32 if GPU memory allows
 
 # Logging configuration
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")

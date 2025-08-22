@@ -2,65 +2,53 @@
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": [
-      "-"
-    ],
+    "content": "Gianna Saborio",
     "default": "-",
     "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": [
-      "Evaluation of left small finger with locking and catching"
-    ],
+    "content": "Evaluation of left small finger with locking and catching; tethering with finger flexion.",
     "default": "-",
-    "instruction": "Provide only the chief complaint."
+    "instruction": "Provide only the chief complaints without additional details."
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": [
-      "Onset two years ago with locking and catching; did not want surgery before but now seeking options."
-    ],
+    "content": "The patient first noticed locking and catching in the left small finger two years ago. He avoided seeking treatment due to previous trigger finger surgeries but now desires evaluation. On exam, the left small finger shows moderate tenderness to palpation with a nodule at the trigger point, limiting range of motion. Well-healed incisions are noted on the middle finger. X-rays are normal.",
     "default": "-",
-    "instruction": "Summarize HPI."
+    "instruction": "Summarize HPI focusing on onset, duration, location, severity, mechanism, treatments, and progression."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "Skin purging without erythema; moderate tenderness; nodule at A1 pulley; good ROM; well-healed incisions on middle finger."
-    ],
+    "content": "Left small finger skin is purging without erythema; moderate tenderness to palpation; nodule at trigger point; excellent range of motion overall; well-healed trigger finger incisions to the middle finger.",
     "default": "",
-    "instruction": "Physical exam findings."
+    "instruction": "Extract verbatim musculoskeletal exam findings."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": [
-      "X-rays normal."
-    ],
+    "content": "X-rays normal for left small finger.",
     "default": "-",
-    "instruction": "Extract imaging results."
+    "instruction": "Extract imaging results as dictated."
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
       "Trigger finger (left small finger)",
-      "Status post trigger finger surgery (middle finger)"
+      "Tethering post-surgery"
     ],
     "default": "-",
-    "instruction": "List active problems."
+    "instruction": "List active problems or conditions relevant to the visit."
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": [
-      "Planned trigger finger surgery."
-    ],
+    "content": "Planned trigger finger surgery; gentle advancement of activity and range of motion; follow-up video visit in one month if symptoms persist.",
     "default": "-",
-    "instruction": "Write doctor's plan."
+    "instruction": "Write the doctor's plan as dictated."
   }
 ]

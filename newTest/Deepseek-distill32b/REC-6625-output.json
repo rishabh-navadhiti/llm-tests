@@ -1,28 +1,20 @@
-Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by reading through the transcript carefully.
+Alright, I need to extract structured medical information from the provided transcript and populate the JSON template. Let me go through each field step by step.
 
-The conversation is between a doctor and a patient named Mr. Parviz Mikael. He's here for a follow-up visit. The doctor mentions that the patient has no pain and wants to know what's going on. 
+1. **Patient Name**: The transcript starts with "Mr. Parviz Mikael," so that's the patient's full name. I'll extract that exactly.
 
-Looking at the exam findings, the pin sites are clean, dry, and intact without erythema or ecchymosis. The patient has no significant tenderness except for parthenonic carpal stable alignment and stiff fingers. The X-rays are the same as the last time, so no new findings there.
+2. **Chief Complaint**: The patient states he has no pain and wants to know what's going on. So the chief complaint is "No pain, wants to know what is going on."
 
-The plan is to continue with plexal ligament split, review the X-rays, and continue the same treatment. The patient is to return to the clinic in 10 days for follow-up, possibly for pin removal or repeat X-rays, and then transition to a phenylplastic splint. They'll also see Eliza Cherian.
+3. **HPI Spencer**: The HPI should summarize the history. The patient is here for a follow-up, no pain, and mentions stiff fingers. I'll structure this into a coherent paragraph focusing on the onset, duration, and current status without adding any interpretations.
 
-Now, I'll go through each section of the JSON template and extract the necessary information.
+4. **Musculoskeletal Verbatim**: The doctor's exam findings are "pin sites clean dry and intact without erythema or ecchymosis. No significant tenderness except for parthenonic carpal stable alignment, stiff fingers." I'll extract this verbatim.
 
-1. **Patient Name**: The patient's full name is explicitly mentioned as Mr. Parviz Mikael. So, I'll put that in.
+5. **Imaging Results**: The transcript mentions "X-rays are the same as the last time." So the imaging result is "X-rays same as last time."
 
-2. **Chief Complaint**: The patient states he has no pain and wants to know what's going on. So, the chief complaint is "No pain; wants to know what is going on."
+6. **Assessment**: The active problems are "No pain" and "Stiff fingers." I'll list these as separate items.
 
-3. **HPI Spencer**: The History of Present Illness should summarize the patient's history. Since it's a follow-up and he has no pain, I'll note that he's here for follow-up with no pain and no significant tenderness except for stiff fingers.
+7. **Plan**: The plan includes continuing plexal ligament split, follow-up in 10 days, possible pin removal or repeat X-rays, and transitioning to a phenylplastic splint. I'll list each point as per the transcript.
 
-4. **Musculoskeletal**: The physical exam findings related to musculoskeletal are pin sites being clean, dry, intact without erythema or ecchymosis. No significant tenderness except for stiff fingers.
-
-5. **Imaging Results**: The X-rays are mentioned as being the same as the last time, so I'll state that the X-rays are normal.
-
-6. **Assessment**: The active problems are stiff fingers and status post plexal ligament split.
-
-7. **Plan**: The plan includes continuing plexal ligament split, reviewing X-rays, returning in 10 days for follow-up with possible pin removal or repeat X-rays, transitioning to a phenylplastic splint, and seeing Eliza Cherian.
-
-I need to make sure each section is filled accurately without adding any extra information not present in the transcript. Also, I should ensure proper medical terminology and correct grammar.
+I need to ensure all fields are filled correctly, using only the information from the transcript without adding any assumptions.
 </think>
 
 ```json
@@ -30,51 +22,46 @@ I need to make sure each section is filled accurately without adding any extra i
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": ["Mr. Parviz Mikael"],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Mr. Parviz Mikael",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": ["No pain; wants to know what is going on."],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "No pain, wants to know what is going on."
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": ["Mr. Parviz Mikael is here for follow-up with no pain and no significant tenderness except for stiff fingers."],
-    "default": "-",
-    "instruction": "Summarize the History of Present Illness."
+    "content": "Mr. Parviz Mikael is here for a follow-up visit. He reports no pain and expresses a desire to understand his current condition."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": ["Pin sites clean, dry, and intact without erythema or ecchymosis. No significant tenderness except for stiff fingers."],
-    "default": "",
-    "instruction": "Extract physical examination findings related to Musculoskeletal."
+    "content": "Pin sites clean dry and intact without erythema or ecchymosis. No significant tenderness except for parthenonic carpal stable alignment, stiff fingers."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": ["X-rays normal."],
-    "default": "-",
-    "instruction": "Extract imaging results explicitly mentioned."
+    "content": "X-rays same as last time."
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
-    "content": ["Stiff fingers", "Status post plexal ligament split."],
-    "default": "-",
-    "instruction": "List active problems or conditions."
+    "content": [
+      "No pain",
+      "Stiff fingers"
+    ]
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": ["Continue plexal ligament split.", "Review X-rays.", "Return to clinic in 10 days for follow-up with possible pin removal or repeat X-rays.", "Transition to phenylplastic splint.", "See Eliza Cherian."],
-    "default": "-",
-    "instruction": "Write the doctor's plan as dictated."
+    "content": [
+      "Continue plexal ligament split.",
+      "Return to clinic in 10 days for follow-up.",
+      "Consider pin removal or repeat X-rays.",
+      "Transition to phenylplastic splint."
+    ]
   }
 ]
 ```

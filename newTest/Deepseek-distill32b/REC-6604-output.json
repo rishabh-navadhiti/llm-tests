@@ -1,20 +1,20 @@
-Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me go through each section step by step.
+Alright, I need to extract structured medical information from the provided transcript and populate the JSON template. Let me go through each field step by step.
 
-First, the Patient Name. The transcript mentions "Nicole Coffee" as the patient, so that's straightforward. I'll put her name in the content.
+1. **Patient Name**: The transcript starts with "Nicole Coffee" mentioned by the doctor. So, the content should be "Nicole Coffee".
 
-Next is the Chief Complaint. The doctor says she's here for pain in her left index finger. That's the main issue, so I'll note that as the chief complaint.
+2. **Chief Complaint**: The patient's main issue is pain in the left index finger. The doctor mentions this directly, so the content is "pain in left index finger".
 
-Moving on to the HPI Spencer section. I need to summarize her history of present illness. She noticed the pain a few months ago, and it started bothering her during a shoulder appointment. Dr. Almadroa recommended observation, but it's gotten worse and hasn't improved. She wants to know if she can have an injection now. I'll structure this into a coherent paragraph, making sure to include onset, duration, and progression.
+3. **HPI Spencer**: I need to summarize the history of present illness. The patient noticed the pain a few months ago, it worsened, and she's seeking an injection. The summary should include onset, duration, location, and progression. So, "The patient reports pain in her left index finger for a few months, which has worsened and not improved. She is seeking an injection at this visit."
 
-For Musculoskeletal, I need to extract the physical exam findings related to that system. The doctor mentions tenderness on the left index finger with an A1 polli, triggering, and excellent range of motion. I'll list these verbatim as per the instructions.
+4. **Musculoskeletal Verbatim**: The doctor's exam findings are listed. I'll extract them verbatim: "left upper extremity skin is clean, dry, and tacky without erythema. Acute moderate tenderness on left index finger with an A1 polii. There is walking catching. There is triggering on index finger. Excellent range of motion overall. Able to give a thumbs up, et cetera, et cetera."
 
-Imaging Results are mentioned as X-rays of the finger being normal. I'll include that exactly as stated.
+5. **Imaging Results**: The transcript mentions X-rays of the finger are normal. So, the content is "X-rays of the finger are normal."
 
-The Assessment should list active problems. From the transcript, it's trigger finger and pain in the left index finger. I'll format these as a list without any additional details.
+6. **Assessment Spencer**: The active problems are pain in the left index finger and triggering on the index finger. So, the list includes both.
 
-Finally, the Plan section. The doctor decides against an injection and instead plans to do "this today," which I assume refers to treating the trigger finger. I'll note that without adding any assumptions about what "this" entails.
+7. **Plan Spencer**: The plan is to do a trigger injection today. So, the content is "Trigger injection will be performed today."
 
-I need to make sure all sections follow the template exactly, using the correct keys and structure. Also, ensure there are no grammatical errors and that everything is concise and professional.
+I need to ensure all fields are filled correctly without adding any inferred information. If any field doesn't have data, use the default "-". But in this case, all necessary information is present.
 </think>
 
 ```json
@@ -22,51 +22,47 @@ I need to make sure all sections follow the template exactly, using the correct 
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": ["Nicole Coffee"],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Nicole Coffee",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": ["Pain in left index finger"],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "pain in left index finger",
+    "default": "-"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": ["The patient reports pain in her left index finger that she has noticed for a few months. It began bothering her during a previous shoulder appointment, where Dr. Almadroa recommended observation. However, the pain has worsened and has not improved. She is now seeking information about whether she can receive an injection."],
-    "default": "-",
-    "instruction": "Summarize the History of Present Illness."
+    "content": "The patient reports pain in her left index finger for a few months, which has worsened and not improved. She is seeking an injection at this visit.",
+    "default": "-"
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": ["Left upper extremity skin is clean, dry, and tacky without erythema. Acute moderate tenderness on left index finger with an A1 polli. There is walking catching. There is triggering on index finger. Excellent range of motion overall."],
-    "default": "",
-    "instruction": "Extract physical examination findings related to Musculoskeletal."
+    "content": "left upper extremity skin is clean, dry, and tacky without erythema. Acute moderate tenderness on left index finger with an A1 polii. There is walking catching. There is triggering on index finger. Excellent range of motion overall. Able to give a thumbs up, et cetera, et cetera.",
+    "default": ""
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": ["X-rays of the finger are normal."],
-    "default": "-",
-    "instruction": "Extract imaging results explicitly mentioned."
+    "content": "X-rays of the finger are normal.",
+    "default": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
-    "content": ["Trigger finger", "Pain in left index finger"],
-    "default": "-",
-    "instruction": "List active problems or conditions."
+    "content": [
+      "pain in left index finger",
+      "triggering on index finger"
+    ],
+    "default": "-"
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": ["No injection will be given today. Plan to treat trigger finger."],
-    "default": "-",
-    "instruction": "Write the doctor's plan as dictated."
+    "content": "Trigger injection will be performed today.",
+    "default": "-"
   }
 ]
 ```

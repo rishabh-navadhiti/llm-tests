@@ -1,20 +1,20 @@
-Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by reading through the transcript carefully to extract all the necessary information.
+Alright, I need to extract structured medical information from the provided transcript and populate the JSON template. Let me go through each field step by step.
 
-First, the patient's name. The transcript mentions "Math is a dominant a stay at home mom." So, her name is Math. I'll note that under PATIENT_NAME.
+1. **Patient Name**: The transcript mentions "Math is a dominant a stay at home mom." So, the patient's name is Math.
 
-Next, the Chief Complaint. She's presenting for evaluation of her left wrist stiffness. So, the chief complaint is "Evaluation of left wrist stiffness."
+2. **Chief Complaint**: The patient presents for evaluation of her left wrist stiffness. So, the chief complaint is "Left wrist stiffness."
 
-Moving on to the History of Present Illness (HPI). She had a fall in October 2023, resulting in a left distal radius fracture. She was treated by Doctor Andrew Rice. Post-op, she was diagnosed with CRPS but has made progress. However, she still can't extend her wrist enough for a push-up. She does Pilates regularly without pain but needs modifications. On exam, her incision is healing well with minimal scar, excellent finger motion, no pain. Wrist flexion is 45 degrees, extension 20 degrees. X-rays show a well-healed fracture with hardware in place.
+3. **HPI Spencer**: I need to summarize the History of Present Illness. The patient fell in October 2023, resulting in a left distal radius fracture. She was diagnosed with CRPS and has made progress but still can't extend her wrist enough for a push-up. She does Pilates without pain but needs modifications. On exam, her incision is healing well, minimal scar, good finger motion, flexion to 45 degrees, extension to 20 degrees. X-rays show a well-healed fracture with hardware.
 
-For the Musculoskeletal section, the exam findings are: incision healing well, minimal scar, excellent finger motion without pain, flexion to 45 degrees, extension to 20 degrees.
+4. **Musculoskeletal Verbatim**: The doctor's physical exam findings are: incision healing well, minimal scar, excellent finger motion without pain, supination, flexion to 45 degrees, extension to 20 degrees.
 
-Imaging Results: X-rays show a well-healed fracture with hardware in place.
+5. **Imaging Results**: The X-rays show a well-healed fracture with hardware in place.
 
-Assessment should list her active problems: Left distal radius fracture (status post-op), Complex Regional Pain Syndrome (CRPS), and Limited wrist motion.
+6. **Assessment**: The active problems are left wrist stiffness and CRPS.
 
-Plan includes reviewing X-rays, discussing that she likely won't regain enough motion for push-ups but shouldn't limit herself beyond that. Recommend advancing activities and follow-up in 3 months.
+7. **Plan**: The plan includes reviewing X-rays, noting good plate alignment, discussing limited motion for push-ups, recommending advancing activities, and scheduling a follow-up in 3 months.
 
-I need to make sure each section is filled accurately without adding any inferred information. Also, ensure proper medical terminology and correct grammar.
+I'll structure each field according to the template instructions, ensuring verbatim extraction where required and summarizing as needed without adding any inferred information.
 </think>
 
 ```json
@@ -22,51 +22,47 @@ I need to make sure each section is filled accurately without adding any inferre
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": ["Math"],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Math",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": ["Evaluation of left wrist stiffness"],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "Left wrist stiffness",
+    "default": "-"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": ["The patient, a stay-at-home mom, sustained a left distal radius fracture in October 2023 following a fall. She was treated by Doctor Andrew Rice. Post-operatively, she was diagnosed with Complex Regional Pain Syndrome (CRPS). While she has made progress, she continues to experience stiffness and limited wrist extension, preventing her from performing push-ups. She regularly engages in Pilates without pain but requires modifications. On examination, her incision is healing well with minimal scarring, and she has excellent finger motion without pain. Wrist flexion is 45 degrees, and extension is 20 degrees. X-rays reveal a well-healed fracture with hardware in place."],
-    "default": "-",
-    "instruction": "Summarize HPI with explicit details."
+    "content": "The patient fell in October 2023, sustaining a left distal radius fracture. She was diagnosed with CRPS and has made progress but still cannot fully extend her wrist for activities like push-ups. Despite this, she continues Pilates without pain, making modifications as needed.",
+    "default": "-"
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": ["Incision healing well with minimal scar; excellent finger motion without pain; flexion to 45 degrees; extension to 20 degrees."],
-    "default": "",
-    "instruction": "Extract physical exam findings verbatim."
+    "content": "Incision healing well, minimal scar, excellent finger motion without pain, supination, flexion to 45 degrees, extension to 20 degrees.",
+    "default": ""
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": ["X-rays show a well-healed fracture with hardware in place."],
-    "default": "-",
-    "instruction": "Extract imaging results as dictated."
+    "content": "X-rays show a well-healed fracture with hardware in place.",
+    "default": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
-    "content": ["Left distal radius fracture (status post-op)", "Complex Regional Pain Syndrome (CRPS)", "Limited wrist motion"],
-    "default": "-",
-    "instruction": "List active problems concisely."
+    "content": [
+      "Left wrist stiffness",
+      "CRPS"
+    ],
+    "default": "-"
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": ["Review X-rays showing adequate plate alignment and fracture reduction.", "Discuss limited wrist motion for push-ups but encourage advancing activities.", "Recommend follow-up in 3 months."],
-    "default": "-",
-    "instruction": "Summarize the plan as dictated."
+    "content": "Review X-rays showing good plate alignment. Discuss limited motion for push-ups. Recommend advancing activities and follow-up in 3 months.",
+    "default": "-"
   }
 ]
 ```

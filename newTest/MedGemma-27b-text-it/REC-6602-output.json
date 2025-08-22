@@ -1,0 +1,64 @@
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": "-",
+    "default": "-"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": "Hand pain and numbness",
+    "default": "-"
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Patient presents for reevaluation of right hand symptoms. She recently completed chemotherapy for lymphoma. She reports increasing numbness and tingling of her right hand, which she notes is worse when trying to put her earrings in. She also reports difficulty with fine motor tasks. She has been trying to hold her phone less due to discomfort. She denies any specific injury."
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Moderate tenderness to palpation of the right small finger. There is a nodule at the A1 pulley."
+    ],
+    "default": ""
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-ray is clear."
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "- Right hand numbness and tingling",
+      "- Right small finger nodule",
+      "- Trigger finger (right)",
+      "- Possible carpal tunnel syndrome (right)"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Administer steroid injection into the right small finger.",
+      "Recommend night splinting for the right hand.",
+      "Recommend night splinting for the right wrist.",
+      "Recommend trial of over-the-counter NSAIDs as needed.",
+      "Discussed low threshold for nerve conduction studies and EMG if symptoms persist.",
+      "Return to clinic in two months for follow-up."
+    ],
+    "default": "-"
+  }
+]
+```

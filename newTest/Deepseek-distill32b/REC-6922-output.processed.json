@@ -2,64 +2,44 @@
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": [
-      "Mahika Mahendru"
-    ],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Mahika Mahendru",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": [
-      "pain around the joint distal to the splint"
-    ],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "pain around the joint distal to the splint"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": [
-      "The patient reports tolerating her splint without complaint but experiences hypersensitivity distal to the splint. On examination, the splint is in place with mild soft tissue swelling and significant hypersensitivity distal to it. The splint applies pressure, contributing to pain likely from mutaneous nerve irritation."
-    ],
-    "default": "-",
-    "instruction": "Summarize HPI with onset, duration, location, severity, and treatments."
+    "content": "The patient reports doing well overall and tolerating her splint without complaint. She experiences pain around the joint distal to the splint, which is hypersensitive. The splint is noted to cause significant pressure, potentially irritating the mutaneous nerve."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "splint in place; mild soft tissue swelling; significant hypersensitivity distal to splint; unable to sublux extensor tendons; excellent PAP in splint."
-    ],
-    "default": "",
-    "instruction": "Extract verbatim musculoskeletal findings."
+    "content": "splint is in place. There's mild soft tissue so that there is significant hypersensitivity distal to the splint. The splint is putting a fair amount of pressure... unable to sublux the extensor tendons in the splint. She has excellent PAP."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": [
-      "-"
-    ],
-    "default": "-",
-    "instruction": "No imaging mentioned."
+    "content": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "- Hypersensitivity distal to splint\n- Mutaneous nerve irritation"
-    ],
-    "default": "-",
-    "instruction": "List active problems."
+      "Hypersensitivity due to splint pressure",
+      "Possible mutaneous nerve irritation"
+    ]
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
     "content": [
-      "- Modify splint\n- Return to clinic if no improvement\n- Follow-up in 3 weeks."
-    ],
-    "default": "-",
-    "instruction": "List recommended actions."
+      "Modify the splint",
+      "Return to clinic Monday if no improvement",
+      "Return to clinic in 3 weeks"
+    ]
   }
 ]

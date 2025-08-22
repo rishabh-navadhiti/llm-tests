@@ -2,68 +2,46 @@
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": [
-      "Math"
-    ],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Math",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": [
-      "Evaluation of left wrist stiffness"
-    ],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "Left wrist stiffness",
+    "default": "-"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": [
-      "The patient, a stay-at-home mom, sustained a left distal radius fracture in October 2023 following a fall. She was treated by Doctor Andrew Rice. Post-operatively, she was diagnosed with Complex Regional Pain Syndrome (CRPS). While she has made progress, she continues to experience stiffness and limited wrist extension, preventing her from performing push-ups. She regularly engages in Pilates without pain but requires modifications. On examination, her incision is healing well with minimal scarring, and she has excellent finger motion without pain. Wrist flexion is 45 degrees, and extension is 20 degrees. X-rays reveal a well-healed fracture with hardware in place."
-    ],
-    "default": "-",
-    "instruction": "Summarize HPI with explicit details."
+    "content": "The patient fell in October 2023, sustaining a left distal radius fracture. She was diagnosed with CRPS and has made progress but still cannot fully extend her wrist for activities like push-ups. Despite this, she continues Pilates without pain, making modifications as needed.",
+    "default": "-"
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "Incision healing well with minimal scar; excellent finger motion without pain; flexion to 45 degrees; extension to 20 degrees."
-    ],
-    "default": "",
-    "instruction": "Extract physical exam findings verbatim."
+    "content": "Incision healing well, minimal scar, excellent finger motion without pain, supination, flexion to 45 degrees, extension to 20 degrees.",
+    "default": ""
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": [
-      "X-rays show a well-healed fracture with hardware in place."
-    ],
-    "default": "-",
-    "instruction": "Extract imaging results as dictated."
+    "content": "X-rays show a well-healed fracture with hardware in place.",
+    "default": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "Left distal radius fracture (status post-op)",
-      "Complex Regional Pain Syndrome (CRPS)",
-      "Limited wrist motion"
+      "Left wrist stiffness",
+      "CRPS"
     ],
-    "default": "-",
-    "instruction": "List active problems concisely."
+    "default": "-"
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": [
-      "Review X-rays showing adequate plate alignment and fracture reduction.",
-      "Discuss limited wrist motion for push-ups but encourage advancing activities.",
-      "Recommend follow-up in 3 months."
-    ],
-    "default": "-",
-    "instruction": "Summarize the plan as dictated."
+    "content": "Review X-rays showing good plate alignment. Discuss limited motion for push-ups. Recommend advancing activities and follow-up in 3 months.",
+    "default": "-"
   }
 ]

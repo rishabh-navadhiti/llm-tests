@@ -2,68 +2,46 @@
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": [
-      "Nadeem Nemi-"
-    ],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Nadeem Nemi",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": [
-      "Evaluation of bilateral thumb pain"
-    ],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "Bilateral thumb pain",
+    "default": "-"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": [
-      "The patient presents for evaluation of bilateral thumb pain, which has worsened since his last visit in 2019 and significantly over the past six months. He reports no numbness or tingling but experiences significant pain limiting his thumbs."
-    ],
-    "default": "-",
-    "instruction": "Summarize HPI with onset, duration, location, severity."
+    "content": "The patient is a right-handed male retiree with a history of bilateral carpal tunnel syndrome, right cubital tunnel syndrome, and bilateral thumb CMC arthritis. He presents today for evaluation of bilateral thumb pain, which has worsened significantly since his last visit in 2019, particularly over the past six months. He reports no numbness or tingling but experiences significant pain, limiting his activities.",
+    "default": "-"
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "Bilateral upper extremty skin is clean, dry and intact. No significant soft tissue swelling, positive Grin, positive shoulder sign, no triggering of any digits with the thumb."
-    ],
-    "default": "",
-    "instruction": "Extract physical exam findings verbatim."
+    "content": "Bilateral upper extremty skin is clean, dry and intact. No significant soft tissue swelling, positive Grin, positive shoulder sign, no triggering of any digits with the thumb, um, dot NCTS.",
+    "default": ""
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": [
-      "X-rays demonstrate severe joint space neovasculitis with osteophytosis and Z deformity on the right; left shows similar findings without calcific arteriogram."
-    ],
-    "default": "-",
-    "instruction": "Extract imaging results as dictated."
+    "content": "X-rays demonstrate severe joint space neovasculitis metacarpal joint with osteophytosis. There is evidence of a Z deformity with hyperextension at the MCP joint. Calcific arteriogram is noted on the right. The left hand shows similar findings except for the calcific arteriogram.",
+    "default": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "Bilateral thumb CMC arthritis",
-      "Bilateral carpal tunnel syndrome",
-      "Right cubital tunnel syndrome"
+      "Bilateral thumb CMC arthritis (progressed)",
+      "Bilateral carpal tunnel syndrome (improving)"
     ],
-    "default": "-",
-    "instruction": "List active conditions."
+    "default": "-"
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": [
-      "Administer steroid injections today.",
-      "Discuss steroid effects and rebound pain.",
-      "Follow-up in two months."
-    ],
-    "default": "-",
-    "instruction": "Include treatments and follow-up."
+    "content": "Trial of steroid injections discussed with patient understanding of temporary relief and potential rebound pain. Recommend observation for carpal tunnel and cubital tunnel symptoms with consideration of nerve studies. Follow-up in two months.",
+    "default": "-"
   }
 ]

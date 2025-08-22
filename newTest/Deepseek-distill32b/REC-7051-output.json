@@ -1,20 +1,20 @@
-Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by reading through the transcript carefully to extract all the necessary information.
+Alright, I need to extract structured medical information from the provided transcript and populate the JSON template. Let me go through each field step by step.
 
-First, looking at the conversation, the doctor mentions "Magara" as the patient's name. So, under "Patient Name," I'll put "Magara." 
+1. **Patient Name**: The transcript mentions "Magara" as the patient's name. I'll extract that exactly.
 
-Next, the chief complaint is about bilateral hand numbness and tingling. That's straightforward, so I'll note that as the chief complaint.
+2. **Chief Complaint**: The patient presents for evaluation of bilateral hand numbness and tingling. That's the chief complaint.
 
-For the History of Present Illness (HPI), the patient is a right-hand dominant retiree with symptoms starting in January 2025 without any trauma. The numbness and tingling wake her up, but she's found relief with night braces. She doesn't have pain or limited motion. I'll summarize this into a coherent paragraph.
+3. **HPI Spencer**: I'll summarize the history. It started in January 2025 without trauma, causing sleep disturbance. She uses night braces which help, denies pain or motion issues.
 
-Moving on to the musculoskeletal exam findings, the transcript mentions bilateral upper extremity skin is clear, intact without rash, minimal tissue swelling, and minimal tenderness to palpation. The specific measurements (PCGSI) are given for each finger, but since the instruction says to extract verbatim, I'll include those as they are.
+4. **Musculoskeletal Verbatim**: The doctor's exam findings include bilateral upper extremity skin intact, minimal swelling, and specific joint space narrowing in the hands.
 
-Imaging results show variable joint space narrowing in both hands, particularly at the thumb MCP joint on the right and severe narrowing at the carpometacarpal joint on the left. I'll list these exactly as described.
+5. **Imaging Results**: The transcript mentions X-rays showing joint space narrowing in both hands, especially at the thumb MCP and carpal joints.
 
-The assessment includes bilateral hand numbness and tingling, carpal tunnel syndrome, and peripheral neuropathy. These are the active problems mentioned, so I'll list them accordingly.
+6. **Assessment**: The conditions are bilateral hand numbness/tingling, features of carpal tunnel, and peripheral neuropathy.
 
-For the plan, the doctor recommends nerve studies and a follow-up in 6 to 8 weeks. That's what I'll include in the plan section.
+7. **Plan**: The plan includes nerve studies, follow-up in 6-8 weeks, and considering carpal tunnel treatment.
 
-I need to make sure all sections are filled correctly, using the exact wording from the transcript where possible, and applying the default values where information isn't present. Also, ensuring proper grammar and structure throughout.
+I'll ensure each field is filled accurately without adding any inferred information.
 </think>
 
 ```json
@@ -22,51 +22,42 @@ I need to make sure all sections are filled correctly, using the exact wording f
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": ["Magara"],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Magara",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": ["Bilateral hand numbness and tingling"],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "bilateral hand numbness and tingling"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": ["Magara, a right-hand dominant retiree, presents with bilateral hand numbness and tingling that began in January 2025 without trauma or injection. Symptoms have awakened her during sleep but improved with nighttime braces. She denies pain or limited motion and seeks evaluation and treatment."],
-    "default": "-",
-    "instruction": "Summarize HPI with onset, duration, location, severity, mechanism, treatments, and progression."
+    "content": "The patient, a right-hand dominant retiree, presents with bilateral hand numbness and tingling that began in January 2025 without trauma or injection. Symptoms have been waking her at night but have improved with nighttime bracing. She denies pain and limited motion."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": ["Bilateral upper extremity skin is clear, intact without rash. Minimal tissue swelling and minimal tenderness to palpation. PCGSI: Right ring finger 1.43, left ring finger 3.61, left hand 2.83, right hand 3.61."],
-    "default": "",
-    "instruction": "Extract verbatim musculoskeletal exam findings."
+    "content": "Bilateral upper extremity skin is clear, intact without rash, minimal soft tissue swelling, minimal tenderness to palpation."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": ["Right hand: Variable joint space narrowing in IP joints, notably thumb MCP joint. Left hand: Severe joint space narrowing at carpometacarpal joint."],
-    "default": "-",
-    "instruction": "Extract imaging results as dictated."
+    "content": "X-rays of the right hand demonstrate variable joint space narrowing throughout the IP joints, most notably at the thumb MCP joint. Left hand shows severe joint space narrowing at the carpometacarpal joint."
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
-    "content": ["Bilateral hand numbness and tingling", "Carpal tunnel syndrome", "Peripheral neuropathy"],
-    "default": "-",
-    "instruction": "List active problems or conditions."
+    "content": [
+      "Bilateral hand numbness and tingling",
+      "Features of carpal tunnel syndrome",
+      "Features of peripheral neuropathy"
+    ]
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": ["Recommend nerve studies", "Follow-up in 6 to 8 weeks."],
-    "default": "-",
-    "instruction": "Include treatments, therapies, medications, imaging, education, or follow-up instructions."
+    "content": "Nerve studies are recommended. Follow-up in 6-8 weeks. Consideration for carpal tunnel treatment."
   }
 ]
 ```

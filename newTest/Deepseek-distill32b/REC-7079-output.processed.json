@@ -2,67 +2,47 @@
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": [
-      "Bertha Campos"
-    ],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Bertha Campos",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": [
-      "Follow-up for suture removal"
-    ],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "Follow-up",
+    "default": "-"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": [
-      "Bertha Campos is a patient who is here for follow-up. She has been working on her motion and feels it is improving. She wants to know if she can have her sutures removed. On examination, the incision is clean and intact with sutures removed today without apparent complication."
-    ],
-    "default": "-",
-    "instruction": "Summarize the History of Present Illness."
+    "content": "The patient is a follow-up for her previous condition. She reports improvement in motion and desires suture removal. Incision is clean and intact.",
+    "default": "-"
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "Incision clean and intact with sutures removed today without apparent complication. Range of motion of the finger near full with tight fist without pain. Full active extension with no evidence of triggering. Moderate ecchymosis to the area consistent with post-operative state."
-    ],
-    "default": "",
-    "instruction": "Extract physical examination findings related to Musculoskeletal."
+    "content": "Range of motion of the finger near full without pain, no evidence of triggering, moderate ecchymosis consistent with post-operative state.",
+    "default": ""
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": [
-      "-"
-    ],
-    "default": "-",
-    "instruction": "Extract imaging results explicitly mentioned."
+    "content": "-",
+    "default": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "Status post surgery",
-      "Improving range of motion"
+      "Sutures in place",
+      "Improving motion",
+      "Post-operative ecchymosis"
     ],
-    "default": "-",
-    "instruction": "Generate concise list of active problems."
+    "default": "-"
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": [
-      "Sutures removed today as incision is clean and intact.",
-      "Continue working on motion.",
-      "Follow up in 4 weeks."
-    ],
-    "default": "-",
-    "instruction": "Write the doctor's plan as dictated."
+    "content": "Sutures removed today. Follow-up in 4 weeks.",
+    "default": "-"
   }
 ]

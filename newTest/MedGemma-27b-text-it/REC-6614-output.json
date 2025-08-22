@@ -1,0 +1,54 @@
+```json
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": "-",
+    "default": "-"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": "Left wrist pain",
+    "default": "-"
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": "Patient presents for evaluation of left wrist pain. The pain is bothersome enough to wake her up at night. She has been seen by a rheumatologist. She has a history of dorsal wrist ganglion cyst and trigger finger.",
+    "default": "-"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": "",
+    "default": ""
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": "X-ray shows osteophytes. Ultrasound shows a retinacular cyst. X-ray of the wrist is normal. Ultrasound of the wrist is normal.",
+    "default": "-"
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "- Left wrist pain",
+      "- Dorsal wrist ganglion cyst",
+      "- Trigger finger",
+      "- Wrist arthritis",
+      "- Thumb CMC arthritis",
+      "- Thumb CMC joint arthritis",
+      "- Trigger finger"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": "Recommend night splinting and activity modification. Consider steroid injection if symptoms persist. Recommend observation for the ganglion cyst. Recommend splinting for trigger finger. Recommend NSAIDs as needed. Return to clinic in six weeks for follow-up.",
+    "default": "-"
+  }
+]
+```

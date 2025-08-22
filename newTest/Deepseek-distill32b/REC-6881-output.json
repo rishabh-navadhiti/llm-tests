@@ -1,20 +1,20 @@
-Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by reading through the transcript carefully to extract all the necessary information.
+Alright, I need to extract structured medical information from the provided transcript and populate the JSON template. Let me go through each field step by step.
 
-First, looking at the "Patient Name" section. The transcript doesn't mention the patient's name explicitly. The speakers are either "doctor" or "patient," but no full name is given. So, according to the instructions, I should return "-".
+1. **Patient Name**: The transcript doesn't mention the patient's name explicitly. The doctor refers to "She" but doesn't provide a name. So, I'll use the default "-".
 
-Next, the "Chief Complaint." The patient mentions issues with her thumb and middle finger. Specifically, she's doing well with her thumb but is having problems with her middle finger, which is locking and catching again. So, the chief complaint should reflect both these concerns: thumb and middle finger issues.
+2. **Chief Complaint**: The patient mentions pain in the middle finger, specifically that it's locking and catching again. So, the chief complaint is "Middle finger pain with locking and catching."
 
-Moving on to the "HPI Spencer" section. The History of Present Illness should be a single paragraph summarizing the onset, duration, etc. From the transcript, the patient has been using cycloprox for her thumb and is doing well. However, her middle finger is problematic. She had an injection that helped but now it's locking again, and it's painful. The exam findings mention tenderness at the A1 pulley and no onychomycosis. I need to structure this into a coherent paragraph without adding any interpretations.
+3. **HPI Spencer**: The HPI should summarize the history. The patient had a thumb issue resolved with cycloprox. The middle finger started having issues after an injection helped temporarily. It's now painful again. So, the HPI is a concise paragraph covering onset, duration, and progression.
 
-For "Musculoskeletal," I need to extract the physical exam findings verbatim. The doctor mentions that the right extremity skin is clean and intact without erythemohymosis. The patient reports moderate tenderness at the middle finger A1 pulley with triggering. There's no evidence of onychomycosis at the right thumbnail, which is grown 100% with excellent cosmesis.
+4. **Musculoskeletal Verbatim**: The doctor's exam findings include the right extremity skin being clean, intact, no erythema. Tenderness at the middle finger A1 pulley with triggering. No onychomycosis, thumb fully grown with good cosmesis.
 
-Imaging Results aren't mentioned in the transcript, so I'll use the default "-".
+5. **Imaging Results**: There's no mention of any imaging done, so I'll use the default "-".
 
-In the "Assessment" section, I need to list active problems. The patient has thumb pain (status post treatment) and middle finger triggering with locking. These are both active issues based on the conversation.
+6. **Assessment**: The active problems are thumb pain (resolved) and middle finger trigger symptoms (recurrent). So, two items in the list.
 
-Finally, the "Plan" section should include the doctor's recommendations. The patient is advised to continue using cycloprox for her thumb. For the middle finger, another injection is recommended for temporary relief. There's no mention of follow-up times, so I'll just list these two points.
+7. **Plan**: The doctor recommends continuing cycloprox, another injection for the middle finger, and activity as tolerated. So, three bullet points.
 
-I need to make sure all sections are filled correctly, using only the information from the transcript without adding any assumptions. Also, ensure proper grammar and medical terminology are used throughout.
+I need to ensure all fields are filled correctly without adding any inferred information. Each content field should strictly follow the instructions, using verbatim where required and summarizing where needed.
 </think>
 
 ```json
@@ -22,51 +22,45 @@ I need to make sure all sections are filled correctly, using only the informatio
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": ["-"],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+    "content": "-",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": ["Thumb pain and middle finger locking/catching"],
-    "default": "-",
-    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+    "content": "Middle finger pain with locking and catching."
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": ["The patient reports continued use of cycloprox for thumb pain with improvement. However, she experiences recurrence of locking and catching in the middle finger despite previous injection relief. On examination, there is moderate tenderness at the middle finger A1 pulley with triggering noted. No evidence of onychomycosis at the right thumbnail, which is fully grown with excellent cosmesis."],
-    "default": "-",
-    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
+    "content": "The patient reports continued use of cycloprox for thumb pain, which has resolved. However, she experiences recurrent middle finger pain with locking and catching, despite previous injection relief. Symptoms have worsened recently, prompting further evaluation."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": ["Right extremity skin is clean and intact without erythemohymosis. Moderate tenderness at the middle finger A1 pulley with triggering noted. No evidence of onychomycosis at the right thumbnail."],
-    "default": "",
-    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+    "content": "Right extremity skin is clean and intact without erythema or hives. Moderate tenderness at the middle finger A1 pulley with triggering observed. No evidence of onychomycosis at the right thumbnail; thumb is fully grown with excellent cosmesis."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": ["-"],
-    "default": "-",
-    "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
+    "content": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
-    "content": ["Thumb pain (status post treatment)", "Middle finger triggering with locking"],
-    "default": "-",
-    "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+    "content": [
+      "Thumb pain (resolved)",
+      "Middle finger trigger symptoms (recurrent)"
+    ]
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": ["Continue use of cycloprox for thumb pain.", "Recommend another injection for middle finger to address temporary relief."],
-    "default": "-",
-    "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."
+    "content": [
+      "Continue cycloprox as directed.",
+      "Administer another injection for middle finger pain.",
+      "Recommend activity as tolerated."
+    ]
   }
 ]
 ```

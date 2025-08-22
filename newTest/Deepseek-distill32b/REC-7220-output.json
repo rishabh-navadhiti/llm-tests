@@ -1,20 +1,20 @@
-Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by reading through the transcript carefully to extract all the necessary information.
+Alright, I need to extract structured medical information from the provided transcript and populate the JSON template. Let me go through each field step by step.
 
-First, looking at the conversation, the doctor mentions a patient who is here for a follow-up. The patient's name isn't explicitly stated, so according to the instructions, I should return "-" for the patient name.
+1. **Patient Name**: The transcript mentions "Doctor Goller" and "Jack," but the patient's name isn't explicitly stated. So, I'll use the default "-".
 
-The chief complaint isn't directly mentioned either. The patient is following up on their condition, but there's no specific chief complaint stated, so I'll use the default "-".
+2. **Chief Complaint**: The patient mentions "not possible fracture" and "post-traumatic arthritis." That's the chief complaint.
 
-Moving on to the History of Present Illness (HPI), the doctor notes that the patient is doing well overall, with fingers improving. The middle finger is still sensitive. The exam shows unchanged findings, including separation of the nail fold from the nail bed on the ring finger and ecchymosis on the middle finger. There's also mention of excellent PIP motion and a stiff distal interphalangeal joint. X-rays were deferred. The plan is to return in one week for a wound check and repeat X-rays, transitioning to removable splints. The patient also mentions breaking their splint while lifting weights and getting a new one made by Jack.
+3. **HPI Spencer**: The patient reports that his splint broke after lifting weights, leading to a follow-up visit. He has post-traumatic arthritis and no fracture. I'll summarize this into a coherent paragraph.
 
-For the Musculoskeletal section, I need to extract the physical exam findings verbatim. The doctor mentions separation of the nail fold from the nail bed on the ring finger, ecchymosis on the middle finger, excellent PIP motion, and a stiff distal interphalangeal joint.
+4. **Musculoskeletal Verbatim**: The doctor notes "excellent PIP motion in the splint, no specific limited motion." I'll extract this verbatim.
 
-Imaging results are mentioned as deferred, so I'll note that.
+5. **Imaging Results**: The transcript mentions X-rays were deferred, so I'll note that.
 
-In the Assessment section, the active problems include finger sensitivity, separation of nail fold, ecchymosis, and post-traumatic arthritis.
+6. **Assessment**: The active conditions are post-traumatic arthritis and splint breakage. I'll list these as bullet points.
 
-The Plan includes returning for a wound check in one week with repeat X-rays, transitioning to removable splints, and protecting with relative motion for 6-8 weeks.
+7. **Plan**: The plan includes protecting with relative motion, returning in 6-8 weeks, and continuing with the splint. I'll extract these points as dictated.
 
-I need to make sure all sections are filled correctly, using only the information provided and adhering to the template's structure. I'll double-check each section to ensure accuracy and completeness.
+I need to ensure all fields are filled correctly, using only the information from the transcript without adding any assumptions.
 </think>
 
 ```json
@@ -22,51 +22,45 @@ I need to make sure all sections are filled correctly, using only the informatio
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": ["-"],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+    "content": "-",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": ["-"],
-    "default": "-",
-    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+    "content": "not possible fracture , um , and now has post-traumatic arthritis"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": ["The patient reports overall improvement with fingers feeling more normal, though the middle finger remains sensitive. The exam shows unchanged findings including separation of the nail fold from the nail bed on the ring finger and ecchymosis on the middle finger. Excellent PIP motion is noted with a stiff distal interphalangeal joint. X-rays were deferred. The plan includes returning in one week for a wound check and repeat X-rays, transitioning to removable splints. The patient broke their splint while lifting weights and received a new one."],
-    "default": "-",
-    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
+    "content": "The patient is here for follow-up after breaking his splint while lifting weights. He reports no fracture and now has post-traumatic arthritis."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": ["Separation of nail fold from nail bed on ring finger", "Ecchymosis on middle finger", "Excellent PIP motion", "Stiff distal interphalangeal joint"],
-    "default": "",
-    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+    "content": "excellent PIP motion in the splint , no specific limited motion"
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": ["X-rays deferred"],
-    "default": "-",
-    "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
+    "content": "X-rays deferred"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
-    "content": ["Finger sensitivity", "Separation of nail fold", "Ecchymosis", "Post-traumatic arthritis"],
-    "default": "-",
-    "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+    "content": [
+      "post-traumatic arthritis",
+      "splint breakage"
+    ]
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": ["Return to clinic in one week for wound check with repeat X-rays", "Plan for transition to removable splints at that time", "Continue to protect with relative motions", "Return to clinic in 6-8 weeks"],
-    "default": "-",
-    "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."
+    "content": [
+      "continue to protect with relative motions",
+      "return to clinic in 6 to 8 weeks",
+      "continue with splint"
+    ]
   }
 ]
 ```

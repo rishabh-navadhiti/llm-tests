@@ -2,78 +2,40 @@
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": [
-      "Stephanie Humphrey",
-      "Amit Jaini",
-      "David Schechter"
-    ],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Miss Stephanie Humphrey",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": [
-      "Left wrist pain post fall",
-      "Right small finger pain and swelling",
-      "Right wrist pain"
-    ],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "Left wrist pain after a trip and fall"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": [
-      "Stephanie Humphrey, a right-hand dominant horticulturalist, fell on 6/21/25, sustaining left wrist pain. Urgent care X-rays showed no fractures, diagnosed as a sprain. Pain worsened in Massachusetts due to humidity.",
-      "Amit Jaini, a left-hand dominant music manager, injured his right small finger playing basketball on 8/2/25. Immediate pain and swelling led to X-rays revealing a proximal phalanx fracture.",
-      "David Schechter, a right-hand dominant pain medicine doctor, experienced right wrist pain since early 2024 without trauma. Pain worsens with supination and flexion."
-    ],
-    "default": "-",
-    "instruction": "Summarize HPI with onset, duration, location, severity, mechanism, treatments, and progression."
+    "content": "The patient experienced a trip and fall on 6/21/25 while leaving Groundlings, resulting in left wrist pain that initially improved but worsened with increased humidity in Massachusetts. She underwent X-rays at urgent care showing no fractures and was diagnosed with a sprain."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "Left wrist: mild tendon inflammation over ECU tendon, pain with pro-supination.",
-      "Right small finger: malrotation, shortening, limited motion.",
-      "Right wrist: mild tendinopathy at ECU tendon."
-    ],
-    "default": "",
-    "instruction": "Extract physical exam findings related to musculoskeletal."
+    "content": "Mild tendon inflammation over the ECU tendon. Pain with pro-supination. Excellent range of motion overall."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": [
-      "Left wrist X-rays normal.",
-      "Right small finger X-rays show proximal phalanx fracture.",
-      "Right wrist X-rays normal with mild joint space narrowing at thumb MCP."
-    ],
-    "default": "-",
-    "instruction": "Extract imaging results as dictated."
+    "content": "X-rays of the left wrist are normal."
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "- Left ECU tendonitis\n- Left ulnar-sided wrist pain",
-      "- Right small finger proximal phalanx fracture",
-      "- Right wrist pain with mild tendinopathy"
-    ],
-    "default": "-",
-    "instruction": "List active problems or conditions."
+      "Left ECU tendonitis",
+      "Left ulnar-sided wrist pain"
+    ]
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": [
-      "- Recommend RE full\n- Trial of hand therapy\n- MRI for further evaluation\n- Follow-up after MRI.",
-      "- Closed reduction and percutaneous pinning tomorrow.",
-      "- Plan pending Dr. De La George's input."
-    ],
-    "default": "-",
-    "instruction": "Write the doctor's plan as dictated."
+    "content": "Recommend trial of hand therapy. Recommend MRI for further evaluation. Return to clinic after MRI."
   }
 ]

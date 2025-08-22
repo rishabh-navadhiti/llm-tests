@@ -1,29 +1,22 @@
-Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by understanding the structure of the JSON and what each section requires.
+Alright, I need to extract structured medical information from the provided transcript and populate the JSON template. Let me go through each field step by step.
 
-First, the JSON has several sections like Patient Name, Chief Complaint, HPI Spencer, etc. Each has a key, content, default, and instructions. My job is to extract the necessary information from the transcript and fill these sections correctly.
+Starting with "Patient Name" (PATIENT_NAME). The transcript mentions several patients: Chaz Thomas, Meesha Senuda, Grace Twan, Charles Shaw, and Josefina Marcial. Each of their names is explicitly stated, so I'll list each as separate entries in the content array.
 
-Looking at the transcript, it's a conversation between a doctor and patients. The doctor is discussing follow-ups for several patients: Chaz Thomas, Meesha Senuda, Grace Twan, Charles Shaw, and Josefina Marcial. Each patient has their own section in the conversation.
+Next is "Chief Complaint" (CHIEF_COMPLAINT). For each patient, I need to identify their main issue. Chaz's complaint is about his splint after someone else's blood got on it. Meesha is dealing with sensitivity and stiffness in her PIP joint. Grace is here for MRI review and injection effects. Charles is following up on his hand after an injection. Josefina is concerned about her right hand pain and considering a left wrist injection.
 
-Starting with the first section: Patient Name. The instruction says to extract the patient's full name exactly as it appears. So I need to go through each patient mentioned and list their names. The transcript mentions Chaz Thomas, Meesha Senuda, Grace Twan, Charles Shaw, and Josefina Marcial. So I'll list all of them under PATIENT_NAME.
+Moving on to "HPI Spencer" (HPI_SPENCER). This requires a summary of each patient's history. Chaz had a laceration, removed sutures, some pain, and limited flexion. Meesha has been wearing a splint and has improving but still stiff PIP. Grace has a mass and systemic symptoms. Charles has mild laceration and is doing well. Josefina experienced severe pain after an injection but is improving.
 
-Next is Chief Complaint. For each patient, I need to find their main issue. Chaz took off his splint because of someone else's blood, so his complaint is about that. Meesha is having sensitivity and stiffness in her PIP joint. Grace is here for MRI review and injection effects. Charles is doing well but needs a follow-up. Josefina had pain after an injection and wants to know about her left wrist. I'll note each of these as their chief complaints.
+For "Musculoskeletal" (MUSCULOSKELETAL_VERBATIM), I need verbatim exam findings. Chaz has a clean laceration with sutures removed, some pain, and limited flexion. Meesha has limited flexion at DIP, stiffness, minimal tenosynovitis, and hypersensitivity. Grace's exam is unchanged. Charles has a mild laceration and needs to protect his hand. Josefina shows tenosynovitis, ulnar prominence, and limited motion.
 
-Moving on to HPI Spencer. This requires a summary of each patient's history of present illness. For Chaz, he had a laceration, sutures were removed, some pain and limited flexion. Meesha has been wearing a splint, improving but still has stiffness. Grace had an injection that helped her mass but now has worsening symptoms. Charles has a mild laceration and is protecting it. Josefina had pain after an injection but is improving; she also has issues with her left wrist.
+"Imaging Results" (IMAGING_RESULTS) should include any mentioned imaging. Grace had an MRI, but the results aren't detailed here. Josefina had X-rays showing ulnar prominence and arthritis. Others didn't mention imaging results, so they default to "-".
 
-The Musculoskeletal section needs verbatim physical exam findings. For Chaz, the laceration is clean, sutures removed, tolerating well, some pain, limited flexion. Meesha has limited flexion at DIP, stiffness at PIP, minimal tenosynovitis. Grace's exam is unchanged. Charles has a mild laceration to proximal nail folds. Josefina has bilateral tenosynovitis, ulnar prominence, limited motion.
+"Assessment" (ASSESSMENT_SPENCER) lists active problems. Chaz has laceration healing with pain and limited flexion. Meesha has PIP stiffness improving. Grace has a mass and systemic symptoms. Charles has a mild laceration. Josefina has wrist arthritis and tenosynovitis.
 
-Imaging Results: Chaz had sutures removed, no imaging mentioned. Meesha's x-ray was deferred. Grace's MRI was reviewed. Charles had new x-rays today showing ulnar prominence and arthritis.
+Finally, "Plan" (PLAN_SPENCER_) includes the doctor's instructions. Chaz gets a removable splint and hand therapy. Meesha stops splinting at night, exercises, and defers therapy. Grace follows up in three months. Charles continues dressings. Josefina tries splints and exercises for her left wrist.
 
-Assessment: For each patient, list active problems. Chaz: laceration healing, sutures removed, pain, limited flexion. Meesha: PIP stiffness improving, DIP limited flexion. Grace: mass reduction, worsening systemic symptoms. Charles: mild laceration healing. Josefina: right wrist improvement after injection, left wrist arthritis.
-
-Plan: Each patient's follow-up instructions. Chaz: removable splint, hand therapy, return in two weeks. Meesha: discontinue splint, home exercises, return in six weeks. Grace: talk to Dr. Sidlow, return in three months. Charles: protect with dressings, return in one week. Josefina: trial of night splints and exercises, consider injection if no improvement.
-
-I need to make sure each section is filled accurately without adding any assumptions. If information isn't present, use the default "-". Also, ensure proper grammar and medical terminology.
-
-Now, putting it all together into the JSON structure as specified.
+I need to ensure each field is filled correctly without adding any inferred information, only using what's explicitly stated.
 </think>
 
-```json
 [
   {
     "title": "Patient Name",
@@ -35,44 +28,43 @@ Now, putting it all together into the JSON structure as specified.
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": ["Follow-up for splint removal due to contamination", "Sensitivity and stiffness in PIP joint", "MRI review and injection effects", "Follow-up for wound healing", "Pain after injection and left wrist concern"],
+    "content": ["Follow-up regarding splint after exposure to someone else's blood", "Sensitivity and stiffness in PIP joint", "MRI review and effects of Kenalog injection", "Follow-up on hand after injection", "Right hand pain after injection and consideration for left wrist injection"],
     "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "instruction": "Patient's chief complaint without additional details."
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": ["Chaz had a laceration with sutures removed; some pain and limited flexion noted.", "Meesha reports improvement in PIP stiffness with splint use but still experiences some sensitivity.", "Grace experienced mass reduction post-injection but now reports worsening systemic symptoms.", "Charles has a mild laceration and is protecting it with dressings.", "Josefina had pain post-injection but is improving; also concerned about left wrist arthritis."],
+    "content": ["Chaz Thomas presented for follow-up after taking off his splint due to exposure to someone else's blood. He reported some pain and limited flexion.", "Meesha Senuda reported improvement in sensitivity and stiffness of the PIP joint but continued to experience some stiffness.", "Grace Twan presented for MRI review following an IM Kenalog injection for a mass and other aches and pains.", "Charles Shaw reported doing well overall with minimal pain and okay with his bulky dressings.", "Josefina Marcial reported her right hand pain improved after an injection and is considering treatment for her left wrist."],
     "default": "-",
-    "instruction": "Summarize the History of Present Illness."
+    "instruction": "Summarize HPI as a single paragraph."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": ["Laceration clean, sutures removed; tolerating well with some pain and limited flexion.", "Limited flexion at DIP joint; stiffness at PIP joint; minimal tenosynovitis.", "Exam unchanged.", "Mild laceration to proximal nail folds.", "Bilateral tenosynovitis; ulnar prominence; limited motion."],
+    "content": ["Laceration clean, dry, intact with sutures removed; some pain, limited flexion.", "Significantly limited flexion at DIP joint; stiffness but able to flex to 90 degrees; minimal tenosynovitis distally; hypersensitivity distally.", "Exam unchanged.", "Mild laceration to proximal nail folds; can protect within asterisks.", "Bilateral upper extremity skin clean, dry, intact without erythema or erosion; moderate tenosynovitis at DRUJ; bilateral ulnar prominence; limited motion bilaterally."],
     "default": "",
     "instruction": "Physical examination findings related to Musculoskeletal."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": ["Sutures removed; no imaging mentioned.", "X-ray deferred.", "MRI reviewed.", "New x-rays show ulnar prominence and arthritis.", ""],
+    "content": ["MRI results reviewed.", "-", "-"],
     "default": "-",
     "instruction": "Extract imaging results explicitly mentioned."
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
-    "content": ["Laceration healing well; sutures removed; pain; limited flexion.", "PIP stiffness improving; DIP limited flexion.", "Mass reduction post-injection; worsening systemic symptoms.", "Mild laceration healing.", "Right wrist improvement post-injection; left wrist arthritis."],
+    "content": ["Laceration healing with sutures removed; pain and limited flexion.", "PIP joint stiffness improving.", "Mass and systemic symptoms.", "Mild laceration to proximal nail folds.", "Wrist arthritis; tenosynovitis."],
     "default": "-",
     "instruction": "List active problems or conditions."
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": ["Transition to removable splint; initiate hand therapy; return in two weeks.", "Discontinue splint; home exercises; return in six weeks.", "Discuss with Dr. Sidlow; return in three months.", "Protect with dressings; return in one week.", "Trial of night splints; home exercises; consider injection if no improvement."],
+    "content": ["Transition to removable splint; initiate hand therapy; follow-up in two weeks.", "Discontinue splint entirely; continue home exercise program; follow-up in six weeks.", "Discuss with Dr. Sidlow about medical control; follow-up in three months or sooner if excisional biopsy desired.", "Continue protecting with soft dressings; keep clean and dry; follow-up in one week.", "Trial of night splints; home exercise program; consider injection if no improvement."],
     "default": "-",
-    "instruction": "Write the doctor's plan as dictated."
+    "instruction": "Doctor's plan as dictated."
   }
 ]
-```

@@ -15,7 +15,6 @@ load_dotenv()
 
 # ==================== CONFIGURATION ====================
 # Model and API settings
-# MODEL_NAME = os.getenv("VLLM_MODEL_NAME", "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B")
 MODEL_NAME = "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
 VLLM_API_URL = "http://localhost:8000/v1/chat/completions"
 
@@ -23,19 +22,19 @@ VLLM_API_URL = "http://localhost:8000/v1/chat/completions"
 INPUT_DIR = Path("/workspace/llm-tests/newTest/transcripts")
 OUTPUT_DIR = Path("/workspace/llm-tests/newTest/Deepseek-distill32b")
 TEMPLATE_PATH = Path("/workspace/llm-tests/templates/doctor-template-specialized-v2.json")
-PROMPT_PATH = Path("/workspace/llm-tests/prompt-v1.txt")
+PROMPT_PATH = Path("/workspace/llm-tests/prompt-v2.txt")  # Using the universal prompt
 
-# Generation parameters - TUNE THESE
-MAX_TOKENS = 2000  # Output JSON should be concise; reduce from 6000
-TEMPERATURE = 0.2  # Lower for more deterministic output (recommended for structured data)
-TOP_P = 0.3        # Lower for more focused sampling (recommended for structured data)
-TOP_K = 40         # Moderate value for diversity control
-FREQUENCY_PENALTY = 0.1  # Reduce repetition
-PRESENCE_PENALTY = 0.1   # Encourage new content
+# Generation parameters
+MAX_TOKENS = 2000
+TEMPERATURE = 0.2
+TOP_P = 0.3
+TOP_K = 40
+FREQUENCY_PENALTY = 0.1
+PRESENCE_PENALTY = 0.1
 
 # Request settings
 REQUEST_TIMEOUT = 600  # seconds
-MAX_CONCURRENT_REQUESTS = 16  # Start with 16, can increase to 32 if GPU memory allows
+MAX_CONCURRENT_REQUESTS = 16  # Optimized for your 2x A40s
 
 # Logging configuration
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -56,38 +55,63 @@ def show_gpu_memory(note: str = "") -> None:
     except Exception as e:
         logger.warning(f"⚠️ Could not read GPU memory: {e}")
 
-def load_template_and_prompt() -> tuple[str, str]:
-    """Load the prompt template and JSON template"""
+def load_core_instructions() -> str:
+    """Load the core instructions from the prompt file"""
     with open(PROMPT_PATH, "r", encoding="utf-8") as f:
-        prompt = f.read().strip()
-
-    with open(TEMPLATE_PATH, "r", encoding="utf-8") as f:
-        template_data = json.load(f)
-
-    return prompt, json.dumps(template_data, indent=2)
-
-def load_transcript(file_path: Path) -> str:
-    """Load a transcript file"""
-    with open(file_path, "r", encoding="utf-8") as f:
         return f.read().strip()
 
-def generate_single_request(system_prompt: str, template: str, transcript: str, transcript_name: str) -> dict:
+def load_json_template() -> str:
+    """Load and return the JSON template as a formatted string"""
+    with open(TEMPLATE_PATH, "r", encoding="utf-8") as f:
+        template_data = json.load(f)
+    return json.dumps(template_data, indent=2)
+
+def build_full_prompt(transcript_text: str) -> str:
+    """
+    Construct the complete prompt by combining:
+    1. Core instructions
+    2. JSON template
+    3. Formatted transcript
+    """
+    core_instructions = load_core_instructions()
+    json_template = load_json_template()
+    
+    full_prompt = (
+        f"{core_instructions}\n\n"
+        "### TEMPLATE TO POPULATE:\n"
+        f"{json_template}\n\n"
+        "### MEDICAL TRANSCRIPT:\n"
+        f"{transcript_text}\n\n"
+        "### FINAL OUTPUT (JSON Array):"
+    )
+    
+    return full_prompt
+
+def load_transcript(file_path: Path) -> str:
+    """Load a transcript file and format it with speaker labels"""
+    with open(file_path, "r", encoding="utf-8") as f:
+        transcript_data = json.load(f)
+    
+    # Format the transcript into a readable string with speaker labels
+    formatted_transcript = ""
+    for entry in transcript_data:
+        speaker = entry.get("speaker", "unknown").capitalize()
+        conversation = entry.get("conversation", "")
+        formatted_transcript += f"{speaker}: {conversation}\n"
+    
+    return formatted_transcript.strip()
+
+def generate_single_request(transcript: str, transcript_name: str) -> dict:
     """Generate a response for a single transcript"""
     logger.info(f"🚀 Preparing request for: {transcript_name}")
     
-    # Construct the system message with template
-    system_content = (
-        system_prompt
-        + "\n\nTEMPLATE_JSON (use exactly this structure; return only JSON matching the template):\n"
-        + template
-        + "\n\nINSTRUCTION: Fill this JSON template with data extracted from the transcript."
-        + "\n⚠️ CRITICAL: Return ONLY valid JSON that exactly matches the template."
-        + " Do NOT include explanations, commentary, thoughts, or markdown/code fences."
-    )
-
+    # Build the complete prompt with instructions, template, and transcript
+    full_prompt = build_full_prompt(transcript)
+    
+    # For DeepSeek, we can use a system message for the instructions
+    # and user message for the transcript, or combine everything in user message
     messages = [
-        {"role": "system", "content": system_content},
-        {"role": "user", "content": f"Medical Transcript to Process:\n\n{transcript}"},
+        {"role": "user", "content": full_prompt}
     ]
 
     payload = {
@@ -181,7 +205,6 @@ def save_outputs(output_dir: Path, base_filename: str, raw_response: str, json_d
 
 def main():
     total_start = time.time()
-    prompt, template = load_template_and_prompt()
     
     logger.info(f"🚀 Processing all transcripts in {INPUT_DIR}")
     logger.info(f"📊 Using parameters: temperature={TEMPERATURE}, top_p={TOP_P}, top_k={TOP_K}")
@@ -200,8 +223,6 @@ def main():
         future_to_transcript = {
             executor.submit(
                 generate_single_request, 
-                prompt, 
-                template, 
                 load_transcript(file), 
                 file.name
             ): file for file in transcript_files

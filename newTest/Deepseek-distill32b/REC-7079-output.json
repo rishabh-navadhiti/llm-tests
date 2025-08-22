@@ -1,20 +1,20 @@
-Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by reading through the transcript carefully.
+Alright, I need to extract structured medical information from the provided transcript and populate the JSON template accordingly. Let me go through each field step by step.
 
-The conversation starts with the doctor saying, "Sweet little thing. Um, Bertha Campos, who is here today for follow-up she suits and he's doing well overall." So, the patient's name is Bertha Campos. That goes into the PATIENT_NAME field.
+1. **Patient Name**: The transcript starts with "Bertha Campos". That's the patient's full name, so I'll put that in the content.
 
-Next, the chief complaint. The patient is here for a follow-up, so her main reason is to have her sutures removed. So, the chief complaint should be about the sutures. I'll phrase it as "Follow-up for suture removal."
+2. **Chief Complaint**: The doctor mentions she's here for a follow-up. So her chief complaint is "Follow-up".
 
-Moving on to the HPI Spencer section. The doctor mentions that Bertha has been working on her motion and feels it's getting better. She wants to know if she can have her sutures out. On exam, the incision is clean and intact, and the sutures were removed without complications. Her range of motion is near full, no pain, no triggering, and some ecchymosis consistent with post-op. I'll summarize this into a coherent paragraph focusing on her history and current status.
+3. **HPI Spencer**: The HPI should summarize her history. She's been working on her motion and feels it's improving. She wants her sutures out. The incision is clean and intact. So I'll note that she's improving and wants sutures removed.
 
-For Musculoskeletal findings, the doctor notes the incision is clean and intact, sutures removed without issues. Range of motion is near full, no pain, no triggering, moderate ecchymosis. I'll extract this verbatim as per the instructions.
+4. **Musculoskeletal Verbatim**: The doctor notes range of motion is near full, no pain, no triggering, moderate ecchymosis. I'll extract that verbatim.
 
-Imaging Results aren't mentioned in the transcript, so I'll leave that as "-".
+5. **Imaging Results**: There's no mention of any imaging in the transcript, so I'll use the default "-".
 
-Assessment should list active problems. She's status post surgery with improving motion and some ecchymosis. So, I'll include "Status post surgery" and "Improving range of motion."
+6. **Assessment**: The issues are sutures in place, improving motion, and post-op ecchymosis. I'll list these as separate points.
 
-The Plan section includes removing sutures today, noting the incision is clean. The doctor advises her to continue working on motion and follow up in 4 weeks. I'll list these points as per the transcript.
+7. **Plan**: The doctor removes the sutures and advises follow-up in 4 weeks. I'll note that as the plan.
 
-I need to make sure all sections are filled correctly, using only the information provided without adding anything extra. Also, ensure proper grammar and punctuation throughout.
+I need to make sure each field follows the instructions, using verbatim where required and summarizing where needed. No extra info, just what's in the transcript.
 </think>
 
 ```json
@@ -22,51 +22,48 @@ I need to make sure all sections are filled correctly, using only the informatio
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": ["Bertha Campos"],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Bertha Campos",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": ["Follow-up for suture removal"],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "Follow-up",
+    "default": "-"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": ["Bertha Campos is a patient who is here for follow-up. She has been working on her motion and feels it is improving. She wants to know if she can have her sutures removed. On examination, the incision is clean and intact with sutures removed today without apparent complication."],
-    "default": "-",
-    "instruction": "Summarize the History of Present Illness."
+    "content": "The patient is a follow-up for her previous condition. She reports improvement in motion and desires suture removal. Incision is clean and intact.",
+    "default": "-"
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": ["Incision clean and intact with sutures removed today without apparent complication. Range of motion of the finger near full with tight fist without pain. Full active extension with no evidence of triggering. Moderate ecchymosis to the area consistent with post-operative state."],
-    "default": "",
-    "instruction": "Extract physical examination findings related to Musculoskeletal."
+    "content": "Range of motion of the finger near full without pain, no evidence of triggering, moderate ecchymosis consistent with post-operative state.",
+    "default": ""
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": ["-"],
-    "default": "-",
-    "instruction": "Extract imaging results explicitly mentioned."
+    "content": "-",
+    "default": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
-    "content": ["Status post surgery", "Improving range of motion"],
-    "default": "-",
-    "instruction": "Generate concise list of active problems."
+    "content": [
+      "Sutures in place",
+      "Improving motion",
+      "Post-operative ecchymosis"
+    ],
+    "default": "-"
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": ["Sutures removed today as incision is clean and intact.", "Continue working on motion.", "Follow up in 4 weeks."],
-    "default": "-",
-    "instruction": "Write the doctor's plan as dictated."
+    "content": "Sutures removed today. Follow-up in 4 weeks.",
+    "default": "-"
   }
 ]
 ```

@@ -1,0 +1,59 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Chaz Thomas"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Follow-up"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Patient presents for follow-up after laceration repair. Patient reports hand is doing well, with some pain and limited flexion. Patient removed sutures yesterday."
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "limited extension, limited flexion, some tenderness to palpation over the A1 pulley, some swelling."
+    ],
+    "default": ""
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [],
+    "default": "-"
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Trigger finger",
+      "Hand pain",
+      "Limited flexion"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Recommend injection into the A1 pulley.",
+      "Recommend return to clinic in 4 weeks for follow-up."
+    ],
+    "default": "-"
+  }
+]

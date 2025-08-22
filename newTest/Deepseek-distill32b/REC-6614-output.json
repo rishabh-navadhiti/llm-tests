@@ -1,20 +1,20 @@
-Okay, so I need to help transform the given medical transcript into a structured patient visit note using the provided JSON template. Let me go through each section step by step.
+Alright, I need to extract structured medical information from the provided transcript and populate the JSON template. Let me go through each field step by step.
 
-First, the Patient Name. The transcript mentions "Precious Myles Garrett" as the patient, so that's straightforward.
+1. **Patient Name**: The transcript starts with "Precious Myles Garrett" being mentioned by the doctor. So, the patient's full name is Precious Myles Garrett.
 
-Next, the Chief Complaint. The patient presented for evaluation of left wrist pain, so that's the chief complaint.
+2. **Chief Complaint**: The doctor mentions she presents for evaluation of her left wrist pain. So, the chief complaint is left wrist pain.
 
-Moving on to the History of Present Illness (HPI). The patient is a right-hand dominant social worker with left wrist pain that's more bothersome than the masses. The pain wakes her up at night, and she wants to know what she can do about it. She was treated by Dr. Ishimori and has diagnoses of a left first dorsal compartment wrist cyst, left thumb MCP osteophyte, and bilateral thumb and MCP joint issues. The masses used to fluctuate in size but are now constant. She saw her rheumatologist who did x-rays and an ultrasound of the front of the wrist. She's here for evaluation and treatment.
+3. **HPI Spencer**: The History of Present Illness should be a summary. She's a right-hand dominant social worker with left wrist pain more bothersome than masses, waking her at night. She wants to know what she can do about it. She was treated by Dr. Ishimori and has diagnoses of a left first dorsal compartment wrist cyst, left thumb MCP osteophyte, and bilateral thumb and MCP joint issues. The masses used to fluctuate but are now constant. She saw her rheumatologist who did x-rays and ultrasound. On exam, there's a pea-sized mass over the first dorsal compartment, non-tender, mobile. Another mass at the dorsal ulnar aspect of the thumb MCP, non-mobile, minimally tender. No tenderness at A1 point, good ROM. Imaging shows an osteophyte and a retinacular cyst.
 
-For the Musculoskeletal examination, the doctor noted a pea-sized mass over the first dorsal compartment, non-tender and mobile. Negative Finkelstein, no pain with thumb extension. Another mass at the dorsal ulnar aspect of the thumb MCP joint, non-mobile, minimally tender, with good range of motion. No tenderness at the A1 point, no locking or catching.
+4. **Musculoskeletal Verbatim**: The physical exam findings are as dictated: left upper extremity skin clean without anthraea maracunasis. Pea-sized mass over first dorsal compartment, non-tender, mobile. Another mass at dorsal ulnar thumb MCP, non-mobile, minimally tender. Excellent ROM, no tenderness at A1 point, no locking or catching.
 
-Imaging results include x-rays showing an osteophyte at the thumb MCP joint and an ultrasound showing a bony avulsion fragment versus osteophyte at the thumb MCP joint and a retinacular cyst in the wrist.
+5. **Imaging Results**: The transcript mentions x-rays showing an osteophyte at the thumb MCP joint and ultrasound showing a bony avulsion fragment/osteophyte and a retinacular cyst.
 
-The Assessment should list active problems: left wrist pain, left first dorsal compartment wrist cyst, left thumb MCP joint osteophyte, and bilateral thumb MCP joint masses.
+6. **Assessment**: The active problems are left wrist pain, left first dorsal compartment wrist cyst, left thumb MCP osteophyte, and bilateral thumb and MCP joint issues.
 
-The Plan includes recommending night splints for carpal tunnel, observing the masses, and scheduling a follow-up in six weeks.
+7. **Plan**: The doctor recommends night splints for carpal tunnel, observation for the masses, aspiration or biopsy consideration, and follow-up in six weeks.
 
-I need to make sure each section is filled accurately without adding any information not present in the transcript. Also, ensure proper medical terminology and correct grammar.
+I need to ensure each field is filled correctly without adding any inferred information.
 </think>
 
 ```json
@@ -22,51 +22,49 @@ I need to make sure each section is filled accurately without adding any informa
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": ["Precious Myles Garrett"],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Precious Myles Garrett",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": ["Evaluation of left wrist pain"],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "Left wrist pain",
+    "default": "-"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": ["A right-hand dominant social worker presenting with left wrist pain more bothersome than masses. Pain wakes her at night. Diagnoses include left first dorsal compartment wrist cyst, left thumb MCP osteophyte, and bilateral thumb MCP joint issues. Masses are constant. Seen rheumatologist for x-rays and ultrasound of wrist."],
-    "default": "-",
-    "instruction": "Summarize HPI with onset, duration, location, severity, treatments, and progression."
+    "content": "Precious Myles Garrett, a right-hand dominant children's social worker, presents for evaluation of left wrist pain, which is more bothersome than the masses and wakes her at night. She seeks advice on managing this issue. She was previously treated by Dr. Ishimori for a left first dorsal compartment wrist cyst, left thumb MCP osteophyte, and bilateral thumb and MCP joint issues. The masses have been constant in size. She consulted her rheumatologist, who performed x-rays and an ultrasound of the wrist.",
+    "default": "-"
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": ["Pea-sized mass over first dorsal compartment, non-tender, mobile. Negative Finkelstein. Mass at dorsal ulnar thumb MCP joint, non-mobile, minimally tender. Good range of motion. No tenderness at A1 point, no locking or catching."],
-    "default": "",
-    "instruction": "Extract physical exam findings verbatim."
+    "content": "Left upper extremity skin is clean without anthraea maracunasis. There is a pea-sized mass over the first dorsal compartment, non-tender and mobile. A mass at the dorsal ulnar aspect of the thumb MCP joint is non-mobile and minimally tender. Excellent range of motion at the thumb MCP with no tenderness at the A1 point or locking/catching.",
+    "default": ""
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": ["X-rays show osteophyte at thumb MCP joint. Ultrasound shows bony avulsion fragment/osteophyte at thumb MCP and retinacular cyst in wrist."],
-    "default": "-",
-    "instruction": "Extract imaging results as dictated."
+    "content": "X-rays show an osteophyte at the thumb MCP joint. Ultrasound demonstrates a bony avulsion fragment/osteophyte at the dorsal MCP joint and a retinacular cyst in the wrist.",
+    "default": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
-    "content": ["- Left wrist pain\n- Left first dorsal compartment wrist cyst\n- Left thumb MCP joint osteophyte\n- Bilateral thumb MCP joint masses"],
-    "default": "-",
-    "instruction": "List active problems or conditions."
+    "content": [
+      "Left wrist pain",
+      "Left first dorsal compartment wrist cyst",
+      "Left thumb MCP osteophyte",
+      "Bilateral thumb and MCP joint issues"
+    ],
+    "default": "-"
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": ["- Recommend night splints for carpal tunnel\n- Observe masses\n- Follow-up in six weeks"],
-    "default": "-",
-    "instruction": "Summarize treatments and follow-up."
+    "content": "Recommend night splints for carpal tunnel. Observe the masses for now. Consider aspiration or biopsy of the wrist mass. Follow-up in six weeks.",
+    "default": "-"
   }
 ]
 ```

@@ -16,37 +16,37 @@
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
     "content": [
-      "Follow-up for splint removal due to contamination",
+      "Follow-up regarding splint after exposure to someone else's blood",
       "Sensitivity and stiffness in PIP joint",
-      "MRI review and injection effects",
-      "Follow-up for wound healing",
-      "Pain after injection and left wrist concern"
+      "MRI review and effects of Kenalog injection",
+      "Follow-up on hand after injection",
+      "Right hand pain after injection and consideration for left wrist injection"
     ],
     "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "instruction": "Patient's chief complaint without additional details."
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
     "content": [
-      "Chaz had a laceration with sutures removed; some pain and limited flexion noted.",
-      "Meesha reports improvement in PIP stiffness with splint use but still experiences some sensitivity.",
-      "Grace experienced mass reduction post-injection but now reports worsening systemic symptoms.",
-      "Charles has a mild laceration and is protecting it with dressings.",
-      "Josefina had pain post-injection but is improving; also concerned about left wrist arthritis."
+      "Chaz Thomas presented for follow-up after taking off his splint due to exposure to someone else's blood. He reported some pain and limited flexion.",
+      "Meesha Senuda reported improvement in sensitivity and stiffness of the PIP joint but continued to experience some stiffness.",
+      "Grace Twan presented for MRI review following an IM Kenalog injection for a mass and other aches and pains.",
+      "Charles Shaw reported doing well overall with minimal pain and okay with his bulky dressings.",
+      "Josefina Marcial reported her right hand pain improved after an injection and is considering treatment for her left wrist."
     ],
     "default": "-",
-    "instruction": "Summarize the History of Present Illness."
+    "instruction": "Summarize HPI as a single paragraph."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
     "content": [
-      "Laceration clean, sutures removed; tolerating well with some pain and limited flexion.",
-      "Limited flexion at DIP joint; stiffness at PIP joint; minimal tenosynovitis.",
+      "Laceration clean, dry, intact with sutures removed; some pain, limited flexion.",
+      "Significantly limited flexion at DIP joint; stiffness but able to flex to 90 degrees; minimal tenosynovitis distally; hypersensitivity distally.",
       "Exam unchanged.",
-      "Mild laceration to proximal nail folds.",
-      "Bilateral tenosynovitis; ulnar prominence; limited motion."
+      "Mild laceration to proximal nail folds; can protect within asterisks.",
+      "Bilateral upper extremity skin clean, dry, intact without erythema or erosion; moderate tenosynovitis at DRUJ; bilateral ulnar prominence; limited motion bilaterally."
     ],
     "default": "",
     "instruction": "Physical examination findings related to Musculoskeletal."
@@ -55,11 +55,9 @@
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
     "content": [
-      "Sutures removed; no imaging mentioned.",
-      "X-ray deferred.",
-      "MRI reviewed.",
-      "New x-rays show ulnar prominence and arthritis.",
-      ""
+      "MRI results reviewed.",
+      "-",
+      "-"
     ],
     "default": "-",
     "instruction": "Extract imaging results explicitly mentioned."
@@ -68,11 +66,11 @@
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "Laceration healing well; sutures removed; pain; limited flexion.",
-      "PIP stiffness improving; DIP limited flexion.",
-      "Mass reduction post-injection; worsening systemic symptoms.",
-      "Mild laceration healing.",
-      "Right wrist improvement post-injection; left wrist arthritis."
+      "Laceration healing with sutures removed; pain and limited flexion.",
+      "PIP joint stiffness improving.",
+      "Mass and systemic symptoms.",
+      "Mild laceration to proximal nail folds.",
+      "Wrist arthritis; tenosynovitis."
     ],
     "default": "-",
     "instruction": "List active problems or conditions."
@@ -81,13 +79,13 @@
     "title": "Plan",
     "key": "PLAN_SPENCER_",
     "content": [
-      "Transition to removable splint; initiate hand therapy; return in two weeks.",
-      "Discontinue splint; home exercises; return in six weeks.",
-      "Discuss with Dr. Sidlow; return in three months.",
-      "Protect with dressings; return in one week.",
-      "Trial of night splints; home exercises; consider injection if no improvement."
+      "Transition to removable splint; initiate hand therapy; follow-up in two weeks.",
+      "Discontinue splint entirely; continue home exercise program; follow-up in six weeks.",
+      "Discuss with Dr. Sidlow about medical control; follow-up in three months or sooner if excisional biopsy desired.",
+      "Continue protecting with soft dressings; keep clean and dry; follow-up in one week.",
+      "Trial of night splints; home exercise program; consider injection if no improvement."
     ],
     "default": "-",
-    "instruction": "Write the doctor's plan as dictated."
+    "instruction": "Doctor's plan as dictated."
   }
 ]

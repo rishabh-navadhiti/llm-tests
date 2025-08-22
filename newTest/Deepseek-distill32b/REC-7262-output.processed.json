@@ -3,69 +3,72 @@
     "title": "Patient Name",
     "key": "PATIENT_NAME",
     "content": [
-      "Kabe Tahiri"
+      "Kabe Tahiri",
+      "Hoy Berlin"
     ],
     "default": "-",
-    "instruction": "Extracted Kabe Tahiri as explicitly mentioned."
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
     "content": [
-      "Neck pain follow-up"
+      "Neck pain",
+      "Uncomfortable cast"
     ],
     "default": "-",
-    "instruction": "Patient mentions neck issues without seeking further treatment."
+    "instruction": "Provide only the patient's chief complaint."
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
     "content": [
-      "Patient reports no change in neck condition since last visit; has not sought further treatment; exam findings remain unchanged; follow-up plan continues as previously established."
+      "Kabe's exam is unchanged with no new symptoms.",
+      "Hoy has discomfort from a scratchy cast leading to skin issues."
     ],
     "default": "-",
-    "instruction": "Summarized onset and duration without additional details."
+    "instruction": "Summarize HPI focusing on onset, duration, location, severity, etc."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
     "content": [
-      "Palpation of ulnar aspect of wrist; limited wrist motion secondary to immobilization; skin excoriations secondary to cast; excellent range of motion in fingers."
+      "Ulnar aspect of the wrist with limited motion",
+      "Thumb motion limited secondary to pain and immobilization"
     ],
     "default": "",
-    "instruction": "Extracted verbatim musculoskeletal findings."
+    "instruction": "Extract verbatim musculoskeletal findings."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
     "content": [
-      "X-rays show increased callus formation at ulna (right); left shows increased callus formation diffusely at radius and ulna."
+      "X-rays show increased callus formation at the ulna and radius."
     ],
     "default": "-",
-    "instruction": "Reported imaging findings as dictated."
+    "instruction": "Extract imaging results as dictated."
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
       "Neck pain",
-      "Status post wrist immobilization",
-      "Triggering of right index and middle fingers."
+      "Wrist immobilization issues",
+      "Cast-related skin excoriation"
     ],
     "default": "-",
-    "instruction": "Listed active problems based on discussion."
+    "instruction": "List active problems or conditions."
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
     "content": [
-      "Transition to short arm cast on left",
-      "Wean on right",
-      "Return in 4 weeks",
-      "Consider removable splint on left",
-      "Perform trigger finger release today."
+      "Follow-up in one year for Kabe.",
+      "Transition to short arm cast on left.",
+      "Wean right cast and consider removable splint.",
+      "Follow-up in 4 weeks."
     ],
     "default": "-",
-    "instruction": "Outlined plan exactly as dictated."
+    "instruction": "Extract the doctor's plan verbatim."
   }
 ]

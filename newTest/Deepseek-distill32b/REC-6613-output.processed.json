@@ -2,47 +2,32 @@
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": [
-      "Precious Myles Garrett"
-    ],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Precious Myles Garrett",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": [
-      "Evaluation of left wrist pain and masses."
-    ],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "Left wrist pain and masses",
+    "default": "-"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": [
-      "A 45-year-old right-hand dominant social worker presents with left wrist pain and masses. The pain is constant, waking her at night, and is more bothersome than the masses. She reports two masses: one at the dorsal radial aspect of her left wrist and another at the dorsal ulnar aspect of her left thumb MCP joint. These masses have been constant in size. She was evaluated by a rheumatologist who performed X-rays and an ultrasound of her wrist."
-    ],
-    "default": "-",
-    "instruction": "Summarize HPI with onset, duration, location, severity, treatments, and progression."
+    "content": "The patient presents with left wrist pain that is more bothersome than the associated masses, waking her at night. She reports two masses: one at the dorsal radial aspect of her left wrist and another at the dorsal ulnar aspect of her left thumb MCP joint. These masses have been constant in size recently. She previously consulted her rheumatologist, who performed X-rays and an ultrasound of the wrist.",
+    "default": "-"
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "Left upper extremity skin is clean, dry, and intact. A pea-sized mass is present over the first dorsal compartment, non-tender and mobile. Another mass is located at the dorsal ulnar aspect of the thumb MCP joint, non-mobile and minimally tender. Excellent range of motion at the thumb MCP with no tenderness at the A1 point, locking, or catching."
-    ],
-    "default": "",
-    "instruction": "Extract physical exam findings related to musculoskeletal system verbatim."
+    "content": "Left upper extremity skin is clean, dry, and intact without anything by my diagnosis. There is a pea-sized mass over the first dorsal compartment. No tenderness or location over the mass. It is mobile and non-tender. Negative Finklestein, no pain with resisted thumb extension. There is a mass at the dorsal ulnar aspect of the thumb MCP joint that is non-mobile and very minimally tender. Excellent range of motion at the thumb MCP. No tenderness or location at the A1 point, no locking or catching.",
+    "default": ""
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": [
-      "X-rays show an osteophyte at the thumb MCP joint. Ultrasound demonstrates a bony avulsion fragment versus osteophyte at the dorsal aspect of the MCP joint of the thumb and a retinacular cyst superficial to the first dorsal compartment sheath in the wrist."
-    ],
-    "default": "-",
-    "instruction": "Extract imaging results as dictated."
+    "content": "X-rays show an osteophyte at the thumb MCP joint. Ultrasound demonstrates a bony avulsion fragment versus osteophyte at the dorsal aspect of the MCP joint of the thumb and a retinacular cyst superficial to the first dorsal compartment sheath in the wrist.",
+    "default": "-"
   },
   {
     "title": "Assessment",
@@ -50,21 +35,14 @@
     "content": [
       "Left first dorsal compartment wrist cyst",
       "Left thumb MCP osteophyte",
-      "Bilateral... (further details unspecified)"
+      "Bilateral"
     ],
-    "default": "-",
-    "instruction": "List active problems or conditions."
+    "default": "-"
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": [
-      "Recommend night splints for carpal tunnel syndrome.",
-      "Observe masses for now.",
-      "Follow-up in six weeks.",
-      "Consider aspiration or biopsy of wrist mass."
-    ],
-    "default": "-",
-    "instruction": "List treatments, therapies, medications, imaging, education, or follow-up instructions."
+    "content": "Recommend night splints for carpal tunnel. Observation of masses for now. Follow-up in six weeks.",
+    "default": "-"
   }
 ]

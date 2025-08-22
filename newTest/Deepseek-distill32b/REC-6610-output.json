@@ -1,100 +1,60 @@
-Okay, so I need to process this medical transcript and fill out the JSON template provided. Let me start by reading through the transcript carefully to extract all the necessary information.
+Alright, I need to extract structured medical information from the provided transcript and populate the JSON template. Let me go through each field step by step.
 
-First, the transcript mentions three patients: Stephanie Humphrey, Amit Jaini, and David Schechter. Each has their own section in the conversation. I need to make sure I capture each patient's details correctly.
+1. **Patient Name**: The transcript mentions three patients: Miss Stephanie Humphrey, Amit Jaini, and David Schechter. Since the template requires only the patient's name if explicitly mentioned, I'll list all three as they are clearly stated.
 
-Starting with Stephanie Humphrey. She's a right-hand dominant horticulturalist who fell on 6/21/25. Her chief complaint is left wrist pain after the fall. The HPI should include the onset, duration, location, severity, mechanism, treatments, and progression. She went to urgent care, had X-rays showing no fractures, diagnosed with a sprain. Then her pain increased in Massachusetts due to humidity. On exam, her left wrist has mild tendon inflammation over ECU tendon, pain with pro-supination, normal X-rays. Assessment is left ECU tendonitis and ulnar-sided wrist pain. Plan includes RE full, hand therapy trial, MRI, and follow-up.
+2. **Chief Complaint**: Each patient has a different complaint. For Stephanie, it's left wrist pain after a fall. Amit has right small finger pain, swelling, and deformity. David complains of right wrist pain without trauma.
 
-Next, Amit Jaini. He's a left-hand dominant music manager with right small finger pain after playing basketball on 8/2/25. X-rays showed a fracture in the proximal phalanx. Exam shows malrotation, shortening, limited motion. Plan is closed reduction and percutaneous pinning tomorrow.
+3. **HPI Spencer**: I need to summarize each patient's history. For Stephanie, she fell on 6/21/25, had X-rays showing no fractures, diagnosed with sprain, pain worsened in Massachusetts. Amit injured his finger on 8/2/25 while playing basketball, immediate pain and swelling, X-rays showed a fracture. David's pain started in early 2024, intermittent, worsens with supination and flexion.
 
-Lastly, David Schechter. Right wrist pain since early 2024 without trauma. Pain with supination and flexion. Exam shows mild tendinopathy at ECU tendon, normal X-rays except mild joint space narrowing at thumb MCP. Plan is pending what Dr. De La George put in.
+4. **Musculoskeletal Verbatim**: Extract physical exam findings related to musculoskeletal. For Stephanie: mild tendon inflammation over ECU, pain with pro-supination, normal ROM. Amit: ecchymosis, malrotation, shortening, limited motion. David: mild tendinopathy at ECU, no subluxation.
 
-Now, mapping this to the JSON template:
+5. **Imaging Results**: Stephanie's X-rays were normal. Amit's X-rays showed a fracture. David's X-rays were normal with mild joint space narrowing.
 
-1. Patient Name: Extract each patient's full name as mentioned.
-2. Chief Complaint: For each patient, their main issue.
-3. HPI Spencer: Detailed history for each patient.
-4. Musculoskeletal: Physical exam findings related to MSK.
-5. Imaging Results: X-ray results as stated.
-6. Assessment: List of conditions.
-7. Plan: Treatment plans as dictated.
+6. **Assessment**: List active problems. Stephanie has ECU tendonitis and ulnar-sided wrist pain. Amit has a proximal phalanx fracture. David has ECU tendinopathy and joint space narrowing.
 
-I need to ensure each section is filled accurately without adding any inferred information. Also, maintain the order and structure of the JSON as specified.
+7. **Plan**: Each patient's plan is detailed. Stephanie gets therapy, MRI, and follow-up. Amit needs surgery. David's plan is pending but includes evaluation.
 
-I should double-check for any grammatical errors and ensure all sentences are properly punctuated. Also, make sure not to include any default values unless the information isn't present.
-
-Finally, compile all this into the JSON format exactly as the template requires, ensuring it's valid and can be parsed without issues.
+I'll structure each patient's information into separate objects within the JSON array, ensuring each field follows the template's instructions.
 </think>
 
-```json
 [
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": ["Stephanie Humphrey", "Amit Jaini", "David Schechter"],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Miss Stephanie Humphrey",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": ["Left wrist pain post fall", "Right small finger pain and swelling", "Right wrist pain"],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "Left wrist pain after a trip and fall"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": [
-      "Stephanie Humphrey, a right-hand dominant horticulturalist, fell on 6/21/25, sustaining left wrist pain. Urgent care X-rays showed no fractures, diagnosed as a sprain. Pain worsened in Massachusetts due to humidity.",
-      "Amit Jaini, a left-hand dominant music manager, injured his right small finger playing basketball on 8/2/25. Immediate pain and swelling led to X-rays revealing a proximal phalanx fracture.",
-      "David Schechter, a right-hand dominant pain medicine doctor, experienced right wrist pain since early 2024 without trauma. Pain worsens with supination and flexion."
-    ],
-    "default": "-",
-    "instruction": "Summarize HPI with onset, duration, location, severity, mechanism, treatments, and progression."
+    "content": "The patient experienced a trip and fall on 6/21/25 while leaving Groundlings, resulting in left wrist pain that initially improved but worsened with increased humidity in Massachusetts. She underwent X-rays at urgent care showing no fractures and was diagnosed with a sprain."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "Left wrist: mild tendon inflammation over ECU tendon, pain with pro-supination.",
-      "Right small finger: malrotation, shortening, limited motion.",
-      "Right wrist: mild tendinopathy at ECU tendon."
-    ],
-    "default": "",
-    "instruction": "Extract physical exam findings related to musculoskeletal."
+    "content": "Mild tendon inflammation over the ECU tendon. Pain with pro-supination. Excellent range of motion overall."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": [
-      "Left wrist X-rays normal.",
-      "Right small finger X-rays show proximal phalanx fracture.",
-      "Right wrist X-rays normal with mild joint space narrowing at thumb MCP."
-    ],
-    "default": "-",
-    "instruction": "Extract imaging results as dictated."
+    "content": "X-rays of the left wrist are normal."
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "- Left ECU tendonitis\n- Left ulnar-sided wrist pain",
-      "- Right small finger proximal phalanx fracture",
-      "- Right wrist pain with mild tendinopathy"
-    ],
-    "default": "-",
-    "instruction": "List active problems or conditions."
+      "Left ECU tendonitis",
+      "Left ulnar-sided wrist pain"
+    ]
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": [
-      "- Recommend RE full\n- Trial of hand therapy\n- MRI for further evaluation\n- Follow-up after MRI.",
-      "- Closed reduction and percutaneous pinning tomorrow.",
-      "- Plan pending Dr. De La George's input."
-    ],
-    "default": "-",
-    "instruction": "Write the doctor's plan as dictated."
+    "content": "Recommend trial of hand therapy. Recommend MRI for further evaluation. Return to clinic after MRI."
   }
 ]
-```

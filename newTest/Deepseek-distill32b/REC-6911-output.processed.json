@@ -2,65 +2,40 @@
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": [
-      "Walt"
-    ],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Walt",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": [
-      "When will the numbness resolve?"
-    ],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "Numbness resolution"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": [
-      "Walt is a post-op day 1 for carpal tunnel surgery. He reports minimal pain but ongoing numbness."
-    ],
-    "default": "-",
-    "instruction": "Summarize HPI with onset, duration, etc."
+    "content": "Walt, a PO1 with carpal tunnel, reports numbness and moderate ecchymosis post-operation. He has minimal pain but seeks resolution of numbness."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "Incision clean with joint-type sutures, moderate ecchymosis, consistent with postoperative state, good finger motion though not full."
-    ],
-    "default": "",
-    "instruction": "List exam findings verbatim."
+    "content": "Incision clean, joint sutures, moderate ecchymosis, good finger motion but not full."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": [
-      "-"
-    ],
-    "default": "-",
-    "instruction": "No imaging mentioned."
+    "content": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "- Post-op carpal tunnel",
-      "- Numbness"
-    ],
-    "default": "-",
-    "instruction": "List active problems."
+      "Post-op carpal tunnel",
+      "Residual numbness"
+    ]
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": [
-      "Return to clinic in 4 weeks for follow-up."
-    ],
-    "default": "-",
-    "instruction": "Note follow-up plan."
+    "content": "Post-op endo carpal tunnel; follow-up in 4 weeks."
   }
 ]

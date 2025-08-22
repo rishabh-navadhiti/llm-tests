@@ -2,67 +2,41 @@
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": [
-      "Magara"
-    ],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Magara",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": [
-      "Bilateral hand numbness and tingling"
-    ],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "bilateral hand numbness and tingling"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": [
-      "Magara, a right-hand dominant retiree, presents with bilateral hand numbness and tingling that began in January 2025 without trauma or injection. Symptoms have awakened her during sleep but improved with nighttime braces. She denies pain or limited motion and seeks evaluation and treatment."
-    ],
-    "default": "-",
-    "instruction": "Summarize HPI with onset, duration, location, severity, mechanism, treatments, and progression."
+    "content": "The patient, a right-hand dominant retiree, presents with bilateral hand numbness and tingling that began in January 2025 without trauma or injection. Symptoms have been waking her at night but have improved with nighttime bracing. She denies pain and limited motion."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "Bilateral upper extremity skin is clear, intact without rash. Minimal tissue swelling and minimal tenderness to palpation. PCGSI: Right ring finger 1.43, left ring finger 3.61, left hand 2.83, right hand 3.61."
-    ],
-    "default": "",
-    "instruction": "Extract verbatim musculoskeletal exam findings."
+    "content": "Bilateral upper extremity skin is clear, intact without rash, minimal soft tissue swelling, minimal tenderness to palpation."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": [
-      "Right hand: Variable joint space narrowing in IP joints, notably thumb MCP joint. Left hand: Severe joint space narrowing at carpometacarpal joint."
-    ],
-    "default": "-",
-    "instruction": "Extract imaging results as dictated."
+    "content": "X-rays of the right hand demonstrate variable joint space narrowing throughout the IP joints, most notably at the thumb MCP joint. Left hand shows severe joint space narrowing at the carpometacarpal joint."
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
       "Bilateral hand numbness and tingling",
-      "Carpal tunnel syndrome",
-      "Peripheral neuropathy"
-    ],
-    "default": "-",
-    "instruction": "List active problems or conditions."
+      "Features of carpal tunnel syndrome",
+      "Features of peripheral neuropathy"
+    ]
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": [
-      "Recommend nerve studies",
-      "Follow-up in 6 to 8 weeks."
-    ],
-    "default": "-",
-    "instruction": "Include treatments, therapies, medications, imaging, education, or follow-up instructions."
+    "content": "Nerve studies are recommended. Follow-up in 6-8 weeks. Consideration for carpal tunnel treatment."
   }
 ]

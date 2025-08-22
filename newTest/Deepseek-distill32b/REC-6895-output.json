@@ -1,26 +1,20 @@
-Okay, so I need to help transform this doctor-patient conversation into a structured patient visit note using the provided JSON template. Let me start by understanding the task.
+Alright, I need to extract structured medical information from the provided transcript and populate the JSON template. Let me go through each field step by step.
 
-First, I'll look at the JSON template provided. It has several sections like Patient Name, Chief Complaint, HPI Spencer, Musculoskeletal, Imaging Results, Assessment, and Plan. Each section has specific instructions on what to extract from the transcript.
+1. **Patient Name**: The transcript doesn't mention the patient's full name explicitly. The doctor refers to "PO1" and "he," but no full name is given. So, I'll use the default "-".
 
-Looking at the transcript, it's a series of conversation snippets with speakers and timestamps. The doctor and patient are discussing the patient's condition. The patient mentions not having much pain but some feedback and a funny feeling in certain positions. The doctor talks about finger rotation, limited motions, immobilization, and imaging results.
+2. **Chief Complaint**: The patient mentions having some feedback and feeling funny when in certain positions. The doctor notes limited finger motions. So, the chief complaint is about limited finger motion and discomfort.
 
-Starting with the Patient Name section. The instructions say to extract the full name exactly as it appears. Scanning through the transcript, I don't see any mention of a patient's name. So, I'll use the default value "-".
+3. **HPI Spencer**: The patient reports minimal pain but some feedback and discomfort in certain positions. The exam shows limited right and small finger motions, with the ulnar gutter splint in place. There's minimal fracture healing. I'll summarize this into a coherent paragraph focusing on the history without exam findings.
 
-Next is the Chief Complaint. The patient says he wants to know what's going on, so his main concern is understanding his symptoms. That translates to "What is going on?" as the chief complaint.
+4. **Musculoskeletal Verbatim**: The doctor mentions limited right and small finger motions, extra footstep stable, minimal fracture healing, and the ulnar gutter splint. I'll extract these verbatim.
 
-For the HPI Spencer section, I need to summarize the history of present illness. The patient mentions not much pain but some feedback and a funny feeling in certain positions. The doctor notes limited finger motions and minimal fracture healing. So, I'll structure this into a coherent paragraph focusing on onset, duration, location, etc., without adding any interpretations.
+5. **Imaging Results**: The transcript doesn't mention any imaging results, so I'll use the default "-".
 
-Moving on to Musculoskeletal findings. The doctor mentions right upper finger rotation appears correct but limited in right and small finger motions. Also, the fracture is stable with minimal healing. I'll extract this verbatim as per the instructions.
+6. **Assessment**: The patient has limited finger motion and minimal fracture healing. These are the active issues, so I'll list them.
 
-Imaging Results: The doctor refers to 4 views showing extra footstep stable and minimal fracture healing. So, I'll note that as "X-ray: stable with minimal fracture healing."
+7. **Plan**: The doctor plans to continue protecting with a splint, continue non-weight bearing, follow up in 3 weeks, transition to a thermoplastic clip, and provide therapy prescription. I'll list these as per the transcript.
 
-Assessment should list active problems. From the conversation, the issues are feedback sensation, limited finger motion, and fracture healing. I'll list these concisely.
-
-Finally, the Plan section includes continuing protection with a splint, down weight-bearing, follow-up in 3 weeks, and therapy prescription. I'll extract these points exactly as dictated.
-
-I need to ensure all sections follow the template's structure and use the correct keys. Also, I must avoid any grammatical errors and maintain a professional tone. Let me double-check each section against the transcript to make sure I haven't missed anything or added information not present.
-
-Everything seems to align with the instructions. Now, I'll format this into the required JSON structure without any markdown or extra explanations.
+I need to ensure all fields are filled correctly, using only the information from the transcript without adding any assumptions.
 </think>
 
 ```json
@@ -28,51 +22,47 @@ Everything seems to align with the instructions. Now, I'll format this into the 
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": ["-"],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+    "content": "-",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": ["What is going on?"],
-    "default": "-",
-    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+    "content": "Limited finger motion and discomfort in certain positions."
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": ["The patient reports minimal pain but experiences feedback and a funny sensation in certain positions. On examination, right upper finger rotation appears correct with limited motion in the right and small fingers. Imaging shows minimal fracture healing."],
-    "default": "-",
-    "instruction": "Summarize the History of Present Illness (HPI) as a single, coherent paragraph in professional clinical note style. Include only information explicitly stated in the transcript. Focus strictly on the patient’s history: onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event through current status. Do NOT include any exam findings, physical measurements, imaging results, or other objective observations. Do NOT infer functional limitations, abilities, or negative findings unless they are literally stated by the patient or clinician in the transcript. Use full sentences, proper grammar, and natural narrative style. Avoid adding adjectives, interpretations, or any information not directly dictated. Ensure the paragraph reads clearly, like a scribe note, and reflects only what is explicitly reported in the transcript."
+    "content": "The patient reports minimal pain but experiences discomfort in certain positions. Examination reveals limited motion in the right and small fingers with minimal fracture healing noted."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": ["Right upper finger rotation appears correct with limited motion in right and small fingers."],
-    "default": "",
-    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.Must be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+    "content": "Limited right and small finger motions, extra footstep stable, minimal fracture healing, ulnar gutter splint in place."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": ["X-ray: stable with minimal fracture healing."],
-    "default": "-",
-    "instruction": "Extract only the imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return the findings exactly as dictated, in clinical note style. Do not add interpretations, assumptions, or inferred normal results if none are stated. If the doctor says imaging was not performed, return the default value. If imaging was performed and the result is reported as normal, return it as 'X-ray normal' (or equivalent phrasing used in transcript). If no imaging results are mentioned at all, return the default value."
+    "content": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
-    "content": ["Feedback sensation", "Limited finger motion", "Fracture healing"],
-    "default": "-",
-    "instruction": "Generate the patient's Assessment section as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain', 'swelling') and diagnosis-based terms (e.g., 'trigger finger', 'wrist arthritis'). - Do not include normal findings (e.g., 'skin is intact') or negative statements (e.g., 'no tenderness to palpation'). - Only include 'status post' conditions if they describe an ongoing issue (e.g., 'stiff finger after surgery'); do not include if mentioned alone. - Keep terms short and scribe-style, without exam details or explanations. - Return the output strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+    "content": [
+      "Limited finger motion",
+      "Minimal fracture healing"
+    ]
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": ["Continue protection with ulnar gutter splint", "Continue down weight-bearing", "Follow-up in 3 weeks", "Therapy prescription provided"],
-    "default": "-",
-    "instruction": "Write the doctor's plan exactly as dictated in the transcript, formatted as a scribe-style summary.Rules:- Use only the treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned in the transcript.- Do not add, infer, or assume any details (for example: do not invent follow-up times such as '6–8 weeks' unless the doctor clearly states it).- If the doctor specifies a follow-up time, include it exactly as stated (e.g., 'return to clinic in 4 weeks').- Maintain natural clinical note style: multiple short sentences, numbered or bulleted steps allowed.- If no plan is explicitly mentioned in the transcript, return the default value."
+    "content": [
+      "Continue protecting with ulnar gutter splint",
+      "Continue non-weight bearing",
+      "Follow up in 3 weeks",
+      "Transition to thermoplastic clip",
+      "Provide therapy prescription"
+    ]
   }
 ]
 ```

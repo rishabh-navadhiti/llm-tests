@@ -2,65 +2,46 @@
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": [
-      "Nicole Coffee"
-    ],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Nicole Coffee",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": [
-      "Pain in left index finger"
-    ],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "pain in left index finger",
+    "default": "-"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": [
-      "The patient reports pain in her left index finger that she has noticed for a few months. It began bothering her during a previous shoulder appointment, where Dr. Almadroa recommended observation. However, the pain has worsened and has not improved. She is now seeking information about whether she can receive an injection."
-    ],
-    "default": "-",
-    "instruction": "Summarize the History of Present Illness."
+    "content": "The patient reports pain in her left index finger for a few months, which has worsened and not improved. She is seeking an injection at this visit.",
+    "default": "-"
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "Left upper extremity skin is clean, dry, and tacky without erythema. Acute moderate tenderness on left index finger with an A1 polli. There is walking catching. There is triggering on index finger. Excellent range of motion overall."
-    ],
-    "default": "",
-    "instruction": "Extract physical examination findings related to Musculoskeletal."
+    "content": "left upper extremity skin is clean, dry, and tacky without erythema. Acute moderate tenderness on left index finger with an A1 polii. There is walking catching. There is triggering on index finger. Excellent range of motion overall. Able to give a thumbs up, et cetera, et cetera.",
+    "default": ""
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": [
-      "X-rays of the finger are normal."
-    ],
-    "default": "-",
-    "instruction": "Extract imaging results explicitly mentioned."
+    "content": "X-rays of the finger are normal.",
+    "default": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "Trigger finger",
-      "Pain in left index finger"
+      "pain in left index finger",
+      "triggering on index finger"
     ],
-    "default": "-",
-    "instruction": "List active problems or conditions."
+    "default": "-"
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": [
-      "No injection will be given today. Plan to treat trigger finger."
-    ],
-    "default": "-",
-    "instruction": "Write the doctor's plan as dictated."
+    "content": "Trigger injection will be performed today.",
+    "default": "-"
   }
 ]

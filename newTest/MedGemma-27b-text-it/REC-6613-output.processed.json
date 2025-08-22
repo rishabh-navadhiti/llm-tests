@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": "Precious Myles Garrett",
+    "default": "-"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": "Left wrist pain",
+    "default": "-"
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": "Patient presents with left wrist pain and masses. She reports pain that wakes her up at night. She also has a mass on her wrist and a mass at the base of her thumb. The masses have been present for some time, fluctuating in size, but have been constant recently. The wrist mass is not tender, but the thumb mass is tender. She saw her rheumatologist who took X-rays and an ultrasound.",
+    "default": "-"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": "No tenderness to palpation.",
+    "default": ""
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": "X-ray shows osteophytes noted at the wrist. Ultrasound demonstrates a retinacular cyst. X-ray normal.",
+    "default": "-"
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "- Left wrist pain",
+      "- Left wrist mass",
+      "- Left thumb MCP joint pain",
+      "- Left thumb MCP joint mass",
+      "- Trigger finger"
+    ],
+    "default": "-"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": "Recommend splinting for 6 weeks. Recommend steroid injection into the A1 pulley. Recommend follow-up in 6 weeks. Discussed surgical options if conservative management fails.",
+    "default": "-"
+  }
+]

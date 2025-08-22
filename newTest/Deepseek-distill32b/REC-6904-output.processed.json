@@ -2,67 +2,45 @@
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": [
-      "Jane Pollock"
-    ],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript."
+    "content": "Jane Pollock",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": [
-      "Soreness and stiffness in the right upper extremity with some bruising."
-    ],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint."
+    "content": "sore and stiff, but not too painful"
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": [
-      "Jane Pollock reports doing well overall following her surgery. She experiences soreness and stiffness in her right upper extremity, with some bruising noted. She describes her pain as not too severe."
-    ],
-    "default": "-",
-    "instruction": "Summarize HPI with onset, duration, location, severity."
+    "content": "Jane Pollock is following up after surgery. She reports being sore and stiff but not too painful. She has some bruising and moderate ecchymosis to the palm consistent with the postoperative state. Her right upper extremity incisions are dry and intact with sutures. The middle and ring fingers are held in a flex position, limited fist about 4 centimeters from the palm with composite selection, unable to straighten fingers."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "Right upper extremity incisions are dry and intact with sutures. Moderate ecchymosis to the palm consistent with postoperative state. Middle and ring fingers held in flex position, limited fist formation about 4 cm from palm."
-    ],
-    "default": "",
-    "instruction": "Extract physical exam findings verbatim."
+    "content": "moderate ecchymosis to the palm consistent with postoperative state . There is uh the middle and ring fingers are hold in a flex position , limited fist about 4 centimeters from palm with composite selection , uh , unable to straighten fingers on the way ."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": [
-      "-"
-    ],
-    "default": "-",
-    "instruction": "No imaging results mentioned."
+    "content": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "Postoperative state of right upper extremity with ecchymosis",
-      "Limited finger movement"
-    ],
-    "default": "-",
-    "instruction": "List active problems."
+      "postoperative state",
+      "ecchymosis",
+      "limited finger movement"
+    ]
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
     "content": [
-      "Remove soft dressing",
-      "Return to clinic in one week for suture removal",
-      "Initiate therapy."
-    ],
-    "default": "-",
-    "instruction": "List doctor's plan verbatim."
+      "remove soft dressings",
+      "return to clinic in 6 days",
+      "follow-up in one week for suture removal and initiation of therapy"
+    ]
   }
 ]

@@ -2,67 +2,41 @@
   {
     "title": "Patient Name",
     "key": "PATIENT_NAME",
-    "content": [
-      "-"
-    ],
-    "default": "-",
-    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned."
+    "content": "James",
+    "default": "-"
   },
   {
     "title": "Chief Complaint",
     "key": "CHIEF_COMPLAINT",
-    "content": [
-      "Recurrence of trigger finger on the right side and new triggering on the left side."
-    ],
-    "default": "-",
-    "instruction": "Provide only the patient's chief complaint without additional details."
+    "content": "Recurrence of trigger finger on the right side and new triggering on the left side."
   },
   {
     "title": "HPI Spencer",
     "key": "HPI_SPENCER",
-    "content": [
-      "The patient reports a recurrence of trigger finger on the right side and new triggering on the left side. He is considering another injection but is unsure if it is too soon."
-    ],
-    "default": "-",
-    "instruction": "Summarize the History of Present Illness as a single paragraph."
+    "content": "The patient, James, is here for a follow-up after surgery with Dr. Hertz. He reports a recurrence of trigger finger on his right side and new triggering on the left side. He is interested in knowing if it is too soon for another injection. On examination, both sides show moderate soft tissue swelling, with triggering of the middle finger and a nodule present on the right side."
   },
   {
     "title": "Musculoskeletal",
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "content": [
-      "Moderate soft tissue swelling on both sides, triggering of the middle finger, and a nodule causing it."
-    ],
-    "default": "",
-    "instruction": "Extract physical examination findings related to Musculoskeletal."
+    "content": "Moderate soft tissue swelling, triggering of the middle finger, nodule present."
   },
   {
     "title": "Imaging Results",
     "key": "IMAGING_RESULTS",
-    "content": [
-      "-"
-    ],
-    "default": "-",
-    "instruction": "Extract imaging results explicitly mentioned in the transcript."
+    "content": "-"
   },
   {
     "title": "Assessment",
     "key": "ASSESSMENT_SPENCER",
     "content": [
-      "- Trigger finger (right middle finger)",
-      "- Trigger finger (left middle finger)"
-    ],
-    "default": "-",
-    "instruction": "Generate a concise list of active problems or conditions."
+      "Trigger finger (right side)",
+      "Trigger finger (left side)",
+      "Status post surgery"
+    ]
   },
   {
     "title": "Plan",
     "key": "PLAN_SPENCER_",
-    "content": [
-      "- Defer injection on the right side.",
-      "- Proceed with injection on the left side.",
-      "- Recommend follow-up with Doctor Hertz."
-    ],
-    "default": "-",
-    "instruction": "Write the doctor's plan exactly as dictated in the transcript."
+    "content": "Deferring injection on the right side; proceeding with injection on the left side today. Recommend follow-up with Dr. Hertz."
   }
 ]

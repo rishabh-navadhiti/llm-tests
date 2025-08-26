@@ -1,0 +1,75 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Walt",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Numbness resolution",
+    "content_analysis": 0.0,
+    "content_similarity": 0.3407999873161316,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.3018999993801117,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1665
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Walt, a PO1 with carpal tunnel, reports numbness and moderate ecchymosis post-operation. He has minimal pain but seeks resolution of numbness.",
+    "content_analysis": 0.2353,
+    "content_similarity": 0.6510999798774719,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5792999863624573,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0382
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Incision clean, joint sutures, moderate ecchymosis, good finger motion but not full.",
+    "content_analysis": 0.7143,
+    "content_similarity": 0.9135000109672546,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.9045000076293945,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0511
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Post-op carpal tunnel",
+      "Residual numbness"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.7290999889373779,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.7689999938011169,
+    "title": "Assessment",
+    "topic_similarity": 0.0921
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Post-op endo carpal tunnel; follow-up in 4 weeks.",
+    "content_analysis": 0.7273,
+    "content_similarity": 0.925000011920929,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6948000192642212,
+    "title": "Plan",
+    "topic_similarity": 0.1398
+  }
+]

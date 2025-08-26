@@ -1,0 +1,90 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Nadeem Nemi"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Worsening bilateral thumb pain"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.9347000122070312,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.9174000024795532,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1209
+  },
+  {
+    "bleu_score": 0.2513,
+    "content": [
+      "Patient presents with worsening bilateral hand pain, specifically involving the thumbs, which has progressed over the last six months. He denies numbness or tingling. He is limited by his symptoms."
+    ],
+    "content_analysis": 0.5556,
+    "content_similarity": 0.8741999864578247,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7300000190734863,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0283
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [],
+    "content_analysis": 0.0,
+    "content_similarity": 0.7006000280380249,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.0,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-ray normal"
+    ],
+    "content_analysis": 0.1765,
+    "content_similarity": 0.390500009059906,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.23149999976158142,
+    "title": "Imaging Results",
+    "topic_similarity": 0.1676
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Hand pain",
+      "- Thumb pain",
+      "- Trigger finger",
+      "- Wrist arthritis",
+      "- Thumb CMC arthritis",
+      "- Stiff finger after surgery"
+    ],
+    "content_analysis": 0.2,
+    "content_similarity": 0.5227000117301941,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5,
+    "title": "Assessment",
+    "topic_similarity": 0.0271
+  },
+  {
+    "bleu_score": 0.1833,
+    "content": [
+      "Bilateral trigger finger injections.",
+      "Return to clinic in two weeks for follow-up."
+    ],
+    "content_analysis": 0.0714,
+    "content_similarity": 0.6175000071525574,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.4961000084877014,
+    "title": "Plan",
+    "topic_similarity": 0.0362
+  }
+]

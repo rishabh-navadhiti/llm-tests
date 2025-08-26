@@ -1,0 +1,92 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.1987999975681305,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.1906999945640564,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "continued soft tissue swelling with hand activity"
+    ],
+    "content_analysis": 0.3333,
+    "content_similarity": 0.7664999961853027,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.7311999797821045,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9982
+  },
+  {
+    "bleu_score": 0.0985,
+    "content": [
+      "The patient is a postoperative patient with continued soft tissue swelling, particularly with increased hand activity. She reports significant improvement in sensation over the past week, with prior hypersensitivity noted two weeks ago and the week before. The incision is well healed with minimal scarring and no firmness. She has excellent range of motion, full fist closure without pain, and is able to place her hand flat on the table. There is a very slight extension lag of less than 5 degrees compared to baseline. Sensation remains decreased but is improving in one digit."
+    ],
+    "content_analysis": 0.1875,
+    "content_similarity": 0.8170999884605408,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5684000253677368,
+    "title": "HPI Spencer",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.3631,
+    "content": [
+      "incision , well healed , very minimal scar , no um firmness to the scar . Excellent range of motion , full tight fist without pain , um , able to get hand flat on the table , there is a very slight extension lag , um , less than 5 degrees when compared to her baseline . Uh , hyperextension , uh , sensation decreased but improving to the on one of the digit"
+    ],
+    "content_analysis": 0.8,
+    "content_similarity": 0.9296000003814697,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7469000220298767,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.998
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- continued soft tissue swelling",
+      "- improved sensation",
+      "- well-healed incision",
+      "- slight extension lag <5 degrees"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.051100000739097595,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.0,
+    "title": "Assessment",
+    "topic_similarity": 0.4789
+  },
+  {
+    "bleu_score": 0.4123,
+    "content": [
+      "Wean splint.",
+      "Advance activity.",
+      "Advance range of motion.",
+      "Return to clinic in 3 months for follow-up."
+    ],
+    "content_analysis": 0.7,
+    "content_similarity": 0.9452000260353088,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.7886000275611877,
+    "title": "Plan",
+    "topic_similarity": 0.0524
+  }
+]

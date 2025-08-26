@@ -1,0 +1,79 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.1356000006198883,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.15639999508857727,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "contraction of bilateral hands",
+    "content_analysis": 0.3333,
+    "content_similarity": 0.8034999966621399,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8549000024795532,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.136
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient is a dominant retiree presenting for evaluation of bilateral hand contractions that began many years ago. He first noticed the condition on his left hand and now observes it on his right hand. The left hand is unable to lie flat on the table due to significant contracture of the ring finger. On examination, the left upper extremity shows significant chordation and nodules, with a 45-degree contracture at the ring finger MP joint and a 10-degree contracture at the PIP joint. No measurable contractures are present in the remaining digits. X-rays of the left hand are normal. The right hand examination reveals intact skin with nodules along the long and ring finger rays but no evidence of contracture.",
+    "content_analysis": 0.303,
+    "content_similarity": 0.786899983882904,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6761999726295471,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0096
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Left upper extremity skin is cleaner without erythema or edema. Significant chordation and nodules along the way, consistent with dense fibrosis. There is a 45-degree contracture at the ring finger MP joint and a 10-degree contracture at the PIP joint. No measurable contracture at any remaining digits. Right hand skin is intact with nodules towards the long and ring finger rays.",
+    "content_analysis": 0.4828,
+    "content_similarity": 0.7620000243186951,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.6029000282287598,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.01
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays normal",
+    "content_analysis": 0.75,
+    "content_similarity": 0.7666000127792358,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7192000150680542,
+    "title": "Imaging Results",
+    "topic_similarity": 0.2497
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Bilateral hand contractures",
+      "Nodules on left and right hands",
+      "MRI recommended"
+    ],
+    "content_analysis": 0.2,
+    "content_similarity": 0.5669999718666077,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.6722999811172485,
+    "title": "Assessment",
+    "topic_similarity": 0.0885
+  },
+  {
+    "bleu_score": 0.59,
+    "content": [
+      "Recommend Zylex.",
+      "Return to clinic when medication is acquired."
+    ],
+    "content_analysis": 0.2222,
+    "content_similarity": 0.5218999981880188,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.652999997138977,
+    "title": "Plan",
+    "topic_similarity": 0.9992
+  }
+]

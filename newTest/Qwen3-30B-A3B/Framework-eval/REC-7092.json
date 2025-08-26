@@ -1,0 +1,94 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 1.0,
+    "content": [
+      "Left index finger injury"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.3199,
+    "content": [
+      "The patient is a left hand dominant individual who sustained an injury to his left index finger at 8:15 AM on the 25th when a camping trunk hinge opened and struck his hand. He reports pain with motion. There is no deformity or angulation. He was taken to the emergency room where X-rays were performed, revealing a fracture. He has two lacerations on the dorsal aspect of the left index finger and the ulnar border of the index finger in the second web space, which are well approximated with interrupted suture material. He has limited flexion and extension of the middle finger at the proximal interphalangeal joint. The fracture is minimally displaced. The patient is scheduled to attend Burning Man on Friday at age 22. He was counseled on risks of sand and sweat exposure leading to infection. He is currently on antibiotics for a few more days and will return to clinic upon return from Burning Man."
+    ],
+    "content_analysis": 0.4762,
+    "content_similarity": 0.78329998254776,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.8395000100135803,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0069
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "There's no deformity or angulation . Um , he went to the emergency room where X-rays were taken that showed a fracture . There's no apparent mal rotation of the index finger . He has limited flexion and extension of the middle finger at the empty point so he is actively able to flex and uh so much ."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.054099999368190765,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.08919999748468399,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4608
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-rays showed a fracture"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.7964000105857849,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7792999744415283,
+    "title": "Imaging Results",
+    "topic_similarity": 0.113
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Left index finger fracture",
+      "- Left index finger lacerations",
+      "- Limited flexion and extension of middle finger at proximal interphalangeal joint"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.6208000183105469,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5672000050544739,
+    "title": "Assessment",
+    "topic_similarity": 0.0459
+  },
+  {
+    "bleu_score": 0.2433,
+    "content": [
+      "Will be placed in a fracture cast.",
+      "Regarding the index finger crush injury, reviewed SAC; recommend continuing cast.",
+      "Regarding lacerations, discussed care; recommend protecting with soft dressing under splint.",
+      "Patient is scheduled to attend Burning Man on Friday; risks of sand and infection discussed.",
+      "Risks of sweating and infection discussed; patient understands precautions.",
+      "Patient is on antibiotics for a few more days.",
+      "Patient will return to clinic when they return from Burning Man."
+    ],
+    "content_analysis": 0.6552,
+    "content_similarity": 0.8715999722480774,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.7871000170707703,
+    "title": "Plan",
+    "topic_similarity": 0.0134
+  }
+]

@@ -1,0 +1,75 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.20389999449253082,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.1460999995470047,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "index finger pain and stiffness",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient presents with index finger pain and stiffness following a laceration on 7-16-25 while working with a chisel. He sought urgent care where the wound was irrigated and repaired. Sutures were removed after 14 days, but the wound reopened. Currently, he reports a stiff index finger with limited flexion.",
+    "content_analysis": 0.2353,
+    "content_similarity": 0.7868000268936157,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.795199990272522,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.9999
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Left upper extremity in-a laceration well-healing without sutures. A very stiff index finger PIP able to flex only about 10 degrees actively at this time. Moderate soft tissue swelling, no sensory tenderness to palpation. Excellent range of motion of the remaining digit.",
+    "content_analysis": 0.7222,
+    "content_similarity": 0.8708000183105469,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7570000290870667,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0164
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays normal",
+    "content_analysis": 1.0,
+    "content_similarity": 0.9528999924659729,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.8758000135421753,
+    "title": "Imaging Results",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "index finger PIP laceration",
+      "stiff finger"
+    ],
+    "content_analysis": 0.6,
+    "content_similarity": 0.8416000008583069,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.8234000205993652,
+    "title": "Assessment",
+    "topic_similarity": 0.0603
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Recommend hand therapy. Return to clinic in four weeks for follow-up.",
+    "content_analysis": 0.3571,
+    "content_similarity": 0.7432000041007996,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.607200026512146,
+    "title": "Plan",
+    "topic_similarity": 0.0495
+  }
+]

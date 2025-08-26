@@ -1,0 +1,75 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Right middle finger crush injury",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient presents with a right middle finger crush injury that occurred on 7-8-25 when her finger was crushed by a dumbbell. She experienced immediate pain, swelling, and limited motion. She sought urgent care where X-rays revealed a fracture, and she was treated with a splint. Follow-up X-rays after 4 weeks showed continued fracture, leading her to continue wearing the splint. She now presents for further evaluation and treatment.",
+    "content_analysis": 0.8421,
+    "content_similarity": 0.9279000163078308,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.8885999917984009,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0164
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Some hematoma noted, excellent flexion of the PIP, some DIP stiffness, no tenderness on palpation of the distal phalanx, some paresthesia at the distal phalanx.",
+    "content_analysis": 0.0,
+    "content_similarity": 0.023900000378489494,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": -0.013199999928474426,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4857
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays show a fracture of the distal phalanx with stable alignment and good fracture healing.",
+    "content_analysis": 0.5833,
+    "content_similarity": 0.9495000243186951,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7558000087738037,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0383
+  },
+  {
+    "bleu_score": 0.5623,
+    "content": [
+      "Right middle finger crush injury",
+      "Distal phalanx fracture"
+    ],
+    "content_analysis": 0.3125,
+    "content_similarity": 0.6786999702453613,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5543000102043152,
+    "title": "Assessment",
+    "topic_similarity": 0.9994
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Reple advanced activity, avoid hanging from hands, return to clinic in 3 weeks for nail check before wedding.",
+    "content_analysis": 0.8,
+    "content_similarity": 0.9634000062942505,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.9532999992370605,
+    "title": "Plan",
+    "topic_similarity": 0.0437
+  }
+]

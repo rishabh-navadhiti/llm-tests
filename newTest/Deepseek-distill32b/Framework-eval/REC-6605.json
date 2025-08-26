@@ -1,0 +1,75 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Gianna Saborio",
+    "content_analysis": 0.0,
+    "content_similarity": 0.16449999809265137,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.19380000233650208,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Evaluation of left small finger with locking and catching; tethering with finger flexion.",
+    "content_analysis": 0.3333,
+    "content_similarity": 0.7811999917030334,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.6837000250816345,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.0708
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient first noticed locking and catching in the left small finger two years ago. He avoided seeking treatment due to previous trigger finger surgeries but now desires evaluation. On exam, the left small finger shows moderate tenderness to palpation with a nodule at the trigger point, limiting range of motion. Well-healed incisions are noted on the middle finger. X-rays are normal.",
+    "content_analysis": 0.1852,
+    "content_similarity": 0.65420001745224,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7652000188827515,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.014
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Left small finger skin is purging without erythema; moderate tenderness to palpation; nodule at trigger point; excellent range of motion overall; well-healed trigger finger incisions to the middle finger.",
+    "content_analysis": 0.75,
+    "content_similarity": 0.9229000210762024,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.5217999815940857,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0243
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays normal for left small finger.",
+    "content_analysis": 1.0,
+    "content_similarity": 0.98089998960495,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.9240999817848206,
+    "title": "Imaging Results",
+    "topic_similarity": 0.1374
+  },
+  {
+    "bleu_score": 0.726,
+    "content": [
+      "Trigger finger (left small finger)",
+      "Tethering post-surgery"
+    ],
+    "content_analysis": 0.4,
+    "content_similarity": 0.6765999794006348,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.491100013256073,
+    "title": "Assessment",
+    "topic_similarity": 0.1209
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Planned trigger finger surgery; gentle advancement of activity and range of motion; follow-up video visit in one month if symptoms persist.",
+    "content_analysis": 0.125,
+    "content_similarity": 0.794700026512146,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.4700999855995178,
+    "title": "Plan",
+    "topic_similarity": 0.0571
+  }
+]

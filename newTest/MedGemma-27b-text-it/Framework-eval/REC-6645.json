@@ -1,0 +1,76 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.26899999380111694,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.22200000286102295,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Bilateral thumb pain",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Patient presents for evaluation of bilateral thumb pain. The pain has worsened significantly since his last visit in 2019, particularly over the last six months. He denies numbness and tingling but reports significant pain. He feels limited by his thumbs.",
+    "content_analysis": 0.6667,
+    "content_similarity": 0.9616000056266785,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.8447999954223633,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0211
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "bilateral upper extremity skin is clean, dry and intact. no significant soft tissue swelling, positive grind, positive shoulder sign.",
+    "content_analysis": 0.75,
+    "content_similarity": 0.8041999936103821,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7452999949455261,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0346
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-ray normal",
+    "content_analysis": 0.1579,
+    "content_similarity": 0.4334000051021576,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.2386000007390976,
+    "title": "Imaging Results",
+    "topic_similarity": 0.9545
+  },
+  {
+    "bleu_score": 0.1934,
+    "content": [
+      "- Bilateral thumb pain",
+      "- Bilateral thumb CMC arthritis",
+      "- Bilateral thumb stiffness"
+    ],
+    "content_analysis": 0.3,
+    "content_similarity": 0.6597999930381775,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5453000068664551,
+    "title": "Assessment",
+    "topic_similarity": 0.0331
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Recommend trial of bilateral thumb CMC joint injections. Discussed temporary nature of steroid injections and potential rebound pain. Recommend observation for carpal tunnel and cubital tunnel symptoms. Consider nerve conduction studies if symptoms recur. Follow up in 2 months.",
+    "content_analysis": 0.7273,
+    "content_similarity": 0.9383000135421753,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.8672999739646912,
+    "title": "Plan",
+    "topic_similarity": 1.0
+  }
+]

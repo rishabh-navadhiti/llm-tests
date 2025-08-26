@@ -1,0 +1,87 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Nicole Coffee"
+    ],
+    "content_analysis": 0.2,
+    "content_similarity": 0.765500009059906,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.7318000197410583,
+    "title": "Patient Name",
+    "topic_similarity": 0.2033
+  },
+  {
+    "bleu_score": 1.0,
+    "content": [
+      "Left index finger pain"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.1078,
+    "content": [
+      "Patient presents with left index finger pain that she has noticed for several months. The pain initially bothered her during her shoulder appointment but has worsened over time. She previously saw Dr. Almadroa who recommended observation, but the condition has not improved and has progressed to causing triggering. She is now requesting treatment."
+    ],
+    "content_analysis": 0.3684,
+    "content_similarity": 0.7696999907493591,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5636000037193298,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0207
+  },
+  {
+    "bleu_score": 0.2723,
+    "content": [
+      "Acute moderate tenderness to palpation over the A1 pulley of the left index finger."
+    ],
+    "content_analysis": 0.4167,
+    "content_similarity": 0.7638000249862671,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7351999878883362,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.9992
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-ray normal"
+    ],
+    "content_analysis": 0.4286,
+    "content_similarity": 0.7016000151634216,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.5425000190734863,
+    "title": "Imaging Results",
+    "topic_similarity": 0.2123
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Left index finger trigger finger"
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.8564000129699707,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.6542999744415283,
+    "title": "Assessment",
+    "topic_similarity": 0.0762
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Plan trigger finger injection.",
+      "X-rays three views of the finger are normal."
+    ],
+    "content_analysis": 0.3333,
+    "content_similarity": 0.4350999891757965,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5454000234603882,
+    "title": "Plan",
+    "topic_similarity": 0.9982
+  }
+]

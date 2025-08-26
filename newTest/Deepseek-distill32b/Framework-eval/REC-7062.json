@@ -1,0 +1,75 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.1987999975681305,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.1906999945640564,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Soft tissue swelling in the hand",
+    "content_analysis": 0.5,
+    "content_similarity": 0.7922000288963318,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8008000254631042,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1209
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient reports noticing continued soft tissue swelling in her hand, particularly when more active. She had experienced hypersensitivity two weeks ago, which has significantly improved over the last week.",
+    "content_analysis": 0.3846,
+    "content_similarity": 0.8851000070571899,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.590399980545044,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0224
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Incision well healed, very minimal scar, no firmness to the scar. Excellent range of motion, full tight fist without pain, able to get hand flat on the table. There is a very slight extension lag, less than 5 degrees when compared to her baseline. Hyperextension, sensation decreased but improving on one of the digits.",
+    "content_analysis": 0.7619,
+    "content_similarity": 0.9470999836921692,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7558000087738037,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.015
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Soft tissue swelling",
+      "Hypersensitivity improving"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.016300000250339508,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.0,
+    "title": "Assessment",
+    "topic_similarity": 0.5146
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Wean splint, advance activity and range of motion, return to clinic in 3 months for follow-up.",
+    "content_analysis": 0.6364,
+    "content_similarity": 0.9327999949455261,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6344000101089478,
+    "title": "Plan",
+    "topic_similarity": 0.0525
+  }
+]

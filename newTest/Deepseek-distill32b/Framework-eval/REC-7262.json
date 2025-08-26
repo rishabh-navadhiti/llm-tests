@@ -1,0 +1,95 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Kabe Tahiri",
+      "Hoy Berlin"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.6887999773025513,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.6917999982833862,
+    "title": "Patient Name",
+    "topic_similarity": 0.1516
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Neck pain",
+      "Uncomfortable cast"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.09870000183582306,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.19670000672340393,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Kabe's exam is unchanged with no new symptoms.",
+      "Hoy has discomfort from a scratchy cast leading to skin issues."
+    ],
+    "content_analysis": 0.0909,
+    "content_similarity": 0.6626999974250793,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.3926999866962433,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0278
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Ulnar aspect of the wrist with limited motion",
+      "Thumb motion limited secondary to pain and immobilization"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.02930000051856041,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": -0.0024999999441206455,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4789
+  },
+  {
+    "bleu_score": 0.5327,
+    "content": [
+      "X-rays show increased callus formation at the ulna and radius."
+    ],
+    "content_analysis": 0.8571,
+    "content_similarity": 0.817799985408783,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7990000247955322,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0552
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Neck pain",
+      "Wrist immobilization issues",
+      "Cast-related skin excoriation"
+    ],
+    "content_analysis": 0.0769,
+    "content_similarity": 0.4584999978542328,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.39989998936653137,
+    "title": "Assessment",
+    "topic_similarity": 0.0514
+  },
+  {
+    "bleu_score": 0.1527,
+    "content": [
+      "Follow-up in one year for Kabe.",
+      "Transition to short arm cast on left.",
+      "Wean right cast and consider removable splint.",
+      "Follow-up in 4 weeks."
+    ],
+    "content_analysis": 0.3182,
+    "content_similarity": 0.6305999755859375,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6304000020027161,
+    "title": "Plan",
+    "topic_similarity": 0.0306
+  }
+]

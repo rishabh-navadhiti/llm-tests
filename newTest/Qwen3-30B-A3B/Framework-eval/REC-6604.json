@@ -1,0 +1,88 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Nicole Coffee"
+    ],
+    "content_analysis": 0.2,
+    "content_similarity": 0.765500009059906,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.7318000197410583,
+    "title": "Patient Name",
+    "topic_similarity": 0.2033
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Pain in left index finger"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.9848999977111816,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.9621000289916992,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.1424,
+    "content": [
+      "Nicole Coffee is a previous patient presenting with pain in the left index finger that has been present for several months. She first noticed the symptom during a shoulder appointment with Dr. Almadroa, who recommended observation. Since then, the pain has worsened and has not improved. She is seeking treatment, specifically requesting an injection at this time."
+    ],
+    "content_analysis": 0.3333,
+    "content_similarity": 0.6187000274658203,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5935999751091003,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0203
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "acute moderate tenderness on left index finger with an A1 polii. Uh, there is walking catching. There is triggering on index finger."
+    ],
+    "content_analysis": 0.3077,
+    "content_similarity": 0.6399999856948853,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.5945000052452087,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0306
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-rays are three views of the finger are normal"
+    ],
+    "content_analysis": 0.8571,
+    "content_similarity": 0.9243999719619751,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.9301000237464905,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0927
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Trigger finger, left index finger",
+      "- Pain, left index finger"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.9082000255584717,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.8632000088691711,
+    "title": "Assessment",
+    "topic_similarity": 0.0644
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Plan will be to do trigger release today.",
+      "Patient is not having the injection."
+    ],
+    "content_analysis": 0.6667,
+    "content_similarity": 0.8234000205993652,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5056999921798706,
+    "title": "Plan",
+    "topic_similarity": 0.9996
+  }
+]

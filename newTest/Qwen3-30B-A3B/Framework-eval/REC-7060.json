@@ -1,0 +1,91 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.18790000677108765,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.18619999289512634,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Right ring finger trigger finger recurrence"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.6327000260353088,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.5781999826431274,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9933
+  },
+  {
+    "bleu_score": 0.2463,
+    "content": [
+      "The patient is here for follow-up. She reports doing very well from a thumb perspective and has adapted to her CMC arthritis. However, she notes that her right ring finger trigger finger has recurred. She began noticing symptoms around February 25, 2020. She initially thought it might not return, but it has. She is currently experiencing triggering in the right ring finger with mild tenderness to palpation of the right ring finger pulley."
+    ],
+    "content_analysis": 0.3182,
+    "content_similarity": 0.7735000252723694,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6870999932289124,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.014
+  },
+  {
+    "bleu_score": 0.2603,
+    "content": [
+      "On the exam , it'll be mild tender palpation of the thumb CMC joints . There is triggering at the right ring finger , there is tenderus palpation of the right ring for pulley plan ."
+    ],
+    "content_analysis": 0.4615,
+    "content_similarity": 0.7573999762535095,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.6438000202178955,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0249
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.3326,
+    "content": [
+      "- Right ring finger trigger finger recurrence",
+      "- CMC arthritis status post injections"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8098999857902527,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.7699000239372253,
+    "title": "Assessment",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.1849,
+    "content": [
+      "Recommend conservative management for right ring finger trigger finger.",
+      "She had three injections previously.",
+      "Recommend surgical release.",
+      "Proceed with carpal tunnel release.",
+      "Continue night lifting."
+    ],
+    "content_analysis": 0.4737,
+    "content_similarity": 0.8395000100135803,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5963000059127808,
+    "title": "Plan",
+    "topic_similarity": 0.672
+  }
+]

@@ -1,0 +1,75 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.18790000677108765,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.18619999289512634,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Right ring finger trigger finger",
+    "content_analysis": 0.6667,
+    "content_similarity": 0.8008000254631042,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.7627999782562256,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1407
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient reports doing well with her thumb but notes that her right ring finger trigger finger has recurred. Symptoms began around 2020, and she had previously received 3 injections, which were not effective.",
+    "content_analysis": 0.2941,
+    "content_similarity": 0.8093000054359436,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5031999945640564,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0214
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Mild tenderness to palpation of the thumb CMC joints. Triggering at the right ring finger with tenderness at the right ring finger pulley.",
+    "content_analysis": 0.7,
+    "content_similarity": 0.8881999850273132,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.8156999945640564,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0288
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.7071,
+    "content": [
+      "CMC arthritis",
+      "Right ring finger trigger finger"
+    ],
+    "content_analysis": 0.8333,
+    "content_similarity": 0.9628000259399414,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.9394999742507935,
+    "title": "Assessment",
+    "topic_similarity": 0.9999
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Recommend surgical release after discussing risks. Continue night lifting.",
+    "content_analysis": 0.1667,
+    "content_similarity": 0.29019999504089355,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.35679998993873596,
+    "title": "Plan",
+    "topic_similarity": 0.0396
+  }
+]

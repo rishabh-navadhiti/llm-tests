@@ -1,0 +1,89 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.517,
+    "content": [
+      "Evaluation of left small finger locking and catching"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.9132000207901001,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8407999873161316,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9999
+  },
+  {
+    "bleu_score": 0.1735,
+    "content": [
+      "The patient is a right-hand dominant designer presenting for evaluation of his left small finger. He first noticed locking and catching in the left small finger approximately two years ago. He delayed seeking care due to prior surgical treatment for trigger fingers in other digits. He is now seeking treatment options. There is no mention of acute trauma or recent change in symptoms. He denies other trigger digits at this time."
+    ],
+    "content_analysis": 0.3043,
+    "content_similarity": 0.8162999749183655,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7919999957084656,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0135
+  },
+  {
+    "bleu_score": 0.3484,
+    "content": [
+      "left small finger skin is purging. In fact, without erythema, he has a moderate tenderness to palpation. Um, at the small finger aim of fluid is nodule that is triggering that excellent range of motion overall. Um, well-healed trigger finger incisions to the middle finger."
+    ],
+    "content_analysis": 0.6429,
+    "content_similarity": 0.91839998960495,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.6539999842643738,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-rays are normal"
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.7239999771118164,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.628600001335144,
+    "title": "Imaging Results",
+    "topic_similarity": 0.2453
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Left small finger trigger finger",
+      "- Status post trigger finger release (middle finger)",
+      "- No other trigger digits present"
+    ],
+    "content_analysis": 0.3333,
+    "content_similarity": 0.7585999965667725,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.8044000267982483,
+    "title": "Assessment",
+    "topic_similarity": 0.9956
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Plan will be planned trigger.",
+      "He is not having any other triggers today."
+    ],
+    "content_analysis": 0.125,
+    "content_similarity": 0.45320001244544983,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.3781000077724457,
+    "title": "Plan",
+    "topic_similarity": 0.1078
+  }
+]

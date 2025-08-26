@@ -1,0 +1,91 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Jane Pollock"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Sore and stiff hand with bruising following surgery"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": -0.02459999918937683,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.10949999839067459,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.504
+  },
+  {
+    "bleu_score": 0.0712,
+    "content": [
+      "Jane Pollock is a postoperative patient presenting for follow-up. She reports overall good recovery but notes ongoing soreness and stiffness in her right upper extremity. She has moderate ecchymosis to the palm consistent with the postoperative state. The middle and ring fingers remain flexed and are unable to fully straighten, with limited fist formation approximately 4 centimeters from the palm. She has not reported any significant pain beyond mild discomfort."
+    ],
+    "content_analysis": 0.1923,
+    "content_similarity": 0.755299985408783,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6933000087738037,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0189
+  },
+  {
+    "bleu_score": 0.5444,
+    "content": [
+      "moderate ecchymosis to the palm consistent with postoperative state . There is uh the middle and ring fingers are hold in a flex position , limited fist about 4 centimeters from palm with composite selection , uh , unable to straighten fingers on the way ."
+    ],
+    "content_analysis": 0.6667,
+    "content_similarity": 0.861299991607666,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7728000283241272,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0178
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Sore and stiff hand postoperatively",
+      "- Moderate ecchymosis to palm",
+      "- Limited finger extension (middle and ring fingers)",
+      "- Incomplete fist formation"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.3894999921321869,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.3917999863624573,
+    "title": "Assessment",
+    "topic_similarity": 0.054
+  },
+  {
+    "bleu_score": 0.4927,
+    "content": [
+      "Remove soft dressings and drive.",
+      "Return to clinic in 6 days for follow-up.",
+      "Return to clinic in one week for suture removal and initiation of therapy."
+    ],
+    "content_analysis": 0.7857,
+    "content_similarity": 0.9448000192642212,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.7860000133514404,
+    "title": "Plan",
+    "topic_similarity": 0.033
+  }
+]

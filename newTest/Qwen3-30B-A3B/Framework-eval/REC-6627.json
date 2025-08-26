@@ -1,0 +1,93 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.1370999962091446,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.2029000073671341,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.3124,
+    "content": [
+      "bilateral hand numbness and tingling as well as burning pain"
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.9936000108718872,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.9937999844551086,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9998
+  },
+  {
+    "bleu_score": 0.493,
+    "content": [
+      "The patient presents with bilateral hand numbness, tingling, and burning pain that began around July 1, 2025. She reports similar symptoms at the end of her previous pregnancy, but these are earlier in onset and more intense. She has been seeing her OB, who recommended injections and referred her to this office. She has been using splints without sufficient improvement to sleep through the night. Symptoms have persisted despite conservative management."
+    ],
+    "content_analysis": 0.4138,
+    "content_similarity": 0.7876999974250793,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.890999972820282,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0134
+  },
+  {
+    "bleu_score": 0.3479,
+    "content": [
+      "Got PCTS, uh, some decreased sensation to the middle fingers, noted."
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.6797000169754028,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.6420000195503235,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.9978
+  },
+  {
+    "bleu_score": 0.2892,
+    "content": [
+      "X-rays deferred secondary to pregnancy, it'll be planned carpal tunnel."
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.7092000246047974,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.6464999914169312,
+    "title": "Imaging Results",
+    "topic_similarity": 0.9996
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- bilateral carpal tunnel syndrome",
+      "- hand numbness",
+      "- tingling",
+      "- burning pain"
+    ],
+    "content_analysis": 0.4286,
+    "content_similarity": 0.784500002861023,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.7847999930381775,
+    "title": "Assessment",
+    "topic_similarity": 0.0734
+  },
+  {
+    "bleu_score": 0.1691,
+    "content": [
+      "Trial of injections recommended.",
+      "Risks and temporary nature discussed with patient.",
+      "Patient understands and agrees.",
+      "Injections will be performed today.",
+      "Return to clinic in three months for follow-up if symptoms persist postpartum."
+    ],
+    "content_analysis": 0.4286,
+    "content_similarity": 0.6029999852180481,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5138999819755554,
+    "title": "Plan",
+    "topic_similarity": 1.0
+  }
+]

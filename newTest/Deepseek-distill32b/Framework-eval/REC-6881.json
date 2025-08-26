@@ -1,0 +1,79 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.1453000009059906,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.13429999351501465,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Middle finger pain with locking and catching.",
+    "content_analysis": 0.5,
+    "content_similarity": 0.833299994468689,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8741999864578247,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.0864
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient reports continued use of cycloprox for thumb pain, which has resolved. However, she experiences recurrent middle finger pain with locking and catching, despite previous injection relief. Symptoms have worsened recently, prompting further evaluation.",
+    "content_analysis": 0.25,
+    "content_similarity": 0.7046999931335449,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.40720000863075256,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0184
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Right extremity skin is clean and intact without erythema or hives. Moderate tenderness at the middle finger A1 pulley with triggering observed. No evidence of onychomycosis at the right thumbnail; thumb is fully grown with excellent cosmesis.",
+    "content_analysis": 0.6471,
+    "content_similarity": 0.9081000089645386,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7738999724388123,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Thumb pain (resolved)",
+      "Middle finger trigger symptoms (recurrent)"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.804099977016449,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.823199987411499,
+    "title": "Assessment",
+    "topic_similarity": 0.0687
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Continue cycloprox as directed.",
+      "Administer another injection for middle finger pain.",
+      "Recommend activity as tolerated."
+    ],
+    "content_analysis": 0.2308,
+    "content_similarity": 0.6317999958992004,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6072999835014343,
+    "title": "Plan",
+    "topic_similarity": 0.0338
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.22759999334812164,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.17419999837875366,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Numbness after carpal tunnel release"
+    ],
+    "content_analysis": 0.3333,
+    "content_similarity": 0.6930999755859375,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.6717000007629395,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1197
+  },
+  {
+    "bleu_score": 0.4717,
+    "content": [
+      "The patient is a PO1 who underwent carpal tunnel release. He reports that he has not had much pain at all. He is concerned about when the numbness will resolve."
+    ],
+    "content_analysis": 0.3077,
+    "content_similarity": 0.7260000109672546,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7940999865531921,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0384
+  },
+  {
+    "bleu_score": 0.692,
+    "content": [
+      "incision , clean joint type of variant sutures , moderate ecchymosis , um , consistent with postoperative state , good finger motion though not full"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.979200005531311,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.9697999954223633,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": -0.02500000037252903,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": -0.010400000028312206,
+    "title": "Assessment",
+    "topic_similarity": 0.5146
+  },
+  {
+    "bleu_score": 0.6148,
+    "content": [
+      "Planned post-op endo carpal tunnel release.",
+      "Return to clinic in 4 weeks for follow-up."
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.9710999727249146,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.9178000092506409,
+    "title": "Plan",
+    "topic_similarity": 0.9998
+  }
+]

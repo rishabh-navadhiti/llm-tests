@@ -1,0 +1,91 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "James"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.2831999957561493,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.2759000062942505,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.4191,
+    "content": [
+      "Recurrence of trigger finger on right side and new triggering on left side"
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.9783999919891357,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.97079998254776,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.2264,
+    "content": [
+      "The patient is a follow-up for recurrence of trigger finger on the right hand and new triggering on the left hand. He had prior surgery with Doctor Hertz and currently has a pin in place. He is currently undergoing post-op protocol. He is seeking evaluation on whether it is too soon to have another injection. He reports moderate soft tissue swelling bilaterally, with triggering of the middle finger on both sides. A nodule is present on the left middle finger causing triggering. He has not received any injections on the left side. He would like to defer injection on the right side for now, which is considered reasonable. The plan is to proceed with injection on the left middle finger today."
+    ],
+    "content_analysis": 0.3929,
+    "content_similarity": 0.8446999788284302,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6703000068664551,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0099
+  },
+  {
+    "bleu_score": 0.7739,
+    "content": [
+      "moderate soft tissue swelling , there is triggering of the middle finger . There is a nodule there that is triggering that"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.9930999875068665,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.9822999835014343,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0526
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-ray shows some fracture healing"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.947700023651123,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.9100000262260437,
+    "title": "Imaging Results",
+    "topic_similarity": 0.1685
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Recurrent trigger finger right hand",
+      "- New trigger finger left hand",
+      "- Status post surgical pinning of fracture"
+    ],
+    "content_analysis": 0.2727,
+    "content_similarity": 0.5845000147819519,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5436999797821045,
+    "title": "Assessment",
+    "topic_similarity": 0.0283
+  },
+  {
+    "bleu_score": 0.1777,
+    "content": [
+      "Deferral of trigger finger injection on right side; patient wishes to hold off today.",
+      "Proceed with trigger finger injection on left middle finger today.",
+      "Continue post-op protocol per current plan.",
+      "Recommend follow-up with Doctor Hertz."
+    ],
+    "content_analysis": 0.6,
+    "content_similarity": 0.8664000034332275,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.7343999743461609,
+    "title": "Plan",
+    "topic_similarity": 1.0
+  }
+]

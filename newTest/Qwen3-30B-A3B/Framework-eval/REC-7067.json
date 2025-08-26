@@ -1,0 +1,91 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.17319999635219574,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.19110000133514404,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.7425,
+    "content": [
+      "New mass at the ulnar border of the index finger DIP joint"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.9143999814987183,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8960000276565552,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.0518
+  },
+  {
+    "bleu_score": 0.5271,
+    "content": [
+      "The patient noticed a new mass or bump at the ulnar border of her index finger DIP joint a few weeks ago. She is concerned because this is different from the bumps she typically gets from her arthritis. The mass does not limit her function. She wants to make sure everything is okay. She has been doing well since May, feeling like she has been making progress with her health and wrist function. She is able to do more with her wrist without pain and has been able to lift some weights. She still experiences some aches and pains in her wrist and shoulder, but overall function has improved."
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.9203000068664551,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.838699996471405,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.009
+  },
+  {
+    "bleu_score": 0.3635,
+    "content": [
+      "There is evidence of Heberton and nos uh throughout . Uh , there is a mass at the ulnar border of the . , excellent range of motion . There's still about degrees of DIP collection of the finger without . , excellent finger motion , almost to make a light fist ."
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.5331000089645386,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.5782999992370605,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.015
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.1299,
+    "content": [
+      "- New mass at ulnar border of index finger DIP joint",
+      "- Osteophyte at DIP joint",
+      "- Wrist pain and shoulder aches",
+      "- Status post incision healing"
+    ],
+    "content_analysis": 0.3529,
+    "content_similarity": 0.6583999991416931,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5339000225067139,
+    "title": "Assessment",
+    "topic_similarity": 0.0253
+  },
+  {
+    "bleu_score": 0.4718,
+    "content": [
+      "Continue home exercise program.",
+      "Continue advancing activity.",
+      "Return to clinic in 6 months for follow-up."
+    ],
+    "content_analysis": 0.7778,
+    "content_similarity": 0.9645000100135803,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.808899998664856,
+    "title": "Plan",
+    "topic_similarity": 0.0488
+  }
+]

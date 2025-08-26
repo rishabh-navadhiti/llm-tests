@@ -1,0 +1,76 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Magara",
+    "content_analysis": 0.0,
+    "content_similarity": 0.6621999740600586,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.5454000234603882,
+    "title": "Patient Name",
+    "topic_similarity": 0.2832
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "bilateral hand numbness and tingling",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient, a right-hand dominant retiree, presents with bilateral hand numbness and tingling that began in January 2025 without trauma or injection. Symptoms have been waking her at night but have improved with nighttime bracing. She denies pain and limited motion.",
+    "content_analysis": 0.4091,
+    "content_similarity": 0.8718000054359436,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.742900013923645,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0195
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Bilateral upper extremity skin is clear, intact without rash, minimal soft tissue swelling, minimal tenderness to palpation.",
+    "content_analysis": 0.25,
+    "content_similarity": 0.7820000052452087,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.832099974155426,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0278
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays of the right hand demonstrate variable joint space narrowing throughout the IP joints, most notably at the thumb MCP joint. Left hand shows severe joint space narrowing at the carpometacarpal joint.",
+    "content_analysis": 0.5714,
+    "content_similarity": 0.8435999751091003,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.762499988079071,
+    "title": "Imaging Results",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Bilateral hand numbness and tingling",
+      "Features of carpal tunnel syndrome",
+      "Features of peripheral neuropathy"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8773999810218811,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.8172000050544739,
+    "title": "Assessment",
+    "topic_similarity": 0.0478
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Nerve studies are recommended. Follow-up in 6-8 weeks. Consideration for carpal tunnel treatment.",
+    "content_analysis": 0.25,
+    "content_similarity": 0.7890999913215637,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.7382000088691711,
+    "title": "Plan",
+    "topic_similarity": 0.0474
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Mr. Kevin Clancy",
+    "content_analysis": 0.75,
+    "content_similarity": 0.9323999881744385,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.8946999907493591,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "left ring finger trigger finger injection",
+    "content_analysis": 0.75,
+    "content_similarity": 0.8640999794006348,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.6679999828338623,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9999
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.09009999781847,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.1023000031709671,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.5146
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "plantar tendonitis",
+    "content_analysis": 0.0,
+    "content_similarity": -0.02889999933540821,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.06539999693632126,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.4347,
+    "content": [
+      "left ring finger trigger finger",
+      "plantar tendonitis"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 1.0,
+    "title": "Assessment",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0843,
+    "content": [
+      "home exercise program for now",
+      "low threshold for formal therapy if no improvement"
+    ],
+    "content_analysis": 0.4,
+    "content_similarity": 0.35749998688697815,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.3855000138282776,
+    "title": "Plan",
+    "topic_similarity": 0.9997
+  }
+]

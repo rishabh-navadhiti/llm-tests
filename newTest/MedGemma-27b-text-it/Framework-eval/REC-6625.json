@@ -1,0 +1,78 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Parviz Mikael",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Follow-up for hand condition",
+    "content_analysis": 0.0,
+    "content_similarity": 0.0917000025510788,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.2800999879837036,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.2832
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Patient is here for follow-up. He reports no current pain and denies any significant issues.",
+    "content_analysis": 0.2,
+    "content_similarity": 0.6992999911308289,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6204000115394592,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0844
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "pin sites clean dry and intact",
+    "content_analysis": 0.25,
+    "content_similarity": 0.6474000215530396,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.3346000015735626,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.9988
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-ray normal",
+    "content_analysis": 0.75,
+    "content_similarity": 0.729200005531311,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.4018999934196472,
+    "title": "Imaging Results",
+    "topic_similarity": 0.3759
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Hand pain",
+      "- Stiff finger"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.43700000643730164,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.2736000120639801,
+    "title": "Assessment",
+    "topic_similarity": 0.0909
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Continue current management.",
+      "- Follow up in 4 weeks."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.34769999980926514,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.3059000074863434,
+    "title": "Plan",
+    "topic_similarity": 0.9954
+  }
+]

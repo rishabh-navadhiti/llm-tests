@@ -1,0 +1,80 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Jane Pollock",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "sore and stiff, but not too painful",
+    "content_analysis": 0.0,
+    "content_similarity": 0.0015999999595806003,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.14499999582767487,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Jane Pollock is following up after surgery. She reports being sore and stiff but not too painful. She has some bruising and moderate ecchymosis to the palm consistent with the postoperative state. Her right upper extremity incisions are dry and intact with sutures. The middle and ring fingers are held in a flex position, limited fist about 4 centimeters from the palm with composite selection, unable to straighten fingers.",
+    "content_analysis": 0.12,
+    "content_similarity": 0.7558000087738037,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7233999967575073,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0201
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "moderate ecchymosis to the palm consistent with postoperative state . There is uh the middle and ring fingers are hold in a flex position , limited fist about 4 centimeters from palm with composite selection , uh , unable to straighten fingers on the way .",
+    "content_analysis": 0.6667,
+    "content_similarity": 0.861299991607666,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7728000283241272,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0178
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "postoperative state",
+      "ecchymosis",
+      "limited finger movement"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.2922999858856201,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.28360000252723694,
+    "title": "Assessment",
+    "topic_similarity": 0.0741
+  },
+  {
+    "bleu_score": 0.3864,
+    "content": [
+      "remove soft dressings",
+      "return to clinic in 6 days",
+      "follow-up in one week for suture removal and initiation of therapy"
+    ],
+    "content_analysis": 0.7692,
+    "content_similarity": 0.9017999768257141,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5992000102996826,
+    "title": "Plan",
+    "topic_similarity": 0.0343
+  }
+]

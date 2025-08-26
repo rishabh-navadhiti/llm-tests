@@ -1,0 +1,85 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Hand pain"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.06440000236034393,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.0617000013589859,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.2832
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Patient presents for follow-up regarding hand injury. Patient reports minimal pain but notes some stiffness and discomfort with certain movements. Patient is inquiring about the status of healing."
+    ],
+    "content_analysis": 0.0769,
+    "content_similarity": 0.45660001039505005,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5396000146865845,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0422
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [],
+    "content_analysis": 0.0,
+    "content_similarity": 0.13179999589920044,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.0,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.5302
+  },
+  {
+    "bleu_score": 0.263,
+    "content": [
+      "X-ray shows stable fracture with minimal displacement."
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.7343999743461609,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7099000215530396,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0802
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Hand pain",
+      "- Stiffness"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.4950999915599823,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.32120001316070557,
+    "title": "Assessment",
+    "topic_similarity": 0.1071
+  },
+  {
+    "bleu_score": 0.0805,
+    "content": [
+      "Continue current management.",
+      "Continue immobilization.",
+      "Follow up in 3 weeks."
+    ],
+    "content_analysis": 0.1333,
+    "content_similarity": 0.3301999866962433,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.3508000075817108,
+    "title": "Plan",
+    "topic_similarity": 0.0683
+  }
+]

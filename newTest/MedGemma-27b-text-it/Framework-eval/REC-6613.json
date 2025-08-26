@@ -1,0 +1,78 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Precious Myles Garrett",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Left wrist pain",
+    "content_analysis": 0.6667,
+    "content_similarity": 0.902400016784668,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8079000115394592,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1209
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Patient presents with left wrist pain and masses. She reports pain that wakes her up at night. She also has a mass on her wrist and a mass at the base of her thumb. The masses have been present for some time, fluctuating in size, but have been constant recently. The wrist mass is not tender, but the thumb mass is tender. She saw her rheumatologist who took X-rays and an ultrasound.",
+    "content_analysis": 0.5217,
+    "content_similarity": 0.8790000081062317,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.840399980545044,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.1321
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "No tenderness to palpation.",
+    "content_analysis": 0.0,
+    "content_similarity": 0.10279999673366547,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.04520000144839287,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-ray shows osteophytes noted at the wrist. Ultrasound demonstrates a retinacular cyst. X-ray normal.",
+    "content_analysis": 0.4211,
+    "content_similarity": 0.7681999802589417,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7141000032424927,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0411
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Left wrist pain",
+      "- Left wrist mass",
+      "- Left thumb MCP joint pain",
+      "- Left thumb MCP joint mass",
+      "- Trigger finger"
+    ],
+    "content_analysis": 0.2353,
+    "content_similarity": 0.6190000176429749,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.446399986743927,
+    "title": "Assessment",
+    "topic_similarity": 0.0227
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Recommend splinting for 6 weeks. Recommend steroid injection into the A1 pulley. Recommend follow-up in 6 weeks. Discussed surgical options if conservative management fails.",
+    "content_analysis": 0.1053,
+    "content_similarity": 0.5644000172615051,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5166000127792358,
+    "title": "Plan",
+    "topic_similarity": 0.0369
+  }
+]

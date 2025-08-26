@@ -1,0 +1,82 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Left index finger injury",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient sustained a left index finger injury when a camping trunk hinge opened on his hand. He experienced pain during motion with no deformity or angulation. He went to the emergency room where X-rays revealed a fracture. He had lacerations on the dorsal aspect of the index finger and ulnar border, which were sutured. He has limited flexion and extension of the middle finger. The fracture is minimally displaced.",
+    "content_analysis": 0.5854,
+    "content_similarity": 0.9052000045776367,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7595000267028809,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0107
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "No apparent malrotation of the index finger. Limited flexion and extension of the middle finger at the metacarpophalangeal joint. Minimally displaced fracture of the small finger.",
+    "content_analysis": 0.0,
+    "content_similarity": 0.05460000038146973,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.07599999755620956,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4741
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays showed a fracture",
+    "content_analysis": 0.5,
+    "content_similarity": 0.7964000105857849,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7792999744415283,
+    "title": "Imaging Results",
+    "topic_similarity": 0.113
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Left index finger crush injury",
+      "Fracture",
+      "Lacerations"
+    ],
+    "content_analysis": 0.2222,
+    "content_similarity": 0.703000009059906,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5619000196456909,
+    "title": "Assessment",
+    "topic_similarity": 0.0631
+  },
+  {
+    "bleu_score": 0.0427,
+    "content": [
+      "Fracture cast application",
+      "Soft dressing under splint for lacerations",
+      "Antibiotics for a few more days",
+      "Precautions regarding sand and infection risks",
+      "Follow-up at clinic upon return"
+    ],
+    "content_analysis": 0.2903,
+    "content_similarity": 0.641700029373169,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5414999723434448,
+    "title": "Plan",
+    "topic_similarity": 0.0196
+  }
+]

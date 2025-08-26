@@ -1,0 +1,75 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Miss Stephanie Humphrey",
+    "content_analysis": 0.75,
+    "content_similarity": 0.9003999829292297,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.88919997215271,
+    "title": "Patient Name",
+    "topic_similarity": 0.171
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Left wrist pain after a trip and fall",
+    "content_analysis": 0.6667,
+    "content_similarity": 0.8198999762535095,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.7774999737739563,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1096
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient experienced a trip and fall on 6/21/25 while leaving Groundlings, resulting in left wrist pain that initially improved but worsened with increased humidity in Massachusetts. She underwent X-rays at urgent care showing no fractures and was diagnosed with a sprain.",
+    "content_analysis": 0.6667,
+    "content_similarity": 0.9370999932289124,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7329000234603882,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0184
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Mild tendon inflammation over the ECU tendon. Pain with pro-supination. Excellent range of motion overall.",
+    "content_analysis": 0.0,
+    "content_similarity": 0.002099999925121665,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.04569999873638153,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4903
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays of the left wrist are normal.",
+    "content_analysis": 0.6667,
+    "content_similarity": 0.8730999827384949,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7924000024795532,
+    "title": "Imaging Results",
+    "topic_similarity": 0.1228
+  },
+  {
+    "bleu_score": 0.5721,
+    "content": [
+      "Left ECU tendonitis",
+      "Left ulnar-sided wrist pain"
+    ],
+    "content_analysis": 0.625,
+    "content_similarity": 0.7797999978065491,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.6274999976158142,
+    "title": "Assessment",
+    "topic_similarity": 0.0528
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Recommend trial of hand therapy. Recommend MRI for further evaluation. Return to clinic after MRI.",
+    "content_analysis": 0.8571,
+    "content_similarity": 0.9941999912261963,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 1.0,
+    "title": "Plan",
+    "topic_similarity": 1.0
+  }
+]

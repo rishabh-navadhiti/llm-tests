@@ -1,0 +1,86 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Jane Pollock"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Follow-up for right upper extremity incisions"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.2662999927997589,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.272599995136261,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.5302
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Patient presents for follow-up. She reports doing well overall but is sore and stiff, though not too painful. She has some bruising."
+    ],
+    "content_analysis": 0.0769,
+    "content_similarity": 0.7014999985694885,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.664900004863739,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0423
+  },
+  {
+    "bleu_score": 0.1361,
+    "content": [
+      "Right upper extremity: incisions are dry and intact. Moderate ecchymosis noted. Middle and ring fingers held in flexion. Limited extension. Limited fist making. Limited range of motion."
+    ],
+    "content_analysis": 0.3333,
+    "content_similarity": 0.8913000226020813,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7932000160217285,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.023
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [],
+    "content_analysis": 0.0,
+    "content_similarity": 0.7006000280380249,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Postoperative status (right upper extremity)"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.548799991607666,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.4982999861240387,
+    "title": "Assessment",
+    "topic_similarity": 0.1078
+  },
+  {
+    "bleu_score": 0.2776,
+    "content": [
+      "Return to clinic in 1 week for follow-up.",
+      "Consider suture removal at next visit.",
+      "Continue with current therapy."
+    ],
+    "content_analysis": 0.6154,
+    "content_similarity": 0.8072999715805054,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6413000226020813,
+    "title": "Plan",
+    "topic_similarity": 0.0398
+  }
+]

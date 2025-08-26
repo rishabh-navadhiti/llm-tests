@@ -1,0 +1,88 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [],
+    "content_analysis": 0.0,
+    "content_similarity": 0.19210000336170197,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Hand pain and stiffness"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.7660999894142151,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8131999969482422,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1197
+  },
+  {
+    "bleu_score": 0.2255,
+    "content": [
+      "Patient is a left-hand dominant artist who presents with left index finger pain and stiffness following a laceration sustained on 7-16-25 while working with a chisel. He lacerated his finger on a piece of wood. He received treatment at urgent care. The wound was repaired, and sutures were removed approximately 14 days later. The wound reopened after suture removal. He now presents for evaluation of stiffness."
+    ],
+    "content_analysis": 0.4286,
+    "content_similarity": 0.8167999982833862,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.8159999847412109,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0111
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "A very stiff finger after surgery."
+    ],
+    "content_analysis": 0.0625,
+    "content_similarity": 0.618399977684021,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.5982000231742859,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0987
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-ray normal"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.8988999724388123,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.6827999949455261,
+    "title": "Imaging Results",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Hand pain",
+      "- Finger stiffness",
+      "- Laceration (healing)",
+      "- Status post finger surgery"
+    ],
+    "content_analysis": 0.1818,
+    "content_similarity": 0.7195000052452087,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.680400013923645,
+    "title": "Assessment",
+    "topic_similarity": 0.0481
+  },
+  {
+    "bleu_score": 0.4786,
+    "content": [
+      "Referral to hand therapy.",
+      "Return to clinic in 4 weeks for follow-up."
+    ],
+    "content_analysis": 0.3571,
+    "content_similarity": 0.7480000257492065,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6906999945640564,
+    "title": "Plan",
+    "topic_similarity": 0.0559
+  }
+]

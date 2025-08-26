@@ -1,0 +1,90 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.1453000009059906,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.13429999351501465,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Middle finger locking and catching with pain"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8578000068664551,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8543000221252441,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9999
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "The patient reports that her middle finger has been doing less well despite a previous injection that provided excellent and temporary relief. She notes that the symptoms of locking and catching have recurred, and she is now experiencing significant pain. She is seeking guidance on further management. The thumb has been doing very well with continued use of cycloprox, and she is asking whether she should continue using it."
+    ],
+    "content_analysis": 0.2353,
+    "content_similarity": 0.8650000095367432,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5340999960899353,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0145
+  },
+  {
+    "bleu_score": 0.2548,
+    "content": [
+      "moderate tendonal patient at the middle finger A1 pulle there is triggering the there is no there . No evidence of onyomycosis at the right thumbnail thumb is grown in 100% with um excellent cosmesis , um ."
+    ],
+    "content_analysis": 0.3684,
+    "content_similarity": 0.7529000043869019,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.718999981880188,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0208
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Middle finger triggering with recurrent symptoms",
+      "- Status post injection with temporary relief",
+      "- Thumb pain resolved with cycloprox use"
+    ],
+    "content_analysis": 0.3333,
+    "content_similarity": 0.6359000205993652,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.6552000045776367,
+    "title": "Assessment",
+    "topic_similarity": 0.0472
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Activity as tolerated regarding the middle finger.",
+      "Patient would like another injection; this is reasonable.",
+      "Will perform injection today."
+    ],
+    "content_analysis": 0.3636,
+    "content_similarity": 0.7361999750137329,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.48590001463890076,
+    "title": "Plan",
+    "topic_similarity": 0.0317
+  }
+]

@@ -1,0 +1,91 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Math"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.15870000422000885,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.12240000069141388,
+    "title": "Patient Name",
+    "topic_similarity": 0.2832
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Stiffness in left wrist since fracture"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8927000164985657,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8539000153541565,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9989
+  },
+  {
+    "bleu_score": 0.2104,
+    "content": [
+      "The patient is a stay-at-home mom who sustained a left distal radius fracture in October 2023 following a fall. She underwent surgery with Dr. Andrew Rice and was diagnosed with CRPS post-operatively. She reports significant improvement since then but continues to experience persistent stiffness in her left wrist. She is unable to extend her wrist sufficiently to perform a push-up, although she can perform Pilates regularly without pain or limitation, using modifications. She presents for evaluation and treatment of ongoing wrist stiffness."
+    ],
+    "content_analysis": 0.4773,
+    "content_similarity": 0.8482999801635742,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.708899974822998,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0083
+  },
+  {
+    "bleu_score": 0.2134,
+    "content": [
+      "Incision while healing , minimal scar , excellent finger motion without painful post supination , uh , flexion to about 45 extensions to about 20"
+    ],
+    "content_analysis": 0.6667,
+    "content_similarity": 0.9289000034332275,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.9459999799728394,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0317
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-rays show well-healed fracture with hardware, plate alignment looks good and overall reduction adequate"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.7552000284194946,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7698000073432922,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0561
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Left distal radius fracture status post surgery",
+      "- CRPS status post injury",
+      "- Persistent wrist stiffness"
+    ],
+    "content_analysis": 0.5714,
+    "content_similarity": 0.8519999980926514,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.8281000256538391,
+    "title": "Assessment",
+    "topic_similarity": 0.9996
+  },
+  {
+    "bleu_score": 0.1454,
+    "content": [
+      "Review X-rays.",
+      "Discuss that patient likely will not have sufficient motion to perform a push-up.",
+      "Recommend advancing activity to return to Pilates.",
+      "Follow-up in 3 months."
+    ],
+    "content_analysis": 0.381,
+    "content_similarity": 0.5210000276565552,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.529699981212616,
+    "title": "Plan",
+    "topic_similarity": 0.0252
+  }
+]

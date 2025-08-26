@@ -1,0 +1,83 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.22759999334812164,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.17419999837875366,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Wants to know when numbness will resolve"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.32199999690055847,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.31850001215934753,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1176
+  },
+  {
+    "bleu_score": 0.2055,
+    "content": [
+      "Patient is status post carpal tunnel release and has not had much pain. He wants to know when the numbness will resolve."
+    ],
+    "content_analysis": 0.2857,
+    "content_similarity": 0.7226999998092651,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7182999849319458,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.036
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "incision clean, dry, intact. No erythema, no ecchymosis. No tenderness to palpation. Good range of motion."
+    ],
+    "content_analysis": 0.3,
+    "content_similarity": 0.602400004863739,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.645799994468689,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0665
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [],
+    "content_analysis": 0.0,
+    "content_similarity": 0.7006000280380249,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.317,
+    "content": [
+      "- Status post carpal tunnel release",
+      "- Numbness/tingling (patient concern)"
+    ],
+    "content_analysis": 0.5714,
+    "content_similarity": 0.7979000210762024,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.8711000084877014,
+    "title": "Assessment",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.3914,
+    "content": [
+      "Return to clinic in 4 weeks for follow-up."
+    ],
+    "content_analysis": 0.2727,
+    "content_similarity": 0.5236999988555908,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5983999967575073,
+    "title": "Plan",
+    "topic_similarity": 0.9989
+  }
+]

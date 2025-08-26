@@ -1,0 +1,79 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Mahika Mahendru",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "pain around the joint distal to the splint",
+    "content_analysis": 0.4,
+    "content_similarity": 0.8357999920845032,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8432999849319458,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9989
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient reports doing well overall and tolerating her splint without complaint. She experiences pain around the joint distal to the splint, which is hypersensitive. The splint is noted to cause significant pressure, potentially irritating the mutaneous nerve.",
+    "content_analysis": 0.5455,
+    "content_similarity": 0.9258999824523926,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6644999980926514,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0196
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "splint is in place. There's mild soft tissue so that there is significant hypersensitivity distal to the splint. The splint is putting a fair amount of pressure... unable to sublux the extensor tendons in the splint. She has excellent PAP.",
+    "content_analysis": 0.7692,
+    "content_similarity": 0.8289999961853027,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7791000008583069,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0232
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Hypersensitivity due to splint pressure",
+      "Possible mutaneous nerve irritation"
+    ],
+    "content_analysis": 0.2222,
+    "content_similarity": 0.6079999804496765,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.4652999937534332,
+    "title": "Assessment",
+    "topic_similarity": 0.0508
+  },
+  {
+    "bleu_score": 0.4684,
+    "content": [
+      "Modify the splint",
+      "Return to clinic Monday if no improvement",
+      "Return to clinic in 3 weeks"
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.9419999718666077,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.7574999928474426,
+    "title": "Plan",
+    "topic_similarity": 1.0
+  }
+]

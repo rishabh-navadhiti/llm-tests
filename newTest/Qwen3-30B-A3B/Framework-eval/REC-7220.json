@@ -1,0 +1,93 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Follow-up for hand injury with persistent middle finger sensitivity and ring finger nail fold separation"
+    ],
+    "content_analysis": 0.2222,
+    "content_similarity": 0.08619999885559082,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.10949999839067459,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.4789
+  },
+  {
+    "bleu_score": 0.083,
+    "content": [
+      "The patient is here for follow-up after a hand injury. He reports that his fingers are improving with soaking, though the middle finger remains sensitive. He has a separation of the nail fold from the nail bed on the ring finger and significant ecchymosis on the middle finger. The distal interphalangeal joint of the middle finger is stiff, while the PIP joints have excellent motion. The patient denies a fracture and now has post-traumatic arthritis. He is following up for wound check and repeat X-rays in one week."
+    ],
+    "content_analysis": 0.037,
+    "content_similarity": 0.6123999953269958,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6449999809265137,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0202
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "A to separate part of the nail fold from nail bed on the ring finger . Uh , Middle finger with a significant ecchymosis . You can delete one of those significant . Amosis , it's on both of those lines . Excellent PIP motion , stiff distal interphalangeal join of the middle finger"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.1251000016927719,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.1648000031709671,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4603
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-rays deferred"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Middle finger sensitivity",
+      "- Ring finger nail fold separation",
+      "- Middle finger ecchymosis",
+      "- Stiff distal interphalangeal joint of middle finger",
+      "- Post-traumatic arthritis"
+    ],
+    "content_analysis": 0.3889,
+    "content_similarity": 0.5763000249862671,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.44359999895095825,
+    "title": "Assessment",
+    "topic_similarity": 0.0215
+  },
+  {
+    "bleu_score": 0.4473,
+    "content": [
+      "Return to clinic in one week for wound check with repeat X-rays.",
+      "Plan for transition to removable splints at that time.",
+      "Continue to protect with relative motion.",
+      "Return to clinic in 6 to 8 weeks."
+    ],
+    "content_analysis": 0.7059,
+    "content_similarity": 0.9217000007629395,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.8679999709129333,
+    "title": "Plan",
+    "topic_similarity": 0.0301
+  }
+]

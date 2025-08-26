@@ -1,0 +1,112 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Chaz Thomas",
+      "Meesha Senuda",
+      "Grace Twan",
+      "Charles Shaw",
+      "Josefina Marcial"
+    ],
+    "content_analysis": 0.1667,
+    "content_similarity": 0.5224000215530396,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.5131000280380249,
+    "title": "Patient Name",
+    "topic_similarity": 0.9901
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Follow-up regarding splint after exposure to someone else's blood",
+      "Sensitivity and stiffness in PIP joint",
+      "MRI review and effects of Kenalog injection",
+      "Follow-up on hand after injection",
+      "Right hand pain after injection and consideration for left wrist injection"
+    ],
+    "content_analysis": 0.125,
+    "content_similarity": 0.024000000208616257,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.09719999879598618,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.462
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Chaz Thomas presented for follow-up after taking off his splint due to exposure to someone else's blood. He reported some pain and limited flexion.",
+      "Meesha Senuda reported improvement in sensitivity and stiffness of the PIP joint but continued to experience some stiffness.",
+      "Grace Twan presented for MRI review following an IM Kenalog injection for a mass and other aches and pains.",
+      "Charles Shaw reported doing well overall with minimal pain and okay with his bulky dressings.",
+      "Josefina Marcial reported her right hand pain improved after an injection and is considering treatment for her left wrist."
+    ],
+    "content_analysis": 0.05,
+    "content_similarity": 0.37119999527931213,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.46549999713897705,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0258
+  },
+  {
+    "bleu_score": 0.0805,
+    "content": [
+      "Laceration clean, dry, intact with sutures removed; some pain, limited flexion.",
+      "Significantly limited flexion at DIP joint; stiffness but able to flex to 90 degrees; minimal tenosynovitis distally; hypersensitivity distally.",
+      "Exam unchanged.",
+      "Mild laceration to proximal nail folds; can protect within asterisks.",
+      "Bilateral upper extremity skin clean, dry, intact without erythema or erosion; moderate tenosynovitis at DRUJ; bilateral ulnar prominence; limited motion bilaterally."
+    ],
+    "content_analysis": 0.1818,
+    "content_similarity": 0.6662999987602234,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7207000255584717,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0453
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "MRI results reviewed.",
+      "-",
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.09179999679327011,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.822700023651123,
+    "title": "Imaging Results",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Laceration healing with sutures removed; pain and limited flexion.",
+      "PIP joint stiffness improving.",
+      "Mass and systemic symptoms.",
+      "Mild laceration to proximal nail folds.",
+      "Wrist arthritis; tenosynovitis."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.40959998965263367,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.38440001010894775,
+    "title": "Assessment",
+    "topic_similarity": 0.053
+  },
+  {
+    "bleu_score": 0.0423,
+    "content": [
+      "Transition to removable splint; initiate hand therapy; follow-up in two weeks.",
+      "Discontinue splint entirely; continue home exercise program; follow-up in six weeks.",
+      "Discuss with Dr. Sidlow about medical control; follow-up in three months or sooner if excisional biopsy desired.",
+      "Continue protecting with soft dressings; keep clean and dry; follow-up in one week.",
+      "Trial of night splints; home exercise program; consider injection if no improvement."
+    ],
+    "content_analysis": 0.1923,
+    "content_similarity": 0.8296999931335449,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6696000099182129,
+    "title": "Plan",
+    "topic_similarity": 0.0395
+  }
+]

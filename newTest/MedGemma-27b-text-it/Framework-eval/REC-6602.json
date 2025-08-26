@@ -1,0 +1,90 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.1817999929189682,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.15129999816417694,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Hand pain and numbness",
+    "content_analysis": 0.6667,
+    "content_similarity": 0.8597000241279602,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8294000029563904,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1197
+  },
+  {
+    "bleu_score": 0.2406,
+    "content": [
+      "Patient presents for reevaluation of right hand symptoms. She recently completed chemotherapy for lymphoma. She reports increasing numbness and tingling of her right hand, which she notes is worse when trying to put her earrings in. She also reports difficulty with fine motor tasks. She has been trying to hold her phone less due to discomfort. She denies any specific injury."
+    ],
+    "content_analysis": 0.381,
+    "content_similarity": 0.8129000067710876,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7324000000953674,
+    "title": "HPI Spencer",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.5909,
+    "content": [
+      "Moderate tenderness to palpation of the right small finger. There is a nodule at the A1 pulley."
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.7170000076293945,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.6194999814033508,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0426
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-ray is clear."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.3314000070095062,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.23690000176429749,
+    "title": "Imaging Results",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Right hand numbness and tingling",
+      "- Right small finger nodule",
+      "- Trigger finger (right)",
+      "- Possible carpal tunnel syndrome (right)"
+    ],
+    "content_analysis": 0.2857,
+    "content_similarity": 0.33219999074935913,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.33730000257492065,
+    "title": "Assessment",
+    "topic_similarity": 0.1794
+  },
+  {
+    "bleu_score": 0.0916,
+    "content": [
+      "Administer steroid injection into the right small finger.",
+      "Recommend night splinting for the right hand.",
+      "Recommend night splinting for the right wrist.",
+      "Recommend trial of over-the-counter NSAIDs as needed.",
+      "Discussed low threshold for nerve conduction studies and EMG if symptoms persist.",
+      "Return to clinic in two months for follow-up."
+    ],
+    "content_analysis": 0.2424,
+    "content_similarity": 0.6547999978065491,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.4970000088214874,
+    "title": "Plan",
+    "topic_similarity": 0.0148
+  }
+]

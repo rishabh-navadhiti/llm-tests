@@ -1,0 +1,76 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Bertha Campos",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Follow-up",
+    "content_analysis": 0.0,
+    "content_similarity": 0.2770000100135803,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.2639999985694885,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.5551
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient is a follow-up for her previous condition. She reports improvement in motion and desires suture removal. Incision is clean and intact.",
+    "content_analysis": 0.1667,
+    "content_similarity": 0.6248000264167786,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6617000102996826,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0351
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Range of motion of the finger near full without pain, no evidence of triggering, moderate ecchymosis consistent with post-operative state.",
+    "content_analysis": 0.2667,
+    "content_similarity": 0.6200000047683716,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.4740000069141388,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.03
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Sutures in place",
+      "Improving motion",
+      "Post-operative ecchymosis"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.31690001487731934,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.2874999940395355,
+    "title": "Assessment",
+    "topic_similarity": 0.0809
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Sutures removed today. Follow-up in 4 weeks.",
+    "content_analysis": 0.25,
+    "content_similarity": 0.8015000224113464,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5455999970436096,
+    "title": "Plan",
+    "topic_similarity": 0.1306
+  }
+]

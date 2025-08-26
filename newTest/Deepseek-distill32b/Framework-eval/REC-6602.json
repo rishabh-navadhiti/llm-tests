@@ -1,0 +1,81 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.1817999929189682,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.15129999816417694,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Increasing numbness and tingling in the right hand.",
+    "content_analysis": 1.0,
+    "content_similarity": 0.9036999940872192,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.873199999332428,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1035
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient, diagnosed with lymphoma and recently completing chemotherapy, reports increased numbness and tingling in her right hand. She also experienced a burn on her right thumb, complicating tasks like putting on earrings and reducing phone usage.",
+    "content_analysis": 0.35,
+    "content_similarity": 0.771399974822998,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5024999976158142,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0177
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Bilateral upper extremity skin is clean, dry, and intact without erythema or ecchymosis. Moderate tenderness of the right small finger with triggering and a nodule present. Excellent range of motion overall; PCGs are normal.",
+    "content_analysis": 0.5333,
+    "content_similarity": 0.8650000095367432,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7760999798774719,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-ray is clear.",
+    "content_analysis": 0.0,
+    "content_similarity": 0.3314000070095062,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.23690000176429749,
+    "title": "Imaging Results",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Numbness and tingling in the right hand",
+      "Trigger finger (right small finger)",
+      "Carpal tunnel syndrome"
+    ],
+    "content_analysis": 0.2857,
+    "content_similarity": 0.43630000948905945,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.36010000109672546,
+    "title": "Assessment",
+    "topic_similarity": 0.1876
+  },
+  {
+    "bleu_score": 0.2594,
+    "content": [
+      "Another injection for trigger finger",
+      "Recommend night splints for carpal tunnel",
+      "Low threshold for nerve studies",
+      "Follow-up in two months"
+    ],
+    "content_analysis": 0.5909,
+    "content_similarity": 0.8474000096321106,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.8083000183105469,
+    "title": "Plan",
+    "topic_similarity": 0.0212
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.09950000047683716,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.14399999380111694,
+    "title": "Patient Name",
+    "topic_similarity": 0.5551
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Left wrist pain",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Patient presents for evaluation of left wrist pain. The pain is bothersome enough to wake her up at night. She has been seen by a rheumatologist. She has a history of dorsal wrist ganglion cyst and trigger finger.",
+    "content_analysis": 0.2059,
+    "content_similarity": 0.7526000142097473,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6033999919891357,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0179
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "",
+    "content_analysis": 0.0,
+    "content_similarity": 0.7006000280380249,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.0,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-ray shows osteophytes. Ultrasound shows a retinacular cyst. X-ray of the wrist is normal. Ultrasound of the wrist is normal.",
+    "content_analysis": 0.3684,
+    "content_similarity": 0.7264999747276306,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.6092000007629395,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0366
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Left wrist pain",
+      "- Dorsal wrist ganglion cyst",
+      "- Trigger finger",
+      "- Wrist arthritis",
+      "- Thumb CMC arthritis",
+      "- Thumb CMC joint arthritis",
+      "- Trigger finger"
+    ],
+    "content_analysis": 0.2,
+    "content_similarity": 0.5343999862670898,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.4300999939441681,
+    "title": "Assessment",
+    "topic_similarity": 0.0203
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Recommend night splinting and activity modification. Consider steroid injection if symptoms persist. Recommend observation for the ganglion cyst. Recommend splinting for trigger finger. Recommend NSAIDs as needed. Return to clinic in six weeks for follow-up.",
+    "content_analysis": 0.1667,
+    "content_similarity": 0.6905999779701233,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5935999751091003,
+    "title": "Plan",
+    "topic_similarity": 0.0271
+  }
+]

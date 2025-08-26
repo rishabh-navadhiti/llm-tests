@@ -1,0 +1,87 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Chaz Thomas"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Follow-up"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Patient presents for follow-up after laceration repair. Patient reports hand is doing well, with some pain and limited flexion. Patient removed sutures yesterday."
+    ],
+    "content_analysis": 0.0714,
+    "content_similarity": 0.4237000048160553,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.3314000070095062,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0407
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "limited extension, limited flexion, some tenderness to palpation over the A1 pulley, some swelling."
+    ],
+    "content_analysis": 0.1111,
+    "content_similarity": 0.48179998993873596,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.49129998683929443,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0918
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [],
+    "content_analysis": 0.0,
+    "content_similarity": 0.7006000280380249,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Trigger finger",
+      "Hand pain",
+      "Limited flexion"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.32839998602867126,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.21649999916553497,
+    "title": "Assessment",
+    "topic_similarity": 0.0741
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Recommend injection into the A1 pulley.",
+      "Recommend return to clinic in 4 weeks for follow-up."
+    ],
+    "content_analysis": 0.2143,
+    "content_similarity": 0.4230000078678131,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.49540001153945923,
+    "title": "Plan",
+    "topic_similarity": 0.068
+  }
+]

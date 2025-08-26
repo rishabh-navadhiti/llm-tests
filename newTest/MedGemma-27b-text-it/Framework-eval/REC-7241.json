@@ -1,0 +1,75 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Recurrence of hand symptoms",
+    "content_analysis": 0.0,
+    "content_similarity": 0.4546999931335449,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.5856000185012817,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.088
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient presents for follow-up regarding trigger finger. He reports a recurrence of triggering on his right side and new triggering on his left side. He inquires about the timing for another injection.",
+    "content_analysis": 0.3333,
+    "content_similarity": 0.7741000056266785,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6205999851226807,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0195
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "moderate swelling",
+    "content_analysis": 0.0,
+    "content_similarity": 0.4129999876022339,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.5386000275611877,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.1249
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.09229999780654907,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.029600000008940697,
+    "title": "Imaging Results",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Trigger finger (right)",
+      "- Trigger finger (left)"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.4627000093460083,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.49079999327659607,
+    "title": "Assessment",
+    "topic_similarity": 0.0643
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Hold off on injection for now.",
+    "content_analysis": 0.0769,
+    "content_similarity": 0.5472000241279602,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5486999750137329,
+    "title": "Plan",
+    "topic_similarity": 0.1009
+  }
+]

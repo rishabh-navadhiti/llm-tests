@@ -1,0 +1,78 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.1356000006198883,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.15639999508857727,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Hand contracture",
+    "content_analysis": 1.0,
+    "content_similarity": 0.8485999703407288,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8471999764442444,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1685
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Patient presents with bilateral hand contractures, consistent with Dupuytren's disease. The patient first noticed contracture in the left hand many years ago and is now starting to notice it in the right hand. The left hand is unable to lay flat on a table with significant contracture of the leading finger. The right hand has nodules along the ring finger ray but no evidence of contracture.",
+    "content_analysis": 0.4211,
+    "content_similarity": 0.6743999719619751,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6323000192642212,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0122
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [],
+    "content_analysis": 0.0,
+    "content_similarity": -0.016899999231100082,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.0,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4536
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-ray normal",
+    "content_analysis": 0.75,
+    "content_similarity": 0.739300012588501,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.5875999927520752,
+    "title": "Imaging Results",
+    "topic_similarity": 0.2497
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Hand contracture",
+      "- Dupuytren's contracture"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.8833000063896179,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.8962000012397766,
+    "title": "Assessment",
+    "topic_similarity": 0.1369
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Prescribe Zileuton",
+      "Return to clinic in 4 weeks"
+    ],
+    "content_analysis": 0.1667,
+    "content_similarity": 0.4699999988079071,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.4934000074863434,
+    "title": "Plan",
+    "topic_similarity": 0.9998
+  }
+]

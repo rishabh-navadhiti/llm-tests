@@ -1,0 +1,77 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.16290000081062317,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.18649999797344208,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Wrist pain after two falls over the last two days",
+    "content_analysis": 0.1429,
+    "content_similarity": 0.7426000237464905,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.7922999858856201,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.0802
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient experienced two falls over the last two days: one while climbing a slide and another while falling off an electric scooter. Following both incidents, he developed pain in his left wrist, particularly with extension, which has not improved.",
+    "content_analysis": 0.4,
+    "content_similarity": 0.8237000107765198,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5777999758720398,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0233
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Moderate soft tissue swelling of the dorsal aspect of the left wrist, mild ecchymosis, significant pain with wrist extension.",
+    "content_analysis": 0.4375,
+    "content_similarity": 0.847100019454956,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.8712999820709229,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0253
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays of the left wrist demonstrate a dorsal distal radius fracture.",
+    "content_analysis": 0.6364,
+    "content_similarity": 0.9110999703407288,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.8903999924659729,
+    "title": "Imaging Results",
+    "topic_similarity": 0.9994
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Left wrist fracture"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.6004999876022339,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.6858000159263611,
+    "title": "Assessment",
+    "topic_similarity": 0.136
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Application of a plan fractured cast.",
+      "Follow-up in two weeks for repeat X-rays and cast change."
+    ],
+    "content_analysis": 0.4286,
+    "content_similarity": 0.6949999928474426,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.9182000160217285,
+    "title": "Plan",
+    "topic_similarity": 0.0584
+  }
+]

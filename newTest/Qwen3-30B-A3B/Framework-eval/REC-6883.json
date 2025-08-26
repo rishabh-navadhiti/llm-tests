@@ -1,0 +1,89 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.16290000081062317,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.18649999797344208,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Pain with extension of the left wrist after two falls over the last two days"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.6528000235557556,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.736299991607666,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.0731
+  },
+  {
+    "bleu_score": 0.305,
+    "content": [
+      "The patient reports two falls over the past two days: one while climbing a slide and another from an electric scooter. After both incidents, he developed pain with extension of the left wrist that has not improved. He is here for evaluation and treatment of this ongoing wrist pain."
+    ],
+    "content_analysis": 0.5263,
+    "content_similarity": 0.8568999767303467,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7333999872207642,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0216
+  },
+  {
+    "bleu_score": 0.4332,
+    "content": [
+      "tension of the dorsal aspect of the left wrist moderate soft tissue swelling there , mild echinosis , um ."
+    ],
+    "content_analysis": 0.2222,
+    "content_similarity": 0.8029999732971191,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.8353999853134155,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.9998
+  },
+  {
+    "bleu_score": 0.2741,
+    "content": [
+      "X-rays for views of the left wrist demonstrate the skeleton the immature patient , um , with a to do space fractures and dorsal distal radius"
+    ],
+    "content_analysis": 0.6923,
+    "content_similarity": 0.9161999821662903,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.8912000060081482,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0316
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Left wrist pain",
+      "- Dorsal distal radius fracture",
+      "- Soft tissue swelling, left wrist"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.6552000045776367,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.6446999907493591,
+    "title": "Assessment",
+    "topic_similarity": 0.0841
+  },
+  {
+    "bleu_score": 0.2003,
+    "content": [
+      "Plan will be a fractured cast.",
+      "Return to clinic in weeks for follow-up with repeat X-rays and cast change."
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8145999908447266,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.9771000146865845,
+    "title": "Plan",
+    "topic_similarity": 0.0589
+  }
+]

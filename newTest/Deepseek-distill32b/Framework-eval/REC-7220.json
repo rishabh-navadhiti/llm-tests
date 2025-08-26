@@ -1,0 +1,79 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "not possible fracture , um , and now has post-traumatic arthritis",
+    "content_analysis": 0.0,
+    "content_similarity": 0.04089999943971634,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.1671999990940094,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.5302
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient is here for follow-up after breaking his splint while lifting weights. He reports no fracture and now has post-traumatic arthritis.",
+    "content_analysis": 0.0,
+    "content_similarity": 0.3488999903202057,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.38199999928474426,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0477
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "excellent PIP motion in the splint , no specific limited motion",
+    "content_analysis": 0.0,
+    "content_similarity": 0.09380000084638596,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.05689999833703041,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4962
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays deferred",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "post-traumatic arthritis",
+      "splint breakage"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.24070000648498535,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.19110000133514404,
+    "title": "Assessment",
+    "topic_similarity": 0.0737
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "continue to protect with relative motions",
+      "return to clinic in 6 to 8 weeks",
+      "continue with splint"
+    ],
+    "content_analysis": 0.1765,
+    "content_similarity": 0.7337999939918518,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5849000215530396,
+    "title": "Plan",
+    "topic_similarity": 0.0395
+  }
+]

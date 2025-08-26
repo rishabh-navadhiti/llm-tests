@@ -1,0 +1,72 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.12300000339746475,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.1712999939918518,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.0071000000461936,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": -0.056699998676776886,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.5551
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.01140000019222498,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": -0.04230000078678131,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.4962
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "hypopigmentation at the dorsal aspect of the CMC joint during consistent with previous injection. Mild over the first dorsal compartment positive finger stain, still a positive, um, grind.",
+    "content_analysis": 0.4667,
+    "content_similarity": 0.5849000215530396,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.6855999827384949,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0255
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.1428000032901764,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": -0.002300000051036477,
+    "title": "Assessment",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "recommend trial of dig verban's injection. Return to clinic in six weeks for follow-up.",
+    "content_analysis": 0.2857,
+    "content_similarity": 0.599399983882904,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6319000124931335,
+    "title": "Plan",
+    "topic_similarity": 0.0461
+  }
+]

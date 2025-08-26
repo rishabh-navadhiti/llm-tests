@@ -1,0 +1,77 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Precious Myles Garrett",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Left wrist pain",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Precious Myles Garrett, a right-hand dominant children's social worker, presents for evaluation of left wrist pain, which is more bothersome than the masses and wakes her at night. She seeks advice on managing this issue. She was previously treated by Dr. Ishimori for a left first dorsal compartment wrist cyst, left thumb MCP osteophyte, and bilateral thumb and MCP joint issues. The masses have been constant in size. She consulted her rheumatologist, who performed x-rays and an ultrasound of the wrist.",
+    "content_analysis": 0.9,
+    "content_similarity": 0.9896000027656555,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.8072999715805054,
+    "title": "HPI Spencer",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Left upper extremity skin is clean without anthraea maracunasis. There is a pea-sized mass over the first dorsal compartment, non-tender and mobile. A mass at the dorsal ulnar aspect of the thumb MCP joint is non-mobile and minimally tender. Excellent range of motion at the thumb MCP with no tenderness at the A1 point or locking/catching.",
+    "content_analysis": 0.0,
+    "content_similarity": 0.07209999859333038,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.0723000019788742,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4614
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays show an osteophyte at the thumb MCP joint. Ultrasound demonstrates a bony avulsion fragment/osteophyte at the dorsal MCP joint and a retinacular cyst in the wrist.",
+    "content_analysis": 0.8333,
+    "content_similarity": 0.9664000272750854,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.8497999906539917,
+    "title": "Imaging Results",
+    "topic_similarity": 0.9999
+  },
+  {
+    "bleu_score": 0.5377,
+    "content": [
+      "Left wrist pain",
+      "Left first dorsal compartment wrist cyst",
+      "Left thumb MCP osteophyte",
+      "Bilateral thumb and MCP joint issues"
+    ],
+    "content_analysis": 0.5333,
+    "content_similarity": 0.8306000232696533,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.604200005531311,
+    "title": "Assessment",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Recommend night splints for carpal tunnel. Observe the masses for now. Consider aspiration or biopsy of the wrist mass. Follow-up in six weeks.",
+    "content_analysis": 0.5333,
+    "content_similarity": 0.8127999901771545,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.666700005531311,
+    "title": "Plan",
+    "topic_similarity": 1.0
+  }
+]

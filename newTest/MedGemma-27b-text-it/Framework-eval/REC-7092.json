@@ -1,0 +1,82 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 1.0,
+    "content": [
+      "Left index finger injury"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.5774,
+    "content": [
+      "Patient presents for evaluation of left index finger injury that occurred on 8/15/25 when a camping trunk hinge opened on his hands. He experienced pain with motion. There was no deformity or angulation. He went to the emergency room where X-rays showed a fracture. He was split on exam. He sustained two lacerations along the dorsal aspect of the index finger and the ulnar border of the index finger in the second web space, which were well approximated with interrupted protein sutures. There is no apparent malrotation of the index finger. Flexion and extension of the middle finger are limited at the MCP joint."
+    ],
+    "content_analysis": 0.7674,
+    "content_similarity": 0.955299973487854,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.8694999814033508,
+    "title": "HPI Spencer",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [],
+    "content_analysis": 0.0,
+    "content_similarity": 0.7006000280380249,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.0,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [],
+    "content_analysis": 0.0,
+    "content_similarity": 0.033900000154972076,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.4789
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Hand pain",
+      "- Lacerations (healing)"
+    ],
+    "content_analysis": 0.1429,
+    "content_similarity": 0.6431999802589417,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5400000214576721,
+    "title": "Assessment",
+    "topic_similarity": 0.9982
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Continue splinting.",
+      "Follow up in 4 weeks."
+    ],
+    "content_analysis": 0.0417,
+    "content_similarity": 0.429500013589859,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.46950000524520874,
+    "title": "Plan",
+    "topic_similarity": 0.099
+  }
+]

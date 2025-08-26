@@ -1,0 +1,86 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.16290000081062317,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.18649999797344208,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Wrist pain"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.683899998664856,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.6646999716758728,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1516
+  },
+  {
+    "bleu_score": 0.0775,
+    "content": [
+      "Patient presents for evaluation of wrist pain after two falls within the last two days. The first fall occurred while climbing a slide, and the second occurred while riding an electric scooter. The patient reports persistent pain with wrist extension."
+    ],
+    "content_analysis": 0.3043,
+    "content_similarity": 0.7896000146865845,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.4950000047683716,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0201
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [],
+    "content_analysis": 0.0,
+    "content_similarity": 0.023900000378489494,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.0,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.459
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-ray normal"
+    ],
+    "content_analysis": 0.2727,
+    "content_similarity": 0.40720000863075256,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.28110000491142273,
+    "title": "Imaging Results",
+    "topic_similarity": 0.1796
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Hand pain",
+      "- Wrist pain",
+      "- Swelling"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.4025999903678894,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.39169999957084656,
+    "title": "Assessment",
+    "topic_similarity": 0.1071
+  },
+  {
+    "bleu_score": 0.1982,
+    "content": [
+      "Apply cast.",
+      "Return to clinic in 4 weeks.",
+      "Repeat X-rays."
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8974000215530396,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5867999792098999,
+    "title": "Plan",
+    "topic_similarity": 0.0802
+  }
+]

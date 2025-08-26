@@ -1,0 +1,90 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Greta Griswana"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "thumb pain"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8184000253677368,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8331000208854675,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.171
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Greta Griswana presents for follow-up with persistent thumb pain despite improvement in forearm pain. The thumb pain is described as severe and significantly impacting her daily function. She reports that her pain has not improved since her last visit. On exam, there is significant tenderness at the trapeziometacarpal joint with a positive grind test. There is no tenderness at the A1 pulley, but there is some tenderness with U&R imminence. X-rays show degenerative changes consistent with arthritis. She is being considered for a steroid injection given the persistent symptoms and imaging findings."
+    ],
+    "content_analysis": 0.2222,
+    "content_similarity": 0.7975000143051147,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5551000237464905,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.9999
+  },
+  {
+    "bleu_score": 0.8546,
+    "content": [
+      "significant tendinous location of the trapeziometacarpal joint, very positive grind. No tenderness with A1 pulley. Some tenderness with U&R imminence."
+    ],
+    "content_analysis": 0.875,
+    "content_similarity": 0.9556000232696533,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.9815000295639038,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0502
+  },
+  {
+    "bleu_score": 0.4111,
+    "content": [
+      "X-rays reviewed. It'll be planned arthritis"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.9333000183105469,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.8118000030517578,
+    "title": "Imaging Results",
+    "topic_similarity": 0.2033
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- thumb pain",
+      "- trapeziometacarpal joint arthritis",
+      "- status post cast use (implied by follow-up)"
+    ],
+    "content_analysis": 0.125,
+    "content_similarity": 0.5726000070571899,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.49790000915527344,
+    "title": "Assessment",
+    "topic_similarity": 0.1173
+  },
+  {
+    "bleu_score": 0.2287,
+    "content": [
+      "Recommend trial of steroid injection for thumb pain.",
+      "Discuss temporary nature of injection and procedure/postoperative protocol.",
+      "Return to clinic in eight weeks for follow-up if symptoms persist."
+    ],
+    "content_analysis": 0.5333,
+    "content_similarity": 0.6256999969482422,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.732200026512146,
+    "title": "Plan",
+    "topic_similarity": 0.0371
+  }
+]

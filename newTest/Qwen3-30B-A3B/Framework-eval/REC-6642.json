@@ -1,0 +1,93 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Nadeem Nemi"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "bilateral thumb pain"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0905,
+    "content": [
+      "Nadeem Nemi is a right-handed male retiree with bilateral thumb CMC arthritis who presents for evaluation of worsening bilateral thumb pain. He reports that the pain has significantly worsened since his last visit in 2019, with the most notable progression occurring over the past six months. He denies numbness and tingling but reports significant limitation in function due to his thumbs. He has no history of trauma or acute injury. He has not undergone any recent surgical interventions. His symptoms are primarily localized to the thumbs and have not improved with prior treatments."
+    ],
+    "content_analysis": 0.24,
+    "content_similarity": 0.6212999820709229,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.8327999711036682,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0172
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "bilateral upper extremity skin is clean, dry and intact. Um, no significant soft tissue swelling, positive Grin, positive shoulder sign, no triggering of any digits with the thumb, um, dot NCTS."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.12849999964237213,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.05469999834895134,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4723
+  },
+  {
+    "bleu_score": 0.2191,
+    "content": [
+      "X-rays are three views of the right hand demonstrate severe joint space narrowing at the metacarpal joint with osteophytosis. There is evidence of a Z deformity with hyperextension at the MCP joint."
+    ],
+    "content_analysis": 0.6842,
+    "content_similarity": 0.8695999979972839,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.8216999769210815,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0205
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- bilateral thumb CMC arthritis",
+      "- bilateral carpal tunnel syndrome",
+      "- right cubital tunnel syndrome"
+    ],
+    "content_analysis": 0.6667,
+    "content_similarity": 0.9161999821662903,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.6392999887466431,
+    "title": "Assessment",
+    "topic_similarity": 0.0301
+  },
+  {
+    "bleu_score": 0.3693,
+    "content": [
+      "Recommend trial of injections for bilateral thumb CMC arthritis.",
+      "Discussed the temporary nature of steroid injections and potential for rebound pain.",
+      "Patient understands and agrees to proceed with injections today.",
+      "For bilateral carpal tunnel and right cubital tunnel: recommend observation for now.",
+      "Consider nerve studies due to persistent symptoms.",
+      "Return to clinic in two months for follow-up."
+    ],
+    "content_analysis": 0.6923,
+    "content_similarity": 0.9804999828338623,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.8867999911308289,
+    "title": "Plan",
+    "topic_similarity": 1.0
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Greta Griswana"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Forearm pain improved, thumb pain"
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.8932999968528748,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8754000067710876,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9996
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Patient presents for follow-up reporting improvement in forearm pain. Current complaint is thumb pain. Patient inquired about treatment options for thumb pain."
+    ],
+    "content_analysis": 0.1429,
+    "content_similarity": 0.631600022315979,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.46000000834465027,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0282
+  },
+  {
+    "bleu_score": 0.2425,
+    "content": [
+      "Significant tendinous location of the trapeziometacarpal joint, very positive grind."
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.8313000202178955,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.5019999742507935,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0613
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": -0.013500000350177288,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.06480000168085098,
+    "title": "Imaging Results",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Thumb pain",
+      "- Tenderness with U&R imminence"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.32030001282691956,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.3928000032901764,
+    "title": "Assessment",
+    "topic_similarity": 0.1485
+  },
+  {
+    "bleu_score": 0.4413,
+    "content": [
+      "Recommend trial of steroid injection.",
+      "Discussed temporary nature of treatment.",
+      "Discussed procedure and postoperative protocol.",
+      "Return to clinic in 8 weeks for follow-up if symptoms persist."
+    ],
+    "content_analysis": 0.6923,
+    "content_similarity": 0.9035000205039978,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.8252999782562256,
+    "title": "Plan",
+    "topic_similarity": 0.0385
+  }
+]

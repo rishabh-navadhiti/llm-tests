@@ -1,0 +1,89 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Post-operative ecchymosis following carpal tunnel release"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": -0.03310000151395798,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.003599999938160181,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.5146
+  },
+  {
+    "bleu_score": 0.0573,
+    "content": [
+      "The patient is a post-operative carpal tunnel release patient who reports doing well overall with minimal pain. He has significant ecchymosis involving the arm and hand, particularly near the incision site, which is 1 centimeter from the palm. He is seeking clarification regarding the ecchymosis and the appearance of varied sutures on exam. He is scheduled to return to clinic in 4 weeks for follow-up."
+    ],
+    "content_analysis": 0.087,
+    "content_similarity": 0.5174999833106995,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5498999953269958,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0401
+  },
+  {
+    "bleu_score": 0.0554,
+    "content": [
+      "incision . Uh , with varied sutures , um , moderate echinosis , uh , to the arm and hand , um , fingers 1 centimeter from palm gently , um , it'll be planned post-op endocarpal tunnel , return to clinic in 4 weeks for um ."
+    ],
+    "content_analysis": 0.1538,
+    "content_similarity": 0.585099995136261,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7343000173568726,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0728
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-",
+      "Post-operative ecchymosis",
+      "Status post carpal tunnel release"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.31940001249313354,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.29260000586509705,
+    "title": "Assessment",
+    "topic_similarity": 0.0741
+  },
+  {
+    "bleu_score": 0.3334,
+    "content": [
+      "Return to clinic in 4 weeks for follow-up.",
+      "Post-operative care for carpal tunnel release."
+    ],
+    "content_analysis": 0.4444,
+    "content_similarity": 0.6317999958992004,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6980999708175659,
+    "title": "Plan",
+    "topic_similarity": 0.0849
+  }
+]

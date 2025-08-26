@@ -1,0 +1,75 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Nicole Coffee",
+    "content_analysis": 0.2,
+    "content_similarity": 0.765500009059906,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.7318000197410583,
+    "title": "Patient Name",
+    "topic_similarity": 0.2033
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "pain in left index finger",
+    "content_analysis": 1.0,
+    "content_similarity": 0.9848999977111816,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.9621000289916992,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient reports pain in her left index finger for a few months, which has worsened and not improved. She is seeking an injection at this visit.",
+    "content_analysis": 0.3125,
+    "content_similarity": 0.8307999968528748,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5192999839782715,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0343
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "left upper extremity skin is clean, dry, and tacky without erythema. Acute moderate tenderness on left index finger with an A1 polii. There is walking catching. There is triggering on index finger. Excellent range of motion overall. Able to give a thumbs up, et cetera, et cetera.",
+    "content_analysis": 0.5625,
+    "content_similarity": 0.8417999744415283,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.6524999737739563,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0171
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays of the finger are normal.",
+    "content_analysis": 0.5714,
+    "content_similarity": 0.8396999835968018,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7961999773979187,
+    "title": "Imaging Results",
+    "topic_similarity": 0.2149
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "pain in left index finger",
+      "triggering on index finger"
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.9391999840736389,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.9072999954223633,
+    "title": "Assessment",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Trigger injection will be performed today.",
+    "content_analysis": 0.75,
+    "content_similarity": 0.7099999785423279,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.629800021648407,
+    "title": "Plan",
+    "topic_similarity": 0.136
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Left small finger locking",
+    "content_analysis": 1.0,
+    "content_similarity": 0.9077000021934509,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8968999981880188,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9998
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Patient presents for evaluation of his left small finger. He reports onset of locking and catching about two years ago. He has not sought treatment previously. He is right-hand dominant.",
+    "content_analysis": 0.1667,
+    "content_similarity": 0.7623000144958496,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6104999780654907,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0234
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "left small finger skin is purging. In fact, without erythema, he has moderate tenderness to palpation.",
+    "content_analysis": 0.3333,
+    "content_similarity": 0.8496999740600586,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.5121999979019165,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0411
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.066600002348423,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.00930000003427267,
+    "title": "Imaging Results",
+    "topic_similarity": 0.5551
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Left small finger trigger finger"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.9516000151634216,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.8169000148773193,
+    "title": "Assessment",
+    "topic_similarity": 0.1102
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Plan for trigger finger release.",
+    "content_analysis": 0.4286,
+    "content_similarity": 0.8022000193595886,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5472999811172485,
+    "title": "Plan",
+    "topic_similarity": 0.1087
+  }
+]

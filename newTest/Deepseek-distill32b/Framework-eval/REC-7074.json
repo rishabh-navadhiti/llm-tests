@@ -1,0 +1,75 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Math",
+    "content_analysis": 0.0,
+    "content_similarity": 0.15870000422000885,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.12240000069141388,
+    "title": "Patient Name",
+    "topic_similarity": 0.2832
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Left wrist stiffness",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient fell in October 2023, sustaining a left distal radius fracture. She was diagnosed with CRPS and has made progress but still cannot fully extend her wrist for activities like push-ups. Despite this, she continues Pilates without pain, making modifications as needed.",
+    "content_analysis": 0.2619,
+    "content_similarity": 0.7067000269889832,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6477000117301941,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0118
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Incision healing well, minimal scar, excellent finger motion without pain, supination, flexion to 45 degrees, extension to 20 degrees.",
+    "content_analysis": 0.4706,
+    "content_similarity": 0.9071999788284302,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.9595000147819519,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.04
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays show a well-healed fracture with hardware in place.",
+    "content_analysis": 0.7143,
+    "content_similarity": 0.8501999974250793,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.8162999749183655,
+    "title": "Imaging Results",
+    "topic_similarity": 0.1012
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Left wrist stiffness",
+      "CRPS"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.6262999773025513,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5314000248908997,
+    "title": "Assessment",
+    "topic_similarity": 0.0798
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Review X-rays showing good plate alignment. Discuss limited motion for push-ups. Recommend advancing activities and follow-up in 3 months.",
+    "content_analysis": 0.4762,
+    "content_similarity": 0.6413000226020813,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.46939998865127563,
+    "title": "Plan",
+    "topic_similarity": 0.027
+  }
+]

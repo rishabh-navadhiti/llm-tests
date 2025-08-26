@@ -1,0 +1,76 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Precious Myles Garrett",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Left wrist pain and masses",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient presents with left wrist pain that is more bothersome than the associated masses, waking her at night. She reports two masses: one at the dorsal radial aspect of her left wrist and another at the dorsal ulnar aspect of her left thumb MCP joint. These masses have been constant in size recently. She previously consulted her rheumatologist, who performed X-rays and an ultrasound of the wrist.",
+    "content_analysis": 0.6667,
+    "content_similarity": 0.9455000162124634,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.8011000156402588,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0134
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Left upper extremity skin is clean, dry, and intact without anything by my diagnosis. There is a pea-sized mass over the first dorsal compartment. No tenderness or location over the mass. It is mobile and non-tender. Negative Finklestein, no pain with resisted thumb extension. There is a mass at the dorsal ulnar aspect of the thumb MCP joint that is non-mobile and very minimally tender. Excellent range of motion at the thumb MCP. No tenderness or location at the A1 point, no locking or catching.",
+    "content_analysis": 0.0,
+    "content_similarity": 0.11129999905824661,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.0731000006198883,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4583
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays show an osteophyte at the thumb MCP joint. Ultrasound demonstrates a bony avulsion fragment versus osteophyte at the dorsal aspect of the MCP joint of the thumb and a retinacular cyst superficial to the first dorsal compartment sheath in the wrist.",
+    "content_analysis": 1.0,
+    "content_similarity": 0.9805999994277954,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.8601999878883362,
+    "title": "Imaging Results",
+    "topic_similarity": 0.97
+  },
+  {
+    "bleu_score": 0.7017,
+    "content": [
+      "Left first dorsal compartment wrist cyst",
+      "Left thumb MCP osteophyte",
+      "Bilateral"
+    ],
+    "content_analysis": 0.4667,
+    "content_similarity": 0.8090999722480774,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.6033999919891357,
+    "title": "Assessment",
+    "topic_similarity": 0.0301
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Recommend night splints for carpal tunnel. Observation of masses for now. Follow-up in six weeks.",
+    "content_analysis": 0.3333,
+    "content_similarity": 0.8066999912261963,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5396999716758728,
+    "title": "Plan",
+    "topic_similarity": 0.0476
+  }
+]

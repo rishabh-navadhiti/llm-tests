@@ -1,0 +1,76 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.17319999635219574,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.19110000133514404,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Mass/bump at ulnar border of index finger DIP joint",
+    "content_analysis": 0.875,
+    "content_similarity": 0.9779000282287598,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.975600004196167,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9999
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient noticed a mass or bump at the ulnar border of her index finger DIP joint a few weeks ago. It does not limit her function but is concerning as it differs from her arthritis-related bumps. On examination, there is a mass at the DIP joint with evidence of Heberden's nodes and osteophytes. She reports overall improvement in wrist function and ability to perform activities without pain, though she still experiences some wrist discomfort.",
+    "content_analysis": 0.3636,
+    "content_similarity": 0.8147000074386597,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6873999834060669,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0105
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "There is a mass at the ulnar border of the DIP joint with evidence of Heberden's nodes and osteophytes. Excellent range of motion is noted.",
+    "content_analysis": 0.3214,
+    "content_similarity": 0.59170001745224,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.4794999957084656,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0269
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Mass at DIP joint",
+      "Heberden's nodes",
+      "Wrist arthritis"
+    ],
+    "content_analysis": 0.2308,
+    "content_similarity": 0.5367000102996826,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.47099998593330383,
+    "title": "Assessment",
+    "topic_similarity": 0.0481
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Continue home exercise program, advance activities as tolerated, return to clinic in 6 months for follow-up.",
+    "content_analysis": 0.6364,
+    "content_similarity": 0.9491999745368958,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6880000233650208,
+    "title": "Plan",
+    "topic_similarity": 0.0486
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.19760000705718994,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.15199999511241913,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Left wrist stiffness and limited range of motion"
+    ],
+    "content_analysis": 0.3333,
+    "content_similarity": 0.8873000144958496,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8974000215530396,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9982
+  },
+  {
+    "bleu_score": 0.2916,
+    "content": [
+      "Patient is a stay-at-home mom who sustained a left distal radius fracture in October 2023 following a trip and fall. She underwent surgery (ORIF) on her left wrist with Dr. Andrew Rice. She was diagnosed with CRPS at the time of injury and post-op, but has made progress. She presents today for evaluation of persistent left wrist stiffness. She is unable to extend her wrist sufficiently to perform a push-up, although she can participate in Pilates regularly without pain or limitation, using modifications."
+    ],
+    "content_analysis": 0.5333,
+    "content_similarity": 0.8669000267982483,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7164000272750854,
+    "title": "HPI Spencer",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Incision is well healed. No tenderness to palpation. Excellent range of motion of the fingers and thumb. No swelling noted. Good grip strength."
+    ],
+    "content_analysis": 0.15,
+    "content_similarity": 0.6642000079154968,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.5659000277519226,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0373
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-ray shows well-healed fracture with good alignment."
+    ],
+    "content_analysis": 0.5714,
+    "content_similarity": 0.7098000049591064,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7688999772071838,
+    "title": "Imaging Results",
+    "topic_similarity": 0.1005
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Left wrist stiffness",
+      "- Limited wrist extension"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.29989999532699585,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.36579999327659607,
+    "title": "Assessment",
+    "topic_similarity": 0.0628
+  },
+  {
+    "bleu_score": 0.188,
+    "content": [
+      "Continue with current therapy.",
+      "Return to clinic in 4 weeks for follow-up."
+    ],
+    "content_analysis": 0.1364,
+    "content_similarity": 0.3675999939441681,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.3700000047683716,
+    "title": "Plan",
+    "topic_similarity": 0.0461
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Right middle finger injury",
+    "content_analysis": 0.6667,
+    "content_similarity": 0.9057999849319458,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8866999745368958,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9998
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient is a female presenting for evaluation of a right middle finger injury that began on 7-8-25 when her finger was crushed by a dumbbell. She experienced immediate pain, swelling, and limited motion. She sought care at urgent care where x-rays revealed a fracture. She was treated with a splint. Repeat x-rays after 4 weeks showed continued fracture, and she continued wearing the splint. She presents today for evaluation and treatment.",
+    "content_analysis": 0.85,
+    "content_similarity": 0.9664000272750854,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.9469000101089478,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.9531
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Some hematoma noted",
+    "content_analysis": 0.0,
+    "content_similarity": 0.1281999945640564,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.08479999750852585,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-ray shows fracture of the distal phalanx with stable alignment and good healing.",
+    "content_analysis": 0.5833,
+    "content_similarity": 0.9211999773979187,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7451000213623047,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0418
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Hand pain",
+      "- Swelling",
+      "- Finger stiffness",
+      "- Distal phalanx fracture healing"
+    ],
+    "content_analysis": 0.1667,
+    "content_similarity": 0.6510000228881836,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.47920000553131104,
+    "title": "Assessment",
+    "topic_similarity": 0.0297
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Advanced activity as tolerated. Avoid hanging from hands. Return to clinic in 4 weeks.",
+    "content_analysis": 0.3636,
+    "content_similarity": 0.6200000047683716,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.42500001192092896,
+    "title": "Plan",
+    "topic_similarity": 0.0549
+  }
+]

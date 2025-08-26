@@ -1,0 +1,80 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Mr. Parviz Mikael",
+    "content_analysis": 0.75,
+    "content_similarity": 0.9350000023841858,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.8422999978065491,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "No pain, wants to know what is going on.",
+    "content_analysis": 1.0,
+    "content_similarity": 0.6915000081062317,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.4429999887943268,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.2453
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Mr. Parviz Mikael is here for a follow-up visit. He reports no pain and expresses a desire to understand his current condition.",
+    "content_analysis": 0.1111,
+    "content_similarity": 0.430400013923645,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.605400025844574,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0754
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Pin sites clean dry and intact without erythema or ecchymosis. No significant tenderness except for parthenonic carpal stable alignment, stiff fingers.",
+    "content_analysis": 1.0,
+    "content_similarity": 0.9973999857902527,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.8080999851226807,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "X-rays same as last time.",
+    "content_analysis": 1.0,
+    "content_similarity": 0.9678000211715698,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.5928999781608582,
+    "title": "Imaging Results",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "No pain",
+      "Stiff fingers"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.4740999937057495,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.334199994802475,
+    "title": "Assessment",
+    "topic_similarity": 0.1071
+  },
+  {
+    "bleu_score": 0.4219,
+    "content": [
+      "Continue plexal ligament split.",
+      "Return to clinic in 10 days for follow-up.",
+      "Consider pin removal or repeat X-rays.",
+      "Transition to phenylplastic splint."
+    ],
+    "content_analysis": 0.5238,
+    "content_similarity": 0.8998000025749207,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.7383000254631042,
+    "title": "Plan",
+    "topic_similarity": 0.0317
+  }
+]

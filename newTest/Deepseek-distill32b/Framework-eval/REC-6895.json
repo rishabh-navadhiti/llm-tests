@@ -1,0 +1,81 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Limited finger motion and discomfort in certain positions.",
+    "content_analysis": 0.0,
+    "content_similarity": 0.011300000362098217,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.1120000034570694,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.2123
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient reports minimal pain but experiences discomfort in certain positions. Examination reveals limited motion in the right and small fingers with minimal fracture healing noted.",
+    "content_analysis": 0.2,
+    "content_similarity": 0.5600000023841858,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6039000153541565,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0405
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Limited right and small finger motions, extra footstep stable, minimal fracture healing, ulnar gutter splint in place.",
+    "content_analysis": 0.0,
+    "content_similarity": 0.4205000102519989,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.4943999946117401,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.068
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.02930000051856041,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.014700000174343586,
+    "title": "Imaging Results",
+    "topic_similarity": 0.4962
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Limited finger motion",
+      "Minimal fracture healing"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.3057999908924103,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.3183000087738037,
+    "title": "Assessment",
+    "topic_similarity": 0.0741
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Continue protecting with ulnar gutter splint",
+      "Continue non-weight bearing",
+      "Follow up in 3 weeks",
+      "Transition to thermoplastic clip",
+      "Provide therapy prescription"
+    ],
+    "content_analysis": 0.5333,
+    "content_similarity": 0.8611999750137329,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5108000040054321,
+    "title": "Plan",
+    "topic_similarity": 0.0324
+  }
+]

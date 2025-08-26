@@ -1,0 +1,90 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.16500000655651093,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.17790000140666962,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Right index and middle finger triggering"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.6646000146865845,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.5751000046730042,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9998
+  },
+  {
+    "bleu_score": 0.1166,
+    "content": [
+      "The patient is a 1:15-year-old male with a history of a left upper extremity fracture, status post long arm cast immobilization. He reports that his right index and middle fingers have recently started triggering. The onset is recent, with no prior history of similar symptoms. The patient is seeking evaluation and management for this new issue. No specific mechanism of injury is reported for the triggering. No prior treatment has been initiated for this condition. The symptoms are currently present and ongoing."
+    ],
+    "content_analysis": 0.1818,
+    "content_similarity": 0.41290000081062317,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.4083999991416931,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0111
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "fingers , thumb motion , limited wrist motion secondary to pain and immobilization . Um . , And we don't . X-rays , right wrist shows uh increased cal formation at the ulna . Left shows stay in line with increased calus formation diffusely to the radius and ulna . Um , plan will be recommend transition to short arm cast on the left , uh . Recommend wean on the right to return to clinic in weeks . For follow-up with repeats , consider transition to removable splint on . No , on the left . Um , And then Leonard Freeman . Uh , it's here today for evaluation of a new problem . His right index and middle fingers have started triggering . , he wants to know what we should do on exam , right , a version of the skin is pied and intact without the A1 point , there's not , triggering them . Uh , recommend an . We will do this today ."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.11789999902248383,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.28290000557899475,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4518
+  },
+  {
+    "bleu_score": 0.4784,
+    "content": [
+      "X-rays, right wrist shows increased callus formation at the ulna. Left shows stay in line with increased callus formation diffusely to the radius and ulna."
+    ],
+    "content_analysis": 0.7778,
+    "content_similarity": 0.9596999883651733,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.9301999807357788,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0284
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Right index and middle finger triggering",
+      "- Status post left upper extremity fracture with healing callus formation"
+    ],
+    "content_analysis": 0.2727,
+    "content_similarity": 0.5852000117301941,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5335999727249146,
+    "title": "Assessment",
+    "topic_similarity": 0.0373
+  },
+  {
+    "bleu_score": 0.58,
+    "content": [
+      "Recommend transition to short arm cast on the left.",
+      "Recommend wean on the right to return to clinic in weeks for follow-up with repeats.",
+      "Consider transition to removable splint on the left.",
+      "Recommend an injection for trigger finger today."
+    ],
+    "content_analysis": 0.7,
+    "content_similarity": 0.9359999895095825,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.7720000147819519,
+    "title": "Plan",
+    "topic_similarity": 1.0
+  }
+]

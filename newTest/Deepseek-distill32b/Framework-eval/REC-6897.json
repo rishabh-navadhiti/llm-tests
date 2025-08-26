@@ -1,0 +1,77 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Ecchymosis",
+    "content_analysis": 0.0,
+    "content_similarity": 0.08500000089406967,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.06300000101327896,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient reports doing well overall with minimal pain but has significant ecchymosis.",
+    "content_analysis": 0.5,
+    "content_similarity": 0.8129000067710876,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.49790000915527344,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0634
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "moderate echinosis",
+    "content_analysis": 0.0,
+    "content_similarity": 0.4228000044822693,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.41780000925064087,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.9985
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Carpal tunnel syndrome",
+      "Ecchymosis"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.25940001010894775,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.29010000824928284,
+    "title": "Assessment",
+    "topic_similarity": 0.0909
+  },
+  {
+    "bleu_score": 0.4895,
+    "content": [
+      "Return to clinic in 4 weeks."
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.5935999751091003,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6578999757766724,
+    "title": "Plan",
+    "topic_similarity": 0.1516
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.18790000677108765,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.18619999289512634,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Recurrence of right ring finger trigger finger"
+    ],
+    "content_analysis": 0.6667,
+    "content_similarity": 0.6462000012397766,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.5810999870300293,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9933
+  },
+  {
+    "bleu_score": 0.1554,
+    "content": [
+      "Patient presents for follow-up regarding thumb CMC arthritis and right ring finger trigger finger. She reports doing well with her thumb CMC arthritis and has adapted to manage life with it. However, her right ring finger trigger finger has recurred, with symptoms starting around 2020-2021. She initially hoped it might resolve but it has progressed into a full trigger finger. She inquires about the next steps for management."
+    ],
+    "content_analysis": 0.4211,
+    "content_similarity": 0.7730000019073486,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6863999962806702,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0135
+  },
+  {
+    "bleu_score": 0.4819,
+    "content": [
+      "mild tenderness to palpation of the right thumb CMC joint",
+      "triggering noted at the right ring finger"
+    ],
+    "content_analysis": 0.5455,
+    "content_similarity": 0.8162000179290771,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7932999730110168,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0301
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [],
+    "content_analysis": 0.0,
+    "content_similarity": 0.7006000280380249,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.726,
+    "content": [
+      "Right thumb CMC arthritis",
+      "Right ring finger trigger finger"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 1.0,
+    "title": "Assessment",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.1706,
+    "content": [
+      "Continue current management for thumb CMC arthritis.",
+      "Proceed with surgical release for right ring finger trigger finger.",
+      "Continue night splinting for right ring finger.",
+      "Follow up in 6 weeks."
+    ],
+    "content_analysis": 0.4,
+    "content_similarity": 0.7598000168800354,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6419000029563904,
+    "title": "Plan",
+    "topic_similarity": 1.0
+  }
+]

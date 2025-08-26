@@ -1,0 +1,91 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.12300000339746475,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.1712999939918518,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "No relief from previous injection"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.35109999775886536,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.4366999864578247,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1347
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "The patient reports no relief from a previous injection. She is seeking further evaluation for ongoing symptoms. The condition involves the dorsal aspect of the CMC joint with associated hypopigmentation consistent with a prior injection site. There is mild tenderness over the first dorsal compartment, and the finger stain test remains positive, as does the grind test. Symptoms have persisted despite prior intervention."
+    ],
+    "content_analysis": 0.1053,
+    "content_similarity": 0.49810001254081726,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.64410001039505,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0348
+  },
+  {
+    "bleu_score": 0.3451,
+    "content": [
+      "on exam, there is some hypopigmentation at the dorsal aspect of the CMC during consistent with previous injection. Um, mild over the first dorsal compartment positive finger stain, still a positive, um, grind."
+    ],
+    "content_analysis": 0.4667,
+    "content_similarity": 0.5067999958992004,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.6226000189781189,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0266
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Hand pain",
+      "- Swelling",
+      "- Trigger finger",
+      "- Status post injection"
+    ],
+    "content_analysis": 0.2857,
+    "content_similarity": 0.6324999928474426,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5318999886512756,
+    "title": "Assessment",
+    "topic_similarity": 0.1215
+  },
+  {
+    "bleu_score": 0.2849,
+    "content": [
+      "Previous injection offered no relief.",
+      "Recommend trial of dig verban's injection.",
+      "Return to clinic in six weeks for follow-up."
+    ],
+    "content_analysis": 0.3571,
+    "content_similarity": 0.6491000056266785,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6319000124931335,
+    "title": "Plan",
+    "topic_similarity": 0.0378
+  }
+]

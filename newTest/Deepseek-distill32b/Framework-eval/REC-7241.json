@@ -1,0 +1,76 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "James",
+    "content_analysis": 0.0,
+    "content_similarity": 0.2831999957561493,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.2759000062942505,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Recurrence of trigger finger on the right side and new triggering on the left side.",
+    "content_analysis": 0.75,
+    "content_similarity": 0.9643999934196472,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.9501000046730042,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient, James, is here for a follow-up after surgery with Dr. Hertz. He reports a recurrence of trigger finger on his right side and new triggering on the left side. He is interested in knowing if it is too soon for another injection. On examination, both sides show moderate soft tissue swelling, with triggering of the middle finger and a nodule present on the right side.",
+    "content_analysis": 0.375,
+    "content_similarity": 0.7882000207901001,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6651999950408936,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0141
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Moderate soft tissue swelling, triggering of the middle finger, nodule present.",
+    "content_analysis": 0.5,
+    "content_similarity": 0.9129999876022339,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.7146999835968018,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 0.09229999780654907,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.029600000008940697,
+    "title": "Imaging Results",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Trigger finger (right side)",
+      "Trigger finger (left side)",
+      "Status post surgery"
+    ],
+    "content_analysis": 0.5556,
+    "content_similarity": 0.70169997215271,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.6413999795913696,
+    "title": "Assessment",
+    "topic_similarity": 0.0438
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Deferring injection on the right side; proceeding with injection on the left side today. Recommend follow-up with Dr. Hertz.",
+    "content_analysis": 0.3333,
+    "content_similarity": 0.6757000088691711,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6197999715805054,
+    "title": "Plan",
+    "topic_similarity": 0.0336
+  }
+]

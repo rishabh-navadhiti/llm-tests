@@ -1,0 +1,92 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Hand pain and abnormal sensation in certain positions"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": -0.007899999618530273,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.07159999758005142,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.2037
+  },
+  {
+    "bleu_score": 0.0434,
+    "content": [
+      "The patient is a post-operative patient status post hand injury. He reports that he has not had much pain but notes some feedback and a funny sensation in the hand when in certain positions. He is seeking clarification on what is going on. The injury occurred previously, and he has been under treatment with an ulnar gutter splint. He is currently advised to continue down weight bearing and protect the hand with the splint. Follow-up is scheduled in 3 weeks for further evaluation and potential transition to a thermoplastic splint."
+    ],
+    "content_analysis": 0.1579,
+    "content_similarity": 0.4555000066757202,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6187000274658203,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.999
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "finger rotation appears correct limited right and small finger motions like very"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.2777000069618225,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.29820001125335693,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.07
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "4 views. It's extra footstep stable and with minimal fracture healing."
+    ],
+    "content_analysis": 0.3333,
+    "content_similarity": 0.5336999893188477,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.36970001459121704,
+    "title": "Imaging Results",
+    "topic_similarity": 0.9998
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Hand pain",
+      "- Abnormal sensation in hand",
+      "- Status post hand injury with minimal fracture healing"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.4706999957561493,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.34630000591278076,
+    "title": "Assessment",
+    "topic_similarity": 0.0566
+  },
+  {
+    "bleu_score": 0.1856,
+    "content": [
+      "Continue to protect with ulnar gutter splint.",
+      "Continue down weight bearing.",
+      "Follow up in 3 weeks for clinic visit.",
+      "Plan to transition to thermoplastic splint at follow-up.",
+      "Therapy prescription provided and patient to schedule therapy appointment for that date."
+    ],
+    "content_analysis": 0.4737,
+    "content_similarity": 0.9348000288009644,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.7975999712944031,
+    "title": "Plan",
+    "topic_similarity": 0.9999
+  }
+]

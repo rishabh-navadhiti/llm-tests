@@ -7,21 +7,19 @@ import re
 from typing import Optional
 import requests
 import os
-from dotenv import load_dotenv
 
-load_dotenv()  # reads .env file and loads variables
 
 OLLAMA_MODEL_NAME = "gpt-oss:120b"
 OLLAMA_API_URL = "http://localhost:11434/api/generate"  # local server
 
 # CONFIG — change as needed
-INPUT_DIR = Path("/workspace/llm-tests/transcripts/Spencer")
-OUTPUT_DIR = Path("/workspace/llm-tests/Output/Gpt-oss-120b")
+INPUT_DIR = Path("/workspace/llm-tests/newTest/transcripts")
+OUTPUT_DIR = Path("/workspace/llm-tests/newTest/GPT-OSS-120b")
 TEMPLATE_PATH = Path("/workspace/llm-tests/templates/doctor-template-specialized-v2.json")
-PROMPT_PATH = Path("/workspace/llm-tests/prompt-v1.txt")
+PROMPT_PATH = Path("/workspace/llm-tests/prompt-v2.txt")
 
 MAX_TOKENS = 6000
-TEMPERATURE = 0.7
+TEMPERATURE = 0.3
 REQUEST_TIMEOUT = 600  # seconds
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -61,9 +59,18 @@ def load_template_and_prompt() -> tuple[str, str]:
 
 
 def load_transcript(file_path: Path) -> str:
-    """Load transcript from a specific file."""
+    """Load a transcript file and format it with speaker labels."""
     with open(file_path, "r", encoding="utf-8") as f:
-        return f.read().strip()
+        transcript_data = json.load(f)
+    
+    # Format the transcript into a readable string with speaker labels
+    formatted_transcript = ""
+    for entry in transcript_data:
+        speaker = entry.get("speaker", "unknown").capitalize()
+        conversation = entry.get("conversation", "")
+        formatted_transcript += f"{speaker}: {conversation}\n"
+    
+    return formatted_transcript.strip()
 
 
 def generate_response_ollama(system_prompt: str, template: str, transcript: str) -> str:
@@ -86,7 +93,7 @@ def generate_response_ollama(system_prompt: str, template: str, transcript: str)
     payload = {
         "model": OLLAMA_MODEL_NAME,
         "prompt": prompt_text,
-        "temperature": TEMPERATURE,  # Use the defined constant
+        "temperature": TEMPERATURE,
         "max_tokens": MAX_TOKENS,
         "stream": False,  # Disable streaming to get complete response
     }
@@ -105,61 +112,19 @@ def generate_response_ollama(system_prompt: str, template: str, transcript: str)
         logger.error(f"Request to Ollama API failed: {e}")
         raise
 
-    # Dump raw response immediately for debugging
-    raw_dump_path = OUTPUT_DIR / f"{Path('temp').stem}.raw.txt"
-    raw_dump_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(raw_dump_path, "w", encoding="utf-8") as f:
-        f.write(resp.text)
-    logger.info(f"✅ Raw Ollama response dumped to {raw_dump_path}")
-
-    # Parse the response
+    # Parse the response as JSON
     try:
         response_data = resp.json()
-        
-        # Handle streaming response format (multiple JSON objects)
-        if isinstance(response_data, str):
-            # If response is a string, try to parse multiple JSON objects
-            response_parts = []
-            for line in response_data.strip().split('\n'):
-                line = line.strip()
-                if line:
-                    try:
-                        part = json.loads(line)
-                        if 'response' in part:
-                            response_parts.append(part['response'])
-                    except json.JSONDecodeError:
-                        continue
-            output_text = ''.join(response_parts)
-        else:
-            # Single response object
-            output_text = response_data.get("response", "")
-            
-        # If output_text is still empty, try alternative parsing
-        if not output_text:
-            # Try to parse line by line from raw text
-            response_parts = []
-            for line in resp.text.strip().split('\n'):
-                line = line.strip()
-                if line:
-                    try:
-                        part = json.loads(line)
-                        if 'response' in part and part['response']:
-                            response_parts.append(part['response'])
-                    except json.JSONDecodeError:
-                        continue
-            output_text = ''.join(response_parts)
-            
+        output_text = response_data.get("response", "")
     except json.JSONDecodeError as e:
         logger.error(f"Failed to parse response JSON: {e}")
-        # Fallback: return raw text
-        output_text = resp.text
+        output_text = resp.text  # Fallback to raw text
 
     gen_time = time.time() - start_time
     logger.info(f"✅ Received response in {gen_time:.2f}s")
     show_gpu_memory("after request")
     
     return output_text.strip()
-
 
 def extract_json(response: str) -> Optional[any]:
     """Extract first valid JSON object/array from Ollama output."""

@@ -19,7 +19,7 @@ MODEL_NAME = "Qwen/Qwen3-30B-A3B-Instruct-2507"  # Using the latest Instruct var
 VLLM_API_URL = "http://localhost:8000/v1/chat/completions"
 
 # Path settings
-INPUT_DIR = Path("/workspace/llm-tests/newTest/transcripts")
+INPUT_DIR = Path("/workspace/llm-tests/evaluation/testiing/trans")
 OUTPUT_DIR = Path("/workspace/llm-tests/newTest/Qwen3-30B-A3B")  # Updated output directory
 TEMPLATE_PATH = Path("/workspace/llm-tests/templates/doctor-template-specialized-v2.json")
 PROMPT_PATH = Path("/workspace/llm-tests/prompt-v2.txt")

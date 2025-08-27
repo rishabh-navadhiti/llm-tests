@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match with benchmark ('Magara'); name appears explicitly in transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches benchmark ('Bilateral hand numbness and tingling'); only casing differs, which is acceptable."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Fully aligns with benchmark in all factual elements: right-hand dominant retiree, onset around Jan 2025, no trauma/injection, nocturnal symptoms improved with braces, denies pain/limited motion."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark shows '-' (no content), while candidate included a long verbatim block mixing exam and imaging text, which does not match the benchmark output."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Matches benchmark findings: right hand IP joint space narrowing, most notable at thumb MCP, and left hand with severe CMC narrowing; minor wording differences only."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Candidate includes 'Carpal tunnel syndrome' and 'peripheral neuropathy' (with added 'medication-induced' qualifier) but adds multiple non-benchmark items (symptom and imaging-based findings) and omits benchmark items ('skin intact', 'no TTP'). Multiple discrepancies."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Consistent with benchmark on nerve studies and follow-up, but candidate lists '6 to 8 weeks' vs benchmark '6 weeks'. Otherwise aligned."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note closely matches the benchmark for patient name, chief complaint, HPI, and imaging results. The plan is largely consistent aside from the follow-up interval. Major divergence occurs in the musculoskeletal verbatim field (candidate populated while the benchmark is blank) and the assessment (candidate adds non-benchmark items and modifies phrasing). Overall, strong on core history and imaging, but weaker alignment on exam/assessment formatting and content."
+}

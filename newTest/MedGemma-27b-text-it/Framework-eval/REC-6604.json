@@ -4,12 +4,12 @@
     "content": [
       "Nicole Coffee"
     ],
-    "content_analysis": 0.2,
-    "content_similarity": 0.765500009059906,
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.7318000197410583,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.2033
+    "topic_similarity": 1.0
   },
   {
     "bleu_score": 1.0,
@@ -24,28 +24,28 @@
     "topic_similarity": 1.0
   },
   {
-    "bleu_score": 0.1078,
+    "bleu_score": 0.1006,
     "content": [
       "Patient presents with left index finger pain that she has noticed for several months. The pain initially bothered her during her shoulder appointment but has worsened over time. She previously saw Dr. Almadroa who recommended observation, but the condition has not improved and has progressed to causing triggering. She is now requesting treatment."
     ],
-    "content_analysis": 0.3684,
-    "content_similarity": 0.7696999907493591,
+    "content_analysis": 0.5333,
+    "content_similarity": 0.8567000031471252,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.5636000037193298,
+    "rhetorical_similarity": 0.659500002861023,
     "title": "HPI Spencer",
-    "topic_similarity": 0.0207
+    "topic_similarity": 0.0208
   },
   {
-    "bleu_score": 0.2723,
+    "bleu_score": 0.0,
     "content": [
       "Acute moderate tenderness to palpation over the A1 pulley of the left index finger."
     ],
-    "content_analysis": 0.4167,
-    "content_similarity": 0.7638000249862671,
+    "content_analysis": 0.3333,
+    "content_similarity": 0.5960000157356262,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.7351999878883362,
+    "rhetorical_similarity": 0.2858999967575073,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.9992
+    "topic_similarity": 0.0385
   },
   {
     "bleu_score": 0.0,
@@ -72,16 +72,16 @@
     "topic_similarity": 0.0762
   },
   {
-    "bleu_score": 0.0,
+    "bleu_score": 0.2782,
     "content": [
       "Plan trigger finger injection.",
       "X-rays three views of the finger are normal."
     ],
     "content_analysis": 0.3333,
-    "content_similarity": 0.4350999891757965,
+    "content_similarity": 0.6876000165939331,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.5454000234603882,
+    "rhetorical_similarity": 0.6355999708175659,
     "title": "Plan",
-    "topic_similarity": 0.9982
+    "topic_similarity": 0.0755
   }
 ]

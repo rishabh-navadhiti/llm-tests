@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 from scipy.stats import shapiro, kstest, anderson
 
 # Paths
-eval_dir = "/Users/rish/Development/runpod dev/llm-tests/newTest/Deepseek-distill32b/Framework-eval"
-results_dir = "/Users/rish/Development/runpod dev/llm-tests/newTest/Deepseek-distill32b/Results"
+eval_dir = "/Users/rish/Development/runpod dev/llm-tests/newTest/Qwen3-30B-A3B/Framework-eval"
+results_dir = "/Users/rish/Development/runpod dev/llm-tests/newTest/Qwen3-30B-A3B/Results"
 os.makedirs(results_dir, exist_ok=True)
 
 output_md = os.path.join(results_dir, "eval_stats.md")

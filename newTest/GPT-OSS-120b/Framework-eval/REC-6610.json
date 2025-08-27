@@ -1,0 +1,88 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Stephanie Humphrey"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "left wrist pain"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.2289,
+    "content": [
+      "The patient is a right\u2011hand dominant horticulturalist who sustained a trip and fall on 6/21/25 while leaving Groundlings, resulting in left wrist pain. The pain was present immediately after the fall, was painful then, and began to improve slightly. She obtained urgent\u2011care X\u2011rays that showed no fractures and was diagnosed with a sprain. Subsequent exposure to humidity in Massachusetts increased her pain, prompting evaluation today."
+    ],
+    "content_analysis": 0.4545,
+    "content_similarity": 0.8650000095367432,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.8841000199317932,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0157
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "On exam, left upper extremity skin is clean and intact without erythema or hematemosis. No specific tendon inflammation. Mild tendon inflammation over the ECU tendon. Um, there is pain with pro-supination. No evidence of subluxation of the ECU tendon. Excellent range of motion overall."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.0364999994635582,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.0478999987244606,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.464
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-rays showed no fractures.",
+      "X-rays are normal through these, the wrist, left wrist."
+    ],
+    "content_analysis": 0.8333,
+    "content_similarity": 0.9563999772071838,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7071999907493591,
+    "title": "Imaging Results",
+    "topic_similarity": 0.9971
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- left ECU tendonitis",
+      "- left ulnar-sided wrist pain"
+    ],
+    "content_analysis": 0.625,
+    "content_similarity": 0.7936000227928162,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.6377999782562256,
+    "title": "Assessment",
+    "topic_similarity": 0.0528
+  },
+  {
+    "bleu_score": 0.4163,
+    "content": [
+      "We'll call it left ECU tendonitis, left ulnar-sided wrist pain. Recommend trial of hand therapy. Recommend MRI for further evaluation. Return to clinic after MRI."
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.6331999897956848,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 1.0,
+    "title": "Plan",
+    "topic_similarity": 0.0465
+  }
+]

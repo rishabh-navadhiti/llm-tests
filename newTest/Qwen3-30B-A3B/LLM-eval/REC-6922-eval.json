@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to transcript: 'Mahika Mahendru' stated by the doctor."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Concise and factually consistent with benchmark: pain distal to the splint."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes exam/plan details (pressure on dorsal aspect, inability to sublux extensor tendons, excellent PAP, and modification consideration) which should not be in HPI; also adds 'right hand' not stated in the transcript. The core history matches but with multiple inappropriate additions."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Captures the doctor's musculoskeletal exam content (splint in place, mild soft tissue, hypersensitivity distal to splint, pressure on dorsal aspect, unable to sublux extensor tendons, excellent PAP). Minor issues include inclusion of the patient's interjection ('right?') and slightly garbled phrasing."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging mentioned in transcript; '-' correctly used, matching the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Includes 'Hypersensitivity distal to the splint' matching the benchmark and adds 'pain distal to splint' and 'splint-related nerve irritation,' both supported by the transcript. Not penalized for omitting benchmark items ('skin intact', 'no TTP') since those are normal findings and not present in the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Plan matches the transcript and benchmark exactly: modify splint; RTC Monday if no improvement; RTC in 3 weeks."
+    }
+  },
+  "total_score": 31,
+  "percentage": 88.57,
+  "overall_summary": "Strong overall alignment with the benchmark. Patient name, chief complaint, imaging, assessment, and plan are accurate. The main deficiency is in the HPI, which inappropriately includes exam/plan details and a minor side/structure inference. Musculoskeletal exam is largely correct but includes a minor patient interjection."
+}

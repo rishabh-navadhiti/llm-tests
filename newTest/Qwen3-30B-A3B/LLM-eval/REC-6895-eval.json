@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both notes list '-' and the transcript contains no explicit patient name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Benchmark: 'Follow up'. Candidate: 'Hand pain and abnormal sensation in certain positions.' Candidate is plausible from transcript but does not match the benchmark CC."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark is a concise patient-reported symptom summary. Candidate adds non-HPI and inferred details (post-operative status, splint use, weight-bearing, follow-up/plan) not confined to patient history and not all stated in transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark uses 'Right upper extremity Skin is intact.' Candidate uses a different verbatim line ('finger rotation appears...') and appears truncated; both are in transcript but candidate does not match the benchmark content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Benchmark: 'Four view X-ray showed extraarticular stable fracture with minimal healing.' Candidate: '4 views. It's extra footstep stable and with minimal fracture healing.' Minor wording/ASR differences; core meaning aligns."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark lists exam-oriented assessment items ('Skin is intact', 'No tenderness to palpation'). Candidate lists symptoms and inferred status post condition; does not match benchmark content. Note: some benchmark items are not clearly stated in transcript, but scoring is against benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Candidate captures most plan elements (continue ulnar gutter splint, down weight-bearing, 3-week follow-up, transition to thermoplastic splint, therapy prescription). It omits explicit mention of 'splint change' present in the benchmark."
+    }
+  },
+  "total_score": 19,
+  "percentage": 54.29,
+  "overall_summary": "The candidate note matches the benchmark on patient name, closely aligns on imaging and plan, but diverges significantly on chief complaint, HPI, assessment, and musculoskeletal verbatim content. Inclusion of inferred/non-HPI details and mismatch with benchmark phrasing reduced scores."
+}

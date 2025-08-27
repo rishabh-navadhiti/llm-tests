@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark '-' exactly; no patient name stated in transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Conveys the same complaint as benchmark with minor wording difference ('increasing'), which is supported by the transcript and remains concise."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Includes all key elements from the benchmark (post-chemo lymphoma, increased home time, right hand numbness/tingling, right thumb burn affecting sensation and earrings, reduced phone holding) without adding unsupported details."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Candidate provides verbatim musculoskeletal exam text from the transcript, whereas the benchmark contains '-'. This is a major mismatch relative to the benchmark content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'X-ray is clear'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Overlaps with benchmark on 'Trigger finger' but omits multiple benchmark items (skin intact, normal percussion of Guyon's canal, moderate tenderness, excellent ROM, nodule) and adds items not listed in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures all plan elements conceptually (injection for trigger finger, night splints, low threshold for nerve studies, 2-month follow-up) but does not explicitly state 'injection' as in the benchmark, instead paraphrasing with transcript phrasing."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "Strong alignment with the benchmark on patient name, chief complaint, HPI, and imaging. Plan is well-captured with minor wording differences. Notable discrepancies are in the musculoskeletal verbatim field (benchmark is '-') and assessment, where several benchmark-listed findings are missing and additional items are included."
+}

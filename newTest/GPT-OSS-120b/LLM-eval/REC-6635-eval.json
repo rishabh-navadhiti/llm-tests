@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "No patient name appears in the transcript; candidate correctly returned '-,' matching the benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches the benchmark ('Index finger pain and stiffness'); casing difference only, meaning preserved."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately includes left-hand dominance, mechanism (chisel, 7-16-25), urgent care repair, suture removal with wound reopening, and current symptoms. Adds limited active PIP flexion (an exam detail not in the benchmark HPI), otherwise consistent."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Faithfully captures the doctor’s verbatim exam findings including 10° PIP flexion, swelling, no tenderness, and ROM of remaining digit(s), aligning with benchmark content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Matches the benchmark exactly: 'X-rays are normal.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Misses the benchmark diagnosis of 'Laceration of the left index finger' and omits laterality for stiffness. Adds problems ('index finger pain', 'post-traumatic PIP stiffness') not listed in the benchmark, leading to notable deviation."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Includes both benchmark plan elements: recommend hand therapy and return in four weeks; phrasing aligns with transcript."
+    }
+  },
+  "total_score": 31,
+  "percentage": 88.57,
+  "overall_summary": "The candidate note closely matches the benchmark in most fields, with perfect alignment for name, chief complaint, musculoskeletal exam, imaging, and plan. The HPI is accurate but includes an exam detail. The main deficit is in the assessment, which omits the laceration diagnosis and laterality while adding extra items. Overall, strong fidelity to transcript with room for improvement in the assessment list."
+}

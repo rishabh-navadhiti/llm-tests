@@ -3,11 +3,11 @@
     "bleu_score": 0.0,
     "content": "-",
     "content_analysis": 0.0,
-    "content_similarity": 0.18790000677108765,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.18619999289512634,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.0,
@@ -22,22 +22,22 @@
   {
     "bleu_score": 0.0,
     "content": "The patient reports doing well with her thumb but notes that her right ring finger trigger finger has recurred. Symptoms began around 2020, and she had previously received 3 injections, which were not effective.",
-    "content_analysis": 0.2941,
-    "content_similarity": 0.8093000054359436,
+    "content_analysis": 0.4,
+    "content_similarity": 0.7627000212669373,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.5031999945640564,
+    "rhetorical_similarity": 0.6449999809265137,
     "title": "HPI Spencer",
-    "topic_similarity": 0.0214
+    "topic_similarity": 0.0207
   },
   {
     "bleu_score": 0.0,
     "content": "Mild tenderness to palpation of the thumb CMC joints. Triggering at the right ring finger with tenderness at the right ring finger pulley.",
-    "content_analysis": 0.7,
-    "content_similarity": 0.8881999850273132,
+    "content_analysis": 0.0,
+    "content_similarity": 0.00989999994635582,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.8156999945640564,
+    "rhetorical_similarity": 0.03709999844431877,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.0288
+    "topic_similarity": 0.4741
   },
   {
     "bleu_score": 0.0,
@@ -65,11 +65,11 @@
   {
     "bleu_score": 0.0,
     "content": "Recommend surgical release after discussing risks. Continue night lifting.",
-    "content_analysis": 0.1667,
-    "content_similarity": 0.29019999504089355,
+    "content_analysis": 0.2,
+    "content_similarity": 0.39239999651908875,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.35679998993873596,
+    "rhetorical_similarity": 0.5460000038146973,
     "title": "Plan",
-    "topic_similarity": 0.0396
+    "topic_similarity": 0.043
   }
 ]

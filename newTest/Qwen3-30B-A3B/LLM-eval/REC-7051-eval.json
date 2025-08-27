@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('Magara') and explicitly stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches benchmark content ('Bilateral hand numbness and tingling'); concise and accurate."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Includes all benchmark elements (right-hand dominant retiree, onset ~Jan 2025, no trauma/injection, nocturnal symptoms improved with braces, denies pain/limited motion) with only minor wording differences."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark shows no musculoskeletal verbatim ('-'), whereas the candidate includes a long mixed passage that also incorporates imaging details; major mismatch with the benchmark field content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Conveys the same findings as the benchmark (right hand IP narrowing with notable thumb MCP involvement; left hand variable narrowing with severe CMC narrowing). Minor wording differences only."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Candidate adds and modifies items compared to benchmark: includes symptom ('bilateral hand numbness and tingling') and imaging finding ('joint space narrowing'), downgrades 'carpal tunnel syndrome' to 'possible,' and omits benchmark items ('Skin is intact', 'No tenderness to palpation'). Multiple differences from ground truth."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes nerve studies and return to clinic, consistent with benchmark, but specifies '6–8 weeks' vs benchmark '6 weeks.' Otherwise faithful to transcript."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note closely matches the benchmark for patient name, chief complaint, HPI, and imaging, and largely aligns with the plan aside from follow-up interval wording. However, it diverges in the assessment by adding/modifying items and misses the benchmark’s inclusion of certain exam findings. The musculoskeletal verbatim field notably does not match the benchmark and mixes exam with imaging content."
+}

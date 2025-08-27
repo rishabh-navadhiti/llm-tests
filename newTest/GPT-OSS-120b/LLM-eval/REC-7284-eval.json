@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "No patient name was stated in the transcript; both benchmark and candidate correctly return '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches the benchmark complaint in content ('Right middle finger crush injury'); capitalization differences are minor."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Timeline, mechanism, symptoms, and prior care match the benchmark, but the candidate improperly includes exam and current imaging findings in the HPI, which violates the field instructions."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Accurately transcribes the musculoskeletal exam verbatim from the transcript (hematoma, PIP flexion, DIP stiffness, no tenderness at distal phalanx, paresthesia). Although the benchmark left this field blank, the transcript clearly contains these findings."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Includes only today's x-ray finding ('fracture of the distal phalanx with stable alignment and good fracture healing') and omits earlier imaging results noted in the benchmark (urgent care x-rays showed a fracture; 4-week repeat showed continued fracture). Multiple missing details."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Captures key active problems (crush injury, distal phalanx fracture, DIP stiffness, paresthesia). Missing other items present in the benchmark assessment (e.g., hematoma and healing/alignment status). Reasonable exclusion of normal/negative findings."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Faithfully reflects the dictated plan, including advancing activity, avoiding hanging from hands, and the corrected follow-up timing (3 weeks) for nail check before wedding. Content aligns with the benchmark plan."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note closely matches the benchmark for patient name, chief complaint, musculoskeletal exam (verbatim), and plan. The HPI includes objective findings that should be excluded. Imaging results are incomplete, omitting prior x-ray findings. Assessment lists the main problems but misses several items included in the benchmark."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the transcript: 'Bertha Campos' is explicitly stated."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate states 'Follow-up for post-operative care' which is less specific than the benchmark's 'Follow up for sutures removal'; main intent preserved but key detail (suture removal) omitted."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes exam/assessment details ('incision is clean and intact', 'no evidence of complications') and implies post-removal status within HPI. Benchmark limits HPI to follow-up for suture removal and improving motion without objective findings."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Partially verbatim and accurate (ROM without pain, full extension, no triggering, postoperative ecchymosis) but omits earlier dictated lines present in the benchmark ('incision clean intact...', 'sutures removed today', 'patient...without complication') and slightly alters phrasing (e.g., omits 'excellent')."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly indicate no imaging information ('-')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Candidate lists no active problems ('-'), which is reasonable given the transcript lacks explicit active diagnoses. The benchmark includes normal findings not present in the transcript; per instructions, not penalized for benchmark-only content."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Correctly includes 'Sutures removed today.' Adds 'Follow-up as needed,' which is not in the transcript (hallucination). Not penalizing for omission of 'Return to clinic in 2 weeks' since that timing appears in the benchmark but not in the transcript."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note captures the patient name and lack of imaging correctly and partially aligns on the musculoskeletal findings and general visit context. Key shortcomings include an imprecise chief complaint, HPI contamination with objective findings and post-removal status, and a hallucinated follow-up instruction in the plan. Differences where the benchmark includes details not in the transcript were not penalized."
+}

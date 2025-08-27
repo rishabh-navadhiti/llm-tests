@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the patient's name explicitly stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Captures both issues (forearm pain, thumb pain); minor extra qualifier ('improved') adds detail beyond a concise complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately summarizes follow-up status, improved forearm pain, ongoing thumb pain, and inquiry about treatment. Benchmark includes wedding-related context likely tied to a different patient; not penalized for omitting that."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Includes only part of the verbatim exam ('Significant tendinous location... very positive grind') but omits multiple dictated findings (right upper extremity context, no A1 pulley tenderness, tenderness at U&R eminence)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Transcript explicitly states 'X-rays reviewed. It shows planned arthritis,' but the candidate returned '-'. Major omission of reported imaging findings."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Misses the primary assessment ('Planned arthritis') and instead lists a symptom and an exam finding; content does not align with the benchmark diagnosis."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches the dictated plan: steroid injection trial, discussion of temporary nature and procedure/post-op protocol, and return in 8 weeks if symptoms persist."
+    }
+  },
+  "total_score": 22,
+  "percentage": 62.86,
+  "overall_summary": "The candidate note correctly identifies the patient, core complaints, and plan, and provides a generally accurate HPI. However, it omits key musculoskeletal details, fails to report the explicit imaging results, and misses the primary assessment diagnosis, leading to a moderate overall score."
+}

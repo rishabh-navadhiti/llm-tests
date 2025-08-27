@@ -12,8 +12,8 @@ rec_ids = [
 ]
 
 BASE_URL = "https://api.physicianassist.com/api/v1"
-AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiNjdhMmY2NDY0YWRjZmU0NDBlOGJlNzUxIiwiZW1haWwiOiJ0ZWNoc3VwcG9ydEBwaHlzaWNpYW5hc3Npc3QuY29tIiwicHJvdmlkZXIiOiJtaWNyb3NvZnQiLCJvcmlnaW4iOiJQT1JUQUwifSwiZXhwIjoxNzU1NzgwMDgxfQ.UojOqRwWBrz7c78_lH_jFFsUHJA6F8lHBMLdPIKThAE"
-DEVICE_ID = "68a705e2936420a5438e1e98"
+AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoiNjdhMmY2NDY0YWRjZmU0NDBlOGJlNzUxIiwiZW1haWwiOiJ0ZWNoc3VwcG9ydEBwaHlzaWNpYW5hc3Npc3QuY29tIiwicHJvdmlkZXIiOiJtaWNyb3NvZnQiLCJvcmlnaW4iOiJQT1JUQUwifSwiZXhwIjoxNzU2MjEyNDY2fQ.GK7Pn888S_MjLutl27yiMF__lS27Cne9DptsSJT_KJc"
+DEVICE_ID = "68ad9ee3936420a5438e21d3"
 
 HEADERS = {
     "accept": "application/json, text/plain, */*",
@@ -150,7 +150,7 @@ def fetch_notes_and_transcripts(rec_ids):
                 error_count += 1
                 continue
 
-            note_id = data1["result"]["Notes"].get("_id")
+            note_id = data1["result"]["Notes"]["doctor_notes_versions"][0]
             transcription_id = data1["result"]["Notes"].get("transcription_id")
 
             if not note_id or not transcription_id:

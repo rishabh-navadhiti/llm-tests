@@ -1,0 +1,88 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "wrist pain"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.132,
+    "content": [
+      "The patient reports significant limitation due to wrist pain and is seeking evaluation for a right total wrist arthroplasty. She notes that synovitis has markedly improved after a rheumatologist injection and that she has begun an infusion for osteoporosis. Her knee replacement has recovered sufficiently, and she wishes to begin planning a wrist rescue procedure."
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.9373000264167786,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.8156999945640564,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0146
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Exam mostly unchanged, except you can delete the large, poorly defined nodule."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.08219999819993973,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": -0.025800000876188278,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.504
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.08969999849796295,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": -0.014399999752640724,
+    "title": "Imaging Results",
+    "topic_similarity": 0.504
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- wrist pain",
+      "- bilateral wrist arthritis",
+      "- osteoporosis"
+    ],
+    "content_analysis": 0.4286,
+    "content_similarity": 0.7366999983787537,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5321999788284302,
+    "title": "Assessment",
+    "topic_similarity": 0.0569
+  },
+  {
+    "bleu_score": 0.0655,
+    "content": [
+      "Exam mostly unchanged, except you can delete the large, poorly defined nodule. The imaging you can leave all the same. Regarding the bilateral wrist arthritis, she is interested in right total wrist arthroplasty. Her synovitis is down and her knee has recovered enough that she would like to start planning wrist rescue procedure."
+    ],
+    "content_analysis": 0.1176,
+    "content_similarity": 0.5414999723434448,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.4957999885082245,
+    "title": "Plan",
+    "topic_similarity": 0.0304
+  }
+]

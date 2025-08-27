@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark ('-'); the transcript provides no patient name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate left this blank ('-') while benchmark lists 'Follow up for hand pain'. The chief complaint is not explicitly stated in the transcript (only implied), so penalized mildly for omission."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "Candidate is blank ('-') despite the transcript clearly stating that the prior injection gave no relief and the patient wants to know what's going on."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Accurately reflects the doctor’s verbatim findings (hypopigmentation at dorsal CMC consistent with prior injection; mild over first dorsal compartment; positive Finkelstein/finger stain; positive grind) with only trivial wording differences."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Matches benchmark ('-'); no imaging mentioned in the transcript."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Candidate left this blank, whereas the benchmark lists 'Pain in hand.' Assessment not explicitly stated in the transcript (though inferable), so partial credit with mild penalty."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark and transcript: recommend trial of de Quervain’s ('dig verban’s') injection and return to clinic in six weeks."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note accurately captured the musculoskeletal exam and plan but omitted key narrative elements, notably the HPI, chief complaint, and assessment. Where the benchmark included information not explicitly stated in the transcript (chief complaint, assessment), the candidate left fields blank. Overall, strong on exam and plan fidelity, weak on history and problem listing."
+}

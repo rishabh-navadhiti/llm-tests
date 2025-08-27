@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to transcript: 'Jane Pollock' explicitly stated."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Benchmark chief complaint is 'Follow-up'; candidate provides 'Sore and stiff'. While symptoms are mentioned in the transcript, the primary visit reason (follow-up) is missing."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes exam findings (ecchymosis, finger positions, 4 cm from palm) and laterality not stated by patient, and omits key HPI elements in benchmark (follow-up, overall doing well, husband present, uncertainty if bruising is normal)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Largely matches the doctor’s dictated MSK findings verbatim but omits the benchmark’s initial sentence about incisions being dry/intact with sutures and has minor wording differences. Note: that omitted line was spoken by the nurse in the transcript."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging mentioned in the transcript; candidate correctly returns '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Candidate lists problem findings (soreness, ecchymosis, limited motion) whereas benchmark lists normal findings ('skin intact', 'no tenderness'). Substantial mismatch with benchmark content. Not penalized for missing benchmark-only details not present in transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures key plan elements: soft dressing, return in 6 days and in one week to consider suture removal and initiation of therapy. Minor wording/clarity issues ('drive') but overall content aligns with benchmark."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate note correctly identifies the patient and imaging status and captures most of the MSK exam and plan content. Major shortcomings include using symptoms instead of the visit reason for the chief complaint, an HPI that improperly incorporates exam details while omitting key contextual elements, and an assessment that diverges notably from the benchmark’s content."
+}

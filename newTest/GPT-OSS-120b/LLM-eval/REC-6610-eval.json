@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('Stephanie Humphrey')."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches benchmark ('Left wrist pain'); minor casing difference only."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Fully aligns with benchmark details: mechanism (trip and fall on 6/21/25 leaving Groundlings), initial improvement, urgent care X-rays with no fracture and sprain diagnosis, humidity in Massachusetts worsened pain, presenting for evaluation."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Candidate provides accurate verbatim MSK exam from the transcript, whereas the benchmark left this field as '-'. Minor discrepancy due to benchmark omission, not factual error."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Matches benchmark content: urgent care X-rays showed no fractures and current left wrist X-rays are normal."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes the two key problems ('Left ECU tendonitis', 'Left ulnar-sided wrist pain') matching the benchmark; omits benchmark’s additional items ('Skin is intact', 'No tenderness to palpation')."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Contains all benchmark plan elements (hand therapy, MRI, return after MRI) with an extra phrase identifying diagnoses; minor deviation from benchmark phrasing."
+    }
+  },
+  "total_score": 32,
+  "percentage": 91.43,
+  "overall_summary": "The candidate note closely matches the benchmark, accurately capturing the patient name, chief complaint, HPI, imaging, and core assessment and plan. Minor differences include adding verbatim MSK findings (omitted in the benchmark), omitting two minor assessment lines, and including one extra plan phrase. Overall, factual alignment is strong."
+}

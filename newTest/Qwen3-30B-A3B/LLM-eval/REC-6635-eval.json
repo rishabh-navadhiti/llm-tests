@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Patient name not stated in transcript; candidate correctly used '-'. Perfect match with benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Captures 'index finger pain and stiffness' exactly in meaning; only capitalization differs. Matches benchmark content."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "History details match (left-hand dominant artist, mechanism/date, urgent care repair, suture removal with wound reopening, presenting for stiffness). However, candidate improperly included exam findings in the HPI, which violates the field instructions. Minor omission of explicit 'left index finger' wording early, but this is not clearly stated in the transcript’s HPI segment."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Contains the dictated musculoskeletal exam essentially verbatim and consistent with the transcript. Minor wording differences from the benchmark (e.g., 'remaining digit' vs 'digits') but factual content is preserved."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Exact match to benchmark and transcript: 'X-rays are normal.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Captures the two core problems (laceration and stiff finger) but lacks laterality and uses slightly different phrasing than the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan: hand therapy and return in 4 weeks (worded as 'four weeks for follow-up'); meaning fully preserved and supported by transcript."
+    }
+  },
+  "total_score": 30,
+  "percentage": 85.71428571428571,
+  "overall_summary": "The candidate note closely matches the benchmark on most fields, with accurate chief complaint, imaging, and plan. The main issue is the HPI including objective exam details that should be excluded, and the assessment lacks laterality and exact phrasing. Musculoskeletal exam is essentially verbatim with minor wording differences. Overall, factual alignment is strong with some instruction adherence issues in the HPI and minor detail differences in the assessment."
+}

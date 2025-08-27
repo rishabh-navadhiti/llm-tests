@@ -4,12 +4,12 @@
     "content": [
       "Math"
     ],
-    "content_analysis": 0.0,
-    "content_similarity": 0.15870000422000885,
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.12240000069141388,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.2832
+    "topic_similarity": 1.0
   },
   {
     "bleu_score": 0.0,
@@ -24,40 +24,40 @@
     "topic_similarity": 0.9989
   },
   {
-    "bleu_score": 0.2104,
+    "bleu_score": 0.2963,
     "content": [
       "The patient is a stay-at-home mom who sustained a left distal radius fracture in October 2023 following a fall. She underwent surgery with Dr. Andrew Rice and was diagnosed with CRPS post-operatively. She reports significant improvement since then but continues to experience persistent stiffness in her left wrist. She is unable to extend her wrist sufficiently to perform a push-up, although she can perform Pilates regularly without pain or limitation, using modifications. She presents for evaluation and treatment of ongoing wrist stiffness."
     ],
-    "content_analysis": 0.4773,
-    "content_similarity": 0.8482999801635742,
+    "content_analysis": 0.4667,
+    "content_similarity": 0.9333999752998352,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.708899974822998,
+    "rhetorical_similarity": 0.817300021648407,
     "title": "HPI Spencer",
-    "topic_similarity": 0.0083
+    "topic_similarity": 0.0108
   },
   {
-    "bleu_score": 0.2134,
+    "bleu_score": 0.8882,
     "content": [
       "Incision while healing , minimal scar , excellent finger motion without painful post supination , uh , flexion to about 45 extensions to about 20"
     ],
-    "content_analysis": 0.6667,
-    "content_similarity": 0.9289000034332275,
+    "content_analysis": 0.9167,
+    "content_similarity": 0.9718000292778015,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.9459999799728394,
+    "rhetorical_similarity": 0.9869999885559082,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.0317
+    "topic_similarity": 1.0
   },
   {
-    "bleu_score": 0.0,
+    "bleu_score": 0.128,
     "content": [
       "X-rays show well-healed fracture with hardware, plate alignment looks good and overall reduction adequate"
     ],
-    "content_analysis": 0.5,
-    "content_similarity": 0.7552000284194946,
+    "content_analysis": 0.6667,
+    "content_similarity": 0.6988000273704529,
     "key": "IMAGING_RESULTS",
-    "rhetorical_similarity": 0.7698000073432922,
+    "rhetorical_similarity": 0.646399974822998,
     "title": "Imaging Results",
-    "topic_similarity": 0.0561
+    "topic_similarity": 0.0416
   },
   {
     "bleu_score": 0.0,
@@ -74,18 +74,18 @@
     "topic_similarity": 0.9996
   },
   {
-    "bleu_score": 0.1454,
+    "bleu_score": 0.1229,
     "content": [
       "Review X-rays.",
       "Discuss that patient likely will not have sufficient motion to perform a push-up.",
       "Recommend advancing activity to return to Pilates.",
       "Follow-up in 3 months."
     ],
-    "content_analysis": 0.381,
-    "content_similarity": 0.5210000276565552,
+    "content_analysis": 0.3077,
+    "content_similarity": 0.670799970626831,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.529699981212616,
+    "rhetorical_similarity": 0.6093000173568726,
     "title": "Plan",
-    "topic_similarity": 0.0252
+    "topic_similarity": 0.0587
   }
 ]

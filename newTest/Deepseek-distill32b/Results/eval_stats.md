@@ -1,4 +1,4 @@
-# Evaluation Statistics Deepseek
+# Evaluation Statistics
 
 ## Field: PATIENT_NAME
 
@@ -13,42 +13,42 @@
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: content_analysis
-- Mean: 0.3176
-- Std Dev: 0.4364
-- Variance: 0.1904
-- Shapiro-Wilk: statistic=0.6697, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.3667, p=0.0001
-- Anderson-Darling: statistic=5.3400
+- Mean: 0.3976
+- Std Dev: 0.4675
+- Variance: 0.2186
+- Shapiro-Wilk: statistic=0.6893, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.3453, p=0.0003
+- Anderson-Darling: statistic=4.9182
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: content_similarity
-- Mean: 0.6021
-- Std Dev: 0.3889
-- Variance: 0.1513
-- Shapiro-Wilk: statistic=0.7536, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.2356, p=0.0342
-- Anderson-Darling: statistic=3.5972
+- Mean: 0.8820
+- Std Dev: 0.2593
+- Variance: 0.0672
+- Shapiro-Wilk: statistic=0.5110, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.4184, p=0.0000
+- Anderson-Darling: statistic=8.1763
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: rhetorical_similarity
-- Mean: 0.5932
-- Std Dev: 0.3854
-- Variance: 0.1485
-- Shapiro-Wilk: statistic=0.7633, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.2323, p=0.0383
-- Anderson-Darling: statistic=3.4193
+- Mean: 0.8775
+- Std Dev: 0.2595
+- Variance: 0.0673
+- Shapiro-Wilk: statistic=0.5265, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.4244, p=0.0000
+- Anderson-Darling: statistic=7.7937
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: topic_similarity
-- Mean: 0.5970
-- Std Dev: 0.3620
-- Variance: 0.1310
-- Shapiro-Wilk: statistic=0.8417, p=0.0002
-- Kolmogorov-Smirnov: statistic=0.2187, p=0.0598
-- Anderson-Darling: statistic=2.0723
+- Mean: 0.4890
+- Std Dev: 0.4773
+- Variance: 0.2278
+- Shapiro-Wilk: statistic=0.7068, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.2817, p=0.0060
+- Anderson-Darling: statistic=4.4946
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
@@ -57,10 +57,10 @@
 | Metric | bleu_score | content_analysis | content_similarity | rhetorical_similarity | topic_similarity |
 | --- | --- | --- | --- | --- | --- |
 | bleu_score | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
-| content_analysis | 0.0000 | 0.1904 | 0.1167 | 0.1163 | 0.0963 |
-| content_similarity | 0.0000 | 0.1167 | 0.1513 | 0.1493 | 0.0021 |
-| rhetorical_similarity | 0.0000 | 0.1163 | 0.1493 | 0.1485 | 0.0022 |
-| topic_similarity | 0.0000 | 0.0963 | 0.0021 | 0.0022 | 0.1310 |
+| content_analysis | 0.0000 | 0.2186 | 0.0363 | 0.0350 | 0.1783 |
+| content_similarity | 0.0000 | 0.0363 | 0.0672 | 0.0671 | -0.0237 |
+| rhetorical_similarity | 0.0000 | 0.0350 | 0.0671 | 0.0673 | -0.0258 |
+| topic_similarity | 0.0000 | 0.1783 | -0.0237 | -0.0258 | 0.2278 |
 
 ## Field: CHIEF_COMPLAINT
 
@@ -127,52 +127,52 @@
 ## Field: HPI_SPENCER
 
 ### Metric: bleu_score
-- Mean: 0.0003
-- Std Dev: 0.0018
+- Mean: 0.0000
+- Std Dev: 0.0000
 - Variance: 0.0000
-- Shapiro-Wilk: statistic=0.1615, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.5385, p=0.0000
-- Anderson-Darling: statistic=13.0387
+- Shapiro-Wilk: statistic=1.0000, p=1.0000
+- Kolmogorov-Smirnov: statistic=0.5000, p=0.0000
+- Anderson-Darling: statistic=nan
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: content_analysis
-- Mean: 0.3280
-- Std Dev: 0.2198
-- Variance: 0.0483
-- Shapiro-Wilk: statistic=0.9453, p=0.0810
-- Kolmogorov-Smirnov: statistic=0.1561, p=0.3266
-- Anderson-Darling: statistic=0.5531
+- Mean: 0.3773
+- Std Dev: 0.2463
+- Variance: 0.0607
+- Shapiro-Wilk: statistic=0.9654, p=0.3305
+- Kolmogorov-Smirnov: statistic=0.1140, p=0.7109
+- Anderson-Darling: statistic=0.3431
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: content_similarity
-- Mean: 0.7233
-- Std Dev: 0.2273
-- Variance: 0.0516
-- Shapiro-Wilk: statistic=0.8113, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.2140, p=0.0693
-- Anderson-Darling: statistic=2.2792
+- Mean: 0.7446
+- Std Dev: 0.2376
+- Variance: 0.0565
+- Shapiro-Wilk: statistic=0.7964, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.2131, p=0.0713
+- Anderson-Darling: statistic=2.4310
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: rhetorical_similarity
-- Mean: 0.6063
-- Std Dev: 0.1990
-- Variance: 0.0396
-- Shapiro-Wilk: statistic=0.9036, p=0.0049
-- Kolmogorov-Smirnov: statistic=0.1216, p=0.6350
-- Anderson-Darling: statistic=0.7746
+- Mean: 0.6428
+- Std Dev: 0.1944
+- Variance: 0.0378
+- Shapiro-Wilk: statistic=0.8119, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.2189, p=0.0594
+- Anderson-Darling: statistic=2.1560
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: topic_similarity
-- Mean: 0.1356
-- Std Dev: 0.2916
-- Variance: 0.0850
-- Shapiro-Wilk: statistic=0.4611, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.4389, p=0.0000
-- Anderson-Darling: statistic=8.8186
+- Mean: 0.1919
+- Std Dev: 0.3534
+- Variance: 0.1249
+- Shapiro-Wilk: statistic=0.5312, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.4291, p=0.0000
+- Anderson-Darling: statistic=7.9211
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
@@ -180,11 +180,11 @@
 
 | Metric | bleu_score | content_analysis | content_similarity | rhetorical_similarity | topic_similarity |
 | --- | --- | --- | --- | --- | --- |
-| bleu_score | 0.0000 | -0.0000 | 0.0000 | -0.0000 | 0.0003 |
-| content_analysis | -0.0000 | 0.0483 | 0.0390 | 0.0264 | 0.0023 |
-| content_similarity | 0.0000 | 0.0390 | 0.0516 | 0.0348 | -0.0070 |
-| rhetorical_similarity | -0.0000 | 0.0264 | 0.0348 | 0.0396 | -0.0089 |
-| topic_similarity | 0.0003 | 0.0023 | -0.0070 | -0.0089 | 0.0850 |
+| bleu_score | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+| content_analysis | 0.0000 | 0.0607 | 0.0455 | 0.0304 | 0.0094 |
+| content_similarity | 0.0000 | 0.0455 | 0.0565 | 0.0394 | -0.0023 |
+| rhetorical_similarity | 0.0000 | 0.0304 | 0.0394 | 0.0378 | -0.0100 |
+| topic_similarity | 0.0000 | 0.0094 | -0.0023 | -0.0100 | 0.1249 |
 
 ## Field: MUSCULOSKELETAL_VERBATIM
 
@@ -199,42 +199,42 @@
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: content_analysis
-- Mean: 0.3836
-- Std Dev: 0.3431
-- Variance: 0.1177
-- Shapiro-Wilk: statistic=0.8792, p=0.0011
-- Kolmogorov-Smirnov: statistic=0.2111, p=0.0758
-- Anderson-Darling: statistic=1.4199
+- Mean: 0.3335
+- Std Dev: 0.3756
+- Variance: 0.1411
+- Shapiro-Wilk: statistic=0.8034, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.2698, p=0.0097
+- Anderson-Darling: statistic=2.6939
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: content_similarity
-- Mean: 0.5863
-- Std Dev: 0.3702
-- Variance: 0.1371
-- Shapiro-Wilk: statistic=0.8060, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.2297, p=0.0418
-- Anderson-Darling: statistic=2.8045
+- Mean: 0.5035
+- Std Dev: 0.4048
+- Variance: 0.1639
+- Shapiro-Wilk: statistic=0.8210, p=0.0001
+- Kolmogorov-Smirnov: statistic=0.2240, p=0.0503
+- Anderson-Darling: statistic=2.4510
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: rhetorical_similarity
-- Mean: 0.5234
-- Std Dev: 0.3327
-- Variance: 0.1107
-- Shapiro-Wilk: statistic=0.8576, p=0.0003
-- Kolmogorov-Smirnov: statistic=0.1964, p=0.1172
-- Anderson-Darling: statistic=2.0079
+- Mean: 0.4591
+- Std Dev: 0.3751
+- Variance: 0.1407
+- Shapiro-Wilk: statistic=0.8439, p=0.0002
+- Kolmogorov-Smirnov: statistic=0.2465, p=0.0234
+- Anderson-Darling: statistic=2.0611
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: topic_similarity
-- Mean: 0.3315
-- Std Dev: 0.3725
-- Variance: 0.1388
-- Shapiro-Wilk: statistic=0.7656, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.3032, p=0.0024
-- Anderson-Darling: statistic=3.3157
+- Mean: 0.4952
+- Std Dev: 0.3786
+- Variance: 0.1433
+- Shapiro-Wilk: statistic=0.8319, p=0.0001
+- Kolmogorov-Smirnov: statistic=0.1933, p=0.1279
+- Anderson-Darling: statistic=2.1523
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
@@ -242,11 +242,11 @@
 
 | Metric | bleu_score | content_analysis | content_similarity | rhetorical_similarity | topic_similarity |
 | --- | --- | --- | --- | --- | --- |
-| bleu_score | 0.0002 | -0.0005 | 0.0002 | 0.0005 | -0.0007 |
-| content_analysis | -0.0005 | 0.1177 | 0.1105 | 0.0943 | -0.0150 |
-| content_similarity | 0.0002 | 0.1105 | 0.1371 | 0.1172 | -0.0334 |
-| rhetorical_similarity | 0.0005 | 0.0943 | 0.1172 | 0.1107 | -0.0333 |
-| topic_similarity | -0.0007 | -0.0150 | -0.0334 | -0.0333 | 0.1388 |
+| bleu_score | 0.0002 | -0.0004 | 0.0004 | 0.0006 | -0.0011 |
+| content_analysis | -0.0004 | 0.1411 | 0.1362 | 0.1214 | 0.0208 |
+| content_similarity | 0.0004 | 0.1362 | 0.1639 | 0.1459 | 0.0104 |
+| rhetorical_similarity | 0.0006 | 0.1214 | 0.1459 | 0.1407 | 0.0160 |
+| topic_similarity | -0.0011 | 0.0208 | 0.0104 | 0.0160 | 0.1433 |
 
 ## Field: IMAGING_RESULTS
 
@@ -261,42 +261,42 @@
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: content_analysis
-- Mean: 0.4064
-- Std Dev: 0.4201
-- Variance: 0.1765
-- Shapiro-Wilk: statistic=0.7728, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.3190, p=0.0011
-- Anderson-Darling: statistic=3.3281
+- Mean: 0.4277
+- Std Dev: 0.4244
+- Variance: 0.1801
+- Shapiro-Wilk: statistic=0.7837, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.3003, p=0.0027
+- Anderson-Darling: statistic=3.0288
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: content_similarity
-- Mean: 0.8011
-- Std Dev: 0.3278
-- Variance: 0.1075
-- Shapiro-Wilk: statistic=0.6229, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.2943, p=0.0035
-- Anderson-Darling: statistic=5.7838
+- Mean: 0.8131
+- Std Dev: 0.3203
+- Variance: 0.1026
+- Shapiro-Wilk: statistic=0.6076, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.2928, p=0.0037
+- Anderson-Darling: statistic=5.9516
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: rhetorical_similarity
-- Mean: 0.7606
-- Std Dev: 0.3136
-- Variance: 0.0984
-- Shapiro-Wilk: statistic=0.7197, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.2654, p=0.0115
-- Anderson-Darling: statistic=3.6878
+- Mean: 0.7729
+- Std Dev: 0.3060
+- Variance: 0.0937
+- Shapiro-Wilk: statistic=0.7138, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.2512, p=0.0197
+- Anderson-Darling: statistic=3.6212
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: topic_similarity
-- Mean: 0.3443
-- Std Dev: 0.4054
-- Variance: 0.1643
-- Shapiro-Wilk: statistic=0.7586, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.2379, p=0.0315
-- Anderson-Darling: statistic=3.3775
+- Mean: 0.2937
+- Std Dev: 0.3753
+- Variance: 0.1408
+- Shapiro-Wilk: statistic=0.7493, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.2614, p=0.0134
+- Anderson-Darling: statistic=3.5007
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
@@ -304,61 +304,61 @@
 
 | Metric | bleu_score | content_analysis | content_similarity | rhetorical_similarity | topic_similarity |
 | --- | --- | --- | --- | --- | --- |
-| bleu_score | 0.0081 | 0.0071 | 0.0003 | 0.0006 | -0.0045 |
-| content_analysis | 0.0071 | 0.1765 | 0.0494 | 0.0197 | 0.0610 |
-| content_similarity | 0.0003 | 0.0494 | 0.1075 | 0.0901 | -0.0423 |
-| rhetorical_similarity | 0.0006 | 0.0197 | 0.0901 | 0.0984 | -0.0477 |
-| topic_similarity | -0.0045 | 0.0610 | -0.0423 | -0.0477 | 0.1643 |
+| bleu_score | 0.0081 | 0.0067 | 0.0001 | 0.0004 | -0.0037 |
+| content_analysis | 0.0067 | 0.1801 | 0.0459 | 0.0148 | 0.0755 |
+| content_similarity | 0.0001 | 0.0459 | 0.1026 | 0.0850 | -0.0309 |
+| rhetorical_similarity | 0.0004 | 0.0148 | 0.0850 | 0.0937 | -0.0363 |
+| topic_similarity | -0.0037 | 0.0755 | -0.0309 | -0.0363 | 0.1408 |
 
 ## Field: ASSESSMENT_SPENCER
 
 ### Metric: bleu_score
-- Mean: 0.1474
-- Std Dev: 0.2617
-- Variance: 0.0685
-- Shapiro-Wilk: statistic=0.5912, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.4563, p=0.0000
-- Anderson-Darling: statistic=7.1730
+- Mean: 0.1550
+- Std Dev: 0.2611
+- Variance: 0.0682
+- Shapiro-Wilk: statistic=0.6215, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.4378, p=0.0000
+- Anderson-Darling: statistic=6.4946
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: content_analysis
-- Mean: 0.3271
-- Std Dev: 0.2896
-- Variance: 0.0839
-- Shapiro-Wilk: statistic=0.9110, p=0.0079
-- Kolmogorov-Smirnov: statistic=0.1563, p=0.3247
-- Anderson-Darling: statistic=0.9455
+- Mean: 0.3150
+- Std Dev: 0.2901
+- Variance: 0.0842
+- Shapiro-Wilk: statistic=0.9049, p=0.0054
+- Kolmogorov-Smirnov: statistic=0.1469, p=0.3981
+- Anderson-Darling: statistic=0.9999
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: content_similarity
-- Mean: 0.6116
-- Std Dev: 0.2554
-- Variance: 0.0652
-- Shapiro-Wilk: statistic=0.9564, p=0.1781
-- Kolmogorov-Smirnov: statistic=0.1147, p=0.7038
-- Anderson-Darling: statistic=0.5112
+- Mean: 0.6103
+- Std Dev: 0.2236
+- Variance: 0.0500
+- Shapiro-Wilk: statistic=0.9749, p=0.5902
+- Kolmogorov-Smirnov: statistic=0.1023, p=0.8217
+- Anderson-Darling: statistic=0.2697
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: rhetorical_similarity
-- Mean: 0.5482
-- Std Dev: 0.2489
-- Variance: 0.0619
-- Shapiro-Wilk: statistic=0.9774, p=0.6731
-- Kolmogorov-Smirnov: statistic=0.0697, p=0.9912
-- Anderson-Darling: statistic=0.2059
+- Mean: 0.5194
+- Std Dev: 0.2113
+- Variance: 0.0446
+- Shapiro-Wilk: statistic=0.9745, p=0.5790
+- Kolmogorov-Smirnov: statistic=0.0997, p=0.8433
+- Anderson-Darling: statistic=0.3969
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: topic_similarity
-- Mean: 0.3162
-- Std Dev: 0.3951
-- Variance: 0.1561
-- Shapiro-Wilk: statistic=0.6475, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.3501, p=0.0002
-- Anderson-Darling: statistic=5.7584
+- Mean: 0.2425
+- Std Dev: 0.3620
+- Variance: 0.1310
+- Shapiro-Wilk: statistic=0.5632, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.4009, p=0.0000
+- Anderson-Darling: statistic=7.3408
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
@@ -366,61 +366,61 @@
 
 | Metric | bleu_score | content_analysis | content_similarity | rhetorical_similarity | topic_similarity |
 | --- | --- | --- | --- | --- | --- |
-| bleu_score | 0.0685 | 0.0438 | 0.0325 | 0.0181 | 0.0327 |
-| content_analysis | 0.0438 | 0.0839 | 0.0645 | 0.0571 | 0.0546 |
-| content_similarity | 0.0325 | 0.0645 | 0.0652 | 0.0587 | 0.0374 |
-| rhetorical_similarity | 0.0181 | 0.0571 | 0.0587 | 0.0619 | 0.0329 |
-| topic_similarity | 0.0327 | 0.0546 | 0.0374 | 0.0329 | 0.1561 |
+| bleu_score | 0.0682 | 0.0462 | 0.0337 | 0.0227 | 0.0422 |
+| content_analysis | 0.0462 | 0.0842 | 0.0571 | 0.0503 | 0.0575 |
+| content_similarity | 0.0337 | 0.0571 | 0.0500 | 0.0428 | 0.0350 |
+| rhetorical_similarity | 0.0227 | 0.0503 | 0.0428 | 0.0446 | 0.0318 |
+| topic_similarity | 0.0422 | 0.0575 | 0.0350 | 0.0318 | 0.1310 |
 
 ## Field: PLAN_SPENCER_
 
 ### Metric: bleu_score
-- Mean: 0.0981
-- Std Dev: 0.1713
-- Variance: 0.0293
-- Shapiro-Wilk: statistic=0.6402, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.3451, p=0.0003
-- Anderson-Darling: statistic=5.6567
+- Mean: 0.1144
+- Std Dev: 0.2122
+- Variance: 0.0450
+- Shapiro-Wilk: statistic=0.6147, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.3622, p=0.0001
+- Anderson-Darling: statistic=5.8680
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: content_analysis
-- Mean: 0.4497
-- Std Dev: 0.2090
-- Variance: 0.0437
-- Shapiro-Wilk: statistic=0.9436, p=0.0722
-- Kolmogorov-Smirnov: statistic=0.1254, p=0.5971
-- Anderson-Darling: statistic=0.6490
+- Mean: 0.4639
+- Std Dev: 0.2346
+- Variance: 0.0550
+- Shapiro-Wilk: statistic=0.9608, p=0.2416
+- Kolmogorov-Smirnov: statistic=0.1111, p=0.7394
+- Anderson-Darling: statistic=0.4196
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: content_similarity
-- Mean: 0.7408
-- Std Dev: 0.1677
-- Variance: 0.0281
-- Shapiro-Wilk: statistic=0.9502, p=0.1151
-- Kolmogorov-Smirnov: statistic=0.0991, p=0.8482
-- Anderson-Darling: statistic=0.4257
+- Mean: 0.7719
+- Std Dev: 0.1884
+- Variance: 0.0355
+- Shapiro-Wilk: statistic=0.8793, p=0.0012
+- Kolmogorov-Smirnov: statistic=0.1482, p=0.3873
+- Anderson-Darling: statistic=1.3012
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: rhetorical_similarity
-- Mean: 0.6406
-- Std Dev: 0.1383
-- Variance: 0.0191
-- Shapiro-Wilk: statistic=0.9481, p=0.0993
-- Kolmogorov-Smirnov: statistic=0.1477, p=0.3919
-- Anderson-Darling: statistic=0.7287
+- Mean: 0.6461
+- Std Dev: 0.1681
+- Variance: 0.0282
+- Shapiro-Wilk: statistic=0.9671, p=0.3695
+- Kolmogorov-Smirnov: statistic=0.1288, p=0.5628
+- Anderson-Darling: statistic=0.5100
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
 ### Metric: topic_similarity
-- Mean: 0.2153
-- Std Dev: 0.3637
-- Variance: 0.1323
-- Shapiro-Wilk: statistic=0.5283, p=0.0000
-- Kolmogorov-Smirnov: statistic=0.3981, p=0.0000
-- Anderson-Darling: statistic=7.9782
+- Mean: 0.2458
+- Std Dev: 0.3840
+- Variance: 0.1475
+- Shapiro-Wilk: statistic=0.5590, p=0.0000
+- Kolmogorov-Smirnov: statistic=0.3969, p=0.0000
+- Anderson-Darling: statistic=7.4960
   - Critical Values: 0.5270, 0.6000, 0.7190, 0.8390, 0.9980
   - Significance Levels: 15.0, 10.0, 5.0, 2.5, 1.0
 
@@ -428,11 +428,11 @@
 
 | Metric | bleu_score | content_analysis | content_similarity | rhetorical_similarity | topic_similarity |
 | --- | --- | --- | --- | --- | --- |
-| bleu_score | 0.0293 | 0.0087 | -0.0011 | 0.0031 | 0.0156 |
-| content_analysis | 0.0087 | 0.0437 | 0.0188 | 0.0154 | 0.0143 |
-| content_similarity | -0.0011 | 0.0188 | 0.0281 | 0.0138 | -0.0040 |
-| rhetorical_similarity | 0.0031 | 0.0154 | 0.0138 | 0.0191 | 0.0083 |
-| topic_similarity | 0.0156 | 0.0143 | -0.0040 | 0.0083 | 0.1323 |
+| bleu_score | 0.0450 | 0.0280 | 0.0082 | 0.0087 | 0.0030 |
+| content_analysis | 0.0280 | 0.0550 | 0.0282 | 0.0261 | 0.0278 |
+| content_similarity | 0.0082 | 0.0282 | 0.0355 | 0.0218 | 0.0146 |
+| rhetorical_similarity | 0.0087 | 0.0261 | 0.0218 | 0.0282 | 0.0290 |
+| topic_similarity | 0.0030 | 0.0278 | 0.0146 | 0.0290 | 0.1475 |
 
 
 ---

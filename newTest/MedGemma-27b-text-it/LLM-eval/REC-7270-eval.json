@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Correctly returned '-' since no name appears in the transcript; matches benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Captures hand contracture but omits 'bilateral,' which is specified in the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Includes core history (onset left, now right; left can't lie flat) but adds exam details (right hand nodules/no contracture) and omits the stated purpose of visit (evaluation/treatment)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Transcript contains detailed musculoskeletal exam verbatim, but candidate left this section empty."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Includes normal X-ray but omits that an MRI is needed, which is stated in transcript and benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes 'Dupuytren's contracture' but misses the benchmark item 'Right upper extremity Skin is intact' and adds 'Hand contracture' not listed in benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "Medication name incorrect ('Zileuton' vs 'Zylex' per benchmark/transcript) and invented follow-up ('in 4 weeks') instead of 'return when medication is acquired.'"
+    }
+  },
+  "total_score": 18,
+  "percentage": 51.43,
+  "overall_summary": "The candidate note captures the general problem and some history accurately but misses key specifics (bilateral nature, MRI needed), omits verbatim musculoskeletal exam, and significantly deviates in the plan (wrong medication and invented follow-up). Overall fidelity to the benchmark is moderate to low."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark with '-' since no name was provided in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Conveys 'trigger finger' accurately and with correct laterality/location; aligns with benchmark meaning."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes some correct elements (doing well with thumb, symptoms ~2020) but differs from benchmark (states recurrence vs benchmark 'new-onset'), omits that she hoped it wouldn’t progress and is asking next steps, and adds '3 injections were not effective' which is not explicitly stated in the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark is '-', while candidate paraphrases exam findings instead of providing verbatim text; does not match the benchmark content or the verbatim requirement."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both indicate no imaging findings ('-')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Captures both problems but lacks specificity for the first item ('CMC arthritis' vs benchmark 'Right thumb CMC arthritis')."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Includes surgical release and risk discussion, but misses multiple benchmark elements: conservative management, context of 'after three injections,' carpal tunnel night splinting (stated as 'night lifting'), and CMC management (no injections today). Not penalizing for 'Return in 2 weeks' since that detail is not evident in the transcript."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note correctly identified the chief complaint, absence of imaging, and most of the assessment, but the HPI deviates from the benchmark and adds an unsupported inference. The musculoskeletal section is not verbatim as required, and the plan omits several key details and contains an inaccuracy ('night lifting' vs 'night splinting'). Overall, partially accurate with notable gaps in HPI and plan fidelity."
+}

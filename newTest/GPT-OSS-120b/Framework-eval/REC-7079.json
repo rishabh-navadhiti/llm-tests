@@ -1,0 +1,86 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Bertha Campos"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "follow-up"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.2770000100135803,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.2639999985694885,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.5551
+  },
+  {
+    "bleu_score": 0.0825,
+    "content": [
+      "The patient, Bertha Campos, presents for a postoperative follow-up. She reports that she has been working on finger motion and feels it is improving. She inquires about having her sutures removed today, noting that the incision appears clean and intact without apparent complications. She demonstrates a near\u2011tight fist without pain, full active extension, and no evidence of triggering. Moderate ecchymosis is present, consistent with the postoperative state."
+    ],
+    "content_analysis": 0.24,
+    "content_similarity": 0.733299970626831,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.703000009059906,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0198
+  },
+  {
+    "bleu_score": 0.4935,
+    "content": [
+      "Range of motion of the finger , um . Near tight fist without pain , um . Full active extension , there's no evidence of triggering . Uh moderate ecchymosis to the form consistent with um . Post-operative state , um . exam incision clean intact with suture sutures removed today patient tell well without apparent complication"
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.816100001335144,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.9286999702453613,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Sutures pending removal\n- Moderate ecchymosis of finger\n- Reduced range of motion"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.3215000033378601,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.45570001006126404,
+    "title": "Assessment",
+    "topic_similarity": 0.0625
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.10840000212192535,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.0763000026345253,
+    "title": "Plan",
+    "topic_similarity": 0.504
+  }
+]

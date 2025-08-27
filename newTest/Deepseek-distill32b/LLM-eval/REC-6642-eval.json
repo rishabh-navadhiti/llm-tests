@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark and transcript: 'Nadeem Nemi'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches benchmark precisely: 'Bilateral thumb pain'."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Fully consistent with benchmark and transcript: worsening bilateral thumb pain since 2019 (notably past 6 months), denies numbness/tingling, significant pain/limitation; added relevant history from transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark shows '-', while candidate includes exam details. Although transcript supports the content, it does not match the benchmark field content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Captures all key imaging findings from the benchmark (severe CMC changes with osteophytosis, Z deformity, calcific arteriogram on right; similar left without calcific). Minor omission of 'three-view' detail."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Includes bilateral thumb CMC arthritis and bilateral carpal tunnel syndrome but omits right cubital tunnel syndrome and 'skin is intact' item present in benchmark; thus multiple missing elements."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Substantially matches benchmark: steroid injection trial with discussion of temporary benefit/rebound pain, observation for CTS/cubital with possible nerve studies, and 2-month follow-up. Missing explicit statement that injections would be done today and specific mention of 'bilateral thumb CMC'."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "Strong alignment on patient name, chief complaint, HPI, imaging, and most of the plan. Main deficits are in the assessment (missing diagnoses compared to benchmark) and a mismatch on the musculoskeletal field where the benchmark had no content."
+}

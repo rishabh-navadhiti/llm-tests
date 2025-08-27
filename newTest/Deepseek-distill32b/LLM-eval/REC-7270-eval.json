@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('-'); no patient name provided in transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Meaning matches 'Bilateral hand contractures'; only minor wording differences."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures onset (left first, now right), inability to lay left hand flat, and reason for visit. However, it misidentifies the contracted finger as the ring finger (benchmark: little finger) and adds exam/imaging details not present in the benchmark HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Not verbatim; text is rephrased/cleaned and introduces terms not stated (e.g., 'erythema or edema', 'dense fibrosis') and omits 'no evidence of contracture' on the right. Major deviation from the dictated wording."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Includes 'X-rays normal' but omits 'MRI is needed,' which is a key element in the benchmark imaging."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark lists 'Dupuytren's contracture' (and a right skin status). Candidate lacks Dupuytren's diagnosis and adds items that belong to exam/plan (nodules, MRI recommended), leading to major content mismatch."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan: Zylex and return to clinic when medication is acquired; minor wording differences are acceptable."
+    }
+  },
+  "total_score": 22,
+  "percentage": 62.857142857142854,
+  "overall_summary": "Accurate for patient name, chief complaint, and plan. HPI mostly aligns but includes an incorrect finger detail and extraneous exam/imaging content. Musculoskeletal section fails the verbatim requirement with added/altered wording. Imaging omits the MRI recommendation, and the assessment misses Dupuytren's while adding misplaced items. Overall, moderate accuracy with notable section-specific issues."
+}

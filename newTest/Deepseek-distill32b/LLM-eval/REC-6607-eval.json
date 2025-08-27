@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both benchmark and candidate correctly use '-' as no patient name is provided in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Benchmark: 'Wrist pain.' Candidate adds 'significantly limiting activities,' which reflects the transcript but is slightly less concise than the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures knee replacement history, improved synovitis after injection, osteoporosis infusion, and interest in right total wrist arthroplasty. Omits the benchmark detail that the knee has recovered enough to start planning."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark is '-', reflecting no verbatim MSK exam statements. Candidate adds 'Bilateral wrist arthritis,' which is not a verbatim exam finding."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Benchmark specifies: 'Imaging mostly unchanged, except delete the large, poorly defined nodule.' Candidate has '-'. Missing stated imaging detail; note the transcript suggests imaging unchanged, so penalized modestly."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Candidate includes synovitis and bilateral wrist arthritis (aligned) but omits osteoporosis and 'Right upper extremity Skin is intact,' and adds 'knee replacement status post' not listed in the benchmark assessment."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Includes planning for right total wrist arthroplasty, but omits 'continue current infusion for osteoporosis' and 'return to clinic in 2 weeks'; adds a contingency about knee recovery not in the benchmark plan."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60,
+  "overall_summary": "The candidate note captures key HPI elements and the chief complaint reasonably well but falls short on imaging, assessment, MSK verbatim requirements, and plan completeness. Several benchmark plan and assessment items are missing, and the MSK field is not verbatim."
+}

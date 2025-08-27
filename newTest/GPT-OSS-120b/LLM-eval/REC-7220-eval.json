@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "No patient name is stated in the transcript; both candidate and benchmark correctly use '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Transcript clearly indicates a follow-up visit and the benchmark lists 'Follow-up', but the candidate left this as '-'."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Candidate accurately captures the benchmark HPI content (doing well, soaking, improving, middle finger sensitivity) but adds extra exam/imaging details and other history beyond the benchmark HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark is '-', while the candidate provided quoted exam findings. This does not match the benchmark field content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Exact match: 'X-rays deferred'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Candidate includes some benchmark problems (significant middle finger ecchymosis, stiff DIP) but omits others present in benchmark (e.g., separation of nail fold from nail bed, excellent PIP motion) and adds items not in the benchmark (post-traumatic arthritis, broken splint, middle finger sensitivity). Not penalized for benchmark items that are not in the transcript (e.g., 'skin intact', 'no TTP')."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes the key benchmark plan elements (RTC in 1 week with repeat X-rays; transition to removable splints). Adds an extra plan from the transcript (protect with relative motion; RTC in 6–8), and omits the exact phrase 'Continue current treatment.'"
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "The candidate note captures several core elements, including the HPI improvement details and imaging deferral, and largely aligns with the plan. However, it misses the chief complaint, diverges from the benchmark in the musculoskeletal verbatim section, and the assessment includes additions and omissions relative to the benchmark. Overall, moderate alignment with notable discrepancies."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly use '-' as no patient name is stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Benchmark: 'Follow-up'. Candidate includes 'Follow-up' but adds extra detail (middle finger sensitivity, nail fold separation). Meaning is preserved but less concise than benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark includes only subjective improvement and middle-finger sensitivity. Candidate adds exam findings (nail fold separation, ecchymosis, joint stiffness), plan details, and 'post-traumatic arthritis/denies fracture,' which are not in the benchmark HPI. Major content mismatch."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark is '-' (no verbatim MSK text). Candidate provides a verbatim string, so it does not match the ground truth."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'X-rays deferred.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Candidate includes some matching problems (ring finger nail fold separation, middle finger ecchymosis, stiff DIP). However, it adds items not in benchmark (middle finger sensitivity, post-traumatic arthritis) and omits 'Excellent PIP motion' from benchmark. Not penalized for benchmark items not in transcript (e.g., skin intact, no TTP)."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Matches two benchmark items (RTC in 1 week with repeat X-rays; transition to removable splints). Adds extra elements (relative motion protection, RTC 6–8 weeks) likely from a second patient and omits 'Continue current treatment' phrasing from the benchmark."
+    }
+  },
+  "total_score": 20,
+  "percentage": 57.14,
+  "overall_summary": "The candidate note partially aligns with the benchmark on core elements (patient name, imaging, parts of the plan). However, it includes inappropriate objective findings and plan details in the HPI, adds extraneous items to the Assessment and Plan (some likely from a second patient), and deviates from the concise chief complaint. Overall, there are several content mismatches with the benchmark despite some correct elements."
+}

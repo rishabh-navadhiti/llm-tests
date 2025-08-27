@@ -1,9 +1,7 @@
 [
   {
     "bleu_score": 0.0,
-    "content": [
-      "Greta Griswana"
-    ],
+    "content": "Greta Griswana",
     "content_analysis": 1.0,
     "content_similarity": 1.0,
     "key": "PATIENT_NAME",
@@ -13,9 +11,7 @@
   },
   {
     "bleu_score": 0.0,
-    "content": [
-      "Thumb pain"
-    ],
+    "content": "Thumb pain",
     "content_analysis": 0.5,
     "content_similarity": 0.8184000253677368,
     "key": "CHIEF_COMPLAINT",
@@ -24,63 +20,56 @@
     "topic_similarity": 0.171
   },
   {
-    "bleu_score": 0.0104,
-    "content": [
-      "Greta reports her forearm pain has improved, but her thumb pain has worsened."
-    ],
-    "content_analysis": 0.2857,
-    "content_similarity": 0.8532000184059143,
+    "bleu_score": 0.0,
+    "content": "Greta Griswana reports improvement in forearm pain but persistent severe thumb pain. She seeks relief options for her thumb pain.",
+    "content_analysis": 0.3529,
+    "content_similarity": 0.91839998960495,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.5023999810218811,
+    "rhetorical_similarity": 0.5687000155448914,
     "title": "HPI Spencer",
-    "topic_similarity": 0.9992
+    "topic_similarity": 1.0
   },
   {
     "bleu_score": 0.0,
-    "content": [
-      "Significant tenderness at the trapeziometacarpal joint with a positive grind."
-    ],
-    "content_analysis": 0.2222,
-    "content_similarity": 0.8306000232696533,
-    "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.4966999888420105,
-    "title": "Musculoskeletal",
-    "topic_similarity": 0.0612
-  },
-  {
-    "bleu_score": 0.0,
-    "content": [
-      "X-rays show planned arthritis."
-    ],
-    "content_analysis": 1.0,
-    "content_similarity": 0.9312999844551086,
-    "key": "IMAGING_RESULTS",
-    "rhetorical_similarity": 0.6107000112533569,
-    "title": "Imaging Results",
-    "topic_similarity": 0.2033
-  },
-  {
-    "bleu_score": 0.0,
-    "content": [
-      "Thumb pain with positive grind, likely arthritis."
-    ],
+    "content": "Significant tendinous location of the trapeziometacarpal joint, very positive grind.",
     "content_analysis": 0.25,
-    "content_similarity": 0.39079999923706055,
-    "key": "ASSESSMENT_SPENCER",
-    "rhetorical_similarity": 0.4970000088214874,
-    "title": "Assessment",
-    "topic_similarity": 0.1485
+    "content_similarity": 0.8313000202178955,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.5019999742507935,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0613
   },
   {
-    "bleu_score": 0.0801,
+    "bleu_score": 0.0,
+    "content": "X-rays reviewed: planned arthritis.",
+    "content_analysis": 1.0,
+    "content_similarity": 0.9241999983787537,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.572700023651123,
+    "title": "Imaging Results",
+    "topic_similarity": 0.2902
+  },
+  {
+    "bleu_score": 0.0,
     "content": [
-      "Trial of steroid injection; follow-up in eight weeks."
+      "Thumb pain",
+      "Trapeziometacarpal arthritis"
     ],
-    "content_analysis": 0.3636,
-    "content_similarity": 0.8443999886512756,
+    "content_analysis": 0.5,
+    "content_similarity": 0.4756999909877777,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5091999769210815,
+    "title": "Assessment",
+    "topic_similarity": 0.15
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "Trial of steroid injection, return to clinic in eight weeks for follow-up.",
+    "content_analysis": 0.4167,
+    "content_similarity": 0.84170001745224,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.5934000015258789,
+    "rhetorical_similarity": 0.616599977016449,
     "title": "Plan",
-    "topic_similarity": 0.0885
+    "topic_similarity": 0.0568
   }
 ]

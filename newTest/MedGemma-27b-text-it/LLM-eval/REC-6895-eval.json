@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly use '-' as no patient name is stated anywhere in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Benchmark indicates 'Follow up,' consistent with the transcript ('here today for the...'), whereas the candidate lists 'Hand pain,' which is not the chief complaint despite mention of minimal pain."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Candidate captures minimal pain and inquiry about what's going on but adds unsupported details ('hand injury,' 'stiffness') and changes 'feels funny in certain positions' to 'discomfort with certain movements.' Multiple minor hallucinations reduce accuracy."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Transcript includes exam phrases such as 'Right upper ... skin is ... intact' and 'finger rotation appears correct...,' and the benchmark captures 'Right upper extremity Skin is intact.' Candidate left this field empty, omitting available verbatim content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Benchmark (and transcript) report 'Four view X-ray... extraarticular stable fracture with minimal healing.' Candidate incorrectly states 'minimal displacement' (not mentioned) and omits 'extraarticular' and 'four views,' altering key findings."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark lists 'Right upper extremity Skin is intact' and 'No tenderness to palpation' (the latter not evident in the transcript; not penalized). Candidate instead lists 'Hand pain' and 'Stiffness'—stiffness is not stated in the transcript and neither item matches the benchmark problems."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Candidate includes 'Continue immobilization' and 'Follow up in 3 weeks,' partially aligning with the benchmark. However, it omits specific dictated elements: continue ulnar gutter splint, down weight-bearing, follow-up with splint change, transition to thermoplastic splint, and therapy prescription provided. It also adds a vague 'Continue current management' not dictated."
+    }
+  },
+  "total_score": 13,
+  "percentage": 37.14,
+  "overall_summary": "The candidate note correctly left the patient name blank but diverged substantially from the benchmark in most sections. The chief complaint was misstated, the HPI included unsupported details, musculoskeletal verbatim findings were omitted, imaging was inaccurately summarized, the assessment did not match and included a hallucinated item, and the plan captured only a small subset of the dictated details while adding a vague, non-dictated statement."
+}

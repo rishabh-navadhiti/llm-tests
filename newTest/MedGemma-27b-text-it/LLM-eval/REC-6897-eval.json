@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both notes correctly use '-' since no patient name appears in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Benchmark is '-', indicating no explicit chief complaint stated. Candidate guessed 'Follow-up for carpal tunnel release,' which is not explicitly provided."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Candidate captures the key facts (doing well, not much pain, lots of ecchymosis) matching the benchmark. However, it adds 'follow-up after carpal tunnel release' and specifies location ('arm and hand'), which are not clearly patient-reported in the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark succinctly captures the MSK exam: 'Incision with varied sutures, moderate ecchymosis.' Candidate includes that phrase but adds repeated, non-MSK and extraneous text, breaking the verbatim requirement."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "No imaging is mentioned; benchmark uses '-'. Candidate leaves the field as an empty array, which conveys no results but does not follow the required default formatting."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark lists items not present in the transcript (we do not penalize for those). The candidate adds unsupported problems ('Status post carpal tunnel release,' 'Hand pain,' 'Swelling'); pain was minimized, swelling was not mentioned, and 'status post' alone is discouraged."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Candidate includes 'Return to clinic in 4 weeks' correctly but omits 'Planned post-op endocarpal tunnel,' which is present in both the transcript and benchmark."
+    }
+  },
+  "total_score": 19,
+  "percentage": 54.285714285714285,
+  "overall_summary": "The candidate note captures some core patient-reported details and the follow-up interval but introduces unsupported elements (CC, HPI context, assessment) and includes excessive, non-verbatim content in the MSK exam. Formatting for imaging was nonstandard. Overall fidelity to the benchmark is moderate with notable inaccuracies."
+}

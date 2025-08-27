@@ -3,11 +3,11 @@
     "bleu_score": 0.0,
     "content": "-",
     "content_analysis": 0.0,
-    "content_similarity": 0.1987999975681305,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.1906999945640564,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.0,
@@ -22,22 +22,22 @@
   {
     "bleu_score": 0.0,
     "content": "The patient reports noticing continued soft tissue swelling in her hand, particularly when more active. She had experienced hypersensitivity two weeks ago, which has significantly improved over the last week.",
-    "content_analysis": 0.3846,
-    "content_similarity": 0.8851000070571899,
+    "content_analysis": 0.2353,
+    "content_similarity": 0.9110000133514404,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.590399980545044,
+    "rhetorical_similarity": 0.7458999752998352,
     "title": "HPI Spencer",
-    "topic_similarity": 0.0224
+    "topic_similarity": 0.0214
   },
   {
     "bleu_score": 0.0,
     "content": "Incision well healed, very minimal scar, no firmness to the scar. Excellent range of motion, full tight fist without pain, able to get hand flat on the table. There is a very slight extension lag, less than 5 degrees when compared to her baseline. Hyperextension, sensation decreased but improving on one of the digits.",
-    "content_analysis": 0.7619,
-    "content_similarity": 0.9470999836921692,
+    "content_analysis": 0.9444,
+    "content_similarity": 0.9943000078201294,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.7558000087738037,
+    "rhetorical_similarity": 0.9265000224113464,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.015
+    "topic_similarity": 1.0
   },
   {
     "bleu_score": 0.0,
@@ -55,12 +55,12 @@
       "Soft tissue swelling",
       "Hypersensitivity improving"
     ],
-    "content_analysis": 0.0,
-    "content_similarity": 0.016300000250339508,
+    "content_analysis": 0.125,
+    "content_similarity": 0.5508999824523926,
     "key": "ASSESSMENT_SPENCER",
-    "rhetorical_similarity": 0.0,
+    "rhetorical_similarity": 0.5300999879837036,
     "title": "Assessment",
-    "topic_similarity": 0.5146
+    "topic_similarity": 0.0571
   },
   {
     "bleu_score": 0.0,

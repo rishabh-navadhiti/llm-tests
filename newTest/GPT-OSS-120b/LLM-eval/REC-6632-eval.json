@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark and transcript ('Greta Griswana')."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate lists only 'thumb pain' and omits 'forearm pain' that is included in the benchmark chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures the key elements from the benchmark (follow-up, forearm pain improved, thumb pain severe, asking for relief, wedding-related decreased use with overall same pain) but adds 'exam findings are unchanged,' which is an exam detail and not in the benchmark HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Content aligns with benchmark findings (right upper extremity, TMC joint tenderness, positive grind, no A1 pulley tenderness, some U&R eminence tenderness). Minor wording/filler differences and a likely misheard word ('termine' vs 'extremity') but meaning preserved."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Candidate states only 'X-rays reviewed' and omits the benchmark’s stated finding ('It shows planned arthritis')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes 'Trapeziometacarpal joint arthritis,' which matches the benchmark diagnosis in meaning, and adds 'Thumb pain' as a relevant symptom-based problem. Minor wording differences from 'Planned arthritis' in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan (steroid injection, counseling on temporary nature/procedure/post-op protocol, return in 8 weeks). Added 'if symptoms persist' is consistent with the transcript and does not conflict with the benchmark."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note closely matches the benchmark on patient identification and plan, and reasonably matches HPI content, but includes an extraneous exam statement in the HPI, omits part of the chief complaint, and underreports the imaging findings. Musculoskeletal details are largely accurate with minor verbatim discrepancies. Assessment aligns in meaning but differs in wording and includes an extra relevant symptom."
+}

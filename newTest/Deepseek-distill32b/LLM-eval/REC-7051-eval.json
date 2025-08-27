@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('Magara')."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches benchmark ('Bilateral hand numbness and tingling'); only capitalization differs."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Captures all key details from the benchmark (right-hand dominant retiree, onset Jan 2025, no trauma/injection, nocturnal symptoms improved by bracing, denies pain/limited motion). Minor wording differences do not change meaning."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark expects '-' (no verbatim provided). Candidate includes paraphrased exam text and introduces 'rash,' which is not verbatim from the transcript, leading to a major mismatch with the benchmark's content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Accurately reflects key imaging findings (right hand IP narrowing, most at thumb MCP; left hand severe CMC narrowing). Omits mention of variable narrowing on the left and '3 views' detail from the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes the main problems (carpal tunnel and peripheral neuropathy) but as 'features of' rather than definitive items. Omits benchmark’s included exam items ('Skin is intact', 'No tenderness to palpation')."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Matches core plan (nerve studies; follow-up, with 6–8 weeks aligning with transcript though benchmark lists 6 weeks). Adds 'Consideration for carpal tunnel treatment,' which is not in the benchmark, making it a minor deviation."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note closely matches the benchmark for patient name, chief complaint, HPI, and imaging. The assessment is partially aligned but less definitive and missing exam items included in the benchmark. The musculoskeletal verbatim field diverges notably, providing paraphrased/altered content when the benchmark has none. The plan aligns well with minor additions. Overall, good fidelity with a few deviations."
+}

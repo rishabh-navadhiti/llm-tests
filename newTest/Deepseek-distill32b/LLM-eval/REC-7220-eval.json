@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark '-' and the transcript provides no patient name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Benchmark is 'Follow-up'; candidate states 'not possible fracture... post-traumatic arthritis,' which is not the concise chief complaint and does not match the benchmark focus."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark describes doing well, soaking, improving, with middle finger sensitivity. Candidate focuses on splint breakage and post-traumatic arthritis, omitting the benchmark details."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark is '-', while candidate adds verbatim content from a different segment; does not match the ground truth field."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Exact match with benchmark: 'X-rays deferred.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "Benchmark lists specific exam findings (e.g., PIP motion, ecchymosis, nail fold separation). Candidate lists 'post-traumatic arthritis' and 'splint breakage,' which do not appear in the benchmark assessment."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "Benchmark plan: 1-week wound check with repeat X-rays and transition to removable splints. Candidate lists 6–8 weeks follow-up and protective relative motion, which diverges from the benchmark."
+    }
+  },
+  "total_score": 14,
+  "percentage": 40,
+  "overall_summary": "The candidate note matches the benchmark on patient name and imaging, but diverges on chief complaint, HPI, assessment, and plan—likely drawing from a different segment of the transcript. Overall, it fails to align with the benchmark’s focus and key clinical details."
+}

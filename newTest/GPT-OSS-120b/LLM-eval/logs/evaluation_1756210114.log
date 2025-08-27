@@ -1,0 +1,17 @@
+2025-08-26 17:38:34,232 - INFO - Logging initialized. Log file: /Users/rish/Development/runpod dev/llm-tests/newTest/GPT-OSS-120b/LLM-eval/logs/evaluation_1756210114.log
+2025-08-26 17:38:34,232 - INFO - Starting medical notes evaluation
+2025-08-26 17:38:34,232 - INFO - Configuration:
+2025-08-26 17:38:34,232 - INFO -   - Benchmark directory: /Users/rish/Development/runpod dev/llm-tests/newTest/benchmark-gemini
+2025-08-26 17:38:34,232 - INFO -   - Candidate directory: /Users/rish/Development/runpod dev/llm-tests/newTest/GPT-OSS-120b
+2025-08-26 17:38:34,232 - INFO -   - Transcript directory: /Users/rish/Development/runpod dev/llm-tests/newTest/transcripts
+2025-08-26 17:38:34,232 - INFO -   - Output directory: /Users/rish/Development/runpod dev/llm-tests/newTest/GPT-OSS-120b/LLM-eval
+2025-08-26 17:38:34,232 - INFO -   - Model: gpt-5
+2025-08-26 17:38:34,232 - INFO - Created output directory: /Users/rish/Development/runpod dev/llm-tests/newTest/GPT-OSS-120b/LLM-eval
+2025-08-26 17:38:34,292 - INFO - OpenAI model 'gpt-5' initialized successfully
+2025-08-26 17:38:34,292 - INFO - Loading evaluation prompt from: /Users/rish/Development/runpod dev/llm-tests/evaluation/eval_prompt.txt
+2025-08-26 17:38:34,292 - INFO - Loaded prompt (2907 characters)
+2025-08-26 17:38:34,292 - INFO - Found 35 benchmark files to process
+2025-08-26 17:38:34,293 - INFO - Processing 1/35: REC-6922
+2025-08-26 17:39:23,975 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-26 17:39:23,990 - INFO - ✅ Successfully evaluated REC-6922 → /Users/rish/Development/runpod dev/llm-tests/newTest/GPT-OSS-120b/LLM-eval/REC-6922-eval.json
+2025-08-26 17:39:23,990 - INFO - Processing 2/35: REC-6627

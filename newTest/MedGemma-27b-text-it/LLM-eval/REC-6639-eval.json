@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Chaz Thomas'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches benchmark precisely: 'Follow-up'."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Contains factual errors and omissions. Candidate says 'Patient removed sutures yesterday' (incorrect; sutures were removed today) and omits the reason for removing the splint (blood contamination) and the patient’s question about what he can do/how things look."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Not verbatim and includes fabricated findings (limited extension, A1 pulley tenderness, swelling) not present in the transcript. Omits the documented verbatim findings ('laceration, clean dry and intact with sutures... thumbs up but some pain, limited flexion')."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "No imaging mentioned for this patient; benchmark uses '-'. Candidate left the field empty, which conveys the same meaning but does not explicitly use '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Major deviation from benchmark. Candidate lists 'Trigger finger' and other items not supported by the transcript, whereas benchmark notes skin intact and no TTP. Introduces a new diagnosis not stated."
+    },
+    "PLAN_SPENCER_": {
+      "score": 0,
+      "justification": "Contradicts benchmark and transcript. Candidate proposes A1 pulley injection and 4-week follow-up; correct plan is transition to removable splint, initiate hand therapy, and return in 2 weeks."
+    }
+  },
+  "total_score": 17,
+  "percentage": 48.57,
+  "overall_summary": "Accurate on patient name and chief complaint, but the HPI contains key errors and omissions, the musculoskeletal section is non-verbatim with fabricated findings, the assessment introduces unsupported diagnoses, and the plan diverges significantly from the dictated plan. Imaging is effectively correct but not formatted as '-'. Overall, substantial factual inaccuracies reduce clinical fidelity."
+}

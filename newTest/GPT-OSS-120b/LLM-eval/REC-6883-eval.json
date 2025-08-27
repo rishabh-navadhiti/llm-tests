@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both notes correctly return '-' as no patient name is stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Candidate lists 'wrist pain,' capturing the main issue but omits the falls aspect present in the benchmark. Meaning largely preserved."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes two falls over two days (slide and electric scooter), persistent wrist extension pain, and reason for visit. Matches benchmark content without added info."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Includes only the initial portion of the dictated exam and omits multiple verbatim findings (dorsal wrist swelling, mild ecchymosis, significant pain with wrist extension)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Conveys the key findings: left wrist X-rays showing distal radius injury in a skeletally immature patient. Minor wording/clarity issues compared with benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes 'distal radius fracture' (matches benchmark) and adds 'wrist pain,' which is accurate but extra relative to the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures fracture casting and follow-up with repeat X-rays and cast change. Wording is awkward and the follow-up interval number is missing, but the transcript also lacks a clear number (do not penalize for benchmark-only detail)."
+    }
+  },
+  "total_score": 28,
+  "percentage": 80,
+  "overall_summary": "The candidate note closely matches the benchmark in HPI, imaging, assessment, and plan content, with minor omissions or wording issues. The chief complaint is slightly under-specified, and the musculoskeletal section is incomplete, missing several verbatim findings. Overall performance is solid but with room for improvement in completeness and verbatim transcription."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to transcript and benchmark: 'Jane Pollock'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Benchmark is 'Follow-up'. Candidate adds 'for right upper extremity incisions,' which is not stated as the complaint and adds unnecessary detail."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures key facts (follow-up, doing well, sore/stiff, not too painful, bruising). Omits minor details in benchmark (husband present; uncertainty if bruising is normal)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Not verbatim and misses multiple specifics from benchmark/transcript (e.g., 'with sutures', 'to the palm', 'about 4 cm from palm', 'unable to straighten'). Paraphrased and simplified."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Benchmark indicates no imaging ('-'). Candidate left the field empty, which conveys the same meaning but does not follow the default formatting."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Benchmark lists 'Right upper extremity Skin is intact' and 'No tenderness to palpation.' Candidate instead lists 'Postoperative status (right upper extremity)'. Content differs notably. (Note: 'No tenderness to palpation' is not in the transcript; not penalized for that omission.)"
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Benchmark includes return in 1 week and 6 days, soft dressing, and consideration of suture removal and initiation of therapy. Candidate includes 1-week follow-up and suture removal consideration but omits soft dressing and 6-day follow-up, and adds 'Continue with current therapy,' which is not stated."
+    }
+  },
+  "total_score": 22,
+  "percentage": 62.86,
+  "overall_summary": "The candidate note captures the patient name and core HPI well, with a generally correct indication of no imaging results. However, it adds detail to the chief complaint, paraphrases and omits key specifics in the musculoskeletal verbatim section, diverges in the assessment content, and incompletely reflects the plan while adding a non-dictated instruction."
+}

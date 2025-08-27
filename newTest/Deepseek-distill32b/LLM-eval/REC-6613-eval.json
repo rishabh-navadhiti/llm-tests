@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark and transcript: 'Precious Myles Garrett'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Left wrist pain and masses'; concise and accurate."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately summarizes pain worse than masses with nocturnal symptoms, two masses with precise locations, stability over time, and prior rheumatology imaging. Minor omission of the rheumatologist's name (Dr. Ishimori) present in benchmark/transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark contains '-', while candidate includes exam details. Although largely derived from the transcript, it does not match the benchmark's expected '-' and contains slight paraphrase/wording inconsistencies for a verbatim field."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Fully aligns with benchmark: X-rays show MCP osteophyte; ultrasound shows bony avulsion fragment vs osteophyte at dorsal MCP and a retinacular cyst superficial to the first dorsal compartment sheath."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes two correct active problems (left first dorsal compartment wrist cyst; left thumb MCP osteophyte) matching benchmark. Omits other benchmark items (some not clearly supported by the transcript) and adds vague 'Bilateral' which is unsupported; hence partial credit."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Captures night splints, observation of masses, and 6-week follow-up. Omits 'consider aspiration vs biopsy of the wrist mass' from benchmark. Adds 'for carpal tunnel'—consistent with transcript but extra relative to benchmark."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note closely matches the benchmark for patient name, chief complaint, and imaging, and provides a largely accurate HPI. The plan is mostly correct but misses the aspiration/biopsy consideration. Assessment includes key problems but adds an unsupported 'Bilateral' and misses other benchmark items. Musculoskeletal verbatim does not align with the benchmark's expected '-' despite reflecting transcript content."
+}

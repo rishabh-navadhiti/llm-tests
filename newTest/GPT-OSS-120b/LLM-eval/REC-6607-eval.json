@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark with '-' since no name is stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches 'Wrist pain'; case difference only."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Captures all benchmark elements: improved synovitis after rheumatology injection, osteoporosis infusion, right TWA consideration due to wrist pain, and knee recovery allowing planning."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark has '-', while candidate included a line that pertains to imaging/note edits, not MSK exam."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Benchmark states 'Imaging mostly unchanged, except delete the large, poorly defined nodule,' which is supported by the transcript; candidate returned '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes osteoporosis and bilateral wrist arthritis and wrist pain, but omits 'Synovitis' from benchmark/transcript. Not penalized for excluding 'skin is intact' since that normal finding is not in the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes core plan to pursue right total wrist arthroplasty and planning. Lacks 'continue infusion' and 'RTC 2 weeks' from benchmark (not in transcript) and includes exam/imaging note-edit lines in the plan."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "Strong alignment on patient name, chief complaint, and HPI. Main deficiencies are misplacement/omission of imaging and MSK content, omission of synovitis in the assessment, and inclusion of non-plan elements in the plan. Core treatment plan is captured."
+}

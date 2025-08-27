@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 2,
+      "justification": "Benchmark lists only 'Kabe Tahiri' as the patient. Candidate includes two names ('Kabe Tahiri', 'Hoy Berlin'), which does not adhere to the single-name expectation."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Benchmark chief complaints are 'Follow up' and 'New problem: Trigger finger.' Candidate lists 'Neck pain' and 'Uncomfortable cast,' missing the new trigger finger problem and not matching the benchmark phrasing."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Candidate captures Kabe’s unchanged status and Hoy’s cast discomfort, but omits Leonard Freeman’s new trigger finger issue and other details (e.g., Kabe not seeking neck treatment). Overall incomplete compared to the benchmark summary."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark is '-', while candidate provides paraphrased MSK findings and not verbatim quotes. This does not match the benchmark and does not follow the 'verbatim' instruction, though the content is related."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Benchmark specifies: right wrist—ulna callus; left wrist—diffuse radius and ulna callus. Candidate merges these without laterality ('ulna and radius'), losing specificity and partially misstating the right side."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark assessment includes 'Right upper extremity skin is intact,' 'Trigger finger (right index and middle),' and 'No TTP.' Candidate lists neck pain and cast-related issues, omitting trigger finger and the benchmark exam qualifiers."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Candidate includes cast transition on the left, weaning the right, and considering a removable splint—matching parts of the benchmark. However, it omits the injection for trigger fingers, adds 'follow-up in one year for Kabe' (not in benchmark), and gives '4 weeks' instead of '6 weeks' (note: transcript did not provide the exact number; candidate introduced an incorrect value)."
+    }
+  },
+  "total_score": 13,
+  "percentage": 37.14,
+  "overall_summary": "The candidate note captures some high-level elements (cast transitions, general HPI points) but diverges notably from the benchmark in chief complaint, assessment, and detailed imaging. It introduces extra/incorrect items (additional patient name, 4-week follow-up, omission of trigger-finger injection) and lacks completeness, especially regarding the new trigger finger problem."
+}

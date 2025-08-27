@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 2,
+      "justification": "Includes the correct patient name ('Chaz Thomas') but also lists four other patients; benchmark expects a single name for the encounter."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Benchmark is a concise 'Follow-up'; candidate provides multiple complaints for different patients and adds detail, reducing concision and focus."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "For Chaz, it should note splint removal due to blood and that he wants to know what he can do; candidate mixes in multiple patients and includes exam elements (pain/limited flexion), and omits the patient's question."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Not verbatim: omits 'Excellent, thumbs up,' adds 'sutures removed,' and mixes findings from other patients; benchmark expects exact phrasing for Chaz."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "Benchmark is '-', as no imaging for Chaz is mentioned. Candidate adds 'MRI results reviewed' (pertains to a different patient and not stated as reviewed for Chaz)."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark lists 'Right upper extremity Skin is intact. No tenderness to palpation.' (acknowledging these specifics are not in the transcript). Candidate instead lists different problems and aggregates other patients' issues."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Includes the correct plan for Chaz (transition to removable splint, hand therapy, 2-week follow-up) but also includes plans for other patients, reducing focus."
+    }
+  },
+  "total_score": 11,
+  "percentage": 31.43,
+  "overall_summary": "The candidate note frequently aggregates information across multiple patients instead of focusing on the single benchmark patient (Chaz Thomas). While the plan for Chaz matches well, most other fields contain extraneous content, lack verbatim accuracy, or deviate from the concise format expected. Imaging was incorrectly populated, and the HPI and musculoskeletal sections were not aligned with the benchmark requirements."
+}

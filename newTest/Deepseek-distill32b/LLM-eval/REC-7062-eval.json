@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Patient name not stated in transcript; both benchmark and candidate correctly use '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Captures 'Soft tissue swelling' concisely; 'in the hand' is consistent with transcript and does not alter meaning."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately summarizes continued swelling with activity and hypersensitivity that improved over the last week. Omits the patient’s question about normalcy and the detail about the prior week duration."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Content matches the exam findings but is not strictly verbatim (removes fillers/‘On exam’ and changes 'one of the digit' to 'one of the digits'). Field requires verbatim phrasing."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Imaging not mentioned; both benchmark and candidate correctly list '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Includes 'Soft tissue swelling' but replaces 'decreased sensation in one digit (improving)' with 'Hypersensitivity improving,' which misstates the finding. Not penalized for omission of items not in transcript (skin intact, no TTP)."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Plan matches benchmark: wean splint, advance activity and ROM, and follow-up in 3 months."
+    }
+  },
+  "total_score": 29,
+  "percentage": 82.86,
+  "overall_summary": "The candidate note aligns well with the benchmark for chief complaint, imaging, and plan, and provides a largely accurate HPI. The musculoskeletal section is accurate but not verbatim as required. The assessment contains a key mismatch by listing 'hypersensitivity improving' instead of 'decreased sensation in one digit (improving)'. Overall, good fidelity with some issues in verbatim requirement and assessment accuracy."
+}

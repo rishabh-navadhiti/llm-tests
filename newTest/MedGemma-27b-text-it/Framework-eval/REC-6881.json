@@ -3,11 +3,11 @@
     "bleu_score": 0.0,
     "content": "-",
     "content_analysis": 0.0,
-    "content_similarity": 0.1453000009059906,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.13429999351501465,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.0,
@@ -22,22 +22,22 @@
   {
     "bleu_score": 0.0,
     "content": "Patient reports her thumb is doing well post-operatively. She has been using cycloprog. She reports her middle finger is locking and catching again, which had previously improved with an injection. The symptoms are painful.",
-    "content_analysis": 0.3333,
-    "content_similarity": 0.7508000135421753,
+    "content_analysis": 0.2143,
+    "content_similarity": 0.890500009059906,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.5476999878883362,
+    "rhetorical_similarity": 0.7462999820709229,
     "title": "HPI Spencer",
-    "topic_similarity": 0.0228
+    "topic_similarity": 0.0224
   },
   {
     "bleu_score": 0.0,
     "content": "moderate tenderness to palpation over the A1 pulley of the right middle finger",
-    "content_analysis": 0.2667,
-    "content_similarity": 0.5968000292778015,
+    "content_analysis": 0.0,
+    "content_similarity": 0.2290000021457672,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.5616000294685364,
+    "rhetorical_similarity": 0.34279999136924744,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.0377
+    "topic_similarity": 0.0579
   },
   {
     "bleu_score": 0.0,
@@ -56,12 +56,12 @@
       "Middle finger locking",
       "Trigger finger (right middle finger)"
     ],
-    "content_analysis": 0.4,
-    "content_similarity": 0.8543999791145325,
+    "content_analysis": 0.25,
+    "content_similarity": 0.6105999946594238,
     "key": "ASSESSMENT_SPENCER",
-    "rhetorical_similarity": 0.8808000087738037,
+    "rhetorical_similarity": 0.49309998750686646,
     "title": "Assessment",
-    "topic_similarity": 0.0602
+    "topic_similarity": 0.0442
   },
   {
     "bleu_score": 0.0,
@@ -69,11 +69,11 @@
       "Continue cycloprog.",
       "Injection to the right middle finger A1 pulley."
     ],
-    "content_analysis": 0.1538,
-    "content_similarity": 0.47589999437332153,
+    "content_analysis": 0.1429,
+    "content_similarity": 0.6044999957084656,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.4106000065803528,
+    "rhetorical_similarity": 0.4787999987602234,
     "title": "Plan",
-    "topic_similarity": 0.051
+    "topic_similarity": 0.0537
   }
 ]

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark and transcript: 'Nicole Coffee'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Conveys the same concise issue as the benchmark ('left index finger pain'); minor wording order only."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately includes duration, worsening, and request for injection, but omits the shoulder visit and Dr. Almadroa's observation context present in the benchmark/transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Faithfully reproduces the physician's exam wording (clean/dry skin, A1 polii tenderness, walking catching, triggering, excellent ROM, thumbs up). Minor casing and inclusion of 'et cetera' reflect the transcript."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "States that X-rays are normal, but omits the specifics 'three views' and 'left index finger' included in the benchmark/transcript."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Lists left index finger pain and trigger pathology; 'triggering on index finger' is clinically equivalent to 'Trigger finger' but not exact phrasing."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Conveys plan for trigger finger injection today, consistent with the transcript. The benchmark's 'Return to clinic in 2 weeks' is not in the transcript, so omission is not penalized."
+    }
+  },
+  "total_score": 32,
+  "percentage": 91.43,
+  "overall_summary": "The candidate note closely matches the benchmark with accurate patient identification, chief complaint, and verbatim musculoskeletal findings. HPI and imaging are slightly less detailed, and assessment/plan have minor wording differences, but overall fidelity to the transcript and clinical content is high."
+}

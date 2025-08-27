@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the transcript and benchmark: 'Precious Myles Garrett'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate lists 'left wrist pain' but omits 'and masses', which are included in the benchmark and transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately reflects all key details from the transcript (night pain, two masses with prior fluctuation now stable, rheumatology evaluation with X-rays and ultrasound) and matches the benchmark content."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Verbatim extraction of the musculoskeletal exam as dictated in the transcript. The benchmark lists '-', but the transcript clearly contains these findings; no penalty for benchmark omission."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Contains all imaging findings present in the benchmark and transcript (X-ray osteophyte at thumb MCP, ultrasound showing bony avulsion fragment vs osteophyte at dorsal MCP, wrist ultrasound retinacular cyst). Minor capitalization differences only."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes key problems matching the benchmark (left wrist cyst, left thumb MCP osteophyte) and adds the thumb MCP mass from the transcript. Uses 'left wrist pain' vs benchmark 'bilateral hand pain' (the latter not clearly supported in the transcript). Omits normal findings present in the benchmark; not penalized as they are not active problems."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Captures all plan elements from the benchmark (night splints, observe masses, aspiration vs biopsy, return in 6 weeks) and includes 'plan carpal tunnel' as dictated in the transcript; benchmark omission not penalized."
+    }
+  },
+  "total_score": 32,
+  "percentage": 91.43,
+  "overall_summary": "The candidate note closely aligns with the benchmark and transcript, with accurate HPI, verbatim MSK exam, precise imaging, and a comprehensive plan. The main discrepancy is a slightly incomplete chief complaint (omitting 'masses'). Assessment matches core items and appropriately includes an additional mass mentioned in the transcript while not carrying forward normal findings."
+}

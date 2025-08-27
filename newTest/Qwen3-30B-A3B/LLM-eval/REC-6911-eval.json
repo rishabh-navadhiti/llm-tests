@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "Benchmark lists 'Walt' and the transcript explicitly mentions 'Walt'; candidate returned '-', omitting the available patient name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Benchmark: 'Carpal Tunnel Syndrome.' Candidate: 'Numbness after carpal tunnel release,' which shifts focus and adds postop context. While numbness is mentioned in the transcript, this does not match the benchmark’s chief complaint exactly."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Candidate captures minimal pain and concern about numbness, but omits the 'busy day' detail and adds 'underwent carpal tunnel release,' which is not stated in the benchmark HPI. Not penalizing absence of 'police officer' since that expansion of 'PO1' is not clearly stated in the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Findings match the benchmark content: clean incision, variant sutures, moderate ecchymosis consistent with postoperative state, and good but not full finger motion. Minor fillers do not change factual content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging mentioned in transcript or benchmark; candidate correctly returned '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 0,
+      "justification": "Benchmark lists 'Status post carpal tunnel release'; candidate left the assessment as '-', omitting the stated diagnosis."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures the benchmark plan (post-op endo carpal tunnel and return in 4 weeks). Minor additions ('release', 'for follow-up') but core content and timing are correct."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60.0,
+  "overall_summary": "The candidate note captures musculoskeletal findings, lack of imaging, and the plan well. However, it misses the patient name and the assessment from the benchmark, and shows partial deviations in chief complaint and HPI (omitting 'busy day' and adding surgical detail). Overall, moderate alignment with key clinical content but with notable omissions."
+}

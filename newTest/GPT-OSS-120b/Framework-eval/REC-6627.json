@@ -1,0 +1,88 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.5133,
+    "content": [
+      "bilateral hand numbness, tingling, and burning pain"
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.9976000189781189,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.996999979019165,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9998
+  },
+  {
+    "bleu_score": 0.5811,
+    "content": [
+      "The patient reports bilateral hand numbness, tingling, and burning pain that began around July 1, 2025. She notes similar symptoms at the end of her previous pregnancy but describes the current episode as earlier onset and more intense. She has been evaluated by her OB, who recommended injections and referred her to this clinic. She has been using splints without sufficient improvement to sleep through the night."
+    ],
+    "content_analysis": 0.619,
+    "content_similarity": 0.9254999756813049,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.9017000198364258,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0153
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "On exam, bilateral upper extremity skin is clean, dry, and intact without erythema or ecchymosis. Got PCTS, uh, some decreased sensation to the middle fingers, noted."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.06880000233650208,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.08399999886751175,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4789
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.04349999874830246,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.021800000220537186,
+    "title": "Imaging Results",
+    "topic_similarity": 0.5551
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Bilateral carpal tunnel syndrome",
+      "- Bilateral hand numbness and tingling",
+      "- Burning pain in hands"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.6966000199317932,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.4851999878883362,
+    "title": "Assessment",
+    "topic_similarity": 0.0369
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "At this point, I recommend trial of injections. We talked about the risks, we talked about the temporary nature, um, she understands. We will do them today. Uh, return to clinic in three months for followup if symptoms persist postpartum."
+    ],
+    "content_analysis": 0.1667,
+    "content_similarity": 0.459199994802475,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.4514000117778778,
+    "title": "Plan",
+    "topic_similarity": 0.0457
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark and transcript: 'Greta Griswana'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate lists only 'thumb pain' while the benchmark includes both 'Forearm pain, thumb pain'. Omits the forearm pain component."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes exam findings, imaging interpretation, and plan (not allowed in HPI) and infers functional impact not stated. Also conflicts with transcript by saying pain 'has not improved' whereas transcript says 'better but overall the same.' Omits wedding context present in benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Mostly verbatim but omits the leading phrase 'Right upper extremity' present in the benchmark transcript excerpt; verbatim requirement not fully met."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Conveys the same result (X-rays reviewed showing arthritis) with minor wording differences ('It'll be planned arthritis' vs 'It shows planned arthritis')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Does not match benchmark 'Planned arthritis' and adds unrelated/hallucinated item 'status post cast use' (pertains to another patient). Also changes diagnosis wording to 'trapeziometacarpal joint arthritis' and adds 'thumb pain.'"
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan: trial steroid injection, counseling on temporary nature and procedure/post-op, and return in 8 weeks. Inclusion of 'if symptoms persist' aligns with the transcript and does not contradict the benchmark."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71428571428571,
+  "overall_summary": "The candidate note correctly captured the patient name, imaging result gist, and plan. The chief complaint was only partially captured. The HPI contains prohibited objective details and a contradiction to the transcript, and the musculoskeletal section was not fully verbatim. The assessment deviated substantially and included a hallucinated, unrelated problem."
+}

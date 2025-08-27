@@ -1,0 +1,86 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.0071000000461936,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": -0.056699998676776886,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.5551
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "The patient reports that a prior injection provided no relief and she is seeking further evaluation."
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8116999864578247,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.48750001192092896,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0582
+  },
+  {
+    "bleu_score": 0.6355,
+    "content": [
+      "there is some hypopigmentation at the dorsal aspect of the CMC during consistent with previous injection. Um, mild over the first dorsal compartment positive finger stain, still a positive, um, grind."
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.953499972820282,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.970300018787384,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.1428000032901764,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": -0.002300000051036477,
+    "title": "Assessment",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.2163,
+    "content": [
+      "plan will be her previous injection offered no relief, recommend trial of, um, dig verban's injection. Return to clinic in six weeks for follow-up."
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8977000117301941,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.840399980545044,
+    "title": "Plan",
+    "topic_similarity": 0.9992
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark '-' as no patient name is stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Includes 'Wrist pain' but omits evaluation of falls; benchmark specifies 'Evaluation of falls and wrist pain.'"
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes two falls (slide and electric scooter) over two days and persistent wrist extension pain; aligns with benchmark facts."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Left blank despite transcript dictation of exam findings (clean skin, intact, swelling, mild ecchymosis, pain with wrist extension); required verbatim text was omitted."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "States 'X-ray normal' which contradicts transcript/benchmark indicating distal radius fracture on left wrist X-rays."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Lists symptoms (wrist pain, swelling) but misses the key diagnosis 'Distal radius fracture' present in benchmark and transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Includes casting and repeat X-rays, but incorrectly adds 'Return in 4 weeks' (not in transcript; benchmark indicates 2 weeks) and omits 'cast change.' Note: Number of weeks is unclear in transcript; adding '4 weeks' is a hallucination."
+    }
+  },
+  "total_score": 16,
+  "percentage": 45.71,
+  "overall_summary": "HPI and patient name are accurate, but the note fails critical elements: missing verbatim musculoskeletal exam, incorrect imaging (stated normal despite fracture), incomplete assessment omitting the distal radius fracture, and a plan with an incorrect follow-up interval and missing cast change. Chief complaint is partially captured."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the transcript and benchmark ('Parviz Mikael')."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Candidate states 'Follow-up for hand condition,' which omits the benchmark's main issue 'No pain' and adds 'hand condition' not explicitly stated in the transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures follow-up and no pain, but adds an inferred statement ('denies any significant issues') and omits 'He wants to know what is going on' from the benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Provides only a fragment ('pin sites clean dry and intact') and misses key dictated details (no erythema/ecchymosis, no significant tenderness, stable alignment, stiff fingers). Not fully verbatim."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Candidate says 'X-ray normal,' which contradicts the transcript and benchmark ('X-rays are the same as the last time.'). This is a hallucinated interpretation."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Candidate lists 'Hand pain' (contradicts 'no pain') and 'Stiff finger' (singular vs 'stiff fingers'). Benchmark contains different items. Major content mismatch."
+    },
+    "PLAN_SPENCER_": {
+      "score": 0,
+      "justification": "Completely diverges from the dictated plan. Invents 'Continue current management' and 'Follow up in 4 weeks' instead of the specific plan (continue plexal ligament split, review X-rays, transition to phenylplastic splint, referral to Eliza Cherian, RTC in 10 days)."
+    }
+  },
+  "total_score": 14,
+  "percentage": 40.0,
+  "overall_summary": "Patient name was correct, and HPI partially aligned. However, chief complaint did not match the benchmark focus, musculoskeletal findings were incomplete and not verbatim, imaging was incorrectly summarized as normal, the assessment included incorrect and mismatched items, and the plan was largely fabricated with the wrong follow-up timeline."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark exactly with '-' as no patient name was provided in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches benchmark meaning precisely (numbness and tingling in the right hand); minor wording ('increasing') aligns with transcript and is acceptable."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately captures chemo for lymphoma, increased right-hand numbness/tingling, thumb burn affecting tasks, and reduced phone use. Omits the minor detail that she has been at home more due to chemotherapy."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark contains '-', while candidate includes paraphrased exam details and not strict verbatim. Also includes 'PCGs are normal,' which is not clearly verbatim. Multiple deviations from benchmark expectations."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'X-ray is clear.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Candidate lists 'numbness/tingling' and 'carpal tunnel syndrome,' which are not in the benchmark assessment (carpal tunnel only implied in plan). Misses several benchmark assessment items (skin intact, normal percussion of Guyon's canal, tenderness, ROM, nodule, trigger finger as a concise problem). Multiple omissions and one likely overreach."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures injection, night splints, low threshold for nerve studies, and 2-month follow-up. Minor omission of specifying 'right small finger' for the injection present in benchmark."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note closely matches the benchmark for most sections, especially chief complaint, imaging, and plan. HPI is strong with a minor omission. The main discrepancies are in the musculoskeletal verbatim field (non-verbatim content where benchmark is '-') and the assessment (missing exam-based items and adding 'carpal tunnel syndrome'). Overall, accurate but with notable deviations in assessment structure and verbatim requirements."
+}

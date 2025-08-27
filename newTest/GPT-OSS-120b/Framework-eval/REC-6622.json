@@ -1,0 +1,84 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Kevin Clancy"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.051899999380111694,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.09000000357627869,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.5146
+  },
+  {
+    "bleu_score": 0.1542,
+    "content": [
+      "Patient presents with trigger finger of the left ring finger; the plan is to perform a left ring finger trigger finger injection."
+    ],
+    "content_analysis": 0.6,
+    "content_similarity": 0.6984999775886536,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5321999788284302,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.9989
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [],
+    "content_analysis": 0.0,
+    "content_similarity": 0.7006000280380249,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.0,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.5081,
+    "content": [
+      "- left ring finger trigger finger"
+    ],
+    "content_analysis": 0.6,
+    "content_similarity": 0.7010999917984009,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.506600022315979,
+    "title": "Assessment",
+    "topic_similarity": 0.0709
+  },
+  {
+    "bleu_score": 0.2699,
+    "content": [
+      "I need to give, uh, Mr. Kevin Clancy a left ring finger trigger finger injection. It'll be injection only. I think that's it for the morning. Oh, um, it'll be plantar tendonitis. Recommend home exercise program for now. Low threshold for formal therapy is no improvement."
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8093000054359436,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6485000252723694,
+    "title": "Plan",
+    "topic_similarity": 0.0245
+  }
+]

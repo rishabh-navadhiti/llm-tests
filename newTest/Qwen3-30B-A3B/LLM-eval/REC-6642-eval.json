@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('Nadeem Nemi') and explicitly stated in transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches benchmark ('bilateral thumb pain'); only capitalization differs, which is formatting."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes core facts (worsened since 2019, worse over 6 months, denies numbness/tingling, functional limitation) but adds multiple unsupported details (no trauma, no recent surgery, no improvement with prior treatments), which were not stated in the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark contains '-', while candidate supplies exam text. Although transcript includes MSK findings, this diverges from the ground truth and is not strictly verbatim (minor wording/spelling differences)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Partial capture of right-hand findings, but omits 'calcific arteriogram' and all left-hand findings; also changes 'neovasculitis' to 'narrowing.' Multiple missing details relative to benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes the three active problems listed in the benchmark (bilateral thumb CMC arthritis, bilateral carpal tunnel, right cubital tunnel) but omits the normal finding line present in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures injections with counseling and doing today, observation for carpal/cubital tunnel, and 2-month follow-up. Minor deviation in nerve study rationale (states 'due to persistent symptoms' vs benchmark 'if symptoms re-emerge')."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "Strong match on patient name and chief complaint. Assessment and plan largely align with minor deviations. HPI contains several unsupported additions. Imaging is incomplete and altered from the dictated wording. Musculoskeletal section does not match the benchmark and is not strictly verbatim."
+}

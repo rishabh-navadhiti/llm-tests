@@ -1,0 +1,86 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "James"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.2831999957561493,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.2759000062942505,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Recurrence of right trigger finger and new left trigger finger"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8917999863624573,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8891000151634216,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.137,
+    "content": [
+      "The patient presents for follow\u2011up with his wife reporting a recurrence of trigger finger on the right side and new triggering of the left middle finger. He inquires whether it is too soon for another injection. On examination, there is moderate soft\u2011tissue swelling of both hands with triggering of the middle finger and a palpable nodule that is causing the trigger. He wishes to defer injection on the right side today and is agreeable to receiving an injection on the left side, where he has not had prior injections. The patient also notes prior surgery with Dr. Hertz and asks how the exam findings appear."
+    ],
+    "content_analysis": 0.2667,
+    "content_similarity": 0.8514000177383423,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6567999720573425,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0104
+  },
+  {
+    "bleu_score": 0.2697,
+    "content": [
+      "His exam on the right is the same on the left , moderate soft tissue swelling , there is triggering of the middle finger . There is a nodule there that is triggering that . Incis clean dry and intact without an Americanness this nail plate held intact with uh with sutures , uh , excellent PIP motion , uh , X-rays are X-ray"
+    ],
+    "content_analysis": 0.2,
+    "content_similarity": 0.6699000000953674,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.8762000203132629,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0356
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-rays are X-ray"
+    ],
+    "content_analysis": 0.6,
+    "content_similarity": 0.45159998536109924,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.29679998755455017,
+    "title": "Imaging Results",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Right trigger finger recurrence\n- Left trigger finger\n- Moderate soft tissue swelling of middle finger\n- Post\u2011operative fracture healing"
+    ],
+    "content_analysis": 0.1538,
+    "content_similarity": 0.5777000188827515,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.505299985408783,
+    "title": "Assessment",
+    "topic_similarity": 0.0282
+  },
+  {
+    "bleu_score": 0.1091,
+    "content": [
+      "Actually deferred plan will be regarding the right side . He would like to hold off on a trigger finger injection today . I think this is reasonable . You can do . WSGM . Um , considering the injection . If he wants , and then we're regarding the left middle finger , trigger finger , he has not any injections , we will do this today . Recommend continued post\u2011op protocol per ... Recommend follow up with her ."
+    ],
+    "content_analysis": 0.3125,
+    "content_similarity": 0.7233999967575073,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6674000024795532,
+    "title": "Plan",
+    "topic_similarity": 0.0145
+  }
+]

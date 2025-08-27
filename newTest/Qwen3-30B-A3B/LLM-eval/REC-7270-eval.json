@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark exactly with '-' as no name is provided in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Meaning matches 'Bilateral hand contractures' with minor extra wording ('Evaluation of')."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes exam measurements (45° MP, 10° PIP) not appropriate for HPI and specifies 'ring finger' instead of 'little finger' as in the benchmark; otherwise captures onset and progression."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Largely verbatim but with small wording differences (e.g., 'Oh, right hand' and 'Skin is finger intact' vs benchmark's phrasing)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Includes 'X-rays are normal' but omits 'MRI is needed' present in the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Does not match benchmark items; adds different problem list (bilateral disease, left ring finger contracture, right hand nodules) and omits 'Dupuytren's contracture' phrased as in benchmark and the normal finding included there."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Content matches benchmark plan (Zylex; return when medication acquired), with only a minimal phrasing difference ('Recommend')."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note aligns on patient name and plan, and mostly matches the chief complaint and musculoskeletal section with minor phrasing differences. The HPI includes inappropriate exam details and an incorrect finger specification relative to the benchmark. Imaging omits the MRI need, and the assessment diverges notably from the benchmark."
+}

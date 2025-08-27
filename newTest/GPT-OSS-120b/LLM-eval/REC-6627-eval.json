@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "No patient name stated in transcript; both benchmark and candidate correctly return '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches benchmark content (bilateral hand numbness, tingling, and burning pain); only minor casing/wording differences."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Fully aligns with benchmark: onset (July 1, 2025), similarity to prior pregnancy but earlier/more intense, OB referral for injections, and splints not enabling sleep."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark lists '-', while candidate includes verbatim exam findings from transcript (minor omission of filler words). Although transcript supports this, it does not match the benchmark content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Benchmark notes 'X-rays deferred secondary to pregnancy'; candidate returns '-'. This omits the only imaging-related statement."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Candidate includes carpal tunnel syndrome and relevant symptoms but omits 'Decreased sensation to the middle fingers' present in benchmark. Inclusion of 'bilateral' aligns with transcript but differs from benchmark phrasing."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures injections and 3-month follow-up; adds accurate transcript details ('do them today', postpartum qualifier) but omits benchmark's note about splints."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note closely matches the benchmark for name, chief complaint, and HPI. It misses the imaging statement and omits an assessment element (decreased sensation). The musculoskeletal section includes accurate transcript content but diverges from the benchmark's '-' entry. The plan is largely consistent with minor omissions and added transcript-supported details."
+}

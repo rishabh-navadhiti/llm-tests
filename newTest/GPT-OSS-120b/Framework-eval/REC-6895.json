@@ -1,0 +1,88 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "funny feeling in certain positions"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.10729999840259552,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.06859999895095825,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.225
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "The patient presents for follow\u2011up, reporting minimal pain but describing a funny sensation in certain positions and seeking clarification of his condition. He notes limited motion of the right small finger and is currently immobilized."
+    ],
+    "content_analysis": 0.2,
+    "content_similarity": 0.5349000096321106,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5806000232696533,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0392
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "right upper show me your skin is cleaned and intact",
+      "finger rotation appears correct limited right and small finger motions like very"
+    ],
+    "content_analysis": 0.1667,
+    "content_similarity": 0.5180000066757202,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.5113000273704529,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.9975
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "4 views . It's extra footstep stable and with minimal fracture healing ."
+    ],
+    "content_analysis": 0.3333,
+    "content_similarity": 0.5336999893188477,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.36970001459121704,
+    "title": "Imaging Results",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Right small finger motion limitation",
+      "- Minimal fracture healing"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.3440999984741211,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.35679998993873596,
+    "title": "Assessment",
+    "topic_similarity": 0.0657
+  },
+  {
+    "bleu_score": 0.0856,
+    "content": [
+      "will be continuing to protect the ulnar gutter splint , um , down weight bearing continues to follow the extra splint change , which return clinic in 3 weeks for follow up with removal transition to thermoplastic clip and therapy prescription was provided for him today to schedule for honors to that date ."
+    ],
+    "content_analysis": 0.6667,
+    "content_similarity": 0.8553000092506409,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5206999778747559,
+    "title": "Plan",
+    "topic_similarity": 0.0258
+  }
+]

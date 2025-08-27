@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly use '-' since no patient name is stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Both notes list '-' and the transcript does not provide a clear chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Core facts match (doing well, little pain, lots of ecchymosis), but the candidate adds exam details (incision, sutures, bruising), infers postoperative follow-up wording, and adds 'No other new symptoms,' which is not stated."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Transcript includes 'Incision with varied sutures, moderate ecchymosis,' but the candidate left this field empty instead of providing verbatim text."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly indicate no imaging results with '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Candidate lists 'Carpal tunnel postoperative' and 'Ecchymosis,' which are supported by the transcript. Benchmark contains items not present in the transcript; per instructions, not penalized. Minor mismatch with benchmark content prevents a perfect score."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Accurately captures the plan: planned post-op endocarpal tunnel and return in 4 weeks; minor filler words do not change meaning."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.28571428571429,
+  "overall_summary": "The candidate note correctly handled name, chief complaint, imaging, and plan. HPI included inappropriate exam details and an unstated negative. Musculoskeletal verbatim was omitted despite clear transcript content. Assessment was reasonable and transcript-based but did not match the benchmark items."
+}

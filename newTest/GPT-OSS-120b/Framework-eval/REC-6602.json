@@ -1,0 +1,86 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "right hand numbness and tingling"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.983299970626831,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.9814000129699707,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.3374,
+    "content": [
+      "The patient was recently diagnosed with lymphoma and has just completed chemotherapy. Since returning home, she has noticed increasing numbness and tingling in her right hand and reports that she burned her right thumb, making it difficult to feel objects and put on earrings. She is attempting to hold her phone less and seeks evaluation and treatment for these symptoms."
+    ],
+    "content_analysis": 0.4667,
+    "content_similarity": 0.9039999842643738,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7332000136375427,
+    "title": "HPI Spencer",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "On exam, uh, bilateral upper extremty skin is clean, dry and intact without erythema or ecchymosis. Moderate tenderness of the right small finger. A one foley. There is triggering there. There is a nodule there. Um, excellent range of motion overall. Uh,.pcgs are normal. Let me see if we did have this one. X-ray is clear."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.06710000336170197,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.11500000208616257,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4649
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-ray is clear."
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.9801999926567078,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.9233999848365784,
+    "title": "Imaging Results",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- right hand numbness and tingling\n- burned right thumb with sensory deficit\n- right small finger trigger"
+    ],
+    "content_analysis": 0.1333,
+    "content_similarity": 0.529699981212616,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.3939000070095062,
+    "title": "Assessment",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.1461,
+    "content": [
+      "Plan B regarding the trigger. Her last injection in her right small finger was in 2015. She would like another today. I think this is reasonable. And then, um, plan carpal tunnel recommend night splints, low threshold for nerve studies. Return to clinic in two months for follow-up."
+    ],
+    "content_analysis": 0.65,
+    "content_similarity": 0.8694000244140625,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6858999729156494,
+    "title": "Plan",
+    "topic_similarity": 1.0
+  }
+]

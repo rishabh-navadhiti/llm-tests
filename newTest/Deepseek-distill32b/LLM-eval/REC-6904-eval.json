@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Jane Pollock'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Benchmark chief complaint is 'Follow-up'. Candidate lists symptoms ('sore and stiff, but not too painful') rather than the visit reason."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures follow-up status, soreness/stiffness without significant pain, and bruising. Misses presence of husband and the patient's uncertainty about bruising. Adds exam details (incisions, finger positioning) which are factual but not part of HPI in the benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Provides the physician’s verbatim MSK findings accurately. Omits the 'incisions dry and intact with sutures' line included in the benchmark (noted from the nurse), hence minor mismatch."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging mentioned in transcript; candidate correctly uses '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Benchmark includes 'Right upper extremity skin is intact' and 'No tenderness to palpation' (the latter not stated in transcript, not penalized). Candidate lists postoperative state/ecchymosis/limited finger movement, which are clinically relevant but do not match benchmark assessment items."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Correctly includes return in 6 days and follow-up in one week for possible suture removal/initiation of therapy. However, 'remove soft dressings' conflicts with benchmark's implication that soft dressings are applied/kept, representing a substantive discrepancy."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "The candidate note correctly identifies the patient and absence of imaging, and captures key HPI and MSK findings, though it mixes exam details into the HPI. Chief complaint is incorrect, the assessment does not align with the benchmark, and the plan contains a notable error regarding dressings despite correct follow-up timing."
+}

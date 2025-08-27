@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly use '-' as no name is stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Benchmark: 'Follow up.' Candidate: 'funny feeling in certain positions.' This is a major mismatch in focus; the benchmark frames the visit purpose as follow-up."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Candidate captures minimal pain and funny sensation in certain positions and desire for clarification, aligning with benchmark. It adds limited right small finger motion and immobilization—details present in the transcript but partly exam-related—so minor divergence."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Candidate includes verbatim phrases ('skin is cleaned and intact' and limited small finger motion) from the exam. Benchmark only lists 'Right upper extremity Skin is intact.' Minor wording and extra included content, but core finding matches."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Candidate reflects the transcript verbatim ('4 views... stable... minimal fracture healing'). Benchmark paraphrases to 'Four view X-ray... extraarticular stable fracture with minimal healing.' Minor wording differences; meaning preserved."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Benchmark lists 'Skin is intact' and 'No tenderness to palpation.' Candidate lists 'Right small finger motion limitation' and 'Minimal fracture healing,' which do not match benchmark assessment items. Note: 'No tenderness to palpation' is not in the transcript and is not penalized for being absent, but the candidate’s items still diverge from the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Candidate captures all key plan elements (continue ulnar gutter splint, down weight-bearing, splint change, transition to thermoplastic splint, therapy prescription, RTC in 3 weeks) consistent with benchmark. Some phrasing is garbled ('clip,' 'honors'), so minor wording issues."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate note matches the benchmark well for name, HPI content, musculoskeletal findings, imaging, and plan, albeit with minor wording and formatting issues. Chief complaint and assessment diverge notably from the benchmark, lowering the overall score."
+}

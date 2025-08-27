@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly return '-' as no patient name is stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Candidate concisely captures the main complaint (middle finger locking/catching with pain). The benchmark also lists thumb pain, which is not clearly presented as a complaint in the transcript, so no penalty; meaning is preserved."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Content closely matches the benchmark and transcript: thumb doing well with question about continuing cycloprox; prior injection helped middle finger but symptoms recurred with painful locking/catching."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Candidate includes verbatim exam lines from the transcript, including intact skin and triggering at the A1 pulley. Benchmark specifies 'Right upper extremity,' which is not explicitly stated in the doctor’s line; otherwise content aligns. Minor wording difference."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly indicate no imaging results mentioned ('-')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Candidate lists active problems consistent with the transcript and benchmark ('middle finger locking/catching' and trigger finger). Omission of thumb pain and normal findings in the benchmark is not penalized as they are not clearly active problems from the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Candidate plan matches transcript: activity as tolerated and proceeding with another injection today. Benchmark adds items (continue cycloprox, follow-up) not stated in the transcript; no penalty for excluding them."
+    }
+  },
+  "total_score": 34,
+  "percentage": 97.14,
+  "overall_summary": "The candidate note closely aligns with the transcript and benchmark, accurately capturing HPI, key exam findings, and the plan to proceed with an injection and activity as tolerated. Minor variance exists in the musculoskeletal phrasing versus the benchmark, but overall factual content is strong and faithful to the transcript."
+}

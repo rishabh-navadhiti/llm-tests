@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the transcript and benchmark ('Mahika Mahendru')."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Captures the main issue (pain distal to splint) but omits the 'follow-up' context present in the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes objective exam details (splint status, swelling, tendon subluxation, PAP) which should not be in HPI and are not in the benchmark HPI; also adds 'right hand,' which is not explicitly stated in the transcript. History elements otherwise align."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Contains the key dictated phrases and is mostly verbatim, but omits 'on the dorsal aspect' and minor phrasing present in the benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging mentioned; '-' matches the benchmark and transcript."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes 'hypersensitivity distal to splint' (matches benchmark) and adds pain and presumed cutaneous nerve irritation supported by the transcript. Benchmark also lists normal findings not present in the transcript; not penalized for their absence."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Accurately reflects the plan: modify splint; return Monday if no improvement; return in 3 weeks. Matches benchmark content."
+    }
+  },
+  "total_score": 29,
+  "percentage": 82.86,
+  "overall_summary": "The candidate note closely matches the benchmark in patient identification, plan, imaging, and captures the chief complaint and MSK findings with minor omissions. The main deficit is in the HPI, which incorrectly includes exam details and a slight location inference not explicit in the transcript. Assessment aligns with key issues, with acceptable additions supported by the transcript."
+}

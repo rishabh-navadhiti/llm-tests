@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark name 'Mahika Mahendru'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Captures the main issue (pain distal to the splint) but omits the 'follow-up' context present in the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Includes doing well, tolerating splint, pain distal to splint, hypersensitivity, and suspected nerve irritation from pressure. Minor omissions (follow-up context, 'increased' pain) and slight paraphrasing."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Close to verbatim but not exact; omits 'on the dorsal aspect,' includes ellipses, and slightly alters phrasing, which reduces fidelity to the dictated wording."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly document no imaging ('-')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Captures hypersensitivity related to splint pressure and possible cutaneous nerve irritation, consistent with the transcript. Does not include 'skin intact' and 'no tenderness,' which appear in the benchmark but are not stated in the transcript, so not penalized. Minor wording differences from benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Accurately reflects the plan: modify splint, RTC Monday if no improvement, and RTC in 3 weeks. Minor wording differences do not change meaning."
+    }
+  },
+  "total_score": 30,
+  "percentage": 85.71,
+  "overall_summary": "The candidate note closely matches the benchmark on most fields, accurately reflecting patient status, HPI details, and the plan. Minor gaps include omission of 'follow-up' context in the chief complaint/HPI, non-verbatim phrasing in musculoskeletal findings, and slight differences in assessment wording. No significant inaccuracies or hallucinations."
+}

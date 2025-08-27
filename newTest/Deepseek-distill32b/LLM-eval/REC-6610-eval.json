@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Includes the correct full name; the honorific 'Miss' is an inconsequential formatting addition and does not alter factual content."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Correctly identifies left wrist pain, but adds mechanism ('after a trip and fall'), making it less concise than the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately captures date, mechanism, initial improvement, urgent care X-rays with sprain diagnosis, and worsening in Massachusetts humidity. Minor omission of the explicit statement that this prompted the current visit."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark leaves this field blank ('-'), while the candidate includes exam phrases. Although transcript-based, it does not match the benchmark content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Captures that current left wrist X-rays are normal but omits the urgent care X-rays showing no fractures noted in the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes 'Left ECU tendonitis' and 'Left ulnar-sided wrist pain' as in the benchmark but omits other listed assessment items ('Skin is intact', 'No tenderness to palpation')."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Fully matches the benchmark plan: hand therapy trial, MRI for further evaluation, and return after MRI."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note closely aligns with key benchmark elements for name, HPI, assessment (core diagnoses), and plan. It over-specifies the chief complaint, omits part of the imaging history, and diverges from the benchmark by populating the musculoskeletal verbatim field. Overall, accurate and clinically coherent, with minor deviations from the benchmark content and formatting expectations."
+}

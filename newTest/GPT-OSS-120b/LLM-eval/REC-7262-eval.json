@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Kabe Tahiri' is explicitly stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Includes 'triggering of right index and middle fingers' but omits the benchmark's 'Follow up' component."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes some relevant history (cast discomfort, triggering) but improperly adds exam and imaging findings and omits Kabe Tahiri’s neck-related follow-up details present in the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark contains '-', while the candidate provides reconstructed, non-exact verbatim text with omissions and alterations; does not match the benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Accurately reflects the imaging findings (increased callus on right ulna; diffuse callus on left radius and ulna) consistent with benchmark content."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Only 'trigger finger' aligns with benchmark. Other listed items (cast discomfort, limited wrist motion, increased callus) diverge from the benchmark assessment."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures key elements: short arm cast left, wean right, follow-up with repeat imaging, consider removable splint, immediate procedure implied. Does not include '6 weeks' or explicitly 'injection' (details not fully stated in transcript, so not penalized), but includes some extraneous non-plan text."
+    }
+  },
+  "total_score": 22,
+  "percentage": 62.86,
+  "overall_summary": "The candidate note matches the patient name and imaging well and largely captures the plan. However, it only partially reflects the chief complaint, includes objective findings in the HPI while omitting key HPI details, diverges from the benchmark in the musculoskeletal verbatim section, and the assessment only partially aligns. Overall, it shows moderate fidelity with notable deviations in structure and content adherence."
+}

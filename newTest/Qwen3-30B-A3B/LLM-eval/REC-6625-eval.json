@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "Name matches but includes the honorific 'Mr.' not present in the benchmark; minor formatting difference with identical factual content."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('No pain'); concise and accurate."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes prohibited exam and imaging details ('stiff fingers', unchanged X-rays) and an inferred prior procedure; benchmark HPI only states no pain and wanting to know what's going on."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Core exam content matches; minor differences include filler words ('Uh', 'um'), slight phrasing, and casing. Meaning preserved."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('X-rays are the same as the last time.')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Does not match benchmark items and includes an inferred 'status post plexal ligament split' not stated in the transcript. Note: benchmark contains items not explicitly verbatim in the transcript, but the candidate also adds non-transcript content."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures most plan elements (continue splint, review X-rays, 10-day follow-up with likely pin removal or repeat X-rays/transition), but omits the explicit referral to Eliza Cherian present in both transcript and benchmark."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note captures the chief complaint and imaging accurately and closely reflects the musculoskeletal exam. However, the HPI includes prohibited and inferred details, the assessment diverges from the benchmark with unsupported items, and the plan misses the referral component. Formatting differences are minor, but content accuracy varies across sections."
+}

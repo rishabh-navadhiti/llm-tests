@@ -3,11 +3,11 @@
     "bleu_score": 0.0,
     "content": "-",
     "content_analysis": 0.0,
-    "content_similarity": 0.14059999585151672,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.12439999729394913,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.0,
@@ -22,12 +22,12 @@
   {
     "bleu_score": 0.0,
     "content": "The patient, who has undergone knee replacement, reports improved synovitis following an injection and has started an infusion for osteoporosis. She now seeks evaluation for right total wrist arthroplasty due to significant wrist pain limiting her activities.",
-    "content_analysis": 0.4091,
-    "content_similarity": 0.8561000227928162,
+    "content_analysis": 0.5625,
+    "content_similarity": 0.8948000073432922,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.5629000067710876,
+    "rhetorical_similarity": 0.7278000116348267,
     "title": "HPI Spencer",
-    "topic_similarity": 0.0161
+    "topic_similarity": 0.0175
   },
   {
     "bleu_score": 0.0,
@@ -43,11 +43,11 @@
     "bleu_score": 0.0,
     "content": "-",
     "content_analysis": 0.0,
-    "content_similarity": 0.08070000261068344,
+    "content_similarity": 0.08969999849796295,
     "key": "IMAGING_RESULTS",
-    "rhetorical_similarity": -0.00930000003427267,
+    "rhetorical_similarity": -0.014399999752640724,
     "title": "Imaging Results",
-    "topic_similarity": 0.5551
+    "topic_similarity": 0.504
   },
   {
     "bleu_score": 0.0,
@@ -56,21 +56,21 @@
       "Bilateral wrist arthritis",
       "Knee replacement status post"
     ],
-    "content_analysis": 0.4286,
-    "content_similarity": 0.8686000108718872,
+    "content_analysis": 0.3,
+    "content_similarity": 0.7063000202178955,
     "key": "ASSESSMENT_SPENCER",
-    "rhetorical_similarity": 0.7860000133514404,
+    "rhetorical_similarity": 0.48080000281333923,
     "title": "Assessment",
-    "topic_similarity": 0.9989
+    "topic_similarity": 0.0483
   },
   {
     "bleu_score": 0.0,
     "content": "Evaluate for right total wrist arthroplasty once knee recovery is sufficient.",
-    "content_analysis": 0.375,
-    "content_similarity": 0.6503000259399414,
+    "content_analysis": 0.1818,
+    "content_similarity": 0.7432000041007996,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.6710000038146973,
+    "rhetorical_similarity": 0.46619999408721924,
     "title": "Plan",
-    "topic_similarity": 0.9994
+    "topic_similarity": 0.0518
   }
 ]

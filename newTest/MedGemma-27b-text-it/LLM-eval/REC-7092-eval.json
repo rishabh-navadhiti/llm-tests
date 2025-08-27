@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly return '-' as no patient name is stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Left index finger injury.'"
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures the same core facts as the benchmark (injury date/mechanism, pain with motion, no deformity, ER X-ray fracture, lacerations with sutures, limited middle finger MCP motion). Minor differences include adding 'no apparent malrotation' and slight wording/formatting variations."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Both indicate no verbatim musculoskeletal exam text provided; factual content aligns."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "Benchmark documents ER X-ray showing a fracture and a prior X-ray with a minimally displaced small finger fracture; candidate provides no imaging results."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark lists 'Fracture' and 'Lacerations' (and 'Right upper extremity Skin is intact'); candidate omits 'Fracture', adds 'Hand pain', and modifies lacerations to '(healing)'. Major mismatch with key problems from the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 0,
+      "justification": "Benchmark plan includes fracture casting, continue antibiotics, protect lacerations with soft dressing, Burning Man risk education, and 2-week follow-up. Candidate says only 'Continue splinting' and 'Follow up in 4 weeks,' omitting key elements and giving an incorrect follow-up interval."
+    }
+  },
+  "total_score": 20,
+  "percentage": 57.142857142857146,
+  "overall_summary": "The candidate note matches well on patient name and chief complaint and provides a mostly aligned HPI. However, it omits documented imaging findings, provides a substantially incomplete and inaccurate assessment (missing 'Fracture'), and a significantly deficient plan that conflicts with the benchmark on key management steps and follow-up. Overall accuracy is moderate to poor due to omissions in imaging, assessment, and plan."
+}

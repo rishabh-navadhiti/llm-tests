@@ -4,8 +4,8 @@ import requests
 
 # Paths
 benchmark_dir = "/Users/rish/Development/runpod dev/llm-tests/newTest/benchmark-gemini"
-candidate_dir = "/Users/rish/Development/runpod dev/llm-tests/newTest/Deepseek-distill32b"
-output_dir = "/Users/rish/Development/runpod dev/llm-tests/newTest/Deepseek-distill32b/Framework-eval"
+candidate_dir = "/Users/rish/Development/runpod dev/llm-tests/newTest/GPT-OSS-120b"
+output_dir = "/Users/rish/Development/runpod dev/llm-tests/newTest/GPT-OSS-120b/Framework-eval"
 
 # API details
 API_URL = "https://pa.aieval.ndproject.dev/compare"

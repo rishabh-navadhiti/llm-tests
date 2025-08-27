@@ -1,0 +1,92 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Middle finger locking and catching, very painful"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.7450000047683716,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.7997000217437744,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.0855
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "The patient reports that her thumb is doing very well and she continues to use cycloprox, asking whether she should keep using it. She reports that her middle finger is less well; a prior injection resolved her symptoms, but she now experiences locking and catching of the middle finger that is very painful, and she wants to know what is going on."
+    ],
+    "content_analysis": 0.3077,
+    "content_similarity": 0.9473000168800354,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7534999847412109,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0149
+  },
+  {
+    "bleu_score": 0.1595,
+    "content": [
+      "extremity skin is cleaned and intact without erythemohymosis .",
+      "moderate tendonal patient at the middle finger A1 pulle there is triggering the there is no there . No evidence of onyomycosis at the right thumbnail thumb is grown in 100% with um excellent cosmesis , um ."
+    ],
+    "content_analysis": 0.2143,
+    "content_similarity": 0.6998000144958496,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.9297999739646912,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0375
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Middle finger locking/catching",
+      "- Trigger finger of middle finger"
+    ],
+    "content_analysis": 0.1429,
+    "content_similarity": 0.3725999891757965,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.34380000829696655,
+    "title": "Assessment",
+    "topic_similarity": 0.9996
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "activity as tolerated regarding the middle finger .",
+      "She has had an injection with excellent and temporary relief .",
+      "She would like another , I think this is reasonable .",
+      "We will do this today .",
+      "deferred"
+    ],
+    "content_analysis": 0.2308,
+    "content_similarity": 0.45899999141693115,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.4885999858379364,
+    "title": "Plan",
+    "topic_similarity": 0.0262
+  }
+]

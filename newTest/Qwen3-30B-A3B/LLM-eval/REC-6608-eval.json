@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "No patient name in transcript; candidate correctly used '-'; matches benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate: 'No relief from previous injection' vs benchmark: 'Follow up for hand pain.' Transcript does not explicitly state 'hand pain' or that the visit is a follow-up chief complaint, so not penalized heavily; however, content differs from benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Candidate includes exam/objective details (CMC hypopigmentation, first dorsal compartment, finger stain, grind) and adds 'tenderness' not stated. Only 'no relief from prior injection' and seeking evaluation match benchmark; HPI should exclude exam findings."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Essentially matches the dictated exam; minor differences (added filler like 'on exam,' and 'Um') but factual content aligns with benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging mentioned in transcript; candidate correctly returned '-'; matches benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark lists only 'Pain in hand.' Candidate adds unsupported problems ('Swelling', 'Trigger finger', 'Status post injection'); only 'Hand pain' aligns."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes the two plan items from benchmark (trial of 'dig verban's' injection; return in 6 weeks) in transcript-consistent wording; adds a non-plan statement about prior injection relief, which is extraneous."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "Strong alignment on patient name, imaging, musculoskeletal exam verbiage, and key plan elements. HPI improperly included exam details and an unstated 'tenderness.' Assessment hallucinated multiple conditions beyond the benchmark. Chief complaint differs from the benchmark but remains transcript-supported."
+}

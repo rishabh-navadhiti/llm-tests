@@ -4,12 +4,12 @@
     "content": [
       "Magara"
     ],
-    "content_analysis": 0.0,
-    "content_similarity": 0.6621999740600586,
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.5454000234603882,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.2832
+    "topic_similarity": 1.0
   },
   {
     "bleu_score": 0.6687,
@@ -24,38 +24,38 @@
     "topic_similarity": 1.0
   },
   {
-    "bleu_score": 0.2586,
+    "bleu_score": 0.4283,
     "content": [
       "The patient is a right-hand dominant retiree who presents with bilateral hand numbness and tingling that began in January 2025 without any history of trauma, injury, or injection. The symptoms initially woke her up at night but have improved with nighttime brace use. She denies pain and limited motion. She is seeking evaluation and treatment for these symptoms."
     ],
     "content_analysis": 0.5909,
-    "content_similarity": 0.9047999978065491,
+    "content_similarity": 0.7203999757766724,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.8205999732017517,
+    "rhetorical_similarity": 0.7547000050544739,
     "title": "HPI Spencer",
-    "topic_similarity": 0.0163
+    "topic_similarity": 1.0
   },
   {
-    "bleu_score": 0.0717,
+    "bleu_score": 0.0,
     "content": [
       "bilateral upper extremity skin is clearer intact withoutnosis , minimal site tissue swelling , minimal tus palpation . PCGSI 1 4.31 left ring finger , 3.61 remaining of left hand 2.83 right . Sorry , that's opposite . It's right ring finger and then right handle 2.83 left hand um . It's not The pilot our hands , so 3 views of the right hand demonstrate variable joint space narrowing throughout the IP joints , most notably , there is joint space narrowing at the thumb MCP joint , and then the left hand variable joint space or out there is severe joint space narrowing at the bus me the carpal joint ."
     ],
-    "content_analysis": 0.2581,
-    "content_similarity": 0.6633999943733215,
+    "content_analysis": 0.0,
+    "content_similarity": 0.06930000334978104,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.6876000165939331,
+    "rhetorical_similarity": 0.2476000040769577,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.9999
+    "topic_similarity": 0.4528
   },
   {
-    "bleu_score": 0.3466,
+    "bleu_score": 0.4229,
     "content": [
       "3 views of the right hand demonstrate variable joint space narrowing throughout the IP joints, most notably there is joint space narrowing at the thumb MCP joint, and then the left hand variable joint space or out there is severe joint space narrowing at the bus me the carpal joint."
     ],
-    "content_analysis": 0.5,
-    "content_similarity": 0.7957000136375427,
+    "content_analysis": 0.8182,
+    "content_similarity": 0.9164999723434448,
     "key": "IMAGING_RESULTS",
-    "rhetorical_similarity": 0.6947000026702881,
+    "rhetorical_similarity": 0.82669997215271,
     "title": "Imaging Results",
     "topic_similarity": 1.0
   },
@@ -67,24 +67,24 @@
       "- peripheral neuropathy",
       "- joint space narrowing in bilateral hands"
     ],
-    "content_analysis": 0.5,
-    "content_similarity": 0.8858000040054321,
+    "content_analysis": 0.25,
+    "content_similarity": 0.6915000081062317,
     "key": "ASSESSMENT_SPENCER",
-    "rhetorical_similarity": 0.8769999742507935,
+    "rhetorical_similarity": 0.5059999823570251,
     "title": "Assessment",
-    "topic_similarity": 0.0427
+    "topic_similarity": 0.9999
   },
   {
-    "bleu_score": 0.4415,
+    "bleu_score": 0.2661,
     "content": [
       "Recommend nerve studies due to low threshold for testing.",
       "Return to clinic in 6 to 8 weeks for follow-up."
     ],
-    "content_analysis": 0.3158,
-    "content_similarity": 0.6276000142097473,
+    "content_analysis": 0.4,
+    "content_similarity": 0.8912000060081482,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.45010000467300415,
+    "rhetorical_similarity": 0.7566999793052673,
     "title": "Plan",
-    "topic_similarity": 0.0302
+    "topic_similarity": 0.0731
   }
 ]

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "Benchmark shows '-' (no explicit patient name). Candidate lists 'James', which is a partial name and likely refers to a different patient segment ('James She'). This does not match the benchmark and is not a full name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Conveys the same meaning as the benchmark: recurrence on the right and new triggering on the left; concise and accurate."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes key elements (follow-up, inquiry about another injection, defer right, no prior left injection), but adds exam findings (swelling, nodule) that do not belong in HPI and conflates the separate postoperative patient by implying the same patient had surgery with Dr. Hertz. Omits the detail that right-side symptoms are the same as left. The benchmark avoids these issues."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Contains the core dictated MSK lines but appends unrelated/erroneous content (incision status, sutures, PIP motion, and an imaging fragment). The benchmark includes only the verbatim MSK findings for the trigger finger."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Benchmark notes 'X-ray showed some fracture healing.' Candidate uses 'X-rays are X-ray,' omitting the stated finding of fracture healing and providing an uninformative fragment."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Partially aligns with benchmark by listing right and left trigger finger and a postoperative issue, but adds 'moderate soft tissue swelling' and 'post-operative fracture healing' (not in benchmark) and omits items like 'status post surgery' phrasing and other listed assessment entries."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures the main plan elements: defer right injection, consider future injection, perform left injection today, continue post-op protocol, and follow-up with the surgeon. It is slightly garbled ('WSGM', ellipsis, 'her' vs 'Doctor Hertz'). The benchmark adds 'Return to clinic in 4 weeks,' which is not stated in the transcript, so not penalized."
+    }
+  },
+  "total_score": 19,
+  "percentage": 54.29,
+  "overall_summary": "The candidate note captures the chief complaint and most plan elements but falters on patient identification, mixes exam details into the HPI, and includes extraneous or incomplete content in musculoskeletal and imaging fields. Assessment is partially correct but deviates from the benchmark structure and content."
+}

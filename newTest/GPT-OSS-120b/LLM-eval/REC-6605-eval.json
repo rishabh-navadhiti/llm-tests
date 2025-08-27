@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "Benchmark uses '-' (no name provided for this encounter). Candidate lists 'Gianna Saborio', which is a different patient mentioned later in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Benchmark: 'Left small finger locking and catching.' Candidate: 'tethering with flexion of fingers,' which refers to a different patient. Major mismatch of the main issue."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes the transcript for the intended patient: right-hand dominant designer, left small finger locking/catching for ~2 years, delayed care due to prior trigger finger surgeries, now seeking treatment. The benchmark mentions job impact not explicitly stated in the transcript; not penalized."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Candidate reproduces the dictated exam essentially verbatim (no erythema, moderate TTP at A1 pulley, palpable nodule, excellent ROM, well-healed middle finger incisions). Minor wording/ASR artifact differences from the benchmark phrasing."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both indicate normal X-rays. Candidate's 'X-rays are normal' matches the benchmark's factual content."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Includes the correct diagnosis 'left small finger trigger finger' but adds 'tethering of fingers,' which pertains to another patient, introducing an extraneous problem."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "Benchmark: planned trigger finger release and return in 2 weeks. Candidate mixes in another patient's postoperative plan (sutures removed, gentle ROM, video visit in 1 month), with only a vague 'planned trigger.' Mostly incorrect. Note: the benchmark's 2-week follow-up is not explicitly in the transcript, but the primary error is mixing plans from different patients."
+    }
+  },
+  "total_score": 18,
+  "percentage": 51.43,
+  "overall_summary": "The candidate note mixes details from two different patients, leading to incorrect patient name, chief complaint, assessment, and plan. HPI, musculoskeletal findings, and imaging largely align with the intended patient, though exam text differs slightly in wording. Overall accuracy is moderate due to cross-patient contamination."
+}

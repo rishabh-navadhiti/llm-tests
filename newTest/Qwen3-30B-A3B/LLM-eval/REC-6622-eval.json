@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "The transcript explicitly states 'Mr. Kevin Clancy,' and the benchmark lists 'Kevin Clancy'; the candidate returned '-', omitting the clearly stated patient name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match to the benchmark and transcript: 'Left ring finger trigger finger.' Concise and accurate."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark provides a minimal HPI ('He reports left ring finger trigger finger.'); the candidate returns '-', providing no HPI content."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "No musculoskeletal exam findings are dictated in the transcript; candidate left the field empty, which aligns with the benchmark's '-' (formatting difference only)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging is mentioned in the transcript; both candidate and benchmark correctly return '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Benchmark lists two problems: 'Left ring finger trigger finger' and 'Plantar tendonitis.' Candidate includes only the first and adds an extraneous '-' item, omitting 'Plantar tendonitis.'"
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Candidate captures all plan items stated in the transcript: injection only for trigger finger, home exercise program, and low threshold for formal therapy if no improvement. The benchmark adds 'Return to clinic in 2 weeks,' which is not in the transcript; not penalized per instructions."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate note correctly captured the chief complaint, absence of imaging and MSK findings, and the plan elements present in the transcript. Major deficiencies include omission of the stated patient name, missing HPI, and an incomplete assessment (missing plantar tendonitis and including an extraneous placeholder)."
+}

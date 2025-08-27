@@ -3,11 +3,11 @@
     "bleu_score": 0.0,
     "content": "-",
     "content_analysis": 0.0,
-    "content_similarity": 0.1817999929189682,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.15129999816417694,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.0,
@@ -20,38 +20,38 @@
     "topic_similarity": 0.1197
   },
   {
-    "bleu_score": 0.2406,
+    "bleu_score": 0.3554,
     "content": [
       "Patient presents for reevaluation of right hand symptoms. She recently completed chemotherapy for lymphoma. She reports increasing numbness and tingling of her right hand, which she notes is worse when trying to put her earrings in. She also reports difficulty with fine motor tasks. She has been trying to hold her phone less due to discomfort. She denies any specific injury."
     ],
-    "content_analysis": 0.381,
-    "content_similarity": 0.8129000067710876,
+    "content_analysis": 0.3529,
+    "content_similarity": 0.8569999933242798,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.7324000000953674,
+    "rhetorical_similarity": 0.8504999876022339,
     "title": "HPI Spencer",
     "topic_similarity": 1.0
   },
   {
-    "bleu_score": 0.5909,
+    "bleu_score": 0.0,
     "content": [
       "Moderate tenderness to palpation of the right small finger. There is a nodule at the A1 pulley."
     ],
-    "content_analysis": 0.5,
-    "content_similarity": 0.7170000076293945,
+    "content_analysis": 0.0,
+    "content_similarity": -0.0024999999441206455,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.6194999814033508,
+    "rhetorical_similarity": 0.06239999830722809,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.0426
+    "topic_similarity": 0.504
   },
   {
     "bleu_score": 0.0,
     "content": [
       "X-ray is clear."
     ],
-    "content_analysis": 0.0,
-    "content_similarity": 0.3314000070095062,
+    "content_analysis": 1.0,
+    "content_similarity": 0.9801999926567078,
     "key": "IMAGING_RESULTS",
-    "rhetorical_similarity": 0.23690000176429749,
+    "rhetorical_similarity": 0.9233999848365784,
     "title": "Imaging Results",
     "topic_similarity": 1.0
   },
@@ -63,15 +63,15 @@
       "- Trigger finger (right)",
       "- Possible carpal tunnel syndrome (right)"
     ],
-    "content_analysis": 0.2857,
-    "content_similarity": 0.33219999074935913,
+    "content_analysis": 0.1333,
+    "content_similarity": 0.5374000072479248,
     "key": "ASSESSMENT_SPENCER",
-    "rhetorical_similarity": 0.33730000257492065,
+    "rhetorical_similarity": 0.3901999890804291,
     "title": "Assessment",
-    "topic_similarity": 0.1794
+    "topic_similarity": 0.0265
   },
   {
-    "bleu_score": 0.0916,
+    "bleu_score": 0.1152,
     "content": [
       "Administer steroid injection into the right small finger.",
       "Recommend night splinting for the right hand.",
@@ -80,11 +80,11 @@
       "Discussed low threshold for nerve conduction studies and EMG if symptoms persist.",
       "Return to clinic in two months for follow-up."
     ],
-    "content_analysis": 0.2424,
-    "content_similarity": 0.6547999978065491,
+    "content_analysis": 0.2857,
+    "content_similarity": 0.7426000237464905,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.4970000088214874,
+    "rhetorical_similarity": 0.7567999958992004,
     "title": "Plan",
-    "topic_similarity": 0.0148
+    "topic_similarity": 0.0209
   }
 ]

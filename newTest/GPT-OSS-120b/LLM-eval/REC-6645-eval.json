@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The patient's name 'Nadeem Nemi' is explicitly stated in the transcript and appears in the benchmark, but the candidate returned '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches the benchmark ('Bilateral thumb pain'); only case differs, which is acceptable."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately summarizes history (worsening since 2019, worse over 6 months, no numbness/tingling, pain limiting use) and pertinent past conditions. Minor issue: adds plan detail ('receiving steroid injections today'), which goes beyond HPI and is not stated as already received."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Includes verbatim exam text from the transcript, but differs from the benchmark in laterality ('bilateral' vs 'Right upper extremity') and includes filler ('Um, dot NCTS'), leading to partial mismatch with the benchmark phrasing."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Captures most findings but omits the 'calcific arteriogram is noted' and the distinction that the left hand lacks this finding, both present in the benchmark. Note: the transcript later instructs to delete the calcific arteriogram phrase, which may explain the omission."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes all key diagnoses from the benchmark (bilateral thumb CMC arthritis, right cubital tunnel, bilateral carpal tunnel) and adds symptom-based 'bilateral thumb pain.' Omits the benchmark's normal finding ('Right upper extremity Skin is intact')."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Contains all core plan elements from the benchmark: trial of injections with counseling on temporary nature and rebound pain, observation for carpal/cubital tunnel, consider nerve studies, and 2-month follow-up. Includes extra conversational lines and slightly different phrasing."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "The candidate note captures the chief complaint and most of the HPI and plan accurately, with minor overreach by including plan details in the HPI. The musculoskeletal section is largely verbatim but differs from the benchmark in laterality. Imaging misses the calcific arteriogram detail present in the benchmark, likely due to the subsequent instruction to delete it. Assessment includes all key diagnoses but omits a normal finding included in the benchmark. The major miss is the patient name, which is present in the transcript but not captured."
+}

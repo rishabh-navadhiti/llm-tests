@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly return '-' as no patient name is provided in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Candidate states 'Right ring finger trigger finger recurrence' vs. benchmark 'Trigger finger.' Content aligns with the main issue; candidate adds side and recurrence, which are accurate but more detailed than the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Core narrative (follow-up, managing thumb CMC arthritis, recurrence of right ring finger trigger finger) aligns with the benchmark. However, the candidate adds exam findings (tenderness) and an overly specific date ('February 25, 2020') not reflected in the benchmark, and omits that she is asking about next steps."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark has '-', while the candidate includes verbatim MSK exam details from the transcript. Although the candidate content reflects the transcript, it does not match the benchmark's content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly indicate no imaging results ('-')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Both problems are represented (CMC arthritis and right ring finger trigger finger). However, the candidate omits 'right thumb' specificity for CMC arthritis and adds 'status post injections,' which is not in the benchmark and is not clearly supported for the CMC arthritis."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Candidate includes conservative management and surgical release after three injections, which aligns with the benchmark. However, it incorrectly adds 'Proceed with carpal tunnel release' (benchmark indicates continuing night splinting) and does not include discussing risks; also uses 'night lifting' rather than 'night splinting' per the benchmark. Do not penalize for the benchmark-only follow-up timing."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "The candidate note captures the main problems and basic plan elements but diverges from the benchmark with added exam details in the HPI, less precise assessment wording, and significant plan inaccuracies (incorrectly stating carpal tunnel release and omitting risk discussion). Chief complaint and non-imaging fields are generally aligned, and imaging is correctly left as '-'."
+}

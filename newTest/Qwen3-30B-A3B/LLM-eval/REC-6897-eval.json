@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "No patient name stated in transcript; both benchmark and candidate correctly use '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Benchmark shows no stated chief complaint ('-'); candidate inferred 'post-operative ecchymosis' which is not explicitly documented as the CC."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes correct elements (doing well, minimal pain, lots of ecchymosis) but adds non-HPI details (exam/plan), misattributes '1 cm from palm' to incision, and includes follow-up—deviating from transcript-only HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Contains the key verbatim exam phrases ('incision with varied sutures,' 'moderate ecchymosis') but appends unrelated/plan text and extra filler, unlike the concise benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging mentioned in transcript; both notes correctly return '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Benchmark lists normal findings not present in the transcript (not penalized). Candidate adds 'post-operative ecchymosis' (supported by transcript) but also includes a stray '-' and 'status post carpal tunnel release' which is inferred."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Accurately captures 'return to clinic in 4 weeks'. The second item ('post-operative care for carpal tunnel release') is a looser paraphrase of 'planned post-op endocarpal tunnel' rather than an exact match."
+    }
+  },
+  "total_score": 22,
+  "percentage": 62.86,
+  "overall_summary": "The candidate note captures some key facts (HPI symptoms, no imaging, follow-up timing) but deviates from the benchmark by inferring a chief complaint, mixing exam/plan into HPI, overextending the musculoskeletal verbatim section, and providing a non-matching assessment with an extra placeholder item. Overall alignment is moderate with notable inaccuracies and formatting issues."
+}

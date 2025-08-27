@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to transcript: 'Precious Myles Garrett.'"
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Captures left wrist pain but omits 'and masses,' which is part of the stated reason for visit."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately summarizes pain waking at night, presence of wrist and thumb masses, fluctuation then stability, and rheumatology imaging. Minor issues: lacks precise anatomical details (dorsal radial/ulnar MCP), omits rheumatologist name, and includes exam-based tenderness details."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Not verbatim and overly generalized ('No tenderness to palpation.'). Doctor stated mixed findings (non-tender wrist mass, minimally tender thumb mass) and specific tests; the candidate’s text is neither verbatim nor accurate."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "Incorrect and self-contradictory. Transcript: X-ray shows thumb MCP osteophyte; ultrasound shows bony avulsion fragment vs osteophyte at dorsal MCP of thumb and a retinacular cyst superficial to the first dorsal compartment. Candidate mislocates findings to the wrist and adds 'X-ray normal.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Misses key diagnoses (left first dorsal compartment wrist cyst, left thumb MCP osteophyte) and adds 'trigger finger,' which is explicitly negated in the exam (no A1 tenderness/locking). Uses vague 'masses' and pain terms instead of specific findings."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Partially aligns on follow-up timing and splinting but misses 'night' splints, omits observation for masses and consideration of aspiration/biopsy, and adds non-dictated items (A1 pulley steroid injection, surgical options)."
+    }
+  },
+  "total_score": 16,
+  "percentage": 45.71,
+  "overall_summary": "The candidate note gets the patient name correct and provides a generally accurate HPI, but it omits 'masses' in the chief complaint and fails the verbatim MSK requirement. Imaging, assessment, and plan contain significant inaccuracies and hallucinated elements (e.g., normal X-ray, trigger finger, A1 pulley injection), deviating from the transcript and benchmark."
+}

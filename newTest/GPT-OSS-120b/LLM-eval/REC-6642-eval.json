@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "The transcript clearly states the patient's name as 'Nadeem Nemi,' but the candidate returned '-'. Major omission."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches the benchmark 'Bilateral thumb pain' in content; minor casing difference only."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes worsening bilateral thumb pain since 2019, worse in last 6 months, denies numbness/tingling, and reports limitation; includes stated history and improvement of carpal/cubital tunnel as in transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Verbatim extraction of exam findings from the transcript. Benchmark listed '-', but transcript clearly contains these findings."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Captures key right-hand findings, but incorrectly states 'The left is the same,' implying calcific arteriogram on the left; benchmark and transcript indicate the left is the same except without the calcific arteriogram."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes main active problems (bilateral thumb CMC arthritis, right cubital tunnel syndrome, carpal tunnel), and symptom of thumb pain. Missing 'bilateral' qualifier for carpal tunnel compared to transcript/benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Plan matches the transcript and benchmark: trial of injections with counseling on temporary effect/rebound pain; observation for carpal/cubital tunnel with consideration of nerve studies; RTC in 2 months."
+    }
+  },
+  "total_score": 28,
+  "percentage": 80.0,
+  "overall_summary": "Strong overall note with accurate chief complaint, HPI, musculoskeletal exam (verbatim), and plan. Main deficiencies: omitted patient name despite being stated, and imaging misrepresented the left hand as identical to the right by not excluding calcific arteriogram; minor lack of laterality for carpal tunnel in assessment."
+}

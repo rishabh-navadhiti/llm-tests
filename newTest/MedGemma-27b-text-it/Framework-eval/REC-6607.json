@@ -3,11 +3,11 @@
     "bleu_score": 0.0,
     "content": "-",
     "content_analysis": 0.0,
-    "content_similarity": 0.14059999585151672,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.12439999729394913,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.0,
@@ -22,12 +22,12 @@
   {
     "bleu_score": 0.0,
     "content": "Patient presents for evaluation of wrist pain. She reports improvement in her synovitis with treatment. Her rheumatologist added a medication which has helped. She has also started an infusion for osteoporosis. She is interested in discussing total wrist arthroplasty for her right wrist.",
-    "content_analysis": 0.4091,
-    "content_similarity": 0.8770999908447266,
+    "content_analysis": 0.3889,
+    "content_similarity": 0.9072999954223633,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.7314000129699707,
+    "rhetorical_similarity": 0.8525000214576721,
     "title": "HPI Spencer",
-    "topic_similarity": 0.0167
+    "topic_similarity": 0.018
   },
   {
     "bleu_score": 0.0,
@@ -43,11 +43,11 @@
     "bleu_score": 0.0,
     "content": "-",
     "content_analysis": 0.0,
-    "content_similarity": 0.08070000261068344,
+    "content_similarity": 0.08969999849796295,
     "key": "IMAGING_RESULTS",
-    "rhetorical_similarity": -0.00930000003427267,
+    "rhetorical_similarity": -0.014399999752640724,
     "title": "Imaging Results",
-    "topic_similarity": 0.5551
+    "topic_similarity": 0.504
   },
   {
     "bleu_score": 0.0,
@@ -58,21 +58,21 @@
       "Osteoporosis",
       "Synovitis"
     ],
-    "content_analysis": 0.375,
-    "content_similarity": 0.7888000011444092,
+    "content_analysis": 0.4,
+    "content_similarity": 0.7746000289916992,
     "key": "ASSESSMENT_SPENCER",
-    "rhetorical_similarity": 0.7034000158309937,
+    "rhetorical_similarity": 0.4823000133037567,
     "title": "Assessment",
-    "topic_similarity": 0.9992
+    "topic_similarity": 0.0519
   },
   {
     "bleu_score": 0.0,
     "content": "Discussed total wrist arthroplasty on the right side.",
-    "content_analysis": 0.25,
-    "content_similarity": 0.6025999784469604,
+    "content_analysis": 0.2,
+    "content_similarity": 0.667900025844574,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.6395999789237976,
+    "rhetorical_similarity": 0.44359999895095825,
     "title": "Plan",
-    "topic_similarity": 0.05
+    "topic_similarity": 0.9994
   }
 ]

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark ('-'); the transcript does not state a patient name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Candidate left '-' while benchmark lists 'Follow up for hand pain.' The transcript does not explicitly state a chief complaint, so only a minor deduction."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately captures that the prior injection gave no relief and that she seeks evaluation, matching benchmark content."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Faithfully reproduces the dictated exam findings (hypopigmentation at dorsal CMC, positive finger stain/Finkelstein, positive grind), consistent with benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both candidate and benchmark indicate no imaging results mentioned ('-')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Candidate left '-' while benchmark lists 'Pain in hand.' The transcript does not explicitly state an assessment, so only a minor deduction."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Includes both key elements from the plan: trial of 'dig verban's' (De Quervain's) injection and return in six weeks; wording differences are minor."
+    }
+  },
+  "total_score": 33,
+  "percentage": 94.29,
+  "overall_summary": "The candidate note closely aligns with the benchmark, accurately capturing HPI, musculoskeletal findings verbatim, imaging (none), and the plan. Minor discrepancies are limited to chief complaint and assessment fields, which were not explicit in the transcript."
+}

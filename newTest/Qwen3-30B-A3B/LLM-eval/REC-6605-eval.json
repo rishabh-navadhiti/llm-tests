@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Candidate and benchmark both list '-' and no name is provided for this patient in the transcript (the only name mentioned, 'Gianna Saborio,' pertains to a different patient)."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches benchmark ('left small finger locking and catching'); the added 'Evaluation of' does not change meaning and remains concise."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately reflects transcript: onset (~2 years), prior trigger finger surgery delaying care, desire for treatment, right-hand dominant designer, and no other triggers today. It adds a minor inferred statement ('There is no mention of acute trauma or recent change'), which is not explicitly stated. Not penalized for omitting the benchmark’s note about job impact, as that detail is not in the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Captures the same findings as the benchmark: skin 'purging,' no erythema, moderate TTP, palpable nodule, excellent ROM, well-healed middle finger incisions. Candidate preserves the verbatim/garbled phrasing from the transcript; benchmark’s cleaned 'A1 pulley' is not explicitly stated in the transcript, so no penalty for its absence."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Candidate states 'X-rays are normal,' matching the transcript. Benchmark adds finger/side specificity; since that detail isn’t explicitly stated in the imaging sentence, no penalty for its omission."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes the correct diagnosis ('Left small finger trigger finger') aligning with the benchmark. However, it adds extra items: a historical 'status post' surgery (not an active problem) and a negative statement ('No other trigger digits'), which should not be in Assessment."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Conveys the planned trigger release (albeit awkwardly: 'Plan will be planned trigger'). Adds a non-plan statement ('He is not having any other triggers today'). Benchmark includes follow-up ('Return to clinic in 2 weeks'), which is not stated in the first patient’s transcript; not penalized for omission."
+    }
+  },
+  "total_score": 31,
+  "percentage": 88.57,
+  "overall_summary": "The candidate note closely aligns with the benchmark, accurately capturing chief complaint, HPI essentials, exam findings, and imaging. The main discrepancies are minor: one inferred line in HPI, inclusion of non-active/negative items in the Assessment, and an extra non-plan statement in the Plan. Overall factual content is strong and faithful to the transcript."
+}

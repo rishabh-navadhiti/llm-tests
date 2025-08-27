@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "No patient name was provided in the transcript; candidate correctly used '-,' matching the benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Conveys wrist pain after two falls, aligning with the benchmark. Minor inclusion of timeframe is acceptable and remains concise."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes two falls (slide and electric scooter), persistent left wrist pain with extension, consistent with the benchmark. Omission of 'seeks evaluation and treatment' is minor."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Not verbatim and omits parts of the doctor's phrasing (e.g., skin findings: 'skin is clean...'; also paraphrases and corrects wording such as 'ecchymosis'). The field requires verbatim text."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Captures a distal radius fracture on left wrist; adds 'dorsal' consistent with transcript. Misses mention of the immature skeleton noted in the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "States 'Left wrist fracture,' which is less specific than the benchmark's 'Distal radius fracture.' Clinically aligned but missing specificity."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes casting and 2-week follow-up with repeat X-rays and cast change, matching the benchmark plan. Wording 'plan fractured cast' is awkward but intent is clear."
+    }
+  },
+  "total_score": 28,
+  "percentage": 80,
+  "overall_summary": "The candidate note closely matches the benchmark in chief complaint, HPI, imaging, and plan. The main shortcomings are the lack of verbatim musculoskeletal findings and reduced specificity in the assessment. Overall, it demonstrates good factual accuracy with minor omissions and wording issues."
+}

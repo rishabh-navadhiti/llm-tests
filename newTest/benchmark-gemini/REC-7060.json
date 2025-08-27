@@ -1,33 +1,7 @@
 [
     {
         "content": [
-            "Shiela Strober"
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": false,
-                    "generic": true,
-                    "missingContent": false,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "-"
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-18T17:22:22.728Z",
-                "to": [
-                    "Shiela Strober"
-                ],
-                "version": 1
-            }
+            "-"
         ],
         "key": "PATIENT_NAME",
         "matches": [
@@ -52,37 +26,7 @@
     },
     {
         "content": [
-            "8.18.2025",
-            "She is here today for followup.  She states that she is doing very well from a thumb perspective.  She has figured out how to manage life with her carpometacarpal arthritis, but her right ring finger trigger finger came back.  She started noticing symptoms around 5/25/2025.  She thought that it maybe not become full-on trigger finger, but it has.  She wants to know what the next step is.",
-            ""
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": true,
-                    "generic": false,
-                    "missingContent": true,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "She is presenting for follow-up of her right thumb CMC arthritis and new-onset right ring finger trigger finger.  She reports managing her thumb CMC arthritis well.  The right ring finger trigger finger symptoms began around 2020.  She had hoped it would not progress to a full trigger finger, but it has, and she is inquiring about the next steps."
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-18T17:22:32.224Z",
-                "to": [
-                    "8.18.2025",
-                    "She is here today for followup.  She states that she is doing very well from a thumb perspective.  She has figured out how to manage life with her carpometacarpal arthritis, but her right ring finger trigger finger came back.  She started noticing symptoms around 5/25/2025.  She thought that it maybe not become full-on trigger finger, but it has.  She wants to know what the next step is.",
-                    ""
-                ],
-                "version": 1
-            }
+            "She is presenting for follow-up of her right thumb CMC arthritis and new-onset right ring finger trigger finger.  She reports managing her thumb CMC arthritis well.  The right ring finger trigger finger symptoms began around 2020.  She had hoped it would not progress to a full trigger finger, but it has, and she is inquiring about the next steps."
         ],
         "key": "HPI_SPENCER",
         "matches": [
@@ -101,39 +45,7 @@
     },
     {
         "content": [
-            "Mild tenderness to palpation at the thumb carpometacarpal joints",
-            "There is triggering at the right ring finger",
-            "There is tenderness to palpation of the right ring finger A1 pulley",
-            ""
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": true,
-                    "generic": false,
-                    "missingContent": true,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "-"
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-18T17:22:41.938Z",
-                "to": [
-                    "Mild tenderness to palpation at the thumb carpometacarpal joints",
-                    "There is triggering at the right ring finger",
-                    "There is tenderness to palpation of the right ring finger A1 pulley",
-                    ""
-                ],
-                "version": 1
-            }
+            "-"
         ],
         "key": "MUSCULOSKELETAL_VERBATIM",
         "matches": [
@@ -187,61 +99,7 @@
     },
     {
         "content": [
-            "under CMC arthritis",
-            "You can delete the injections given today",
-            "She is doing well thus far",
-            "Recommended conservative management",
-            "",
-            "Regarding the right ring finger trigger finger",
-            "She has triggering again",
-            "She has had 3 injections, recommend surgical release",
-            "",
-            "Plan OR Risks",
-            "We will proceed",
-            "",
-            "Regarding the carpal tunnel",
-            "Continue night splinting",
-            ""
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": true,
-                    "generic": false,
-                    "missingContent": true,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "Conservative management for right ring finger trigger finger.  Surgical release recommended for trigger finger after three injections. Discuss risks of surgical release. Continue night splinting for carpal tunnel. Return to clinic in 2 weeks."
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-18T17:23:09.139Z",
-                "to": [
-                    "under CMC arthritis",
-                    "You can delete the injections given today",
-                    "She is doing well thus far",
-                    "Recommended conservative management",
-                    "",
-                    "Regarding the right ring finger trigger finger",
-                    "She has triggering again",
-                    "She has had 3 injections, recommend surgical release",
-                    "",
-                    "Plan OR Risks",
-                    "We will proceed",
-                    "",
-                    "Regarding the carpal tunnel",
-                    "Continue night splinting",
-                    ""
-                ],
-                "version": 1
-            }
+            "Conservative management for right ring finger trigger finger.  Surgical release recommended for trigger finger after three injections. Discuss risks of surgical release. Continue night splinting for carpal tunnel. Return to clinic in 2 weeks."
         ],
         "key": "PLAN_SPENCER",
         "matches": [

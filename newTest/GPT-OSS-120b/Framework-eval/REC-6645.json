@@ -1,0 +1,89 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.26899999380111694,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.22200000286102295,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "bilateral thumb pain"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.1202,
+    "content": [
+      "The patient is a right\u2011handed male retiree with a history of bilateral carpal tunnel syndrome, right cubital tunnel syndrome, and bilateral thumb CMC arthritis, previously seen in 2019. He reports bilateral thumb pain that has worsened significantly since the prior visit, especially over the past six months. He denies numbness or tingling but describes significant pain limiting thumb use. He is receiving steroid injections today for his thumb CMC arthritis."
+    ],
+    "content_analysis": 0.3043,
+    "content_similarity": 0.7795000076293945,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6717000007629395,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0163
+  },
+  {
+    "bleu_score": 0.6055,
+    "content": [
+      "On exam, bilateral upper extremty skin is clean, dry and intact. Um, no significant soft tissue swelling, positive grind, positive shoulder sign. No triggering of any digits with the thumb. Um, dot NCTS."
+    ],
+    "content_analysis": 0.5833,
+    "content_similarity": 0.7583000063896179,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.939300000667572,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0306
+  },
+  {
+    "bleu_score": 0.3895,
+    "content": [
+      "X-rays are three views of the right hand demonstrate severe joint space neovasculitis with metacarpal with osteophytosis, evidence of a Z deformity with hyperextension of the MCP joint. The left hand is the same."
+    ],
+    "content_analysis": 0.8421,
+    "content_similarity": 0.9560999870300293,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.6732000112533569,
+    "title": "Imaging Results",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- bilateral thumb CMC arthritis",
+      "- bilateral thumb pain",
+      "- bilateral carpal tunnel syndrome",
+      "- right cubital tunnel syndrome"
+    ],
+    "content_analysis": 0.6,
+    "content_similarity": 0.8841000199317932,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.6255000233650208,
+    "title": "Assessment",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.1264,
+    "content": [
+      "Recommend trial of injections. Talked about the temporary nature of steroid. Talked about rebound pain, he understands we would do this today. Regarding the carpal tunnel and cubital tunnel, he is doing much better. Recommend observation for now. Consider nerve studies. His symptoms re- exist maybe. But try to plan it in two months for follow-up. And then that is it, my friend. I will talk to you next week. I'll send you a message on Friday when I know."
+    ],
+    "content_analysis": 0.4333,
+    "content_similarity": 0.6442000269889832,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6103000044822693,
+    "title": "Plan",
+    "topic_similarity": 0.0155
+  }
+]

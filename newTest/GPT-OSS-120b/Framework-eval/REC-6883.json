@@ -1,0 +1,87 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "wrist pain"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.683899998664856,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.6646999716758728,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1516
+  },
+  {
+    "bleu_score": 0.2689,
+    "content": [
+      "The patient experienced two falls over the past two days, one while climbing a slide and another after falling off an electric scooter. After each incident he developed pain with wrist extension that has not improved. He presents for evaluation and treatment of the persistent wrist pain."
+    ],
+    "content_analysis": 0.6667,
+    "content_similarity": 0.9430000185966492,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7354999780654907,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0229
+  },
+  {
+    "bleu_score": 0.1861,
+    "content": [
+      "On exam . It's his left upper extremity skin is clean , giant intact without erythematic mosis"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.6409000158309937,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.6611999869346619,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0282
+  },
+  {
+    "bleu_score": 0.1863,
+    "content": [
+      "X-rays for views of the left wrist demonstrate the skeleton the immature patient , um , with a to do space fractures and dorsal distal radius"
+    ],
+    "content_analysis": 0.6364,
+    "content_similarity": 0.8769999742507935,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.8827999830245972,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0449
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- distal radius fracture",
+      "- wrist pain"
+    ],
+    "content_analysis": 0.4,
+    "content_similarity": 0.8374000191688538,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.8305000066757202,
+    "title": "Assessment",
+    "topic_similarity": 0.1096
+  },
+  {
+    "bleu_score": 0.5098,
+    "content": [
+      "plan will be a plan fractured cast, to clinic in weeks for follow-up with repeat X-rays and cast change."
+    ],
+    "content_analysis": 0.7857,
+    "content_similarity": 0.8327000141143799,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.7811999917030334,
+    "title": "Plan",
+    "topic_similarity": 0.0637
+  }
+]

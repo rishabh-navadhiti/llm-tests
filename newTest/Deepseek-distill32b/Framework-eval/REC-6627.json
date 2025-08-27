@@ -3,11 +3,11 @@
     "bleu_score": 0.0,
     "content": "-",
     "content_analysis": 0.0,
-    "content_similarity": 0.1370999962091446,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.2029000073671341,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.0,
@@ -22,22 +22,22 @@
   {
     "bleu_score": 0.0,
     "content": "The patient presents with bilateral hand numbness, tingling, and burning pain that began on July 1, 2025. These symptoms are similar to those experienced at the end of her previous pregnancy but are occurring earlier and are more intense. She has been seeing her OB, who recommended injections and referred her to this office. She has been wearing splints but has not experienced sufficient improvement to sleep through the night.",
-    "content_analysis": 0.3793,
-    "content_similarity": 0.7864999771118164,
+    "content_analysis": 0.6842,
+    "content_similarity": 0.9340999722480774,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.8827000260353088,
+    "rhetorical_similarity": 0.9118000268936157,
     "title": "HPI Spencer",
-    "topic_similarity": 0.0144
+    "topic_similarity": 0.0164
   },
   {
     "bleu_score": 0.0,
     "content": "Bilateral upper extremity skin is clean, dry, and intact without erythema or ecchymosis. Decreased sensation to the middle fingers is noted.",
-    "content_analysis": 1.0,
-    "content_similarity": 0.8812000155448914,
+    "content_analysis": 0.0,
+    "content_similarity": 0.03840000182390213,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.7925999760627747,
+    "rhetorical_similarity": 0.019899999722838402,
     "title": "Musculoskeletal",
-    "topic_similarity": 1.0
+    "topic_similarity": 0.4789
   },
   {
     "bleu_score": 0.0,
@@ -50,7 +50,7 @@
     "topic_similarity": 0.5551
   },
   {
-    "bleu_score": 0.0,
+    "bleu_score": 0.2633,
     "content": [
       "bilateral carpal tunnel syndrome",
       "bilateral hand numbness",
@@ -58,15 +58,15 @@
       "burning pain",
       "decreased sensation to the middle fingers"
     ],
-    "content_analysis": 0.4,
-    "content_similarity": 0.7663999795913696,
+    "content_analysis": 0.3846,
+    "content_similarity": 0.7354999780654907,
     "key": "ASSESSMENT_SPENCER",
-    "rhetorical_similarity": 0.8425999879837036,
+    "rhetorical_similarity": 0.5447999835014343,
     "title": "Assessment",
-    "topic_similarity": 0.9978
+    "topic_similarity": 0.0332
   },
   {
-    "bleu_score": 0.1531,
+    "bleu_score": 0.0,
     "content": [
       "defer X-rays secondary to pregnancy",
       "recommend trial of injections",
@@ -74,11 +74,11 @@
       "perform injections today",
       "follow up in three months postpartum if symptoms persist"
     ],
-    "content_analysis": 0.3636,
-    "content_similarity": 0.4691999852657318,
+    "content_analysis": 0.1053,
+    "content_similarity": 0.34610000252723694,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.5181000232696533,
+    "rhetorical_similarity": 0.2761000096797943,
     "title": "Plan",
-    "topic_similarity": 0.019
+    "topic_similarity": 0.0384
   }
 ]

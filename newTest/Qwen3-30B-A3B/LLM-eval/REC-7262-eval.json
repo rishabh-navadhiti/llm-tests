@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "Transcript explicitly names 'Kabe Tahiri'; candidate returned '-' instead of the stated name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Captured the new problem of right index/middle finger triggering, but omitted the concurrent follow-up complaint present in the benchmark and transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "Contains major discrepancies: frames a single patient with left UE fracture and trigger fingers, adds unsupported negatives (no prior treatment, no mechanism), and omits other HPI elements (neck unchanged, cast discomfort) present in the benchmark and transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Candidate includes a long, non-verbatim mix (exam, imaging, plan, names) rather than a strict musculoskeletal finding; benchmark shows no dedicated MS quote for this note."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Accurately reflects both wrist X-ray findings with minor wording differences ('stay in line' vs 'show'); core content matches the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Includes trigger finger but adds 'status post left UE fracture with healing callus' not listed in benchmark, and omits items like 'skin intact'. Note: 'No tenderness to palpation' in benchmark is not clearly stated in the transcript, so absence of that item is not penalized."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Contains all key plan elements (transition to short arm cast left, wean right, injection for trigger finger, RTC with repeats, consider removable splint). Minor deviations: missing 'cast' after 'wean' and unspecified weeks. The benchmark specifies '6 weeks', which is not clearly stated in the transcript, so this is not penalized."
+    }
+  },
+  "total_score": 16,
+  "percentage": 45.71,
+  "overall_summary": "The candidate note partially aligns with imaging and plan, but it misses the explicitly stated patient name, provides an HPI with unsupported and omitted details, and the musculoskeletal section is not verbatim and includes non-exam content. Assessment partially overlaps but includes an extra condition not in the benchmark. Imaging is close to perfect; plan is largely correct with minor wording gaps."
+}

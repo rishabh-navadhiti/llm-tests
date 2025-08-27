@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "Candidate lists 'Gianna Saborio,' which pertains to a different patient segment. For this encounter, the name was not provided in the transcript; benchmark correctly uses '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Includes correct complaint of left small finger locking/catching but adds 'tethering with finger flexion' from a different patient and is not concise."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Captures onset (~2 years) and prior surgery avoidance, but incorrectly states limiting ROM (contradicts 'excellent range of motion') and mixes in exam/imaging details. Not penalizing omission of job impact since that was not in transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Largely matches the exam findings, but not strictly verbatim (e.g., paraphrases 'A1 pulley' as 'trigger point' and minor wording changes)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Accurately reflects imaging: X-rays of the left small finger are normal."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Correctly lists trigger finger (left small finger) but adds 'Tethering post-surgery,' which applies to a different patient."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Includes planned trigger finger surgery but adds unrelated plan elements (gentle ROM, video visit in 1 month) and omits 'return in 2 weeks' from benchmark."
+    }
+  },
+  "total_score": 17,
+  "percentage": 48.57142857142857,
+  "overall_summary": "The candidate note partially captures the correct condition and imaging but repeatedly mixes content from a different patient encounter, leading to inaccuracies in the name, chief complaint, assessment, and plan. There is also a factual error about range of motion. Verbatim requirements for the musculoskeletal section were not fully met."
+}

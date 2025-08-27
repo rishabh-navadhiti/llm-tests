@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The transcript explicitly states the patient's name as 'Math,' but the candidate returned '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Candidate lists 'Left wrist stiffness and limited range of motion.' Benchmark is 'Left wrist stiffness.' Minor extra wording but meaning preserved."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures the fracture in Oct 2023, surgery, CRPS diagnosis, ongoing stiffness, inability to do push-ups, and ability to do Pilates with modifications. Minor inference by specifying 'ORIF' which is not explicitly stated."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Not verbatim and includes fabricated findings (no TTP, no swelling, grip strength) while omitting dictated details (flexion ~45, extension ~20, minimal scar, excellent finger motion)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Partially matches 'well-healed fracture,' but omits key dictated details: 'stable hardware,' 'plate alignment looks good,' 'overall reduction adequate,' and 'post-op left wrist.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark lists CRPS and status post left distal radius fracture. Candidate lists symptoms (stiffness, limited extension) and omits both benchmark problems."
+    },
+    "PLAN_SPENCER_": {
+      "score": 0,
+      "justification": "Candidate fabricates 'continue with current therapy' and incorrect follow-up '4 weeks.' Benchmark plan is advance activity as tolerated, return to Pilates, and follow-up in 3 months."
+    }
+  },
+  "total_score": 11,
+  "percentage": 31.43,
+  "overall_summary": "The candidate note captures the general HPI and chief complaint reasonably well but fails critical fields: incorrect omission of patient name, non-verbatim and fabricated musculoskeletal exam, incomplete imaging details, incorrect assessment relative to the benchmark, and an inaccurate plan with invented elements and wrong follow-up interval."
+}

@@ -5,11 +5,11 @@
       "-"
     ],
     "content_analysis": 0.0,
-    "content_similarity": 0.1987999975681305,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.1906999945640564,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.0,
@@ -24,28 +24,28 @@
     "topic_similarity": 0.9982
   },
   {
-    "bleu_score": 0.0985,
+    "bleu_score": 0.1086,
     "content": [
       "The patient is a postoperative patient with continued soft tissue swelling, particularly with increased hand activity. She reports significant improvement in sensation over the past week, with prior hypersensitivity noted two weeks ago and the week before. The incision is well healed with minimal scarring and no firmness. She has excellent range of motion, full fist closure without pain, and is able to place her hand flat on the table. There is a very slight extension lag of less than 5 degrees compared to baseline. Sensation remains decreased but is improving in one digit."
     ],
-    "content_analysis": 0.1875,
-    "content_similarity": 0.8170999884605408,
+    "content_analysis": 0.2059,
+    "content_similarity": 0.8485000133514404,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.5684000253677368,
+    "rhetorical_similarity": 0.7304999828338623,
     "title": "HPI Spencer",
-    "topic_similarity": 1.0
+    "topic_similarity": 0.0121
   },
   {
-    "bleu_score": 0.3631,
+    "bleu_score": 0.7726,
     "content": [
       "incision , well healed , very minimal scar , no um firmness to the scar . Excellent range of motion , full tight fist without pain , um , able to get hand flat on the table , there is a very slight extension lag , um , less than 5 degrees when compared to her baseline . Uh , hyperextension , uh , sensation decreased but improving to the on one of the digit"
     ],
-    "content_analysis": 0.8,
-    "content_similarity": 0.9296000003814697,
+    "content_analysis": 1.0,
+    "content_similarity": 0.965399980545044,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.7469000220298767,
+    "rhetorical_similarity": 0.9429000020027161,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.998
+    "topic_similarity": 0.9081
   },
   {
     "bleu_score": 0.0,
@@ -67,12 +67,12 @@
       "- well-healed incision",
       "- slight extension lag <5 degrees"
     ],
-    "content_analysis": 0.0,
-    "content_similarity": 0.051100000739097595,
+    "content_analysis": 0.1667,
+    "content_similarity": 0.5267999768257141,
     "key": "ASSESSMENT_SPENCER",
-    "rhetorical_similarity": 0.0,
+    "rhetorical_similarity": 0.5328999757766724,
     "title": "Assessment",
-    "topic_similarity": 0.4789
+    "topic_similarity": 0.0354
   },
   {
     "bleu_score": 0.4123,

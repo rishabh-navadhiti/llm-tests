@@ -1,0 +1,90 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.22059999406337738,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.17430000007152557,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "The patient presents for follow\u2011up after a hand injury. He reports soaking the hand and feels overall improvement, with fingers becoming more normal except the middle finger, which remains very sensitive. Examination notes a separation of part of the nail fold from the nail bed on the ring finger and significant ecchymosis on the middle finger, along with excellent PIP motion but a stiff distal interphalangeal joint of the middle finger. X\u2011rays were deferred. He states his splint is doing well, although it broke after lifting weights and was replaced. He now reports that a fracture is not possible but notes post\u2011traumatic arthritis."
+    ],
+    "content_analysis": 0.04,
+    "content_similarity": 0.5740000009536743,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6626999974250793,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0187
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "A to separate part of the nail fold from nail bed on the ring finger. Middle finger with a significant ecchymosis. Excellent PIP motion, stiff distal interphalangeal join of the middle finger."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.0778999999165535,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.09390000253915787,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4679
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-rays deferred"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- post\u2011traumatic arthritis",
+      "- middle finger sensitivity",
+      "- significant ecchymosis of middle finger",
+      "- stiff distal interphalangeal joint of middle finger",
+      "- broken splint"
+    ],
+    "content_analysis": 0.1579,
+    "content_similarity": 0.580299973487854,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.414000004529953,
+    "title": "Assessment",
+    "topic_similarity": 0.0228
+  },
+  {
+    "bleu_score": 0.3813,
+    "content": [
+      "Return to clinic in one week for wound check with repeat X\u2011rays, plan for transition to removable splints at that time. Continue to protect with relative motions, return to clinic in 6 to 8."
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.9210000038146973,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.7218000292778015,
+    "title": "Plan",
+    "topic_similarity": 0.0301
+  }
+]

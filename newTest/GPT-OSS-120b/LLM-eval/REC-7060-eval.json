@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark exactly with '-' since no name is stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Conveys the same complaint as the benchmark ('trigger finger') with appropriate specificity ('right ring finger')."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Overall aligns with benchmark (follow-up, thumb CMC arthritis controlled, recurrent right ring trigger, seeking next steps). However, it adds an overly specific onset date ('2/5/2020') not supported by the transcript (benchmark uses 'around 2020'), making a factual detail incorrect."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark is '-' (no accepted MSK verbatim). Candidate includes exam-like text that appears in the transcript but is spoken by the patient, not the doctor, and includes some garbled phrasing. This does not match the benchmark content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Matches benchmark '-' with no imaging mentioned in the transcript."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Lists the same active problems as the benchmark (CMC arthritis and right ring trigger finger). The added 'recurrent' is consistent with 'came back.' Note: Benchmark specifies 'Right thumb'; the transcript does not clearly state laterality for the thumb, so not penalized."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures key plan elements aligned with the benchmark: defer injections, conservative management, surgical release after three injections with risks discussed, and continue night support for carpal tunnel. Minor discrepancy with 'night lifting' vs benchmark 'night splinting.' The benchmark includes 'Return to clinic in 2 weeks,' which is not stated in the transcript; not penalized for omission."
+    }
+  },
+  "total_score": 29,
+  "percentage": 82.85714285714286,
+  "overall_summary": "The candidate note closely aligns with the benchmark on most fields, correctly identifying the chief complaint, assessment, and lack of imaging. The HPI contains one incorrect specific date. The musculoskeletal field diverges from the benchmark by including patient-spoken exam text. The plan is largely consistent with minor wording differences and omits a follow-up time only present in the benchmark."
+}

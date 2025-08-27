@@ -1,33 +1,7 @@
 [
     {
         "content": [
-            "Susan Shell"
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": false,
-                    "generic": true,
-                    "missingContent": false,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "-"
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-06T16:49:14.195Z",
-                "to": [
-                    "Susan Shell"
-                ],
-                "version": 1
-            }
+            "-"
         ],
         "key": "PATIENT_NAME",
         "matches": [
@@ -52,37 +26,7 @@
     },
     {
         "content": [
-            "8.6.2025",
-            "She is here today for followup.  She got her all of her other medical conditions taken care of.  She had her knee replaced and wants to know how things look.  She notes that her synovitis is much improved.  Her rheumatologist added an injection, which has made a big difference.  She has also started an infusion for her osteoporosis.  She wants to talk about total wrist arthroplasty on the right side.  She feels like she is significantly limited in all things by her wrist pain.  She is here for evaluation and treatment.",
-            ""
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": true,
-                    "generic": false,
-                    "missingContent": true,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "She reports improved synovitis after her rheumatologist administered an injection. She has also started an infusion for osteoporosis.  She is now considering a total wrist arthroplasty on the right side due to significant limitations caused by wrist pain. She had a knee replacement and notes her knee has recovered enough to start planning the wrist procedure."
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-06T16:49:25.671Z",
-                "to": [
-                    "8.6.2025",
-                    "She is here today for followup.  She got her all of her other medical conditions taken care of.  She had her knee replaced and wants to know how things look.  She notes that her synovitis is much improved.  Her rheumatologist added an injection, which has made a big difference.  She has also started an infusion for her osteoporosis.  She wants to talk about total wrist arthroplasty on the right side.  She feels like she is significantly limited in all things by her wrist pain.  She is here for evaluation and treatment.",
-                    ""
-                ],
-                "version": 1
-            }
+            "She reports improved synovitis after her rheumatologist administered an injection. She has also started an infusion for osteoporosis.  She is now considering a total wrist arthroplasty on the right side due to significant limitations caused by wrist pain. She had a knee replacement and notes her knee has recovered enough to start planning the wrist procedure."
         ],
         "key": "HPI_SPENCER",
         "matches": [
@@ -111,33 +55,7 @@
     },
     {
         "content": [
-            "Imaging mostly unchanged"
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": true,
-                    "generic": false,
-                    "missingContent": true,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "Imaging mostly unchanged, except delete the large, poorly defined nodule."
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-06T16:49:38.119Z",
-                "to": [
-                    "Imaging mostly unchanged"
-                ],
-                "version": 1
-            }
+            "Imaging mostly unchanged, except delete the large, poorly defined nodule."
         ],
         "key": "IMAGING_GEORGE",
         "matches": [
@@ -147,38 +65,10 @@
     },
     {
         "content": [
+            "Right upper extremity Skin is intact.",
+            "Osteoporosis",
             "Bilateral wrist arthritis",
             "Synovitis"
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": true,
-                    "generic": false,
-                    "missingContent": true,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "Right upper extremity Skin is intact.",
-                    "Osteoporosis",
-                    "Bilateral wrist arthritis",
-                    "Synovitis"
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-06T16:50:06.483Z",
-                "to": [
-                    "Bilateral wrist arthritis",
-                    "Synovitis"
-                ],
-                "version": 1
-            }
         ],
         "key": "ASSESSMENT_SPENCER",
         "matches": [
@@ -205,43 +95,7 @@
     },
     {
         "content": [
-            "Regarding the bilateral wrist arthritis",
-            "She is interested in right total wrist arthroplasty",
-            "Her synovitis is down and her knee has recovered enough that she would like to start planning",
-            "Plan OR Risks",
-            "We will proceed",
-            ""
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": true,
-                    "generic": false,
-                    "missingContent": true,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "Plan for right total wrist arthroplasty. Continue current infusion for osteoporosis. Return to clinic in 2 weeks."
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-06T16:49:54.252Z",
-                "to": [
-                    "Regarding the bilateral wrist arthritis",
-                    "She is interested in right total wrist arthroplasty",
-                    "Her synovitis is down and her knee has recovered enough that she would like to start planning",
-                    "Plan OR Risks",
-                    "We will proceed",
-                    ""
-                ],
-                "version": 1
-            }
+            "Plan for right total wrist arthroplasty. Continue current infusion for osteoporosis. Return to clinic in 2 weeks."
         ],
         "key": "PLAN_SPENCER",
         "matches": [

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly use '-' as no patient name is stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches the benchmark ('Left index finger injury'); only capitalization differs, which is harmless."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Candidate includes inaccuracies and inferences not supported by the transcript (adds '22-year-old', interprets '8:15, 25' as a time rather than date, states 'currently using a cast and soft dressing'). While it captures pain with motion, lack of deformity, ER X-rays showing fracture, lacerations with sutures, and limited middle finger motion, the added/incorrect details reduce fidelity."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark has '-' while candidate supplies mixed, partially verbatim exam statements and a fragmented imaging line. Content is not aligned to the benchmark and is not strictly doctor-only verbatim."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Candidate captures that ER X-rays showed a fracture but omits the benchmark’s additional detail that a previous hand X-ray demonstrated a minimally displaced fracture in the small finger."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Candidate lists fracture and lacerations consistent with benchmark, but omits 'skin is intact' and adds 'limited flexion of middle finger' (not in benchmark). Note: do not penalize for benchmark elements absent from transcript; however, the mismatch vs. benchmark content warrants a moderate score."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Candidate includes key plan elements: fracture cast, protect lacerations with soft dressing under splint, Burning Man-related infection risk counseling, antibiotics for a few more days, and RTC when they return. Benchmark specifies 'return in 2 weeks' (not stated in transcript, so not penalized). Minor noise ('age 22') and garbled phrases prevent a perfect score."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate note accurately captures the chief complaint and most plan items. However, the HPI contains several unsupported or incorrect details (age, timing, current cast use), imaging omits a key detail from the benchmark, and the musculoskeletal section does not align with the benchmark’s expected content. Overall, moderately accurate with notable issues in HPI precision and completeness."
+}

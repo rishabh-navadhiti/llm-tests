@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the benchmark full name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches the benchmark precisely and is concise: 'Left wrist pain.'"
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures all key elements (dominant hand, occupation, pain worse than masses, night symptoms, prior treatments, imaging, and goals). Minor omissions/wording differences: does not mention prior fluctuation of masses and specifies ultrasound of the wrist rather than 'anterior wrist.'"
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark is '-', while the candidate includes a paraphrased exam and omits verbatim elements (e.g., negative Finkelstein, no pain with resisted thumb extension). Does not match the ground truth and is not verbatim."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Substantively consistent with the benchmark: osteophyte on X-ray; ultrasound shows bony avulsion fragment versus osteophyte at dorsal MCP and a retinacular cyst. Minor omissions include specifying 'thumb' MCP and 'superficial to the first dorsal compartment sheath.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes core problems (left first dorsal compartment cyst, left thumb MCP osteophyte). Uses 'issues' instead of 'masses' and adds 'left wrist pain,' which is not in the benchmark list. Items in the benchmark not supported by the transcript (e.g., 'Right upper extremity skin is intact,' 'No tenderness to palpation') were not penalized."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Observation, aspiration/biopsy, and 6-week follow-up align with the benchmark. However, it attributes night splints to carpal tunnel, whereas the benchmark ties night splints to the masses."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note closely matches the benchmark for patient name, chief complaint, HPI, and imaging, with minor omissions. Assessment is partially aligned but includes wording differences and an extra item. The plan is mostly correct but misattributes the indication for night splints. The musculoskeletal verbatim section does not match the benchmark and is not verbatim."
+}

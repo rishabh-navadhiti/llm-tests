@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark with '-' and no name is provided in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches benchmark (bilateral hand numbness/tingling and burning pain); only minor phrasing/case differences."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately summarizes onset, pregnancy context, OB referral, splinting, and sleep impact. Slight over-precision ('on' July 1 vs 'around' July 1) prevents a perfect match."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark contains '-', while candidate includes exam text; despite being from the transcript, it does not match the benchmark format/content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Benchmark notes 'X-rays deferred secondary to pregnancy'; candidate has '-', omitting the key imaging detail."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes 'carpal tunnel syndrome' and 'decreased sensation to the middle fingers' aligning with benchmark. Misses 'Right upper extremity Skin is intact.' and adds symptom items not listed in benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures injections (including done today per transcript) and 3-month follow-up. Adds imaging deferral and counseling; omits 'currently wearing splints' in the plan that appears in the benchmark."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate note closely matches the benchmark on chief complaint and HPI, with minor over-precision on onset. The main deficiencies are omission of the imaging result (X-rays deferred) and mismatch in the musculoskeletal verbatim field (benchmark used '-'). Assessment and plan are largely aligned, with some added details and one minor omission."
+}

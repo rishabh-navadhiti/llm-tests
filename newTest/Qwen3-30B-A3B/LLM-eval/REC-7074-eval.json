@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('Math') and explicitly present in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Meaning matches 'Left wrist stiffness' but adds extra context ('since fracture'), making it slightly less concise than the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately summarizes the course: Oct 2023 left distal radius fracture from a fall, surgery with Dr. Rice, CRPS diagnosis, persistent stiffness limiting push-ups, able to do Pilates with modifications. Minor variance on timing of CRPS ('post-operatively' vs 'at time of injury') and inclusion of social detail; overall meaning preserved."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Nearly verbatim to benchmark; differs by 'while healing' vs 'well healing'. Otherwise matches phrasing and measurements."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Captures key findings (well-healed fracture, hardware, good plate alignment, adequate reduction). Omits 'left wrist,' 'post-op,' and 'stable' wording present in benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes CRPS and status post distal radius fracture (worded slightly differently) and adds persistent wrist stiffness, which is a relevant active problem. Content aligns with benchmark without contradictions."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Contains core elements from the benchmark (advance activity/return to Pilates, 3-month follow-up) and adds counseling about push-up limitation and reviewing X-rays, both stated in the transcript. Minor phrasing differences."
+    }
+  },
+  "total_score": 29,
+  "percentage": 82.85714285714286,
+  "overall_summary": "The candidate note closely aligns with the benchmark across all fields, with only minor wording differences and some additional but accurate details from the transcript. No major inaccuracies or omissions were noted."
+}

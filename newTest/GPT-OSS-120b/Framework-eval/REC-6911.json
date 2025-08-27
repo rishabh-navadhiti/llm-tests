@@ -1,0 +1,87 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Walt"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Numbness"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.39959999918937683,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.3400999903678894,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.2453
+  },
+  {
+    "bleu_score": 0.148,
+    "content": [
+      "Patient underwent carpal tunnel release and reports minimal pain but persistent numbness, and is concerned about when the numbness will resolve."
+    ],
+    "content_analysis": 0.2308,
+    "content_similarity": 0.7098000049591064,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.4661000072956085,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0342
+  },
+  {
+    "bleu_score": 0.6376,
+    "content": [
+      "On exam incision , clean joint type of variant sutures , moderate ecchymosis , um , consistent with postoperative state , good finger motion though not full"
+    ],
+    "content_analysis": 0.875,
+    "content_similarity": 0.9544000029563904,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.9616000056266785,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0286
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Carpal tunnel postoperative",
+      "- Persistent numbness"
+    ],
+    "content_analysis": 0.4,
+    "content_similarity": 0.6791999936103821,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.8077999949455261,
+    "title": "Assessment",
+    "topic_similarity": 0.0818
+  },
+  {
+    "bleu_score": 0.2469,
+    "content": [
+      "Plan will be a planned post\u2011op endo carpal tunnel, return to clinic in 4 weeks for follow up."
+    ],
+    "content_analysis": 0.5833,
+    "content_similarity": 0.9458000063896179,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.713100016117096,
+    "title": "Plan",
+    "topic_similarity": 0.067
+  }
+]

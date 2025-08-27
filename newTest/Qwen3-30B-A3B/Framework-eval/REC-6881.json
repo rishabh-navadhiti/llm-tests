@@ -5,11 +5,11 @@
       "-"
     ],
     "content_analysis": 0.0,
-    "content_similarity": 0.1453000009059906,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.13429999351501465,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.0,
@@ -24,28 +24,28 @@
     "topic_similarity": 0.9999
   },
   {
-    "bleu_score": 0.0,
+    "bleu_score": 0.1693,
     "content": [
       "The patient reports that her middle finger has been doing less well despite a previous injection that provided excellent and temporary relief. She notes that the symptoms of locking and catching have recurred, and she is now experiencing significant pain. She is seeking guidance on further management. The thumb has been doing very well with continued use of cycloprox, and she is asking whether she should continue using it."
     ],
-    "content_analysis": 0.2353,
-    "content_similarity": 0.8650000095367432,
+    "content_analysis": 0.375,
+    "content_similarity": 0.9366000294685364,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.5340999960899353,
+    "rhetorical_similarity": 0.7554000020027161,
     "title": "HPI Spencer",
-    "topic_similarity": 0.0145
+    "topic_similarity": 0.8186
   },
   {
-    "bleu_score": 0.2548,
+    "bleu_score": 0.0,
     "content": [
       "moderate tendonal patient at the middle finger A1 pulle there is triggering the there is no there . No evidence of onyomycosis at the right thumbnail thumb is grown in 100% with um excellent cosmesis , um ."
     ],
-    "content_analysis": 0.3684,
-    "content_similarity": 0.7529000043869019,
+    "content_analysis": 0.0,
+    "content_similarity": 0.364300012588501,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.718999981880188,
+    "rhetorical_similarity": 0.4941999912261963,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.0208
+    "topic_similarity": 0.0404
   },
   {
     "bleu_score": 0.0,
@@ -66,12 +66,12 @@
       "- Status post injection with temporary relief",
       "- Thumb pain resolved with cycloprox use"
     ],
-    "content_analysis": 0.3333,
-    "content_similarity": 0.6359000205993652,
+    "content_analysis": 0.25,
+    "content_similarity": 0.5302000045776367,
     "key": "ASSESSMENT_SPENCER",
-    "rhetorical_similarity": 0.6552000045776367,
+    "rhetorical_similarity": 0.4918999969959259,
     "title": "Assessment",
-    "topic_similarity": 0.0472
+    "topic_similarity": 0.032
   },
   {
     "bleu_score": 0.0,
@@ -80,11 +80,11 @@
       "Patient would like another injection; this is reasonable.",
       "Will perform injection today."
     ],
-    "content_analysis": 0.3636,
-    "content_similarity": 0.7361999750137329,
+    "content_analysis": 0.2308,
+    "content_similarity": 0.5916000008583069,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.48590001463890076,
+    "rhetorical_similarity": 0.5083000063896179,
     "title": "Plan",
-    "topic_similarity": 0.0317
+    "topic_similarity": 0.0339
   }
 ]

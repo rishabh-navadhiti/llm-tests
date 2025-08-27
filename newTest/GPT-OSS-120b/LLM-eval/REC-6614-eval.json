@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "Benchmark lists 'Precious Myles Garrett' from the transcript, but candidate returned '-'. Major omission of explicitly stated name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches 'Left wrist pain'; only casing differs, which is a harmless formatting difference."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Captures all key elements from the benchmark HPI (hand dominance, occupation, left wrist pain more bothersome than masses, nocturnal pain, prior care by Dr. Ishimori, rheumatology imaging, masses now constant, seeking treatment) without adding extraneous details."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark leaves this field as '-', while the candidate includes a long verbatim exam section. This is a major content difference from the benchmark, despite being drawn from the transcript."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Matches the benchmark imaging findings in content: osteophyte on thumb MCP x-ray, ultrasound with bony avulsion fragment vs osteophyte at dorsal thumb MCP, and retinacular cyst superficial to first dorsal compartment sheath."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Partial overlap: includes 'left first dorsal compartment wrist cyst' and 'left thumb MCP osteophyte' that match benchmark. Missing 'bilateral thumb and MCP joint masses' and adds items not in benchmark (e.g., retinacular cyst, bony avulsion fragment, left wrist pain, and exam qualifiers). Not penalized for omission of benchmark normals ('Right upper extremity skin is intact', 'No tenderness to palpation')."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes night splints, observation, aspiration vs biopsy, and return in six weeks matching the benchmark. Adds 'We plan carpal tunnel' and a generic review statement not in the benchmark; otherwise meaning preserved."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "The candidate note accurately captured the chief complaint, HPI, and imaging results, and largely matched the plan with one added element. Major issues include omission of the patient name, divergence from the benchmark in the musculoskeletal section (benchmark left empty), and a partially mismatched assessment with added items and missing bilateral involvement."
+}

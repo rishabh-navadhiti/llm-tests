@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark and transcript: 'Stephanie Humphrey'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Benchmark specifies 'Left wrist pain'; candidate wrote 'Left hand pain', which changes the location."
+    },
+    "HPI_SPENCER": {
+      "score": 1,
+      "justification": "Contains multiple inaccuracies and hallucinations (swelling, splinting/ice, denial of prior wrist issues, left-hand dominance) and omits key benchmark details (urgent care X-rays no fracture, sprain diagnosis, humidity in Massachusetts worsening pain, leaving Groundlings). Only the date and general mechanism align."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Benchmark is '-', and the candidate provides a statement not verbatim from the transcript ('No tenderness to palpation over the ECU')—this was never stated."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Candidate states 'X-rays are normal,' capturing only part of the benchmark. Missing prior urgent care result ('no fractures') and laterality/context."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark includes 'Left ECU tendonitis' and 'Left ulnar-sided wrist pain.' Candidate lists 'Left wrist pain' (partial) and incorrectly adds 'Possible trigger finger,' which pertains to another patient and is not in the benchmark for this visit."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Exact match to benchmark plan: hand therapy, MRI for further evaluation, and return after MRI."
+    }
+  },
+  "total_score": 18,
+  "percentage": 51.43,
+  "overall_summary": "The candidate note correctly captured the patient name and plan, but had significant issues in the HPI (hallucinations and incorrect dominance), an inaccurate chief complaint location, a fabricated musculoskeletal verbatim entry, partial imaging details, and an incorrect assessment item. Overall accuracy is moderate to poor, with key factual discrepancies."
+}

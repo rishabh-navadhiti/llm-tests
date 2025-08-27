@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "The patient's name ('Nadeem Nemi') is explicitly stated in the transcript and benchmark, but the candidate used '-'. Major omission."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches the benchmark and transcript exactly: 'Bilateral thumb pain'."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately captures all key details from the benchmark/transcript: evaluation for bilateral thumb pain, worsening since 2019 and over last six months, denies numbness/tingling, significant pain, function limited."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Includes most verbatim findings (skin clean/dry/intact; no soft tissue swelling; positive grind and shoulder sign). Omits 'No triggering of any digits with the thumb.' Minor omission. Note: laterality phrasing differs between benchmark ('Right') and transcript ('bilateral'); not penalized."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "Candidate states 'X-ray normal,' which contradicts the benchmark/transcript describing severe degenerative changes (severe joint space change, osteophytosis, Z deformity, MCP hyperextension; calcific finding noted then retracted for left)."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Includes bilateral thumb CMC arthritis, but misses benchmark conditions of bilateral carpal tunnel syndrome and right cubital tunnel syndrome mentioned in the transcript; adds 'stiffness,' which is not documented."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Fully aligns with benchmark: trial of CMC injections with counseling on temporary effect and rebound pain; observe carpal/cubital tunnel; consider nerve studies if symptoms recur; follow-up in 2 months."
+    }
+  },
+  "total_score": 22,
+  "percentage": 62.86,
+  "overall_summary": "The candidate note accurately captures the chief complaint, HPI, and plan. However, it fails to record the patient’s name, misrepresents imaging as normal, and provides an incomplete assessment with an added unsupported item. Musculoskeletal exam is mostly accurate but omits a minor finding."
+}

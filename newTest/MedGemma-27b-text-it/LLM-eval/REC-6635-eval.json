@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "No patient name is mentioned in the transcript (benchmark uses '-'). Candidate left the field empty instead of '-', a minor formatting deviation but factually consistent."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Benchmark specifies 'Index finger pain and stiffness.' Candidate wrote 'Hand pain and stiffness,' which is less specific and slightly inaccurate in location."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes the transcript: left-hand dominant artist, left index finger laceration on 7-16-25 while using a chisel, urgent care repair, sutures removed ~14 days later with wound reopening, now with stiffness. No extraneous exam/imaging details added."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark provides detailed verbatim exam findings. Candidate wrote 'A very stiff finger after surgery,' which is not verbatim, omits key details (PIP flexion ~10°, swelling, TTP absent, other digits ROM), and adds an inaccurate 'after surgery' statement."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Transcript/benchmark state 'X-rays are normal.' Candidate wrote 'X-ray normal.' Meaning is preserved with minor wording difference."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Benchmark: 'Laceration of the left index finger' and 'Stiff left index finger.' Candidate includes less specific or incorrect items ('Hand pain'), omits side/digit specificity, and adds a fabricated 'Status post finger surgery.'"
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches the dictated plan: recommend/referral to hand therapy and return to clinic in 4 weeks."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "The candidate note captures the HPI and plan accurately and concisely, and the imaging result is essentially correct. However, it under-specifies the chief complaint, provides a non-verbatim and partially incorrect musculoskeletal exam, and the assessment contains a major hallucination ('status post finger surgery') with missing specificity. Formatting for the patient name field is slightly off."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches the benchmark with '-' since no patient name appears in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches 'Soft tissue swelling'; case-only difference, meaning preserved."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes swelling with activity, questioning normalcy, and improved sensation after hypersensitivity over the prior two weeks. Benchmark’s added impact statement is not in transcript and not required."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Verbatim extraction of the doctor’s exam including incision status, ROM, extension lag (<5°), hyperextension, and improving decreased sensation in one digit."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging mentioned; '-' matches benchmark intent."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes key problems (soft tissue swelling, decreased digit sensation) and adds slight extension lag from transcript (reasonable). Omits benchmark items ('skin is intact', 'no TTP') that are not in the transcript (no penalty for those omissions). Minor detail difference (did not note 'improving' for sensation)."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches plan: wean splint, advance activity, advance ROM, and return in 3 months; phrasing/formatting differences only."
+    }
+  },
+  "total_score": 34,
+  "percentage": 97.14,
+  "overall_summary": "Excellent alignment with the benchmark across most fields, with accurate transcript-based content. The only minor deviation is in the Assessment, which omits benchmark-only items not present in the transcript and adds a relevant, accurate finding from the exam."
+}

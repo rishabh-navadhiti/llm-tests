@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "Benchmark uses '-' due to no single clear patient name; candidate entered 'James' (first name only) and likely referenced a different patient segment. Not a full exact name and deviates from the ground truth choice to leave it unknown."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Semantically matches the benchmark: recurrence on the right and new triggering on the left, concise and accurate."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Core elements match (follow-up for right recurrence and new left triggering, inquiry about injections, defer right, no prior left injection). However, candidate adds exam details (swelling, nodule) and infers ongoing post-op protocol, diverging from benchmark’s history-only content."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Captures the dictated exam findings verbatim (moderate soft tissue swelling, middle finger triggering, nodule)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Content matches ('X-ray ... some fracture healing') with only minor tense difference from the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Includes right and left trigger finger and status post surgery (more specific as surgical pinning), aligning with benchmark problems. Omission of normal findings from benchmark is not penalized, as those were not in the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan elements: defer right injection, inject left middle finger today, continue post-op protocol, and follow up with Doctor Hertz. The benchmark’s 'return in 4 weeks' (not in transcript) is reasonably omitted and not penalized."
+    }
+  },
+  "total_score": 28,
+  "percentage": 80.0,
+  "overall_summary": "The candidate note closely matches the benchmark on chief complaint, musculoskeletal verbatim, assessment, and plan. Imaging is essentially correct with minor wording differences. The main deficiencies are in the HPI (inclusion of exam/plan elements and extra details) and patient name (incorrectly populated and incomplete). Overall, solid clinical content alignment with some adherence issues to field-specific instructions."
+}

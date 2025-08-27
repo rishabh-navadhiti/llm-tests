@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('Math'); aligns with transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match ('Left wrist stiffness'); concise and accurate."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Captures all key facts from transcript/benchmark: October 2023 left distal radius fracture, CRPS diagnosis, persistent limitation with wrist extension preventing push-ups, and Pilates with modifications without pain."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Findings are factually consistent (healing incision, minimal scar, excellent finger motion, flexion ~45, extension ~20) but not verbatim; wording altered (e.g., 'without painful post supination' changed to 'without pain, supination') and degrees added."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Includes core result (well-healed fracture with hardware) but omits details in benchmark/transcript such as 'post-op', 'stable hardware', and comments that plate alignment is good and reduction adequate."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes 'CRPS' (matches benchmark) but omits 'Status post left distal radius fracture' and adds 'Left wrist stiffness' which is not listed in the benchmark assessment."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Captures most plan elements (advance activities; 3-month follow-up; discussion about limited push-ups; review X-rays) but omits explicit 'Return to Pilates' from the benchmark."
+    }
+  },
+  "total_score": 28,
+  "percentage": 80,
+  "overall_summary": "The candidate note closely matches the benchmark for name, chief complaint, and HPI. Musculoskeletal findings are accurate but not verbatim as required. Imaging is correct but lacks several specific details. Assessment partially matches with one omission and one addition. Plan is largely aligned but misses the explicit 'Return to Pilates.' Overall, strong factual alignment with room for improvement in verbatim quoting and completeness."
+}

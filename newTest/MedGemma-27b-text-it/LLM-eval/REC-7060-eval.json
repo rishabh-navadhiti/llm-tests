@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly use '-' as the patient's name is not stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Candidate succinctly captures the complaint as trigger finger of the right ring finger, consistent with the benchmark's 'Trigger finger.'"
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Content largely matches the benchmark (follow-up for thumb CMC arthritis; right ring trigger finger; managing thumb well; progressed to full trigger; asking next steps). Minor discrepancies include 'recurrence' vs 'new-onset' and onset stated as '2020–2021' vs 'around 2020.'"
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark has '-' while candidate includes paraphrased exam findings and not verbatim quotes. This is a major mismatch relative to the benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Both indicate no imaging results. Candidate uses an empty list while the benchmark uses '-'; minor formatting difference."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Exact match to benchmark: Right thumb CMC arthritis; Right ring finger trigger finger."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Partial overlap: includes surgical release concept and continued management. However, it omits 'discuss risks' and the context of 'after three injections,' misstates splinting target (right ring finger vs carpal tunnel), and invents a 6-week follow-up instead of the benchmark’s 2 weeks."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note captures the chief complaint and assessment well and provides a mostly accurate HPI. However, it diverges from the benchmark in the musculoskeletal verbatim field, uses a different format for imaging, and contains significant inaccuracies and omissions in the plan (incorrect splinting target, missing risk discussion/three injections context, and an invented follow-up interval). Overall, moderate alignment with notable issues in plan fidelity and verbatim requirements."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly use '-' as no patient name is provided in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Candidate: 'bilateral hand contracture' vs benchmark: 'Bilateral hand contractures'. Meaning matches; minor wording/pluralization difference."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Candidate captures timing and laterality but incorrectly specifies 'ring finger' (benchmark: little finger) and adds 'no prior treatment' not stated in the transcript. Also imports exam detail into HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Content matches the dictated exam: left ring MCP ~45°, left PIP ~10°, nodules/cords, no other digit contractures; right hand nodules with no contracture. Minor phrasing differences and inclusion of 'X-rays are normal' do not alter factual content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Candidate includes 'X-rays are normal' but omits 'MRI is needed,' which the benchmark includes and is stated in the transcript."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes 'Dupuytren's disease' (matches benchmark diagnosis) but omits the benchmark item 'Right upper extremity Skin is intact' and adds extra exam-specific details (e.g., degree of contracture)."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Accurately reflects the plan as dictated: recommend Zylex and return to clinic when medication is acquired."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note largely aligns with the benchmark on name, chief complaint, musculoskeletal exam, and plan. Main deficits are in the HPI (incorrect finger specified and an added unsupported statement) and imaging (missed MRI needed). Assessment includes the main diagnosis but diverges from the benchmark content and adds extra detail."
+}

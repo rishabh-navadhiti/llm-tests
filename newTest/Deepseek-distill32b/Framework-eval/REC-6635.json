@@ -3,11 +3,11 @@
     "bleu_score": 0.0,
     "content": "-",
     "content_analysis": 0.0,
-    "content_similarity": 0.20389999449253082,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.1460999995470047,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.0,
@@ -22,22 +22,22 @@
   {
     "bleu_score": 0.0,
     "content": "The patient presents with index finger pain and stiffness following a laceration on 7-16-25 while working with a chisel. He sought urgent care where the wound was irrigated and repaired. Sutures were removed after 14 days, but the wound reopened. Currently, he reports a stiff index finger with limited flexion.",
-    "content_analysis": 0.2353,
-    "content_similarity": 0.7868000268936157,
+    "content_analysis": 0.2917,
+    "content_similarity": 0.8241000175476074,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.795199990272522,
+    "rhetorical_similarity": 0.7297000288963318,
     "title": "HPI Spencer",
-    "topic_similarity": 0.9999
+    "topic_similarity": 0.0154
   },
   {
     "bleu_score": 0.0,
     "content": "Left upper extremity in-a laceration well-healing without sutures. A very stiff index finger PIP able to flex only about 10 degrees actively at this time. Moderate soft tissue swelling, no sensory tenderness to palpation. Excellent range of motion of the remaining digit.",
-    "content_analysis": 0.7222,
-    "content_similarity": 0.8708000183105469,
+    "content_analysis": 0.9375,
+    "content_similarity": 0.9621999859809875,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.7570000290870667,
+    "rhetorical_similarity": 0.8615000247955322,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.0164
+    "topic_similarity": 1.0
   },
   {
     "bleu_score": 0.0,
@@ -65,11 +65,11 @@
   {
     "bleu_score": 0.0,
     "content": "Recommend hand therapy. Return to clinic in four weeks for follow-up.",
-    "content_analysis": 0.3571,
-    "content_similarity": 0.7432000041007996,
+    "content_analysis": 0.4444,
+    "content_similarity": 0.9696000218391418,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.607200026512146,
+    "rhetorical_similarity": 0.9388999938964844,
     "title": "Plan",
-    "topic_similarity": 0.0495
+    "topic_similarity": 0.9995
   }
 ]

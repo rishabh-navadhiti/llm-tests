@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly use '-' as no patient name is stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Candidate captures 'Middle finger locking/catching with pain,' which matches the transcript. The benchmark also lists 'Thumb pain,' but this is not supported by the transcript; per instructions, no penalty for omitting benchmark-only details."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Candidate HPI accurately summarizes the transcript: thumb doing well while using cycloprox and asking whether to continue; prior injection to middle finger with excellent but temporary relief; recurrence of locking/catching with significant pain and seeking further management. Minor wording differences from benchmark (e.g., 'thumb pain') are due to benchmark content not stated in the transcript, so no penalty."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark uses the doctor’s verbatim line: 'Right upper extremity skin is cleaned and intact without erythemohymosis.' The candidate instead provides a different, garbled passage (not the cited doctor phrasing) and includes nail findings, resulting in major content mismatch."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly report '-' as no imaging is mentioned."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Candidate includes middle finger triggering and the prior injection with temporary relief (supported by transcript). It differs from the benchmark by stating 'Thumb pain resolved,' introducing 'pain' not stated in the transcript and omits 'skin intact' from the benchmark. Given benchmark items not supported by transcript are not penalized, minor discrepancies remain."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Candidate plan matches transcript: activity as tolerated for the middle finger and performing another injection today. Benchmark adds 'continue cycloprox' and 'RTC in 2 weeks,' which are not clearly stated in the transcript; per instructions, no penalty for omitting those."
+    }
+  },
+  "total_score": 30,
+  "percentage": 85.71,
+  "overall_summary": "Strong alignment with the benchmark on most sections, especially HPI and Plan, while correctly avoiding benchmark-only elements not supported by the transcript. Main deficiency is in the Musculoskeletal verbatim section, which does not match the doctor’s cited phrasing. Assessment is largely consistent but includes a minor deviation regarding thumb pain/resolution."
+}

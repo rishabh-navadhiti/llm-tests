@@ -4,12 +4,12 @@
     "content": [
       "Nicole Coffee"
     ],
-    "content_analysis": 0.2,
-    "content_similarity": 0.765500009059906,
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.7318000197410583,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.2033
+    "topic_similarity": 1.0
   },
   {
     "bleu_score": 0.0,
@@ -24,28 +24,28 @@
     "topic_similarity": 1.0
   },
   {
-    "bleu_score": 0.1424,
+    "bleu_score": 0.1218,
     "content": [
       "Nicole Coffee is a previous patient presenting with pain in the left index finger that has been present for several months. She first noticed the symptom during a shoulder appointment with Dr. Almadroa, who recommended observation. Since then, the pain has worsened and has not improved. She is seeking treatment, specifically requesting an injection at this time."
     ],
-    "content_analysis": 0.3333,
-    "content_similarity": 0.6187000274658203,
+    "content_analysis": 0.45,
+    "content_similarity": 0.6488999724388123,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.5935999751091003,
+    "rhetorical_similarity": 0.738099992275238,
     "title": "HPI Spencer",
-    "topic_similarity": 0.0203
+    "topic_similarity": 0.0204
   },
   {
-    "bleu_score": 0.0,
+    "bleu_score": 0.298,
     "content": [
       "acute moderate tenderness on left index finger with an A1 polii. Uh, there is walking catching. There is triggering on index finger."
     ],
-    "content_analysis": 0.3077,
-    "content_similarity": 0.6399999856948853,
+    "content_analysis": 0.4545,
+    "content_similarity": 0.7501999735832214,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.5945000052452087,
+    "rhetorical_similarity": 0.6146000027656555,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.0306
+    "topic_similarity": 0.0324
   },
   {
     "bleu_score": 0.0,
@@ -78,11 +78,11 @@
       "Plan will be to do trigger release today.",
       "Patient is not having the injection."
     ],
-    "content_analysis": 0.6667,
-    "content_similarity": 0.8234000205993652,
+    "content_analysis": 0.2727,
+    "content_similarity": 0.6761999726295471,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.5056999921798706,
+    "rhetorical_similarity": 0.39469999074935913,
     "title": "Plan",
-    "topic_similarity": 0.9996
+    "topic_similarity": 0.0921
   }
 ]

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark: no patient name provided, correctly recorded as '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Benchmark: 'Numbness and tingling in the right hand.' Candidate: 'Hand pain and numbness' adds pain, omits tingling and laterality."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes chemo for lymphoma, increasing right-hand numbness/tingling, phone use reduction, and earring difficulty. Missing burn to right thumb and 'at home more.' Adds 'denies any specific injury' (contradicts burn) and 'fine motor tasks' not stated."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Benchmark is '-', while candidate provides paraphrased findings and not verbatim doctor text; does not match benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'X-ray is clear.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Captures 'trigger finger' and 'right small finger nodule' but omits 'skin intact,' 'excellent ROM,' 'moderate tenderness,' and 'normal percussion of Guyon's canal.' Adds 'right hand numbness/tingling' and 'possible carpal tunnel,' which are not in the benchmark assessment."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Includes key elements: injection for trigger finger, night splints, low threshold for nerve studies, and 2-month follow-up. Adds items not in benchmark (NSAIDs, duplicate splinting, EMG detail, 'steroid' specification), introducing unnecessary deviations."
+    }
+  },
+  "total_score": 19,
+  "percentage": 54.29,
+  "overall_summary": "The candidate note captures several core elements (imaging result, trigger finger injection, night splints, nerve studies, and follow-up) and includes major HPI points. However, it weakens accuracy by altering the chief complaint, inserting an incorrect denial of injury, failing to provide verbatim musculoskeletal text, omitting multiple assessment findings, and adding several plan elements not present in the benchmark."
+}

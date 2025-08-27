@@ -5,11 +5,11 @@
       "-"
     ],
     "content_analysis": 0.0,
-    "content_similarity": 0.1370999962091446,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.2029000073671341,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.3124,
@@ -24,28 +24,28 @@
     "topic_similarity": 0.9998
   },
   {
-    "bleu_score": 0.493,
+    "bleu_score": 0.5725,
     "content": [
       "The patient presents with bilateral hand numbness, tingling, and burning pain that began around July 1, 2025. She reports similar symptoms at the end of her previous pregnancy, but these are earlier in onset and more intense. She has been seeing her OB, who recommended injections and referred her to this office. She has been using splints without sufficient improvement to sleep through the night. Symptoms have persisted despite conservative management."
     ],
-    "content_analysis": 0.4138,
-    "content_similarity": 0.7876999974250793,
+    "content_analysis": 0.65,
+    "content_similarity": 0.9333000183105469,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.890999972820282,
+    "rhetorical_similarity": 0.9168000221252441,
     "title": "HPI Spencer",
-    "topic_similarity": 0.0134
+    "topic_similarity": 1.0
   },
   {
-    "bleu_score": 0.3479,
+    "bleu_score": 0.0,
     "content": [
       "Got PCTS, uh, some decreased sensation to the middle fingers, noted."
     ],
-    "content_analysis": 0.25,
-    "content_similarity": 0.6797000169754028,
+    "content_analysis": 0.0,
+    "content_similarity": 0.14010000228881836,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.6420000195503235,
+    "rhetorical_similarity": 0.08399999886751175,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.9978
+    "topic_similarity": 0.5302
   },
   {
     "bleu_score": 0.2892,
@@ -67,15 +67,15 @@
       "- tingling",
       "- burning pain"
     ],
-    "content_analysis": 0.4286,
-    "content_similarity": 0.784500002861023,
+    "content_analysis": 0.2727,
+    "content_similarity": 0.680899977684021,
     "key": "ASSESSMENT_SPENCER",
-    "rhetorical_similarity": 0.7847999930381775,
+    "rhetorical_similarity": 0.48260000348091125,
     "title": "Assessment",
-    "topic_similarity": 0.0734
+    "topic_similarity": 0.041
   },
   {
-    "bleu_score": 0.1691,
+    "bleu_score": 0.108,
     "content": [
       "Trial of injections recommended.",
       "Risks and temporary nature discussed with patient.",
@@ -83,11 +83,11 @@
       "Injections will be performed today.",
       "Return to clinic in three months for follow-up if symptoms persist postpartum."
     ],
-    "content_analysis": 0.4286,
-    "content_similarity": 0.6029999852180481,
+    "content_analysis": 0.1667,
+    "content_similarity": 0.4163999855518341,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.5138999819755554,
+    "rhetorical_similarity": 0.49160000681877136,
     "title": "Plan",
-    "topic_similarity": 1.0
+    "topic_similarity": 0.0413
   }
 ]

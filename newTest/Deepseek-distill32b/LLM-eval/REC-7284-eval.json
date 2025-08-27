@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Benchmark shows '-', and candidate correctly uses '-'; no patient name provided in transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Right middle finger crush injury.'"
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Content matches benchmark in all key details (date, mechanism, symptoms, urgent care visit, splint, repeat x-rays, continued splint use, current evaluation)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark is '-', but candidate included verbatim exam findings. While accurate to the transcript, it does not match the benchmark field content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Candidate includes today's x-ray result (distal phalanx fracture with stable alignment and good healing), but omits prior imaging details present in benchmark (urgent care and 4-week repeat findings)."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Candidate lists two problems ('Right middle finger crush injury' and 'Distal phalanx fracture') but misses multiple items included in the benchmark assessment (hematoma, DIP stiffness, PIP flexion, no tenderness, paresthesia, healing status)."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan elements: advance activity, avoid hanging from hands, and return in 3 weeks for nail check before wedding; minor typo ('Reple') does not alter meaning."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note aligns well with the benchmark for patient name, chief complaint, HPI, and plan. Imaging results are partially complete, omitting prior imaging details. The assessment is underinclusive compared to the benchmark. The musculoskeletal verbatim field diverges from the benchmark by including text where the benchmark had '-'. Overall, accurate but with notable deviations in two fields."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "Benchmark uses '-', while candidate lists 'James' (partial name, not full). This does not adhere to the instruction to use full name if explicitly mentioned or '-' otherwise."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Meaning matches the benchmark exactly: recurrence on the right and new triggering on the left."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Partially accurate (follow-up for bilateral trigger finger and inquiry about injection), but it conflates the surgical follow-up (James She) as the primary patient and omits key details from the benchmark (deferring right injection today and no prior injections on the left). Also adds exam details not summarized in the benchmark HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Content is similar but not verbatim. The benchmark states: 'Moderate soft tissue swelling, triggering of the middle finger. There is a nodule there that is triggering that.' Candidate paraphrases and omits phrasing, violating the verbatim requirement."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Benchmark notes 'X-ray showed some fracture healing,' which is supported by the transcript. Candidate lists '-', missing the documented imaging finding."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Includes the core active problems matching the benchmark and transcript (right and left trigger finger, status post surgery). Omission of 'skin intact' and 'no tenderness to palpation' is not penalized as these specifics are not clearly supported by the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Captures major elements: defer right injection today, perform left injection, and follow-up with Dr. Hertz. Omits 'consider future injection if desired' and 'continue post-op protocol per Dr. Hertz' present in the benchmark/transcript. The benchmark's 'RTC in 4 weeks' is not in the transcript and is not penalized."
+    }
+  },
+  "total_score": 20,
+  "percentage": 57.14,
+  "overall_summary": "The candidate note captures the chief complaint and core assessment well, but the HPI conflates patients and misses key details, the musculoskeletal section is not verbatim, and imaging results are omitted despite being documented. The plan includes major actions but lacks some benchmark-supported specifics."
+}

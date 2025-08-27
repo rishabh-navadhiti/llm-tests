@@ -1,0 +1,72 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "Precious Myles Garrett",
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "left wrist pain",
+    "content_analysis": 0.6667,
+    "content_similarity": 0.902400016784668,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8079000115394592,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1209
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient reports left wrist pain that wakes her up at night and is more bothersome than the masses. She also notes a dorsal radial mass on the left wrist and a dorsal ulnar mass on the left thumb MCP joint, which previously fluctuated in size but are now relatively constant. She was evaluated by a rheumatologist who obtained X\u2011rays and an ultrasound of the wrist. She presents today for further evaluation and treatment of these concerns.",
+    "content_analysis": 0.5385,
+    "content_similarity": 0.9296000003814697,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7347999811172485,
+    "title": "HPI Spencer",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "On exam, left upper extremity skin is clean, dry and intact without anything by my diagnosis. There is a pea-sized mass over the first dorsal compartment. No tenderness or location over the mass. It is mobile and non-tender. Negative Finklestein, no pain with resisted thumb extension. Um, there is a mass at the dorsal ulnar aspect of the thumb MCP joint that is non-mobile and very minimally tender. Excellent range of motion at the thumb MCP. No tenderness or location at the A1 point, no locking or catching.",
+    "content_analysis": 0.0,
+    "content_similarity": 0.11659999936819077,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.0731000006198883,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.458
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "outside X-rays are viewed with an osteophyte noted at the thumb MCP joint. ultrasound demonstrates a bony avulsion fragment versus osteophyte at the dorsal aspect of the MCP joint of the thumb. ultrasound of the wrist demonstrates a retinacular cyst, superficial to the first dorsal compartment sheath.",
+    "content_analysis": 0.9444,
+    "content_similarity": 0.9624000191688538,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.9605000019073486,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0165
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "- left wrist pain\n- left dorsal wrist cyst\n- left thumb MCP osteophyte\n- dorsal ulnar thumb MCP mass",
+    "content_analysis": 0.4375,
+    "content_similarity": 0.7854999899864197,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5616999864578247,
+    "title": "Assessment",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "plan, we plan carpal tunnel, recommend night splints. recommend observation for now. aspiration versus biopsy of the wrist mass. Return to clinic in six weeks to follow up.",
+    "content_analysis": 0.5625,
+    "content_similarity": 0.8420000076293945,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.8294000029563904,
+    "title": "Plan",
+    "topic_similarity": 1.0
+  }
+]

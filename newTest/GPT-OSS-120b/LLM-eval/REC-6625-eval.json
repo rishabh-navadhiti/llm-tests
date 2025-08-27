@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the patient's name stated in the transcript ('Mr. Parviz Mikael')."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Concisely captures the chief complaint ('no pain'); only casing differs from the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes the HPI: follow-up visit, reports no pain, wants to know what is going on; no added or omitted details."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Verbatim extraction of the exam findings as dictated, matching the benchmark content in meaning and phrasing from the transcript."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Exact match to the imaging result stated ('X-rays are the same as the last time.')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Does not match the benchmark assessment items ('Skin is intact', 'No tenderness to palpation'). Candidate lists only 'stiff fingers', resulting in major content mismatch."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Includes all plan elements as dictated: continue splint, review X-rays, return in 10 days with likely pin removal or repeat X-rays, transition to phenylplastic splint, and referral to Eliza Cherian; minor filler words do not alter content."
+    }
+  },
+  "total_score": 31,
+  "percentage": 88.57,
+  "overall_summary": "The candidate note closely matches the benchmark across most fields, especially name, chief complaint, HPI, musculoskeletal exam, imaging, and plan. The primary discrepancy is in the Assessment, where the candidate listed 'stiff fingers' instead of the benchmark's normal findings, leading to a significant mismatch. Overall, strong performance with one notable deviation."
+}

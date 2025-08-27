@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "No patient name stated in transcript; both benchmark and candidate correctly use '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Captures left small finger locking but omits 'and catching' present in benchmark/transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Includes onset (~2 years), location, and delay in seeking care; adds right-hand dominance from transcript. Omits reason for delay (prior trigger finger surgery) and explicit desire for treatment. The job impact noted in benchmark is not in the transcript and not penalized."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Partially verbatim but misses multiple key elements from the exam: A1 pulley detail, palpable nodule, excellent ROM, and well-healed middle finger incisions."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Transcript notes normal X-rays; candidate marks imaging as '-', omitting this key result."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Accurately identifies left small finger trigger finger, matching benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "States plan for trigger finger release consistent with benchmark. Benchmark’s 2-week follow-up is not clearly in transcript and omission is not penalized."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note aligns well on patient identification, assessment, and planned procedure. Chief complaint and HPI are mostly accurate with minor omissions. The musculoskeletal exam lacks several verbatim findings, and imaging was incorrectly omitted despite being normal in the transcript. Overall, solid core accuracy with gaps in exam detail and imaging."
+}

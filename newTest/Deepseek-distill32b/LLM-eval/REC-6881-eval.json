@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly use '-' since no patient name is provided in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate lists middle finger pain with locking/catching (accurate) but omits the thumb-related concern present in the benchmark ('Thumb pain')."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Candidate accurately summarizes thumb doing well with ongoing cycloprox use and recurrent middle finger locking/catching after prior injection relief. Minor omissions (e.g., explicit inquiry about continuing cycloprox) prevent a perfect match."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Field requires verbatim text. Benchmark states: 'Right upper extremity skin is cleaned and intact without erythemohymosis.' Candidate paraphrases ('clean' vs 'cleaned', 'erythema or hives' instead of 'erythemohymosis') and adds non-verbatim findings, making it largely non-verbatim and partially inaccurate."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly indicate '-' as no imaging is mentioned."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Candidate includes the key active problems: thumb pain (improved/resolved) and recurrent middle finger trigger symptoms, matching benchmark core items. Omission of 'skin intact' and 'no TTP' reduces alignment, though we do not penalize for benchmark elements that conflict with or are not supported by the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Plan aligns with benchmark: continue cycloprox, administer another middle finger injection, and activity as tolerated. Omission of 'RTC in 2 weeks' (present in benchmark but not in transcript) should not be penalized."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note captures the main clinical content well, particularly HPI, assessment of active problems, imaging (none), and plan. The chief complaint omits the thumb component, and the musculoskeletal section is not verbatim and contains inaccuracies. Overall, the note is largely accurate with notable issues in the verbatim exam section."
+}

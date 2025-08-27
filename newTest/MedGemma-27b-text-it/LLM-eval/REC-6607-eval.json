@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark '-' with no patient name stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Wrist pain'."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes improved synovitis, osteoporosis infusion, and interest in right wrist arthroplasty, but omits knee recovery enabling surgery planning and the significant functional limitation from wrist pain; also misstates 'injection' as 'medication'."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "No MSK exam verbatim in benchmark; candidate appropriately left this blank. Transcript does not provide clear MSK verbatim distinct from general exam."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Benchmark states imaging mostly unchanged; transcript indicates imaging can be left the same. Candidate returned '-', missing that content. Not penalized for the 'delete nodule' clause since that pertains to exam per transcript."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Captures osteoporosis, wrist arthritis (but not specified bilateral), and synovitis; adds 'hand pain' and 'swelling' (swelling not stated). Omission of 'skin is intact' not penalized as it's a normal finding and not in transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Adequately reflects plan regarding right total wrist arthroplasty (worded as 'discussed'). Other benchmark items (continue infusion, RTC 2 weeks) are not in the transcript and not penalized."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note correctly captured the chief complaint and some core HPI elements, but missed key HPI details (knee recovery, functional limitation) and mischaracterized the injection. Imaging content indicating 'unchanged' was omitted. Assessment included relevant items but added an unsupported problem and lacked bilaterality. The plan closely aligned on the arthroplasty decision, with non-transcript benchmark additions appropriately not penalized."
+}

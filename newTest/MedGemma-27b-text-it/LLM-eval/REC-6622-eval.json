@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to transcript and benchmark ('Kevin Clancy')."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Content matches benchmark ('Left ring finger trigger finger'); concise and accurate."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures the core fact of left ring finger trigger finger consistent with benchmark, but adds minor wording ('evaluation and treatment') not explicitly stated."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "No musculoskeletal exam findings in transcript; candidate appropriately left this empty, matching benchmark intent."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "No imaging mentioned; benchmark uses '-', candidate left content empty. Minor formatting difference with equivalent meaning."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Includes 'Left ring finger trigger finger' but omits 'Plantar tendonitis' present in benchmark; significant omission of one active problem."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes injection for trigger finger and plantar tendonitis home exercise program with low threshold for formal therapy, aligning with benchmark content. Omits 'Return to clinic in 2 weeks' (present in benchmark but not in transcript; not penalized). Minor wording addition ('with home exercises') not verbatim."
+    }
+  },
+  "total_score": 29,
+  "percentage": 82.86,
+  "overall_summary": "The candidate note accurately captures the patient name, chief complaint, and most of the plan. HPI is close with minor non-essential phrasing. Musculoskeletal and imaging omissions are handled appropriately. The main deficiency is the assessment, which misses 'Plantar tendonitis' included in the benchmark. Overall, solid but with a notable omission in assessment and minor formatting/wording variances."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to transcript: 'Bertha Campos' is explicitly stated."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate lists 'follow-up' only, missing the key detail of suture removal inquiry present in the benchmark and transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes correct elements (post-op follow-up, improving motion, asking about suture removal) but adds multiple exam findings (clean incision, ROM, no triggering, ecchymosis) that belong in the physical exam, not HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Captures the doctor’s dictated findings essentially verbatim (suture removal, intact incision, near tight fist without pain, full extension, no triggering, moderate ecchymosis). Minor ordering/punctuation differences do not change factual content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging mentioned in the transcript; both candidate and benchmark correctly return '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Contains inaccuracies: 'Sutures pending removal' contradicts 'sutures removed today'; 'Reduced range of motion' contradicts excellent ROM; 'ecchymosis of finger' is not specified (doctor says 'form/forearm'). Not penalized for missing benchmark items that are not in transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Transcript indicates sutures were removed today (a plan/procedure), but candidate returns '-' with no plan. Not penalized for missing benchmark items not stated in the transcript (ROM exercises, 2-week follow-up)."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "Accurate on patient name, musculoskeletal verbatim findings, and imaging. Chief complaint is incomplete, HPI inappropriately includes exam details, assessment contains significant inaccuracies, and the plan omits the documented suture removal."
+}

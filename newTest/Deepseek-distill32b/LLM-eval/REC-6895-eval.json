@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "No patient name is stated in the transcript; both benchmark and candidate correctly use '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Benchmark lists 'Follow up,' which is not explicitly stated in the transcript. Candidate uses symptom-based phrasing ('limited finger motion' and positional discomfort) supported by the transcript. Content differs from the benchmark but remains appropriate and factual."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures key HPI elements from the transcript (minimal pain; feels funny in certain positions). However, it adds exam/imaging details ('limited motion' and 'minimal fracture healing') that belong outside HPI, reducing alignment with the benchmark."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark verbatim finding is 'Right upper extremity Skin is intact.' Candidate includes paraphrased and mixed content (motion limits, fracture healing, splint) and is not verbatim. Only partially related to MSK exam."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "Transcript and benchmark document imaging: 'Four view X-ray showed extraarticular stable fracture with minimal healing.' Candidate left this field as '-', which is a complete omission."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Benchmark lists 'Skin is intact' (present in transcript) and 'No tenderness to palpation' (not stated in transcript; not penalized). Candidate includes relevant active problems (limited finger motion, minimal fracture healing) but omits 'skin is intact,' so partial match."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Includes most plan elements: continue ulnar gutter splint, return in 3 weeks, therapy, transition to thermoplastic. Differences: 'non-weight bearing' conflicts with 'down weight-bearing' in transcript/benchmark, and 'follow up with splint change' is omitted; 'clip' vs 'splint' wording mismatch."
+    }
+  },
+  "total_score": 19,
+  "percentage": 54.29,
+  "overall_summary": "The candidate note captures several key patient-reported symptoms and major plan items but misses the documented imaging entirely and does not provide verbatim musculoskeletal findings. The chief complaint is reasonable but differs from the benchmark. Assessment is partially aligned but omits 'skin intact.' Weight-bearing status is misstated in the plan. Overall, factual alignment is mixed with notable omissions and some misplacement of content."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match with the transcript: 'Nadeem Nemi' is stated explicitly at the start."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Conveys the same issue as the benchmark ('bilateral thumb pain'); 'worsening' is supported by the transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Captures key elements (bilateral thumb pain, worse over 6 months, denies numbness/tingling, functional limitation). Misses the detail that worsening dates back to 2019."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Benchmark indicates no musculoskeletal verbatim content ('-'); candidate left this empty, which aligns with the benchmark. Note: transcript did include MSK exam details, but benchmark omitted them."
+    },
+    "IMAGING_RESULTS": {
+      "score": 0,
+      "justification": "Incorrect and contradictory. Transcript/benchmark report severe CMC joint findings and Z deformity, whereas candidate states 'X-ray normal.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Includes fabricated/incorrect items (trigger finger, wrist arthritis, stiff finger after surgery) and omits benchmark problems (bilateral carpal tunnel, right cubital tunnel). Only 'Thumb CMC arthritis' partially matches but lacks laterality."
+    },
+    "PLAN_SPENCER_": {
+      "score": 0,
+      "justification": "Incorrect plan: specifies trigger finger injections and 2-week follow-up, conflicting with benchmark plan of CMC injections today, counseling on steroid/rebound, observation for CTS/cubital tunnel with possible nerve studies, and 2-month follow-up."
+    }
+  },
+  "total_score": 20,
+  "percentage": 57.14,
+  "overall_summary": "Strong on patient identification and chief complaint with a mostly accurate HPI. However, the note contains major factual errors in imaging, assessment, and plan, including fabricated or incorrect conditions and the wrong treatment/follow-up, leading to a substantial deviation from the benchmark."
+}

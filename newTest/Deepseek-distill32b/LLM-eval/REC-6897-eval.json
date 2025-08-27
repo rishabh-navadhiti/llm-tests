@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both notes correctly use '-' as no patient name is present in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Benchmark shows '-', indicating no explicit chief complaint. Candidate assigns 'Ecchymosis' without it being stated as the chief complaint in the transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Captures all stated history: doing well overall, not much pain, and a lot of ecchymosis. Paraphrasing ('minimal pain', 'significant ecchymosis') preserves meaning without adding new information."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Transcript includes 'incision ... with varied sutures, moderate echinosis.' Candidate only included 'moderate echinosis,' omitting 'incision with varied sutures,' resulting in partial capture of the verbatim findings."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly indicate no imaging results ('-'); none are mentioned in the transcript."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Benchmark lists exam-based normal findings not present in the transcript (not penalized). Candidate lists 'Ecchymosis' (supported by transcript) and 'Carpal tunnel syndrome' (reasonable given 'post-op endocarpal tunnel' context, but not explicitly stated as a diagnosis). Partial alignment with transcript; differs from benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Transcript plan includes 'planned post-op endocarpal tunnel' and 'return to clinic in 4 weeks.' Candidate included only the follow-up, omitting the planned post-op item."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note accurately captured the HPI, patient name status, and absence of imaging, but fell short on chief complaint attribution, omitted part of the musculoskeletal verbatim exam, and provided an incomplete plan. The assessment included one transcript-supported item (ecchymosis) and a reasonable but not explicitly stated diagnosis."
+}

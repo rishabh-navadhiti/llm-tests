@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "Patient name ('Lindsay Demash') is explicitly stated in the transcript, but the candidate returned '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Conveys the same complaint as the benchmark with equivalent meaning; only minor wording differences."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurate, coherent summary aligned with the transcript without adding unsupported details. Although the benchmark includes 'right' and 'clicks', these are not clearly available in the transcript and should not be penalized."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Only a partial verbatim extraction; omits multiple dictated elements (e.g., 'Right upper extremity is clean', dorsal finding, osteophyte mention, incision healing, ROM specifics)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging results mentioned in the transcript; candidate correctly returned '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Deviates from benchmark by adding items (osteophyte, wrist/shoulder aches, status post incision) and omitting 'Arthritis' and other listed problems. Includes the mass but misses other benchmark items."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches the benchmark plan: continue home exercise program, advance activity, and return in 6 months."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate captured the chief complaint, HPI, and plan accurately and succinctly. Major issues include missing the explicitly stated patient name, an incomplete musculoskeletal verbatim extraction with several omissions, and an assessment that diverges from the benchmark by adding non-listed items and omitting 'Arthritis'."
+}

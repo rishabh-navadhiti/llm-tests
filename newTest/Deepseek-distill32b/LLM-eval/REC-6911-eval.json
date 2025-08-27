@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match with benchmark ('Walt'); correctly derived from transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate lists 'Numbness resolution' while benchmark uses 'Carpal Tunnel Syndrome.' Patient did ask about numbness, but benchmark frames the chief complaint as CTS; partial mismatch."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Includes PO1 status, minimal pain, and concern about numbness (aligned). However, it omits the 'busy day' detail and inappropriately adds exam finding ('moderate ecchymosis') into HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Very close to verbatim but simplifies/omits details ('joint type of variant sutures' and 'consistent with postoperative state'); minor wording differences."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Correctly marked as '-' consistent with benchmark indicating no imaging mentioned."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Captures post-op CTS status but lacks explicit 'release' wording used in benchmark; adds 'Residual numbness,' which is supported by transcript but not in benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan: post-op endoscopic carpal tunnel care and follow-up in 4 weeks."
+    }
+  },
+  "total_score": 29,
+  "percentage": 82.86,
+  "overall_summary": "The candidate note is generally accurate with correct patient name, imaging, and plan. Minor deviations include a different framing of the chief complaint, mixing exam findings into the HPI, and slight paraphrasing in the musculoskeletal verbatim section. Assessment is close to benchmark with an additional, supported item. Overall, a solid but not perfect match."
+}

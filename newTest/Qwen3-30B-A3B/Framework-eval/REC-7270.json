@@ -5,11 +5,11 @@
       "-"
     ],
     "content_analysis": 0.0,
-    "content_similarity": 0.1356000006198883,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.15639999508857727,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.0,
@@ -24,28 +24,28 @@
     "topic_similarity": 0.1209
   },
   {
-    "bleu_score": 0.2381,
+    "bleu_score": 0.1084,
     "content": [
       "The patient is a dominant retiree with bilateral hand Dupuytren's disease. He first noticed symptoms in his left hand many years ago, and now he is beginning to notice similar changes in his right hand. The left hand is unable to lie flat on the table due to significant contracture of the ring finger. He has a 45-degree contracture at the ring finger metacarpophalangeal (MP) joint and approximately 10 degrees of contracture at the proximal interphalangeal (PIP) joint. There is no measurable contracture in the remaining digits of the left hand. The right hand has intact skin with nodules along the ring finger ray, but no evidence of contracture. He is here for evaluation and treatment."
     ],
-    "content_analysis": 0.3548,
-    "content_similarity": 0.6841999888420105,
+    "content_analysis": 0.2258,
+    "content_similarity": 0.7239999771118164,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.7635999917984009,
+    "rhetorical_similarity": 0.7817000150680542,
     "title": "HPI Spencer",
-    "topic_similarity": 1.0
+    "topic_similarity": 0.012
   },
   {
-    "bleu_score": 0.1611,
+    "bleu_score": 0.8413,
     "content": [
       "On exam left upper extremity skin is cleaner . Without anti American message uh significant chordation and nodules along the way , um . Consistent with dense , there's a 45 degree contracture at the ring finger MP joint , um . There is about a 10 degree contractor at the . Uh , ringing your PIP joint . Uh no measurable contractor at any remaining digits , um . Oh , right hand , um . Skin is finger intact . There is , there are nodules towards long ring finger ray need to be able to get hands on on the table . There's no evidence of contracture of the um hand ."
     ],
-    "content_analysis": 0.3824,
-    "content_similarity": 0.6704000234603882,
+    "content_analysis": 0.9583,
+    "content_similarity": 0.9495000243186951,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.48969998955726624,
+    "rhetorical_similarity": 0.9334999918937683,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.007
+    "topic_similarity": 1.0
   },
   {
     "bleu_score": 0.0,
@@ -53,11 +53,11 @@
       "X-rays are normal"
     ],
     "content_analysis": 0.75,
-    "content_similarity": 0.77920001745224,
+    "content_similarity": 0.7365999817848206,
     "key": "IMAGING_RESULTS",
-    "rhetorical_similarity": 0.7028999924659729,
+    "rhetorical_similarity": 0.6656000018119812,
     "title": "Imaging Results",
-    "topic_similarity": 0.2497
+    "topic_similarity": 0.3759
   },
   {
     "bleu_score": 0.0,
@@ -66,24 +66,24 @@
       "- Left ring finger contracture",
       "- Right hand nodules"
     ],
-    "content_analysis": 0.375,
-    "content_similarity": 0.7875000238418579,
+    "content_analysis": 0.2,
+    "content_similarity": 0.6437000036239624,
     "key": "ASSESSMENT_SPENCER",
-    "rhetorical_similarity": 0.7815999984741211,
+    "rhetorical_similarity": 0.5440999865531921,
     "title": "Assessment",
-    "topic_similarity": 0.0885
+    "topic_similarity": 0.063
   },
   {
-    "bleu_score": 0.59,
+    "bleu_score": 0.8932,
     "content": [
       "Recommend Zylex.",
       "Return to clinic when medication is acquired."
     ],
-    "content_analysis": 0.2222,
-    "content_similarity": 0.5218999981880188,
+    "content_analysis": 1.0,
+    "content_similarity": 0.9474999904632568,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.652999997138977,
+    "rhetorical_similarity": 0.8737000226974487,
     "title": "Plan",
-    "topic_similarity": 0.9992
+    "topic_similarity": 0.1209
   }
 ]

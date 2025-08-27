@@ -1,0 +1,72 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "The patient presents for postoperative follow\u2011up after carpal tunnel release. He reports doing well overall with minimal pain but notes significant ecchymosis around the incision and asks why this is present. He describes the incision with varied sutures and moderate bruising. No other new symptoms were reported.",
+    "content_analysis": 0.1667,
+    "content_similarity": 0.46140000224113464,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5157999992370605,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0419
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "",
+    "content_analysis": 0.0,
+    "content_similarity": 0.0625,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.0,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.5551
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "-",
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "- Carpal tunnel postoperative\n- Ecchymosis",
+    "content_analysis": 0.0,
+    "content_similarity": 0.32679998874664307,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.3637000024318695,
+    "title": "Assessment",
+    "topic_similarity": 0.0909
+  },
+  {
+    "bleu_score": 0.0,
+    "content": "it'll be planned post-op endocarpal tunnel , return to clinic in 4 weeks for um",
+    "content_analysis": 1.0,
+    "content_similarity": 0.9086999893188477,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.7049000263214111,
+    "title": "Plan",
+    "topic_similarity": 0.9992
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "right ring finger trigger finger"
+    ],
+    "content_analysis": 0.6667,
+    "content_similarity": 0.8008000254631042,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.7627999782562256,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1407
+  },
+  {
+    "bleu_score": 0.1377,
+    "content": [
+      "The patient reports doing well with her thumb CMC arthritis but notes that her right ring finger trigger finger has recurred. She first noticed the symptoms around 2/5/2020. She thought it might not develop fully. She has previously received three injections for the trigger finger and is now seeking the next step in management."
+    ],
+    "content_analysis": 0.4444,
+    "content_similarity": 0.8939999938011169,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6917999982833862,
+    "title": "HPI Spencer",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "On the exam , it'll be mild tender palpation of the thumb CMC joints . There is triggering at the right ring finger , there is tenderus palpation of the right ring for pulley plan ."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.0340999998152256,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.04479999840259552,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4679
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.4035,
+    "content": [
+      "Thumb CMC arthritis",
+      "Right ring finger trigger finger (recurrent)"
+    ],
+    "content_analysis": 0.8571,
+    "content_similarity": 0.9451000094413757,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.9049999713897705,
+    "title": "Assessment",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0674,
+    "content": [
+      "You can delete the injections given today , as she is doing well thus far , I recommend to you conservative management regarding the right ring finger trigger finger , um . She is triggering again , she had 3 injections , recommend surgical release , plan all our risk risk , we'll proceed , and then we're gonna the carpal tunnel continue night lifting . And then Gary Bond"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.7390999794006348,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.5368000268936157,
+    "title": "Plan",
+    "topic_similarity": 1.0
+  }
+]

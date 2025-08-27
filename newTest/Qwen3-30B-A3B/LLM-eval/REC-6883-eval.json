@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both notes correctly use '-' as no patient name is provided in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Meaning matches the benchmark (falls with wrist pain). Candidate includes extra specifics (left side, extension, timing), which are accurate but more detailed than the concise benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes the two falls (slide and electric scooter), persistent left wrist pain with extension, and purpose of visit, matching the benchmark content."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Includes only part of the dictated exam ('tension... moderate soft tissue swelling... mild echinosis') but omits other verbatim lines present in the transcript/benchmark (e.g., skin intact and pain with wrist extension)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Conveys the same findings as the benchmark (left wrist X-rays show distal radius fracture in an immature skeleton), though wording is garbled; core meaning is preserved."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes 'distal radius fracture' (benchmark item) plus additional relevant problems (pain and swelling) supported by the transcript. Content is accurate but not an exact match to the benchmark list."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan (fracture cast; return with repeat X-rays and cast change). The benchmark specifies '2 weeks,' which is not explicit in the transcript; the candidate appropriately leaves the number unspecified, so no penalty."
+    }
+  },
+  "total_score": 29,
+  "percentage": 82.86,
+  "overall_summary": "The candidate note closely aligns with the benchmark in most sections, particularly HPI and plan. Chief complaint and imaging are accurate with minor wording differences. The assessment includes additional, valid problems beyond the benchmark. The main deficit is the musculoskeletal verbatim section, which omits several dictated lines."
+}

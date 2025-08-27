@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match with benchmark: 'Bertha Campos'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Candidate states 'Follow-up' which conveys the visit type but omits the specific reason (suture removal) present in the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately summarizes follow-up for possible suture removal and improved motion, consistent with transcript and benchmark. Includes an exam detail ('incision is clean and intact'), which is factual but not typically HPI content."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Not verbatim and omits several benchmark elements (incision status, sutures removed, patient tolerating well, full active extension, 'near tight fist'). Paraphrasing reduces fidelity to the required verbatim format."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both candidate and benchmark indicate no imaging reported ('-')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Candidate lists conditions supported by the transcript (sutures in place, improving motion, post-op ecchymosis) but does not match benchmark items ('skin is intact', 'no tenderness'), which are not present in the transcript; not penalized for missing those, but content diverges from benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Correctly notes sutures removed today, aligning with benchmark. However, adds 'Follow-up in 4 weeks,' which conflicts with benchmark (2 weeks) and is not in the transcript; 'continue ROM' from benchmark is not in transcript and not required, but the incorrect interval lowers the score."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note captures the patient name, general follow-up context, request for/act of suture removal, and some exam findings. Main deficiencies are lack of specificity in the chief complaint, non-verbatim and incomplete musculoskeletal section, divergence from benchmark assessment content, and an incorrect follow-up interval in the plan."
+}

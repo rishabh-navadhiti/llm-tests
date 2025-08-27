@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "Benchmark lists 'Math' from the transcript, but the candidate returned '-'. The patient's name is explicitly stated, so the candidate is incorrect."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate states 'stiffness that has persisted since her wrist injury' which captures the gist but omits side and location ('left wrist') present in the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Includes key facts (left distal radius fracture in Oct 2023 after a fall, surgery by Dr. Rice, CRPS, persistent stiffness, cannot do push-up, Pilates without pain). However, it inappropriately adds exam and imaging details, which the benchmark excludes per instructions."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Nearly verbatim to the transcript; minor wording difference ('while' vs 'well') compared to the benchmark but the factual content matches."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Captures the main findings (well-healed fracture, stable hardware, plate alignment good, reduction adequate) but omits explicit mention of modality/side ('X-ray of the left wrist, post-op') and uses abbreviated phrasing."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Contains benchmark items (CRPS, status post left distal radius fracture) and adds relevant symptom-based problems (left wrist stiffness, limited extension) consistent with the transcript. Minor differences in phrasing."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Includes 'not limit her'/advance activity and 3-month follow-up, aligning with the benchmark, but misses/garbles 'Return to Pilates' and includes extraneous imaging review text. Overall partially matches plan content."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60.0,
+  "overall_summary": "The candidate note captures many core facts but has notable issues: missing the explicitly stated patient name, a less specific chief complaint, inclusion of exam/imaging in the HPI, and a partially incorrect/garbled plan that omits 'Return to Pilates.' Musculoskeletal and imaging content are largely consistent with the benchmark, though imaging lacks modality/side detail. Overall, moderate fidelity with room for improvement in precision and adherence to instructions."
+}

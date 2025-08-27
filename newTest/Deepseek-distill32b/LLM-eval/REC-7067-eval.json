@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The transcript explicitly states the patient's name as 'Lindsay Demash,' which the benchmark includes. The candidate used '-' instead of the available name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches the benchmark in factual content (mass/bump at the ulnar border of the index finger DIP joint). Minor wording differences only."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures the core elements (new mass at ulnar DIP, different from arthritis bumps, not limiting, overall wrist improvement with some discomfort). Missing several benchmark details (turned a corner in May, lifting weights, shoulder symptoms). Laterality ('right') in benchmark likely derived from exam; not penalized if uncertain from transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Paraphrased and condensed; not verbatim. Omits multiple details present in the benchmark verbatim exam (skin intact, dorsal findings, DIP flexion degrees, incision healing, supination/pronation metrics, near full fist)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both candidate and benchmark indicate no imaging findings ('-')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Includes 'mass at DIP joint' and 'arthritis' consistent with the benchmark. Missing items 'skin intact' and 'no tenderness to palpation.' Adds 'Heberden's nodes,' which are not listed in the benchmark assessment (minor addition)."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan: continue home exercise program, advance activities, and return in 6 months."
+    }
+  },
+  "total_score": 22,
+  "percentage": 62.86,
+  "overall_summary": "The candidate note accurately captures the chief complaint, plan, and absence of imaging. It falls short on patient identification, provides a non-verbatim and incomplete musculoskeletal exam, and omits several HPI and assessment details included in the benchmark."
+}

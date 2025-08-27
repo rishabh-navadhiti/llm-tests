@@ -1,0 +1,88 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Chaz Thomas"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Splint removed due to blood contamination and concerns about healing."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.061400000005960464,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.26030001044273376,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.504
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "The patient presented for follow\u2011up after a hand laceration that had been sutured. He removed his splint yesterday after it became contaminated with another person\u2019s blood and is now concerned about what to do next and how the injury is healing. He reports some pain and limited flexion but tolerates the situation well. Sutures were removed today without apparent complication."
+    ],
+    "content_analysis": 0.1875,
+    "content_similarity": 0.6353999972343445,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5440999865531921,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0303
+  },
+  {
+    "bleu_score": 0.5644,
+    "content": [
+      "laceration, clean dry and intact with sutures. Sutures removed today, patient tolerating well without apparent complication. Excellent, thumbs up but some pain, limited flexion."
+    ],
+    "content_analysis": 0.4444,
+    "content_similarity": 0.8794999718666077,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 1.0,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0576
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Hand laceration",
+      "Pain in hand",
+      "Limited flexion"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.414000004529953,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.3228999972343445,
+    "title": "Assessment",
+    "topic_similarity": 0.0741
+  },
+  {
+    "bleu_score": 0.2255,
+    "content": [
+      "plan, it'll be sutured in today. Recommend transition to removable splint. Uh, recommend initiation of hand therapy. Return to clinic in two weeks for follow-up and range of motion check."
+    ],
+    "content_analysis": 0.4375,
+    "content_similarity": 0.8909000158309937,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.8245000243186951,
+    "title": "Plan",
+    "topic_similarity": 0.9994
+  }
+]

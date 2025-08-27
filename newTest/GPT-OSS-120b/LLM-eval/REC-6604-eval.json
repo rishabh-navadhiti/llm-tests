@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark and explicitly stated in the transcript ('Nicole Coffee')."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Conveys the same issue as the benchmark ('Left index finger pain') with minor wording differences only."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Includes all key facts from the benchmark: duration (few months), context (shoulder appointment with observation), worsening, and request for injection; no extraneous info."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Contains the same exam findings as the benchmark, preserving factual content; added filler words do not change meaning."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Communicates that three-view finger X-rays are normal, matching the benchmark’s findings. Laterality detail in the benchmark is not explicit in the transcript, so not penalized."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Lists 'left index finger pain' and 'trigger finger,' consistent with the benchmark; added laterality is acceptable."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "Conflicts with the benchmark by stating 'not having the injection' versus benchmark plan for trigger finger injection. Omission of 'RTC in 2 weeks' is not penalized as it is not in the transcript, but the core treatment plan is incorrect."
+    }
+  },
+  "total_score": 31,
+  "percentage": 88.57,
+  "overall_summary": "The candidate note closely matches the benchmark across most fields, accurately reflecting the patient’s identity, chief complaint, HPI, exam, imaging, and assessment. The primary deficiency is in the Plan, which contradicts the benchmark’s injection plan. Otherwise, differences are minor and largely stylistic."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "Transcript explicitly states the patient's name as 'Nadeem Nemi' at the start, but the candidate returned '-'. Major omission compared with the benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match to benchmark and transcript: 'Bilateral thumb pain.'"
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Captures all benchmark HPI facts (worsened since 2019, worse in last 6 months, no numbness/tingling, limited by thumbs) and includes additional transcript-supported details (right-handed male retiree; carpal/cubital status) without adding exam/imaging."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Core findings align (skin clean/dry/intact, positive grind/shoulder sign, no triggering), but differs from benchmark on laterality (bilateral vs right), includes filler/'dot NCTS', and is not phrased as in benchmark. Partial match."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Includes severe changes, osteophytosis, Z deformity, and MCP hyperextension consistent with benchmark. However, it replaces 'neovasculitis' with 'narrowing' and omits the calcific arteriogram detail and the explicit left-hand comparison ('same except no calcific arteriogram') present in the benchmark. Note: transcript later directed deletion of the calcific arteriogram, but benchmark retained it."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Lists the key active problems consistent with benchmark (bilateral thumb CMC arthritis, bilateral CTS, right cubital tunnel). Adds 'progression' and omits the normal finding ('Right upper extremity Skin is intact') included in the benchmark. Minor differences."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Fully aligns with benchmark: steroid injections today with counseling on temporary effect/rebound pain, observation for CTS/cubital tunnel, consider nerve studies if symptoms recur, and 2-month follow-up. Minor wording differences only."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.28571428571429,
+  "overall_summary": "The candidate note closely matches the benchmark on chief complaint, HPI, and plan, and reasonably captures musculoskeletal and imaging findings with some discrepancies in phrasing and omitted details. The main deficiency is failing to capture the patient’s name and minor deviations in imaging and verbatim MSK text. Overall, clinically accurate with a few notable gaps."
+}

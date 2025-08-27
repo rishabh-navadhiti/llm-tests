@@ -1,0 +1,86 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Kabe Tahiri"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Triggering of right index and middle fingers"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.5864999890327454,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.626800000667572,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.0909
+  },
+  {
+    "bleu_score": 0.0785,
+    "content": [
+      "The patient reports that his long waterproof cast has become uncomfortable and scratchy, and he is seeking advice regarding the cast. He notes limited wrist motion and thumb motion secondary to pain and immobilization, with multiple skin excoriations on the left upper extremity. He also reports that his right index and middle fingers have begun to trigger. Recent X\u2011rays demonstrate increased callus formation at the ulna of the right wrist and diffuse callus formation of the radius and ulna on the left."
+    ],
+    "content_analysis": 0.0667,
+    "content_similarity": 0.46720001101493835,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.38589999079704285,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0103
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "upper extremity skin can minimal palpation of finger motion , some limited wrist motion consistent with immobilization , uh , left upper extremity , skin with multiple excoriation , secondary , the fingers , thumb motion , limited wrist motion secondary to pain and immobilization ."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.04149999842047691,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": -0.004699999932199717,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4594
+  },
+  {
+    "bleu_score": 0.3748,
+    "content": [
+      "X-rays right wrist shows uh increased cal formation at the ulna. Left shows stay in line with increased calus formation diffusely to the radius and ulna."
+    ],
+    "content_analysis": 0.6364,
+    "content_similarity": 0.8162999749183655,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.7493000030517578,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0274
+  },
+  {
+    "bleu_score": 0.1175,
+    "content": [
+      "- Cast discomfort with skin excoriations\n- Limited wrist motion secondary to pain\n- Increased callus formation of right ulna and left radius/ulna\n- Triggering of right index and middle fingers"
+    ],
+    "content_analysis": 0.2,
+    "content_similarity": 0.5651999711990356,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.4778999984264374,
+    "title": "Assessment",
+    "topic_similarity": 0.9997
+  },
+  {
+    "bleu_score": 0.1801,
+    "content": [
+      "plan will be recommend transition to short arm cast on the left , uh . Recommend wean on the right to return to clinic in weeks . For follow-up with repeats , consider transition to removable splint on . No , on the left . Um , And then Leonard Freeman . Uh , it's here today for evaluation of a new problem . His right index and middle fingers have started triggering . ... recommend an ... We will do this today ."
+    ],
+    "content_analysis": 0.4444,
+    "content_similarity": 0.8130999803543091,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6287000179290771,
+    "title": "Plan",
+    "topic_similarity": 0.9999
+  }
+]

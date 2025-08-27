@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 4,
+      "justification": "Includes correct full name but adds the honorific 'Mr.', a minor formatting difference."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Meaning matches ('left ring finger trigger finger'), but adds 'injection,' which is extra detail not required for a concise complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "Missing entirely ('-'); benchmark provides a brief HPI statement."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Candidate adds 'plantar tendonitis' despite no verbatim MSK findings in transcript; benchmark correctly uses '-'."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both indicate no imaging results ('-')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Matches both problems: left ring finger trigger finger and plantar tendonitis."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Includes HEP and low threshold for therapy for plantar tendonitis, but omits the trigger finger injection plan present in the transcript and benchmark. The benchmark's RTC in 2 weeks is not in the transcript, so not penalized."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60,
+  "overall_summary": "The candidate captures patient identity, assessment items, and parts of the plan accurately, but misses the HPI entirely, incorrectly populates the musculoskeletal verbatim field, and omits the trigger finger injection from the plan. Formatting differences are minor; main deficits are missing HPI and incomplete plan."
+}

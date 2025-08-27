@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both benchmark and candidate correctly return '-' as no patient name is provided in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Candidate 'right hand numbness and tingling' matches the benchmark 'Numbness and tingling in the right hand' in meaning and concision."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Candidate includes all benchmark elements (right hand numbness/tingling, burned right thumb with functional difficulty, holding phone less, recent chemotherapy for lymphoma and being at home more) with clear, accurate wording."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark is '-', while the candidate provides verbatim exam findings from the transcript (including X-ray mention). Although accurate to the transcript, it does not match the benchmark content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'X-ray is clear.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Candidate includes 'right small finger trigger' (aligns) and symptom items, but omits multiple benchmark items (skin intact, normal percussion of Guyon's canal, moderate tenderness, excellent ROM, nodule). It also adds 'burned right thumb with sensory deficit' which is not in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Core plan elements match the benchmark (trigger finger injection today, night splints for carpal tunnel, low threshold for nerve studies, RTC in 2 months). Minor differences include extra historical detail (last injection 2015) and verbatim phrasing; overall meaning preserved."
+    }
+  },
+  "total_score": 27,
+  "percentage": 77.14,
+  "overall_summary": "The candidate note aligns well with the benchmark for patient name, chief complaint, HPI, imaging, and largely for the plan. The main discrepancies are in the musculoskeletal verbatim field (candidate provided detailed transcript content whereas the benchmark is empty) and the assessment, where several benchmark items are missing and one symptom-based item is added. Overall, strong factual accuracy with mismatches in two sections relative to the benchmark."
+}

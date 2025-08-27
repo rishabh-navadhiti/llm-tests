@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 1,
+      "justification": "Benchmark lists 'Nadeem Nemi' from the transcript, but the candidate returned '-', omitting the explicit patient name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match to the benchmark: 'Bilateral thumb pain.'"
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Includes all benchmark elements (worsened since 2019, worse over last six months, no numbness/tingling, limited by thumbs) and adds accurate contextual history from the transcript without contradiction."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Text matches the benchmark except for laterality: candidate uses 'Bilateral upper extremity' whereas the benchmark states 'Right upper extremity'. Remaining phrasing is otherwise verbatim."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Key discrepancy: candidate says 'moderate' while the benchmark states 'severe'; also omits 'three views'. Other elements (Z deformity, calcific arteriogram on right; left same except calcific) align with the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes the benchmark’s active diagnoses (bilateral thumb CMC arthritis, right cubital tunnel, bilateral carpal tunnel) but omits the benchmark item 'Right upper extremity Skin is intact.'"
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Fully aligns with the benchmark: injections today, counseling on temporary nature and rebound pain, observation for carpal/cubital tunnel, consider nerve studies, and 2-month follow-up."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.28571428571429,
+  "overall_summary": "The candidate note closely matches the benchmark for chief complaint, HPI, and plan. Minor variance exists in the musculoskeletal wording (laterality). The main deficit is in imaging, where the candidate reported 'moderate' instead of 'severe' and omitted 'three views'. The assessment includes all active problems but omits a normal finding listed in the benchmark. Name extraction was missed."
+}

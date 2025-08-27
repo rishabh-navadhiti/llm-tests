@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the benchmark and explicitly stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Captures left wrist pain but omits 'and masses,' which are included in the benchmark and transcript."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes all key details from the transcript (night pain, two masses with prior fluctuation, rheumatology visit with X-ray/ultrasound). Additional demographic details are transcript-based and not contradictory."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Candidate provides verbatim exam details from the transcript, whereas the benchmark is '-'. Although factually correct, it does not match the benchmark's content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Fully matches the benchmark findings (thumb MCP osteophyte on X-ray; ultrasound showing bony avulsion fragment vs osteophyte at dorsal MCP and a retinacular cyst at the first dorsal compartment). Only tense/wording differs slightly."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Includes two correct problems (left first dorsal compartment wrist cyst; left thumb MCP osteophyte) but adds 'bilateral osteophytes' which is not supported by the benchmark or clear in the transcript, and omits 'bilateral hand pain' present in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Includes night splints, aspiration/biopsy consideration, and 6-week follow-up, but omits 'Recommend observation for now for the masses' present in the benchmark; adds 'Review clinical scenario and images' which is not part of the benchmark plan."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "Strong performance on patient identification, HPI, and imaging, with accurate transcript-based content. The chief complaint is incomplete, the musculoskeletal field contains accurate transcript content but diverges from the benchmark’s '-', the assessment includes an unsupported diagnosis and misses an item, and the plan omits the observation recommendation while adding a non-essential step."
+}

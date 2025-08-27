@@ -2,12 +2,12 @@
   {
     "bleu_score": 0.0,
     "content": "Nicole Coffee",
-    "content_analysis": 0.2,
-    "content_similarity": 0.765500009059906,
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.7318000197410583,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.2033
+    "topic_similarity": 1.0
   },
   {
     "bleu_score": 0.0,
@@ -22,22 +22,22 @@
   {
     "bleu_score": 0.0,
     "content": "The patient reports pain in her left index finger for a few months, which has worsened and not improved. She is seeking an injection at this visit.",
-    "content_analysis": 0.3125,
-    "content_similarity": 0.8307999968528748,
+    "content_analysis": 0.5,
+    "content_similarity": 0.8519999980926514,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.5192999839782715,
+    "rhetorical_similarity": 0.669700026512146,
     "title": "HPI Spencer",
-    "topic_similarity": 0.0343
+    "topic_similarity": 0.0346
   },
   {
     "bleu_score": 0.0,
     "content": "left upper extremity skin is clean, dry, and tacky without erythema. Acute moderate tenderness on left index finger with an A1 polii. There is walking catching. There is triggering on index finger. Excellent range of motion overall. Able to give a thumbs up, et cetera, et cetera.",
-    "content_analysis": 0.5625,
-    "content_similarity": 0.8417999744415283,
+    "content_analysis": 0.8462,
+    "content_similarity": 0.9972000122070312,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.6524999737739563,
+    "rhetorical_similarity": 0.9603999853134155,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.0171
+    "topic_similarity": 1.0
   },
   {
     "bleu_score": 0.0,
@@ -65,11 +65,11 @@
   {
     "bleu_score": 0.0,
     "content": "Trigger injection will be performed today.",
-    "content_analysis": 0.75,
-    "content_similarity": 0.7099999785423279,
+    "content_analysis": 0.2222,
+    "content_similarity": 0.555400013923645,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.629800021648407,
+    "rhetorical_similarity": 0.3797999918460846,
     "title": "Plan",
-    "topic_similarity": 0.136
+    "topic_similarity": 0.1078
   }
 ]

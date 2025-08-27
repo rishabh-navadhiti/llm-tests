@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark '-' and transcript contains no explicit patient name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Left index finger injury'."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes core facts (mechanism, timing around 8/15/25, pain with motion, no deformity/angulation, ED visit with fracture, lacerations), but has multiple inaccuracies and additions: wrong hand dominance (left vs transcript right), misinterpreted date/time ('8:15 AM on the 25th'), wrong joint (PIP vs MCP), adds 'minimally displaced' not stated for the index finger, and introduces non-HPI details ('age 22', counseling and plan)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark is '-', but candidate includes content and mixes in non-exam info ('he went to the emergency room...'). This does not match the ground truth and is not limited to verbatim MSK findings."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Captures that X-rays showed a fracture, but omits the additional benchmark detail that a previous hand X-ray demonstrated a minimally displaced fracture in the small finger."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes 'fracture' and 'lacerations' consistent with benchmark, but omits 'Skin is intact' and adds an extra item ('limited flexion/extension of middle finger at PIP') not in benchmark and with incorrect joint compared to transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Closely aligns with benchmark plan: fracture cast, protect lacerations with soft dressing under splint, Burning Man risk counseling (sand/sweat), antibiotics for a few days, and follow-up on return. The benchmark's 'return in 2 weeks' detail is not in the transcript; no penalty applied."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate note correctly captured the chief complaint and plan, and partially matched imaging and assessment. However, the HPI contained several factual inaccuracies (hand dominance, date/time, joint specificity, and an unwarranted 'minimally displaced' qualifier) and included plan details. The musculoskeletal verbatim section did not match the benchmark and mixed in non-exam content. Overall accuracy is moderate with notable errors in HPI and MSK sections."
+}

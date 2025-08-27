@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the patient name stated in the transcript and benchmark."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Meaningfully identical to the benchmark ('Pain in left index finger' vs 'Left index finger pain'); concise and accurate."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Contains all key facts from the benchmark: location, duration (few/several months), context with shoulder visit and observation by Dr. Almadroa, worsening course, and desire for injection. No added inferences."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Includes some dictated phrases (tenderness at A1 pulley, catching, triggering) but omits multiple verbatim elements present in the transcript and benchmark (skin clean/dry/tacky, excellent ROM, thumbs up). The field requires complete verbatim extraction."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Accurately reflects the transcript’s imaging result ('X-rays are three views of the finger are normal'). Benchmark adds 'left index', which was not explicitly stated in the imaging sentence; per instructions, not penalized."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Lists the same active problems as the benchmark (trigger finger and left index finger pain) with equivalent wording."
+    },
+    "PLAN_SPENCER_": {
+      "score": 1,
+      "justification": "Major discrepancy: candidate states 'trigger release today' and 'not having the injection,' while the benchmark plan is for a trigger finger injection. The contradiction represents a substantial content error. Note: the benchmark’s follow-up instruction ('Return in 2 weeks') is not in the transcript and is not a basis for penalization."
+    }
+  },
+  "total_score": 28,
+  "percentage": 80,
+  "overall_summary": "The candidate note accurately captured the patient name, chief complaint, HPI, imaging, and assessment, closely aligning with the benchmark. The main shortcomings were in the musculoskeletal verbatim section (missing several dictated elements) and a significant plan mismatch (stating trigger release and no injection instead of trigger finger injection). Overall, good factual accuracy with critical errors in the plan and incomplete exam transcription."
+}

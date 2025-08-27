@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Patient name is not mentioned in the transcript; both benchmark and candidate correctly use '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Candidate states 'continued soft tissue swelling with hand activity,' which preserves the meaning of the benchmark 'Soft tissue swelling' with minor extra wording."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "While the candidate captures swelling with activity and the hypersensitivity/improving sensation timeline, it improperly includes objective exam findings and adds 'postoperative,' which are not HPI elements and not stated explicitly. It also omits the patient's inquiry about normalcy."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "The candidate reproduces the dictated musculoskeletal exam essentially verbatim with only negligible punctuation/filler differences; factual content matches the benchmark."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging mentioned in transcript; both candidate and benchmark correctly return '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Overlap on soft tissue swelling and improving sensation, but the candidate adds 'well-healed incision' (a normal finding) and 'slight extension lag' not listed in the benchmark. Not penalized for missing benchmark items that were not in the transcript (e.g., skin intact, no TTP)."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Plan matches benchmark content (wean splint, advance activity/ROM, RTC in 3 months); ordering and minor phrasing differences are acceptable."
+    }
+  },
+  "total_score": 29,
+  "percentage": 82.86,
+  "overall_summary": "The candidate note aligns well with the benchmark for patient name, imaging, musculoskeletal exam, and plan, and provides a close chief complaint. The main deficiencies are in the HPI, where objective exam elements and an unstated 'postoperative' status were included, and in the assessment, which added non-benchmark items and a normal finding. Overall, clinically accurate but with notable sectioning/placement issues in HPI and assessment."
+}

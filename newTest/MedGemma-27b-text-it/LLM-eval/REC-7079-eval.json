@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "Patient name 'Bertha Campos' is clearly stated in the transcript and benchmark, but the candidate returned '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 0,
+      "justification": "Benchmark shows 'Follow up for sutures removal' based on transcript, but the candidate left this field empty."
+    },
+    "HPI_SPENCER": {
+      "score": 0,
+      "justification": "Transcript supports an HPI about follow-up and asking for suture removal with improved motion; candidate provided no HPI content."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Candidate correctly captured ROM, near tight fist without pain, full active extension, no triggering, and moderate ecchymosis, but omitted dictated lines on the incision being clean/intact, sutures removed today, and no complications."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "No imaging mentioned in transcript; benchmark uses '-', candidate left the field empty. Content equivalent with minor formatting difference."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Benchmark lists items not supported by the transcript. No assessment items are explicitly stated in the transcript, so the candidate’s omission should not be penalized."
+    },
+    "PLAN_SPENCER_": {
+      "score": 0,
+      "justification": "Transcript and benchmark indicate sutures were removed today (and benchmark adds follow-up/exercises), but the candidate provided no plan."
+    }
+  },
+  "total_score": 12,
+  "percentage": 34.29,
+  "overall_summary": "The candidate missed key sections (name, chief complaint, HPI, and plan). Musculoskeletal verbatim partially matches but omits important dictated lines about the incision and suture removal. Imaging appropriately indicates no data with minor formatting variance. Assessment omission is acceptable given no explicit assessment in the transcript. Overall, significant omissions reduce accuracy."
+}

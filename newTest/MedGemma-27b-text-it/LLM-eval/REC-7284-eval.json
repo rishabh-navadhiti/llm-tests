@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "No patient name stated in transcript; candidate and benchmark both correctly use '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Candidate states 'Right middle finger injury' vs benchmark 'Right middle finger crush injury'; minor omission of 'crush' but core meaning preserved."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Matches benchmark content and chronology: date, mechanism (dumbbell crush), immediate symptoms, urgent care x-rays, splint, repeat x-rays at 4 weeks showing continued fracture, and current visit for evaluation."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark is '-', while candidate includes 'Some hematoma noted.' Despite being in the transcript, it does not match the benchmark ground truth content for this field."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Candidate captures today's x-ray finding (distal phalanx fracture with stable alignment and good healing) but omits prior urgent care and 4-week repeat x-ray results included in the benchmark and slightly paraphrases wording."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Candidate includes 'hand pain' and 'swelling' not listed in the benchmark and misses several benchmark items (e.g., crush injury, paresthesia). Partial overlap with 'fracture healing' and 'stiffness.' Not penalized for 'skin is intact' since that detail is not in the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Candidate correctly lists advancing activity and avoiding hanging, but gives follow-up as 4 weeks and omits '3 weeks for nail check before wedding,' which the benchmark reflects as the final instruction."
+    }
+  },
+  "total_score": 22,
+  "percentage": 62.86,
+  "overall_summary": "The candidate note is strong on HPI and captures the chief complaint reasonably well. It underperforms on imaging by omitting prior study results, diverges from the benchmark in the musculoskeletal verbatim field, and the assessment misses several benchmark problems while adding others. The plan contains a significant discrepancy in follow-up timing and omits the nail-check detail."
+}

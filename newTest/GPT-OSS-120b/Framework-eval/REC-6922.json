@@ -1,0 +1,88 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Mahika Mahendru"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "pain around the joint distal to the splint"
+    ],
+    "content_analysis": 0.4,
+    "content_similarity": 0.8357999920845032,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8432999849319458,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9989
+  },
+  {
+    "bleu_score": 0.1685,
+    "content": [
+      "The patient, Mahika Mahendru, presents for follow\u2011up and reports overall doing well and tolerating her splint without complaint except for pain around the joint distal to the splint, which is described as markedly hypersensitive. On examination the splint is in place with mild soft\u2011tissue swelling and significant hypersensitivity distal to the splint; the splint exerts a fair amount of pressure on the dorsal aspect of the right hand. The extensor tendons cannot be subluxated while the splint is on, and she demonstrates excellent PAP within the splint. The increased pain is attributed to irritation of a cutaneous nerve from splint pressure."
+    ],
+    "content_analysis": 0.2963,
+    "content_similarity": 0.8162999749183655,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5774000287055969,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0131
+  },
+  {
+    "bleu_score": 0.5264,
+    "content": [
+      "splint is in place . There's mild soft tissue so that there is significant hypersensitivity distal to the splint . The splint is putting a fair amount of pressure , um . is unable to sublux the extensor tendons in the splint . She has excellent PAP"
+    ],
+    "content_analysis": 0.7692,
+    "content_similarity": 0.8375999927520752,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.8029000163078308,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0197
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- pain around distal joint",
+      "- hypersensitivity distal to splint",
+      "- cutaneous nerve irritation from splint pressure"
+    ],
+    "content_analysis": 0.3,
+    "content_similarity": 0.6371999979019165,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.4787999987602234,
+    "title": "Assessment",
+    "topic_similarity": 0.0424
+  },
+  {
+    "bleu_score": 0.7168,
+    "content": [
+      "recommend modification of the splint . Return to clinic Monday if no improvement after modification of the splint . Return to clinic in 3 weeks , of course ."
+    ],
+    "content_analysis": 0.875,
+    "content_similarity": 0.9577000141143799,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.9398000240325928,
+    "title": "Plan",
+    "topic_similarity": 0.0415
+  }
+]

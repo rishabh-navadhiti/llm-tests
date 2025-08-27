@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "No patient name appears in the transcript; both candidate and benchmark correctly use '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Right middle finger crush injury.'"
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately captures onset (7/8/25), mechanism (dumbbell crush), immediate symptoms (pain, swelling, limited motion), urgent care x-ray showing fracture, splinting, repeat x-rays with continued fracture, and current evaluation. Minor issue: adds paresthesia, which is an exam finding in the transcript, not HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark left this field as '-', while the candidate included verbatim exam text from the transcript. Although accurate to the transcript, it does not match the benchmark content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Candidate includes today's x-ray finding (distal phalanx fracture with stable alignment and good healing) but omits prior imaging results noted in the benchmark (urgent care x-ray showing fracture and 4-week repeat showing continued fracture)."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Partial overlap: includes distal phalanx fracture, DIP stiffness, and paresthesia. Missing several benchmark items (e.g., hematoma, crush injury, healing/alignment detail)."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Includes 'avoid hanging from hands' and correct follow-up ('return in 3 weeks'). However, it incorrectly adds 'continue splinting' (not in transcript) and omits 'advanced activity' directed in the benchmark."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate note captures the chief complaint and much of the HPI accurately, and includes correct imaging and plan elements, but it diverges from the benchmark by adding an exam item into the HPI, providing musculoskeletal verbatim text where the benchmark is empty, omitting earlier imaging details, limiting the assessment items, and misstating the plan by adding 'continue splinting' and omitting 'advanced activity.'"
+}

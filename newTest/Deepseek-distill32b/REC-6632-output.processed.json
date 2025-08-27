@@ -1,4 +1,41 @@
 [
-  "Thumb pain",
-  "Trapeziometacarpal arthritis"
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": "Greta Griswana",
+    "default": "-"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": "Thumb pain"
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": "Greta Griswana reports improvement in forearm pain but persistent severe thumb pain. She seeks relief options for her thumb pain."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": "Significant tendinous location of the trapeziometacarpal joint, very positive grind."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": "X-rays reviewed: planned arthritis."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Thumb pain",
+      "Trapeziometacarpal arthritis"
+    ]
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": "Trial of steroid injection, return to clinic in eight weeks for follow-up."
+  }
 ]

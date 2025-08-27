@@ -1,33 +1,7 @@
 [
     {
         "content": [
-            "Sally Magaram"
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": false,
-                    "generic": true,
-                    "missingContent": false,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "Magara"
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-18T16:14:15.226Z",
-                "to": [
-                    "Sally Magaram"
-                ],
-                "version": 1
-            }
+            "Magara"
         ],
         "key": "PATIENT_NAME",
         "matches": [
@@ -52,33 +26,7 @@
     },
     {
         "content": [
-            "She presents today for evaluation of her bilateral hand numbness and tingling that began around January 2025 in the absence of any antecedent trauma, injury or injection.  She states that this was waking her up when she was sleeping, but more recently she started wearing braces at night and this has helped.  She denies pain and limited motion.  She has numbness and tingling.  She is here for evaluation and treatment."
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": true,
-                    "generic": false,
-                    "missingContent": false,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "Magara is a right-hand dominant retiree who presents for evaluation of bilateral hand numbness and tingling that began around January 2025.  She reports this started in the absence of any trauma, injury, or injection.  She states the numbness and tingling were waking her up at night, but wearing braces has helped recently. She denies pain and limited motion."
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-18T16:14:40.114Z",
-                "to": [
-                    "She presents today for evaluation of her bilateral hand numbness and tingling that began around January 2025 in the absence of any antecedent trauma, injury or injection.  She states that this was waking her up when she was sleeping, but more recently she started wearing braces at night and this has helped.  She denies pain and limited motion.  She has numbness and tingling.  She is here for evaluation and treatment."
-                ],
-                "version": 1
-            }
+            "Magara is a right-hand dominant retiree who presents for evaluation of bilateral hand numbness and tingling that began around January 2025.  She reports this started in the absence of any trauma, injury, or injection.  She states the numbness and tingling were waking her up at night, but wearing braces has helped recently. She denies pain and limited motion."
         ],
         "key": "HPI_SPENCER",
         "matches": [
@@ -93,45 +41,7 @@
     },
     {
         "content": [
-            "bilateral upper extremities",
-            "Skin is clean, dry and intact without erythema or ecchymosis",
-            "Minimal soft tissue swelling",
-            "Minimal tenderness to palpation",
-            ".PCTS",
-            "Semmes-Weinstein 4.31 right ring finger, 3.61 remaining of right hand, 2.83 left hand",
-            ""
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": true,
-                    "generic": false,
-                    "missingContent": true,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "-"
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-18T16:14:51.875Z",
-                "to": [
-                    "bilateral upper extremities",
-                    "Skin is clean, dry and intact without erythema or ecchymosis",
-                    "Minimal soft tissue swelling",
-                    "Minimal tenderness to palpation",
-                    ".PCTS",
-                    "Semmes-Weinstein 4.31 right ring finger, 3.61 remaining of right hand, 2.83 left hand",
-                    ""
-                ],
-                "version": 1
-            }
+            "-"
         ],
         "key": "MUSCULOSKELETAL_VERBATIM",
         "matches": [
@@ -141,39 +51,7 @@
     },
     {
         "content": [
-            "right hand x-ray 3 views demonstrate variable joint space narrowing throughout the interphalangeal joints.  Most notably, there is joint space narrowing at the thumb metacarpophalangeal joint",
-            "",
-            "left hand variable joint space narrowing throughout.  There is severe joint space narrowing at the trapeziometacarpal joint.",
-            ""
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": true,
-                    "generic": false,
-                    "missingContent": true,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "3 views of the right hand demonstrated variable joint space narrowing throughout the IP joints, most notably at the thumb MCP joint. The left hand also showed variable joint space narrowing, with severe narrowing at the CMC joint."
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-18T16:15:09.498Z",
-                "to": [
-                    "right hand x-ray 3 views demonstrate variable joint space narrowing throughout the interphalangeal joints.  Most notably, there is joint space narrowing at the thumb metacarpophalangeal joint",
-                    "",
-                    "left hand variable joint space narrowing throughout.  There is severe joint space narrowing at the trapeziometacarpal joint.",
-                    ""
-                ],
-                "version": 1
-            }
+            "3 views of the right hand demonstrated variable joint space narrowing throughout the IP joints, most notably at the thumb MCP joint. The left hand also showed variable joint space narrowing, with severe narrowing at the CMC joint."
         ],
         "key": "IMAGING_GEORGE",
         "matches": [
@@ -188,36 +66,10 @@
     },
     {
         "content": [
-            "Bilateral hands numbness and tingling, likely carpal tunnel with peripheral neuropathy, medication-induced."
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": true,
-                    "generic": false,
-                    "missingContent": true,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "Right upper extremity Skin is intact.",
-                    "Carpal tunnel syndrome",
-                    "Peripheral neuropathy",
-                    "No tenderness to palpation."
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-18T16:15:27.786Z",
-                "to": [
-                    "Bilateral hands numbness and tingling, likely carpal tunnel with peripheral neuropathy, medication-induced."
-                ],
-                "version": 1
-            }
+            "Right upper extremity Skin is intact.",
+            "Carpal tunnel syndrome",
+            "Peripheral neuropathy",
+            "No tenderness to palpation."
         ],
         "key": "ASSESSMENT_SPENCER",
         "matches": [
@@ -240,45 +92,7 @@
     },
     {
         "content": [
-            "Plan carpal tunnel",
-            "Regarding the bilateral hand numbness and tingling",
-            "This has some features of carpal tunnel and some features of peripheral neuropathy",
-            "Recommend continue night splints",
-            "Low threshold for nerve studies",
-            "Return to clinic in 6 to 8 weeks for followup",
-            ""
-        ],
-        "history": [
-            {
-                "comment": "",
-                "correctionType": {
-                    "doctorSpecific": true,
-                    "generic": false,
-                    "missingContent": true,
-                    "notInTranscription": false
-                },
-                "data": [
-                    "Plan nerve studies. Return to clinic in 6 weeks."
-                ],
-                "ragas": {
-                    "accuracy": 10,
-                    "aesthetics": 10,
-                    "grammar": 10,
-                    "relevance": 10,
-                    "structure": 10
-                },
-                "timestamp": "2025-08-18T16:15:40.714Z",
-                "to": [
-                    "Plan carpal tunnel",
-                    "Regarding the bilateral hand numbness and tingling",
-                    "This has some features of carpal tunnel and some features of peripheral neuropathy",
-                    "Recommend continue night splints",
-                    "Low threshold for nerve studies",
-                    "Return to clinic in 6 to 8 weeks for followup",
-                    ""
-                ],
-                "version": 1
-            }
+            "Plan nerve studies. Return to clinic in 6 weeks."
         ],
         "key": "PLAN_SPENCER",
         "matches": [

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Transcript provides no patient name; both benchmark and candidate correctly use '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches benchmark content ('index finger pain and stiffness'); only capitalization differs, meaning identical."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately captures mechanism, date, urgent care repair, suture removal at ~14 days, wound reopening, and current stiffness. Omits left-hand dominance, occupation, and left laterality present in the benchmark/transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Closely reflects the doctor's wording and all key findings (well-healing laceration without sutures, very stiff PIP ~10° flexion, moderate swelling, no tenderness, remaining digit ROM). Minor filler-word differences only."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "Conveys 'X-rays are normal' but omits the verb ('are'); minor wording deviation from exact phrasing."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Identifies laceration and stiffness but lacks left laterality and index-finger specificity in the stiffness item; adds 'PIP' detail not in benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Includes both plan elements: recommend hand therapy and return in four weeks; meaning fully matches benchmark."
+    }
+  },
+  "total_score": 31,
+  "percentage": 88.57,
+  "overall_summary": "The candidate note closely aligns with the benchmark. Strengths include faithful musculoskeletal findings and an accurate plan. Minor shortcomings involve omission of left laterality, left-hand dominance/occupation in the HPI, and a slight wording deviation in imaging. Assessment is generally correct but less specific than the benchmark."
+}

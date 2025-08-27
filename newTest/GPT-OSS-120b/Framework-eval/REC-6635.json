@@ -1,0 +1,86 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.6687,
+    "content": [
+      "index finger pain and stiffness"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.2708,
+    "content": [
+      "The patient is a left\u2011hand dominant artist who lacerated the PIP joint of his left index finger on 7\u201116\u201125 while working with a chisel; the blade struck a hard piece of wood, slipped, and cut the finger. He presented to urgent care where the wound was irrigated and repaired. Sutures were removed approximately 14 days later, at which time the wound reopened. Since then he has experienced persistent pain and stiffness of the index finger, with limited active flexion at the PIP joint."
+    ],
+    "content_analysis": 0.3793,
+    "content_similarity": 0.785099983215332,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6995999813079834,
+    "title": "HPI Spencer",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.5768,
+    "content": [
+      "On exam, left upper extremity in- a laceration well-healing, um, without sutures. A very stiff index finger PIP able to flex only about 10 degrees actively at this time. Moderate soft tissue swelling, no sensory tenderness to palpation. Excellent range of motion of the remaining digit."
+    ],
+    "content_analysis": 0.8824,
+    "content_similarity": 0.9162999987602234,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.838100016117096,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 1.0,
+    "content": [
+      "X-rays are normal."
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- index finger pain\n- index finger stiffness\n- post\u2011traumatic PIP stiffness"
+    ],
+    "content_analysis": 0.2857,
+    "content_similarity": 0.6586999893188477,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.6736999750137329,
+    "title": "Assessment",
+    "topic_similarity": 0.0512
+  },
+  {
+    "bleu_score": 0.2141,
+    "content": [
+      "Plan PIP recommend hand therapy. Return to clinic in four weeks for follow-up image motion."
+    ],
+    "content_analysis": 0.3636,
+    "content_similarity": 0.7468000054359436,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.7279000282287598,
+    "title": "Plan",
+    "topic_similarity": 0.0734
+  }
+]

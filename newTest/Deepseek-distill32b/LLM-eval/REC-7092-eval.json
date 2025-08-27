@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark exactly with '-' as no name is provided."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Identical to benchmark: 'Left index finger injury'."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Captures mechanism, pain with motion, lack of deformity, ER visit, fracture, and lacerations, but omits benchmark details (date 8/15/2025, accompanied by significant other, skin intact, precise laceration locations and suture type, MCP joint). Adds 'minimally displaced fracture' not in the benchmark HPI and potentially misattributes it."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Benchmark indicates '-', but candidate includes non-verbatim and additional content; thus it does not match the benchmark requirement."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "States 'X-rays showed a fracture' but misses benchmark details that ER films showed a fracture and that a previous hand X-ray showed a minimally displaced small finger fracture."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes 'Fracture' and 'Lacerations' as in benchmark, but omits the benchmark item 'Right upper extremity Skin is intact' and adds 'Left index finger crush injury' not listed in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Matches cast application, soft dressing under splint, antibiotics, and education about sand/infection. Misses explicit 'sweating' risk. Benchmark specifies 'return in 2 weeks' which is not in the transcript; no penalty applied for that omission."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60,
+  "overall_summary": "The candidate note aligns well on patient name and chief complaint, and partially on HPI, imaging, assessment, and plan. Main deficits include omitted benchmark HPI specifics, inclusion of non-benchmark details (e.g., minimally displaced fracture in HPI), a non-matching musculoskeletal verbatim section, and incomplete imaging details. The plan largely matches except for missing the 'sweating' risk and different follow-up timing (not penalized as not in transcript)."
+}

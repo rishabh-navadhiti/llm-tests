@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to transcript: 'Nicole Coffee.'"
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Concise and accurate: 'Left index finger pain' matches the stated reason for visit."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures duration, context (shoulder visit and observation), worsening, and desire for injection, but introduces an exam finding ('progressed to causing triggering') not stated as history and generalizes request ('requesting treatment') instead of specifically 'injection.'"
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Not verbatim and incomplete. Wording altered ('to palpation over' vs. 'on ... with an A1 polii') and multiple dictated findings omitted (skin clean/dry/tacky, catching, triggering, ROM, thumbs up)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Meaning preserved (normal X-ray) but lacks specifics ('three views' and 'left index finger') present in the benchmark/transcript; not reported exactly as stated."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes trigger finger but omits the symptom-based problem 'Left index finger pain' listed in the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes trigger finger injection consistent with transcript/benchmark. However, it inappropriately includes the imaging result within the plan. The benchmark's follow-up ('Return in 2 weeks') is not in the transcript, so not penalized for omission."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note captures key elements such as name, chief complaint, and core plan. However, it introduces an exam finding into the HPI, fails to provide verbatim and complete musculoskeletal exam details, generalizes imaging results, and omits a symptom in the assessment. Overall accuracy is moderate, with most core clinical facts present but several instruction adherence issues."
+}

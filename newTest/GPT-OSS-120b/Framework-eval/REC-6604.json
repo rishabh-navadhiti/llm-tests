@@ -1,0 +1,87 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Nicole Coffee"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "pain in left index finger"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.9848999977111816,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.9621000289916992,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.2697,
+    "content": [
+      "The patient reports left index finger pain that she has noticed for a few months. The symptoms were initially noted during a shoulder appointment, where observation was recommended. Since then the pain has worsened and not improved, and she now seeks an injection."
+    ],
+    "content_analysis": 0.5714,
+    "content_similarity": 0.8640000224113464,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7300999760627747,
+    "title": "HPI Spencer",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.6406,
+    "content": [
+      "left upper extremity skin is clean, dry, and tacky without erythema. Acute moderate tenderness on left index finger with an A1 polii. Uh, there is walking catching. There is triggering on index finger. Excellent range of motion overall. Um, on exam... Oh, uh, able to give a thumbs up, et cetera, et cetera."
+    ],
+    "content_analysis": 0.7857,
+    "content_similarity": 0.9710000157356262,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.8991000056266785,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-rays are three views of the finger are normal."
+    ],
+    "content_analysis": 0.8571,
+    "content_similarity": 0.9323999881744385,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.9193999767303467,
+    "title": "Imaging Results",
+    "topic_similarity": 0.1096
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- left index finger pain",
+      "- trigger finger of left index finger"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.9664000272750854,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.9110999703407288,
+    "title": "Assessment",
+    "topic_similarity": 0.9998
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "plan will be, uh, plan trigger. She is not having the injection. We will do this today. X-rays are three views of the finger are normal."
+    ],
+    "content_analysis": 0.2857,
+    "content_similarity": 0.7135999798774719,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.3758000135421753,
+    "title": "Plan",
+    "topic_similarity": 0.0821
+  }
+]

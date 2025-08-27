@@ -3,11 +3,11 @@
     "bleu_score": 0.0,
     "content": "-",
     "content_analysis": 0.0,
-    "content_similarity": 0.12300000339746475,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.1712999939918518,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.0,
@@ -32,12 +32,12 @@
   {
     "bleu_score": 0.0,
     "content": "hypopigmentation at the dorsal aspect of the CMC joint during consistent with previous injection. Mild over the first dorsal compartment positive finger stain, still a positive, um, grind.",
-    "content_analysis": 0.4667,
-    "content_similarity": 0.5849000215530396,
+    "content_analysis": 0.9091,
+    "content_similarity": 0.9629999995231628,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.6855999827384949,
+    "rhetorical_similarity": 0.9559999704360962,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.0255
+    "topic_similarity": 0.9971
   },
   {
     "bleu_score": 0.0,
@@ -62,11 +62,11 @@
   {
     "bleu_score": 0.0,
     "content": "recommend trial of dig verban's injection. Return to clinic in six weeks for follow-up.",
-    "content_analysis": 0.2857,
-    "content_similarity": 0.599399983882904,
+    "content_analysis": 0.6,
+    "content_similarity": 0.9789999723434448,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.6319000124931335,
+    "rhetorical_similarity": 0.934499979019165,
     "title": "Plan",
-    "topic_similarity": 0.0461
+    "topic_similarity": 0.9998
   }
 ]

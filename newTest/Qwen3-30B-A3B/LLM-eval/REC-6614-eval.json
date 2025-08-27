@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to transcript and benchmark: 'Precious Myles Garrett'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Matches benchmark content ('Left wrist pain'); only capitalization differs, which is acceptable."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Mostly aligns with benchmark and transcript, but incorrectly specifies 'bilateral thumb and MCP joint osteophytes' instead of the benchmark's non-specific 'issues/masses'. Otherwise, details about pain severity, nocturnal symptoms, prior evaluations, and imaging are accurate."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark contains '-', while candidate includes exam verbatim. Despite being transcript-accurate, it does not match the benchmark output."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Content matches benchmark: osteophyte on thumb MCP x-ray; ultrasound with bony avulsion fragment vs osteophyte at dorsal thumb MCP; wrist ultrasound showing retinacular cyst superficial to first dorsal compartment sheath."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes key problems but labels 'bilateral thumb and MCP joint' as osteophytes rather than 'masses' per benchmark. Not penalized for omitting normal/negative items in benchmark that are not supported by the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Accurately includes observation, aspiration vs biopsy, and 6-week follow-up. Omits 'recommend night splints' present in benchmark; minor wording ('consider') otherwise acceptable."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.28571428571429,
+  "overall_summary": "The candidate note closely matches the benchmark in patient name, chief complaint, and imaging. HPI has a minor diagnostic specificity error regarding bilateral thumb/MCP findings. The assessment mirrors this issue. The plan is mostly correct but misses 'night splints.' The MSK verbatim content, while accurate to the transcript, does not match the benchmark’s '-' entry."
+}

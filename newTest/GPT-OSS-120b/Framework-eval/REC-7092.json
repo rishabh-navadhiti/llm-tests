@@ -1,0 +1,88 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "left index finger injury"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.1903,
+    "content": [
+      "The 22\u2011year\u2011old right\u2011hand\u2011dominant male sustained a left index finger crush injury at approximately 8:15 when a camping trunk hinge opened onto his hand. He experienced immediate pain with motion but noted no obvious deformity or angulation. He presented to the emergency department where X\u2011rays confirmed a fracture and he received irrigation and interrupted sutures for two dorsal lacerations along the ulnar border and second web space. He reports limited flexion and extension of the middle finger but is able to actively flex. He is currently using a cast and soft dressing."
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8471999764442444,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.691100001335144,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0081
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "There's no deformity or angulation. No apparent mal rotation of the index finger. Limited flexion and extension of the middle finger at the empty point so he is actively able to flex. the hand demonstrated minimally displaced rash and the small."
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.062300000339746475,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.08810000121593475,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.4658
+  },
+  {
+    "bleu_score": 0.0394,
+    "content": [
+      "X-rays were taken that showed a fracture"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8129000067710876,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.8145999908447266,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0841
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Left index finger fracture",
+      "- Left index finger dorsal lacerations",
+      "- Limited flexion of middle finger"
+    ],
+    "content_analysis": 0.25,
+    "content_similarity": 0.6805999875068665,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5803999900817871,
+    "title": "Assessment",
+    "topic_similarity": 0.0491
+  },
+  {
+    "bleu_score": 0.1702,
+    "content": [
+      "will be plan fracture cast, regarding the, uh, index finger crush injury, reviewed the SAC so good recommend continuing for a cast regarding we can do R4 regarding the lacerations we discussed that ass are well applied, the wound is still, recommend protect with soft dressing under the splint. They are scheduled to go to Burning Man on Friday, age 22. We discussed the risk of sand and infection. We discussed the risk of sweating and infection. They understand this, they were given strictly the precautions. He is on antibiotics for a few more days, returned the clinic when they return."
+    ],
+    "content_analysis": 0.5758,
+    "content_similarity": 0.8867999911308289,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6761999726295471,
+    "title": "Plan",
+    "topic_similarity": 0.0126
+  }
+]

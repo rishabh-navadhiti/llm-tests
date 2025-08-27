@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly use '-' as no patient name is explicitly mentioned in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Candidate says 'Recurrence of hand symptoms,' which is vague and omits key specifics from the benchmark: trigger finger, right recurrence, and new left-sided triggering."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Candidate includes the follow-up and bilateral triggering with inquiry about another injection, but omits multiple explicit details from the transcript captured in the benchmark: deferring right-sided injection today and no prior injections on the left with plan to inject today. Also omits mention of the additional patient (James She) follow-up context."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Transcript verbatim is: 'Moderate soft tissue swelling, there is triggering of the middle finger. There is a nodule there that is triggering that.' Candidate reduces this to 'moderate swelling,' which is not verbatim and misses substantial dictated content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 1,
+      "justification": "Transcript indicates X-rays with 'some fracture healing.' Benchmark reflects 'X-ray showed some fracture healing.' Candidate returns '-', missing the explicit imaging result."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Candidate lists right and left trigger finger, matching core problems. However, benchmark also includes 'Status post surgery' (present in transcript for another patient); candidate omits this. Not penalized for normal findings in benchmark that are not clearly in the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Candidate includes only 'Hold off on injection for now,' capturing the right-sided deferral. It misses additional dictated plan elements present in the transcript and benchmark: left middle finger injection today, continued post-op protocol per Dr. Hertz, and follow-up with Dr. Hertz. Not penalized for 'Return to clinic in 4 weeks' since that timing is not clearly stated in the transcript."
+    }
+  },
+  "total_score": 18,
+  "percentage": 51.43,
+  "overall_summary": "The candidate note captures the broad theme (bilateral trigger finger and deferring injection), but lacks key specifics across multiple fields. It misses exact wording where verbatim text is required, omits the imaging result, and provides an incomplete HPI and plan compared to the benchmark. Most omissions correspond to details explicitly present in the transcript."
+}

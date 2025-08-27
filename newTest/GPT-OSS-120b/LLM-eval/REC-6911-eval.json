@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('Walt'); correctly extracted from transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate lists 'Numbness' while benchmark lists 'Carpal Tunnel Syndrome'. Related but not the same main complaint stated by the doctor."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures minimal pain and concern about numbness, consistent with transcript. Omits 'busy day' and occupation detail present in benchmark; additionally introduces 'underwent carpal tunnel release,' which is not in the benchmark HPI (though postoperative context is implied elsewhere)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Factual content matches benchmark findings; minor wording/filler ('On exam', 'um') and punctuation differences."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Both candidate and benchmark correctly indicate no imaging results ('-')."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 5,
+      "justification": "Conveys status post carpal tunnel release (worded as 'Carpal tunnel postoperative') and adds 'Persistent numbness,' a relevant active symptom; aligns with benchmark without contradiction."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Matches benchmark plan: planned post-op endoscopic carpal tunnel and return in 4 weeks; only minor wording differences."
+    }
+  },
+  "total_score": 30,
+  "percentage": 85.71,
+  "overall_summary": "The candidate note closely aligns with the benchmark in most sections, particularly name, exam, imaging, assessment, and plan. The main discrepancies are in the chief complaint (symptom vs diagnosis) and HPI, which misses some details and adds a mildly speculative element. Overall, solid performance with minor content and wording differences."
+}

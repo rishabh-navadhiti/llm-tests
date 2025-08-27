@@ -1,0 +1,87 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Greta Griswana"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "thumb pain"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.8184000253677368,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.8331000208854675,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.171
+  },
+  {
+    "bleu_score": 0.0914,
+    "content": [
+      "Greta presents for follow\u2011up of persistent thumb pain that she describes as severe, while noting that her forearm pain has improved. She reports that her thumb pain is \u201ckilling her\u201d and seeks options for relief and improvement. She mentions that her daughter\u2019s wedding limited her hand use, resulting in some improvement, but overall the thumb symptoms remain unchanged. Examination findings are unchanged from prior visits."
+    ],
+    "content_analysis": 0.2917,
+    "content_similarity": 0.868399977684021,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.5853000283241272,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.9999
+  },
+  {
+    "bleu_score": 0.4668,
+    "content": [
+      "On exam, um, it's her right upper termine. Significant tendinous location of the trapeziometacarpal joint, very positive grind. Uh, let me see something. No tenderness with A1 pulley. Um, some tenderness with U&R imminence."
+    ],
+    "content_analysis": 0.7,
+    "content_similarity": 0.8195000290870667,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.9718999862670898,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0395
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-rays reviewed"
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.5634999871253967,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.5504999756813049,
+    "title": "Imaging Results",
+    "topic_similarity": 0.2832
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Thumb pain",
+      "- Trapeziometacarpal joint arthritis"
+    ],
+    "content_analysis": 0.3333,
+    "content_similarity": 0.5523999929428101,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5859000086784363,
+    "title": "Assessment",
+    "topic_similarity": 0.1384
+  },
+  {
+    "bleu_score": 0.6641,
+    "content": [
+      "Recommend trial of steroid injection. Talked about temporary nature, talked about procedure and postoperative protocol. Return to clinic in eight weeks for follow-up if symptoms persist."
+    ],
+    "content_analysis": 0.6154,
+    "content_similarity": 0.9114999771118164,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.8773000240325928,
+    "title": "Plan",
+    "topic_similarity": 0.0388
+  }
+]

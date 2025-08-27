@@ -1,0 +1,88 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "soft tissue swelling"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 1.0,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 1.0,
+    "title": "Chief Complaint",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "The patient reports persistent soft tissue swelling of the hand that becomes more noticeable with activity and is questioning its normalcy. She notes that sensation has markedly improved; she experienced hypersensitivity two weeks ago and the week prior, which has significantly lessened over the past week."
+    ],
+    "content_analysis": 0.3333,
+    "content_similarity": 0.9120000004768372,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7572000026702881,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0167
+  },
+  {
+    "bleu_score": 0.7522,
+    "content": [
+      "On exam incision , well healed , very minimal scar , no um firmness to the scar . Excellent range of motion , full tight fist without pain , um , able to get hand flat on the table , there is a very slight extension lag , um , less than 5 degrees when compared to her baseline . Uh , hyperextension , uh , sensation decreased but improving to the on one of the digit"
+    ],
+    "content_analysis": 0.9444,
+    "content_similarity": 0.949999988079071,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.9325000047683716,
+    "title": "Musculoskeletal",
+    "topic_similarity": 0.0132
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 1.0,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- soft tissue swelling",
+      "- decreased sensation of digit",
+      "- slight extension lag (<5 degrees)"
+    ],
+    "content_analysis": 0.2727,
+    "content_similarity": 0.5425000190734863,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.6176000237464905,
+    "title": "Assessment",
+    "topic_similarity": 0.0398
+  },
+  {
+    "bleu_score": 0.2843,
+    "content": [
+      "wean splint advanced activity , advanced range of motion , return to clinic in 3 months for follow-up"
+    ],
+    "content_analysis": 0.6364,
+    "content_similarity": 0.9538999795913696,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6668000221252441,
+    "title": "Plan",
+    "topic_similarity": 0.0435
+  }
+]

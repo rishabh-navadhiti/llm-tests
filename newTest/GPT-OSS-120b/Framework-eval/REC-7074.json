@@ -1,0 +1,89 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.2101999968290329,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.2621000111103058,
+    "title": "Patient Name",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "stiffness that has persisted since her wrist injury"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.7912999987602234,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.722599983215332,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.9989
+  },
+  {
+    "bleu_score": 0.1487,
+    "content": [
+      "She suffered a left distal radius fracture in October 2023 after a fall, was treated surgically by Dr. Andrew Rice and diagnosed with CRPS. Since the injury she has persistent stiffness of the left wrist and limited extension, reporting she cannot extend enough to perform a push\u2011up despite making progress. She continues regular Pilates without pain or limitation, but the inability to fully extend the wrist remains. On examination she has minimal scar, excellent finger motion, wrist flexion about 45\u00b0, extension about 20\u00b0, and X\u2011ray shows a well\u2011healed fracture with hardware."
+    ],
+    "content_analysis": 0.3333,
+    "content_similarity": 0.9273999929428101,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.765500009059906,
+    "title": "HPI Spencer",
+    "topic_similarity": 0.0105
+  },
+  {
+    "bleu_score": 0.9276,
+    "content": [
+      "Incision while healing , minimal scar , excellent finger motion without painful post supination , uh , flexion to about 45 extensions to about 20 ."
+    ],
+    "content_analysis": 0.9167,
+    "content_similarity": 0.9764000177383423,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.9897000193595886,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.2947,
+    "content": [
+      "well healed fracture with st hardware , plate alignment looks good and the overall reduction looks um adequate ."
+    ],
+    "content_analysis": 0.4167,
+    "content_similarity": 0.6577000021934509,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.6948999762535095,
+    "title": "Imaging Results",
+    "topic_similarity": 0.0333
+  },
+  {
+    "bleu_score": 0.2452,
+    "content": [
+      "- Left wrist stiffness",
+      "- CRPS of left wrist",
+      "- Limited wrist extension",
+      "- Status post left distal radius fracture"
+    ],
+    "content_analysis": 0.5714,
+    "content_similarity": 0.79339998960495,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.7581999897956848,
+    "title": "Assessment",
+    "topic_similarity": 0.0429
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "plan will be regarding the left wrist , review the X-rays . The plate alignment looks good and the overall reduction looks um adequate . We discussed that you likely will not have the motion to do . Uh , a push up , but I would not limit her . More broadly than that recommended advanced activity is to advance wavering and return to panic and uh . 3 months for a follow-up ."
+    ],
+    "content_analysis": 0.15,
+    "content_similarity": 0.3531999886035919,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.48739999532699585,
+    "title": "Plan",
+    "topic_similarity": 0.0457
+  }
+]

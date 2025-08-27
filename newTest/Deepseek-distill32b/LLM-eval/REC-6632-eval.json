@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match with benchmark patient name."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Captures thumb pain but omits forearm pain listed in the benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately summarizes improvement in forearm pain and severe thumb pain with request for relief; misses follow-up context and additional details (wedding/overall same)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Includes part of the verbatim exam but omits key elements (right upper extremity, no A1 pulley tenderness, U&R eminence tenderness)."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "Matches benchmark: X-rays reviewed showing 'planned arthritis.'"
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes arthritis diagnosis (aligned in meaning) but adds 'Thumb pain' not listed in benchmark and uses different terminology than 'planned arthritis.'"
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Includes steroid injection and 8-week follow-up but omits counseling on temporary nature, procedure, and postoperative protocol."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note correctly identifies the patient, key imaging result, and core HPI elements. It partially captures the musculoskeletal exam and plan but omits several verbatim findings and counseling details. The assessment aligns conceptually with arthritis but adds an extra item not in the benchmark. Overall, solid but with notable omissions in exam and plan specifics."
+}

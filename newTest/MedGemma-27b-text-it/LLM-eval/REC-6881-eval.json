@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Both notes correctly use '-' as no patient name is mentioned in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Benchmark lists two complaints (thumb pain; middle finger pain/locking). Candidate includes only middle finger locking/catching/pain and omits the thumb complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 3,
+      "justification": "Captures that the thumb is doing well, ongoing use of ciclopirox ('cycloprox'), prior injection with temporary relief, and recurrence of painful locking/catching in the middle finger. However, it introduces 'post-operatively' (not stated) and misspells the medication; it also omits the patient's question about whether to continue the medication."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 1,
+      "justification": "Benchmark verbatim is 'Right upper extremity skin is cleaned and intact without erythemohymosis.' Candidate provides a different, paraphrased finding about A1 pulley tenderness, not verbatim and not matching the benchmark content."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging is mentioned in the transcript; both notes correctly return '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Benchmark includes 'Thumb pain', 'Middle finger triggering and locking', 'Right upper extremity skin is intact', and 'No tenderness to palpation.' Candidate lists 'Hand pain', 'Middle finger locking', and 'Trigger finger (right middle finger)'. It substitutes 'hand' for 'thumb', omits items present in the benchmark, and adds a diagnosis not listed."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Includes injection for the middle finger, aligning with the benchmark. However, it misspells the medication ('cycloprog' vs 'cycloprox') and omits 'activity as tolerated' which is stated in the transcript. It also adds A1 pulley specificity not in the benchmark. The benchmark's 'return in 2 weeks' was not in the transcript, so omission is not penalized."
+    }
+  },
+  "total_score": 21,
+  "percentage": 60,
+  "overall_summary": "The candidate note captures key elements about the middle finger symptoms and planned injection but misses the thumb-related chief complaint, introduces an unsupported 'post-operative' detail, uses non-verbatim MSK phrasing that does not match the benchmark, and has medication misspelling. Imaging is correct. Assessment and plan are partially aligned but omit and alter several benchmark items."
+}

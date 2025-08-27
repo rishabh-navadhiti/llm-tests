@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the transcript (“Jane Pollock”)."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 1,
+      "justification": "Benchmark lists 'Follow-up' per transcript; candidate gives a symptom-based complaint, not the stated chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes correct elements (follow-up, overall well, soreness/stiffness, minimal pain, bruising) but adds exam findings (ecchymosis, finger position, distance from palm, right upper extremity) that belong in the objective exam, not HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 3,
+      "justification": "Captures a substantial verbatim portion of the doctor's musculoskeletal exam but omits the incisions status included in the benchmark. The included text is accurate; however, content is incomplete."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging mentioned in transcript; both candidate and benchmark correctly use '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Major mismatch with benchmark content. Candidate lists symptom/exam problems, while benchmark lists normal findings. Note: 'No tenderness to palpation' is not in the transcript and is not penalized for omission, but overall content does not align with the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Correctly includes follow-ups in 6 days and 1 week with consideration for suture removal/therapy, but incorrectly states 'Remove soft dressings and drive,' which contradicts the benchmark and misinterprets the transcript."
+    }
+  },
+  "total_score": 19,
+  "percentage": 54.29,
+  "overall_summary": "The candidate note correctly identified the patient and imaging status and partially captured the musculoskeletal exam and follow-up plans. However, it misrepresented the chief complaint, introduced exam details into the HPI, omitted part of the musculoskeletal findings, diverged significantly from the benchmark assessment, and misstated the dressing plan."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "The patient's name 'Lindsay Demash' is explicitly stated in the transcript, but the candidate returned '-'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Concise and matches the benchmark content about a mass/new bump at the ulnar border of the index finger DIP joint."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes core details (new mass at ulnar border, concern, not limiting, wrist/shoulder symptoms) but adds an unsupported statement ('no pain associated with the mass') and omits multiple details from the benchmark (e.g., 'turned a corner in May,' 'clicks,' and laterality)."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Contains several verbatim MSK phrases (ROM, incision healing, supination/pronation, fist) but omits multiple dictated elements present in the benchmark such as 'Right upper extremity is clean,' Heberden nodes, mass location, and osteophyte."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging findings are mentioned in the transcript; both candidate and benchmark correctly list '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 4,
+      "justification": "Includes key problems (mass, osteoarthritis) and adds symptom-based items (wrist/shoulder aches) supported by the transcript. It omits benchmark items that are exam findings (e.g., skin intact), leading to minor differences from the benchmark list."
+    },
+    "PLAN_SPENCER_": {
+      "score": 5,
+      "justification": "Accurately captures the dictated plan: continue home exercise program, continue advancing activity, and return in 6 months."
+    }
+  },
+  "total_score": 23,
+  "percentage": 65.71,
+  "overall_summary": "The candidate note captures the chief complaint, imaging status, and plan accurately. HPI contains one unsupported statement and misses several details. Musculoskeletal verbatim content is only partially captured, omitting key dictated elements. Assessment aligns on major issues with some acceptable additions, but differs slightly from the benchmark list. Patient name extraction was missed."
+}

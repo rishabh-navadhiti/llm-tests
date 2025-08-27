@@ -3,11 +3,11 @@
     "bleu_score": 0.0,
     "content": "-",
     "content_analysis": 0.0,
-    "content_similarity": 0.19760000705718994,
+    "content_similarity": 0.2101999968290329,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.15199999511241913,
+    "rhetorical_similarity": 0.2621000111103058,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 1.0
   },
   {
     "bleu_score": 0.0,
@@ -22,14 +22,14 @@
     "topic_similarity": 0.9982
   },
   {
-    "bleu_score": 0.2916,
+    "bleu_score": 0.348,
     "content": [
       "Patient is a stay-at-home mom who sustained a left distal radius fracture in October 2023 following a trip and fall. She underwent surgery (ORIF) on her left wrist with Dr. Andrew Rice. She was diagnosed with CRPS at the time of injury and post-op, but has made progress. She presents today for evaluation of persistent left wrist stiffness. She is unable to extend her wrist sufficiently to perform a push-up, although she can participate in Pilates regularly without pain or limitation, using modifications."
     ],
-    "content_analysis": 0.5333,
-    "content_similarity": 0.8669000267982483,
+    "content_analysis": 0.5,
+    "content_similarity": 0.9024999737739563,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.7164000272750854,
+    "rhetorical_similarity": 0.8360999822616577,
     "title": "HPI Spencer",
     "topic_similarity": 1.0
   },
@@ -38,24 +38,24 @@
     "content": [
       "Incision is well healed. No tenderness to palpation. Excellent range of motion of the fingers and thumb. No swelling noted. Good grip strength."
     ],
-    "content_analysis": 0.15,
-    "content_similarity": 0.6642000079154968,
+    "content_analysis": 0.1667,
+    "content_similarity": 0.6474999785423279,
     "key": "MUSCULOSKELETAL_VERBATIM",
-    "rhetorical_similarity": 0.5659000277519226,
+    "rhetorical_similarity": 0.5986999869346619,
     "title": "Musculoskeletal",
-    "topic_similarity": 0.0373
+    "topic_similarity": 1.0
   },
   {
     "bleu_score": 0.0,
     "content": [
       "X-ray shows well-healed fracture with good alignment."
     ],
-    "content_analysis": 0.5714,
-    "content_similarity": 0.7098000049591064,
+    "content_analysis": 0.4545,
+    "content_similarity": 0.6654999852180481,
     "key": "IMAGING_RESULTS",
-    "rhetorical_similarity": 0.7688999772071838,
+    "rhetorical_similarity": 0.5824999809265137,
     "title": "Imaging Results",
-    "topic_similarity": 0.1005
+    "topic_similarity": 0.0837
   },
   {
     "bleu_score": 0.0,
@@ -71,16 +71,16 @@
     "topic_similarity": 0.0628
   },
   {
-    "bleu_score": 0.188,
+    "bleu_score": 0.2412,
     "content": [
       "Continue with current therapy.",
       "Return to clinic in 4 weeks for follow-up."
     ],
-    "content_analysis": 0.1364,
-    "content_similarity": 0.3675999939441681,
+    "content_analysis": 0.1818,
+    "content_similarity": 0.5612999796867371,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.3700000047683716,
+    "rhetorical_similarity": 0.48410001397132874,
     "title": "Plan",
-    "topic_similarity": 0.0461
+    "topic_similarity": 1.0
   }
 ]

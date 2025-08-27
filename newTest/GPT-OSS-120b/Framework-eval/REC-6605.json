@@ -1,0 +1,87 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "Gianna Saborio"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 0.16449999809265137,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 0.19380000233650208,
+    "title": "Patient Name",
+    "topic_similarity": 0.601
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "tethering with flexion of fingers"
+    ],
+    "content_analysis": 0.5,
+    "content_similarity": 0.3628000020980835,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.39250001311302185,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1071
+  },
+  {
+    "bleu_score": 0.2364,
+    "content": [
+      "The patient is a right\u2011hand dominant designer presenting for evaluation of his left small finger. He first noticed locking and catching approximately two years ago. He delayed seeking care because he required surgery for other trigger fingers, but now wishes to explore treatment options."
+    ],
+    "content_analysis": 0.4118,
+    "content_similarity": 0.8240000009536743,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.6784999966621399,
+    "title": "HPI Spencer",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.3484,
+    "content": [
+      "left small finger skin is purging. In fact, without erythema, he has a moderate tenderness to palpation. Um, at the small finger aim of fluid is nodule that is triggering that excellent range of motion overall. Um, well-healed trigger finger incisions to the middle finger."
+    ],
+    "content_analysis": 0.6429,
+    "content_similarity": 0.91839998960495,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.6539999842643738,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "X-rays are normal"
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.7239999771118164,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.628600001335144,
+    "title": "Imaging Results",
+    "topic_similarity": 0.2453
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- left small finger trigger finger",
+      "- tethering of fingers"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.7815999984741211,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.7605999708175659,
+    "title": "Assessment",
+    "topic_similarity": 0.0969
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "plan will be, uh, planned trigger. Such as moved today, gently advance activity, gently advance range of motion discussed, but I expect, uh, hands-on-the-grab activity to be uncomfortable for some time. She goes back to school, uh, in two weeks. Recommend video visit in one month if symptoms persist."
+    ],
+    "content_analysis": 0.0952,
+    "content_similarity": 0.42160001397132874,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.574400007724762,
+    "title": "Plan",
+    "topic_similarity": 0.0495
+  }
+]

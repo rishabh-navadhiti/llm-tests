@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to benchmark ('Chaz Thomas') and explicitly stated in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 2,
+      "justification": "Benchmark is 'Follow-up' per transcript. Candidate adds specific context (splint contamination, healing concerns) rather than the concise chief complaint."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Captures key benchmark elements (removed splint due to contamination; concerned about next steps/how it looks) but adds exam/procedure details (pain, limited flexion, sutures removed) not in the benchmark HPI."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 4,
+      "justification": "Mostly matches benchmark verbatim but includes an extra sentence ('Sutures removed today...') not present in the benchmark MSK text."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging mentioned for this patient; both candidate and benchmark correctly use '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 2,
+      "justification": "Benchmark lists 'Right upper extremity Skin is intact.' and 'No tenderness to palpation.' Candidate lists different problems ('Hand laceration', 'Pain in hand', 'Limited flexion'). While benchmark content is not clearly supported by transcript, there is a substantive mismatch with the benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes all benchmark plan elements and additional transcript-supported details ('it'll be sutured in today', 'range of motion check'). The extra content diverges from the benchmark summary."
+    }
+  },
+  "total_score": 24,
+  "percentage": 68.57,
+  "overall_summary": "The candidate accurately captured the patient name and imaging status and largely aligned with the benchmark MSK and plan, albeit with added details. Chief complaint and HPI deviated from the benchmark’s concise formulations, and the assessment differed substantially from the benchmark content. Overall, the note reflects relevant transcript information but does not consistently match the benchmark’s wording and scope."
+}

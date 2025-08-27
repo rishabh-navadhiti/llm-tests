@@ -1,0 +1,88 @@
+[
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "-"
+    ],
+    "content_analysis": 0.0,
+    "content_similarity": 1.0,
+    "key": "PATIENT_NAME",
+    "rhetorical_similarity": 1.0,
+    "title": "Patient Name",
+    "topic_similarity": 0.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "bilateral hand contracture"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.9528999924659729,
+    "key": "CHIEF_COMPLAINT",
+    "rhetorical_similarity": 0.9753999710083008,
+    "title": "Chief Complaint",
+    "topic_similarity": 0.1374
+  },
+  {
+    "bleu_score": 0.1699,
+    "content": [
+      "The patient is a dominant retiree with a history of bilateral handduin's disease who presents for evaluation of progressive hand contractures that began many years ago. He first noticed contracture in his left hand several years ago, which now prevents the hand from lying flat on a table and involves a significant contracture of the ring finger. More recently he has begun to notice similar changes in his right hand. He reports no prior treatment and seeks evaluation and management."
+    ],
+    "content_analysis": 0.4211,
+    "content_similarity": 0.7994999885559082,
+    "key": "HPI_SPENCER",
+    "rhetorical_similarity": 0.7296000123023987,
+    "title": "HPI Spencer",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.8473,
+    "content": [
+      "On exam left upper extremity skin is cleaner . Without anti American message uh significant chordation and nodules along the way , um . Consistent with dense , there's a 45 degree contracture at the ring finger MP joint , um . There is about a 10 degree contractor at the . Uh , ringing your PIP joint . Uh no measurable contractor at any remaining digits , um . X-rays are normal . Oh , right hand , um . Skin is finger intact . There are nodules towards long ring finger ray need to be able to get hands on on the table . There's no evidence of contracture of the um hand ."
+    ],
+    "content_analysis": 0.8846,
+    "content_similarity": 0.9269000291824341,
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "rhetorical_similarity": 0.9526000022888184,
+    "title": "Musculoskeletal",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 1.0,
+    "content": [
+      "X-rays are normal."
+    ],
+    "content_analysis": 0.75,
+    "content_similarity": 0.7735000252723694,
+    "key": "IMAGING_RESULTS",
+    "rhetorical_similarity": 0.6935999989509583,
+    "title": "Imaging Results",
+    "topic_similarity": 1.0
+  },
+  {
+    "bleu_score": 0.0,
+    "content": [
+      "- Dupuytren's disease (bilateral hand contracture)",
+      "- Left ring finger MCP joint contracture (~45\u00b0)",
+      "- Right hand nodules"
+    ],
+    "content_analysis": 0.1818,
+    "content_similarity": 0.6305999755859375,
+    "key": "ASSESSMENT_SPENCER",
+    "rhetorical_similarity": 0.5246999859809875,
+    "title": "Assessment",
+    "topic_similarity": 0.0586
+  },
+  {
+    "bleu_score": 0.5373,
+    "content": [
+      "you recommend Zylex returned to clinic when medication is acquired"
+    ],
+    "content_analysis": 1.0,
+    "content_similarity": 0.9562000036239624,
+    "key": "PLAN_SPENCER_",
+    "rhetorical_similarity": 0.6377999782562256,
+    "title": "Plan",
+    "topic_similarity": 0.1012
+  }
+]

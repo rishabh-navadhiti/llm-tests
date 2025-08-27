@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Matches benchmark with '-' since no patient name appears in the transcript."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 4,
+      "justification": "Captures 'wrist pain' accurately but adds extra detail about function and surgery interest beyond the concise benchmark."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Includes all key transcript facts (improved synovitis after injection, osteoporosis infusion, right TWA interest, bilateral wrist arthritis, knee recovery) with no unsupported additions."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 2,
+      "justification": "Benchmark is '-' (no discrete MSK exam findings). Candidate included a general exam statement and an imaging instruction, which are not specific MSK findings."
+    },
+    "IMAGING_RESULTS": {
+      "score": 3,
+      "justification": "Includes 'The imaging you can leave all the same,' but omits the benchmark detail to delete the large, poorly defined nodule."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Correctly lists bilateral wrist arthritis and synovitis, but omits osteoporosis present in the transcript/benchmark and adds 'status post knee replacement.' Not penalized for missing 'skin intact' since it's not in the transcript."
+    },
+    "PLAN_SPENCER_": {
+      "score": 3,
+      "justification": "Appropriately plans for right wrist arthroplasty and continuation of osteoporosis infusion (aligned with benchmark), but adds an unsupported follow-up statement. Not penalized for missing 'RTC in 2 weeks' since that timing is not in the transcript."
+    }
+  },
+  "total_score": 25,
+  "percentage": 71.43,
+  "overall_summary": "The candidate note aligns well with the benchmark on core facts (HPI, surgical interest, improved synovitis, osteoporosis infusion). Deviations include an over-detailed chief complaint, inclusion of non-specific exam/imaging text in the musculoskeletal section, omission of osteoporosis in the assessment, and an unsupported follow-up in the plan. Overall, mostly accurate with some formatting and detail discrepancies."
+}

@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 0,
+      "justification": "Candidate used '-' despite the transcript and benchmark clearly providing the full name 'Precious Myles Garrett'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 5,
+      "justification": "Exact match to benchmark: 'Left wrist pain'."
+    },
+    "HPI_SPENCER": {
+      "score": 2,
+      "justification": "Includes pain waking at night and rheumatology visit, but omits multiple benchmark details (right-hand dominance, occupation, Dr. Ishimori, prior specific diagnoses, mass size history) and adds an unsupported 'trigger finger' history."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "Benchmark provides no verbatim content ('-'); candidate also provides none. Harmless formatting difference (empty vs '-')."
+    },
+    "IMAGING_RESULTS": {
+      "score": 2,
+      "justification": "Partially correct (mentions osteophytes and retinacular cyst) but incorrectly states normal wrist x-ray/ultrasound and omits the 'bony avulsion fragment vs osteophyte' detail present in the benchmark."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Contains multiple unsupported problems (trigger finger, wrist/CMC arthritis) and duplicates, while missing key benchmark items (left thumb MCP osteophyte, bilateral thumb/MCP masses). Only partial overlap with wrist cyst."
+    },
+    "PLAN_SPENCER_": {
+      "score": 2,
+      "justification": "Matches night splints, observation, and RTC 6 weeks, but omits 'aspiration vs biopsy of the wrist mass' and adds unsupported interventions (steroid injection, trigger finger splinting, NSAIDs, activity modification)."
+    }
+  },
+  "total_score": 17,
+  "percentage": 48.57,
+  "overall_summary": "The candidate captured the chief complaint and some plan elements but missed the patient name, omitted several key HPI details, added unsupported diagnoses (trigger finger, arthritis), and misreported imaging with contradictory normal findings. Overall, significant inaccuracies and omissions reduce fidelity to the benchmark."
+}

@@ -5,11 +5,11 @@
       "-"
     ],
     "content_analysis": 0.0,
-    "content_similarity": 0.14059999585151672,
+    "content_similarity": 1.0,
     "key": "PATIENT_NAME",
-    "rhetorical_similarity": 0.12439999729394913,
+    "rhetorical_similarity": 1.0,
     "title": "Patient Name",
-    "topic_similarity": 0.601
+    "topic_similarity": 0.0
   },
   {
     "bleu_score": 0.0,
@@ -24,16 +24,16 @@
     "topic_similarity": 0.1221
   },
   {
-    "bleu_score": 0.1814,
+    "bleu_score": 0.2161,
     "content": [
       "The patient reports significant wrist pain that limits her ability to perform daily activities. She has bilateral wrist arthritis and is interested in right total wrist arthroplasty. Her synovitis has improved following a rheumatologist-administered injection. She has also started an infusion for osteoporosis. Her knee replacement has healed sufficiently to allow consideration of a wrist rescue procedure. She is here for evaluation and treatment of her wrist condition."
     ],
-    "content_analysis": 0.4286,
-    "content_similarity": 0.9289000034332275,
+    "content_analysis": 0.4783,
+    "content_similarity": 0.9383999705314636,
     "key": "HPI_SPENCER",
-    "rhetorical_similarity": 0.7378000020980835,
+    "rhetorical_similarity": 0.9164999723434448,
     "title": "HPI Spencer",
-    "topic_similarity": 1.0
+    "topic_similarity": 0.0134
   },
   {
     "bleu_score": 0.0,
@@ -53,11 +53,11 @@
       "The imaging you can leave all the same."
     ],
     "content_analysis": 0.0,
-    "content_similarity": 0.7301999926567078,
+    "content_similarity": 0.6389999985694885,
     "key": "IMAGING_RESULTS",
-    "rhetorical_similarity": 0.506600022315979,
+    "rhetorical_similarity": 0.46790000796318054,
     "title": "Imaging Results",
-    "topic_similarity": 0.1685
+    "topic_similarity": 0.1306
   },
   {
     "bleu_score": 0.0,
@@ -67,25 +67,25 @@
       "- Improved synovitis",
       "- Status post knee replacement"
     ],
-    "content_analysis": 0.3333,
-    "content_similarity": 0.8246999979019165,
+    "content_analysis": 0.25,
+    "content_similarity": 0.6959999799728394,
     "key": "ASSESSMENT_SPENCER",
-    "rhetorical_similarity": 0.7954000234603882,
+    "rhetorical_similarity": 0.5659999847412109,
     "title": "Assessment",
-    "topic_similarity": 0.9978
+    "topic_similarity": 0.0372
   },
   {
-    "bleu_score": 0.1001,
+    "bleu_score": 0.3165,
     "content": [
       "Plan to evaluate for right total wrist arthroplasty.",
       "Continue current management for osteoporosis with infusion.",
       "Follow-up to discuss surgical options for right wrist."
     ],
-    "content_analysis": 0.1667,
-    "content_similarity": 0.5881999731063843,
+    "content_analysis": 0.3333,
+    "content_similarity": 0.8809000253677368,
     "key": "PLAN_SPENCER_",
-    "rhetorical_similarity": 0.7003999948501587,
+    "rhetorical_similarity": 0.724399983882904,
     "title": "Plan",
-    "topic_similarity": 0.0257
+    "topic_similarity": 0.9999
   }
 ]

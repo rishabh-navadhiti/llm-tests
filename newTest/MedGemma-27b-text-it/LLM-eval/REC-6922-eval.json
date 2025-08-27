@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the transcript: 'Mahika Mahendru'."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 3,
+      "justification": "Candidate states 'Follow-up for splint' but omits key detail of 'pain distal to the splint' present in the benchmark/transcript; follow-up context captured."
+    },
+    "HPI_SPENCER": {
+      "score": 5,
+      "justification": "Accurately summarizes follow-up status, tolerating splint, pain around the joint distal to the splint with hypersensitivity, and perceived cutaneous nerve irritation from splint pressure; no exam findings added."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 0,
+      "justification": "Transcript includes verbatim MSK findings (splint in place, mild soft tissue swelling, hypersensitivity distal to splint, dorsal pressure, unable to sublux extensor tendons, excellent PAP), but the candidate left this field empty."
+    },
+    "IMAGING_RESULTS": {
+      "score": 4,
+      "justification": "No imaging mentioned. Benchmark shows '-', while candidate left the field empty; meaning aligns (no imaging), but formatting deviates."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 1,
+      "justification": "Should list 'Hypersensitivity distal to the splint' based on the transcript; candidate provided nothing. Note: benchmark also includes 'Skin is intact' and 'No tenderness to palpation,' which are not in the transcript and are not required."
+    },
+    "PLAN_SPENCER_": {
+      "score": 0,
+      "justification": "Transcript plan: modify splint; return Monday if no improvement after modification; return in 3 weeks. Candidate omitted the plan entirely."
+    }
+  },
+  "total_score": 18,
+  "percentage": 51.43,
+  "overall_summary": "Accurate patient name and an excellent HPI. Chief complaint is incomplete, MSK verbatim and plan are missing, and assessment omits the key active problem. Imaging absence is conveyed but not formatted per instructions."
+}

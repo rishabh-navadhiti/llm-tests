@@ -1,0 +1,35 @@
+{
+  "field_scores": {
+    "PATIENT_NAME": {
+      "score": 5,
+      "justification": "Exact match to the transcript: 'Kevin Clancy' is explicitly stated by the doctor."
+    },
+    "CHIEF_COMPLAINT": {
+      "score": 0,
+      "justification": "Benchmark chief complaint 'Left ring finger trigger finger' is clearly stated in the transcript, but the candidate returned '-'."
+    },
+    "HPI_SPENCER": {
+      "score": 4,
+      "justification": "Accurately notes left ring finger trigger finger, but includes plan details (injection) which are outside HPI scope, though they are from the transcript."
+    },
+    "MUSCULOSKELETAL_VERBATIM": {
+      "score": 5,
+      "justification": "No musculoskeletal exam findings were dictated; candidate correctly left this empty."
+    },
+    "IMAGING_RESULTS": {
+      "score": 5,
+      "justification": "No imaging results for this patient were mentioned; reference to 'David' is a different patient. Candidate correctly returned '-'."
+    },
+    "ASSESSMENT_SPENCER": {
+      "score": 3,
+      "justification": "Includes 'left ring finger trigger finger' but omits 'plantar tendonitis' which is present in the transcript and benchmark."
+    },
+    "PLAN_SPENCER_": {
+      "score": 4,
+      "justification": "Includes key plan elements: trigger finger injection and home exercise program with low threshold for formal therapy. Contains extraneous filler and omits 'Return to clinic in 2 weeks' (not present in transcript; no penalty for that), but overall plan content matches core items."
+    }
+  },
+  "total_score": 26,
+  "percentage": 74.29,
+  "overall_summary": "The candidate note correctly captured the patient name, lack of MSK and imaging details, and most of the plan, but missed the chief complaint and one assessment item (plantar tendonitis). The HPI is mostly accurate but includes plan details. Overall, content is largely accurate with some omissions and minor formatting/extraneous content issues."
+}

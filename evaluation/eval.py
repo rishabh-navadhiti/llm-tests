@@ -7,7 +7,7 @@ from openai import OpenAI
 # -------------------------------
 # CONFIG
 # -------------------------------
-PROMPT_PATH = "eval_prompt.txt"
+PROMPT_PATH = "/Users/rish/Development/runpod dev/llm-tests/evaluation/eval_prompt.txt"
 BENCHMARK_DIR = "benchmark"
 CANDIDATE_DIR = "../Output/DeepSeek-R1-32b-reasoning"
 TRANSCRIPT_DIR = "../transcripts/Spencer"

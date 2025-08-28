@@ -703,7 +703,7 @@
 
 ## Field Scores by Record
 
-| Record ID | PATIENT_NAME | CHIEF_COMPLAINT | HPI_SPENCER | MUSCULOSKELETAL | IMAGING | ASSESSMENT | PLAN | Total/35 |
+| Record ID | PATIENT_NAME | CHIEF_COMPLAINT | HPI | MUSCULOSKELETAL | IMAGING | ASSESSMENT | PLAN | Total/35 |
 |-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
 | REC-6602 | 5 | 5 | 5 | 1 | 5 | 2 | 4 | 27/35 |
 | REC-6604 | 5 | 5 | 5 | 5 | 5 | 5 | 1 | 31/35 |

@@ -2,8 +2,8 @@ import os
 import json
 
 # 📂 Directory containing evaluation JSON files
-INPUT_DIR = "/Users/rish/Development/runpod dev/llm-tests/newTest/Qwen3-30B-A3B/LLM-eval"
-OUTPUT_FILE = "/Users/rish/Development/runpod dev/llm-tests/newTest/Qwen3-30B-A3B/Results/LLM-Report.md"
+INPUT_DIR = "/Users/rish/Development/runpod dev/llm-tests/newTest/Deepseek-distill32b/LLM-eval"
+OUTPUT_FILE = "/Users/rish/Development/runpod dev/llm-tests/newTest/Deepseek-distill32b/Results/LLM-Report.md"
 MODEL_NAME = "Medgemma 27b"
 
 def process_eval_files(input_dir, output_file):

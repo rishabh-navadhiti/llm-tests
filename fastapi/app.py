@@ -14,22 +14,22 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Global generation parameters (not exposed to frontend)
+# generation parameters 
+MODEL = "Qwen/Qwen3-30B-A3B-Instruct-2507"
 TEMPERATURE = 0.1
 TOP_P = 0.3
 MAX_TOKENS = 4000
 FREQUENCY_PENALTY = 0.0
 PRESENCE_PENALTY = 0.0
 
-# Local vLLM server configuration
 VLLM_API_URL = "http://localhost:8000/v1/chat/completions"
 
 # Request Models
 class MedicalNoteRequest(BaseModel):
-    system_prompt: str = Field(..., description="System instructions for the model")
-    json_template: Dict[str, Any] = Field(..., description="JSON template to populate")
-    medical_transcript: List[Dict[str, str]] = Field(..., description="Transcript as list of speaker/conversation objects")
-    recording_id: Optional[str] = Field(None, description="Optional ID for saving test files")
+    system_prompt: str
+    json_template: List[Dict[str, Any]] 
+    medical_transcript: List[Dict[str, str]]
+    recording_id: Optional[str] = None
 
 class TokenUsage(BaseModel):
     prompt_tokens: int
@@ -41,12 +41,15 @@ class TimingInfo(BaseModel):
     generation_time_ms: float
     processing_time_ms: float
 
+from typing import Union
+
 class MedicalNoteResponse(BaseModel):
     success: bool
-    generated_json: Optional[Dict[str, Any]] = None
+    generated_json: Optional[List[Dict[str, Any]]] = None  
     token_usage: Optional[TokenUsage] = None
     timing: Optional[TimingInfo] = None
     error_message: Optional[str] = None
+
 
 # FastAPI App
 app = FastAPI(
@@ -65,7 +68,7 @@ def format_transcript(transcript_data: List[Dict[str, str]]) -> str:
     
     return formatted_transcript.strip()
 
-def build_medical_prompt(system_prompt: str, json_template: Dict[str, Any], formatted_transcript: str) -> str:
+def build_medical_prompt(system_prompt: str, json_template: List[Dict[str, Any]], formatted_transcript: str) -> str:
     """Build the complete prompt for medical note generation."""
     template_str = json.dumps(json_template, indent=2, ensure_ascii=False)
     
@@ -86,26 +89,29 @@ def build_medical_prompt(system_prompt: str, json_template: Dict[str, Any], form
     
     return prompt
 
-def extract_json_from_response(response: str) -> Optional[Dict[str, Any]]:
+
+def extract_json_from_response(response: str) -> Optional[Any]:
     """
-    Extract JSON from model response, handling various formatting issues.
+    Extract JSON (list or dict) from model response, handling various formatting issues.
+    Returns either a dict or list depending on what the model output is.
     """
     if not response or not response.strip():
         return None
-    
-    # Try direct parsing first
+
+    # Direct parse
     try:
         return json.loads(response)
     except json.JSONDecodeError:
         pass
-    
-    # Try to find JSON in the response using various patterns
+
+    # Regex patterns for arrays and objects
     patterns = [
-        r'\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}',  # JSON object
-        r'```json\s*(\{.*?\})\s*```',  # JSON in code block with language
-        r'```\s*(\{.*?\})\s*```',  # JSON in code block without language
+        r'```json\s*([\s\S]*?)```',   
+        r'```\s*([\s\S]*?)```',       
+        r'(\[.*\])',                  
+        r'(\{.*\})',                  
     ]
-    
+
     for pattern in patterns:
         matches = re.findall(pattern, response, re.DOTALL)
         for match in matches:
@@ -113,26 +119,27 @@ def extract_json_from_response(response: str) -> Optional[Dict[str, Any]]:
                 return json.loads(match)
             except json.JSONDecodeError:
                 continue
-    
-    # Try to find the outermost JSON structure by counting braces
-    brace_level = 0
-    start_idx = -1
-    
-    for i, char in enumerate(response):
-        if char == '{':
-            if brace_level == 0:
-                start_idx = i
-            brace_level += 1
-        elif char == '}':
-            brace_level -= 1
-            if brace_level == 0 and start_idx >= 0:
-                candidate = response[start_idx:i+1]
-                try:
-                    return json.loads(candidate)
-                except json.JSONDecodeError:
-                    continue
-    
+
+    # Fallback: try brace/bracket balancing
+    for open_char, close_char in [('{', '}'), ('[', ']')]:
+        level = 0
+        start_idx = -1
+        for i, char in enumerate(response):
+            if char == open_char:
+                if level == 0:
+                    start_idx = i
+                level += 1
+            elif char == close_char:
+                level -= 1
+                if level == 0 and start_idx >= 0:
+                    candidate = response[start_idx:i+1]
+                    try:
+                        return json.loads(candidate)
+                    except json.JSONDecodeError:
+                        continue
+
     return None
+
 
 def save_test_files(recording_id: str, prompt: str, raw_response: str, extracted_json: Dict[str, Any]):
     """
@@ -143,19 +150,15 @@ def save_test_files(recording_id: str, prompt: str, raw_response: str, extracted
     3. processed_output.json - contains the extracted JSON
     """
     try:
-        # Create directory if it doesn't exist
         test_dir = Path(f"test_outputs/{recording_id}")
         test_dir.mkdir(parents=True, exist_ok=True)
         
-        # Save input prompt
         with open(test_dir / "input.txt", "w", encoding="utf-8") as f:
             f.write(prompt)
         
-        # Save raw response
         with open(test_dir / "raw_output.json", "w", encoding="utf-8") as f:
             json.dump({"response": raw_response}, f, indent=2, ensure_ascii=False)
         
-        # Save processed JSON
         with open(test_dir / "processed_output.json", "w", encoding="utf-8") as f:
             json.dump(extracted_json, f, indent=2, ensure_ascii=False)
         
@@ -171,7 +174,7 @@ async def root():
 async def health_check():
     return {"status": "healthy", "timestamp": datetime.utcnow().isoformat()}
 
-@app.post("/generate-medical-note", response_model=MedicalNoteResponse)
+@app.post("/generate", response_model=MedicalNoteResponse)
 async def generate_medical_note(request: MedicalNoteRequest):
     """
     Generate a structured medical note from a transcript using Qwen 30B A3B Instruct.
@@ -179,7 +182,7 @@ async def generate_medical_note(request: MedicalNoteRequest):
     total_start_time = time.time()
     
     try:
-        # Format the transcript
+        # Format transcript
         formatted_transcript = format_transcript(request.medical_transcript)
         
         # Build the prompt
@@ -194,11 +197,11 @@ async def generate_medical_note(request: MedicalNoteRequest):
             {"role": "user", "content": prompt}
         ]
         
-        # Call local vLLM server
+        # Call vLLM server
         generation_start_time = time.time()
         
         payload = {
-            "model": "Qwen/Qwen3-30B-A3B-Instruct",
+            "model": MODEL,
             "messages": messages,
             "temperature": TEMPERATURE,
             "top_p": TOP_P,
@@ -214,13 +217,25 @@ async def generate_medical_note(request: MedicalNoteRequest):
         vllm_response = response.json()
         generation_time_ms = (time.time() - generation_start_time) * 1000
         
-        # Extract the response content
         choices = vllm_response.get("choices", [])
         if not choices:
             raise HTTPException(status_code=500, detail="No choices returned from model")
         
-        content = choices[0].get("message", {}).get("content", "")
+        # content = choices[0].get("message", {}).get("content", "")
         
+        # If vLLM returns a wrapper with "response"
+        if "response" in vllm_response:
+            content = vllm_response["response"]
+        else:
+            # Fallback: OpenAI-style response with choices
+            choices = vllm_response.get("choices", [])
+            if not choices:
+                raise HTTPException(status_code=500, detail="No choices returned from model")
+            content = choices[0].get("message", {}).get("content", "")
+
+
+
+
         # Extract token usage information
         usage_data = vllm_response.get("usage", {})
         token_usage = TokenUsage(
@@ -229,7 +244,6 @@ async def generate_medical_note(request: MedicalNoteRequest):
             total_tokens=usage_data.get("total_tokens", 0)
         )
         
-        # Extract JSON from the response
         processing_time_start = time.time()
         extracted_json = extract_json_from_response(content)
         processing_time_ms = (time.time() - processing_time_start) * 1000
@@ -241,14 +255,12 @@ async def generate_medical_note(request: MedicalNoteRequest):
         if request.recording_id:
             save_test_files(request.recording_id, prompt, content, extracted_json or {})
         
-        # Prepare timing information
         timing_info = TimingInfo(
             total_time_ms=total_time_ms,
             generation_time_ms=generation_time_ms,
             processing_time_ms=processing_time_ms
         )
         
-        # Return successful response
         return MedicalNoteResponse(
             success=True,
             generated_json=extracted_json,
@@ -263,7 +275,6 @@ async def generate_medical_note(request: MedicalNoteRequest):
             error_message=str(e)
         )
 
-# For testing locally
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8001)  # Different port than vLLM
+    uvicorn.run(app, host="0.0.0.0", port=4000) 

@@ -1,21 +1,17 @@
 Couldn't find '/root/.ollama/id_ed25519'. Generating new private key.
 Your new public key is: 
 
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMnQ7hb8GbaNP7EuiQPB2fuLneD3I5XVK04lWfe3lUlk
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGWgWU6pyc8ux9OcGx9B7HzRCtJBnNy1Tu0FWJnAAHEb
 
-time=2025-08-26T05:37:35.242Z level=INFO source=routes.go:1331 msg="server config" env="map[CUDA_VISIBLE_DEVICES: GPU_DEVICE_ORDINAL: HIP_VISIBLE_DEVICES: HSA_OVERRIDE_GFX_VERSION: HTTPS_PROXY: HTTP_PROXY: NO_PROXY: OLLAMA_CONTEXT_LENGTH:4096 OLLAMA_DEBUG:INFO OLLAMA_FLASH_ATTENTION:false OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://127.0.0.1:11434 OLLAMA_INTEL_GPU:false OLLAMA_KEEP_ALIVE:5m0s OLLAMA_KV_CACHE_TYPE: OLLAMA_LLM_LIBRARY: OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:0 OLLAMA_MAX_QUEUE:512 OLLAMA_MODELS:/root/.ollama/models OLLAMA_MULTIUSER_CACHE:false OLLAMA_NEW_ENGINE:false OLLAMA_NEW_ESTIMATES:false OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NUM_PARALLEL:1 OLLAMA_ORIGINS:[http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://* vscode-file://*] OLLAMA_SCHED_SPREAD:false ROCR_VISIBLE_DEVICES: http_proxy: https_proxy: no_proxy:]"
-time=2025-08-26T05:37:35.242Z level=INFO source=images.go:477 msg="total blobs: 0"
-time=2025-08-26T05:37:35.242Z level=INFO source=images.go:484 msg="total unused blobs removed: 0"
-time=2025-08-26T05:37:35.242Z level=INFO source=routes.go:1384 msg="Listening on 127.0.0.1:11434 (version 0.11.7)"
-time=2025-08-26T05:37:35.243Z level=INFO source=gpu.go:217 msg="looking for compatible GPUs"
-time=2025-08-26T05:37:35.891Z level=INFO source=types.go:130 msg="inference compute" id=GPU-c117a0d5-e320-896b-15e1-58d7818df163 library=cuda variant=v12 compute=8.6 driver=12.7 name="NVIDIA A40" total="44.4 GiB" available="44.2 GiB"
-time=2025-08-26T05:37:35.891Z level=INFO source=types.go:130 msg="inference compute" id=GPU-f0af3490-1d51-b41c-6e85-9a1398f0384c library=cuda variant=v12 compute=8.6 driver=12.7 name="NVIDIA A40" total="44.4 GiB" available="44.2 GiB"
-[GIN] 2025/08/26 - 05:38:03 | 200 |      41.821µs |       127.0.0.1 | HEAD     "/"
-[GIN] 2025/08/26 - 05:38:04 | 200 |   444.37555ms |       127.0.0.1 | POST     "/api/pull"
-[GIN] 2025/08/26 - 05:38:19 | 200 |      58.039µs |       127.0.0.1 | HEAD     "/"
-time=2025-08-26T05:38:20.356Z level=INFO source=download.go:177 msg="downloading 90a618fe6ff2 in 66 1 GB part(s)"
-time=2025-08-26T05:39:48.672Z level=INFO source=download.go:177 msg="downloading fa6710a93d78 in 1 7.2 KB part(s)"
-time=2025-08-26T05:39:50.009Z level=INFO source=download.go:177 msg="downloading f60356777647 in 1 11 KB part(s)"
-time=2025-08-26T05:39:51.344Z level=INFO source=download.go:177 msg="downloading d8ba2f9a17b3 in 1 18 B part(s)"
-time=2025-08-26T05:39:52.655Z level=INFO source=download.go:177 msg="downloading e7233df9dcc9 in 1 490 B part(s)"
-[GIN] 2025/08/26 - 05:40:50 | 200 |         2m31s |       127.0.0.1 | POST     "/api/pull"
+time=2025-08-29T03:41:09.462Z level=INFO source=routes.go:1331 msg="server config" env="map[CUDA_VISIBLE_DEVICES: GPU_DEVICE_ORDINAL: HIP_VISIBLE_DEVICES: HSA_OVERRIDE_GFX_VERSION: HTTPS_PROXY: HTTP_PROXY: NO_PROXY: OLLAMA_CONTEXT_LENGTH:4096 OLLAMA_DEBUG:INFO OLLAMA_FLASH_ATTENTION:false OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://127.0.0.1:11434 OLLAMA_INTEL_GPU:false OLLAMA_KEEP_ALIVE:5m0s OLLAMA_KV_CACHE_TYPE: OLLAMA_LLM_LIBRARY: OLLAMA_LOAD_TIMEOUT:5m0s OLLAMA_MAX_LOADED_MODELS:0 OLLAMA_MAX_QUEUE:512 OLLAMA_MODELS:/root/.ollama/models OLLAMA_MULTIUSER_CACHE:false OLLAMA_NEW_ENGINE:false OLLAMA_NEW_ESTIMATES:false OLLAMA_NOHISTORY:false OLLAMA_NOPRUNE:false OLLAMA_NUM_PARALLEL:1 OLLAMA_ORIGINS:[http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://* vscode-file://*] OLLAMA_SCHED_SPREAD:false ROCR_VISIBLE_DEVICES: http_proxy: https_proxy: no_proxy:]"
+time=2025-08-29T03:41:09.463Z level=INFO source=images.go:477 msg="total blobs: 0"
+time=2025-08-29T03:41:09.463Z level=INFO source=images.go:484 msg="total unused blobs removed: 0"
+time=2025-08-29T03:41:09.463Z level=INFO source=routes.go:1384 msg="Listening on 127.0.0.1:11434 (version 0.11.8)"
+time=2025-08-29T03:41:09.463Z level=INFO source=gpu.go:217 msg="looking for compatible GPUs"
+time=2025-08-29T03:41:10.736Z level=INFO source=types.go:130 msg="inference compute" id=GPU-1b42ebc2-0b0d-3a6a-c1c8-a664f8648090 library=cuda variant=v12 compute=8.6 driver=12.7 name="NVIDIA A40" total="44.4 GiB" available="44.2 GiB"
+time=2025-08-29T03:41:10.736Z level=INFO source=types.go:130 msg="inference compute" id=GPU-35e4d6bb-d571-0143-d5f4-b11471778a1c library=cuda variant=v12 compute=8.6 driver=12.7 name="NVIDIA A40" total="44.4 GiB" available="44.2 GiB"
+time=2025-08-29T03:41:10.736Z level=INFO source=types.go:130 msg="inference compute" id=GPU-734f8184-dad6-d3e5-012b-a5f8ebb877e0 library=cuda variant=v12 compute=8.6 driver=12.7 name="NVIDIA A40" total="44.4 GiB" available="44.2 GiB"
+time=2025-08-29T03:41:10.736Z level=INFO source=types.go:130 msg="inference compute" id=GPU-2f813a6e-9def-56ef-8b0e-fa4d1b237f1c library=cuda variant=v12 compute=8.6 driver=12.7 name="NVIDIA A40" total="44.4 GiB" available="44.2 GiB"
+[GIN] 2025/08/29 - 03:41:15 | 200 |      71.334µs |       127.0.0.1 | HEAD     "/"
+time=2025-08-29T03:41:16.076Z level=INFO source=download.go:177 msg="downloading 90a618fe6ff2 in 66 1 GB part(s)"
+[GIN] 2025/08/29 - 03:41:50 | 200 | 35.135480246s |       127.0.0.1 | POST     "/api/pull"

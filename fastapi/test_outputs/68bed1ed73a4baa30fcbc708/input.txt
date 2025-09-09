@@ -1,0 +1,293 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note, you will also be provided with a pre charting notes , use that as context for the notes.. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. "
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": [],
+    "default": "No current medications found.",
+    "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [],
+    "default": "No family history found",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [],
+    "default": "No social history",
+    "instruction": "What is the social history of this patient"
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [],
+    "default": "No allergies found",
+    "instruction": "What is the allergies of this patient"
+  },
+  {
+    "sub-section": [
+      {
+        "title": "GASTROINTESTINAL",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "GENITOURINARY",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "NEUROLOGICAL",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Hematologic",
+        "key": "SOAP_ROS_HEMATOLOGIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lymphatic",
+        "key": "SOAP_ROS_LYMPHATIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_ROS_PSYCHIATRIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of systems",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Nose",
+        "key": "SOAP_PE_NOSE",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PHYSICAL_EXAM_NECK",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Abdomen",
+        "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [],
+    "default": "No Immunizations found",
+    "instruction": "What is the immunizations of this patient"
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [],
+    "default": "No lab results found",
+    "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "ICD_ASSESSMENT",
+        "content": [],
+        "default": "-",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give all the current assessment and not historical information return it in a list. The result must be easily searchable in icd description so search for the icd code."
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section, provide everything in a list."
+      }
+    ],
+    "title": "Assessment and Plan",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: Fan , how are you ? Hey , good morning , doctor . I'm fine . How are you ? Thank you . We have a pretty busy today . Let's get started . This one to me is . Morning . How you doing ? So Jenny to get rid of that , uh , the , the tip or the whole thing , just the tip , OK .
+Patient: just the distal failing , so there was uh an ulcer , there's an ulcer . So and they looked at the X-ray and it looks like the infection has
+Doctor_1: that ,
+Patient: . So did they say to you the possibility would have been IV antibiotics for 6 weeks that you would have to do yourself versus which does not guarantee that the infection is gonna get , gonna be taken care of because of a circulation is , is limited in that area . So that's why you guys decided that the best thing to do is . Yeah , I don't know why they didn't tell you about the aspirin . Yeah , we want , we don't want surgeons don't want patients on aspirin . They should have told you that . So I
+Doctor_1: Dr . Swanson , the same . Hey Kyle , good morning .
+Patient: , I'm doing well , yourself ? Hey , I see you , Mr . Harshman today . You see her next to me . Um , question , he , he took an aspirin today . He said nobody told him to stop the aspirin . Are you OK with that for the surgery
+Doctor_1: ? You're
+Patient: . Oh , OK , excellent . OK . So I'm doing the HMP right now , OK ? OK , take care . OK , you have a good day . OK , bye-bye . But Just wanted to confirm because I don't want you to get there and then tell you uh uh go home . So , I'm sorry that this happened , but it's the best course of action because they would have to put up what is called a PICC line and you would have to give yourself the , the antibiotic and , and the truth is I have seen many times that patients go through 6 weeks of antibiotics and still the infection doesn't get .
+Doctor_1: , it doesn't go away .
+Patient: . Do you , do you have sensation in your feet ?
+Doctor_1: . All right . So it's . Um , callous , callous all up there .
+Patient: you saw the ulcer , you found it yourself , OK , because you know what happened . The reason why I'm asking is because sometimes patients with diabetes , once they lose the sensation , they don't know there is an ulcer . I'm pretty good . And , and not many , not many people do this to look at the bottom of the bone . So yours is , is in the bottom , the bottom , right ?
+Doctor_1: 
+Patient: the left of the second toe . OK , all right . So , let me look at your vitals today .
+Doctor_1: . Blood
+Spk_2: is
+Doctor_1: . OK .
+Patient: haven't lost any more weight . You've got to keep working on that , OK ? have to keep working on losing more weight . Yeah , but are the sugars behaving ? Are they OK ? Yeah , the last time that we looked at your A1C , your A1C was 6.8 , so I'm happy with that , OK ? All right . So when it comes to
+Doctor_1: surgery .
+Patient: reason for why they want me to see you is because they want to make sure that there's no cardiac risk , OK , for
+Doctor_1: surgery .
+Patient: there's an algorithm that we follow . Is this a high-risk surgery ? No . You have a history of heart attacks , stands , open heart surgery ? No . Do you have a history of congestion or failure ? No . You have a history of a stroke ? No . Would you be a patient who would require insulin ? No , I mean , during the surgery . Are you a patient whose kidneys are failing ? No . So it means that the risk is not . Or no , I mean , we cannot say 0 . So it's low , medium , or high .
+Doctor_1: you , are you gonna be taking time off ? I'm already on
+Spk_2: 
+Doctor_1: week weekend and very bloody and stuff . Relax . OK , OK . Deep breath in now . OK . OK .
+Patient: listen to the heart . You write at Harley ?
+Doctor_1: you to ask the next question . Do you wear a helmet ?
+Spk_2: how much required states .
+Doctor_1: you do it in
+Patient: . Illinois is not
+Doctor_1: to wear a helmet .
+Patient: your decision . As your doctor , I always tell patients to ride motorcycle
+Doctor_1: work . Yeah . So lungs are clear , heart sounds fine , the vitals are good . No fever
+Patient: all . I don't see any reason not to have the surgery . So I'll complete the HMP . It'll be ready tomorrow . OK ? OK , wish you the best . When are you come ,
+Spk_2: do you come back to see me ? So It
+Patient: like you have an uh an appointment on the 17th for a vein thing .
+Spk_2: , no , well , yeah , see , yeah , June , I have June 17th . Doctor Hane . The procedure and then the 17th with you . No , 13th ,
+Patient: Haneef . 17th ultrasound of the vein post ablation . Yes , and for me it is August . So I just reading to you
+Doctor_1: no August
+Patient: talking about
+Doctor_1: . Mr . Hodgson , we'll take care of the rest , OK ? You get , you'll get better soon . You're welcome . Good luck to you , sir . Great . Resistance , skin ulceration to left second toe . Physical exam , skin . Presence of ulceration , distal ailings ? That second toe . And the same thing goes for extremities , presents with ulceration . Discopes left second toe . That's been in plan #1 and number 2 . They have a problem if you in nature . That is not well controlled . Patient will undergo amputation of the distal phalanx of the left second toe . But risk is low . patient medically optimal for surgery . Number 3 , status to be made that it was in control on . Lisinopril 5 mg once a day . Or if they have a problem chronicildenafil , 100 mg 1 hour prior to sexual activity . 5 microfu ura that is make sure that is well and lisinopril , 5 mg will you take . 6 and 7 , if you have a problem , nature . That is well controlled on Oze take 2 mg of few once per week . A , the taro chronic in nature , that is well controlled on atorvastatin , 20 mg per day . And you know fibric acid , 135 mg once a day . 9 and 10 established problem chronic dementia that is not well controlled those to maintain a BMI of 30 . Patient was canceled today regarding eating healthy and exercising daily . Number 11 is have problem chronic dementia that is well controlled . position , patient is medically optimal to undergo amputation of distal phalanx of the left second toe . Thank you , doc . to see Fred .
+Patient: . Al
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

@@ -1,0 +1,333 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Mr. Catalina"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Elevated blood glucose levels and poor diabetes control"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [
+      "Mr. Catalina is a 75-year-old male with a history of type 2 diabetes, presenting with poorly controlled glycemic levels. His most recent blood glucose reading was 272 mg/dL, and his hemoglobin A1C is 8.8%, significantly above the target of under 7%. He reports consuming a donut daily in the morning, which he acknowledges is not consistent with diabetic dietary guidelines. He admits to eating foods high in carbohydrates and sugars, including bread, pasta, rice, potatoes, and sweets, despite being aware of the dietary restrictions. He has been non-adherent to dietary recommendations, stating he only has time for a donut in the morning. He is aware that his current eating habits are contributing to his elevated glucose levels. He has not been consistently exercising, although he reports walking over a mile three times per week. He is concerned about his weight and has been walking for exercise. He has a history of a recent heart attack in his brother, which he describes as occurring while the brother was driving himself to a destination. He also reports ear wax buildup, with difficulty hearing and a sensation of blockage. He denies pain in his joints but acknowledges mild arthritis, which he attributes to aging. He is seeking guidance on managing his diabetes, improving his diet, and addressing his ear wax issue."
+    ],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [
+      "Type 2 diabetes mellitus",
+      "Hypertriglyceridemia",
+      "Hypercholesterolemia (managed with atorvastatin)",
+      "Arthritis (degenerative, non-rheumatoid)",
+      "History of myocardial infarction in brother (recently occurred)"
+    ],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits."
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": [
+      "Metformin (Glucophage) 500 mg, oral, twice daily, on for 5 years",
+      "Atorvastatin 40 mg, oral, once daily, on for 3 years",
+      "Ozempic (semaglutide) 1 mg, subcutaneous, once weekly, on for 2 weeks (dose to be increased to 2 mg)"
+    ],
+    "default": "No current medications found.",
+    "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [
+      "Brother: History of myocardial infarction (recently occurred), no known complications reported",
+      "No other significant family history of diabetes, cardiovascular disease, or cancer reported"
+    ],
+    "default": "No family history found",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [
+      "Retired",
+      "Lives independently",
+      "Walks over a mile three times per week for exercise",
+      "Reports consuming a donut daily in the morning",
+      "No tobacco use reported",
+      "No alcohol use reported",
+      "No recreational drug use reported"
+    ],
+    "default": "No social history",
+    "instruction": "What is the social history of this patient"
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [
+      "No known allergies"
+    ],
+    "default": "No allergies found",
+    "instruction": "What is the allergies of this patient"
+  },
+  {
+    "sub-section": [
+      {
+        "title": "GASTROINTESTINAL",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [
+          "No abdominal pain, nausea, vomiting, diarrhea, or constipation reported"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "GENITOURINARY",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [
+          "No urinary frequency, urgency, dysuria, hematuria, or nocturia reported"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "NEUROLOGICAL",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [
+          "No headaches, dizziness, syncope, focal weakness, numbness, tingling, or visual disturbances reported"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [
+          "No fever, chills, night sweats, unintentional weight loss, fatigue, or malaise reported"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [
+          "Reports mild joint stiffness and firmness in hands, consistent with degenerative arthritis; no pain or swelling reported"
+        ],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Hematologic",
+        "key": "SOAP_ROS_HEMATOLOGIC",
+        "content": [
+          "No history of anemia, bleeding, bruising, or clotting disorders reported"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lymphatic",
+        "key": "SOAP_ROS_LYMPHATIC",
+        "content": [
+          "No lymphadenopathy, swelling, or infections reported"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_ROS_PSYCHIATRIC",
+        "content": [
+          "No symptoms of depression, anxiety, or mood disturbances reported"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of systems",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [
+          "Bilateral ear wax impaction noted; external auditory canals obstructed; hearing impaired; no signs of infection or discharge"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Nose",
+        "key": "SOAP_PE_NOSE",
+        "content": [
+          "No nasal congestion, discharge, or obstruction reported"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [
+          "No sore throat, hoarseness, or difficulty swallowing reported"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PHYSICAL_EXAM_NECK",
+        "content": [
+          "No lymphadenopathy, thyromegaly, or masses noted"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [
+          "Regular rhythm, no murmurs, gallops, or rubs appreciated"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [
+          "Clear to auscultation bilaterally, no wheezes, crackles, or rhonchi"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Abdomen",
+        "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+        "content": [
+          "Soft, non-tender, non-distended; no hepatosplenomegaly or masses palpated"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [
+          "Hands show firmness consistent with degenerative arthritis; no swelling or deformity"
+        ],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+        "content": [
+          "Alert and oriented to person, place, and time; cranial nerves II-XII intact; motor strength 5/5 in all extremities; normal coordination and gait"
+        ],
+        "default": "Normal",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [
+          "Appears calm, cooperative, and appropriate; no signs of distress or mood disturbance"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [
+      "Influenza vaccine: last received 1 year ago",
+      "Pneumococcal vaccine: received once, no details on date",
+      "Tdap: received 5 years ago"
+    ],
+    "default": "No Immunizations found",
+    "instruction": "What is the immunizations of this patient"
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [
+      "Hemoglobin A1C: 8.8% (elevated, target <7%)",
+      "Fasting blood glucose: 272 mg/dL (elevated)",
+      "Triglycerides: 288 mg/dL (elevated, target <150 mg/dL)",
+      "LDL cholesterol: 59 mg/dL (within target, <100 mg/dL)",
+      "Uric acid: normal"
+    ],
+    "default": "No lab results found",
+    "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "ICD_ASSESSMENT",
+        "content": [
+          "Type 2 Diabetes Mellitus, Uncontrolled (E11.69)",
+          "Hypertriglyceridemia (E78.1)",
+          "Degenerative Arthritis (M19.90)",
+          "Hypercholesterolemia, Secondary to Medication (E78.0)",
+          "Ear Wax Impaction (H60.5)"
+        ],
+        "default": "-",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give all the current assessment and not historical information return it in a list. The result must be easily searchable in icd description so search for the icd code."
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [
+          "Increase dose of Ozempic (semaglutide) from 1 mg to 2 mg subcutaneous once weekly",
+          "Continue current dose of metformin 500 mg oral twice daily",
+          "Prescribe Debrox (carbamide peroxide) otic solution for ear wax removal",
+          "Refer to ophthalmologist for diabetic eye exam due to elevated A1C and diabetes duration",
+          "Educate patient on dietary modifications: avoid donuts, bread, pasta, rice, potatoes, and sweets; emphasize high-protein, low-carbohydrate breakfast options such as eggs, vegetables, and avocado",
+          "Advise patient to walk on treadmill for 1 hour after consuming any carbohydrate-containing meal; 2 hours for two servings",
+          "Encourage adherence to American Diabetes Association exercise guidelines (5 sessions per week)",
+          "Schedule follow-up appointment in 4 months for A1C recheck and medication review"
+        ],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section, provide everything in a list."
+      }
+    ],
+    "title": "Assessment and Plan",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [
+      "Next Appointment: Schedule the next appointment for 4 months from today.",
+      "Review and Adjustments: Plan for reviewing the patient's progress, glycemic control, and medication adherence during the follow-up appointment. Adjust treatment plan as needed based on A1C results and lifestyle changes."
+    ],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]

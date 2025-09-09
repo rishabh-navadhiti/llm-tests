@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Header
 from pydantic import BaseModel, Field
 from typing import Optional, Dict, Any, List
 import json
@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # generation parameters 
-MODEL = "Qwen/Qwen3-30B-A3B-Instruct-2507"
+MODEL = "Qwen/Qwen3-30B-A3B-Instruct-2507-FP8"
 TEMPERATURE = 0.1
 TOP_P = 0.3
 MAX_TOKENS = 4000
@@ -41,15 +41,12 @@ class TimingInfo(BaseModel):
     generation_time_ms: float
     processing_time_ms: float
 
-from typing import Union
-
 class MedicalNoteResponse(BaseModel):
     success: bool
     generated_json: Optional[List[Dict[str, Any]]] = None  
     token_usage: Optional[TokenUsage] = None
     timing: Optional[TimingInfo] = None
     error_message: Optional[str] = None
-
 
 # FastAPI App
 app = FastAPI(
@@ -88,7 +85,6 @@ def build_medical_prompt(system_prompt: str, json_template: List[Dict[str, Any]]
     )
     
     return prompt
-
 
 def extract_json_from_response(response: str) -> Optional[Any]:
     """
@@ -140,7 +136,6 @@ def extract_json_from_response(response: str) -> Optional[Any]:
 
     return None
 
-
 def save_test_files(recording_id: str, prompt: str, raw_response: str, extracted_json: Dict[str, Any]):
     """
     Save test files for debugging purposes.
@@ -175,10 +170,24 @@ async def health_check():
     return {"status": "healthy", "timestamp": datetime.utcnow().isoformat()}
 
 @app.post("/generate", response_model=MedicalNoteResponse)
-async def generate_medical_note(request: MedicalNoteRequest):
+async def generate_medical_note(
+    request: MedicalNoteRequest,
+    authorization: Optional[str] = Header(None, description="Bearer token for vLLM API authentication")
+):
     """
     Generate a structured medical note from a transcript using Qwen 30B A3B Instruct.
+    Requires Authorization header with Bearer token for vLLM access.
     """
+    # Check if API key is provided
+    if not authorization or not authorization.startswith("Bearer "):
+        raise HTTPException(
+            status_code=401,
+            detail="API key required. Use Authorization: Bearer <your_vllm_api_key>"
+        )
+    
+    # Extract the API key from the header
+    api_key = authorization.replace("Bearer ", "").strip()
+    
     total_start_time = time.time()
     
     try:
@@ -197,7 +206,7 @@ async def generate_medical_note(request: MedicalNoteRequest):
             {"role": "user", "content": prompt}
         ]
         
-        # Call vLLM server
+        # Call vLLM server with API key authentication
         generation_start_time = time.time()
         
         payload = {
@@ -211,19 +220,19 @@ async def generate_medical_note(request: MedicalNoteRequest):
             "stream": False
         }
         
-        response = requests.post(VLLM_API_URL, json=payload, timeout=300)
+        # Add API key to request headers
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {api_key}"
+        }
+        
+        response = requests.post(VLLM_API_URL, json=payload, headers=headers, timeout=300)
         response.raise_for_status()
         
         vllm_response = response.json()
         generation_time_ms = (time.time() - generation_start_time) * 1000
         
-        choices = vllm_response.get("choices", [])
-        if not choices:
-            raise HTTPException(status_code=500, detail="No choices returned from model")
-        
-        # content = choices[0].get("message", {}).get("content", "")
-        
-        # If vLLM returns a wrapper with "response"
+        # Extract content from vLLM response
         if "response" in vllm_response:
             content = vllm_response["response"]
         else:
@@ -232,9 +241,6 @@ async def generate_medical_note(request: MedicalNoteRequest):
             if not choices:
                 raise HTTPException(status_code=500, detail="No choices returned from model")
             content = choices[0].get("message", {}).get("content", "")
-
-
-
 
         # Extract token usage information
         usage_data = vllm_response.get("usage", {})
@@ -261,13 +267,37 @@ async def generate_medical_note(request: MedicalNoteRequest):
             processing_time_ms=processing_time_ms
         )
         
-        return MedicalNoteResponse(
+        result = MedicalNoteResponse(
             success=True,
             generated_json=extracted_json,
             token_usage=token_usage,
             timing=timing_info
         )
+
+        if request.recording_id:
+            try:
+                test_dir = Path(f"test_outputs/{request.recording_id}")
+                test_dir.mkdir(parents=True, exist_ok=True)
+                with open(test_dir / "final_response.json", "w", encoding="utf-8") as f:
+                    json.dump(result.dict(), f, indent=2, ensure_ascii=False)
+                logger.info(f"Saved final response for recording_id: {request.recording_id}")
+            except Exception as e:
+                logger.error(f"Error saving final response: {e}")
+
+        return result
         
+    except requests.exceptions.HTTPError as e:
+        if e.response.status_code == 401:
+            logger.error("Invalid API key provided to vLLM")
+            return MedicalNoteResponse(
+                success=False,
+                error_message="Invalid API key. Please check your vLLM API key."
+            )
+        logger.error(f"HTTP error from vLLM: {e}")
+        return MedicalNoteResponse(
+            success=False,
+            error_message=f"vLLM server error: {str(e)}"
+        )
     except Exception as e:
         logger.error(f"Error generating medical note: {e}")
         return MedicalNoteResponse(
@@ -277,4 +307,4 @@ async def generate_medical_note(request: MedicalNoteRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=4000) 
+    uvicorn.run(app, host="0.0.0.0", port=4000)

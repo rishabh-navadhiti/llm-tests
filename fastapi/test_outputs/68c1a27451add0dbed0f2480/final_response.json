@@ -1,0 +1,145 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "History of present illness",
+      "key": "HPI_VERBATIM",
+      "content": [
+        "She's taking Norco, 1 or 2 pills a day, pains across her back and into her right butt, thigh area.",
+        "The pain is the same as before.",
+        "She wants to work for a few more years.",
+        "She was interested in doing another injection, but since the last injection wasn't too helpful, she is open to referral to pain management."
+      ],
+      "default": "-",
+      "instruction": "Extract only the History of Present Illness (HPI) from the patient’s report. Include only the patient’s stated symptoms, their onset, duration, severity, progression, aggravating/relieving factors, attempted treatments, and impact on daily life. Do not include physical exam findings, assessment, or plan. Present the HPI concisely, using the patient’s words as closely as possible without adding interpretation."
+    },
+    {
+      "title": "Vitals",
+      "key": "VITALS",
+      "content": [],
+      "default": "-",
+      "instruction": ""
+    },
+    {
+      "title": "Physical Exam",
+      "key": "PHYSICAL_EXAM",
+      "content": [
+        "Exam shows decreased range of motion.",
+        "Transition is fine.",
+        "X-rays of the neck show moderate to severe disease at C5-6, preserved lordosis, no deformity."
+      ],
+      "default": "-",
+      "instruction": ""
+    },
+    {
+      "title": "Constitutional",
+      "key": "SOAP_ROS_CONSTITUTIONAL",
+      "content": [
+        "Normal"
+      ],
+      "default": "Normal",
+      "instruction": "If no information is present please return Normal"
+    },
+    {
+      "title": "Skin",
+      "key": "SOAP_PHYSICAL_EXAM_SKIN",
+      "content": [
+        "Normal"
+      ],
+      "default": "Normal",
+      "instruction": "If no information is present please return Normal"
+    },
+    {
+      "title": "Vascular",
+      "key": "ROS_VASCULAR",
+      "content": [
+        "Normal"
+      ],
+      "default": "-",
+      "instruction": "If not information is present return normal"
+    },
+    {
+      "title": "Neurologic and Lumbar",
+      "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+      "content": [
+        "Alignment: Preserved lordosis, no deformity.",
+        "Sensation: Intact.",
+        "Range of Motion: Decreased range of motion, transition is fine.",
+        "Strength: Iliopsoas - 5/5, Quadriceps - 5/5, Tibialis - 5/5, EHL - 5/5, Gastrocsoleus - 5/5, Straight Leg Raise - Negative.",
+        "Reflexes: Patellar - 2+, Ankle - 2+, Clonus - Absent."
+      ],
+      "default": "-",
+      "instruction": "Extract the Neurologic and Lumbar examination findings from the provided text, focusing on the following categories: Alignment, Sensation (including intactness, location, and type of touch), Range of Motion (noting flexion, extension, left/right rotation, presence of pain, and overall assessment), Strength (detailing individual muscle scores for Iliopsoas, Quadriceps, Tibialis, EHL, Gastrocsoleus, and the result of the Straight Leg Raise), and Reflexes (specifying scores for Patellar and Ankle reflexes, and the presence of Clonus, including laterality where applicable)."
+    },
+    {
+      "title": "Imaging",
+      "key": "IMAGING_GEORGE",
+      "content": [
+        "X-rays show scoliosis measuring approximately 26 degrees, compared to 25 degrees on the prior study.",
+        "X-rays of the neck show moderate to severe disease at C5-6, preserved lordosis, no deformity.",
+        "Imaging was completed and reviewed."
+      ],
+      "default": "-",
+      "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+    },
+    {
+      "title": "Assessment",
+      "key": "ASSESSMENT",
+      "content": [
+        "The patient has degenerative scoliosis with a curve of approximately 26 degrees, stable from prior imaging (25 degrees). She also has moderate to severe cervical disc disease at C5-6 with preserved lordosis and no deformity. The patient reports persistent back and right buttock/thigh pain, which has not significantly improved with prior injections. She is currently on Norco 1-2 tablets daily for pain. The lack of response to the last injection suggests consideration of alternative interventions. Comorbidities include chronic pain and degenerative spinal changes. Differential diagnoses include radiculopathy from cervical disc disease and lumbar radiculopathy secondary to scoliosis. The patient is motivated to continue working and is seeking further pain management options."
+      ],
+      "default": "No assessment",
+      "instruction": "Provide a detailed note of the patient's current health status based on the information gathered during the visit. This should be in a single paragraph:\nDiagnosis or Differential Diagnosis: List the primary diagnosis or possible diagnoses based on the assessment. Include a differential diagnosis if there is uncertainty or multiple potential causes.\nPertinent Positive and Negative Findings: Highlight key findings from the patient's history, physical examination, and diagnostic tests that support the diagnosis or influence the treatment plan.\nSeverity or Progression: Describe the severity of the condition, if applicable, and any changes observed since the last visit.\nComorbidities: Note any other existing medical conditions that may impact the patient's current health status or treatment plan."
+    },
+    {
+      "title": "Plan",
+      "key": "PLAN_WITH_FOLLOW_UP",
+      "content": [
+        "Referral to USC Pain Management, specifically to Dr. Michael Bros, for evaluation of potential radiofrequency ablation (RFA) and further pain management strategies.",
+        "Continue current Norco regimen (1-2 tablets daily) as needed for pain.",
+        "Patient to follow up with Dr. Boutros after the pain management visit.",
+        "Return to clinic in 4 weeks."
+      ],
+      "default": "-",
+      "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services.\n\nAlso in the end provide the plan of action for the individual conditions. And return the follow-up duration as a number.\nWhen presenting the follow-up, format the sentence as: \"Return to clinic in X days/weeks/months.\""
+    },
+    {
+      "title": "Work disability status",
+      "key": "WDS",
+      "content": [],
+      "default": "-",
+      "instruction": "Note weather this patient has a work disability status or not.\nIt should be exactly what doctor mention if not present leave it blank."
+    },
+    {
+      "title": "Request for medical authorization",
+      "key": "RFMA",
+      "content": [
+        "Referral to USC Pain Management for evaluation",
+        "Consideration of radiofrequency ablation (RFA)"
+      ],
+      "default": "-",
+      "instruction": "Note the points mentioned by the doctor that has requested medical authorization for the patients company.\n- It has to be what the doctor has spoken\n- DO NOT INCLUDE plan in this section\n- Only include what doctor requests for.\n- Be direct, give in single line for each request\n- ex <treatment/MRI/screening/injection> <referral>\n- dont mention work restrictions"
+    },
+    {
+      "title": "Follow Up",
+      "key": "SOAP_FOLLOW_UP",
+      "content": [
+        "Next Appointment: Schedule the next appointment for 4 weeks from today.",
+        "Review and Adjustments: Plan to review the patient's progress and adjust the treatment plan based on the pain management evaluation."
+      ],
+      "default": "No follow up",
+      "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 1905,
+    "completion_tokens": 1876,
+    "total_tokens": 3781
+  },
+  "timing": {
+    "total_time_ms": 22107.139348983765,
+    "generation_time_ms": 22106.507539749146,
+    "processing_time_ms": 0.1556873321533203
+  },
+  "error_message": null
+}

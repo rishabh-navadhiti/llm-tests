@@ -1,0 +1,134 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "History of present illness",
+      "key": "HPI_VERBATIM",
+      "content": [
+        "She has had LAD since she ran out of gabapentin. Pain goes on both buttock thighs and hips. She can still walk, but hasn't been exercising much."
+      ],
+      "default": "-",
+      "instruction": "Extract only the History of Present Illness (HPI) from the patient’s report. Include only the patient’s stated symptoms, their onset, duration, severity, progression, aggravating/relieving factors, attempted treatments, and impact on daily life. Do not include physical exam findings, assessment, or plan. Present the HPI concisely, using the patient’s words as closely as possible without adding interpretation."
+    },
+    {
+      "title": "Vitals",
+      "key": "VITALS",
+      "content": [],
+      "default": "-",
+      "instruction": ""
+    },
+    {
+      "title": "Physical Exam",
+      "key": "PHYSICAL_EXAM",
+      "content": [
+        "Exam reveals tenderness in the buttocks and hips on both sides. No red flags noted."
+      ],
+      "default": "-",
+      "instruction": ""
+    },
+    {
+      "title": "Constitutional",
+      "key": "SOAP_ROS_CONSTITUTIONAL",
+      "content": [
+        "Normal"
+      ],
+      "default": "Normal",
+      "instruction": "If no information is present please return Normal"
+    },
+    {
+      "title": "Skin",
+      "key": "SOAP_PHYSICAL_EXAM_SKIN",
+      "content": [
+        "Normal"
+      ],
+      "default": "Normal",
+      "instruction": "If no information is present please return Normal"
+    },
+    {
+      "title": "Vascular",
+      "key": "ROS_VASCULAR",
+      "content": [
+        "Normal"
+      ],
+      "default": "-",
+      "instruction": "If not information is present return normal"
+    },
+    {
+      "title": "Neurologic and Lumbar",
+      "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+      "content": [
+        "Alignment: Normal",
+        "Sensation: Intact, no specific deficits noted",
+        "Range of Motion: Flexion and extension within normal limits, no pain noted during movement, left/right rotation not specifically assessed",
+        "Strength: Iliopsoas - 5/5, Quadriceps - 5/5, Tibialis - 5/5, EHL - 5/5, Gastrocsoleus - 5/5, Straight Leg Raise - Negative bilaterally",
+        "Reflexes: Patellar reflex - 2+ bilaterally, Ankle reflex - 2+ bilaterally, Clonus - Absent bilaterally"
+      ],
+      "default": "-",
+      "instruction": "Extract the Neurologic and Lumbar examination findings from the provided text, focusing on the following categories: Alignment, Sensation (including intactness, location, and type of touch), Range of Motion (noting flexion, extension, left/right rotation, presence of pain, and overall assessment), Strength (detailing individual muscle scores for Iliopsoas, Quadriceps, Tibialis, EHL, Gastrocsoleus, and the result of the Straight Leg Raise), and Reflexes (specifying scores for Patellar and Ankle reflexes, and the presence of Clonus, including laterality where applicable)."
+    },
+    {
+      "title": "Imaging",
+      "key": "IMAGING_GEORGE",
+      "content": [
+        "X-rays were obtained. Findings show L4-L5 disc space narrowing with retroesophageal prominence (retroesis 1223). Repeat X-ray recommended in 6-7 months."
+      ],
+      "default": "-",
+      "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+    },
+    {
+      "title": "Assessment",
+      "key": "ASSESSMENT",
+      "content": [
+        "The patient has recurrent radicular symptoms at L4-L5, consistent with lumbar disc disease. Differential diagnoses include lumbar radiculopathy due to disc degeneration or facet joint arthropathy. Pertinent positive findings include bilateral buttock and hip pain, positive history of gabapentin use with symptom recurrence, and imaging showing L4-L5 disc space narrowing with retroesophageal prominence. No red flags were identified. The condition is stable with current treatment. No significant comorbidities noted."
+      ],
+      "default": "No assessment",
+      "instruction": "Provide a detailed note of the patient's current health status based on the information gathered during the visit. This should be in a single paragraph:\nDiagnosis or Differential Diagnosis: List the primary diagnosis or possible diagnoses based on the assessment. Include a differential diagnosis if there is uncertainty or multiple potential causes.\nPertinent Positive and Negative Findings: Highlight key findings from the patient's history, physical examination, and diagnostic tests that support the diagnosis or influence the treatment plan.\nSeverity or Progression: Describe the severity of the condition, if applicable, and any changes observed since the last visit.\nComorbidities: Note any other existing medical conditions that may impact the patient's current health status or treatment plan."
+    },
+    {
+      "title": "Plan",
+      "key": "PLAN_WITH_FOLLOW_UP",
+      "content": [
+        "Renewed gabapentin for radicular pain. Patient will continue her exercise program. Repeat X-ray recommended in 6-7 months. No work restrictions. Return to clinic in 6 months."
+      ],
+      "default": "-",
+      "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services.\n\nAlso in the end provide the plan of action for the individual conditions. And return the follow-up duration as a number.\nWhen presenting the follow-up, format the sentence as: \"Return to clinic in X days/weeks/months.\""
+    },
+    {
+      "title": "Work disability status",
+      "key": "WDS",
+      "content": [],
+      "default": "-",
+      "instruction": "Note weather this patient has a work disability status or not.\nIt should be exactly what doctor mention if not present leave it blank."
+    },
+    {
+      "title": "Request for medical authorization",
+      "key": "RFMA",
+      "content": [
+        "Repeat X-ray in 6-7 months"
+      ],
+      "default": "-",
+      "instruction": "Note the points mentioned by the doctor that has requested medical authorization for the patients company.\n- It has to be what the doctor has spoken\n- DO NOT INCLUDE plan in this section\n- Only include what doctor requests for.\n- Be direct, give in single line for each request\n- ex <treatment/MRI/screening/injection> <referral>\n- dont mention work restrictions"
+    },
+    {
+      "title": "Follow Up",
+      "key": "SOAP_FOLLOW_UP",
+      "content": [
+        "Next Appointment: Return to clinic in 6 months.",
+        "Review and Adjustments: Plan to review progress and adjust treatment as needed during follow-up."
+      ],
+      "default": "No follow up",
+      "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 1774,
+    "completion_tokens": 1712,
+    "total_tokens": 3486
+  },
+  "timing": {
+    "total_time_ms": 19495.951175689697,
+    "generation_time_ms": 19495.32461166382,
+    "processing_time_ms": 0.15807151794433594
+  },
+  "error_message": null
+}

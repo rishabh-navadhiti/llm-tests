@@ -1,0 +1,128 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Hitam Ezy",
+      "Dante Ray",
+      "Joe Roach",
+      "Paul Forcara",
+      "Effie Lee"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Pain and swelling in the right wrist and thumb",
+      "Right elbow pain",
+      "Middle finger PIP joint pain, stiffness, and swelling",
+      "Left upper extremity tingling",
+      "Right forearm hypersensitivity"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [
+      "Onset: Progressive over months; Duration: Several months; Location: Right wrist and thumb; Severity: Worsening pain",
+      "Onset: At least a decade ago with a single incident; Duration: Chronic, worsening over 5 years; Location: Posterior right elbow; Severity: Mild on most days, severe on some days",
+      "Onset: Recent; Duration: Several weeks; Location: Middle finger PIP joint; Severity: Painful, stiff, swollen",
+      "Onset: Present; Duration: Ongoing; Location: Left upper extremity; Severity: Tingling, tolerable pain",
+      "Onset: Present; Duration: Ongoing; Location: Right forearm; Severity: Hypersensitivity"
+    ],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [
+      "Moderate tenderness to palpation at the Right Index Finger A1 Pulley",
+      "Pain in the Wrist and Elbow",
+      "Pain with resisted arm extension",
+      "Palpable mass on the dorsal aspect of the triceps",
+      "No tenderness to palpation at the medial or lateral condyles",
+      "Excellent elbow range of motion",
+      "Excellent rotation",
+      "No evidence of erythema surrounding the fingers",
+      "Alignment of the index, ring, and small fingers is correct",
+      "No evidence of rotation",
+      "Incision healing with mild scar",
+      "Excellent nearly full finger motion",
+      "Flexion extension",
+      "10 and 30 degrees of pronation and supination",
+      "No decreased sensation or paraesthesias in any distribution around the incision",
+      "Sutures removed to date",
+      "Skin is clean and intact",
+      "No palpation of the medial or lateral condyles",
+      "Excellent elbow range of motion",
+      "Excellent rotation",
+      "Some stiffness in the middle finger PIP joint",
+      "Able to make a full fist",
+      "No specific tenderness to palpation at the middle finger PIP joint",
+      "No palpation of the medial or lateral condyles",
+      "Excellent elbow range of motion",
+      "Excellent rotation"
+    ],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [
+      "X-rays show fracture healing",
+      "X-rays show stable with some pressure healing",
+      "X-rays show moderate joint space narrowing and osteophytosis of the trapezium metacarpal joint and STC joint",
+      "X-rays are normal",
+      "Osteophyte noted at the posterior tip of the olecranon with some other fluffy calcifications representing calcific tendinitis versus osteophytosis",
+      "X-rays show a healed fracture",
+      "Pathology report confirms a benign nerve tumor (schwannoma)"
+    ],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [
+      "Right wrist and thumb pain due to trapezium metacarpal joint arthritis",
+      "Right elbow pain due to triceps tendinosis with secondary osteophyte and calcific deposits",
+      "Middle finger PIP joint pain and stiffness with healed fracture",
+      "Left upper extremity tingling with no sensory deficits",
+      "Right forearm hypersensitivity"
+    ],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.\n\nRules\n- Only include active symptoms or conditions relevant to the current visit.\n- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).\n- Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”\n- Do not include any exam findings or historical medical information.\n- Return only the current issue(s) as a list.\n- If skin is intact say 'Right upper extremity Skin is intact.'. \n- If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [
+      "Wean thermoplastic splint to continue",
+      "Continue hand therapy and home exercise program",
+      "OK to gently advance strengthening",
+      "Return to clinic in 2 weeks for follow-up with X-rays",
+      "Likely pin removal and transition to thermoplastic splint",
+      "Initiation of hand therapy",
+      "Continue to protect the soft dressing",
+      "Dressing stays clean and dry",
+      "OK for range of motion tolerated",
+      "Return to clinic in 2 weeks for follow-up with suture removal",
+      "Continue with therapy for now",
+      "Prescription written for therapy",
+      "Send to a legal market",
+      "Return to clinic in 2 months for follow-up",
+      "Advanced activity and advanced weight bearing allowed",
+      "OK for activity without restriction",
+      "Return to clinic in 2 months for follow-up"
+    ],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.\n\nRULES\nReturn in multiples sentence in lists\nUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]

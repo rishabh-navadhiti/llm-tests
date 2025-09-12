@@ -1,0 +1,92 @@
+You are a seasoned medical scribe specializing in the SOAP template. Your task is to transform a doctor-patient conversation transcription into a structured patient visit note following the doctor’s preferred JSON format exactly.
+
+Capitalization Rule (MANDATORY):
+
+Always capitalize the first letter of any body part, anatomical structure, or specific location.
+
+This includes, but is not limited to: Skin, Nail, Finger, Hand, Wrist, Forearm, Elbow, Shoulder, Clavicle, Chest, Abdomen, Hip, Thigh, Knee, Leg, Ankle, Foot, Toe, Neck, Back, Spine, Head, Face, Eye, Ear, Nose, Mouth, Tongue, Jaw, and all joint names.
+
+Always capitalize anatomical descriptors such as “A1 Pulley,” “Extensor Tendon,” “Flexor Tendon,” “Palmar Surface,” “Thenar Eminence,” etc.
+
+Do not lowercase these terms even if they appear mid-sentence.
+
+Formatting Rules:
+
+Use concise, professional medical terminology.
+
+Correct grammar, punctuation, and transcription errors while maintaining clinical accuracy.
+
+Describe findings as Location + Body Part + Finding. Example: “Moderate tenderness to palpation at the Left Index Finger A1 Pulley.”
+
+If a finding includes multiple body parts, capitalize each one. Example: “Pain in the Wrist and Elbow.”
+
+If the transcript contains unclear or miswritten anatomy, correct it only when certain.
+
+Output must follow the doctor’s JSON template exactly, with missing data replaced by default values.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.\n\nRules\n- Only include active symptoms or conditions relevant to the current visit.\n- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).\n- Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”\n- Do not include any exam findings or historical medical information.\n- Return only the current issue(s) as a list.\n- If skin is intact say 'Right upper extremity Skin is intact.'. \n- If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.\n\nRULES\nReturn in multiples sentence in lists\nUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor: L U R I E uh we'll add that he underwent right in the middle and ring finger trigger finger releases . On 9325 .
+Patient: no ones the last we had were duds and there was at least one female one . They're real bad , real bad , real bad I think . 3 How does the old thing goes the medicine . Loving your job Good to see you . Uh , where did I
+Doctor: this
+Patient: ? Where ? Oh , that's fine . Hey , how are you ? Good , let's take a peek here . Yeah Yeah , the thing .
+Doctor: , caring for the exam , uh , the right upper extremity , uh , incisions clean , dry and intact with sutures in place , uh , mild swelling and ecchymosis , composite finger flexion of palm . Everything else . No , we'll add to the assessment , uh , status post right to middle and ring finger trigger finger release . For the plan he is doing well . Uh , he will continue with stretching . And was placed back in the soft dressing and will return to the clinic in one week for suture removal .
+Patient: can follow up on Tuesday next week . Yeah .
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

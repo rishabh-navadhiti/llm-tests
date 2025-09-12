@@ -1,0 +1,300 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note, you will also be provided with a pre charting notes , use that as context for the notes.. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. "
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": [],
+    "default": "No current medications found.",
+    "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [],
+    "default": "No family history found",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [],
+    "default": "No social history",
+    "instruction": "What is the social history of this patient"
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [],
+    "default": "No allergies found",
+    "instruction": "What is the allergies of this patient"
+  },
+  {
+    "sub-section": [
+      {
+        "title": "GASTROINTESTINAL",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "GENITOURINARY",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "NEUROLOGICAL",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Hematologic",
+        "key": "SOAP_ROS_HEMATOLOGIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lymphatic",
+        "key": "SOAP_ROS_LYMPHATIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_ROS_PSYCHIATRIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of systems",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Nose",
+        "key": "SOAP_PE_NOSE",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PHYSICAL_EXAM_NECK",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Abdomen",
+        "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [],
+    "default": "No Immunizations found",
+    "instruction": "What is the immunizations of this patient"
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [],
+    "default": "No lab results found",
+    "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "ICD_ASSESSMENT",
+        "content": [],
+        "default": "-",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give all the current assessment and not historical information return it in a list. The result must be easily searchable in icd description so search for the icd code."
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section, provide everything in a list."
+      }
+    ],
+    "title": "Assessment and Plan",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: So we put on the schedule and put an order in , to use the system . Is it in right now ? No , you did it yesterday . Oh is it ? And with my mother-in-law . Yeah , yeah . Wendy , uh , order for the X-ray right now . I can , we can do it . I don't think we put it in yet , but should we ? And then will that work out to move this to do that ? How would we do that ? It should transfer Um , or else it just stays in here , but it stays in here with no name . I just left it as an urgent . But you can , you , can you put , you can you assign , if we put the order , can you assign that X-ray to that order ? Yeah , so we should put the order . If you want it on there , yeah , we're gonna , I'm gonna make a document because you got , it's like insurance might be involved , so I can make a note . So we can do that . We're gonna do that . We're gonna do it . I'm walking away . Oh , here we go . Now he's pretty . Like Uh , OK . Well , if not , we'll figure out a way to deal with it . Uh , I'll put it . It was , what was it , uh , you put it in , Chris , your forearm to you , to the forearm . I know right forearm . And then , uh , yeah , perfect . That's from yesterday . See Michelle Fico .
+Patient: ,
+Doctor_1: are
+Patient: ?
+Doctor_1: Doctor last year . Have we met before or no ? Nice to meet you . All right . So tell me about the knees here .
+Patient: in before the pandemic , um , I was being seen by Doctor Mark Joe at , um , I was , and we talked about a knee replacement for this leg . I had an arthroscopy done , um . Uh , 2018 or something like that . Uh , not by Doctor Joe , but by one of his associates who left the practice . Um , anyway , um , and the arthroscopy helped this knee . They removed the debris that was floating around and , uh , it's so , but if you need to lock , it just was less painful unlocking it . And uh , But I overcompensated and the right knee got worse . And um but I put off anything orthopedically during the pandemic . I just thought was . So anyway , um , both knees bother me . I get shin splints , uh , that's what I call them because that's what they feel like , uh , in both legs . And , um , um , this leg doesn't , the right knee doesn't block , but it's very painful . And I just got back from 3 weeks in , in New England . Visiting family and friends that I was in and on boats . I was a lot of walking on the beach and the sand . It required two people to help me to get up from a sand chair and two people to help me get in and out of the kitchen . I can't live that way . And I'm 72 and I regret not having the knee replacement in the knees . the worst one , would you say ? Well , it's tough to say . awful . I returned from Massachusetts uh a week ago today . And ever since I've been back , I've had sciatica . And uh well , for that ? Well , this is new . This is a new symptom . I think it was from the plane ride . I was so tense sitting in the seat and I wasn't able to get up because my seat mate , but the aisle was disabled , so I didn't want to bother . So I was sitting there so tense and my knees are bothering me and my back . So anyway , I came home with um really bad sciatica on my left buttock . And then I also , um , this knee seems so swollen . I couldn't even put it flat on the bed . I couldn't extend it . It , I can't now . It's much better . I , I've been icing it , um , been putting Var on it , the gel . Yes , I can't take NSAIDs because I have some kidney disease . I stay away from NSAIDs , um . So , uh , and I could barely bear weight on this right knee . Um ,
+Doctor_1: it swollen ?
+Patient: thought it was swollen . Yes , I was worried that there might be fluid in there . Um , one particular day when I got into the boat , it was just jarring motion on my right knee , just jarring . It's a pain at my , my legs . So , um , but , um , like I said , it's better . Yeah , uh , the range of motion is better , but , um , And I can bear weight now when I could before . Now I can extend the leg . It is , it hasn't improved . The sciatica hasn't improved the back is really still tight so .
+Doctor_1: , let me see you straight out this left one . Good . Bend it back all the way . Yeah , yeah , your motion's pretty good . Let's do this one straight out . Bend it back . It seems like the right one is worse at least today , yeah ? Yeah , move the , move the hips back and forth . Good . This side now , back and forth , good . When you have pain in the knees , is the whole thing , is it localized ?
+Patient: , it's really the whole thing , plus with this knee , um , I noticed that my veins are kind of distended , plus I felt pressure in behind my knee . Like something was pulling , uh , like a rubber band or something , which was making my range of motion worse . That might have been ,
+Doctor_1: might have had a little baker cyst back there . Sometimes people will describe it exactly like you did like a rubber band that the ceiling . I mean , X-ray wise , you have some arthritis in there . It's not the worst case I've ever seen . I mean , it's , I would call this modern arthritis . So right knee , left knee , let me pull that up a little bit . So we're looking at the space here . That's not a space , that's your cartilage , right ? That's your cushion . What we don't wanna see is no space , right ? And so you still have a space here . Is it an 18 year old's knee ? No . OK . So this , you got a little wear and tear , little bone spurs here . So it's not nothing . And then if we look at your kneecaps here , you know , more wear and tear underneath the kneecaps here , you can see . This is your kneecap here , bone spur , bone spur . And that will give you pain if you uh squat , lunge , stairs , that kind of thing , like getting up from the chair , like you said , that's probably making that difficult . Same thing , actually , a little worse on the left , which was kind of where this all started . But you see bone spurs here and here . So , I mean , look , this is , this is what it is , we know what it is . The big question always is , what do we do about it ? And the answer is , well , you can't take NSAIDs . All right , so that's out . Physical therapy ? Yeah , sure . Why not ? That's never the wrong answer . We can certainly talk about that . There are injectables , right ? Maybe you've had these like cortisone , etc . Have you've been through all that ?
+Patient: , I had course and I also had the
+Doctor_1: , what do you think of the gel ? Nothing . Yeah , it's a 50/50 deal . So if , if you're in the bath 50% , that's kind of what people say . And then the final straw is knee replacement . So you get the , you , that's the , that's the menu , that's the menu of options . So I mean , it really kind of depends on you and what direction you wanna take this and . But because you've been dealing with this a long time and I ,
+Patient: know , I don't want to have to have two people helping me up and down . I mean , that's , and I live in a two-star condo , so I'm up and down . Yes ,
+Doctor_1: we're talking about knee replacement , then we'd have to decide which one would be first . It's cause they're kind of taking turns on you here a little bit . I mean , X-ray wise , the left one's a hair worse . But I mean , that was the , and that was the original one that kind of gave you trouble , but the , it's , that's really your choice . So what , what's involved , knee replacement , two-hour operation . By default is you spend a night in the hospital . If you're a go-getter , can you go home the same day ? Yeah , but , you know , if you're not , if you're not gonna push it , we'll keep you overnight , let you go home the next day . When you go home , therapy comes to the house and they'll come and see you a couple of times a week for the first month . I check you back in 2 weeks at that point , uh , you don't like me , and then you kind of like me at 6 weeks that you like me . So the hard part , is not the walking . You'll do that very quickly . What people don't like is the bending cause guess what ? That's the part that hurts . But that's the critical part of class of therapy afterwards . How's your health ?
+Patient: , um , I should mention to you , I fell on August 23rd in Maine . You know , all devices have steps to go up . And I missed the stuff and I fell on my left hip on my left knee . And uh this hip that has been sore , you know . But I didn't see any bruising . I just , it was just sort of , so , um , anyway , um . Heart's
+Doctor_1: , lungs OK , kidneys OK , no
+Patient: . I , you know , I'm a nurse ,
+Doctor_1: ? I did that . Yeah . That sucks .
+Patient: . So , um , Stage 2 to 3 kidney disease . My um GFR was all the way down to 32 , and I panicked , but we got it back up to 42 . I'm on uh Farsega and Ozemic which has helped her kidney uh disease as . Oh yeah , so grateful cause I was panicking thinking I too . Um . I had , I had gotten down from like 195 to 173 , but I think I've gained a few pounds back . So , but um , yeah , so I don't know it's not big and fortiga . Uh , I don't know of any cardiac problems . Um , I'm not aware of any . Are you taking any blood thinners ? I just take baby aspirin . Yeah . And uh what else ? I think that's it . I , I'm , um . Oh , I had a thyroidectomy because I had numerous nodules in my thyroid , and they couldn't decide whether it was benign or malignant . So I said take this take out . I didn't want that . That was um a year and a half ago . Uh , and , uh , Simon said it and um . Um , What else , um , you should probably know , I have abundance on my feet , so I just wanted to see what kind of condition my feet are . That's fine . That this is a chronic condition . I did physical therapy , um , because my PCP made me basically , uh , well , so I could have a consult , an ortho consult but I was begging for an ortho consult and it's .
+Doctor_1: is Dudley or ,
+Patient: . Because of my insurance , so I had physical therapy , a functional physical therapist .
+Doctor_1: you've been through already . Yeah , good .
+Patient: . But I ended up with um tendinitis on my left foot because they made me do these toes things . And so I'm seeing a podiatrist for that . So , um , she was gonna inject uh er into the tendon , and I just haven't had done yet . So causelu wanted me wear a boot afterwards and I was like ,
+Doctor_1: . All right . So you got a few irons in the fire . Yeah , I mean , as far as this , the knee replacement , it's really kind of your call . I'm booking a few months ahead just so we keep that in mind . So , if then when you say , hey , I wanna do it , then we can get the ball rolling and then you , you just need to pick a side .
+Patient: . All right . Yeah , I'm , I'm not employed right now . I was laid off from my job at Health Net , uh , services , uh , December 31st , and , um , I didn't plan to retire , so I'm still looking for a job but , um , and , uh , so I would like to go back to work , but I'm thinking I'd like to get the knees done before I think about returning to work .
+Doctor_1: 
+Patient: saying I could have one knee done probably before the end . Oh .
+Doctor_1: , but we need to get the ball rolling now .
+Patient: you think I shouldn't put it off ?
+Doctor_1: think that's up to you . I think this is really dependent on you and your symptoms . So , like I said , I mean , you were sort of dealing with this even 5 years ago . So I mean , I , you know , you kind of know what to expect . It's , what , what to expect is kind of what you've been going through already . So you say , well , I don't like that , then , then that's a reason to fix it . If you say , well , I can tolerate and I'm not ready , that's , then fine . That's really your fault .
+Patient: . And , uh , you know , not gonna recommend an MRI on my knees at this point ? I don't think it's gonna change anything . Um , Well , I don't know which , which insurance . I'm not sure . I think I would go ,
+Doctor_1: can think about it . I don't mean to put you under the gun . Are you on the portal ?
+Patient: .
+Doctor_1: Cedar sin portal . If you're on it , you can just message us . Like you think about it , talk about it with your family , and then , you know , let me know . And as soon as you say , hey , let's do it , we can put the order in and then the ball will get rolling . OK . Cause we do need to pick a side of your knee replacement . We just say , yeah , they want more special than that .
+Patient: . Well , this one seems more acute . This is chronic . So I don't , but it's also a little more stable . Well ,
+Doctor_1: I
+Patient: ,
+Doctor_1: don't , this is not a question we have to answer at this moment . So , yeah , let me know and then we'll get the ball rolling . We'll get you fixed up .
+Patient: you don't think there's any fluid accumulation ? There is a little bit , but just a little bit , not too . Would you remove the Baker cyst when you go ahead and do the decompresses
+Doctor_1: part of the usually does ,
+Patient: . And the shin splints are from the ,
+Doctor_1: might be from the knee actually . So occasionally people will get deferred pain right down in there from the arthritis . All right . You let us know .
+Patient: , yes , I , well , I mean , I can let you know today . I , I , I want to proceed . I mean , that's why , yeah , I'm going to proceed . We don't , I can't get this up . We just needed
+Doctor_1: silent side .
+Patient: , Can you pick ?
+Doctor_1: , I would say we do the left one first . That's , that's the original problem , Mary , cause the acute thing that's gonna get , if we do nothing , that acute pain cause you've been on a trip is probably gonna get better . But the left one's been the one . So if you leave it to me , I'd take the 1 . It's a little worse than the X-ray
+Patient: .
+Doctor_1: right , so we'll put that in , you know , you , you can . If you change your mind . We want to change that quickly , so we're not , it's like the day well let's do the right , like no , we're not doing so , all right , I'll put you in then you'll get a call from my scheduler uh and you guys .
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

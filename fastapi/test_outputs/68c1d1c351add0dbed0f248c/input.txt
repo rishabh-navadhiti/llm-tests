@@ -1,0 +1,87 @@
+You are a seasoned medical scribe specializing in the SOAP template. Your task is to transform a doctor-patient conversation transcription into a structured patient visit note following the doctor’s preferred JSON format exactly.
+
+Capitalization Rule (MANDATORY):
+
+Always capitalize the first letter of any body part, anatomical structure, or specific location.
+
+This includes, but is not limited to: Skin, Nail, Finger, Hand, Wrist, Forearm, Elbow, Shoulder, Clavicle, Chest, Abdomen, Hip, Thigh, Knee, Leg, Ankle, Foot, Toe, Neck, Back, Spine, Head, Face, Eye, Ear, Nose, Mouth, Tongue, Jaw, and all joint names.
+
+Always capitalize anatomical descriptors such as “A1 Pulley,” “Extensor Tendon,” “Flexor Tendon,” “Palmar Surface,” “Thenar Eminence,” etc.
+
+Do not lowercase these terms even if they appear mid-sentence.
+
+Formatting Rules:
+
+Use concise, professional medical terminology.
+
+Correct grammar, punctuation, and transcription errors while maintaining clinical accuracy.
+
+Describe findings as Location + Body Part + Finding. Example: “Moderate tenderness to palpation at the Left Index Finger A1 Pulley.”
+
+If a finding includes multiple body parts, capitalize each one. Example: “Pain in the Wrist and Elbow.”
+
+If the transcript contains unclear or miswritten anatomy, correct it only when certain.
+
+Output must follow the doctor’s JSON template exactly, with missing data replaced by default values.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [],
+    "default": "-",
+    "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [],
+    "default": "",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [],
+    "default": "-",
+    "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.\n\nRules\n- Only include active symptoms or conditions relevant to the current visit.\n- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).\n- Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”\n- Do not include any exam findings or historical medical information.\n- Return only the current issue(s) as a list.\n- If skin is intact say 'Right upper extremity Skin is intact.'. \n- If no tendon palpation. say ' No tenderness to palpation. '"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [],
+    "default": "-",
+    "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.\n\nRULES\nReturn in multiples sentence in lists\nUser numbers instead of word where necessary , \"6 to 8 weeks\""
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: She said that she's doing better . She notes that um she still has pain and swelling . She wants to know when this will go away , but she feels like her motion is improving readily . She Um , As some limited risk collection . But feels like her extension and rotation is improving readily and her fingers are moving well on exam , incision while healing mild scar , uh excellent nearly full finger motion , uh flexion extension . We'll call 10 and 30 prosupination call 6060 . X-rays show demo with some fracture healing , um , plan will be reviewed . The X-rays is a great , uh , recommend wean thermoplastic splint to continue , um , hand therapy and home exercise program , OK to gently advance strengthening . Um , Hitam Ezy uh is here today for follow-up . He says that he's doing well overall . He notes that his uh Fingers don't hurt as much as they did , um . On exam , uh , it's clean and touch , no evidence of erythe that's surrounding them , alignment of the index and you know , ring and small fingers , uh , looks correct , no evidence of that rotation , um . X-rays show stable with some pressure healing plan will be continued to protect the splint . Um , we do the X-rays is a great recommend return to the clinic in 2 weeks for follow-up with X-rays , likely pin removal transition to thermoplastic splint and initiation hand therapy . Oh , on the exam , if you can put incisions per sutures , uh , sutures are removed to date . And then , Did Dante Ray . Um , Hong 2 , I saw he's on Madrid schedule . I'm changing it right now , is a PO1 , so if we use a post-op template , uh , he is here with his wife for room to follow up . He says that he is doing well overall . His biggest question is what the mass was his pain is tolerable . tingling left upper extremity incision can join the sutures . No decreased sensation or paraesthesias , uh , in any distribution around the incision , though the incision itself was not palpated today and . The rest is fine . In the X-ray section if you can pull up the pathology report . That would be great . Um , regarding the left hand schwannoma , um , review the pathology . This is a tumor of the nerve , but it is not malignant . Um , recommend continue to protect the soft dressing , uh , dressing stays clean and dry , OK for range of motions tolerated and returned to clinic in 2 weeks for follow-up with suture removal . Uh . And then Joe Roach is a right-hand dominant , uh . Retire . Without previous injuries , she has right thumb CMC arthritis or right dates disease . Uh , she presents today for evaluation of her right wrist slash thumb pain that has been progressively worsening over the last few months . She said that she had a fall in January 2025 that As a pain to her right wrist . She saw Kylie and wore a brace for 6 weeks and then that pain went away . The pain she's experiencing now is new , and she cannot remember if it feels similar . She feels like some of the pain is related to um . Using her phone a lot on the exam , right upper extremities seen as talked about losis , moderate tendon at the trapezium metacarpal joint positive grind , mild shoulder sign positive tlo location at the um . First muscle retinaculum positive ingle scenes at the tributes of metacarpal joint and the first muscle compartment , um . X-rays are for views of the right hand with Rolando , uh , demonstrate moderate joint space narrowing and osteopitosis of the trapezium carpal joint and STC joint . Um , that be plan arthritis . UCC plan day for veins , um , both threshold for hand therapy . She will think about this return to clinic in 2 months for follow-up . And then Paul Forcara , um , he's a right-handed engineer . Um , he presents today for evaluation of his right elbow pain . He thinks that this pain has been A part of his life for at least the last decade , he recalls a single incident of pain about a decade ago , but this resolved and he didn't think about it much at that time . He knows over the last 5 years it has become much more regular . He does not try to let it limit him , but he cannot do push-ups because of the pain in his posterior elbow . He has tried to treat it with therapy . He has tried , um , Yeah Rest and activity modification . He states that on most days the pain is nothing to write home about , but there are some days where it is so painful that he has difficulty shampooing his hair or getting up on a out of a chair . um . He has seen multiple providers who have talked about a variety of treatments including PRP injections , steroid injections , and surgery . He is here for further evaluation on exam , right upper extremity . Uh , skin is clean and intact with the anti-americosis . Uh , there is a palpable mass of the dorsal aspect of the triceps , um . Pain with resisted arm extension , um , but on exam today , no particular pain about the triceps thumb , tenderness palpation about the triceps insertion . uh , no palpation of the medial lateral condyles , excellent elbow range of motion , excellent , um . For a rotation . Uh , you can pull on the MRI results . You can pull , uh , x-rays . So x-rays for example normal . There is a osteophyte noded at the posterior tip of the electronon with some other fluffy calcifications that represent calciic tendinitis versus osteophytosis . And we'll be regarding the right triceps tendinosis , um , reviewed the X-rays MRI and clinical scenario . We discussed that this is an inflammation problem , and the Osteophyte , as well as the calcifications are secondary to the inflammation . Um , they're unlikely to be being caused by the inflammation . At this point , you really can have a choose your own adventure situation , um . We talked about everything from uh more therapy to therapy with the steroid injection , PIP injection , stem cell injections , surgery in the form of debridement or surgery in the form of uh distal triceps , uh repair and reconstruction . He's looking for a long term solution , and we discussed that there is not any one thing that I can confidently tell him will solve this problem indefinitely . Hence the choose your own adventure situation . He would like to proceed with therapy for now . Prescription was written , we will send him to a legal market . And then I think that is it for the morning and I'm missing . Oh , Effie Lee um is here today with her boyfriend for follow-up . She said that she's doing OK overall . Her biggest complaint is her middle finger PIP joint . Um , It is painful , stiff and swollen . She is worried because the X-rays were normal there . She wants to know what's going . Congrats , doctor . Um , Uh , she feels like her small finger is moving well and she is starting to use it more , but it is not strong yet . On the exam , consens will he excellent range of motion the small finger , some stiffness in the middle finger PIP so able to make a full knot tight fist . No specific tness palpation there , though not full motion , um . X-rays show a healed fracture plan will be um plan PIP . Um , Regarding the middle finger PIP and then regarding the small thing or fifth metacarpal fracture aias is a great advanced activity , advanced weight bearing , um , OK for activity without restriction . Ret returned to clinic in 2 months for all . And that's Beautiful . Take a break and I'll call you after lunch .
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

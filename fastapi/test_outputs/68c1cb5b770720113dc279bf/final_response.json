@@ -1,0 +1,117 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "Patient Name",
+      "key": "PATIENT_NAME",
+      "content": [
+        "No Mae",
+        "Mark Steins",
+        "Paul Cohen"
+      ],
+      "default": "-",
+      "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+    },
+    {
+      "title": "Chief Complaint",
+      "key": "CHIEF_COMPLAINT",
+      "content": [
+        "Radiating pain along the radial border of the right forearm to the axilla",
+        "Intermittent pain limiting sleep",
+        "Concern about pattern of finger and knuckle sensation",
+        "Stiffness in the index finger",
+        "Burning pain in the left index finger",
+        "Numbness and tingling in the right wrist"
+      ],
+      "default": "-",
+      "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+    },
+    {
+      "title": "HPI Spencer",
+      "key": "HPI_SPENCER",
+      "content": [
+        "Onset: Several weeks ago",
+        "Duration: Intermittent, lasting hours",
+        "Location: Radiating from radial border of right forearm to axilla",
+        "Severity: Very limiting, prevents sleep"
+      ],
+      "default": "-",
+      "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+    },
+    {
+      "title": "Musculoskeletal",
+      "key": "MUSCULOSKELETAL_VERBATIM",
+      "content": [
+        "Stiff index and middle finger consistent with immobilization",
+        "30 degree PIP flexion contracture that is not passively correctable",
+        "Good but not full range of motion",
+        "Some tenderness in the palm consistent with pillar pain",
+        "Dorsal pins sides well healed",
+        "Distal pin in place, no motion at DIP",
+        "Excellent PIP motion",
+        "Some erythema consistent with skin irritation from constant splinting",
+        "Right incision healing with mild scar",
+        "Spitting suture on the right",
+        "Excellent range of motion, full tightness without pain"
+      ],
+      "default": "",
+      "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+    },
+    {
+      "title": "Imaging Results",
+      "key": "IMAGING_RESULTS",
+      "content": [
+        "X-rays are the same as last time",
+        "Repeat X-rays to be obtained in 1 month"
+      ],
+      "default": "-",
+      "instruction": ""
+    },
+    {
+      "title": "Assessment",
+      "key": "ASSESSMENT_SPENCER",
+      "content": [
+        "Right upper extremity Skin is intact.",
+        "No tenderness to palpation.",
+        "Right forearm hypersensitivity.",
+        "Left index finger burning pain.",
+        "Right wrist numbness and tingling resolved.",
+        "Index finger stiffness with 30 degree PIP flexion contracture not passively correctable."
+      ],
+      "default": "-",
+      "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.\n\nRules\n- Only include active symptoms or conditions relevant to the current visit.\n- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).\n- Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”\n- Do not include any exam findings or historical medical information.\n- Return only the current issue(s) as a list.\n- If skin is intact say 'Right upper extremity Skin is intact.'. \n- If no tendon palpation. say ' No tenderness to palpation.'"
+    },
+    {
+      "title": "Plan",
+      "key": "PLAN_SPENCER_",
+      "content": [
+        "Continue with fracture healing plan and practice splint.",
+        "Return to clinic in one week for pin removal and transition to thermoplastic splint.",
+        "Initiate hand therapy.",
+        "Recommend LMB for the index finger.",
+        "Return to clinic in 4 weeks for follow-up.",
+        "Advance right upper extremity activity as tolerated.",
+        "Continue with removable splint for sleep.",
+        "Return to clinic in 1 month for repeat X-rays.",
+        "Plan for pin removal 3 weeks post-op.",
+        "Follow-up with neurology consult after evaluation.",
+        "Return to clinic after neurology consult.",
+        "Continue monitoring left index finger burning pain.",
+        "Educate patient on splint use and skin care to prevent irritation."
+      ],
+      "default": "-",
+      "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.\n\nRULES\nReturn in multiples sentence in lists\nUser numbers instead of word where necessary , \"6 to 8 weeks\""
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 1929,
+    "completion_tokens": 1217,
+    "total_tokens": 3146
+  },
+  "timing": {
+    "total_time_ms": 14472.79953956604,
+    "generation_time_ms": 14472.299814224243,
+    "processing_time_ms": 0.10418891906738281
+  },
+  "error_message": null
+}

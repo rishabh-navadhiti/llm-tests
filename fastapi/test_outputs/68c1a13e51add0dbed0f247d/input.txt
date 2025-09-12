@@ -1,0 +1,108 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+When interpreting the clinical report, use clinical judgment to clarify likely errors or ambiguous abbreviations (e.g., miswritten joint names, injection types, or anatomic references), and correct them only when the context strongly supports it. Do not change terms without justification.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "History of present illness",
+    "key": "HPI_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only the History of Present Illness (HPI) from the patient’s report. Include only the patient’s stated symptoms, their onset, duration, severity, progression, aggravating/relieving factors, attempted treatments, and impact on daily life. Do not include physical exam findings, assessment, or plan. Present the HPI concisely, using the patient’s words as closely as possible without adding interpretation."
+  },
+  {
+    "title": "Vitals",
+    "key": "VITALS",
+    "content": [],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Physical Exam",
+    "key": "PHYSICAL_EXAM",
+    "content": [],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "Vascular",
+    "key": "ROS_VASCULAR",
+    "content": [],
+    "default": "-",
+    "instruction": "If not information is present return normal"
+  },
+  {
+    "title": "Neurologic and Lumbar",
+    "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the Neurologic and Lumbar examination findings from the provided text, focusing on the following categories: Alignment, Sensation (including intactness, location, and type of touch), Range of Motion (noting flexion, extension, left/right rotation, presence of pain, and overall assessment), Strength (detailing individual muscle scores for Iliopsoas, Quadriceps, Tibialis, EHL, Gastrocsoleus, and the result of the Straight Leg Raise), and Reflexes (specifying scores for Patellar and Ankle reflexes, and the presence of Clonus, including laterality where applicable)."
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT",
+    "content": [],
+    "default": "No assessment",
+    "instruction": "Provide a detailed note of the patient's current health status based on the information gathered during the visit. This should be in a single paragraph:\nDiagnosis or Differential Diagnosis: List the primary diagnosis or possible diagnoses based on the assessment. Include a differential diagnosis if there is uncertainty or multiple potential causes.\nPertinent Positive and Negative Findings: Highlight key findings from the patient's history, physical examination, and diagnostic tests that support the diagnosis or influence the treatment plan.\nSeverity or Progression: Describe the severity of the condition, if applicable, and any changes observed since the last visit.\nComorbidities: Note any other existing medical conditions that may impact the patient's current health status or treatment plan."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [],
+    "default": "-",
+    "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services.\n\nAlso in the end provide the plan of action for the individual conditions. And return the follow-up duration as a number.\nWhen presenting the follow-up, format the sentence as: \"Return to clinic in X days/weeks/months.\""
+  },
+  {
+    "title": "Work disability status",
+    "key": "WDS",
+    "content": [],
+    "default": "-",
+    "instruction": "Note weather this patient has a work disability status or not.\nIt should be exactly what doctor mention if not present leave it blank."
+  },
+  {
+    "title": "Request for medical authorization",
+    "key": "RFMA",
+    "content": [],
+    "default": "-",
+    "instruction": "Note the points mentioned by the doctor that has requested medical authorization for the patients company.\n- It has to be what the doctor has spoken\n- DO NOT INCLUDE plan in this section\n- Only include what doctor requests for.\n- Be direct, give in single line for each request\n- ex <treatment/MRI/screening/injection> <referral>\n- dont mention work restrictions"
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor: All right , so she's got . LAd since she ran out with gabapentin . um uh pain goes on both butt thighs , hips . Um , she can still walk though , and hasn't been exercising much though , and then exam tennis and a butt , hips on both sides , a little bit tenner at the back train stations fine though . X-rays you got . So that when she's got a big spa the L4 5 . Retroesis 1223 . she's having radicular symptoms again , uh , renewed the gabapentin . She'll continue her exercise program . Can desose red flags fall in 67 months for , uh , repeat X-ray .
+Patient: you , doctor . Thank you .
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

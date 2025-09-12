@@ -1,0 +1,332 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note, you will also be provided with a pre charting notes , use that as context for the notes.. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. "
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": [],
+    "default": "No current medications found.",
+    "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [],
+    "default": "No family history found",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [],
+    "default": "No social history",
+    "instruction": "What is the social history of this patient"
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [],
+    "default": "No allergies found",
+    "instruction": "What is the allergies of this patient"
+  },
+  {
+    "sub-section": [
+      {
+        "title": "GASTROINTESTINAL",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "GENITOURINARY",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "NEUROLOGICAL",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Hematologic",
+        "key": "SOAP_ROS_HEMATOLOGIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lymphatic",
+        "key": "SOAP_ROS_LYMPHATIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_ROS_PSYCHIATRIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of systems",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Nose",
+        "key": "SOAP_PE_NOSE",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PHYSICAL_EXAM_NECK",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Abdomen",
+        "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [],
+    "default": "No Immunizations found",
+    "instruction": "What is the immunizations of this patient"
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [],
+    "default": "No lab results found",
+    "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "ICD_ASSESSMENT",
+        "content": [],
+        "default": "-",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give all the current assessment and not historical information return it in a list. The result must be easily searchable in icd description so search for the icd code."
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section, provide everything in a list."
+      }
+    ],
+    "title": "Assessment and Plan",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: Questions ?
+Nurse: , doctor . Uh , for Jude Judy Berlin , doctor .
+Doctor_1: , Let's see , what time was the patient ?
+Nurse: second , doctor . One o'clock patient post-op patient .
+Doctor_1: ,
+Nurse: 
+Doctor_1: , Berlin , yes , sorry . Uh ,
+Nurse: is in the right side or left side or right side , doctor ?
+Doctor_1: , we , we'll have it on , uh , so . So that was for the left side , and that one's for the right side . That's good , perfect . Whatever you have there is great .
+Nurse: , doctor . For Robert Rays doctor ?
+Doctor_1: , uh Robert Rivers .
+Nurse: , doctor . Uh 215 patients .
+Doctor_1: . 0 , Reeves , Robert Reeves , yes .
+Nurse: , doctor . Uh , I want uh diagnosis and plan doctor .
+Doctor_1: , diagnosis is right forearm abrasion slash laceration , right middle finger proximal interphal interphalangeal joint dislocation , right finger proximal interphalangeal joint dislocation plan , um , regarding the right for abrasion , um . You can delete recommended dressing changes , you can just add and delete close follow to say recommend continued dressing changes until healed , uh . Scar precautions given regarding the right middle finger , um . The the wound appears well healing . I see no signs of infection . Recommend uh range of motion exercises . Consider hand therapy . Uh , same thing for the right ring finger .
+Nurse: is normal , doctor . Mhm
+Doctor_1: of the Sorry , 4 views , no 3 views of the right hand were ordered , kind of taken , reviewed with the patient that demonstrates . Uh well located PIP joints of the middle and ring fingers .
+Nurse: , doctor . That's it , doctor .
+Doctor_1: . Um , Let's see , you got um you got a dictation for Ingria , Gerald . Gerald Tina , the 2 , 3:15 patient .
+Nurse: , doctor .
+Doctor_1: .
+Nurse: , the mass , right doctor diagnosis for this patient . Right ,
+Doctor_1: , right thumb mass .
+Nurse: doctor ? After MRI .
+Doctor_1: MRI correct .
+Nurse: , OK .
+Doctor_1: you got a dictation for Steven
+Nurse: . Yes , doctor .
+Doctor_1: do we do one for , let's see , Langdon ?
+Nurse: , no , doctor . Doctor , one second . For uh Stevenberg , uh , do I need to do . PLO , doctor ? That jetty ?
+Doctor_1: can do . PLOR . He will think about this . In the meantime , we will proceed with
+Nurse: . A diagnosis doctor for this patient ?
+Doctor_1: right distal biceps , tendon rupture .
+Nurse: , doctor .
+Doctor_1: , let's see . Did , uh , let's see . That was injection . You got one for Eduardo Avila Gonzalez .
+Nurse: . Yes , doctor .
+Doctor_1: . Did you get one for Elizabeth or Liz Strickland ?
+Nurse: , doctor .
+Doctor_1: , she is here today for follow-up . She states that she's been having increasing pain in her bilateral thumbs and her left index finger . She says that she is catching , locking , and triggering , mostly of the left thumb , but also in the right thumb . Next paragraph . More recently , she has been noticing problems with the left index finger . She notices that the fingertip , sorry , the distal joint has gotten more swollen . And she has pain there , but she has also noticed triggering , catching , and locking . She denies any trauma or injury . She says that she , uh she tries to , um , She tries to rest it , but it continues to hurt . Uh , her exam . Uh , this is all good . After the right right after it says compartment soft . Sorry , um , uh , compartment soft on the left side . If you can just say tenors palpation at the A1 pulley of the index finger , there is triggering noted on exam today . Um , X-rays . I think we got X-rays today , yes , we did , no , just the left index finger . So you can change the x-rays to old X-rays , and you can add um Dot XRA 3 views of the left index finger were ordered comment taken reviewed with the patient that demonstrates um . Severe degenerative changes noted the DIP joint . Uh , no other findings are noted . Uh , so her diagnoses are bilateral hand arthritis , right decal veins disease , bilateral trigger thumb , left index finger , trigger finger . Regarding the bilateral trigger thumb . Um , you can delete the triggering is usually a mechanical process , all that stuff , just leave , we talked about range of treatment options . Um , delete the rest of that and just say , uh , she has had two injections here . I , uh , I recommend treatment in the form of trigger finger trigger thumb release . Uh , PLO . We will proceed on the left first . Uh , next line , she does have uh problems on the right side , and I think it's reasonable to do a cortisone injection under anesthesia on the right side . Um , regarding the left index finger , trigger finger . PLO , no , sorry , uh , full . I reviewed the X-rays , clinical exam findings . We will try a cortisone injection today .
+Nurse: doctor ?
+Doctor_1: , for surgery .
+Nurse: doctor . Thanks .
+Doctor_1: think that's it .
+Nurse: , one second . 2:45 patient doctor Braz Ay .
+Doctor_1: , that's a good one . Thank you . Uh , let me get a chart .
+Nurse: , doctor .
+Doctor_1: , um , he is a right hand dominant male . Diagnosis right ring finger , trigger finger . Uh , he is here for evaluation and treatment of his right ring finger . He says it started about 6 months ago . There is no trauma or injury , it just started all of a sudden . He notes that it gets swollen and stuck . Uh , he has to manually open it and it's become more frequent . He looked online and he was told that he has a trigger finger , he wants to know what to do . On exam , right upper extremity . Uh , skin is intact , tenderness palpation at the A1 pulley of the ring finger . There is triggering of the ring finger noted . There is no sagittal band insufficiency noted . Um , there's no contracture noted , he is able to make a full fist and extend his fingers all the way . Uh , X-rays , 3 views of the right ring finger were order taken reviewed to the patient that demonstrates . A normal Uh , so , uh , PL trigger , uh , we will give an injection today .
+Nurse: doctor ?
+Doctor_1: , 3 to 6 months .
+Nurse: , doctor .
+Doctor_1: .
+Nurse: second , OK . I'll check whether any other patients are there . Have a good weekend . For , for 145 patients , doctor , it's a post-op . Robinson Sandra .
+Doctor_1: 
+Nurse: . Um ,
+Doctor_1: don't see it . What was the patient , what was , what time was the
+Nurse: ? 145 , doctor . It's a post-op patient , doctor .
+Doctor_1: Robinson ? Oh yeah . OK . We can do
+Nurse: . Yes , doctor .
+Doctor_1: is here today for follow-up . Uh , she says that her pain is doing well . She is taking uh Norco for her pain rarely . Um , I Uh , on examination , her incisions are clean , dry , and intact . Uh , there are no signs of infection . Uh , X-rays views of the I think it was the left hand , yeah , left , uh , thumb where order taken reviewed with the patient that demonstrates interval resection of the trapezium with good uh with well maintained space . The thumb alignment appears satisfactory . Uh , so regarding the uh carpal tunnel syndrome , uh , recommend protect with soft dressing . Um , recommended observation regarding the thumb CMC joint . The X-rays look good . Recommend protect with thumb spike a splint , non-weight bearing , recommend follow up in . Uh , uh , One month for X-rays .
+Nurse: , doctor . Thank you . OK , there are 3 patients , uh , uh , in Wednesday scheduled doctor . Can you please give And this patient's doctor ?
+Doctor_1: patients ?
+Nurse: , Wednesday's patients , doctor , uh , you were busy on that day , so you said we'll go out on Fridays ? Uh , patient , Doctor Greenberg Ealing .
+Doctor_1: on .
+Nurse: .
+Doctor_1: , hold on one second , OK ?
+Nurse: , doctor .
+Doctor_1: , sorry , Rupa . Um . OK , uh , let's see . Eileen Greenberg , right ?
+Nurse: , doctor .
+Doctor_1: , um , She's here today for follow up . She has been having problems with both of her middle fingers . For the left middle finger , this is the one she had surgery on . She has been having clicking . And catching . She still has lots of scar tissue . She's been doing therapy , and she still has lots of pain . She wants to know what she should do about this next paragraph . She also has been having triggering , catching , and locking of the right middle finger . This one has not had surgery . She would like to know if she can have another injection . On exam . Um , left upper extremity , incision well healed with moderate scar tissue . Um , Uh , she continues to have a slight flexion contraction noted in the PIP joint . Um , of the middle finger . She does , there is tendon swelling noted with a slight click of the tendon noted at the A2 pulley on exam today . There is also a slight catch noted at the DIP joint at at this time . Um , next paragraph , extremity , right upper extremity , skin clean , dry and intact , tenorous palpation of the A1 pulley of the right middle finger , positive triggering note of the right middle finger , um . A neurovasically intact distally . OK , so you can change ultrasound to old ultrasound was reviewed with the patient . OK , so regarding the right , regarding the right middle finger , trigger finger , uh , this appears to be a Uh , this appears to be , so , uh , this is a trigger finger . I recommend trial of cortisone injection . Next paragraph , uh , regarding the uh left middle finger , trigger finger , uh , overall , her wound is healed well , but she still has scar tissue . Uh , I also note she has significant soft tissue swelling here . Um , I do feel a trigger . I recommend a trial of cortisone injection to see if we can get her through this . If we cannot , I recommend surgery in the form of revision , trigger finger release with possible uh flexor flexor digitorum superficialis excision . Of the middle finger . Um , PLSU she will think about this , recommend follow up in 2 months for reevaluation .
+Nurse: , doctor . Thank you . Uh , the same timing , doctor Tarbey Gavin ,
+Doctor_1: . Yeah , Gavin Torbati . Yeah , um . Uh , he is here today for follow-up with his mom . Uh , he has stiffness , uh , he does have some limited ability to extend , uh , he does have , he still has some pain . On exam Uh , he is making a good fist , he has good pro slash supination . He has fair wrist flexion extension . Um , X-rays , you can leave the same cause we got X-rays and they were the same , uh , uh , for plan , uh , recommend wean , uh , splint , uh , recommend initiation of hand therapy , gently advanced weight-bearing right upper extremity , follow up in 6 weeks for re-evaluation .
+Nurse: , doctor . Thank you . And the admilo Francisco doctor , is that the patient ?
+Doctor_1: sorry , which patient ?
+Nurse: patient doctor Jeremilo Francisco .
+Doctor_1: yeah , yeah , um . Wait , Frank had ami ?
+Nurse: ,
+Doctor_1: Jaramillo .
+Nurse: , doctor . Yeah ,
+Doctor_1: . Sorry . H I
+Nurse: K .
+Doctor_1: , I don't have his chart .
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

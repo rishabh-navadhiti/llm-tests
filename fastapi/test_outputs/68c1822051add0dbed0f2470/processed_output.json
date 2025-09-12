@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Mary"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Bilateral knee pain with worsening right knee pain, swelling, limited range of motion, and new-onset sciatica following a recent trip"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [
+      "The patient reports bilateral knee pain that began prior to the pandemic, with a history of arthroscopy in 2018 that provided temporary relief. She developed worsening pain in the right knee due to overcompensation, which she delayed addressing during the pandemic. Both knees are currently symptomatic, with the patient describing shin splint-like pain in both legs. The right knee is swollen, with limited range of motion and inability to fully extend the leg. She reports difficulty bearing weight and required assistance getting in and out of a sand chair and kitchen during a recent three-week trip to New England involving extensive walking on sand. She developed new-onset sciatica in the left buttock one week after returning from Massachusetts, which she attributes to prolonged sitting during a flight. The sciatica and knee pain have not improved. She notes distended veins and a sensation of pressure behind the right knee, described as a rubber band pulling, which may indicate a Baker’s cyst. She has been using ice and topical gel for relief but cannot use NSAIDs due to stage 2-3 kidney disease. She fell on August 23rd in Maine, injuring her left hip and knee, though no bruising was observed. She has a history of thyroidectomy due to nodules, and is currently managing kidney disease with Farsega and Ozemic. She is a former nurse, currently unemployed after being laid off from Health Net, and is seeking knee replacement to return to work. She has undergone physical therapy and developed tendinitis in the left foot as a result. She has not had an MRI, and the doctor does not believe it would change management. She expresses a desire to proceed with knee replacement, favoring the left knee as the initial procedure due to it being the original site of symptoms and being more severely affected on X-ray."
+    ],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [
+      "No allergies mentioned"
+    ],
+    "default": "No allergies found",
+    "instruction": "What is the allergies of this patient"
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [
+      "Former nurse, currently unemployed after being laid off from Health Net on December 31st. Not planning to retire. Currently seeking employment. Lives in a two-story condo requiring frequent stair use. History of fall on August 23rd in Maine resulting in left hip and knee injury. No visible bruising. Has undergone physical therapy and is seeing a podiatrist for left foot tendinitis. Takes baby aspirin. No known cardiac problems. No history of smoking or alcohol use mentioned."
+    ],
+    "default": "No social history",
+    "instruction": "What is the social history of this patient"
+  },
+  {
+    "title": "Abdomen",
+    "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "Follow up",
+    "key": "PE_PLAN_FOLLOW_UP",
+    "content": [
+      "Schedule knee replacement surgery, starting with the left knee as recommended. Proceed with preoperative workup and insurance coordination. Patient to communicate decision via portal. If patient confirms, order will be placed and scheduler will contact. Follow-up in 2 weeks post-surgery. Home physical therapy to begin after discharge. Patient to monitor symptoms and report any changes."
+    ],
+    "default": "-",
+    "instruction": ""
+  }
+]

@@ -1,0 +1,317 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Mary"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Bilateral knee pain with worsening right knee pain and sciatica following a recent trip, along with difficulty bearing weight and performing daily activities"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [
+      "The patient reports bilateral knee pain that has progressively worsened over time, with the left knee being the initial site of symptoms. She had an arthroscopy in 2018, which provided temporary relief by removing debris, but she subsequently overcompensated, leading to worsening of the right knee. She delayed orthopedic intervention during the pandemic. Currently, both knees are painful, with the right knee being particularly symptomatic. She describes pain with weight-bearing, limited range of motion, and swelling in the right knee, which prevented her from fully extending the leg. She notes distended veins and a sensation of pressure behind the right knee, described as a rubber band-like pull, suggestive of a Baker’s cyst. She reports new-onset sciatica in the left buttock, which began one week after returning from a three-week trip to New England involving extensive walking on sand and boat travel. She required assistance from two people to rise from a sand chair and to move in and out of the kitchen. She has been using ice and topical gel (Var) for symptom relief but cannot use NSAIDs due to stage 2–3 chronic kidney disease. The sciatica and knee pain have not improved. She fell on August 23rd in Maine, injuring her left hip and knee, though there was no bruising. She has a history of tendinitis in the left foot from physical therapy, managed by a podiatrist. She expresses strong desire to proceed with knee replacement surgery, particularly to regain independence and return to work. She is currently unemployed and seeking to undergo surgery before resuming employment. She is considering the left knee for initial replacement due to its chronicity and worse radiographic findings, though the right knee is more acutely symptomatic. She is not currently requesting an MRI, as she believes it would not change management. She is open to proceeding with surgery and has expressed willingness to move forward."
+    ],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [
+      "Stage 2–3 chronic kidney disease (GFR 32, improved to 42), thyroidectomy for multiple nodules (1.5 years ago), history of fall with left hip and knee injury (August 23), bilateral knee osteoarthritis with bone spurs and cartilage wear, history of arthroscopy (2018), history of tendinitis in the left foot secondary to physical therapy, and history of functional physical therapy for knee symptoms."
+    ],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. "
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": [
+      "Farsen (Fasenra) for kidney disease, Ozempic (semaglutide) for kidney disease, and baby aspirin (81 mg) once daily orally."
+    ],
+    "default": "No current medications found.",
+    "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [
+      "No family history of note provided."
+    ],
+    "default": "No family history found",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [
+      "Patient is a 72-year-old retired nurse, currently unemployed after being laid off from Health Net Services on December 31. She is actively seeking employment. Lives in a two-story condo, requiring frequent stair use. No tobacco, alcohol, or illicit drug use reported. No recent travel-related exposures beyond the recent trip to New England. No known occupational exposures."
+    ],
+    "default": "No social history",
+    "instruction": "What is the social history of this patient"
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [
+      "No known allergies."
+    ],
+    "default": "No allergies found",
+    "instruction": "What is the allergies of this patient"
+  },
+  {
+    "sub-section": [
+      {
+        "title": "GASTROINTESTINAL",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "GENITOURINARY",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "NEUROLOGICAL",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [
+          "New-onset left-sided sciatica, bilateral knee pain with altered gait, no focal neurological deficits noted on exam."
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [
+          "Fatigue, weight loss (195 to 173 lbs), recent weight gain, no fever, chills, or night sweats."
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [
+          "Bilateral knee pain with swelling, limited range of motion, difficulty bearing weight, distended veins, and a sensation of pressure behind the right knee. History of left foot tendinitis. No joint deformities noted."
+        ],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Hematologic",
+        "key": "SOAP_ROS_HEMATOLOGIC",
+        "content": [
+          "No anemia, bleeding, or clotting issues reported. On low-dose aspirin for anticoagulation."
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lymphatic",
+        "key": "SOAP_ROS_LYMPHATIC",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_ROS_PSYCHIATRIC",
+        "content": [
+          "No mood disturbances, anxiety, or depression reported. Patient is motivated to undergo surgery and return to work."
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of systems",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Nose",
+        "key": "SOAP_PE_NOSE",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PHYSICAL_EXAM_NECK",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Abdomen",
+        "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [
+          "Right knee shows mild swelling, limited range of motion, and tenderness. Left knee shows similar findings with more pronounced osteoarthritic changes on X-ray. No joint deformities. No crepitus noted. Both knees have intact ligamentous stability."
+        ],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+        "content": [
+          "Normal strength in all extremities, normal reflexes, intact sensation, and normal gait with assistance. No focal neurological deficits. Left sciatica present with pain radiating to buttock, no motor weakness."
+        ],
+        "default": "Normal",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [
+          "Alert, oriented, cooperative, and appropriate mood. No signs of depression or anxiety."
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [
+      "No immunizations documented in the conversation."
+    ],
+    "default": "No Immunizations found",
+    "instruction": "What is the immunizations of this patient"
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [
+      "GFR decreased to 32 (stage 2–3 chronic kidney disease), improved to 42 with treatment. No other lab results discussed."
+    ],
+    "default": "No lab results found",
+    "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "ICD_ASSESSMENT",
+        "content": [
+          "M17.90 - Osteoarthritis, unspecified knee, without mention of laterality",
+          "M17.10 - Osteoarthritis, left knee, without mention of laterality",
+          "M17.20 - Osteoarthritis, right knee, without mention of laterality",
+          "M54.9 - Sciatica, unspecified",
+          "N18.2 - Chronic kidney disease, stage 2",
+          "Z90.1 - Status post thyroidectomy",
+          "M72.1 - Tendinitis of foot"
+        ],
+        "default": "-",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give all the current assessment and not historical information return it in a list. The result must be easily searchable in icd description so search for the icd code."
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [
+          "Proceed with left knee replacement as the initial procedure due to chronicity and worse radiographic findings.",
+          "Schedule preoperative evaluation and testing, including cardiac clearance and nephrology consultation given stage 2–3 CKD.",
+          "Discontinue NSAIDs due to renal impairment.",
+          "Continue current medications: Farsen (Fasenra), Ozempic, and baby aspirin.",
+          "Initiate physical therapy preoperatively to optimize strength and function.",
+          "Refer to podiatrist for ongoing management of left foot tendinitis.",
+          "Discuss surgical risks, benefits, and recovery expectations with patient.",
+          "Coordinate with scheduler to initiate knee replacement process once decision is confirmed.",
+          "Patient to contact office when ready to proceed; order will be placed promptly."
+        ],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section, provide everything in a list."
+      }
+    ],
+    "title": "Assessment and Plan",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [
+      "Next Appointment: Patient to contact office when ready to proceed with knee replacement. Once decision is confirmed, scheduler will contact patient to schedule surgery and preoperative appointments.",
+      "Review and Adjustments: Review of surgical readiness, lab results, and patient preferences during preoperative visit. Adjustments to plan based on patient’s response to prehab and medical clearance."
+    ],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]

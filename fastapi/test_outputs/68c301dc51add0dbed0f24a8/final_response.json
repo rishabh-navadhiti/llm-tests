@@ -1,0 +1,84 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "Patient Name",
+      "key": "PATIENT_NAME",
+      "content": [
+        "L U R I E"
+      ],
+      "default": "-",
+      "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+    },
+    {
+      "title": "Chief Complaint",
+      "key": "CHIEF_COMPLAINT",
+      "content": [
+        "Right upper extremity pain and swelling after trigger finger release"
+      ],
+      "default": "-",
+      "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+    },
+    {
+      "title": "HPI Spencer",
+      "key": "HPI_SPENCER",
+      "content": [
+        "Onset: Post-operative, Duration: Recent, Location: Right upper extremity, Severity: Mild to moderate swelling and discomfort"
+      ],
+      "default": "-",
+      "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+    },
+    {
+      "title": "Musculoskeletal",
+      "key": "MUSCULOSKELETAL_VERBATIM",
+      "content": [
+        "Right upper extremity incisions clean, dry and intact with sutures in place, mild swelling and ecchymosis, composite finger flexion of palm"
+      ],
+      "default": "",
+      "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+    },
+    {
+      "title": "Imaging Results",
+      "key": "IMAGING_RESULTS",
+      "content": [
+        "-"
+      ],
+      "default": "-",
+      "instruction": ""
+    },
+    {
+      "title": "Assessment",
+      "key": "ASSESSMENT_SPENCER",
+      "content": [
+        "Right upper extremity Skin is intact.",
+        "No tenderness to palpation."
+      ],
+      "default": "-",
+      "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.\n\nRules\n- Only include active symptoms or conditions relevant to the current visit.\n- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).\n- Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”\n- Do not include any exam findings or historical medical information.\n- Return only the current issue(s) as a list.\n- If skin is intact say 'Right upper extremity Skin is intact.'. \n- If no tendon palpation. say ' No tenderness to palpation.'"
+    },
+    {
+      "title": "Plan",
+      "key": "PLAN_SPENCER_",
+      "content": [
+        "Patient is doing well post-operatively.",
+        "Continues with stretching exercises.",
+        "Soft dressing remains in place.",
+        "Suture removal scheduled in one week.",
+        "Follow-up appointment confirmed for Tuesday next week."
+      ],
+      "default": "-",
+      "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.\n\nRULES\nReturn in multiples sentence in lists\nUser numbers instead of word where necessary , \"6 to 8 weeks\""
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 1340,
+    "completion_tokens": 851,
+    "total_tokens": 2191
+  },
+  "timing": {
+    "total_time_ms": 9519.80447769165,
+    "generation_time_ms": 9519.340515136719,
+    "processing_time_ms": 0.13637542724609375
+  },
+  "error_message": null
+}

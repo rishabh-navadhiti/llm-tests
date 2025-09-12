@@ -1,0 +1,85 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "Patient Name",
+      "key": "PATIENT_NAME",
+      "content": [
+        "Jacob Bosley"
+      ],
+      "default": "-",
+      "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+    },
+    {
+      "title": "Chief Complaint",
+      "key": "CHIEF_COMPLAINT",
+      "content": [
+        "Bilateral hand numbness and tingling"
+      ],
+      "default": "-",
+      "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+    },
+    {
+      "title": "HPI Spencer",
+      "key": "HPI_SPENCER",
+      "content": [
+        "Onset: Mid 2024, Duration: Ongoing, Location: Bilateral hands, left greater than right, Severity: Significant night symptoms"
+      ],
+      "default": "-",
+      "instruction": "What is the Onset, duration, location and severity on the illness, only mention that, and nothing else"
+    },
+    {
+      "title": "Musculoskeletal",
+      "key": "MUSCULOSKELETAL_VERBATIM",
+      "content": [
+        "Skin intact, no soft tissue swelling, no thenar atrophy, positive Tinel's carpal tunnel, positive wrist flexion, positive Phalen's compression test, everything else normal"
+      ],
+      "default": "",
+      "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim."
+    },
+    {
+      "title": "Imaging Results",
+      "key": "IMAGING_RESULTS",
+      "content": [
+        "-"
+      ],
+      "default": "-",
+      "instruction": ""
+    },
+    {
+      "title": "Assessment",
+      "key": "ASSESSMENT_SPENCER",
+      "content": [
+        "Bilateral carpal tunnel syndrome",
+        "Right upper extremity Skin is intact."
+      ],
+      "default": "-",
+      "instruction": "Generate a list of the patient's current medical conditions using simple, concise language as typically seen in a medical scribe note.\n\nRules\n- Only include active symptoms or conditions relevant to the current visit.\n- Use general terms (e.g., \"right forearm hypersensitivity\" instead of anatomical/nerve distribution terms).\n- Do not include normal findings such as “skin is intact” or “no tenderness to palpation.”\n- Do not include any exam findings or historical medical information.\n- Return only the current issue(s) as a list.\n- If skin is intact say 'Right upper extremity Skin is intact.'. \n- If no tendon palpation. say ' No tenderness to palpation. '"
+    },
+    {
+      "title": "Plan",
+      "key": "PLAN_SPENCER_",
+      "content": [
+        "Discussed carpal tunnel syndrome at length with the patient.",
+        "Patient has exhausted non-operative treatment options including night brace and injection.",
+        "Patient is interested in proceeding with left endoscopic carpal tunnel release.",
+        "Risks of surgery including blood loss, infection, neurovascular injury, tendon injury, and stiffness were discussed.",
+        "Patient elected to proceed with left endoscopic carpal tunnel release.",
+        "Return to clinic in 6 to 8 weeks for follow-up."
+      ],
+      "default": "-",
+      "instruction": "Write a scribe-style summary of the healthcare provider’s plan of action based on the clinical conversation. Use natural, conversational language that flows like a dictated clinical note. Include treatment recommendations, therapies (including self-therapy or formal therapy), any discussion or education provided to the patient, lifestyle modifications, and follow-up instructions. Be sure to include the follow-up time in a conversational tone, e.g., “return to clinic in 6 to 8 weeks.” Mention any relevant findings or explanations discussed with the patient, and reflect how the provider explains the reasoning behind the treatment.\n\nRULES\nReturn in multiples sentence in lists\nUser numbers instead of word where necessary , \"6 to 8 weeks\""
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 1360,
+    "completion_tokens": 912,
+    "total_tokens": 2272
+  },
+  "timing": {
+    "total_time_ms": 10294.46816444397,
+    "generation_time_ms": 10294.051170349121,
+    "processing_time_ms": 0.10180473327636719
+  },
+  "error_message": null
+}

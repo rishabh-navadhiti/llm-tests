@@ -1,0 +1,315 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Prado"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [
+      "Right leg weakness and anterior thigh pain with recurrent falls"
+    ],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [
+      "The patient reports progressive right leg weakness and anterior thigh pain, with onset approximately three months prior, around late June 2023. She describes the pain as localized to the front of the right thigh and associated with difficulty straightening the leg, with current strength graded at 2/5 in the right quadriceps. She has experienced 16 falls since symptom onset, including a recent fall down the stairs. The patient notes that she is unable to drive due to lack of control and requires bracing for mobility, relying on a wheelchair or chair for ambulation. She has undergone a lumbar MRI revealing significant right L3-4 stenosis, which is believed to be the underlying cause of her symptoms. Prior to this visit, she received a corticosteroid injection for suspected tendon inflammation, which provided no relief. She has also been evaluated by a neurosurgeon in 2023, who recommended a vertebroplasty or cement injection for vertebral body stabilization, but this was deferred due to concurrent radiation therapy plans. The patient has a history of breast cancer diagnosed in 2010, with recurrence in the bones in 2018. She is currently undergoing follow-up for bone metastases, with a PET scan scheduled for August 24, 2023, to assess for disease progression. She reports that prior imaging did not show active disease, but further imaging is being pursued for confirmation. The patient is concerned about the risk of fracture due to recurrent falls and is seeking definitive treatment for her spinal stenosis and potential vertebral instability. She is currently on pain medication, though specific details are not provided. The patient’s husband, who is able to drive, is unable to assist with ambulation due to his own health history, including a past injury from Vietnam. She has recently hired help for household tasks due to functional limitations."
+    ],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [
+      "Breast cancer diagnosed in 2010, with recurrence in bone metastases in 2018. History of lumbar spinal stenosis at L3-4. History of vertebral body compression likely related to metastatic disease. Undergoing ongoing oncologic follow-up with imaging surveillance including PET scans and MRIs. No prior surgeries related to spine or cancer at this time. No documented hospitalizations unrelated to current illness."
+    ],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. "
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": [
+      "Pain medication (specific name not provided, currently in use)"
+    ],
+    "default": "No current medications found.",
+    "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [
+      "No relevant family history of cancer, neurological disorders, or significant hereditary diseases reported."
+    ],
+    "default": "No family history found",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [
+      "Patient is married. Husband is able to drive but unable to assist with ambulation due to prior injury sustained during military service in Vietnam. Patient has hired external help for household tasks including cleaning and cooking due to functional limitations. Patient is currently unable to drive due to fear of falling and lack of leg control. Lives independently with support from hired personnel. No history of tobacco, alcohol, or illicit drug use reported."
+    ],
+    "default": "No social history",
+    "instruction": "What is the social history of this patient"
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [
+      "No known allergies reported."
+    ],
+    "default": "No allergies found",
+    "instruction": "What is the allergies of this patient"
+  },
+  {
+    "sub-section": [
+      {
+        "title": "GASTROINTESTINAL",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "GENITOURINARY",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "NEUROLOGICAL",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [
+          "Right lower extremity weakness (2/5 strength in right quadriceps), anterior thigh pain, gait instability, recurrent falls, impaired ambulation, inability to drive due to lack of control"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [
+          "Fatigue, weight loss not reported, fever or chills not reported, night sweats not reported"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [
+          "Right leg weakness, anterior thigh pain, recurrent falls, inability to straighten right leg, functional impairment requiring bracing and assistance"
+        ],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Hematologic",
+        "key": "SOAP_ROS_HEMATOLOGIC",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lymphatic",
+        "key": "SOAP_ROS_LYMPHATIC",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_ROS_PSYCHIATRIC",
+        "content": [
+          "Anxiety related to fear of falling and loss of independence, emotional distress due to chronic illness and functional decline"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of systems",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Nose",
+        "key": "SOAP_PE_NOSE",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PHYSICAL_EXAM_NECK",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Abdomen",
+        "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [
+          "Right lower extremity weakness with 2/5 strength in quadriceps, decreased range of motion in right leg, inability to fully extend leg, tenderness to palpation in anterior thigh, gait instability"
+        ],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+        "content": [
+          "Decreased strength in right quadriceps (2/5), normal sensation in bilateral lower extremities, normal deep tendon reflexes, intact coordination, gait abnormal with instability and reliance on assistive devices"
+        ],
+        "default": "Normal",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [
+          "Alert and oriented x3, cooperative, appropriate affect, no signs of acute distress or psychosis"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [
+      "No immunizations documented during this visit. Patient has not reported any recent vaccinations."
+    ],
+    "default": "No Immunizations found",
+    "instruction": "What is the immunizations of this patient"
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [
+      "PET scan scheduled for August 24, 2023, to evaluate for progression of bone metastases. Previous PET scans in 2023 did not show active disease. MRI of lumbar spine performed, revealing significant right L3-4 stenosis. No recent blood work or other lab tests reported."
+    ],
+    "default": "No lab results found",
+    "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "ICD_ASSESSMENT",
+        "content": [
+          "M48.061 - Spinal stenosis, lumbar region, with neurogenic claudication, right side",
+          "C50.911 - Breast cancer, unspecified site, right breast, in situ",
+          "C79.51 - Secondary malignant neoplasm of bone and bone marrow",
+          "Z51.11 - Encounter for antineoplastic chemotherapy",
+          "Z51.89 - Encounter for other specified aftercare"
+        ],
+        "default": "-",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give all the current assessment and not historical information return it in a list. The result must be easily searchable in icd description so search for the icd code."
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [
+          "Proceed with surgical intervention for right L3-4 spinal stenosis with decompression and stabilization.",
+          "Consider simultaneous vertebroplasty with cement augmentation of the affected vertebral body to stabilize metastatic lesion during the same procedure.",
+          "Initiate postoperative rehabilitation plan to improve strength and mobility.",
+          "Continue oncologic follow-up with PET scan on August 24, 2023, to assess for disease activity.",
+          "Coordinate with radiation oncology team to ensure timing of surgery does not interfere with ongoing or future radiation therapy.",
+          "Prescribe or optimize pain management regimen to improve comfort and function.",
+          "Provide patient education on fall prevention, mobility aids, and home safety modifications.",
+          "Refer to physical therapy for gait training and strengthening exercises.",
+          "Arrange for home health services or caregiver support as needed."
+        ],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section, provide everything in a list."
+      }
+    ],
+    "title": "Assessment and Plan",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [
+      "Next Appointment: Schedule follow-up appointment for postoperative evaluation and rehabilitation planning.",
+      "Review and Adjustments: Plan to review surgical recovery, pain control, mobility progress, and oncologic status during follow-up visit. Adjust rehabilitation and medication plan as needed."
+    ],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]

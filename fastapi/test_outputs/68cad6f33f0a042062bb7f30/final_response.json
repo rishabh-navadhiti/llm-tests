@@ -1,0 +1,326 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "Patient Name",
+      "key": "PATIENT_NAME",
+      "content": [
+        "Patient_1"
+      ],
+      "default": "-",
+      "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+    },
+    {
+      "title": "Chief Complaint",
+      "key": "CHIEF_COMPLAINT",
+      "content": [
+        "Recurrent cyst on wrist with recurrence after prior surgical removal, now requiring aspiration"
+      ],
+      "default": "-",
+      "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+    },
+    {
+      "title": "History of Present Illness",
+      "key": "HISTORY_OF_PRESENT_ILLNESS",
+      "content": [
+        "The patient reports a recurrent cyst on the wrist that has reappeared after a prior surgical removal approximately 8 years ago. The cyst is noted to recur with repetitive activities involving wrist extension, such as push-ups and bench presses. The patient describes the current cyst as increasingly bothersome, prompting the desire for aspiration. The patient has previously undergone surgical excision of a similar cyst and notes a residual scar. The current episode began after a delay in treatment, and the patient is now seeking intervention due to mild discomfort. The patient is also experiencing persistent sensory changes in the lower leg following a prior nerve surgery, including tingling, numbness, and a sensation of the leg 'falling asleep' upon movement. These symptoms are attributed to nerve regeneration, particularly in the medial aspect of the knee, where an interposition graft was performed. The patient reports that the sensation is tolerable and not painful, but still noticeable. The patient is uncertain whether the symptoms are due to nerve regeneration or muscle constriction. The patient is currently undergoing physical therapy and strengthening exercises, which may exacerbate symptoms. The patient expresses difficulty distinguishing between normal recovery sensations and abnormal discomfort. The patient is open to further evaluation and treatment if symptoms become bothersome."
+      ],
+      "default": "-",
+      "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+    },
+    {
+      "title": "Past Medical History",
+      "key": "PAST_MEDICAL_HISTORY",
+      "content": [
+        "Prior surgical excision of a wrist cyst 8 years ago; history of nerve surgery on the right leg involving right soft tissue neurolysis, interposition grafting for the medial tibial nerve, and RPNI (reversed posterior nerve interposition) for the anterior tibial nerve. The patient underwent surgery in January/February, with postoperative recovery ongoing. No other significant past medical conditions reported."
+      ],
+      "default": "No past medical history found",
+      "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. "
+    },
+    {
+      "title": "Current Medications",
+      "key": "CURRENT_MEDICATIONS",
+      "content": [
+        "No current medications found."
+      ],
+      "default": "No current medications found.",
+      "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+    },
+    {
+      "title": "Family History",
+      "key": "FAMILY_HISTORY",
+      "content": [
+        "No family history found"
+      ],
+      "default": "No family history found",
+      "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+    },
+    {
+      "title": "Social History",
+      "key": "SOCIAL_HISTORY",
+      "content": [
+        "Patient is a parent of a 6-month-old infant. Works out regularly, including push-ups and bench presses. No tobacco, alcohol, or illicit drug use reported. Lives with a small child and a pet. No occupational hazards reported."
+      ],
+      "default": "No social history",
+      "instruction": "What is the social history of this patient"
+    },
+    {
+      "title": "Allergies",
+      "key": "ALLERGIES",
+      "content": [
+        "No allergies found"
+      ],
+      "default": "No allergies found",
+      "instruction": "What is the allergies of this patient"
+    },
+    {
+      "sub-section": [
+        {
+          "title": "GASTROINTESTINAL",
+          "key": "SOAP_ROS_GASTROINTESTINAL",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "GENITOURINARY",
+          "key": "SOAP_ROS_GENITOURINARY",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "NEUROLOGICAL",
+          "key": "SOAP_ROS_NEUROLOGICAL",
+          "content": [
+            "Tingling and numbness in the right lower leg, particularly along the medial aspect of the knee and extending to the ankle. Sensation described as similar to a limb 'falling asleep' with occasional electric-like sensations. Patient reports that the sensation is tolerable and not painful. No motor deficits reported."
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Constitutional",
+          "key": "SOAP_ROS_CONSTITUTIONAL",
+          "content": [
+            "No fatigue, fever, chills, weight loss, or night sweats reported."
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "MUSCULOSKELETAL",
+          "key": "SOAP_ROS_MUSCULOSKELETAL",
+          "content": [
+            "Recurrent wrist cyst with history of surgical excision. No joint deformities or acute injuries noted. Patient reports pain with repetitive wrist extension activities."
+          ],
+          "default": "Normal",
+          "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+        },
+        {
+          "title": "Hematologic",
+          "key": "SOAP_ROS_HEMATOLOGIC",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Lymphatic",
+          "key": "SOAP_ROS_LYMPHATIC",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Psychiatric",
+          "key": "SOAP_ROS_PSYCHIATRIC",
+          "content": [
+            "No symptoms of depression, anxiety, or mood disturbance reported. Patient is emotionally stable and engaged in conversation."
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        }
+      ],
+      "title": "Review of systems",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "sub-section": [
+        {
+          "title": "Ears",
+          "key": "SOAP_PE_EARS",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Nose",
+          "key": "SOAP_PE_NOSE",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Throat",
+          "key": "SOAP_PE_THROAT",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Neck",
+          "key": "SOAP_PHYSICAL_EXAM_NECK",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Heart",
+          "key": "SOAP_PE_HEART",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Lungs",
+          "key": "SOAP_PE_LUNGS",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Abdomen",
+          "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "MUSCULOSKELETAL",
+          "key": "SOAP_ROS_MUSCULOSKELETAL",
+          "content": [
+            "No deformities or acute injuries noted. Wrist cyst present with mild tenderness on palpation. No swelling or erythema observed."
+          ],
+          "default": "Normal",
+          "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+        },
+        {
+          "title": "Neurological",
+          "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+          "content": [
+            "Sensory testing reveals decreased sensation in the medial aspect of the right lower leg and ankle. Positive Tinel’s sign at the medial knee. No motor weakness noted. Reflexes intact. Gait normal."
+          ],
+          "default": "Normal",
+          "instruction": "What is the neurologicals of this patient"
+        },
+        {
+          "title": "Psychiatric",
+          "key": "SOAP_PE_PSYCHIATRIC",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        }
+      ],
+      "title": "Physical Exam",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "title": "Immunizations",
+      "key": "SOAP_IMMUNIZATIONS",
+      "content": [
+        "No Immunizations found"
+      ],
+      "default": "No Immunizations found",
+      "instruction": "What is the immunizations of this patient"
+    },
+    {
+      "title": "Lab Results",
+      "key": "LAB_RESULTS",
+      "content": [
+        "No lab results found"
+      ],
+      "default": "No lab results found",
+      "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+    },
+    {
+      "sub-section": [
+        {
+          "title": "Assessment",
+          "key": "ICD_ASSESSMENT",
+          "content": [
+            "Benign cyst, recurrent, right wrist (ICD-10: D37.2)",
+            "Post-surgical nerve regeneration, right medial tibial nerve (ICD-10: Z51.89)",
+            "Post-surgical status, right anterior tibial nerve (ICD-10: Z51.89)"
+          ],
+          "default": "-",
+          "instruction": "Generate a list of the patient's current medical conditions, Only give all the current assessment and not historical information return it in a list. The result must be easily searchable in icd description so search for the icd code."
+        },
+        {
+          "title": "Plan",
+          "key": "SOAP_PLAN",
+          "content": [
+            "Schedule aspiration of the recurrent wrist cyst under local anesthesia with IV sedation.",
+            "Perform surgical excision of the cyst with removal of the stalk at the wrist joint.",
+            "Consider excision of the residual skin tag if desired, though it may not be covered by insurance.",
+            "Refer patient to hand therapy for nerve desensitization and nerve glide exercises.",
+            "Initiate home exercise program focused on nerve desensitization and gradual strengthening.",
+            "Monitor for recurrence of the wrist cyst and consider repeat excision if recurrence occurs.",
+            "Continue observation of the right lower leg sensory symptoms, as they are likely part of the nerve regeneration process.",
+            "Reassess the medial tibial nerve symptoms in 6–12 months; consider further intervention if symptoms persist or worsen."
+          ],
+          "default": "No plan",
+          "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section, provide everything in a list."
+        }
+      ],
+      "title": "Assessment and Plan",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "title": "Follow Up",
+      "key": "SOAP_FOLLOW_UP",
+      "content": [
+        "Next Appointment: Schedule aspiration and potential excision of the wrist cyst within the next 1–2 weeks. Follow-up with hand therapy within 2 days of the procedure. Review of nerve symptoms in 6–12 months.",
+        "Review and Adjustments: Assess response to aspiration and surgical excision. Evaluate progress of nerve regeneration and adjust therapy plan as needed. Reassess need for further surgical intervention if symptoms persist."
+      ],
+      "default": "No follow up",
+      "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 6766,
+    "completion_tokens": 3561,
+    "total_tokens": 10327
+  },
+  "timing": {
+    "total_time_ms": 48626.012086868286,
+    "generation_time_ms": 48625.06651878357,
+    "processing_time_ms": 0.09822845458984375
+  },
+  "error_message": null
+}

@@ -1,0 +1,312 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note, you will also be provided with a pre charting notes , use that as context for the notes.. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. "
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": [],
+    "default": "No current medications found.",
+    "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [],
+    "default": "No family history found",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [],
+    "default": "No social history",
+    "instruction": "What is the social history of this patient"
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [],
+    "default": "No allergies found",
+    "instruction": "What is the allergies of this patient"
+  },
+  {
+    "sub-section": [
+      {
+        "title": "GASTROINTESTINAL",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "GENITOURINARY",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "NEUROLOGICAL",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Hematologic",
+        "key": "SOAP_ROS_HEMATOLOGIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lymphatic",
+        "key": "SOAP_ROS_LYMPHATIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_ROS_PSYCHIATRIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of systems",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Nose",
+        "key": "SOAP_PE_NOSE",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PHYSICAL_EXAM_NECK",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Abdomen",
+        "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [],
+    "default": "No Immunizations found",
+    "instruction": "What is the immunizations of this patient"
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [],
+    "default": "No lab results found",
+    "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "ICD_ASSESSMENT",
+        "content": [],
+        "default": "-",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give all the current assessment and not historical information return it in a list. The result must be easily searchable in icd description so search for the icd code."
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section, provide everything in a list."
+      }
+    ],
+    "title": "Assessment and Plan",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: Of course . Thank you for your patience and waiting . Hi , how are you doing ? Good . So you got something new for me . Oh , that is quite the bump .
+Patient: wanted to drain it the last time that the little guy , the baby was due like 3 days later , so I didn't want . How's the baby . How's yours ?
+Doctor_1: . He's almost , almost 6 months .
+Patient: ,
+Doctor_1: the guy . They're so cute . Let's see . Oh , the smiles are the best , aren't they ?
+Patient: know we're like waiting for him to giggle . He's like trying to .
+Doctor_1: yeah , first couple of weeks and they give you nothing , you're like , and then the smile and you're like this is the best . Now that was the reinforcement I needed . Um , OK , so . That was , so you had it back in June when we saw each other ? No . Yes , yes . Got it . It's it's
+Patient: 
+Doctor_1: 
+Patient: a little while . I , I get these somewhat frequently . I have , I had one surgically removed here . You can see the kind of scar . It's starting to reappear a little bit . This is years ago . Um , it's , it's like from working out . It's like push ups , bench presses , anything where I sort of have my wrist like sort of cocked back . I , I notice that it generates it faster and , um , but yeah , this one . And you also said this is fine . I've had a germ check that's right you said like maybe if we're going in , you can take them
+Doctor_1: . Do you want to take it out surgically or you wanna drain ? Um , with aspiration , OK . The drain , I would agree with that . Um , the draining with aspiration tends to just fill right back up . Um , so in that case , what is your schedule ? What would you , OK , perfect . So let's put in the bookings that it sounds like you've been through it on the other side , so you'll have some sort of idea but I'll talk you through the specific protocols I have with this one . How long ago was that ?
+Patient: years . 8 years , I guess , like . OK , perfect .
+Doctor_1: you want to take that little skin thing off at the same time ?
+Patient: not , and this is the weirdest answer , but as long as it's not gonna cost me more money , I don't really care about it .
+Doctor_1: should not be covered by insurance . Yeah , um , it will probably be a different incision though cause I typically go right over here and then I can just do like a little ellipse , but I think it would just make a way bigger incision to make it all one . So let's just do two smaller side .
+Patient: , so this is . When I first spoke to the germ , he kind of indicated that he thought maybe it wouldn't be covered by insurance cause it was aesthetic only , but
+Doctor_1: , sometimes ways we can say , like , rule out certain things . We'll try . If it does end up being denied , then we can leave it alone .
+Patient: , and I'm not a , I'm not a , you know , yeah ,
+Doctor_1: . We'll try it out . So , um , this , um , incision will do sort of right over the bump itself , transverse like that one was . Um , we shell out the entirety of the cyst , we chase down the stalk to where it's coming from at the wrist joint itself . The biggest risk of this whole thing is kind of what you're experiencing on the other side . It can come back . Um , I usually quote people about a 10% recurrence rate . If you're someone that seems to be prone to them , that might be even a little higher . Um , if it comes back , we can treat it the same way , where if it gets big , we can take it out again . Perfect . Um ,
+Patient: your schedule just in terms of aspirating it today because it's gotten to the point where because I delayed , it's bothering me a little bit . Um , I was just trying to get a sense of like it's gonna be a long time , maybe I'll let's stick a needle in it today if not like
+Doctor_1: weeks . Yeah , we're not talking months , um . Let's see . I mean , it's definitely not next week , but I don't think we'd be having to talk too much after that . That's cause this is a relatively fast procedure . Yeah . Yeah , let's do it for their own sake , yes .
+Patient: by the way , you do it , uh , what twilight anesthesia ,
+Doctor_1: anesthesia , exactly . So , um , the max sedation , you'll get the IV , you'll take a nap , but it's not the full general anesthetic that you got before for your leg . Um , I do , because , uh , surgery center , um , Lindon , which is about 5 minutes down the road , they do all fairly short outpatient cases , um , so they're great , they're super efficient . Um , all buried below the skin stitches , although I leave the two knots outside , um , and those get trimmed at the 2 week mark . I'll put you in a splint just for the first week , so a little plaster on one side , mostly just so that you slow down a little bit and that you're protected from when you lift him , even though I'm very plaster . OK . I think it was . And I usually just do a brace , but people with small children and big pets , I usually put plaster on just because the tendency is there's no way you're not gonna lift him , um , and so this is . More a reminder to yourself to kind of take it easy , especially that first week , uh one week it comes off .
+Patient: . Um . All here and while we're doing this . What waking up is this thing gonna do ? I like
+Doctor_1: many months are in ?
+Patient: are December .
+Doctor_1: months , 8 months . No ,
+Patient: , maybe
+Doctor_1: did it right before in January ,
+Patient: . Yeah , definitely . It was , it was right before you went on .
+Doctor_1: that was probably more like January ,
+Patient: . OK , so maybe it was February . All right ,
+Doctor_1: was gonna say just for cause here's what I think .
+Patient: the good news is I have Feeling or tingling is bad news is it's not a particularly pleasant feeling . It's not rising to a level where I would do anything about going back in . I'm just trying to understand . How much of it is Waking up and how much of it is strengthening and muscle constricting the space that the nerve lives in .
+Doctor_1: , let me look back at the note , um , and then we can probably talk about kind of the distinction between those two feelings . So , A surgery report that's It's 20.3 . Let's go to notes and OR . And OK , so 220 . So we did the right softness neurolysis , then we did interposition grafting for the softness , and then We also had the anterior . Tibial we did the RPNI so because we had two spots we were working on . OK , so which one is causing that sort of Discomfort .
+Patient: think both . So I'm kind of So if you remember , the issue , I could kind of fire it by hitting by like flexing my hamstring . Mhm . Before the surgery , that would create a fire to the degree it was painful . Now I can trigger it , it's just tingling . So it's tolerable . It's nothing I would . Let us go back in for and over here also kind of a bang it's almost like it puts a little bit of sleep and you hit it on the ground , you can kind of feel it through your life like I can kind of feel that a little bit um . But I wouldn't , you know , if I hit it like contact if I hit it right now , like I kind of feel it kind of all the way through . So , it , it's certainly At worst , I would characterize it as a little jarring , or like comfortable , you know , but it's not painful like it used to be . Got it . Like before I would lift to pick up to put my shoe on , and that I'd get a fire through through the like , you know , my front shin . I'm not getting that . Got it . OK ,
+Doctor_1: I think it's gonna depend , um , or vary by the two sites . So let me pull up your pictures from the surgery and that helps kind of talk through it . I think the Interior shin one . May sort of be what it is , and if it's still bothersome , we might consider doing something different for it . That's this one here . This other one through the inside of the knee , I think is still sort of it's regeneration and waking up process , and that's because we did an interposition graft for that one versus we did an RPNI for the other one , which pictures helped sort of make that make sense . So let's see .
+Patient: is the waking up process like Your leg falls asleep , give the blood flow back to it , it tingles and then it goes back , like , is that the progression ? Yes . So tingling can proceed healing and normalcy .
+Doctor_1: . Yes , and that is for the medial one , but not necessarily this one . This one is should sort of be um That is what it is going to be . And so if that one's still causing prickling , tingling , or uncomfortable sensations , we may consider burying it deeper or doing something else to it , because that one's not a waking up thing . That's just a , it's probably still a sensitive thing . Um , so if it's tolerable and it's nothing you would want to do anything about , we can let it be . If it's bothersome . That would be one I would say , OK , we should go back and re , whereas the other one I'd say let's give it more time . And that's because I'm struggling for a
+Patient: I think is unfortunately , it's a little bit of I wanna , I'm probably gonna wanna wait and see on everything simply because There's a bit of like feeling confusion I have , like I can't really tell what's what . There's so much numbness , there's so it feels so different than than this leg . It feels like all swollen , you know , it's still to this day it feels very swollen , um , that is so gnarly .
+Doctor_1: , so this is what's going . Yes , absolutely , and I always try to remember to ask if you're OK looking before I pull up a gory photo . Um , so this is the Proximal side or the uh near end of the nerve and your far side or distal end was all the way here . So we did this whole interposition graft , and that is somewhere in the ballpark of , here we go , so that's my baby . Um , this is in the ballpark about 5 centimeters . So if we talk about it growing a millimeter a day after a period of about 6 weeks to grow across that first connection , we're talking 6+ months for it to Get all the way through to even connect to here . So if we're starting to feel now that kind of pins and needle sensation , like when your foot falls asleep , it's often that initial preceding , this is just a nerve fiber starting to send their signal down , and they will then , as they reach their target and calm , go back to a more normal sensation . Now , part of it will be a watching and waiting game . Um , So , If it is persisting and we're getting , you know , that year plus on and it's still uncomfortable , there are other things we can do for this to further ablate it that would now result in a totally numb patch to it , but it could be worth it if the sensation is Numb is better than sensation . Um , the other one , because it is a RPNI . So this is sort of it's hard to see , but um this is your nerve end here and it's wrapped in this muscle here . And so that is at its end point . There is no connection somewhere else . So if that's still sensitive , that means that that sort of end of the nerve is still firing in a way that Um , is not just a phase , potentially . So , If this bothered you enough now , I would offer as soon as now to do it , although it's very reasonable to keep watching it . I would recommend we keep watching this one for longer , and it makes sense if we're watching one and the other one's reasonable , just to give them both time and see .
+Patient: really . Plus , like there's just so much like it feels like
+Doctor_1: area where going on where
+Patient: bone was . The , the graph , like there's just so much that I can't tell like what's kind of bothering me if I , if I can be honest , uh , if you
+Doctor_1: up , I'll tap along in a little bit . Sometimes that helps clarify just touch . It says one time in here . Any of that's sending like painful electric shocks . Now , when you get that uncomfortable feeling , is it right in here ?
+Patient: that's kind of , I mean , um . Like that one , yeah , like that's that's tingling all all the way down . I can feel that in my ankle .
+Doctor_1: here .
+Patient: pronounced as they come .
+Doctor_1: , so I'd say that being less up here , more down here is when we look back at these photos here , when I first tapped was up here , so that means sorting made it through that connection , but now it's kind of , it's called an advancing to know . Now it's marching its way down . So that to me is telling us this is still in progress , it's still sending the signals . It just needs
+Patient: . OK . Um , All right , is there any desensitization stuff like now that I'm like full blown working out and like You know , cause one of the things that I'm really , I , I , I need to go and see um Verisse again cause I haven't seen him in quite some time . I'm getting a lot of Or like PCL behind my knee , like compartment , like sensitive like the soreness rather , um , that's that's exercised driven , um , and I think I'm sort of feeling like as I'm strengthening everything , it's it , everything's getting pushed , you know , pushed around , but is there anything I should be doing ? On your side of the coin .
+Doctor_1: for desensitization , yes , there are different strategies . There's different modalities where they'll use like in the occupational therapy , different textures so that the nerve can kind of learn different textures . A lot of it is just massage to the area , so it's getting the input of pressure . Um , there are entire protocols that the therapists have , that it may even be worth sending you just for a single session , just as a training and home exercise program where we say our only focus is nerve desensitization , what can we set up for our own program ? Um , because the short answer is yes there are , but it's probably beyond what I can give you in a simple handout , um , which I , yeah , so I think that would be .
+Patient: , that might be , that might be worthwhile .
+Doctor_1: I will send you to , I would say , so we have a hand therapy office here . They're all occupational therapists and although it's weird sometimes to go to a hand therapist for a leg issue , I think they would be really well equipped to work on nerve stuff , um , where most physical therapists are not super um . Used to working on nerves , so I'd probably send you to our people here . There may be occasional physical therapists that are well versed in nerves , but I know our people are . So this is right up in this nerve pain .
+Patient: , the interesting thing about this side , the anterior side is , it's , it's more of like the What would happen if your leg was like if I kind of bang my heel on the ground , like more than you tapping on the specific location , it's more if I like kind of bang my heel on the ground , it feels like that whole area is like asleep , um , but that may be a result of numbness more so than , uh . Where I was , that's , that's the thing . It's like , it's , it's come so far that I'm , I've finally hit the point where I'm like . I don't , I don't think it's Something that we we need to fix .
+Doctor_1: I think , you know , even though we are at about 7 months with that big a graft , uh , interposition graft , I'd still say we're early in that . And the way that you're sort of , the place you're describing it and the way you're describing that positive toel sign , all is encouraging to me that that's part of its process of waking up , especially with this medial or the inside of the knee side . So let's give that a little time , but I do think them doing some what we call nerve glide exercises and desensitization really making a home program for you would be good .
+Patient: , great . All them .
+Doctor_1: get
+Patient: 
+Doctor_1: then we'll get a book .
+Patient: ,
+Doctor_1: . So come with me . Let's get Amy's card for you . Um , I'll send in the booking that today , and then she'll give you a call in the next , usually like 2 days , um , and with your calendars in front of you , you can pick a you do need a ride to get picked up , but yes , correct . Outpatient usually takes about 45 minutes . The whole process may be more like an hour .
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

@@ -1,0 +1,325 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "Patient Name",
+      "key": "PATIENT_NAME",
+      "content": [
+        "Mr. Sharma"
+      ],
+      "default": "-",
+      "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+    },
+    {
+      "title": "Chief Complaint",
+      "key": "CHIEF_COMPLAINT",
+      "content": [
+        "Pain in the right knee for the past 2 weeks"
+      ],
+      "default": "-",
+      "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+    },
+    {
+      "title": "History of Present Illness",
+      "key": "HISTORY_OF_PRESENT_ILLNESS",
+      "content": [
+        "The patient reports a 2-week history of right knee pain that began after a long walk. The pain recurs with walking exceeding 15-20 minutes and is exacerbated by stair climbing and prolonged sitting. The patient describes stiffness after sitting for extended periods and mild evening swelling, without redness. Pain severity is rated 6/10 during ambulation, decreasing with rest. There is no history of knee locking or trauma in the past two weeks. Five years ago, the patient sustained a knee twist during cricket, which resolved with rest. No prior surgeries on the knee. The patient is currently managing symptoms with avoidance of aggravating activities and hot fomentation. The pain has not improved significantly with conservative measures. The patient is concerned about progression and seeks evaluation for possible osteoarthritis or ligament strain."
+      ],
+      "default": "-",
+      "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+    },
+    {
+      "title": "Past Medical History",
+      "key": "PAST_MEDICAL_HISTORY",
+      "content": [
+        "No significant past medical history. No prior surgeries on the right knee. Five years ago, a knee twist during cricket, which resolved with rest."
+      ],
+      "default": "No past medical history found",
+      "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. "
+    },
+    {
+      "title": "Current Medications",
+      "key": "CURRENT_MEDICATIONS",
+      "content": [
+        "Pain relief medication prescribed by the doctor (to be initiated)"
+      ],
+      "default": "No current medications found.",
+      "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+    },
+    {
+      "title": "Family History",
+      "key": "FAMILY_HISTORY",
+      "content": [
+        "No family history of musculoskeletal disorders or arthritis reported."
+      ],
+      "default": "No family history found",
+      "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+    },
+    {
+      "title": "Social History",
+      "key": "SOCIAL_HISTORY",
+      "content": [
+        "Patient is a non-smoker, does not consume alcohol, and is physically active with recreational cricket participation. No history of substance use."
+      ],
+      "default": "No social history",
+      "instruction": "What is the social history of this patient"
+    },
+    {
+      "title": "Allergies",
+      "key": "ALLERGIES",
+      "content": [
+        "No known allergies reported."
+      ],
+      "default": "No allergies found",
+      "instruction": "What is the allergies of this patient"
+    },
+    {
+      "sub-section": [
+        {
+          "title": "GASTROINTESTINAL",
+          "key": "SOAP_ROS_GASTROINTESTINAL",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "GENITOURINARY",
+          "key": "SOAP_ROS_GENITOURINARY",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "NEUROLOGICAL",
+          "key": "SOAP_ROS_NEUROLOGICAL",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Constitutional",
+          "key": "SOAP_ROS_CONSTITUTIONAL",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "MUSCULOSKELETAL",
+          "key": "SOAP_ROS_MUSCULOSKELETAL",
+          "content": [
+            "Right knee pain with stiffness and mild swelling, particularly after prolonged sitting or walking. No deformity or instability noted."
+          ],
+          "default": "Normal",
+          "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+        },
+        {
+          "title": "Hematologic",
+          "key": "SOAP_ROS_HEMATOLOGIC",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Lymphatic",
+          "key": "SOAP_ROS_LYMPHATIC",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Psychiatric",
+          "key": "SOAP_ROS_PSYCHIATRIC",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        }
+      ],
+      "title": "Review of systems",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "sub-section": [
+        {
+          "title": "Ears",
+          "key": "SOAP_PE_EARS",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Nose",
+          "key": "SOAP_PE_NOSE",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Throat",
+          "key": "SOAP_PE_THROAT",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Neck",
+          "key": "SOAP_PHYSICAL_EXAM_NECK",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Heart",
+          "key": "SOAP_PE_HEART",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Lungs",
+          "key": "SOAP_PE_LUNGS",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Abdomen",
+          "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "MUSCULOSKELETAL",
+          "key": "SOAP_ROS_MUSCULOSKELETAL",
+          "content": [
+            "Right knee with mild swelling, tenderness to palpation, and decreased range of motion with prolonged sitting or walking. No deformity, instability, or crepitus noted. Ligamentous stability intact on examination."
+          ],
+          "default": "Normal",
+          "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+        },
+        {
+          "title": "Neurological",
+          "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "What is the neurologicals of this patient"
+        },
+        {
+          "title": "Psychiatric",
+          "key": "SOAP_PE_PSYCHIATRIC",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        }
+      ],
+      "title": "Physical Exam",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "title": "Immunizations",
+      "key": "SOAP_IMMUNIZATIONS",
+      "content": [
+        "No immunizations mentioned."
+      ],
+      "default": "No Immunizations found",
+      "instruction": "What is the immunizations of this patient"
+    },
+    {
+      "title": "Lab Results",
+      "key": "LAB_RESULTS",
+      "content": [
+        "No lab results discussed."
+      ],
+      "default": "No lab results found",
+      "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+    },
+    {
+      "sub-section": [
+        {
+          "title": "Assessment",
+          "key": "ICD_ASSESSMENT",
+          "content": [
+            "M17.9 - Osteoarthritis, unspecified site",
+            "S83.509A - Unspecified sprain of ligament of right knee, initial encounter"
+          ],
+          "default": "-",
+          "instruction": "Generate a list of the patient's current medical conditions, Only give all the current assessment and not historical information return it in a list. The result must be easily searchable in icd description so search for the icd code."
+        },
+        {
+          "title": "Plan",
+          "key": "SOAP_PLAN",
+          "content": [
+            "Perform physical examination of the right knee.",
+            "Order radiographic imaging (X-ray) of the right knee to evaluate for osteoarthritis or structural abnormalities.",
+            "Prescribe pain relief medication for symptomatic management.",
+            "Recommend avoidance of prolonged walking and stair climbing.",
+            "Apply hot fomentation for 10-15 minutes twice daily.",
+            "Initiate simple lower extremity strengthening exercises.",
+            "Monitor for improvement in 2 weeks; consider referral to physiotherapy if symptoms persist.",
+            "Advise immediate follow-up if pain worsens or knee locking occurs."
+          ],
+          "default": "No plan",
+          "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section, provide everything in a list."
+        }
+      ],
+      "title": "Assessment and Plan",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "title": "Follow Up",
+      "key": "SOAP_FOLLOW_UP",
+      "content": [
+        "Next Appointment: Schedule the next appointment for 2 weeks from today.",
+        "Review and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+      ],
+      "default": "No follow up",
+      "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 3169,
+    "completion_tokens": 3171,
+    "total_tokens": 6340
+  },
+  "timing": {
+    "total_time_ms": 40985.16368865967,
+    "generation_time_ms": 40982.905864715576,
+    "processing_time_ms": 0.20575523376464844
+  },
+  "error_message": null
+}

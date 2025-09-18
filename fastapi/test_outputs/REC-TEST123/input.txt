@@ -1,0 +1,31 @@
+ROLE: You are an expert medical scribe. TASK: Extract structured medical information from a doctor-patient conversation transcript and populate a provided JSON template. CRITICAL INSTRUCTIONS: 1. **Output Format:** You MUST output a JSON array of objects that exactly matches the structure, keys, and order of the provided template. 2. **Filling the Template:** For each object in the template, you must fill the "content" field based *only* on the transcript, strictly following the "instruction" for that field. 3. **Source Material:** Use ONLY the information explicitly stated in the provided medical transcript. Do not infer, assume, or add any information not present in the transcript. 4. **Handling Missing Data:** If no relevant information is found in the transcript for a specific field, you must use the "default" value provided for that field in the template. 5. **Verbatim vs. Interpretation:** - For fields requiring verbatim extraction, extract the doctor's words exactly as dictated. - For fields requiring summarization, synthesize the information into a concise, professional clinical note. - Use clinical judgment ONLY to correct unambiguous errors (e.g., a likely misstated joint name if the context is 100% clear). Do not change terms without strong justification. 6. **Final Output:** Your entire response must be ONLY the completed JSON array. Do not include any other text, explanations, or markdown code blocks.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Only include the name if it is explicitly mentioned. Do NOT guess or infer the patient’s name from context, doctor names, or other people mentioned. If the patient’s name is not present in the transcript, return \"-\". Never return doctor names, staff names, family member names, or any other proper nouns that are not the patient. Return only a single string containing the patient name or \"-\" if unknown."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor: Good morning, can you tell me your name?
+Patient: My name is John Doe.
+Doctor: What brings you in today?
+Patient: I have been experiencing constant headaches for the past two weeks.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

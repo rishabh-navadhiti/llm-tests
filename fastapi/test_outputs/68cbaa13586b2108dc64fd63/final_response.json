@@ -1,0 +1,322 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "Patient Name",
+      "key": "PATIENT_NAME",
+      "content": [
+        "Benjamin Posey"
+      ],
+      "default": "-",
+      "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Do not guess or infer, and do not return doctor names, staff names, or family members. If the patient’s name is not explicitly mentioned, return \"-\"."
+    },
+    {
+      "title": "Chief Complaint",
+      "key": "CHIEF_COMPLAINT",
+      "content": [
+        "Right index finger fracture"
+      ],
+      "default": "-",
+      "instruction": "Extract the patient's chief complaint as a short phrase. Exclude extra details, context, or direct quotes. If no complaint is stated, return the default value."
+    },
+    {
+      "title": "History of Present Illness",
+      "key": "HISTORY_OF_PRESENT_ILLNESS",
+      "content": [
+        "Benjamin Posey, a pediatric patient, presents with a right index finger fracture sustained during a fall. The injury occurred while rollerblading, resulting in the need for a cast. He has been wearing a cast for several weeks and reports that he is tired of it. He notes that immediately after removing the cast, there was a slight reduction in range of motion; however, he feels improved mobility even 10 minutes later, indicating early recovery. He denies significant pain at the time of the visit. The fracture is located at the base of the proximal phalanx and is classified as a buckle fracture. The patient is currently in the healing phase, with radiographic evidence of remodeling and stabilization. There is no tenderness on palpation, and he is able to make a fist with full extension. The patient is eager to resume normal activities, including school and physical play, but is advised to avoid high-impact sports and contact activities for the next two weeks to minimize the risk of refracture. The father expresses concern about long-term growth plate development, though the physician reassures that the current X-ray findings show normal physis and healing. No other associated symptoms such as swelling, discoloration, or neurovascular compromise are reported."
+      ],
+      "default": "-",
+      "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+    },
+    {
+      "title": "Past Medical History",
+      "key": "PAST_MEDICAL_HISTORY",
+      "content": [
+        "No past medical history found"
+      ],
+      "default": "No past medical history found",
+      "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. "
+    },
+    {
+      "title": "Current Medications",
+      "key": "CURRENT_MEDICATIONS",
+      "content": [
+        "No current medications found."
+      ],
+      "default": "No current medications found.",
+      "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+    },
+    {
+      "title": "Family History",
+      "key": "FAMILY_HISTORY",
+      "content": [
+        "No family history found"
+      ],
+      "default": "No family history found",
+      "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+    },
+    {
+      "title": "Social History",
+      "key": "SOCIAL_HISTORY",
+      "content": [
+        "Pediatric patient; active in school and physical activities; enjoys rollerblading and sports; no tobacco, alcohol, or drug use reported; lives with parents; no significant social stressors noted."
+      ],
+      "default": "No social history",
+      "instruction": "What is the social history of this patient"
+    },
+    {
+      "title": "Allergies",
+      "key": "ALLERGIES",
+      "content": [
+        "No allergies found"
+      ],
+      "default": "No allergies found",
+      "instruction": "What is the allergies of this patient"
+    },
+    {
+      "sub-section": [
+        {
+          "title": "GASTROINTESTINAL",
+          "key": "SOAP_ROS_GASTROINTESTINAL",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "GENITOURINARY",
+          "key": "SOAP_ROS_GENITOURINARY",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "NEUROLOGICAL",
+          "key": "SOAP_ROS_NEUROLOGICAL",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Constitutional",
+          "key": "SOAP_ROS_CONSTITUTIONAL",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "Extract the patient’s constitutional review of systems (ROS) findings exactly as stated in the transcript. If no findings are mentioned, return “Normal.” Do not add or infer details."
+        },
+        {
+          "title": "MUSCULOSKELETAL",
+          "key": "SOAP_ROS_MUSCULOSKELETAL",
+          "content": [
+            "Right index finger fracture with healing; no joint deformities or instability noted; full range of motion observed post-cast removal; no pain on palpation."
+          ],
+          "default": "Normal",
+          "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+        },
+        {
+          "title": "Hematologic",
+          "key": "SOAP_ROS_HEMATOLOGIC",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Lymphatic",
+          "key": "SOAP_ROS_LYMPHATIC",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Psychiatric",
+          "key": "SOAP_ROS_PSYCHIATRIC",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        }
+      ],
+      "title": "Review of systems",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "sub-section": [
+        {
+          "title": "Ears",
+          "key": "SOAP_PE_EARS",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Nose",
+          "key": "SOAP_PE_NOSE",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Throat",
+          "key": "SOAP_PE_THROAT",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Neck",
+          "key": "SOAP_PHYSICAL_EXAM_NECK",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Heart",
+          "key": "SOAP_PE_HEART",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Lungs",
+          "key": "SOAP_PE_LUNGS",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Abdomen",
+          "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "MUSCULOSKELETAL",
+          "key": "SOAP_ROS_MUSCULOSKELETAL",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+        },
+        {
+          "title": "Neurological",
+          "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "What is the neurologicals of this patient"
+        },
+        {
+          "title": "Psychiatric",
+          "key": "SOAP_PE_PSYCHIATRIC",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        }
+      ],
+      "title": "Physical Exam",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "title": "Immunizations",
+      "key": "SOAP_IMMUNIZATIONS",
+      "content": [
+        "No Immunizations found"
+      ],
+      "default": "No Immunizations found",
+      "instruction": "What is the immunizations of this patient"
+    },
+    {
+      "title": "Lab Results",
+      "key": "LAB_RESULTS",
+      "content": [
+        "Three views of the right index finger X-ray were ordered, interpreted, and reviewed. Findings include remodeling of the proximal phalanx base consistent with good fracture healing. The physis appears stable and normal. No signs of displacement, malalignment, or complications."
+      ],
+      "default": "No lab results found",
+      "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+    },
+    {
+      "sub-section": [
+        {
+          "title": "Assessment",
+          "key": "ICD_ASSESSMENT",
+          "content": [
+            "S62.209A - Unspecified fracture of proximal phalanx of right index finger, initial encounter"
+          ],
+          "default": "-",
+          "instruction": "Generate a list of the patient's current medical conditions, Only give all the current assessment and not historical information return it in a list. The result must be easily searchable in icd description so search for the icd code."
+        },
+        {
+          "title": "Plan",
+          "key": "SOAP_PLAN",
+          "content": [
+            "Transition from cast to buddy straps for protection of the right index finger fracture.",
+            "Recommend wearing buddy straps for two weeks to support healing.",
+            "Advise avoidance of ball sports, contact sports, and high-impact activities such as basketball, soccer, tetherball, and rollerblading for the next two weeks.",
+            "Educate on the risk of refracture during the healing phase.",
+            "Encourage return to regular daily activities, including showering and school, with no restrictions beyond the above.",
+            "Schedule follow-up in four to six weeks for repeat X-ray to assess physis and confirm healing progress."
+          ],
+          "default": "No plan",
+          "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section, provide everything in a list."
+        }
+      ],
+      "title": "Assessment and Plan",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "title": "Follow Up",
+      "key": "SOAP_FOLLOW_UP",
+      "content": [
+        "Next Appointment: Return in four to six weeks.",
+        "Review and Adjustments: Repeat X-ray to evaluate physis and confirm fracture healing; assess for any signs of refracture or growth plate complications."
+      ],
+      "default": "No follow up",
+      "instruction": "Extract the follow-up schedule exactly as dictated. Include both:\nNext Appointment: when the patient should return (e.g., “Return to clinic in 2 weeks”).\nReview and Adjustments: what will be reviewed or adjusted at that visit, if mentioned.\nIf no follow-up is mentioned, return “No follow up.”"
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 5794,
+    "completion_tokens": 3309,
+    "total_tokens": 9103
+  },
+  "timing": {
+    "total_time_ms": 42139.06788825989,
+    "generation_time_ms": 42138.53931427002,
+    "processing_time_ms": 0.13399124145507812
+  },
+  "error_message": null
+}

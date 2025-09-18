@@ -1,0 +1,132 @@
+[
+  {
+    "title": "History of present illness",
+    "key": "HPI_VERBATIM",
+    "content": [
+      "The patient reports chronic back pain that worsens with movement and persists even when lying down. She has difficulty walking and requires a walker for ambulation. She notes pain in the lower back and bilateral lower extremities, with the left side appearing shorter. The pain is exacerbated by sitting and standing, and she experiences discomfort when attempting to straighten her spine. She has a history of knee and ankle problems, with the left knee showing valgus deformity. The patient has not undergone prior spinal surgery and is concerned about her ability to return to a straight posture. She has not had prior imaging for this issue, but an MRI dated August 29, 2025, revealed mild spinal stenosis at L3-L4, severe disc disease from L1 to S1, and no significant stenosis in the cervical spine. She reports that her symptoms have progressively worsened over time, with increasing difficulty in mobility and daily function. She is currently not receiving effective relief from conservative measures and is considering surgical intervention for her degenerative scoliosis."
+    ],
+    "default": "-",
+    "instruction": "Summarize the patient’s History of Present Illness (HPI) as a clear, professional paragraph in clinical note style. Include only details explicitly stated in the transcript: symptoms, onset, duration, location, severity, aggravating or relieving factors, treatments tried, impact on daily life, and relevant prior evaluations or consultations. Maintain chronological flow. Exclude physical exam findings, imaging results, and assessment details. Do not infer or assume information. Use full sentences and natural scribe-style narrative."
+  },
+  {
+    "title": "Vitals",
+    "key": "VITALS",
+    "content": [
+      "Vitals were not mentioned in the transcript. Height, weight, and BMI were not documented."
+    ],
+    "default": "-",
+    "instruction": "Extract all information related to the patient’s vitals. Include whether vitals were filed for the visit, whether height and weight are documented, and whether BMI is available or could be calculated. If any of these are explicitly stated as absent or not on file, include that. If no vitals are mentioned, return “-”."
+  },
+  {
+    "title": "Physical Exam",
+    "key": "PHYSICAL_EXAM",
+    "content": [
+      "A physical examination was performed. The spine was noted to be significantly crooked, with visible rib prominence on the convex side. No swelling was observed. The lower back was examined, and the patient demonstrated limited range of motion with pain during movement. The patient was observed using a walker for ambulation. The exam findings were consistent with degenerative scoliosis and associated spinal deformity."
+    ],
+    "default": "No physical exam mentioned.",
+    "instruction": "Extract details of the physical examination if mentioned. Include whether an exam was performed, the date (if available), and a concise summary of the findings. If findings are described as unchanged or consistent with previous exams, include that. If no physical exam is mentioned, return “No physical exam mentioned.”"
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Extract the patient’s constitutional review of systems (ROS) findings exactly as stated in the transcript. If no findings are mentioned, return “Normal.” Do not add or infer details."
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Extract any skin examination findings exactly as dictated. If none are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Vascular",
+    "key": "ROS_VASCULAR",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Extract any vascular findings exactly as dictated. If no vascular findings are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Neurologic and Lumbar",
+    "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+    "content": [
+      "Alignment: Spine is significantly crooked with visible rib prominence on the convex side. The patient is hunched over. Range of Motion: Limited flexion and extension with pain. Sensation: Not assessed. Strength: Not assessed. Reflexes: Not assessed. No clonus noted. No specific muscle group weakness reported."
+    ],
+    "default": "-",
+    "instruction": "Extract the neurologic and lumbar exam findings exactly as stated in the transcript. Organize the findings under these categories if present:\nAlignment\nSensation\nRange of Motion (flexion, extension, rotation, pain)\nStrength (with muscle groups and scores if given)\nReflexes (patellar, ankle, clonus)\nInclude laterality (left/right) where mentioned. Return only what is explicitly stated. If no findings are reported, return “-”."
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [
+      "- MRI of the cervical spine (August 29, 2025) at AMI: Severe disc disease at C7, no stenosis.",
+      "- MRI of the lumbar spine (August 29, 2025) at AMI: Mild spinal stenosis at L3-L4, severe disc disease from L1 to S1."
+    ],
+    "default": "-",
+    "instruction": "Extract all imaging results explicitly mentioned (e.g., X-ray, MRI, CT, ultrasound). Include the type of imaging, body part, date (if given), and the findings exactly as dictated. Present the results as a bulleted list. If no imaging is mentioned, return “-”. Do not add or interpret."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT",
+    "content": [
+      "- Degenerative scoliosis",
+      "- Severe disc disease L1 to S1",
+      "- Mild spinal stenosis L3-L4",
+      "- Left valgus knee deformity",
+      "- Chronic back pain",
+      "- Bilateral lower extremity pain"
+    ],
+    "default": "-",
+    "instruction": "Generate the Assessment as a concise list of the patient’s active diagnoses or conditions relevant to this visit.\nRules:\nInclude symptom-based problems (e.g., “back pain”) and diagnosis-based terms (e.g., “spinal stenosis”).\nExclude normal findings and negative statements.\nInclude “status post” only if it describes an ongoing issue (e.g., “stiffness after surgery”).\nKeep terms short and scribe-style, without exam details or explanations.\nReturn strictly as a list (one item per line, with dash or bullet).\nIf no active conditions are mentioned, return “-”."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [
+      "Request epidural steroid injection (ESI) for the lumbar spine with bilateral facet blocks from L3 to S1 using acado. The injection will be performed under fluoroscopic guidance with sedation. The patient will be scheduled after insurance approval is obtained.",
+      "Schedule a surgical consultation with the knee specialist (Dr. O'Dowd) for evaluation of the left valgus knee deformity. The knee surgery should be addressed prior to any spinal surgery.",
+      "Initiate treatment with epidural injections to improve back pain and facilitate recovery from knee surgery.",
+      "Provide the patient with a copy of the MRI report.",
+      "Follow up after the epidural injection to assess response and determine next steps."
+    ],
+    "default": "-",
+    "instruction": "Write the doctor’s plan exactly as dictated, in scribe-style summary form.\nRules:\nInclude only treatments, procedures, medications, therapies, referrals, patient education, and follow-up instructions explicitly mentioned in the transcript.\nDo not add or assume any details (e.g., do not invent follow-up times unless stated).\nIf a follow-up is specified, include it exactly as dictated, formatted as: “Return to clinic in X days/weeks/months.”\nUse short sentences or numbered/bulleted steps.\nIf no plan is mentioned, return “-”."
+  },
+  {
+    "title": "Work disability status",
+    "key": "WDS",
+    "content": [
+      "The patient is unable to work due to her condition and requires a walker for ambulation. She is not currently employed and is not able to perform daily activities without assistance."
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s work disability status exactly as stated by the doctor. If not mentioned, return “-”. Do not infer."
+  },
+  {
+    "title": "Request for medical authorization",
+    "key": "RFMA",
+    "content": [
+      "Epidural steroid injection (ESI) with bilateral facet blocks L3 to S1",
+      "MRI report for the lumbar spine",
+      "Surgical consultation with knee specialist (Dr. O'Dowd)"
+    ],
+    "default": "-",
+    "instruction": "Extract only the items the doctor explicitly requested for insurance or medical authorization. Return each request as a single line in the format:\n<treatment/procedure/imaging/referral>\nDo not include the overall plan, work restrictions, or explanations. If no requests are mentioned, return “-”."
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [
+      "Next Appointment: Return to clinic after the epidural injection to assess response.",
+      "Review and Adjustments: Evaluate pain relief, functional improvement, and determine next steps including potential surgery or further injections."
+    ],
+    "default": "No follow up",
+    "instruction": "Extract the follow-up schedule exactly as dictated. Include both:\nNext Appointment: when the patient should return (e.g., “Return to clinic in 2 weeks”).\nReview and Adjustments: what will be reviewed or adjusted at that visit, if mentioned.\nIf no follow-up is mentioned, return “No follow up.”"
+  }
+]

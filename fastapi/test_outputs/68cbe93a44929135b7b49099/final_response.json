@@ -1,0 +1,79 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "Patient Name",
+      "key": "PATIENT_NAME",
+      "content": [
+        "Benjamin Kapolunick"
+      ],
+      "default": "-",
+      "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Do not guess or infer, and do not return doctor names, staff names, or family members. If the patient’s name is not explicitly mentioned, return \"-\"."
+    },
+    {
+      "title": "Chief Complaint",
+      "key": "CHIEF_COMPLAINT",
+      "content": [
+        "Hand fracture"
+      ],
+      "default": "-",
+      "instruction": "Extract the patient's chief complaint as a short phrase. Exclude extra details, context, or direct quotes. If no complaint is stated, return the default value."
+    },
+    {
+      "title": "History of Present Illness",
+      "key": "HISTORY_OF_PRESENT_ILLNESS",
+      "content": [
+        "Benjamin Kapolunick presented for follow-up with a history of a hand fracture. He reported that he is doing OK and has removed his previous splint, which was replaced with a new one. He expressed confusion and frustration that his hand is fractured rather than his finger. On physical examination, the incision site showed no complications, and sutures were removed. The ring finger demonstrated correct rotation, but there was significant stiffness in the metacarpophalangeal and proximal interphalangeal joints. X-rays confirmed stable alignment with a fracture that remains stable. The patient is currently on a thermoplastic splint, undergoing hand therapy, and advised to maintain non-weight bearing status. Follow-up is scheduled in four weeks for repeat X-rays or range of motion assessment."
+      ],
+      "default": "-",
+      "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+    },
+    {
+      "title": "Allergies",
+      "key": "ALLERGIES",
+      "content": [
+        "No allergies found"
+      ],
+      "default": "No allergies found",
+      "instruction": "What is the allergies of this patient"
+    },
+    {
+      "title": "Social History",
+      "key": "SOCIAL_HISTORY",
+      "content": [
+        "No social history"
+      ],
+      "default": "No social history",
+      "instruction": "What is the social history of this patient"
+    },
+    {
+      "title": "Abdomen",
+      "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+      "content": [
+        "Normal"
+      ],
+      "default": "Normal",
+      "instruction": "If no information is present please return Normal"
+    },
+    {
+      "title": "Follow up",
+      "key": "PE_PLAN_FOLLOW_UP",
+      "content": [
+        "Return to clinic in 4 weeks for repeat X-rays or range of motion check."
+      ],
+      "default": "-",
+      "instruction": ""
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 1028,
+    "completion_tokens": 801,
+    "total_tokens": 1829
+  },
+  "timing": {
+    "total_time_ms": 9105.659246444702,
+    "generation_time_ms": 9105.350017547607,
+    "processing_time_ms": 0.023603439331054688
+  },
+  "error_message": null
+}

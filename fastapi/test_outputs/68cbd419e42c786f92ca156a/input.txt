@@ -1,0 +1,427 @@
+You are a medical scribe experienced in various medical specialties, including psychiatric evaluations. You will be provided with the transcription text of the conversation between the doctor and the patient in triple quotes. Your task is to prepare the patient visit note in the format required by the doctor. Analyze the conversation first. As an expert-level medical scribe, use medical terminologies where applicable and ensure the style and tone match that of the doctor. Use complete sentences and paragraphs, including all important information discussed. You will be given the doctor's preferred note format as a JSON array of objects. Each object represents a section of the patient visit note, such as history of present illness or past medical history, specified in the title key. Objects may have additional keys like instructions, default, sub-section, and content. If an object has a sub-section, it will not have a content key. Sub-sections can have their own instructions, content, default, and further sub-sections. Based on the titles and instructions, determine what information belongs in each section and fill in the 'content' key of the respective object. The 'content' should be an array of strings. Fill data only in the 'content' keys. Do not add content keys elsewhere. Only capture medical-related conversations. If no data is present for a section, return 'No {title} was discussed' or 'No {title} was reported'. For sections with sub-sections, ensure that the main section title is included in the JSON output along with the sub-sections and their defaults if no data is present. The final output should be a JSON array of objects in the same order and format as the template, without the instructions and default keys. Ensure the output is in JSON format, allowing easy parsing into an array of objects using Python. Given that you are working with a Psychiatric evaluations doctor, every detail needs to be captured correctly. When returning the JSON, do not include double quotes inside a double quote, as this causes invalid JSON
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "sub-section": [
+      {
+        "title": "Guardian / Caregiver if applicable:",
+        "key": "PE_GUARDIAN_CAREGIVER_NAMES",
+        "content": [],
+        "default": "-",
+        "instruction": "Provide the full name, relationship to the client, contact information (phone number, email address, and home address), reason for referral, consent status and date, and any additional notes about the guardian."
+      },
+      {
+        "title": "F2F Start Time",
+        "key": "PE_F2F_START_TIME",
+        "content": [],
+        "default": "-",
+        "instruction": ""
+      },
+      {
+        "title": "F2F End Time",
+        "key": "PE_F2F_END_TIME",
+        "content": [],
+        "default": "-",
+        "instruction": ""
+      }
+    ],
+    "title": "Referral Source",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient's chief complaint as a short phrase. Exclude extra details, context, or direct quotes. If no complaint is stated, return the default value."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Gastrointestinal",
+        "key": "PE_GI",
+        "content": [],
+        "default": "Denies n/v/d",
+        "instruction": "Does the patient have any nausea, vomiting, and diarrhea?"
+      },
+      {
+        "title": "Neurological",
+        "key": "PE_NEURO",
+        "content": [],
+        "default": "Denies h/a, denies hx of seizure or TBI",
+        "instruction": "What are the Neurological symptons of the patient?"
+      },
+      {
+        "title": "Psychological",
+        "key": "PE_PSYCH",
+        "content": [],
+        "default": "",
+        "instruction": "Provide a detailed summary of the psychiatric examination conducted during the visit. Include observations on the patient's appearance, behavior, mood, and affect. Document the patient's thought processes, thought content, perception, cognition, insight, and judgment. Note any signs of distress, agitation, or other significant psychiatric symptoms. Include specific observations related to speech, eye contact, motor activity, and any other relevant behaviors. Ensure all information is accurate, thorough, and free of grammatical errors or omissions."
+      }
+    ],
+    "title": "Review of systems",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Ethanol/Alcohol",
+        "key": "PE_ETOH",
+        "content": [],
+        "default": "-",
+        "instruction": "Provide a detailed account of the patient's history of alcohol use. Include information on the quantity and frequency of alcohol consumption, duration of use, and any patterns or changes in use over time. Document any history of alcohol-related problems, such as legal issues, health problems, or impact on daily functioning and relationships. Note any previous attempts at reducing or quitting alcohol use, including treatments or interventions and their outcomes. Ensure all information is accurate, thorough, and free of grammatical errors or omissions."
+      },
+      {
+        "title": "Tetrahydrocannabinol",
+        "key": "PE_THC",
+        "content": [],
+        "default": "-",
+        "instruction": "Provide a detailed account of the patient's history of cannabis (THC) use. Include information on the frequency and quantity of cannabis consumption, duration of use, and any changes or patterns in use over time. Document any effects of cannabis use on the patient's daily life, including cognitive function, mood, and behavior. Note any attempts to reduce or quit cannabis use, as well as any treatments or interventions tried and their outcomes. Ensure all information is accurate, comprehensive, and free of grammatical errors or omissions."
+      },
+      {
+        "title": "Tobacco",
+        "key": "KEY_TOBACCO",
+        "content": [],
+        "default": "-",
+        "instruction": "scs"
+      },
+      {
+        "title": "PDMP/CURES ",
+        "key": "PE_PDMP_CURES_",
+        "content": [],
+        "default": "-",
+        "instruction": "Provide a detailed summary of the patient's history of controlled substance use as per the Prescription Drug Monitoring Program (PDMP) or CURES database. Include information on the types of controlled substances prescribed, duration of use, frequency of refills, and any patterns or changes in use over time. Document any past or current issues related to controlled substance use, such as misuse, abuse, or dependency. Note any attempts by the patient to obtain controlled substances from multiple providers or pharmacies (\"doctor shopping\"). Ensure accuracy and thoroughness in documenting all relevant information from the PDMP/CURES database."
+      }
+    ],
+    "title": "Substance use history",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Previous Diagnoses",
+        "key": "PE_PREVIOUS_DIAGNOSES",
+        "content": [],
+        "default": "-",
+        "instruction": "Return default if not found"
+      },
+      {
+        "title": "Psychiatric Hospitalizations",
+        "key": "PE_PSYCHIATRIC_HOSPITALIZATIONS",
+        "content": [],
+        "default": "-",
+        "instruction": "Provide a detailed account of the patient's psychiatric hospitalizations. Include the following information for each hospitalization: the dates of admission and discharge, the reason for hospitalization, the name of the hospital or facility, and the treatments or interventions received during the stay. Additionally, note any diagnoses made during the hospitalization, the patient's response to treatment, and any relevant follow-up or aftercare plans. Capture the patient's perspective on the hospitalizations, including their understanding of the reasons for admission and their experiences during the stay. Ensure all information is accurate and complete, without any grammatical errors or omissions."
+      },
+      {
+        "title": "History of self harm",
+        "key": "PE_HX_OF_SELF_HARM",
+        "content": [],
+        "default": "Denies",
+        "instruction": "Provide a comprehensive account of the patient's history of self-harm. Include the following details: the types of self-harm behaviors exhibited, the frequency and duration of these behaviors, and any specific triggers or circumstances that lead to self-harm. Document the patient's description of their thoughts and feelings surrounding self-harm, any methods used, and any medical or psychological treatments received as a result. Note any patterns or changes in self-harm behaviors over time. Capture the patient's perspective on their self-harm, including their understanding of the underlying reasons and any coping strategies they have developed. Ensure all information is accurate and complete, without any grammatical errors or omissions."
+      },
+      {
+        "title": "Access to weapons",
+        "key": "PE_ACCESS_TO_WEAPONS",
+        "content": [],
+        "default": "Denies",
+        "instruction": "Provide a detailed account of the patient's access to weapons. Include information on the types of weapons the patient has access to (e.g., firearms, knives, other dangerous objects), how these weapons are stored and secured, and the patient's ability to obtain these weapons. Document any history or incidents involving the patient's use of weapons or threats to use them. Capture any statements made by the patient regarding their thoughts or intentions related to weapon use. Note any safety measures or interventions in place to restrict the patient's access to weapons. Ensure all information is accurate, comprehensive, and free of grammatical errors or omissions."
+      },
+      {
+        "title": "Psychiatric medications history",
+        "key": "PE_PSYCHIATRIC_MEDICATION_HX",
+        "content": [],
+        "default": "-",
+        "instruction": ""
+      }
+    ],
+    "title": "Physchiatric history",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Born and raised ",
+        "key": "PE_BORN_AND_RAISED",
+        "content": [],
+        "default": "-",
+        "instruction": "Document details about the patient's upbringing and early life experiences. Include information about their place of birth, childhood environment, familial dynamics, educational background, and significant life events during their formative years. Capture any factors that may have influenced their current health status or psychological well-being. Ensure clarity and thoroughness in documenting the patient's developmental history."
+      },
+      {
+        "title": "Trauma History",
+        "key": "PE_TRAUMA_HX",
+        "content": [],
+        "default": "-",
+        "instruction": "Record details about the patient's history of trauma. Include any significant events or experiences that the patient identifies as traumatic, such as accidents, abuse, violence, or other distressing incidents. Document the nature of the trauma, when it occurred, and any ongoing effects or symptoms related to the trauma. Specify how the trauma has impacted the patient's life, including relationships, daily functioning, and overall well-being. Ensure sensitivity and thoroughness in documenting this critical aspect of the patient's history."
+      },
+      {
+        "title": "Education",
+        "key": "PE_EDUCATION",
+        "content": [],
+        "default": "-",
+        "instruction": "Document the patient's educational background and history. Include details about their highest level of education completed, academic achievements, any special education or vocational training, and their overall educational experiences. Note any challenges or successes in their academic journey that may be relevant to their current health or psychological state. Capture how their education has influenced their abilities, career choices, and overall well-being. Ensure accuracy and completeness in documenting this aspect of the patient's background."
+      },
+      {
+        "title": "Employment history",
+        "key": "PE_EMPLOYMENT_HISTORY",
+        "content": [],
+        "default": "-",
+        "instruction": ""
+      },
+      {
+        "title": "Military history",
+        "key": "PE_MILITARY_HISTORY",
+        "content": [],
+        "default": "N/A",
+        "instruction": ""
+      },
+      {
+        "title": "Legal",
+        "key": "PE_LEGAL",
+        "content": [],
+        "default": "-",
+        "instruction": "Document details about the patient's legal history and involvement with the legal system. Include information about any past legal issues, such as arrests, convictions, or legal proceedings. Specify the nature of the legal matters, when they occurred, and their outcomes. Note any ongoing legal obligations, such as probation or court-mandated treatments. Capture how legal issues may be impacting the patient's current health, well-being, or psychological state. Ensure sensitivity and thoroughness in documenting this aspect of the patient's background."
+      },
+      {
+        "title": "Living Arrangement",
+        "key": "PE_LIVING_ARRANGEMENT",
+        "content": [],
+        "default": "-",
+        "instruction": "Record details about the patient's current living arrangement. Include information about where the patient resides, such as their home, assisted living facility, with family members, or independently. Specify the type of accommodation, such as apartment, house, nursing home, or other arrangements. Document who the patient lives with, if applicable, and their relationship to those individuals. Note any recent changes in living situation or stability. Capture how their living arrangement may impact their health, well-being, or ability to manage their condition. Ensure accuracy and completeness in documenting this aspect of the patient's background."
+      },
+      {
+        "title": "Supportive Relationships",
+        "key": "PE_SUPPORTIVE_RELATIONSHIPS",
+        "content": [],
+        "default": "-",
+        "instruction": "Describe the patient's supportive relationships, including individuals who provide significant emotional, practical, or social support. Specify the nature of these relationships (e.g., family members, friends, caregivers) and their role in the patient's life. Document any interactions or conversations relevant to the patient's well-being or treatment. Ensure accuracy and completeness in portraying the supportive network surrounding the patient."
+      },
+      {
+        "title": "Strengths",
+        "key": "PE_STRENGTHS",
+        "content": [],
+        "default": "-",
+        "instruction": ""
+      },
+      {
+        "title": "Risk Factors",
+        "key": "PE_RISK_FACTORS",
+        "content": [],
+        "default": "",
+        "instruction": ""
+      }
+    ],
+    "title": "Psycosocial history",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Family psych history",
+    "key": "PE_FAMILY_PSYCH_HISTORY",
+    "content": [],
+    "default": "Denies any additional knowledge of a family hx of mental illness, SUD or suicide",
+    "instruction": "Please provide a detailed summary of the patient's family psychiatric history. Include any known psychiatric disorders or conditions among the patient's immediate family members (parents, siblings, children), extended family if relevant (grandparents, aunts, uncles, cousins), and any other individuals who have played a significant role in the patient's life. Specify the relationship of each individual to the patient and provide details of the psychiatric disorder or condition, including the age of onset, duration, and any treatments or interventions received. Additionally, include any relevant family dynamics or interactions that may impact the patient's mental health. Do not include any assessments or plans suggested by the doctor in this section"
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Medical issues",
+        "key": "PE_MEDICAL_ISSUES",
+        "content": [],
+        "default": "-",
+        "instruction": "What are the past medical histories of the patient "
+      },
+      {
+        "title": "Past surgeries",
+        "key": "PE_PAST_SURGERIES",
+        "content": [],
+        "default": "-",
+        "instruction": "What are the past medical issues of the patient?"
+      }
+    ],
+    "title": "Past medical history",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Psychiatric",
+        "key": "PE_ACTIVE_PSYCHIATRIC",
+        "content": [],
+        "default": "-",
+        "instruction": "What are the active medications for Psychiatric"
+      },
+      {
+        "title": "Medical",
+        "key": "PE_ACTIVE_MEDICAL",
+        "content": [],
+        "default": "-",
+        "instruction": "What are the active medication for medical"
+      }
+    ],
+    "title": "Active medical history",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Drug allergies",
+    "key": "PE_DRUG_ALLERGIES",
+    "content": [],
+    "default": "-",
+    "instruction": ""
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Appearance",
+        "key": "PE_APPEARANCE",
+        "content": [],
+        "default": "Appears stated age, casual dress, fair grooming and hygiene.",
+        "instruction": ""
+      },
+      {
+        "title": "Attitude / Behavior",
+        "key": "PE_ATTITUDE_BEHAVIOR:",
+        "content": [],
+        "default": "Calm and engaged. Culturally, appropriate eye contact.",
+        "instruction": ""
+      },
+      {
+        "title": "Psychomotor",
+        "key": "PE_PSYCHOMOTOR",
+        "content": [],
+        "default": "No clear psychomotor retardation, agitation, or tremor",
+        "instruction": ""
+      },
+      {
+        "title": "Speech",
+        "key": "PE_SPEECH",
+        "content": [],
+        "default": "Spontaneous, fluent, and of appropriate volume and prosody",
+        "instruction": ""
+      },
+      {
+        "title": "Mood",
+        "key": "PE_MOOD",
+        "content": [],
+        "default": "\" (0-no depression/euthymic, 10-worst depression)",
+        "instruction": ""
+      },
+      {
+        "title": "Affect",
+        "key": "PE_AFFECT",
+        "content": [],
+        "default": "",
+        "instruction": ""
+      },
+      {
+        "title": "Thought Process",
+        "key": "PE_THOUGHT_PROCESS",
+        "content": [],
+        "default": "Coherent, logical, linear",
+        "instruction": ""
+      },
+      {
+        "title": "Thought Content",
+        "key": "PE_THOUGHT_CONTENT",
+        "content": [],
+        "default": "Denies suicidal ideation, homicidal ideation, no delusions of grandeur or paranoia elicited",
+        "instruction": "Record the patient's thought content as observed or reported during the evaluation. Describe the themes, beliefs, or preoccupations expressed by the patient. Document any obsessions, compulsions, paranoid thoughts, hallucinations, or delusions experienced, specifying their nature and content. Include details about the intensity, frequency, and duration of these experiences, as well as any triggers or contexts in which they occur. Note the patient's insight into their thoughts and any distress or impairment caused by them. Provide a comprehensive and objective account while maintaining sensitivity and respect for the patient's experiences."
+      },
+      {
+        "title": "Perceptual Disturbances",
+        "key": "PE_PERCEPTUAL_DISTURBANCES",
+        "content": [],
+        "default": "Denies auditory hallucinations, visual hallucinations, ideas of reference, thought broadcasting, and thought insertion",
+        "instruction": ""
+      },
+      {
+        "title": "Cognition",
+        "key": "PE_COGNITION",
+        "content": [],
+        "default": "grossly intact (although not formally tested today); alert and oriented x 4 Insight/Judgement: Fair (Help seeking)",
+        "instruction": ""
+      }
+    ],
+    "title": "O/ Mental status examinations",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "DSM-V Diagnostic Impression",
+        "key": "PE_DSM_V_DIAGNOSTIC_IMPRESSION:",
+        "content": [],
+        "default": "-",
+        "instruction": "What is the DSM-V DIAGNOSTIC IMPRESSION of the patient?"
+      }
+    ],
+    "title": "Assessment",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Psychiatric",
+        "key": "PE_PLAN_PSYCHIATRIC",
+        "content": [],
+        "default": "-",
+        "instruction": ""
+      },
+      {
+        "title": "Pharmacy",
+        "key": "PE_PLAN_PHARMACY",
+        "content": [],
+        "default": "-",
+        "instruction": ""
+      },
+      {
+        "title": "Medical",
+        "key": "PE_PLAN_MEDICAL",
+        "content": [],
+        "default": "-",
+        "instruction": ""
+      },
+      {
+        "title": "Legal",
+        "key": "PE_PLAN_LEGAL",
+        "content": [],
+        "default": "-",
+        "instruction": ""
+      },
+      {
+        "title": "Follow up",
+        "key": "PE_PLAN_FOLLOW_UP",
+        "content": [],
+        "default": "-",
+        "instruction": ""
+      }
+    ],
+    "title": "Plan",
+    "instruction": "",
+    "merge": false
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Patient_1: Hi , my name is ABC and I'm suffering from headache from the past 10 days .
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

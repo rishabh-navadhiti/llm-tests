@@ -1,0 +1,387 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note, you will also be provided with a pre charting notes , use that as context for the notes.. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. "
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": [],
+    "default": "No current medications found.",
+    "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [],
+    "default": "No family history found",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [],
+    "default": "No social history",
+    "instruction": "What is the social history of this patient"
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [],
+    "default": "No allergies found",
+    "instruction": "What is the allergies of this patient"
+  },
+  {
+    "sub-section": [
+      {
+        "title": "GASTROINTESTINAL",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "GENITOURINARY",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "NEUROLOGICAL",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Hematologic",
+        "key": "SOAP_ROS_HEMATOLOGIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lymphatic",
+        "key": "SOAP_ROS_LYMPHATIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_ROS_PSYCHIATRIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of systems",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Nose",
+        "key": "SOAP_PE_NOSE",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PHYSICAL_EXAM_NECK",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Abdomen",
+        "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [],
+    "default": "No Immunizations found",
+    "instruction": "What is the immunizations of this patient"
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [],
+    "default": "No lab results found",
+    "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "ICD_ASSESSMENT",
+        "content": [],
+        "default": "-",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give all the current assessment and not historical information return it in a list. The result must be easily searchable in icd description so search for the icd code."
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section, provide everything in a list."
+      }
+    ],
+    "title": "Assessment and Plan",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Patient_1: Nobody ever told me that.
+Doctor_1: Well, whoever told you is wrong. Okay, let me show you. What number do you see here?
+Patient_1: Glycemia?
+Doctor_1: What do you see?
+Patient_1: 272.
+Doctor_1: That's very bad. The problem is, when I see numbers like this, Mr., Mr. Catalina, you're eating things you cannot... you're not supposed to eat. Our body doesn't produce sugar. The sugar comes through the mouth.
+Patient_1: Right.
+Doctor_1: And it's bread, pasta, rice, potatoes or sweets. So when I see 272, I know that you're not eating the way you're supposed to. So for me to help you, we need to work together. But when I see that you're not, we're not working together. You're working against me.
+Patient_1: Ah, yes. I got to have my diet down.
+Doctor_1: Well, it's your decision.
+Patient_1: I've been fighting this, I've been fighting this diabetes forever.
+Doctor_1: And I know. And I... W- we're gonna put the paper here so I can go over it with you, please? So I do wanna help you, but I'm not a magician.
+Patient_1: Yeah.
+Doctor_1: If I give you a medication and you eat sugars, I have to give you another medication and you eat more sugars, and I have to give you another medication. So what I'm giving to you is trying to fight the sugars that you're eating, and that's not how it should be. It should be we work together. You follow the diet, and I give you the medication to complement the diet. But unfortunately-
+Patient_1: The only time I have a... is in the morning. That's when I have, I have a donut. One donut, cup of coffee.
+Doctor_1: You can't. You cannot have donuts. You're a diabetic. You can... Well, you can have a donut, but then you need to get on a treadmill for one hour.
+Patient_1: One hour? I don't-
+Doctor_1: Non-stop.
+Patient_1: I don't do that.
+Doctor_1: So you see, my hands are tied. Or there is another option. I can give you a shot of insulin that you get after you eat the donut, so you have to give yourself a shot of insulin every day.
+Patient_1: Oh.
+Doctor_1: I mean, I'm offering you an option.
+Patient_1: I guess I can, I guess I can cut the donuts out, huh?
+Doctor_1: Yeah. So...
+Patient_1: So I can have toast then, right?
+Doctor_1: Again, toast are carbs. What are you prepared to do physically to get rid of those calories after you eat the toast?
+Patient_1: I have to stop-
+Doctor_1: You're retired, right?
+Patient_1: Right.
+Doctor_1: So you have time to exercise.
+Patient_1: I do exercise three times a week.
+Doctor_1: What do you do? No, it's... It has to be five times by the American Diabetes Association.
+Patient_1: Oh my goodness. Well, I do, I do, uh, my weight, my weigh-in upstairs three times a week, and I go out three times a week. Three-
+Doctor_1: Do you walk or do you get in the car to go?
+Patient_1: I still walk over a mile.
+Doctor_1: No, but you do the whole green walking, right? Okay. So sugar, 272. Hemoglobin A1C, 8.8. That's pretty bad. It should be under seven. When I look at your last, uh, A1C previous to this one of course-
+Patient_1: It sticks to eight.
+Doctor_1: ... your A1C is 6.9.
+Patient_1: Yeah.
+Doctor_1: So it means this is the living proof that you're eating things you're not supposed to eat. Okay. When the sugars are high, the triglycerides are gonna be high. They are 288. They should be under 150. Now your bad cholesterol is 59. That is good. We wanna keep it under 100. So that part is good. And the reason why the bad cholesterol is good is because you're taking Atorvastatin 40. So what are we gonna do today? Uh, and I also want you to know that the uric acid is good. Okay? So that part is good. So what are we gonna do today? We're going to increase the dose of Ozempic to two milligrams. You will continue taking Metformin. My advice is please, no donuts.
+Patient_1: Okay. Got it.
+Doctor_1: Or if you eat the donut, then immediately you jump on a treadmill and you walk for an hour. But if you eat two donuts, then you're gonna, you're gonna get on the treadmill for two hours. So that's the rule. One hour per sweet, of, of walking on a treadmill.
+Patient_1: All right.
+Doctor_1: But you're retired. You have the time.
+Patient_1: Yeah, I'm retired.
+Doctor_1: So you have the time to do it. So-
+Patient_1: Okay.
+Doctor_1: So it's, it's, uh, is a matter of what you wanna do yourself. I can tell you what I can do as your doctor, which is giving you the medication. I can give you advice. But I don't have any control over the choices you make-
+Patient_1: Right.
+Doctor_1: ... when you eat.
+Patient_1: I agree.
+Doctor_1: Instead of the donut, get two eggs. Add vegetables, add some protein, get some avocado. You can eat it. That is a healthy breakfast for a diabetic. But not a donut. You didn't say-
+Patient_1: I can have eggs though, huh?
+Doctor_1: Eggs are fine, of course. Eggs are, are, are okay.
+Patient_1: Oatmeal?
+Doctor_1: Oatmeal is fine. Yeah, absolutely. Just don't add any sugar to it.
+Patient_1: Yeah, whatever it is.
+Doctor_1: Okay. Now the system is telling me that you're due for your eye exam. When was your last eye exam? Okay, we're gonna refer you to Lawless.
+Patient_1: Oh.
+Doctor_1: He's a diabetic eye exam. Okay? Diabetics need to have a-
+Patient_1: Didn't I just... I thought I just went to my, my doctor over there.
+Doctor_1: Who's your doctor?
+Patient_1: Nelson.
+Doctor_1: Uh, I don't have any... He's out- outside this hospital, so I don't got any... I don't get any reports. So when was that? 'Cause as I said, he doesn't send me anything, so, like, I cannot see that.
+Patient_1: Yeah, he does that diabetic thing with the m-
+Doctor_1: But has it been less than a year?
+Patient_1: Probably a year.
+Doctor_1: Okay, can you call and make an appointment, please? Okay, thank you. All right. So I'm gonna listen to your lungs and your heart. I am going to increase the dose of Ozempic then to two milligrams.
+Patient_1: Instead of one?
+Doctor_1: Instead of one. Yes, sir. And then we're gonna recheck your A1C again in three months. Okay?
+Patient_1: All right.
+Doctor_1: Moment. And I'm honest with you, with the amount of Ozempic that you're taking, you should be able to control your sugars. I mean, you're taking a pretty good dose.
+Patient_1: And I just ordered that, so what happens now?
+Doctor_1: So do you-
+Patient_1: Finish that one? I, I pick it up today?
+Doctor_1: So you did already?
+Patient_1: Yeah, could I...
+Doctor_1: Okay. So use what you have, okay?
+Patient_1: That would be four, four doses.
+Doctor_1: Yeah. Use those four doses and then pick up a new one. And then we're gonna see you, not in three months, but in four months. Okay?
+Patient_1: Do they have something for triglycerides?
+Doctor_1: Uh, yes. There's something called diet. Deeper thing and out and in. Next line, listen to your heart. So, you know what to do.
+Patient_1: Or you know what to do.
+Doctor_1: And as I said, I can show you the way, but you decide if you walk that way or not. So I'll see you in four months.
+Patient_1: And what about these things in my hand?
+Doctor_1: Okay. Okay. This is called arthritis, okay?
+Patient_1: It's all it is?
+Doctor_1: Arthritis. Yeah. We get this... Have one over here... Is the wear and tear. We're not getting any younger. Yeah. Those things are caused by arthritis, arthritis that we start getting when we... I mean, I myself am gonna turn 61. I'm getting arthritis a little bit.
+Patient_1: I'm 75.
+Doctor_1: So, so that's arthritis. You see how firm they are?
+Patient_1: It looks like I'm getting it in all of my fingers.
+Doctor_1: Yeah. And I, and I wish that, uh, that there is, there is a cure for that. Let me show you something.
+Patient_1: But I don't have to be worried about it?
+Doctor_1: No, no, no, no, no, no, no.
+Patient_1: What about this ear that keeps running?
+Doctor_1: Y- give me just a sec. I wanna show you something. Okay?
+Patient_1: Yeah, that's it.
+Doctor_1: Yeah. That's Heberden's nodes that we all get with arthritis, unfortunately. You see? Clinical manifestations of arthritis. That's what we get in the hands. Yeah. I wish, uh, I wish there was something that I would use it myself. Yeah. They, they-
+Patient_1: They don't hurt. I mean, it's-
+Doctor_1: Yeah. But that, that appears with arthritis. Non-rheumatic arthritis is the normal wear and tear. And what's going on with the ear you were saying?
+Patient_1: This, this ear here keeps clogging up. Something happens to take the moisture away.
+Doctor_1: Take a look. Take a look.
+Patient_1: It's getting-
+Doctor_1: No, I'll take a look. How's the tavern?
+Patient_1: Well, my brother's running it. I guess he's doing all right. He just had a heart attack.
+Doctor_1: Oh, I'm so sorry. Did he recover?
+Patient_1: Yeah. He's been home.
+Doctor_1: All right. Well-
+Patient_1: He lives out there on the... Just before you get-
+Doctor_1: Ready to tour?
+Patient_1: He lives just before you get into Polo.
+Doctor_1: Oh, Polo. Okay.
+Patient_1: He had a heart attack and he drove all the way to-
+Doctor_1: Oh.
+Patient_1: ... KST all by himself.
+Doctor_1: That is not a good idea.
+Patient_1: No. I know.
+Doctor_1: Okay. I understand why can't you hear things, but you have... It's blocked. It's covered with wax. It's like a wall. No wonder you can't hear anything.
+Patient_1: Yeah. I mean-
+Doctor_1: So this is what we need to do. You're going to buy something called Debrox. I'm gonna write the name down.
+Patient_1: Okay.
+Doctor_1: I'm gonna put some drops there, then I'm gonna bring you back here and we're gonna take that wax out. Okay?
+Patient_1: All right.
+Doctor_1: Yeah. Your ears are full of wax.
+Patient_1: I was gonna say, I can't hear anything.
+Doctor_1: No, because-
+Patient_1: I'm not...
+Doctor_1: Yeah. I perfectly understand. So I'm gonna write the name here. Do you see? Debrox.
+Patient_1: Where do you get this at?
+Doctor_1: Any pharmacy.
+Patient_1: Any phar... Is it over counter or-
+Doctor_1: Yeah. Over the counter. So we're gonna bring... Yeah. Let me get you two appointments. Okay? One in four months and one in, um, in one in one week to put the ear back.
+Patient_1: And then you take the wax out?
+Doctor_1: I'll take the wax out. So, mm-hmm. Here. One second, I'll be right back.
+Patient_1: Thank you.
+Doctor_1: You need another appointment in one week. Your ears are full of wax. I told him to get, uh, Debrox back, uh, till then. Can you cancel the appointment? I'm sorry, miss. We need to change that for four months.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

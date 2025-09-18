@@ -1,0 +1,316 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note, you will also be provided with a pre charting notes , use that as context for the notes.. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name"
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period. Avoid direct speech and avoid talking in first person."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. "
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": [],
+    "default": "No current medications found.",
+    "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [],
+    "default": "No family history found",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [],
+    "default": "No social history",
+    "instruction": "What is the social history of this patient"
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [],
+    "default": "No allergies found",
+    "instruction": "What is the allergies of this patient"
+  },
+  {
+    "sub-section": [
+      {
+        "title": "GASTROINTESTINAL",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "GENITOURINARY",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "NEUROLOGICAL",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Hematologic",
+        "key": "SOAP_ROS_HEMATOLOGIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lymphatic",
+        "key": "SOAP_ROS_LYMPHATIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_ROS_PSYCHIATRIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of systems",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Nose",
+        "key": "SOAP_PE_NOSE",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PHYSICAL_EXAM_NECK",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Abdomen",
+        "key": "SOAP_PHYSICAL_EXAM_ABDOMEN",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "MUSCULOSKELETAL",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "Does the patient have any musculoskeletal injuries or deformities? If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PHYSICAL_EXAM_NEUROLOGICAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [],
+    "default": "No Immunizations found",
+    "instruction": "What is the immunizations of this patient"
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [],
+    "default": "No lab results found",
+    "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "ICD_ASSESSMENT",
+        "content": [],
+        "default": "-",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give all the current assessment and not historical information return it in a list. The result must be easily searchable in icd description so search for the icd code."
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section, provide everything in a list."
+      }
+    ],
+    "title": "Assessment and Plan",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: Rupa OK , we're going to see Benjamin Posey . She's on Spencer's schedule . At 8:45 ,
+Family_member_1: ? Good
+Doctor_1: . I'm doing well . How I say
+Family_member_1: , very
+Doctor_1: , of course . How are you ? How are things ? You doing OK ? You cat got your tongue . You don't wanna talk . It's OK . You can say hi . You
+Family_member_1: good morning . Mm . Yeah little Shaq You're a little shy ? Yeah , OK . I'm gonna show your finger to
+Doctor_1: . What's on your shirt ? Tell me about your shirt . You like for ? He wants to be an artist . That's cool . So what do you like better , the bear or the is that an elk or a deer ? The deer , OK . You like the deer better ? Not the bear ? The bears scare you ? Oh ,
+Family_member_1: scared me .
+Doctor_1: a picture
+Family_member_1: . Go be . He has 8 brothers , so he's gonna go be . How ,
+Doctor_1: are you in the lineup ?
+Family_member_1: 
+Doctor_1: your older brothers pick on you ?
+Family_member_1: yeah ,
+Doctor_1: fight back . What about your younger brothers , are you mean to your little brothers ?
+Family_member_1: It sounds like it is
+Doctor_1: , you know , I , I appreciate that . Wait , so , so if you're like me to your little brothers , then how come you're too afraid to talk to me ? You're a tough guy , right ?
+Family_member_1: ,
+Doctor_1: ,
+Family_member_1: a nice guy . You're very nice .
+Doctor_1: take good care of him ,
+Family_member_1: ?
+Doctor_1: long as they understand that you're , you know , bigger , stronger , faster ,
+Family_member_1: listen .
+Doctor_1: gotta listen , right ?
+Family_member_1: to minimize the fact that we don't want there to be trauma forever going again after this .
+Doctor_1: no , come on , you gotta go rollerblading . So much fun . How does it feel ? How much pain are you having right now ?
+Family_member_1: , right now , you're in a lot of pain ? Um ,
+Doctor_1: you
+Family_member_1: 
+Doctor_1: fist for me ? OK , good , open all the way .
+Family_member_1: was saying that like right after they took it off there's a little less range of motion and he feels like there's more in 10 minutes later , yeah ,
+Doctor_1: the magic of being young exactly if it was you or me we'd be like moving we like .
+Family_member_1: .
+Doctor_1: that's the way that it is , OK . OK .
+Family_member_1: let's see . What was your first cast . Hello and now you got the right one .
+Doctor_1: pain when I push ? Good . And no pain up here , right ? The pain when I go like this . No stretching ? Little stretching .
+Family_member_1: like it's stretching . Yeah , good . Um ,
+Doctor_1: me show you .
+Family_member_1: your fingers . Believe it ?
+Doctor_1: we look at Sort of like , I think , you know , the You can kind of see it's like right along here . It's just a little bit of a buckle fracture . This is where he's growing from . We protected it because it's near the where he's growing from , but if you look at how it's going and you look at even how You know how he's healing , you can see that it's actually already smoothing out here . Great , and you can see the extra bone as he's remodeling it . Wow , it does go , it does go all the way across here , but , um , everything looks nice and stable . The ices looks wonderful . OK . But he's not tender on palpation . I , I look at this and I go , I think we can transition into some body straps or something sort of in a little bit of protection , but not too much .
+Family_member_1: ,
+Doctor_1: some tape .
+Family_member_1: for how long ?
+Doctor_1: weeks .
+Family_member_1: .
+Doctor_1: , obviously , anytime that you come out of a cast , and you have a fracture , there's always a risk of re fracture , right ? So cause it just doesn't move naturally , but you can see he's already moving better . Um , so I would just be mindful and watchful of it , right ? But you , I mean probably won't be able to slow
+Family_member_1: all that . Exactly , and writing and all of that .
+Doctor_1: , do , do your thing .
+Family_member_1: just do regular life . Yeah , OK . Sound good , sound good , buddy ? Shower now , we just want to put tape . You can shower , you can do everything regular now .
+Doctor_1: , the only , the only thing I would probably avoid for the next two weeks would be like tetherball , basketball , roller skating ,
+Family_member_1: , even his tether ball , OK , so we're going . I know you know tether ball is a big out there probably , yeah , they have it at our on our block , yeah , OK , yeah .
+Doctor_1: probably , it's probably , probably starts too many fights with that .
+Family_member_1: things that are involving direct just
+Doctor_1: sort of like , you know , big heavy balls , probably not the best right now . OK , just a couple of weeks . They , they actually look fantastic . So I'm not even , if I were worried about it , I put them back in the cast . I'm not happy about it . I just , you know , wanna minimize you having to come back . And then the only other thing that I would do is I'd say come back in like 4 to 6 weeks , um , probably 11 last X-ray just to make sure that we've sort of gotten outside of the injury window , or we can verify that the , that the ice is in fact doing what it's supposed to and growing . Keep on growing . Good
+Family_member_1: . Do we have any sense from these type of things or it would be a different X-ray about like is all growth plane and how tall and how that kind of stuff or ,
+Doctor_1: , you can , you can , on hand X-rays , which , you know , again , when you look at when you You look at this , these are finger X-rays , not hand X-rays . On hand X-rays , you can , um , there are ways to determine bone age , um , but even that , we can , you know , we can't look at just a single finger X-ray . Um , are you concerned about that ? With
+Family_member_1: of the other kids . So that's
+Doctor_1: , I , I , you know , there , the pediatric orthopedic surgeons usually do more of those . They , they tend to do that . And then there's also , if there's concern about hormone imbalances and things like that ,
+Family_member_1: are . Piatric endocrinologist , unfortunately , I just do it . I do to fix it , right ? No , but I think , yeah , I , I don't think any particular concern , you know , I I don't see I don't , well , um , you know ,
+Doctor_1: health , good , good protein intake , all the , yeah , and .
+Family_member_1: when we look at this , it looks like that . OK , perfect . Really , really appreciate it . Thank you so much . You said a big thank you . OK , give me a handshake . We appreciate he's like boom boom boom . Hold on ,
+Doctor_1: get you those those buddy tapes , OK , OK ,
+Family_member_1: . Uh But Prin it Doctor Yochida .
+Doctor_1: can know it , you're good . OK , so , uh , finger fracture , um , we're gonna transition to body straps . So if you can just get him a pair of buddy straps . Actually , just get him like , just put one right here . It's perfect . Just one , yeah , just one , because this fracture is down here . So this is a buddy strap , um , and then follow up in 4 to 6 weeks . Uh , he , so , uh , HPI is doing better , um . His pain is doing better . He's really tired of the cast , uh , on physical exam . Uh there's no soft tissue swelling , there's no tenderness palpation . At the index finger of proximal phalanx . His rotation appears appropriate , and he is able to make a fist . Um , Neurovascular tact distally X-rays . Um , Previews of the Uh , right index finger were ordered to come take a review of the patient and father that demonstrate . A remodeling of the proximal phalanx space consistent with good fracture healing . Uh , plan , um , So regarding the right index finger , uh , proximal phalanx fracture , we reviewed the X-rays . Um , with a patient and father , uh , he is showing good signs of healing . Recommend protect with body straps 2 weeks , then wean , uh , recommend avoid ball sports or contact sports for the next 2 weeks . Uh , we talked about the risk of refracture , uh , recommend follow-up in 4 to 6 weeks for x-rays to evaluate the ices .
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

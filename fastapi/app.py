@@ -15,7 +15,7 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-DETAILS_LOG_PATH = "/workspace/llm-tests/fastapi/details.json"
+DETAILS_LOG_PATH = "/workspace/llm-tests/fastapi/details.ndjson"
 
 
 # generation parameters 

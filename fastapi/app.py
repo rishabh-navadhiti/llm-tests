@@ -6,7 +6,8 @@ import time
 import requests
 import re
 import os
-from datetime import datetime
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 import logging
 from pathlib import Path
 
@@ -14,11 +15,14 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+DETAILS_LOG_PATH = "/workspace/llm-tests/fastapi/details.json"
+
+
 # generation parameters 
 MODEL = "Qwen/Qwen3-30B-A3B-Instruct-2507-FP8"
 TEMPERATURE = 0.1
 TOP_P = 0.3
-MAX_TOKENS = 4000
+MAX_TOKENS = 6000
 FREQUENCY_PENALTY = 0.0
 PRESENCE_PENALTY = 0.0
 
@@ -135,6 +139,45 @@ def extract_json_from_response(response: str) -> Optional[Any]:
                         continue
 
     return None
+
+def log_request_details(
+    recording_id: Optional[str],
+    json_template: List[Dict[str, Any]],
+    token_usage: Optional[TokenUsage],
+    timing_info: Optional[TimingInfo]
+):
+    """Append request details to an NDJSON log file (one JSON object per line)."""
+    try:
+        if len(json_template) == 7:
+            template_type = "Kiran"
+        elif len(json_template) == 13:
+            template_type = "Urmila"
+        else:
+            template_type = "Unknown"
+
+        utc_now = datetime.now(timezone.utc)
+        india_now = utc_now.astimezone(ZoneInfo("Asia/Kolkata"))
+
+        log_entry = {
+            "recording_id": recording_id,
+            "template": template_type,
+            "utc_datetime": utc_now.isoformat(),
+            "date": india_now.strftime("%Y-%m-%d"),
+            "time": india_now.strftime("%H:%M:%S"),
+            "token_usage": token_usage.dict() if token_usage else None,
+            "timing_info": timing_info.dict() if timing_info else None
+        }
+
+        log_path = Path(DETAILS_LOG_PATH)
+        log_path.parent.mkdir(parents=True, exist_ok=True)
+
+        with open(log_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(log_entry, ensure_ascii=False) + "\n")
+
+        logger.info(f"Logged request details for recording_id: {recording_id}")
+    except Exception as e:
+        logger.error(f"Error logging request details: {e}")
+
 
 def save_test_files(recording_id: str, prompt: str, raw_response: str, extracted_json: Dict[str, Any]):
     """
@@ -281,8 +324,10 @@ async def generate_medical_note(
                 with open(test_dir / "final_response.json", "w", encoding="utf-8") as f:
                     json.dump(result.dict(), f, indent=2, ensure_ascii=False)
                 logger.info(f"Saved final response for recording_id: {request.recording_id}")
+                log_request_details(request.recording_id, request.json_template, token_usage, timing_info)
+
             except Exception as e:
-                logger.error(f"Error saving final response: {e}")
+                logger.error(f"Error saving final response: {e}")   
 
         return result
         

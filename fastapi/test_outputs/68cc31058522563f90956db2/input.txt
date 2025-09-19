@@ -1,0 +1,127 @@
+ROLE: You are an expert medical scribe.
+TASK: Extract structured medical information from a doctor-patient conversation transcript and populate a provided JSON template.
+
+CRITICAL INSTRUCTIONS
+
+Output Format
+
+You MUST output a JSON array of objects that exactly matches the structure, keys, and order of the provided template.
+
+Do not include any other text, explanations, or markdown formatting.
+
+Filling the Template
+
+For each object in the template, fill the "content" field strictly based on the transcript, following the "instruction" for that field.
+
+Use ONLY information explicitly stated in the transcript.
+
+Handling Missing Data
+
+If no relevant information is present in the transcript for a field, return the "default" value exactly as provided in the template.
+
+Verbatim vs. Summarization
+
+For fields requiring verbatim extraction, copy the doctor’s words exactly as dictated.
+
+For fields requiring summarization, rewrite into a concise, professional clinical note.
+
+Do not infer or assume information beyond what is clearly stated.
+
+Capitalization Rules (MANDATORY)
+
+Always capitalize the first letter of any body part, anatomical structure, or specific location.
+
+Includes: Skin, Nail, Finger, Hand, Wrist, Forearm, Elbow, Shoulder, Clavicle, Chest, Abdomen, Hip, Thigh, Knee, Leg, Ankle, Foot, Toe, Neck, Back, Spine, Head, Face, Eye, Ear, Nose, Mouth, Tongue, Jaw, and all joint names.
+
+Always capitalize anatomical descriptors such as “A1 Pulley,” “Extensor Tendon,” “Flexor Tendon,” “Palmar Surface,” “Thenar Eminence,” etc.
+
+Do not lowercase these terms even if they appear mid-sentence.
+
+Formatting Rules
+
+Use concise, professional medical terminology.
+
+Correct grammar, punctuation, and obvious transcription errors while preserving clinical meaning.
+
+Findings should follow the format: Location + Body Part + Finding (e.g., “Moderate tenderness to palpation at the Left Index Finger A1 Pulley”).
+
+If multiple body parts are listed, capitalize each (e.g., “Pain in the Wrist and Elbow”).
+
+Only correct anatomy when it is clearly mis-transcribed.
+
+Final Output
+
+Output ONLY the completed JSON array.
+
+Do not include explanations, reasoning, or additional text.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Do not guess or infer, and do not return doctor names, staff names, or family members. If the patient’s name is not explicitly mentioned, return \"-\"."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient's chief complaint as a short phrase. Exclude extra details, context, or direct quotes. If no complaint is stated, return the default value."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single coherent paragraph in professional clinical note style. Include only details explicitly stated in the transcript about onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event to current status. Exclude exam findings, physical measurements, imaging, or other objective observations. Do not infer or assume information. Use full sentences, proper grammar, and clear narrative style, reflecting only what is explicitly reported."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the musculoskeletal physical examination findings exactly as dictated by the doctor. Do not modify, paraphrase, or interpret—return the text verbatim. If no musculoskeletal findings are mentioned, return the default value."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return findings exactly as dictated, without adding or interpreting. If the doctor reports imaging as normal, return it as stated (e.g., 'X-ray normal'). If imaging was not performed or not mentioned, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain') and diagnosis-based terms (e.g., 'trigger finger'). - Exclude normal findings (e.g., 'skin is intact') and negative statements (e.g., 'no tenderness'). - Include 'status post' only if it describes an ongoing issue (e.g., 'stiff finger after surgery'). - Keep terms short and scribe-style, without exam details or explanations. - Format strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, in scribe-style summary form. Rules: - Include only treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned. - Do not add or assume any details (e.g., do not invent follow-up times unless stated). - If follow-up is specified, include it exactly as dictated (e.g., 'return to clinic in 4 weeks'). - Use short sentences or numbered/bulleted steps. - If no plan is mentioned, return the default value."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: ... for Mark Freund, F-R-E-U-N-D. Uh, let's see. We'll add that... Actually, yeah, um, we'll add that around early 9/2025, he started developing left radial sided wrist pain also with some numbness and stiffness. He went to urgent care on 09/17/25 where he was diagnosed with left ducal veins and he was given a splint, and told to ice. He underwent X-rays of his left wrist at that time, uh, with a read that was normal. Hey, Mark.
+Patient_1: Hello.
+Doctor_1: Good to see you. I'm well. Doing a big bike trip?
+Patient_1: I am.
+Doctor_1: Awesome, awesome. Have you done a lot of these?
+Patient_1: Yes.
+Doctor_1: Okay.
+Patient_1: Yeah.
+Nurse_1: We were going on the next trip. Can you schedule that?
+Doctor_1: Uh, yeah, schedule that right there. Uh, caring for the exam with the left upper extremity, uh, mild swelling over first six sensor compartment. Tenderness, uh, where he is tender to palpation. Uh, positive Finklestein. Uh, no thumb CMC. Tenderness. I will add to the assessment a left aquer veins tenosynovitis. For the plan, we discussed left aquer veins at length. He will continue use of his thumb spica brace and icing and Naproxen. Uh, since he is improving, we elected to hold off on an injection for now, but he is leaving for a bicycle, uh, tournament... Uh, bicycle trip, uh, in Japan, uh, in three weeks, and if he is having significant pain before that, we will do an injection.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

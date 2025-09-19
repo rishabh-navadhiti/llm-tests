@@ -1,0 +1,409 @@
+ROLE: You are an expert medical scribe.
+TASK: Extract structured medical information from a doctor-patient conversation transcript and populate a provided JSON template.
+
+CRITICAL INSTRUCTIONS:
+1.  **Output Format:** You MUST output a JSON array of objects that exactly matches the structure, keys, and order of the provided template.
+2.  **Filling the Template:** For each object in the template, you must fill the `"content"` field based *only* on the transcript, strictly following the `"instruction"` for that field.
+3.  **Source Material:** Use ONLY the information explicitly stated in the provided medical transcript. Do not infer, assume, or add any information not present in the transcript.
+4.  **Handling Missing Data:** If no relevant information is found in the transcript for a specific field, you must use the `"default"` value provided for that field in the template.
+5.  **Verbatim vs. Interpretation:**
+    - For fields requiring verbatim extraction, extract the doctor's words exactly as dictated.
+    - For fields requiring summarization, synthesize the information into a concise, professional clinical note.
+    - Use clinical judgment ONLY to correct unambiguous errors (e.g., a likely misstated joint name if the context is 100% clear). Do not change terms without strong justification.
+6.  **Final Output:** Your entire response must be ONLY the completed JSON array. Do not include any other text, explanations, or markdown code blocks.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "History of present illness",
+    "key": "HPI_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "Summarize the patient’s History of Present Illness (HPI) as a clear, professional paragraph in clinical note style. Include only details explicitly stated in the transcript: symptoms, onset, duration, location, severity, aggravating or relieving factors, treatments tried, impact on daily life, and relevant prior evaluations or consultations. Maintain chronological flow. Exclude physical exam findings, imaging results, and assessment details. Do not infer or assume information. Use full sentences and natural scribe-style narrative."
+  },
+  {
+    "title": "Vitals",
+    "key": "VITALS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all information related to the patient’s vitals. Include whether vitals were filed for the visit, whether height and weight are documented, and whether BMI is available or could be calculated. If any of these are explicitly stated as absent or not on file, include that. If no vitals are mentioned, return “-”."
+  },
+  {
+    "title": "Physical Exam",
+    "key": "PHYSICAL_EXAM",
+    "content": [],
+    "default": "No physical exam mentioned.",
+    "instruction": "Extract details of the physical examination if mentioned. Include whether an exam was performed, the date (if available), and a concise summary of the findings. If findings are described as unchanged or consistent with previous exams, include that. If no physical exam is mentioned, return “No physical exam mentioned.”"
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract the patient’s constitutional review of systems (ROS) findings exactly as stated in the transcript. If no findings are mentioned, return “Normal.” Do not add or infer details."
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract any skin examination findings exactly as dictated. If none are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Vascular",
+    "key": "ROS_VASCULAR",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract any vascular findings exactly as dictated. If no vascular findings are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Neurologic and Lumbar",
+    "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the neurologic and lumbar exam findings exactly as stated in the transcript. Organize the findings under these categories if present:\nAlignment\nSensation\nRange of Motion (flexion, extension, rotation, pain)\nStrength (with muscle groups and scores if given)\nReflexes (patellar, ankle, clonus)\nInclude laterality (left/right) where mentioned. Return only what is explicitly stated. If no findings are reported, return “-”."
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all imaging results explicitly mentioned (e.g., X-ray, MRI, CT, ultrasound). Include the type of imaging, body part, date (if given), and the findings exactly as dictated. Present the results as a bulleted list. If no imaging is mentioned, return “-”. Do not add or interpret."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT",
+    "content": [],
+    "default": "-",
+    "instruction": "Generate the Assessment as a concise list of the patient’s active diagnoses or conditions relevant to this visit.\nRules:\nInclude symptom-based problems (e.g., “back pain”) and diagnosis-based terms (e.g., “spinal stenosis”).\nExclude normal findings and negative statements.\nInclude “status post” only if it describes an ongoing issue (e.g., “stiffness after surgery”).\nKeep terms short and scribe-style, without exam details or explanations.\nReturn strictly as a list (one item per line, with dash or bullet).\nIf no active conditions are mentioned, return “-”."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [],
+    "default": "-",
+    "instruction": "Write the doctor’s plan exactly as dictated, in scribe-style summary form.\nRules:\nInclude only treatments, procedures, medications, therapies, referrals, patient education, and follow-up instructions explicitly mentioned in the transcript.\nDo not add or assume any details (e.g., do not invent follow-up times unless stated).\nIf a follow-up is specified, include it exactly as dictated, formatted as: “Return to clinic in X days/weeks/months.”\nUse short sentences or numbered/bulleted steps.\nIf no plan is mentioned, return “-”."
+  },
+  {
+    "title": "Work disability status",
+    "key": "WDS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient’s work disability status exactly as stated by the doctor. If not mentioned, return “-”. Do not infer."
+  },
+  {
+    "title": "Request for medical authorization",
+    "key": "RFMA",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only the items the doctor explicitly requested for insurance or medical authorization. Return each request as a single line in the format:\n<treatment/procedure/imaging/referral>\nDo not include the overall plan, work restrictions, or explanations. If no requests are mentioned, return “-”."
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Extract the follow-up schedule exactly as dictated. Include both:\nNext Appointment: when the patient should return (e.g., “Return to clinic in 2 weeks”).\nReview and Adjustments: what will be reviewed or adjusted at that visit, if mentioned.\nIf no follow-up is mentioned, return “No follow up.”"
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Patient_1: ... but I can go like this.
+Doctor_1: Mm-hmm.
+Patient_1: Now, I al- only can go to one side.
+Doctor_1: Mm-hmm.
+Patient_1: When you go straight, it still hurt. Very hurt here.
+Doctor_1: Can you still walk?
+Patient_1: I can walk, but with a walker. That's it.
+Doctor_1: If you have a walker, can you walk for 20 minutes or 30 minutes?
+Patient_1: Oh, no. Only from the kitchen to restroom-
+Doctor_1: Mm-hmm.
+Patient_1: ... to the sofa.
+Doctor_1: Okay. Let me un- Are you taking any medications for the pain?
+Patient_1: Uh, yeah. Before, the doctor gave me different... Even my, uh, knee. I have knee problem and ankle problem. Same meds. Uh, ƒ45 is not recorded.
+Doctor_1: Okay.
+Patient_1: Especially... What about the cervical?
+Doctor_1: Well, good news about the neck. The neck is okay.
+Patient_1: Oh, the neck is okay?
+Doctor_1: Yeah. So the cervical spine MRI at AMI on August 29, 2025, just disc disease, severe at C5-C7, but no stenosis or real.
+Patient_1: No. Yeah, I've heard the top is-
+Doctor_1: More and more here, huh?
+Patient_1: But when you go up the, uh... Yeah. Uh, go he- yeah, yeah. That, that, that area does hurt too.
+Doctor_1: Yeah. But, well, this is off. This actually goes ƒ45 to the-
+Patient_1: So one, one... Yeah.
+Doctor_1: Right.
+Patient_1: And also here.
+Doctor_1: At the side of... Yeah.
+Patient_1: This part going like-
+Doctor_1: Uneven, right?
+Patient_1: So, I think more like that.
+Doctor_1: So let me check the lower back now.
+Patient_1: I just think maybe there's no way 'cause I can't do the surgery.
+Doctor_1: No, thi- this is actually not swollen. This is actually the bones pushing out because your spine is crooked.
+Patient_1: But it's too big, right?
+Doctor_1: No, it's the ribs that's pushing out. That's, that's why you're so curved here. This is you, right? See how crooked your spine is?
+Patient_1: Left. Oh, that's the left side.
+Doctor_1: Yeah. And then the MRI...
+Patient_1: There isn't any way I can do anything?
+Doctor_1: Well, let me have a look here. So, the MRI, August 29, again at AMI. Just m- mild sensor stenosis three, four.
+Patient_1: Oh, my god.
+Doctor_1: Severe disc disease. Five, four, three, two, one. L1 to S1.
+Patient_1: Okay. It looks bad.
+Doctor_1: Yeah.
+Patient_1: Oh.
+Doctor_1: Okay, subramially not too bad. So centrally, no stenosis. So it's, it's right in the middle, it's not too bad, but it's w- where the, the spine is curved over-
+Patient_1: I'm on there.
+Doctor_1: ... it starts to hit the nerves, you know?
+Patient_1: Ah, yeah.
+Doctor_1: All right? 'Cause your spine's so crooked.
+Patient_1: So, what-
+Doctor_1: Your spine is so bent, so it starts to hit the nerves coming out, right?
+Patient_1: Yeah.
+Doctor_1: And it's hunched over too.
+Patient_1: Yeah, 'cause that's why I've been... I can touch it.
+Doctor_1: Yeah.
+Patient_1: But I don't know if it's my spine.
+Doctor_1: Yeah. It's the first problem.
+Patient_1: Besides from my, uh, wrist.
+Doctor_1: Well, we have-
+Patient_1: What caused that pain?
+Doctor_1: Um, two things. Genetic. It's just your body's way of wearing out. It doesn't happen to everybody. For some reason, your spine, the bones get loose.
+Patient_1: Just loose.
+Doctor_1: And then they start to get crooked, and then they start to wear out and fall over. And of course, wear and tear. As we get older, it, it wears out. So for some reason, it wears out very quickly and badly for you. Um, so at this point, we have two options. Okay? One option is to do a shot into your back. It's called the spinal injections or epidural injections. Uh, that's just putting medicine into the spine. We put shots in there. Um, the shots are good because they're easy, they're safe, they're quick, in and out. Very, very low risk. And it doesn't hurt because I sedate you for it. You'll fall asleep for about five minutes. And then I use X-rays and I make sure the needles are in the right spot. Everybody feels better. The problem is, we don't know how much better, and we don't know how long it lasts.
+Patient_1: All right.
+Doctor_1: Some people might feel 100% better. Some people might only feel 20% better. Some people, I do the shot, it lasts two years. For others, it may only last two weeks. We just don't know.
+Patient_1: Um, my knee, I think I got shot before.
+Doctor_1: Did it last a while?
+Patient_1: No. It just, uh... I don't even feel.
+Doctor_1: Yeah. We just don't know. So-
+Patient_1: Like, I've had it like two times, but it's okay.
+Doctor_1: Mm-hmm. So that's an... one option.
+Patient_1: Mm-hmm.
+Doctor_1: The second option is to do surgery.
+Patient_1: Okay.
+Doctor_1: Right?
+Patient_1: So if I... Can I go back to straight anymore?
+Doctor_1: We can, we can get it as-
+Patient_1: You think?
+Doctor_1: ... straight as possible. Um, have you ever had any abdominal surgeries?
+Patient_1: Um, let's see. Not really big, uh... I, I only had one remove the, uh, gallbladder.
+Doctor_1: Oh, those little incisions?
+Patient_1: Yeah, the...
+Doctor_1: Arthrosc- uh, laparoscopic?
+Patient_1: Yeah, the ... Okay, good. So five, four, three, two, one. Ah. Well, this... This is my first time to, to take the MRI for this and...
+Doctor_1: When you're sitting, does the back hurt too?
+Patient_1: Yeah.
+Doctor_1: Even when you're sitting, it hurts, huh?
+Patient_1: It hurts. Like I have to go front or go back-
+Doctor_1: Yeah.
+Patient_1: ... change position.
+Doctor_1: Yeah.
+Patient_1: And always move around.
+Doctor_1: Well, I...
+Patient_1: A lot of old people are like this.
+Doctor_1: 15%.
+Patient_1: Okay.
+Doctor_1: Yeah, 15%.
+Patient_1: Good for you.
+Doctor_1: Yeah, no, I have a lot. So, the other option is to do the surgery to make it straight. So let me show you an example.
+Patient_1: Is that very big surgery?
+Doctor_1: Medium to big. Big, yeah. Not small, but not serious, huh? Uh, Sonia. There it is.
+Patient_1: Mm-hmm.
+Doctor_1: Yeah, so crooked, huh? So here's an example. This is you, right?
+Patient_1: Yeah.
+Doctor_1: So this is another lady, very similar age.
+Patient_1: Oh, lovely.
+Doctor_1: Yeah. Very similar, too. She was ni- born in 1948, so she's three years older than you.
+Patient_1: Yeah.
+Doctor_1: So this is her.
+Patient_1: Oh, okay.
+Doctor_1: Her, this is her before, and this is her now.
+Patient_1: Oh, that's a lot better.
+Doctor_1: Yeah. So you see, this bone is way off.
+Patient_1: Mm-hmm.
+Doctor_1: This bone is... Bones are hitting each other.
+Patient_1: Oh.
+Doctor_1: This bone is off this way.
+Patient_1: Yeah.
+Doctor_1: Now, pretty straight.
+Patient_1: Mm-hmm.
+Doctor_1: Yeah.
+Patient_1: Oh, so the-
+Doctor_1: Not perfect, but very s- very level.
+Patient_1: Oh, there's a nail.
+Doctor_1: Yeah. There's the screws.
+Patient_1: Screws, oh, okay.
+Doctor_1: And I put the spacer, right, look right here.
+Patient_1: Wow.
+Doctor_1: See, the corners are hitting? Now, pretty good.
+Patient_1: Now, good.
+Doctor_1: You see that?
+Patient_1: Well, now, then...
+Doctor_1: Yeah. Now she's walking, she's moving, she's making a good recovery.
+Patient_1: Cool.
+Doctor_1: But the first month was rough.
+Patient_1: Oh, yeah, I have two-
+Doctor_1: You stay in the hospital, uh, for three nights. And usually I recommend staying at the hospital for two weeks in the re- in the rehab unit, physical therapy.
+Patient_1: Mm-hmm.
+Doctor_1: For two weeks.
+Patient_1: Mm-hmm.
+Doctor_1: Then you can go home. You can walk, you can move.
+Patient_1: Oh.
+Doctor_1: Um, but you take it easy for six weeks.
+Patient_1: So two weeks after already able to move.
+Doctor_1: You should be able to walk and move after just a few days.
+Patient_1: Mm-hmm.
+Doctor_1: The first day, we actually get you out of bed. So the surgery itself, uh, is successful. I would say 95% success rate.
+Patient_1: Mm-hmm.
+Doctor_1: Meaning only 5% of the time there's a complication, like bleeding...
+Patient_1: Oh.
+Doctor_1: ... infection...
+Patient_1: Yeah.
+Doctor_1: ... having to do another surgery if there's a hematoma. Sometimes these screws come loose, we have to go back and change it. That's rare. That's probably only one or two percent.
+Patient_1: Yes.
+Doctor_1: But, you know, problems like constipation, um, uh, you know, bed sores, things like that, you know, that might happen.
+Patient_1: Okay.
+Doctor_1: Like urinary infection, 5% of the time we deal with that, you know?
+Patient_1: Especially with this surgery.
+Doctor_1: Yeah.
+Patient_1: Uh, what about the... How long, uh, well, uh, how long will it fully heal, like I can go out?
+Doctor_1: Um, usually three weeks, four weeks is when patients start to feel good and start to go to the mall, go to, um, the park.
+Patient_1: Okay.
+Doctor_1: You know, walk around the mall, walk around the park. Uh, one month, people start to drive again.
+Patient_1: Mm-hmm.
+Doctor_1: Um, by four months, I let you do whatever you want.
+Patient_1: Oh.
+Doctor_1: Four months, you can start to, you know, um, some people run, some people play tennis, some people...
+Patient_1: Wow.
+Doctor_1: ... you know, get around.
+Patient_1: And that's full, uh, will stay with me?
+Doctor_1: Forever, yeah. Yeah.
+Patient_1: Right.
+Doctor_1: See, this is bone right here. The bone is starting to get hard. All the bone will grow over the screw.
+Patient_1: Mm-hmm.
+Doctor_1: So it'll be... We leave it alone for a bit.
+Patient_1: Okay. How do you see that at this age, the bone's still okay, strong enough for a whole back, um, there?
+Doctor_1: Well, that's, that's... Yeah, that's a very good question, because right now you're only, you know, ear- early 70s. So right now, we could do it.
+Patient_1: 75, 74.
+Doctor_1: Yeah. But in four years, five years, six years...
+Patient_1: Harder.
+Doctor_1: Gets harder.
+Patient_1: Oh, yeah.
+Doctor_1: So we... Yeah, if you don't do it now, it'll get harder later.
+Patient_1: And-
+Doctor_1: So, so that's why I was able to correct it very good.
+Patient_1: Oh.
+Doctor_1: For young people, we make it perfect, 'cause we can push and pull hard. But for older people, we can only push and pull a little bit.
+Patient_1: Oh.
+Doctor_1: Because then those bones are not hard enough.
+Patient_1: I know, you push hard, maybe...
+Doctor_1: It rips out, correct. So that's why you have to consider...
+Patient_1: But-
+Doctor_1: Nobody wants to have surgery, but...
+Patient_1: Mm-hmm.
+Doctor_1: ... if you, if you know you probably will need it, it's better to do it early...
+Patient_1: When you're better than this.
+Doctor_1: ... when you're younger and healthier...
+Patient_1: Yeah.
+Doctor_1: ... and the bones are stronger.
+Patient_1: Yeah, I understand that part.
+Doctor_1: Yeah.
+Patient_1: And another reason, because my, this knee we've got it fixed a few years ago.
+Doctor_1: Mm-hmm.
+Patient_1: And now, maybe my, my two sides is not balanced.
+Doctor_1: Mm.
+Patient_1: This one is, uh, shorter.
+Doctor_1: Oh, crooked, right? You see?
+Patient_1: Yeah. No, no, no.
+Doctor_1: Oh, sorry.
+Patient_1: This one is shorter than this one now. Like, it's four years or more. Is it go to that side?
+Doctor_1: Yeah, and here too, here?
+Patient_1: No, you touch it, it's okay now.
+Doctor_1: Oh, yeah.
+Patient_1: Yeah. But you see this one? It-
+Doctor_1: Mm-hmm. It's straighter, yeah.
+Patient_1: More straight than... You see now? Go to...
+Doctor_1: Well, the other, the other thing to consider is to get the knee fixed first, right? If the knee is fixed, then it'll make your back recovery a lot easier.
+Patient_1: That's what I'm worried about, 'cause, uh, when I walk...
+Doctor_1: Mm-hmm.
+Patient_1: ... around on my...
+Doctor_1: Mm-hmm.
+Patient_1: Sometimes I try to, you know, touch here...
+Doctor_1: Yeah.
+Patient_1: ... and feel what I, try to figure out what's going on. I feel one side...
+Doctor_1: Yeah.
+Patient_1: ... like this, like this.
+Doctor_1: So what I-
+Patient_1: So one side is short, then when I go to the mirror...
+Doctor_1: Mm-hmm.
+Patient_1: ... I saw this one is, uh, going out.
+Doctor_1: Yeah. So what-
+Patient_1: It changed position.
+Doctor_1: What I would recommend is get a, a consultation with our knee specialists and s-
+Patient_1: Oh, I have appointment on next week.
+Doctor_1: Perfect.
+Patient_1: Same here.
+Doctor_1: Okay.
+Patient_1: With a knee.
+Doctor_1: Dr. O'Dowd, right?
+Patient_1: I think so. It's a surgery, right?
+Doctor_1: Perfect, yeah.
+Patient_1: Yeah, because before is a doctor... What's his name?... uh, different doctor-
+Doctor_1: Yeah, okay.
+Patient_1: ... before. And he says if you want to see a surgery doctor.
+Doctor_1: Yeah, good.
+Patient_1: Then he recommend-
+Doctor_1: Perfect. So what I would recommend then is, see him for the knee to talk about surgery for the knee. I think the knee should actually be done first.
+Patient_1: First. Oh.
+Doctor_1: And then what we could do in the meantime, is I could do the shots for you. That way when the back feels better, then the knee can recover properly.
+Patient_1: Oh, okay.
+Doctor_1: Okay? So...
+Patient_1: Yeah, because I'm wearing some Oh.
+Doctor_1: Yeah.
+Patient_1: ... my leg.
+Doctor_1: Yeah.
+Patient_1: The pain comes from the hip and not the knee.
+Doctor_1: Exactly. All right. So-
+Patient_1: And I have more problem because, uh, here, right?
+Doctor_1: Yeah. Yeah, it goes out.
+Patient_1: Yeah, when I walk and I go always-
+Doctor_1: Yep.
+Patient_1: I always get like four legs to go back there.
+Doctor_1: Yeah.
+Patient_1: I fall down two times.
+Doctor_1: Yeah.
+Patient_1: Which I don't even control, but ...
+Doctor_1: So why don't I request the shot for your back? Because your insurance have to request it first. And then once we get the approval, then we'll schedule it, okay?
+Patient_1: Uh, yeah.
+Doctor_1: And then you can get the consultation for the knee.
+Patient_1: Uh, my only question is, so you'll be talking about the surgery.
+Doctor_1: Mm-hmm.
+Patient_1: So, the insurance pays?
+Doctor_1: Yes.
+Patient_1: All right.
+Doctor_1: Yeah.
+Patient_1: Thank you.
+Doctor_1: Well, that depends on your insurance, but usually they have a deductible, but they should cover most of it. Yeah. All right?
+Patient_1: And would you please send me one of print out about the MRI report?
+Doctor_1: The MRI report? Yeah.
+Patient_1: MRI report.
+Doctor_1: Okay.
+Patient_1: So I can, I can, you know-
+Doctor_1: Of course, yeah.
+Patient_1: ... give it to my son and I can ... you know.
+Doctor_1: Yeah. Yeah. All right. So I'll request it, okay? Why don't you have a seat, I'll have my assistant come in, she'll give you the report. All right.
+Patient_1: Thank you.
+Doctor_1: Thank you very much. All right. So you can say she has, got LSS, can't walk, can't move too well. So either walker or cane, feels unsteady, but her left knee is hurting her too. She's going to see, uh, sounds like Dr. Daod next week for surgical con- consultation. Uh, and then therapy has not helped. And then we t- and exam's the same. Assessment plan. You got the MRIs, right, Pooja?
+Patient_1: Yes, Doctor.
+Doctor_1: Oh, Irma? Yeah, Irma, yeah. So assessment plan. She's got a bad degenerative scoliosis. Uh, talked to her about conditional treatment options. I recommend getting her knee addressed first. She's got a pretty valgus knee on the left side.Um, and then in the meantime, doing an epidural would be helpful. Risk benefit study shows she's agreeable. I'll do a, uh, request to do bilateral facet blocks. Uh, L3 to S1, with a caudo ESI.
+Patient_1: Okay, Dr. Lee. Uh, what will be the follow-up?
+Doctor_1: A follow-up after the shot.
+Patient_1: Okay, Dr. Lee. Thank you.
+Doctor_1: Thank you.
+Patient_1: Okay. You will have to call me at 9:00 during Friday practice.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

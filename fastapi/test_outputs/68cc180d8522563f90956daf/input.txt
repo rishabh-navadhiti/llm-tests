@@ -1,0 +1,183 @@
+ROLE: You are an expert medical scribe.
+TASK: Extract structured medical information from a doctor-patient conversation transcript and populate a provided JSON template.
+
+CRITICAL INSTRUCTIONS:
+1.  **Output Format:** You MUST output a JSON array of objects that exactly matches the structure, keys, and order of the provided template.
+2.  **Filling the Template:** For each object in the template, you must fill the `"content"` field based *only* on the transcript, strictly following the `"instruction"` for that field.
+3.  **Source Material:** Use ONLY the information explicitly stated in the provided medical transcript. Do not infer, assume, or add any information not present in the transcript.
+4.  **Handling Missing Data:** If no relevant information is found in the transcript for a specific field, you must use the `"default"` value provided for that field in the template.
+5.  **Verbatim vs. Interpretation:**
+    - For fields requiring verbatim extraction, extract the doctor's words exactly as dictated.
+    - For fields requiring summarization, synthesize the information into a concise, professional clinical note.
+    - Use clinical judgment ONLY to correct unambiguous errors (e.g., a likely misstated joint name if the context is 100% clear). Do not change terms without strong justification.
+6.  **Final Output:** Your entire response must be ONLY the completed JSON array. Do not include any other text, explanations, or markdown code blocks.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "History of present illness",
+    "key": "HPI_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "Summarize the patient’s History of Present Illness (HPI) as a clear, professional paragraph in clinical note style. Include only details explicitly stated in the transcript: symptoms, onset, duration, location, severity, aggravating or relieving factors, treatments tried, impact on daily life, and relevant prior evaluations or consultations. Maintain chronological flow. Exclude physical exam findings, imaging results, and assessment details. Do not infer or assume information. Use full sentences and natural scribe-style narrative."
+  },
+  {
+    "title": "Vitals",
+    "key": "VITALS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all information related to the patient’s vitals. Include whether vitals were filed for the visit, whether height and weight are documented, and whether BMI is available or could be calculated. If any of these are explicitly stated as absent or not on file, include that. If no vitals are mentioned, return “-”."
+  },
+  {
+    "title": "Physical Exam",
+    "key": "PHYSICAL_EXAM",
+    "content": [],
+    "default": "No physical exam mentioned.",
+    "instruction": "Extract details of the physical examination if mentioned. Include whether an exam was performed, the date (if available), and a concise summary of the findings. If findings are described as unchanged or consistent with previous exams, include that. If no physical exam is mentioned, return “No physical exam mentioned.”"
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract the patient’s constitutional review of systems (ROS) findings exactly as stated in the transcript. If no findings are mentioned, return “Normal.” Do not add or infer details."
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract any skin examination findings exactly as dictated. If none are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Vascular",
+    "key": "ROS_VASCULAR",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract any vascular findings exactly as dictated. If no vascular findings are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Neurologic and Lumbar",
+    "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the neurologic and lumbar exam findings exactly as stated in the transcript. Organize the findings under these categories if present:\nAlignment\nSensation\nRange of Motion (flexion, extension, rotation, pain)\nStrength (with muscle groups and scores if given)\nReflexes (patellar, ankle, clonus)\nInclude laterality (left/right) where mentioned. Return only what is explicitly stated. If no findings are reported, return “-”."
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all imaging results explicitly mentioned (e.g., X-ray, MRI, CT, ultrasound). Include the type of imaging, body part, date (if given), and the findings exactly as dictated. Present the results as a bulleted list. If no imaging is mentioned, return “-”. Do not add or interpret."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT",
+    "content": [],
+    "default": "-",
+    "instruction": "Generate the Assessment as a concise list of the patient’s active diagnoses or conditions relevant to this visit.\nRules:\nInclude symptom-based problems (e.g., “back pain”) and diagnosis-based terms (e.g., “spinal stenosis”).\nExclude normal findings and negative statements.\nInclude “status post” only if it describes an ongoing issue (e.g., “stiffness after surgery”).\nKeep terms short and scribe-style, without exam details or explanations.\nReturn strictly as a list (one item per line, with dash or bullet).\nIf no active conditions are mentioned, return “-”."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [],
+    "default": "-",
+    "instruction": "Write the doctor’s plan exactly as dictated, in scribe-style summary form.\nRules:\nInclude only treatments, procedures, medications, therapies, referrals, patient education, and follow-up instructions explicitly mentioned in the transcript.\nDo not add or assume any details (e.g., do not invent follow-up times unless stated).\nIf a follow-up is specified, include it exactly as dictated, formatted as: “Return to clinic in X days/weeks/months.”\nUse short sentences or numbered/bulleted steps.\nIf no plan is mentioned, return “-”."
+  },
+  {
+    "title": "Work disability status",
+    "key": "WDS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient’s work disability status exactly as stated by the doctor. If not mentioned, return “-”. Do not infer."
+  },
+  {
+    "title": "Request for medical authorization",
+    "key": "RFMA",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only the items the doctor explicitly requested for insurance or medical authorization. Return each request as a single line in the format:\n<treatment/procedure/imaging/referral>\nDo not include the overall plan, work restrictions, or explanations. If no requests are mentioned, return “-”."
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Extract the follow-up schedule exactly as dictated. Include both:\nNext Appointment: when the patient should return (e.g., “Return to clinic in 2 weeks”).\nReview and Adjustments: what will be reviewed or adjusted at that visit, if mentioned.\nIf no follow-up is mentioned, return “No follow up.”"
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: There's still a lot of pain?
+Patient: The pain is on the left.
+Doctor_1: The left side? Does it go down the thigh here, in the front?
+Patient: Yes. It was hurting down here. The first injection we went, that's where. Um, that it might be a blood clot.
+Doctor_1: And then, did she rule that out with an ultrasound?
+Patient: They ruled it out, yes.
+Doctor_1: Okay. The pain was sort of on the side here? Okay. And the right leg is okay? It's not painful?
+Patient: Right leg is dull, just numb.
+Doctor_1: Numb?
+Patient: Yeah.
+Doctor_1: Doesn't feel normal? Is, is it weak as well?
+Patient: Not, not weak.
+Doctor_1: Mm.
+Patient: Not weak, no strength.
+Doctor_1: And if you're using a walker, how long can you walk for? Can you walk for 10 minutes? 20 minutes?
+Patient: Maybe 10.
+Doctor_1: Hm. All right. Now the pain's in the left, huh? But when I, when I did the shot, the pain went away for a while?
+Patient: Oh, yes.
+Doctor_1: Hm.
+Patient: Pain on the right is getting dark blue.
+Doctor_1: Interesting. Let's see. Have you seen your neurologist recently too?
+Patient: Yeah. You know, the, uh, pain, the electric pain-
+Doctor_1: Mm-hmm.
+Patient: ... on my right is gone because she gave me extra Gabapentin.
+Doctor_1: Mm-hmm.
+Patient: And it's, it's a fighter.
+Doctor_1: Have you been doing some physical therapy or exercise on your own?
+Patient: Yeah.
+Doctor_1: Okay. But does the neurologist think the pain down the left leg is from MS or do they think it's from the back?
+Patient: Oh, both, I think. They think it's from both sides.
+Doctor_1: Oh, okay. So left side. Yeah, I think the left side's gonna be caused from the back too. It is pinching a little bit as well. 'Cause when I gave you the shot, I actually went in on both sides.
+Patient: Okay.
+Doctor_1: After the shot, both sides felt good.
+Patient: Okay.
+Doctor_1: Yeah. So I, I think you, you had, you had that fusion in your back, um, years ago. And the, the rest of your spine up top here is still a little curved or has gotten more curved.
+Patient: Mm-hmm.
+Doctor_1: And it's been getting more tilted. So the right side gets... This is the right and this is the left. So it's falling towards the right, so the right side gets hit more.
+Patient: Mm-hmm.
+Doctor_1: But then on a side view... Sorry. On a side view, right down here has been fused. The level above it, see this bone is kinda-
+Patient: Yeah.
+Doctor_1: ... kicking back like that? See how that corner is kinda touching and kind of overhanging?
+Patient: Yeah.
+Doctor_1: That's hitting the nerves on both sides there. Right. So I think that's what causing your pain. And that's why I injected L2-3.
+Patient: Right.
+Doctor_1: Okay. You should strengthen your legs again. Okay. I'm gonna move this out of the way. Can you raise your knee up like this? Hold it there. Don't let me push down. No power. How about this side? There's four minus in her hips, both sides. Can you straighten it out? Hold it there and don't let me push down. 432 to this side. Four or five in her quads. And pull your ankles up like this, real strong. Hold it there and don't let me push down. No power at all. Left side, of course.
+Patient: Yeah.
+Doctor_1: So four or five minus in the left and then four or five right to it. Well , let's see here. Uh, the shot I gave you was four months ago. Technically, you can get three per year. Okay? So it's been four months. If you wanna try another shot, I think that's fine.
+Patient: Yeah.
+Doctor_1: And I think it's safe.
+Patient: I think so.
+Doctor_1: You want that? Yeah. So you didn't have any problems with the first shots, correct? Afterwards, pain wasn't too bad? No issues with the anesthesia?
+Patient: No.
+Doctor_1: Good. So definitely continue the Gabapentin and let's set you up with a shot.
+Patient: Okay.
+Doctor_1: Okay? So we're gonna have you talk to Laura now who will give the injection for you, okay?
+Patient: Yeah. Thank you.
+Doctor_1: I'll have her give you a notice here. Thank you. Okay. You're gonna follow up with Laura at Herbert Jones. Injection site.
+Patient: Okay.
+Doctor_1: Injection site.
+Nurse_1: Okay.
+Doctor_1: Laura, I think he's on the phone but there's a chair on the other side of the room. Okay. See you soon. All right. So she's having dot LRAD. It's actually worse on the left now. The right side is still, has gotten a little bit more numb, a little bit more painful, but there was 100% relief for a few, a couple months afterwards, but now it's wearing out. She uses a walker. Uh, she sees a neurologist for MS, an exam. We got assessment. She has a history of MS. She's got history of L3-L5 fusion by outside surgeon. She's got retrosthesis scoliosis above. Uh, I gave her an injection L2-3 four months ago and it gave her great relief, uh, so she wants to, to repeat it. Uh, so I'll repeat the L2-3, Transform ESI. Responding to stump shoes at least, she'll continue Gabapentin and exercise program.
+Nurse_2: Okay, Dr. Lee. Thank you.
+Nurse_3: Here, right?
+Doctor_1: Mm-hmm.
+Nurse_3: I'm late, but-
+Doctor_1: She's here. She's here. She's here.
+Nurse_3: ... need your help.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

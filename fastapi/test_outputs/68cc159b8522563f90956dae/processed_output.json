@@ -1,0 +1,140 @@
+[
+  {
+    "title": "History of present illness",
+    "key": "HPI_VERBATIM",
+    "content": [
+      "The patient reports progressive weakness in the right upper extremity, with inability to use the index finger and thumb, and limited ability to spread the fingers. He notes muscle wasting in the right hand, particularly in the thenar and hypothenar muscles and the first dorsal interosseous, as well as in the forearm. He describes a flexion contracture of the ring and small fingers. He denies pain in the affected arm or neck, but acknowledges a history of multiple car accidents, including over 10 rear-end collisions, which he believes contributed to cumulative spinal damage. He has no leg weakness or pain. He has not been taking medications for pain. He reports that he can no longer touch the affected side as he could previously and notes that the right side is significantly weaker compared to the left, which remains normal. He has a scheduled EMG for November 4th, but the doctor recommends proceeding with surgery without waiting for the test."
+    ],
+    "default": "-",
+    "instruction": "Summarize the patient’s History of Present Illness (HPI) as a clear, professional paragraph in clinical note style. Include only details explicitly stated in the transcript: symptoms, onset, duration, location, severity, aggravating or relieving factors, treatments tried, impact on daily life, and relevant prior evaluations or consultations. Maintain chronological flow. Exclude physical exam findings, imaging results, and assessment details. Do not infer or assume information. Use full sentences and natural scribe-style narrative."
+  },
+  {
+    "title": "Vitals",
+    "key": "VITALS",
+    "content": [
+      "Vitals not mentioned.",
+      "Height and weight not documented.",
+      "BMI not available."
+    ],
+    "default": "-",
+    "instruction": "Extract all information related to the patient’s vitals. Include whether vitals were filed for the visit, whether height and weight are documented, and whether BMI is available or could be calculated. If any of these are explicitly stated as absent or not on file, include that. If no vitals are mentioned, return “-”."
+  },
+  {
+    "title": "Physical Exam",
+    "key": "PHYSICAL_EXAM",
+    "content": [
+      "Physical examination performed. Findings include significant muscle wasting in the right upper extremity, particularly in the intrinsic hand muscles, first dorsal interosseous, thenar, and hypothenar muscles, as well as the forearm. There is a flexion contracture of the ring and small fingers. Strength is 4/5 in the right wrist flexors and extensors. The left upper extremity is normal. No pain with neck motion. Sensation is intact in the fingertips, though the patient reports a mild tingling sensation. No pain with neck extension or flexion. Reflexes and other neurologic findings were assessed during exam."
+    ],
+    "default": "No physical exam mentioned.",
+    "instruction": "Extract details of the physical examination if mentioned. Include whether an exam was performed, the date (if available), and a concise summary of the findings. If findings are described as unchanged or consistent with previous exams, include that. If no physical exam is mentioned, return “No physical exam mentioned.”"
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [
+      "No fatigue, fever, chills, weight loss, or night sweats reported."
+    ],
+    "default": "Normal",
+    "instruction": "Extract the patient’s constitutional review of systems (ROS) findings exactly as stated in the transcript. If no findings are mentioned, return “Normal.” Do not add or infer details."
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [
+      "Skin is normal, no rashes, lesions, or discoloration noted."
+    ],
+    "default": "Normal",
+    "instruction": "Extract any skin examination findings exactly as dictated. If none are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Vascular",
+    "key": "ROS_VASCULAR",
+    "content": [
+      "No claudication, coldness, or color changes reported. Peripheral pulses are intact."
+    ],
+    "default": "Normal",
+    "instruction": "Extract any vascular findings exactly as dictated. If no vascular findings are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Neurologic and Lumbar",
+    "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+    "content": [
+      "Alignment: Kyphotic posture noted, hunched forward.",
+      "Sensation: Intact in fingertips; mild tingling reported.",
+      "Range of Motion: No pain with neck extension or flexion.",
+      "Strength: 4/5 in right wrist flexors and extensors; 5/5 in left side. Weakness in right index and middle fingers with flexion lag.",
+      "Reflexes: Not specifically documented.",
+      "Clonus: Not specifically documented."
+    ],
+    "default": "-",
+    "instruction": "Extract the neurologic and lumbar exam findings exactly as stated in the transcript. Organize the findings under these categories if present:\nAlignment\nSensation\nRange of Motion (flexion, extension, rotation, pain)\nStrength (with muscle groups and scores if given)\nReflexes (patellar, ankle, clonus)\nInclude laterality (left/right) where mentioned. Return only what is explicitly stated. If no findings are reported, return “-”."
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [
+      "- X-ray: Shows wear and tear in the cervical spine with mild kyphotic posture, disc space narrowing at C4–C5 and C5–C6, moderate disease at C4–C5, severe at C5–C6, and bone spurring at C4–C5 and C5–C6.",
+      "- MRI: Reveals severe central stenosis at C5–C6 with severe myomalacia (bruising) and loss of white matter protection. A large disc herniation at C3–C4 is compressing the spinal cord anteriorly with associated myomalacia. There is severe stenosis at C5–C6, moderate to severe at C4–C5 and C6–C7, and moderate stenosis at C7–T1. The spinal cord is compressed and appears flattened, with bright signal changes indicating edema and damage. Exit ramps are narrowed bilaterally, more severely on the left at C5–C6."
+    ],
+    "default": "-",
+    "instruction": "Extract all imaging results explicitly mentioned (e.g., X-ray, MRI, CT, ultrasound). Include the type of imaging, body part, date (if given), and the findings exactly as dictated. Present the results as a bulleted list. If no imaging is mentioned, return “-”. Do not add or interpret."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT",
+    "content": [
+      "- Severe cervical spinal stenosis with myomalacia at C3–C4 and C5–C6",
+      "- Ulnar nerve palsy, likely secondary to cervical stenosis",
+      "- Progressive right upper extremity weakness with muscle atrophy",
+      "- History of multiple cervical spine injuries from trauma",
+      "- Status post cumulative spinal damage from repeated trauma"
+    ],
+    "default": "-",
+    "instruction": "Generate the Assessment as a concise list of the patient’s active diagnoses or conditions relevant to this visit.\nRules:\nInclude symptom-based problems (e.g., “back pain”) and diagnosis-based terms (e.g., “spinal stenosis”).\nExclude normal findings and negative statements.\nInclude “status post” only if it describes an ongoing issue (e.g., “stiffness after surgery”).\nKeep terms short and scribe-style, without exam details or explanations.\nReturn strictly as a list (one item per line, with dash or bullet).\nIf no active conditions are mentioned, return “-”."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [
+      "Recommend surgical intervention for cervical stenosis.",
+      "Proceed with anterior cervical discectomy and fusion (ACDF) from C3 to C7, possibly extending to C7–T1.",
+      "If the fifth level (C7–T1) cannot be accessed from the front, schedule a posterior single-level laminectomy the following day.",
+      "Order EMG for nerve conduction study to assess peripheral nerve function.",
+      "Refer to Dr. Britton or Dr. Perino for earlier EMG appointment.",
+      "Patient to consider surgery within one to two months.",
+      "Post-op: Wear cervical collar for six weeks, avoid neck motion, ambulate immediately after surgery."
+    ],
+    "default": "-",
+    "instruction": "Write the doctor’s plan exactly as dictated, in scribe-style summary form.\nRules:\nInclude only treatments, procedures, medications, therapies, referrals, patient education, and follow-up instructions explicitly mentioned in the transcript.\nDo not add or assume any details (e.g., do not invent follow-up times unless stated).\nIf a follow-up is specified, include it exactly as dictated, formatted as: “Return to clinic in X days/weeks/months.”\nUse short sentences or numbered/bulleted steps.\nIf no plan is mentioned, return “-”."
+  },
+  {
+    "title": "Work disability status",
+    "key": "WDS",
+    "content": [
+      "Patient is currently not working due to physical limitations from neurological deficits."
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s work disability status exactly as stated by the doctor. If not mentioned, return “-”. Do not infer."
+  },
+  {
+    "title": "Request for medical authorization",
+    "key": "RFMA",
+    "content": [
+      "EMG",
+      "Anterior cervical discectomy and fusion (ACDF) C3–C7",
+      "Posterior laminectomy C7–T1 (if needed)"
+    ],
+    "default": "-",
+    "instruction": "Extract only the items the doctor explicitly requested for insurance or medical authorization. Return each request as a single line in the format:\n<treatment/procedure/imaging/referral>\nDo not include the overall plan, work restrictions, or explanations. If no requests are mentioned, return “-”."
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [
+      "Next Appointment: Return to clinic in 1–2 months to discuss surgical decision.",
+      "Review and Adjustments: Review EMG results, assess surgical candidacy, and finalize surgical plan."
+    ],
+    "default": "No follow up",
+    "instruction": "Extract the follow-up schedule exactly as dictated. Include both:\nNext Appointment: when the patient should return (e.g., “Return to clinic in 2 weeks”).\nReview and Adjustments: what will be reviewed or adjusted at that visit, if mentioned.\nIf no follow-up is mentioned, return “No follow up.”"
+  }
+]

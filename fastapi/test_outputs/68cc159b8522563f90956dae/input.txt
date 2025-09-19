@@ -1,0 +1,287 @@
+ROLE: You are an expert medical scribe.
+TASK: Extract structured medical information from a doctor-patient conversation transcript and populate a provided JSON template.
+
+CRITICAL INSTRUCTIONS:
+1.  **Output Format:** You MUST output a JSON array of objects that exactly matches the structure, keys, and order of the provided template.
+2.  **Filling the Template:** For each object in the template, you must fill the `"content"` field based *only* on the transcript, strictly following the `"instruction"` for that field.
+3.  **Source Material:** Use ONLY the information explicitly stated in the provided medical transcript. Do not infer, assume, or add any information not present in the transcript.
+4.  **Handling Missing Data:** If no relevant information is found in the transcript for a specific field, you must use the `"default"` value provided for that field in the template.
+5.  **Verbatim vs. Interpretation:**
+    - For fields requiring verbatim extraction, extract the doctor's words exactly as dictated.
+    - For fields requiring summarization, synthesize the information into a concise, professional clinical note.
+    - Use clinical judgment ONLY to correct unambiguous errors (e.g., a likely misstated joint name if the context is 100% clear). Do not change terms without strong justification.
+6.  **Final Output:** Your entire response must be ONLY the completed JSON array. Do not include any other text, explanations, or markdown code blocks.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "History of present illness",
+    "key": "HPI_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "Summarize the patient’s History of Present Illness (HPI) as a clear, professional paragraph in clinical note style. Include only details explicitly stated in the transcript: symptoms, onset, duration, location, severity, aggravating or relieving factors, treatments tried, impact on daily life, and relevant prior evaluations or consultations. Maintain chronological flow. Exclude physical exam findings, imaging results, and assessment details. Do not infer or assume information. Use full sentences and natural scribe-style narrative."
+  },
+  {
+    "title": "Vitals",
+    "key": "VITALS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all information related to the patient’s vitals. Include whether vitals were filed for the visit, whether height and weight are documented, and whether BMI is available or could be calculated. If any of these are explicitly stated as absent or not on file, include that. If no vitals are mentioned, return “-”."
+  },
+  {
+    "title": "Physical Exam",
+    "key": "PHYSICAL_EXAM",
+    "content": [],
+    "default": "No physical exam mentioned.",
+    "instruction": "Extract details of the physical examination if mentioned. Include whether an exam was performed, the date (if available), and a concise summary of the findings. If findings are described as unchanged or consistent with previous exams, include that. If no physical exam is mentioned, return “No physical exam mentioned.”"
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract the patient’s constitutional review of systems (ROS) findings exactly as stated in the transcript. If no findings are mentioned, return “Normal.” Do not add or infer details."
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract any skin examination findings exactly as dictated. If none are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Vascular",
+    "key": "ROS_VASCULAR",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract any vascular findings exactly as dictated. If no vascular findings are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Neurologic and Lumbar",
+    "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the neurologic and lumbar exam findings exactly as stated in the transcript. Organize the findings under these categories if present:\nAlignment\nSensation\nRange of Motion (flexion, extension, rotation, pain)\nStrength (with muscle groups and scores if given)\nReflexes (patellar, ankle, clonus)\nInclude laterality (left/right) where mentioned. Return only what is explicitly stated. If no findings are reported, return “-”."
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all imaging results explicitly mentioned (e.g., X-ray, MRI, CT, ultrasound). Include the type of imaging, body part, date (if given), and the findings exactly as dictated. Present the results as a bulleted list. If no imaging is mentioned, return “-”. Do not add or interpret."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT",
+    "content": [],
+    "default": "-",
+    "instruction": "Generate the Assessment as a concise list of the patient’s active diagnoses or conditions relevant to this visit.\nRules:\nInclude symptom-based problems (e.g., “back pain”) and diagnosis-based terms (e.g., “spinal stenosis”).\nExclude normal findings and negative statements.\nInclude “status post” only if it describes an ongoing issue (e.g., “stiffness after surgery”).\nKeep terms short and scribe-style, without exam details or explanations.\nReturn strictly as a list (one item per line, with dash or bullet).\nIf no active conditions are mentioned, return “-”."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [],
+    "default": "-",
+    "instruction": "Write the doctor’s plan exactly as dictated, in scribe-style summary form.\nRules:\nInclude only treatments, procedures, medications, therapies, referrals, patient education, and follow-up instructions explicitly mentioned in the transcript.\nDo not add or assume any details (e.g., do not invent follow-up times unless stated).\nIf a follow-up is specified, include it exactly as dictated, formatted as: “Return to clinic in X days/weeks/months.”\nUse short sentences or numbered/bulleted steps.\nIf no plan is mentioned, return “-”."
+  },
+  {
+    "title": "Work disability status",
+    "key": "WDS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient’s work disability status exactly as stated by the doctor. If not mentioned, return “-”. Do not infer."
+  },
+  {
+    "title": "Request for medical authorization",
+    "key": "RFMA",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only the items the doctor explicitly requested for insurance or medical authorization. Return each request as a single line in the format:\n<treatment/procedure/imaging/referral>\nDo not include the overall plan, work restrictions, or explanations. If no requests are mentioned, return “-”."
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Extract the follow-up schedule exactly as dictated. Include both:\nNext Appointment: when the patient should return (e.g., “Return to clinic in 2 weeks”).\nReview and Adjustments: what will be reviewed or adjusted at that visit, if mentioned.\nIf no follow-up is mentioned, return “No follow up.”"
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Patient_1: ... treatments, five treatments now.
+Doctor_1: Yeah, yeah.
+Patient_1: I could touch it before. My old side, I, I could move my fingers probably there, but now I have to come down.
+Doctor_1: Mm-hmm.
+Patient_1: From the radius side, my middle finger's coming up more, but my index finger and my thumb, I can't use at all.
+Doctor_1: Yeah.
+Patient_1: And to spread my hands-
+Doctor_1: So, so the left side is still normal?
+Patient_1: I can't spread at all.
+Doctor_1: Oh, for sure. Is there still pain?
+Patient_1: And there's no pain, and I know I'm, like, losing muscle.
+Doctor_1: Yeah.
+Patient_1: I don't know if you can see.
+Doctor_1: What about your, like, walking? Your legs?
+Patient_1: My walking? No, nothing at all. No pain in my neck.
+Doctor_1: Mm-hmm.
+Patient_1: I've always had t- issues with my back, just in so many different accidents and stuff, but nothing that's-
+Doctor_1: Hmm.
+Patient_1: ... really bothers me. I'm not face- I'm not sitting in a car for four hours-
+Doctor_1: Okay.
+Patient_1: ... or something like that.
+Doctor_1: Yeah. So you're not taking any medications for pain?
+Patient_1: No, no.
+Doctor_1: Uh-huh, okay. Have you had a, a ner- a nerve study done of your arm? An ENG where they put like little electrodes and measure the nerve function?
+Patient_1: No.
+Doctor_1: Okay.
+Patient_1: And actually, I have one ordered right now.
+Doctor_1: Oh, you do? Okay. When- is it scheduled already or?
+Patient_1: Yes, it's been, it's way out though. They're getting sooner instead of right now, I had one for November 4th.
+Doctor_1: November, okay. That's six weeks off. Who's doing it, do you know?
+Patient_1: Uh, I'm having it done at, uh, at Cedars.
+Doctor_1: Cedars, okay. All right. Well... Hm. Okay.
+Patient_1: I made an appointment with you and my, my good friend, John Reese-
+Doctor_1: Mm-hmm.
+Patient_1: ... and Debbie.
+Doctor_1: Yeah, yeah.
+Patient_1: He said I had to make that appointment, so I got to get a couple of appointments. I called mine to show I'm really good
+Doctor_1: So, well let me have a look at your neck first.
+Patient_1: Okay.
+Doctor_1: Up on, even backwards. Does that bother you?
+Patient_1: No.
+Doctor_1: How about looking down? Any pain?
+Patient_1: No pain.
+Doctor_1: Okay. I'm gonna test your strength now, okay?
+Patient_1: Okay.
+Doctor_1: Elbows out like this. Hold it there real strong. Don't let it push down. Good. Like this, real strong. Lost that muscle too, huh?
+Patient_1: Yeah.
+Doctor_1: This side. Can you make a fist like that? Rock it upwards. Hold it there real strong. Real good, not bad. Left side's rock solid. And then downward. This side's rock solid. And this side is weak, huh?
+Patient_1: Yes.
+Doctor_1: And try to spread your fingers. A lot of muscle wasting-
+Patient_1: Yeah.
+Doctor_1: ... in this, uh, first dorsal interosseous and intrinsic hand muscles. And a lot in this forearm too. Palms up. Can you feel me touching all the fingertips?
+Patient_1: Yes.
+Doctor_1: And how about here?
+Patient_1: Yes.
+Doctor_1: Nor- feels normal?
+Patient_1: Yes, just a little bit of tingly.
+Doctor_1: Yep. This wasting is thenar and hypothenar muscles as well.
+Patient_1: Yes.
+Doctor_1: Can you make a fist? So, flexion lag in this index and middle finger. How about I just let it drop now, just go with the flow.
+Patient_1: Okay.
+Doctor_1: Fall. Good. Your legs here, relaxed. Other side. Jumpy. Okay, hyperflexing these lower extremities. So, this is a serious condition here. Let me show you all the things that are going on here. So, on x-rays you know, you've got some wear and tear in your neck. On the front view here, you know, pretty straight. Not a big deal. A little tilt to the right. Looks like two, three, four, five.
+Patient_1: Yes.
+Doctor_1: Okay. And then on the side view, this is the front, this is the back here. You're a little hunched forward. Okay, normally we're more upright and more swayed back. A lot of times we hunch forward to protect the nerves though.
+Patient_1: Okay.
+Doctor_1: Right? So, when there's a pinched nerve in our spine, we hunch forward to help sort of open up the spaces. So when people hunch forward, it kind of unhinges a little bit.
+Patient_1: Okay.
+Doctor_1: Okay? So, kyphotic posture, hunched over. Uh, these are the bones. There should be spacing between, and you see these discs are very worn out. Moderate disease, 4-5, severe at 5, 6, and 7. A lot of bone spurring at 4-5 and 5-6 too.
+Patient_1: And that's, that's been from wear, over years?
+Doctor_1: Over the years, wear, you know, wear and tear. That's all just, eh, kind of, you know, not too big of a deal. But when we look at the MRI, it is very, very concerning and severe. So, this is the side view of your neck. Okay? This is the front of your neck, this is the back of your neck. The base of the brain is up here. What you can see here is the base of the brain, and here's the spinal cord coming down. The spinal cord is basically a group of nerves that communicate the brain to the rest of the body. Okay? Everything is contained in a sac of fluid. That's the spinal fluid, where it's all being kind of floats in there. It's protected by the fluid, and the fluid gives it nourishment. So up here looks beautiful, right? The spinal cord is this gray rope. There's a layer of white on either side, that protects it. And then here you see, um, well, these are the bones here. Right? There are discs in between, the disc or the, the cushions. This disc blew out, and it just like a jelly donut, got squished and this disc popped out and, and dinged the cord. You see how the cord is kind of a more smooth, dark color?
+Patient_1: Yes.
+Doctor_1: And you see this kind of whitish discoloration? We call that myomalacia. It's bruising of the cord. So, he's got a large disc herniation, C3, C4. It's hitting, it's touching the cord anteriorly, and there's a spot of myomalacia. And then if you come down, you see there's no white protecting that area. And then there's no white protecting this area. It is, it is being squished and choked, and you see a lot of bright spots within the cord. So that's severe myomalacia. The brighter that, that spot means the more bruising, the more edema and damage there is to the spinal cord. So, let me go to this view to see how bad it really is. So, this is looking up, up the pipe. So, this is the spinal cord, just coming out as the fat. Right? And here's the layer of spinal fluid around it. And then just like the freeway, there are exit ramps where the nerves branch out of the neck and go down your arm. So, since we're looking up, this is right, this is left. See how the nerve's coming out here? Looks good. This is totally normal. We're at the top of your neck here. And we come down to C3-4.Again, the large central disc herniation, how it's kind of dinging the cord. And so, the cord just... more like a little kidney bean now.
+Patient_1: Yes.
+Doctor_1: And then the exit ramps... Eh, a little tight on the left, so I'll say moderate, uh, on the left and then mild on the right. Not a big deal, that nerve only supplies this area. Okay? That could cause neck pain. And then we go down lower, C4-C5, not too horrible. Still just a little layer of white, okay, but pretty tight on the left. And then, yeah, pretty tight on the right, so moderate on both sides, okay, at C4-C5. And then at C5-C6, right spot of myomalacia. Now there's no space around the cord at all. Now there's zero space around, you know, the, for the exit ramps to get out of the, out of the spine there. So, those are the nerves trying to get out of the spine and they're being choked off. It's actually more severe on the left.
+Patient_1: Mm-hmm.
+Doctor_1: So, severe pons bilateris at C5-C6, but worse on the left, a severe central stenosis. And then we get past it, we get to the next level and it is, you know, still squished.
+Patient_1: Good.
+Doctor_1: Okay. And again, both sides are pretty darn tight, uh, I would say moderate severe both sides at C6-C7. And finally, at C7-T1, still kinda tight. Still kinda tight. Exit ramps looking not bad. Moderate centric stenosis at C7-T1. ... two, three, four, five, six, seven. So, we got a lot of s- a lot of things going on here.
+Patient_1: On T1?
+Doctor_1: Yeah, all the way down to T1, actually. It's still, it's still worrisome. And that, that exit ramp there does go down to the hand.
+Patient_1: Okay.
+Doctor_1: So, for you, um, you- you have, you have, uh, two problems, okay? So, definitely, the nerves and the spinal cord in your neck are being pinched. So, the- the signal is actually gonna be disrupted getting to the rest of the body. Okay?
+Patient_1: Okay.
+Doctor_1: And there's no protection around the cord right now. So, if you were to fall or even get in a minor fender bender, any ding to the cord, you could actually be paralyzed from here on out. So, this is very serious. Um, the nerves, the nerves are basically given out or damaged now going down to the arm, hand.
+Patient_1: Okay.
+Doctor_1: So, when the signal doesn't get through to the muscle, the muscle wastes away.
+Patient_1: Okay.
+Doctor_1: Okay? Um, I think the EMG is a good idea. The EMG basically will tell us where the damage is coming from, how bad it is. Um, I think the other problem you have is you probably have a pinched nerve in your arm and elbow as well.
+Patient_1: Okay.
+Doctor_1: Okay? And that's a, that- that leads to this kind of stereotypical, uh, posturing of the hand here.
+Patient_1: Oh.
+Doctor_1: We call that an ulnar nerve palsy. That's- that's more pinching from here. When- when it's already pinched here, there's already a lower signal, so any irritation here, boom, it's like two happe- two car accidents. You know? Traffic builds up, another car accident, now there's no- no flow going through it. Um, but this is the first car accident, you know, this is the more major one. So, the EMG, um, without even seeing it, I'm- I'm guessing they're gonna find some damage for you. But this is the bigger problem here. Uh, you need surgery for this. Okay? I don't, I don't think there's any surgeon that would see, look at this and say you wouldn't need surgery.
+Patient_1: Right. This is different, too, I can see, yeah.
+Doctor_1: Yeah, yeah . This is, this is kind of scary tight here, right? You see down here, this is what it should look like. This is what you- it looked like when you were young here. And then all- all this is pretty dinged up. So, uh, at, so at this point, the question is, what surgery would you need?
+Patient_1: Let's do...
+Doctor_1: So, there's- there's two, there's two ways of fixing this. Well, three ways, I guess. Um, one way is to go through the front and the other way is to go through the back. Okay?
+Patient_1: Okay.
+Doctor_1: We, we- we like to go through the front because it's a smaller surgery.
+Patient_1: Okay.
+Doctor_1: You know, I do it through a microscopic approach. Even with four levels, it's about an inch, inch and a half to see. I make a little slit in the front here. So, right between your deltoid muscle, that gets me right to the spine. There's really no cutting. We just kind of divide it. And we go in with a microscope and a little tube here, and we can, we can, uh, we can get to each level, you know. From the front, we can, we can do four levels.
+Patient_1: Okay.
+Doctor_1: You act- you actually have a particularly longer neck. So, this is, this is your jawline here, so I can probably sneak under and get that, get this level here, here, here. And then this level is actually just above your collarbone, so I can technically get to there, too. Five levels from the front is very rare, because not many people have this thick neck that can be accessible. Uh, but five levels also is, is, uh, the biggest issue with this is because we push your throat aside, you can re- w- wake up with a really sore throat, meaning you may not even be able to swallow for a few days or a couple weeks. Like, you can really get bruised up.
+Patient_1: Okay.
+Doctor_1: 'Cause during surgery, you're completely out. You're- you're intubated. There's a- a tube, um, that goes down your windpipe and breathes for you. And that tube irritates the throat as well, so it's kind of a double hit on the throat. Uh, I've only seen that happen maybe once, once... Actually, one, one time it was ser- serious because the patient had, uh, prior esophageal cancer, so the throat was already scarred. But after surgery, he- he didn't even have emergency surgery, but he had a tough time swallowing afterwards and it was permanent.
+Patient_1: Okay.
+Doctor_1: Yeah, so he's kind of an outlier because he had prior radiation to his neck. Uh, another patient had s- uh, difficulty swallowing, but it went away after a month. Okay?
+Patient_1: Okay.
+Doctor_1: But for a month he was just, you know, just smoothies, like this liquid diet. Most patients, most men will have a sore throat for like, a week or two, but they can still eat, everything is fine. And then after that, you know, hmm. They might be a little sore or achy. Um, that's sort of the biggest, uh, um, side effect from this.
+Patient_1: Okay.
+Doctor_1: Um, so for you, um, I would, I would recommend going through the front because it's less bleeding, there's less trauma. I've actually never seen infection from this. Um, it's an overall better-tolerated surgery. Um, but that's with the caveat that I can get all five levels.
+Patient_1: Okay.
+Doctor_1: If I get in there and once we do this, we can't get to that level, it's just too close to the collarbone...Sometimes you kind of shave off a little bit of a bone to get there, but I think that caused a lot of trauma to the chest here. Um, the other op- way to do it was to go through the back. Going through the back works, for sure, but, you know, all th- all these muscles and ligaments back here, we cut into it and get a lot of soreness making stuff worse. And sometimes there's that sort of like that prolonged or permanent soreness when someone goes through the back. So, for you, I would recommend going through the front first. For sure I can get four levels. If, if I can't get that fifth level, we, we could do, we could do the, the fifth level soon or we can even leave it for another day. That's, that fifth level is actually not tight centrally, right? This is what, this is what is urgent, the spinal cord. The spinal cord is urgent, because it supplies the entire body. So, going through the front, we, we address the main fire, right? Down here, C7, C1 is still pinching the nerves that go down, right, and one of those nerves contributes to the hand. So, you need that fifth level addressed, but it's not as emergent as the spinal cord is. Right? So, this can even be done in like a few weeks or even a couple months after, by going through the back. And then the advantage is now if I have to go through the back, it's still a smaller surgery. I'm not doing five levels from the back. I'm just doing one level from the back. Right? So, it's less trauma for the back too, less risk of that pain, achiness, and infection, all the, all the above. So, if I go through the front, it's only a one-day hospital, maybe two nights.
+Patient_1: Is there recovery for the front?
+Doctor_1: The front, you're up and walking right away, you're moving your arms. We just don't want you moving your neck too much for the first six weeks. Uh, if you're outdoors, you wear a collar. If you're indoors, you don't have to wear it. Right?
+Patient_1: Okay.
+Doctor_1: Yeah. That's, that's the gist of it, you know. Um, it's s-... I would say doing four levels from the front, there's probably about a 2% chance that the bones... Well, what we do is I go through the front, and the bones are hard, the disc is soft, right? This black stuff is soft. I basically j- get to the front here and I start pulling that disc out, start scraping it out, and I get to here and I pull that away from the spinal cord. Get to here, pull that away from the spinal cord. Pull all this junk away from the spinal cord, and then same here. This part's a little concerning, though. You see how there's, there's just so much junk behind the, be- behind this bone? So, if I get here, I can only kind of pull away a little bit here, and if I get in here I can kind of pull away here. So, there's a... If I come through the front, there's a chance I have to shave a little bit of that bone off just to get to, to there, right, to get all that piece out. And then from here, all that piece out. So, I end up... I may end up having to take out a little bit more of this bone, or sometimes I take this bone out completely. The... And then all this is removed from the spinal cord. Okay? So, once that junk is re- taken out, there's a, there's a space there, and I put a cage or a spacer there. It's, it's 3D-printed titanium. It keeps the bones apart and it restores that space. And once I push it apart, I can get into the exit ramps and, and do a roadwork or open it up even more so.
+Patient_1: All right.
+Doctor_1: But when I restore that space by pushing the bones apart, that opens it up even more, and it's permanent. So, the nerves start to wake up, signals start to get through. Okay? Um, so one, it'll never get worse. Two, you will make some improvement, but I don't know how much is gonna come back.
+Patient_1: Right.
+Doctor_1: I can't tell you. I don't know.
+Patient_1: Yeah.
+Doctor_1: And I am... And I'm still thinking of getting an EMG, and you'll probably need another surgery here or even here. But that's, that's done by a hand surgeon and that's a, that's a quick 10-minute surgery. But we open up here first, because this is the source, right? So, I mean, yeah, that, that would be ƒ5000. They should... We'll do the front first. If I can get five levels, great. If I can't, we save that fifth level for another day. But this is, this is the fiber here. Here, here, here, where the cord is getting dinged.
+Patient_1: And if you do the front and you do the second part from the back for the T1-
+Doctor_1: Yeah.
+Patient_1: ... how long does that take then to repair? Is it less time since you've already done the front of it?
+Doctor_1: Yeah. If I go through the back for one level, it's probably like a one-night or a two-nights stay in a hospital. Um, kind of the same thing. I mean, if... It's probably easier if you just do it at the same time, that way you don't prolong the recovery process.
+Patient_1: And can you reach everything just from the back, or do you have to go through the front too after you do-
+Doctor_1: Yeah, if I, if I just go through the back, I can do the whole thing through the back, no problem. The issue is that now we've opened up your back, you know-
+Patient_1: Mm-hmm.
+Doctor_1: ... this much. And then that's an ugly scar. It just ru-... That's all it takes, so-
+Patient_1: The first one's the short and then-
+Doctor_1: Correct. Two s- two smaller approaches are better than one big approach.
+Patient_1: Okay. So, you said if you couldn't reach that last one-
+Doctor_1: I'd probably do it the next day.
+Patient_1: Oh, okay.
+Doctor_1: Yeah. What I do is I do it on a... Do, do the front on a Tuesday, give you a break, do the back on a, on a Wednesday. Yeah. Studies have shown that... 'Cause if I just go front and then I flip you, do the back... If I do the front, it'll take me two hours. We flip you, prepare you, that takes another 30, 45 minutes. Going through the back's another two hours. It's just-
+Patient_1: Oh.
+Doctor_1: ... the positioning ƒ5000 certain problem. Now we're looking at a four-hour surgery, four plus. Um, so study... A lot of studies have shown that anything longer than four hours, the anesthetics kind of kick in. It's tough on the body, the recovery, the infection rate, and inflammation. So, uh, you break the two surgeries up into two two-hour surgeries, and patients do way better.
+Patient_1: All right.
+Doctor_1: Yeah. So...
+Patient_1: Thank you for your time today.
+Doctor_1: Yeah. No, no problem. Uh, if you do want a, uh, a referral for an EMG, we have a Dr. Britton here in this office that does it for us.
+Patient_1: Okay.
+Doctor_1: Or Dr. Perino upstairs. See if you can get an earlier appointment.
+Patient_1: Oh, yeah.
+Doctor_1: Okay?
+Patient_1: All right.
+Doctor_1: And then think about the surgery, um, and then...
+Patient_1: Well, it could just be done sooner than later.
+Doctor_1: It, it has to be done, yeah. I don't, I don't think there's any question or anything.
+Patient_1: And timeframe? When you would you suggest having that done?
+Doctor_1: If I were in your shoes, I would get it financially.
+Patient_1: Right.
+Doctor_1: Like a month to two months max wait, yeah.
+Patient_1: Okay.
+Patient_1: And you think most of that damage is just done from years? I know I've been in so many darn car accidents and stuff, and I've been rear-ended probably must have over 10 times, uh, in my lifetime.
+Doctor_1: Yeah. Yeah. All of that is cumulative. All the damages, it's just adds up, you know, every time they hit you.
+Patient_1: Hit a little bump here and then-
+Doctor_1: Yeah.
+Patient_1: ... get another one a couple years later, just knock it on five.
+Doctor_1: Yeah. Yeah. All right. Yeah. St- stuff's fine. All right. Just wait here. I'll have my assistant give you the order for that nerves test. But actually, I wouldn't even wait for that nerve test.
+Patient_1: Yeah.
+Doctor_1: Yeah. I, I think it's he- it's helpful for that future stuff. But this is obvious, we don't need a nerve study to address this.
+Patient_1: Thank you very much.
+Doctor_1: All right. No problem. Good meeting you.
+Patient_1: Thank you.
+Doctor_1: Just wait here. I'll have my assistant set you up. Okay?
+Patient_1: Okay. Thank you.
+Doctor_1: All righty. You got all the HPI. Just add that, uh, there's not much pain now, just a lot of weakness. Um, muscle waste on the right side. Left side's not bad. On exam, you got a lot of muscle wastings at the right upper extremity, and especially in the hand, intrinsic muscle and supraspor- dorsal interosseous. He's got four out of five, um, strength in his wrists, flexor and extensor. He's, uh, he's got, uh, um, flexion contractures of the, uh, ring and small fingers. Um, and then x-rays, MRIs, you got. So assessment, he's got severe, um, uh, neurologic deficits throughout that right arm. He's found to have severe, uh, stenosis with myomalacia throughout the cervical spine. Uh, we talked about treatments. Due to neurologic deficits, I recommend surgical intervention. Getting an EMG would be helpful. He likely has acutal... sorry, an ulnar nerve palsy as well, but the cervical stenosis must be addressed first. I would recommend doing an ACF C3 down to C7, possibly C7 T1. Uh, for C7 T1, um, if we can't get it from the front approach, then, uh, I would take him back the next day for a posterior single level lam- posterior lamina fusion. There's benefits to come, but he doesn't think about it as well. I gave him a new order for an EMG to see if we can get it done sooner with another doctor who's agreeable. He'll let me know if he decides on surgery. Okay, Doctor. Thank you. You're welcome. All right. Next, we have Branham. Hey there.
+Patient_1: Hey. How are you?
+Doctor_1: Good. How are you?
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

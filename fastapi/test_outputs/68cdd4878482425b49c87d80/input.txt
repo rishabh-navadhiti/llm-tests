@@ -1,0 +1,277 @@
+ROLE: You are an expert medical scribe.
+TASK: Extract structured medical information from a doctor-patient conversation transcript and populate a provided JSON template.
+
+CRITICAL INSTRUCTIONS:
+1.  **Output Format:** You MUST output a JSON array of objects that exactly matches the structure, keys, and order of the provided template.
+2.  **Filling the Template:** For each object in the template, you must fill the `"content"` field based *only* on the transcript, strictly following the `"instruction"` for that field.
+3.  **Source Material:** Use ONLY the information explicitly stated in the provided medical transcript. Do not infer, assume, or add any information not present in the transcript.
+4.  **Handling Missing Data:** If no relevant information is found in the transcript for a specific field, you must use the `"default"` value provided for that field in the template.
+5.  **Verbatim vs. Interpretation:**
+    - For fields requiring verbatim extraction, extract the doctor's words exactly as dictated.
+    - For fields requiring summarization, synthesize the information into a concise, professional clinical note.
+    - Use clinical judgment ONLY to correct unambiguous errors (e.g., a likely misstated joint name if the context is 100% clear). Do not change terms without strong justification.
+6.  **Final Output:** Your entire response must be ONLY the completed JSON array. Do not include any other text, explanations, or markdown code blocks.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "History of present illness",
+    "key": "HPI_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "Summarize the patient’s History of Present Illness (HPI) as a clear, professional paragraph in clinical note style. Include only details explicitly stated in the transcript: symptoms, onset, duration, location, severity, aggravating or relieving factors, treatments tried, impact on daily life, and relevant prior evaluations or consultations. Maintain chronological flow. Exclude physical exam findings, imaging results, and assessment details. Do not infer or assume information. Use full sentences and natural scribe-style narrative."
+  },
+  {
+    "title": "Vitals",
+    "key": "VITALS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all information related to the patient’s vitals. Include whether vitals were filed for the visit, whether height and weight are documented, and whether BMI is available or could be calculated. If any of these are explicitly stated as absent or not on file, include that. If no vitals are mentioned, return “-”."
+  },
+  {
+    "title": "Physical Exam",
+    "key": "PHYSICAL_EXAM",
+    "content": [],
+    "default": "No physical exam mentioned.",
+    "instruction": "Extract details of the physical examination if mentioned. Include whether an exam was performed, the date (if available), and a concise summary of the findings. If findings are described as unchanged or consistent with previous exams, include that. If no physical exam is mentioned, return “No physical exam mentioned.”"
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract the patient’s constitutional review of systems (ROS) findings exactly as stated in the transcript. If no findings are mentioned, return “Normal.” Do not add or infer details."
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract any skin examination findings exactly as dictated. If none are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Vascular",
+    "key": "ROS_VASCULAR",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract any vascular findings exactly as dictated. If no vascular findings are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Neurologic and Lumbar",
+    "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the neurologic and lumbar exam findings exactly as stated in the transcript. Organize the findings under these categories if present:\nAlignment\nSensation\nRange of Motion (flexion, extension, rotation, pain)\nStrength (with muscle groups and scores if given)\nReflexes (patellar, ankle, clonus)\nInclude laterality (left/right) where mentioned. Return only what is explicitly stated. If no findings are reported, return “-”."
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all imaging results explicitly mentioned (e.g., X-ray, MRI, CT, ultrasound). Include the type of imaging, body part, date (if given), and the findings exactly as dictated. Present the results as a bulleted list. If no imaging is mentioned, return “-”. Do not add or interpret."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT",
+    "content": [],
+    "default": "-",
+    "instruction": "Generate the Assessment as a concise list of the patient’s active diagnoses or conditions relevant to this visit.\nRules:\nInclude symptom-based problems (e.g., “back pain”) and diagnosis-based terms (e.g., “spinal stenosis”).\nExclude normal findings and negative statements.\nInclude “status post” only if it describes an ongoing issue (e.g., “stiffness after surgery”).\nKeep terms short and scribe-style, without exam details or explanations.\nReturn strictly as a list (one item per line, with dash or bullet).\nIf no active conditions are mentioned, return “-”."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [],
+    "default": "-",
+    "instruction": "Write the doctor’s plan exactly as dictated, in scribe-style summary form.\nRules:\nInclude only treatments, procedures, medications, therapies, referrals, patient education, and follow-up instructions explicitly mentioned in the transcript.\nDo not add or assume any details (e.g., do not invent follow-up times unless stated).\nIf a follow-up is specified, include it exactly as dictated, formatted as: “Return to clinic in X days/weeks/months.”\nUse short sentences or numbered/bulleted steps.\nIf no plan is mentioned, return “-”."
+  },
+  {
+    "title": "Work disability status",
+    "key": "WDS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient’s work disability status exactly as stated by the doctor. If not mentioned, return “-”. Do not infer."
+  },
+  {
+    "title": "Request for medical authorization",
+    "key": "RFMA",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only the items the doctor explicitly requested for insurance or medical authorization. Return each request as a single line in the format:\n<treatment/procedure/imaging/referral>\nDo not include the overall plan, work restrictions, or explanations. If no requests are mentioned, return “-”."
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Extract the follow-up schedule exactly as dictated. Include both:\nNext Appointment: when the patient should return (e.g., “Return to clinic in 2 weeks”).\nReview and Adjustments: what will be reviewed or adjusted at that visit, if mentioned.\nIf no follow-up is mentioned, return “No follow up.”"
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: Hi, there. How are you? Good. Now, how's the pain? Any changes since I last saw you?
+Patient_1: It's like it never happened on Monday night, so-
+Doctor_1: Hmm. You think it helped a little bit or it helped you sleep?
+Patient_1: Help me sleep, I guess, you know.
+Doctor_1: Mm-hmm.
+Family_member_1: You did say it took away the general, like, right pain.
+Patient_1: Yeah, it... Yeah, it did take that 'cause I try to take it early enough in the evening so...
+Doctor_1: Right. Are you still working?
+Patient_1: Oh, yeah.
+Doctor_1: You still holding down those horses? Man.
+Patient_1: Oh, yeah.
+Doctor_1: And the, and the back is still what hurts you the most? Like more than the neck?
+Patient_1: The neck, the neck doesn't hurt. The neck is stiff, the shoulder is stiff.
+Doctor_1: Okay.
+Patient_1: Like, with vertigo and so on.
+Doctor_1: Mm. Is there any weakness in the arm or numbness in the hand?
+Patient_1: There's no numbness. I wouldn't say, it seems strong enough. And I, I mean, I can still do like weights with it, you know. I mean, I'm right-handed so-
+Doctor_1: Mm-hmm.
+Patient_1: ... it's usually about performing with my right hand anyway just 'cause, you know, my right's probably stronger but I-
+Doctor_1: And, and where in the back does it hurt the most?
+Patient_1: In the back-
+Doctor_1: Yeah.
+Patient_1: ... right to the left of L2.
+Doctor_1: Okay. Anything down the butt or the legs?
+Patient_1: No, just... I mean, the, you know, that, that nerve sensation-
+Doctor_1: Mm-hmm.
+Patient_1: ... that I get like in my toes. The toes will kind of maybe quiver a little bit-
+Doctor_1: Mm-hmm.
+Patient_1: ... pain a little bit. Like a burning sensation kind of behind it.
+Doctor_1: Mm.
+Patient_1: And then that, you know, when I bend over sometimes and can't straighten back up-
+Doctor_1: Mm.
+Patient_1: ... it looks like wiggle around or worst case scenario .
+Doctor_1: Okay. Let me just check your trach here. You make a fist like that, cock it upwards, hold it there real strong, okay? Go to this side, and downward. Hold it there. Good. This side. Now spread your fingers out. Close them together. That's not bad. What about the legs? Can you raise your knee like this?
+Patient_1: Yeah.
+Doctor_1: Hold it there. This side. That's pretty good. And cock your ankle, ankles upwards. Nice and strong. How far can you look up for me? Does that bother you? That's pretty darn good.
+Family_member_1: I know. Inaudible ] X-rays and MRI checkups.
+Doctor_1: Mm-hmm.
+Family_member_1: So if I didn't kind of handle one hand as-
+Doctor_1: Mm.
+Family_member_1: ... the day goes on, if we're x-raying a bunch of horses-
+Doctor_1: Mm-hmm.
+Family_member_1: ... and they're in line, which is a little more... You know, it's... You know, it's, you know, the arm will get-
+Doctor_1: It's gonna hold it.
+Family_member_1: ... held, and trying to... Some... There's a movement. Yes, you do like this, that flipping up.
+Doctor_1: Yeah.
+Family_member_1: Yeah.
+Doctor_1: Okay. Well, let's see. We did get an MRI of your neck. You do have some problems here. So this is the side view. Okay, this is the front. This is the back. These are the bones. Right. And they should be lined up, but this one's a little forward, right? That little step off right there. But that's actually m- pretty common. We actually see that more. We actually don't worry so much 'cause it's right at the base here. So, um, so there's a spondylitis C7, T1. This is lined up perfectly. These are line ups, just a disk here. That's lined up. But you see, this is forward, right? And a spondylitis three four. And that's a good-looking disk. It's a nice thick padding. Worn out, worn out, worn out, worn out. And right here is the base of the brain, here's the spinal cord coming down. And everything is surrounded by a stack of spinal fluid, and it gets a little crowded in here. Okay? So, we go to this view, let's see how crowded it really is. So just like the freeway, there is a central highway and then there are exit ramps. Okay? So this is looking down the f- the central highway. Or looking up actually. Right? So his- here's the spinal cord, here's the layer of spinal fluid surrounding it. This would be the central highway coming out of this at two. And then these are the exit ramps here. Since we're looking up, this is right, this is left. Split. This looks good. Room on both sides, room in the middle. Okay? But right here, look, we're windy. Now we go down to C3, C4. Central highway looks fine. Left exit ramp looks very tight. Right side, a little tight. So I would call that severe thrombosis on the left and only mi- mild on the right at C3, 4. And then we go down to the next level. Right side is kind of tight, moderate. Left side is pretty squished. And then the central highway is a little tight. You don't see much white around that cord anymore. So I would call that moderate central stenosis at C4, 5, and then severe thrombosis on the left. That's why your left side is a little worse, you know? Then we go down here. Right side, look at that exit ramp, looks beautiful. What happened here? So completely squished. Severe-
+Patient_1: There was a lot of traffic on C4.
+Doctor_1: Yeah.
+Family_member_1: Caltrans just running through-
+Doctor_1: Yeah, there's a truck.
+Patient_1: Yeah.
+Doctor_1: There's a truck blocking that exit ramp. So severe thrombosis on the left, uh, two, three, four, five, six. And then-
+Patient_1: Oh.
+Doctor_1: And then there's still a little layer of white, you know? So mild central stenosis at, uh, five, six. And then we go down lower at six, seven. Let me see. Six, so it gets better. Beautiful.
+Family_member_1: Yeah.
+Doctor_1: Pretty good, pretty good.
+Family_member_1: Yeah.
+Doctor_1: Six, seven looks fine. And then seven, one. Looks good, looks good.
+Family_member_1: Yeah.
+Doctor_1: So really, it's your nerve here.
+Patient_1: Here. And that, and that would cause this?
+Doctor_1: Arm to be a little weak.
+Patient_1: Yeah.
+Doctor_1: Shaking, pain.
+Patient_1: Baking.
+Doctor_1: But not everybody feels nerve pain, because this has happened...... over the bl- decades.
+Family_member_2: Yeah, there's no pain per se.
+Doctor_1: Yeah. But your body's just like stiff and then you'll notice that the quiver, the weakness.
+Family_member_2: Yeah.
+Doctor_1: That's the, that's the nerve. It's not sending enough signals down, so your brain's telling it to move, it just doesn't fire as much anymore. It's not firing 100%. And we saw your back last, last time, right? I mean, obv- obviously your back look is a little worrisome too. Yeah. Um ...
+Family_member_2: Should we back the bar and chair?
+Doctor_1: No, no. You're still good. So yeah, that L4, 5 especially, you know, the nerves are all squished together here. Should be able to look at that, L4, 5's whoo ...
+Family_member_2: And more stuff going on, on the left side as well, that would cause-
+Doctor_1: Yeah.
+Family_member_2: ... uh, left symptoms rather than right symptoms.
+Doctor_1: Yeah, your back and your neck seems like the left side is worse. You know, a lot of times if you're right-handed, your left side is that, you know, that strong jumping side, you know, so who knows. So what do we do? Um, one, I mean, you're still working, you're still functional, right?
+Family_member_2: I'm still functional.
+Doctor_1: And when I test you, it seems like it's still firing.
+Family_member_2: Right.
+Doctor_1: But w- but if I'm able to sense the weakness, that means you, you would have lost a lot of the strength already. For s- for someone to test and s- and, you know, see the weakness, you probably have lost already, uh, half of your strength. But if you're noticing a little weakness, then it's starting to set in, right?
+Family_member_2: Mm-hmm.
+Doctor_1: Um, so, you know, on the one hand, I, I'm not sensing any weakness and you're still functional, so I mean, the option is to treat this conserve- conservatively for now. Uh, you know, usually we just do this with therapy, all right, because the bones are a little misaligned. If we get the muscles strong, then the muscles can hold those bones more tightly together, keep them from causing damage. Right? So I def- definitely think we should start that 'cause you haven't started that yet, right?
+Family_member_2: Yeah. Yeah, we have to get ... right. And I do have to go next Wednesday.
+Doctor_1: Okay. Did I re- I, did I refer you for neck and back at that appointment?
+Family_member_2: No, just, um, just neck.
+Doctor_1: Just the back?
+Family_member_2: Just for X-ray.
+Doctor_1: Okay.
+Family_member_2: Yeah. It's over there-
+Doctor_1: Okay.
+Family_member_2: ... and so I start next Wednesday.
+Doctor_1: So let me, let me do one for the neck as well, okay?
+Family_member_2: The reason we're waiting till Wednesday is we have this horse sale this weekend, where she's gonna like-
+Doctor_1: Mm.
+Family_member_2: ... kill her body this week.
+Doctor_1: Okay. Yeah.
+Family_member_2: Once started and then ... well-
+Doctor_1: Yeah.
+Family_member_2: ... you know what I mean?
+Doctor_1: Yeah. Yeah. Exactly.
+Family_member_2: I might start Wednesday as soon as that's available.
+Doctor_1: Do you take like an ibuprofen or Tylenol, too?
+Family_member_2: I take like two Advil and two Tylenol close to three times a day.
+Doctor_1: Mm-hmm.
+Family_member_2: And I've tri- we've tried Prednisolone. We did a lower dose m- many months ago and that really didn't do much good.
+Doctor_1: Have you tried diclofenac? That's a prescription anti-inflammatory. It's more potent than ibuprofen. It's only twice a day. Why don't we try that?
+Family_member_2: Is the name the s- the same as the cream?
+Doctor_1: Uh, yes. It's a, it's the cream-
+Family_member_2: The, the brand name?
+Doctor_1: But it's a pill version.
+Family_member_2: There's just, uh ...
+Doctor_1: Yes. Yeah.
+Family_member_2: It's, uh, Surpect. Um ...
+Doctor_1: So why don't we do that, see if we ... that way we can cut down on the ibuprofens and Tylenol a bit, okay?
+Family_member_2: Okay.
+Doctor_1: Hopefully that works better too.
+Family_member_2: Okay. Any side effects on that?
+Doctor_1: Same with ibuprofen, it can cause an upset stomach-
+Family_member_2: Oh.
+Doctor_1: ... so take it with food. So let's do that. Give you the gabapentin as well. I would still take it and then let's do neck and back.
+Family_member_2: Okay.
+Doctor_1: And let's watch this. If you, if the pain starts to become out of hand, if you notice that it's getting weaker, arms, legs, if you notice that it's harder to stand or walk for a long time, um, don't wait till it's horrible. If you see that, that, you know, deterioration-
+Family_member_2: I mean, I've seen a deterioration from January-
+Doctor_1: Already, right?
+Family_member_2: ... until now.
+Doctor_1: Yeah. So-
+Family_member_2: Already. Already.
+Doctor_1: So keep track of it. I also want you to walk and look at the time.
+Family_member_2: Okay.
+Doctor_1: It's fine to walk slow, but I want you to be able to walk for an hour without stopping. Okay? If you see, it's like, "Oh, man, 45 minutes, I gotta sit or I gotta lean up against something." Then it's like, wow, now it's 30 minutes. If it falls below 30 minutes, that's when I tell patients, "We've got to do surgery." Okay? Um, if it's 30 minutes to ... and up, and up, I'm like, "Eh, it's up to you." You know?
+Family_member_2: But since she hasn't, she's not a person that's done a walking program, she could start slow and not expect-
+Doctor_1: Yes.
+Family_member_2: ... to be able to-
+Doctor_1: Yeah. Yeah. Maybe walk-
+Family_member_2: I mean, we're not gonna get to perfect pain management-
+Doctor_1: Correct. Yeah.
+Family_member_2: ... right away. Or, uh-
+Doctor_1: Yeah. Maybe walk 10, 15 minutes, do that for a week, then do 20 minutes, do it for a week and I'll ease up. All right. But I do want to see you back here in two months and we'll check on your progress of care. Is that okay?
+Family_member_2: Mm-hmm. Yep.
+Doctor_1: Yeah. I wanted to give you a, a new, new one too.
+Family_member_2: Now quickly, when you, you were doing that nerve thing the last time I was here-
+Doctor_1: Mm.
+Family_member_2: ... where this one seemed more hyperactive.
+Doctor_1: Yeah.
+Family_member_2: And what, what did, what did that tell us?
+Doctor_1: I think it's from that, the neck. Right?
+Family_member_2: You think it's from-
+Doctor_1: Yeah. Remember that one spot, there's some moderate central or central highway stenosis. When the cord is squeezed, the signals going down are a little bit, little bit altered, so the reflexes get a little bit more jumpy.
+Family_member_2: Mm-hmm.
+Doctor_1: You know. But it's a little odd that it's worse on the right side 'cause, 'cause the left side is actually more pinched.
+Family_member_2: Yeah. I think I can see it. Yeah.
+Doctor_1: So yeah. All right, my dear. Just wait here. I'll have my assistant set you guys up with the new prescriptions, okay?
+Family_member_2: Okay.
+Doctor_1: Thank you. That is a tough, hardworking lady. All right. So her neck's too stiff, that CDDD, but she feels a quiver, quote, unquote, and some weakness in her left arm if she uses it too much . Back is still tight, aching. Uh, gabapentin is helping a little bit and the exam's the same. MRI's, we got, so it says she's got stenosis spanning her neck, spawning stenosis in the back. Uh, cancel initial treatment options. We'll con- uh, start physical therapy for your neck and back. She'll, uh, take gabapentin. I'm gonna give her diclofenac to replace ibuprofen and Tylenol. Cancel, do the notes. Follow up in two months, uh, if, uh, it gets worse. We'll consider doing surgery or injections. She's agreeable.
+Patient_1: Okay, Dr. Lee. Thank you. What will be the dose for diclofenac?
+Doctor_1: Let's do the higher dose, 75.
+Patient_1: Okay, Dr. Lee. Thank you.
+Doctor_1: Thank you. Do, do, do, do, do, do, do, do, do. All right. Who is next? First name, in four. Pitino. How are you?
+Patient_1: Hi. Good. How are you doing?
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

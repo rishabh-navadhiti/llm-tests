@@ -1,0 +1,65 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "Patient Name",
+      "key": "PATIENT_NAME",
+      "content": [],
+      "default": "-",
+      "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Do not guess or infer, and do not return doctor names, staff names, or family members. If the patient’s name is not explicitly mentioned, return \"-\"."
+    },
+    {
+      "title": "Chief Complaint",
+      "key": "CHIEF_COMPLAINT",
+      "content": [],
+      "default": "-",
+      "instruction": "Extract the patient's chief complaint as a short phrase. Exclude extra details, context, or direct quotes. If no complaint is stated, return the default value."
+    },
+    {
+      "title": "HPI Spencer",
+      "key": "HPI_SPENCER",
+      "content": [],
+      "default": "-",
+      "instruction": "Summarize the History of Present Illness (HPI) as a single coherent paragraph in professional clinical note style. Include only details explicitly stated in the transcript about onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event to current status. Exclude exam findings, physical measurements, imaging, or other objective observations. Do not infer or assume information. Use full sentences, proper grammar, and clear narrative style, reflecting only what is explicitly reported."
+    },
+    {
+      "title": "Musculoskeletal",
+      "key": "MUSCULOSKELETAL_VERBATIM",
+      "content": [],
+      "default": "-",
+      "instruction": "Extract the musculoskeletal physical examination findings exactly as dictated by the doctor. Do not modify, paraphrase, or interpret—return the text verbatim. If no musculoskeletal findings are mentioned, return the default value."
+    },
+    {
+      "title": "Imaging Results",
+      "key": "IMAGING_RESULTS",
+      "content": [],
+      "default": "-",
+      "instruction": "Extract only imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return findings exactly as dictated, without adding or interpreting. If the doctor reports imaging as normal, return it as stated (e.g., 'X-ray normal'). If imaging was not performed or not mentioned, return the default value."
+    },
+    {
+      "title": "Assessment",
+      "key": "ASSESSMENT_SPENCER",
+      "content": [],
+      "default": "-",
+      "instruction": "Generate the patient's Assessment as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain') and diagnosis-based terms (e.g., 'trigger finger'). - Exclude normal findings (e.g., 'skin is intact') and negative statements (e.g., 'no tenderness'). - Include 'status post' only if it describes an ongoing issue (e.g., 'stiff finger after surgery'). - Keep terms short and scribe-style, without exam details or explanations. - Format strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+    },
+    {
+      "title": "Plan",
+      "key": "PLAN_SPENCER_",
+      "content": [],
+      "default": "-",
+      "instruction": "Write the doctor's plan exactly as dictated in the transcript, in scribe-style summary form. Rules: - Include only treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned. - Do not add or assume any details (e.g., do not invent follow-up times unless stated). - If follow-up is specified, include it exactly as dictated (e.g., 'return to clinic in 4 weeks'). - Use short sentences or numbered/bulleted steps. - If no plan is mentioned, return the default value."
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 1592,
+    "completion_tokens": 829,
+    "total_tokens": 2421
+  },
+  "timing": {
+    "total_time_ms": 9579.330921173096,
+    "generation_time_ms": 9578.904867172241,
+    "processing_time_ms": 0.0705718994140625
+  },
+  "error_message": null
+}

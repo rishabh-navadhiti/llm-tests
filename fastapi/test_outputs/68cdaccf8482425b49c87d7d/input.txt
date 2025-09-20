@@ -1,0 +1,167 @@
+ROLE: You are an expert medical scribe.
+TASK: Extract structured medical information from a doctor-patient conversation transcript and populate a provided JSON template.
+
+CRITICAL INSTRUCTIONS
+
+Output Format
+
+You MUST output a JSON array of objects that exactly matches the structure, keys, and order of the provided template.
+
+Do not include any other text, explanations, or markdown formatting.
+
+Filling the Template
+
+For each object in the template, fill the "content" field strictly based on the transcript, following the "instruction" for that field.
+
+Use ONLY information explicitly stated in the transcript.
+
+Handling Missing Data
+
+If no relevant information is present in the transcript for a field, return the "default" value exactly as provided in the template.
+
+Verbatim vs. Summarization
+
+For fields requiring verbatim extraction, copy the doctor’s words exactly as dictated.
+
+For fields requiring summarization, rewrite into a concise, professional clinical note.
+
+Do not infer or assume information beyond what is clearly stated.
+
+Capitalization Rules (MANDATORY)
+
+Always capitalize the first letter of any body part, anatomical structure, or specific location.
+
+Includes: Skin, Nail, Finger, Hand, Wrist, Forearm, Elbow, Shoulder, Clavicle, Chest, Abdomen, Hip, Thigh, Knee, Leg, Ankle, Foot, Toe, Neck, Back, Spine, Head, Face, Eye, Ear, Nose, Mouth, Tongue, Jaw, and all joint names.
+
+Always capitalize anatomical descriptors such as “A1 Pulley,” “Extensor Tendon,” “Flexor Tendon,” “Palmar Surface,” “Thenar Eminence,” etc.
+
+Do not lowercase these terms even if they appear mid-sentence.
+
+Formatting Rules
+
+Use concise, professional medical terminology.
+
+Correct grammar, punctuation, and obvious transcription errors while preserving clinical meaning.
+
+Findings should follow the format: Location + Body Part + Finding (e.g., “Moderate tenderness to palpation at the Left Index Finger A1 Pulley”).
+
+If multiple body parts are listed, capitalize each (e.g., “Pain in the Wrist and Elbow”).
+
+Only correct anatomy when it is clearly mis-transcribed.
+
+Final Output
+
+Output ONLY the completed JSON array.
+
+Do not include explanations, reasoning, or additional text.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Do not guess or infer, and do not return doctor names, staff names, or family members. If the patient’s name is not explicitly mentioned, return \"-\"."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient's chief complaint as a short phrase. Exclude extra details, context, or direct quotes. If no complaint is stated, return the default value."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single coherent paragraph in professional clinical note style. Include only details explicitly stated in the transcript about onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event to current status. Exclude exam findings, physical measurements, imaging, or other objective observations. Do not infer or assume information. Use full sentences, proper grammar, and clear narrative style, reflecting only what is explicitly reported."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the musculoskeletal physical examination findings exactly as dictated by the doctor. Do not modify, paraphrase, or interpret—return the text verbatim. If no musculoskeletal findings are mentioned, return the default value."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return findings exactly as dictated, without adding or interpreting. If the doctor reports imaging as normal, return it as stated (e.g., 'X-ray normal'). If imaging was not performed or not mentioned, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain') and diagnosis-based terms (e.g., 'trigger finger'). - Exclude normal findings (e.g., 'skin is intact') and negative statements (e.g., 'no tenderness'). - Include 'status post' only if it describes an ongoing issue (e.g., 'stiff finger after surgery'). - Keep terms short and scribe-style, without exam details or explanations. - Format strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, in scribe-style summary form. Rules: - Include only treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned. - Do not add or assume any details (e.g., do not invent follow-up times unless stated). - If follow-up is specified, include it exactly as dictated (e.g., 'return to clinic in 4 weeks'). - Use short sentences or numbered/bulleted steps. - If no plan is mentioned, return the default value."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: ... for Ral- Rolin Rhone, R-H-O-N-E. He is a 71-year-old right-hand dominant professional. I'll figure out what he actually does. Um, around eight, early 8/2025, he was snaking a tub when he may have... Sorry, after which he developed left middle finger swelling and pain. He has been rinsing with soap and water, and, uh, was started on Augmentin by his PCP on 8/1/25. He has been doing soaks. He reports improving redness and swelling. He underwent X-rays today of his left middle finger, demonstrating no acute fracture dislocation, normal bone quality, no degenerative changes. Can I pass it that way?
+Nurse_1: Uh, the last one? Yes.
+Doctor_1: No, is it- oh, okay.
+Nurse_2: Huh?
+Doctor_1: You going straight to the airport?
+Doctor_2: I think so.
+Nurse_1: Okay.
+Doctor_1: Yeah.
+Nurse_1: He'll... This one here ............................
+Doctor_1: On Monday. I think it's going to be next week. .......................... without it, so he'll need to come back. And then, we might put him on some meds. He needs to be seen next week for his cardiac surgery. We're gonna let him live without it, so he can come out. ............................
+Patient_1: Oh, okay.
+Nurse_1: Even with the medication?
+Patient_1: Okay, okay.
+Doctor_1: Um, got some swelling and thickening of the, uh, aponicial fold of the middle finger along with some, uh, along their real perinikium, some, uh, nail lifting, and indents in the nail, uh, about halfway down the sterile matrix. Turn your hands over. No problems here? Okay.
+Patient_1: He said I was, uh, guarding it. Didn't put gloves on again.
+Doctor_1: Ah, these are actually
+Doctor_2: contractures. These are actually... It's something different. We can talk about that. Feels normal, normal-
+Patient_1: Yeah.
+Doctor_1: ... normal, and normal. Give me thumbs up. Keep your thumbs up. Don't let me push it down. Give me an okay sign like that. Don't let me open the circle. Squeeze your... It's okay. Gonna squeeze your fingers together like that. Don't let me pull your fingers apart. Did the antibiotics help anything?
+Patient_1: First of all, Dr. Sai, I'm not a... I'm not a surgical... I'm not a surgical guy.
+Doctor_1: Yeah.
+Patient_1: I'm not an aspirin guy.
+Doctor_1: Yeah.
+Patient_1: I'll take Advil.
+Doctor_1: Sure.
+Patient_1: I took a whole bottle of penicillin last time-
+Doctor_1: Yeah. The Aug- the Augmentin that they gave you?
+Patient_1: The pill.
+Doctor_1: Yeah. Augmentin.
+Patient_1: I don't know what it... I don't know what that is. That's, that's a foreign language to me. I know it's-
+Doctor_1: Amoxicillin.
+Patient_1: It was-
+Doctor_1: Is it the one that's in this?
+Patient_1: That's exactly right. It wasn't penicillin.
+Doctor_1: Okay, yeah, yeah. Okay.
+Patient_1: Okay, I took the whole thing. I did it.
+Doctor_1: Okay.
+Patient_1: Like I... You know, look, I don't like doing it. I feel it's gonna damage me-
+Doctor_1: Okay.
+Patient_1: ... somewhere down the road, but I took it. It might have helped.
+Doctor_1: Yeah.
+Patient_1: I don't know. It, it looks like it's gone down.
+Doctor_1: Yeah. Tender here? The infection didn't get into your bone?
+Nurse_1: Uh, I can bring you in for a 848.
+Doctor_1: Hopefully next year we'll be back.
+Patient_1: Well, next year is gonna be unbelie-
+Doctor_1: Say some greenish discoloration of the ulnar aspect of the nail plate. And for the assessment, the 71-year-old male with, um, left middle finger paronychia and possible onychomycosis. For the plan, we discussed his condition at length. He's currently not having any pain, so I do not think he's got an active bacterial infection going on. Um, but he does have quite a bit of trauma to the skin around his nail due to what he did to it before. Uh, I recommended twice daily Epsom salt soaks. Um, he may also have, uh, a little bit of onychomycosis at the edges. Um, so he was started on Penlac, and he will return to clinic in six weeks for reevaluation. And that'll be it for today.
+Doctor_2: Okay, doctor, thank you.
+Doctor_1: Yeah, thank you.
+Doctor_2: Have a good one. Bye.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

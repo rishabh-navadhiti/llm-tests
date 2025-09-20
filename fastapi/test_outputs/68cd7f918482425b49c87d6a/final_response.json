@@ -1,0 +1,147 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "History of present illness",
+      "key": "HPI_VERBATIM",
+      "content": [
+        "The patient reports ongoing left leg pain. The right side is asymptomatic. She can walk for approximately 30 minutes per round, with breaks between rounds. She notes that the pain worsens in the evening when standing, particularly in the kitchen and near the doorway. She is currently taking nerve medication at night, which she reports has provided minimal relief with no side effects. She denies any other medications. The pain is described as nerve-related, originating from the spine and radiating down the leg. She has a history of spinal stenosis, with severe stenosis at L2-3 and L4-5 on the left, mild to moderate on the right, and mild stenosis at L1-2. She has no significant weakness or loss of function, as she can walk for 30 minutes without stopping and maintains good strength in the lower extremities. The patient is considering physical therapy as the initial treatment option."
+      ],
+      "default": "-",
+      "instruction": "Summarize the patient’s History of Present Illness (HPI) as a clear, professional paragraph in clinical note style. Include only details explicitly stated in the transcript: symptoms, onset, duration, location, severity, aggravating or relieving factors, treatments tried, impact on daily life, and relevant prior evaluations or consultations. Maintain chronological flow. Exclude physical exam findings, imaging results, and assessment details. Do not infer or assume information. Use full sentences and natural scribe-style narrative."
+    },
+    {
+      "title": "Vitals",
+      "key": "VITALS",
+      "content": [
+        "Vitals were not mentioned in the transcript. Height, weight, and BMI were not documented."
+      ],
+      "default": "-",
+      "instruction": "Extract all information related to the patient’s vitals. Include whether vitals were filed for the visit, whether height and weight are documented, and whether BMI is available or could be calculated. If any of these are explicitly stated as absent or not on file, include that. If no vitals are mentioned, return “-”."
+    },
+    {
+      "title": "Physical Exam",
+      "key": "PHYSICAL_EXAM",
+      "content": [
+        "Physical exam was performed. Strength testing showed the patient could raise her knee and hold it strongly. No significant weakness was noted. The exam findings were consistent with previous evaluations."
+      ],
+      "default": "No physical exam mentioned.",
+      "instruction": "Extract details of the physical examination if mentioned. Include whether an exam was performed, the date (if available), and a concise summary of the findings. If findings are described as unchanged or consistent with previous exams, include that. If no physical exam is mentioned, return “No physical exam mentioned.”"
+    },
+    {
+      "title": "Constitutional",
+      "key": "SOAP_ROS_CONSTITUTIONAL",
+      "content": [
+        "Normal"
+      ],
+      "default": "Normal",
+      "instruction": "Extract the patient’s constitutional review of systems (ROS) findings exactly as stated in the transcript. If no findings are mentioned, return “Normal.” Do not add or infer details."
+    },
+    {
+      "title": "Skin",
+      "key": "SOAP_PHYSICAL_EXAM_SKIN",
+      "content": [
+        "Normal"
+      ],
+      "default": "Normal",
+      "instruction": "Extract any skin examination findings exactly as dictated. If none are mentioned, return “Normal.” Do not infer."
+    },
+    {
+      "title": "Vascular",
+      "key": "ROS_VASCULAR",
+      "content": [
+        "Normal"
+      ],
+      "default": "Normal",
+      "instruction": "Extract any vascular findings exactly as dictated. If no vascular findings are mentioned, return “Normal.” Do not infer."
+    },
+    {
+      "title": "Neurologic and Lumbar",
+      "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+      "content": [
+        "Alignment: No significant deformity noted. Sensation: Not specifically assessed. Range of Motion: Not assessed. Strength: Knee extension is strong bilaterally. Reflexes: Not assessed. Clonus: Not assessed. Laterality: Left leg pain is predominant."
+      ],
+      "default": "-",
+      "instruction": "Extract the neurologic and lumbar exam findings exactly as stated in the transcript. Organize the findings under these categories if present:\nAlignment\nSensation\nRange of Motion (flexion, extension, rotation, pain)\nStrength (with muscle groups and scores if given)\nReflexes (patellar, ankle, clonus)\nInclude laterality (left/right) where mentioned. Return only what is explicitly stated. If no findings are reported, return “-”."
+    },
+    {
+      "title": "Imaging",
+      "key": "IMAGING_GEORGE",
+      "content": [
+        "MRI of the lumbar spine shows severe left-sided L5-S1 spinal stenosis. Mild to moderate stenosis on the right side at L5-S1. Severe stenosis at L2-3 and L4-5. Mild stenosis at L1-2 and L3-4. Spondylosis and mild scoliosis are present. Calcaneal nerve chondromalacia is noted."
+      ],
+      "default": "-",
+      "instruction": "Extract all imaging results explicitly mentioned (e.g., X-ray, MRI, CT, ultrasound). Include the type of imaging, body part, date (if given), and the findings exactly as dictated. Present the results as a bulleted list. If no imaging is mentioned, return “-”. Do not add or interpret."
+    },
+    {
+      "title": "Assessment",
+      "key": "ASSESSMENT",
+      "content": [
+        "- Left leg pain",
+        "- Severe spinal stenosis L2-3, L4-5, L5-S1 (left side)",
+        "- Mild to moderate spinal stenosis L5-S1 (right side)",
+        "- Spondylosis",
+        "- Mild scoliosis",
+        "- Calcaneal nerve chondromalacia"
+      ],
+      "default": "-",
+      "instruction": "Generate the Assessment as a concise list of the patient’s active diagnoses or conditions relevant to this visit.\nRules:\nInclude symptom-based problems (e.g., “back pain”) and diagnosis-based terms (e.g., “spinal stenosis”).\nExclude normal findings and negative statements.\nInclude “status post” only if it describes an ongoing issue (e.g., “stiffness after surgery”).\nKeep terms short and scribe-style, without exam details or explanations.\nReturn strictly as a list (one item per line, with dash or bullet).\nIf no active conditions are mentioned, return “-”."
+    },
+    {
+      "title": "Plan",
+      "key": "PLAN_WITH_FOLLOW_UP",
+      "content": [
+        "Start physical therapy at Arcadia.",
+        "Continue current nerve medication nightly.",
+        "Prescribe back brace for use during housework, cooking, and grocery shopping.",
+        "Do not wear brace during walking or exercise.",
+        "Advise patient to wear brace during air travel and carry medication.",
+        "Take Advil upon boarding plane to reduce inflammation.",
+        "Follow up in six weeks."
+      ],
+      "default": "-",
+      "instruction": "Write the doctor’s plan exactly as dictated, in scribe-style summary form.\nRules:\nInclude only treatments, procedures, medications, therapies, referrals, patient education, and follow-up instructions explicitly mentioned in the transcript.\nDo not add or assume any details (e.g., do not invent follow-up times unless stated).\nIf a follow-up is specified, include it exactly as dictated, formatted as: “Return to clinic in X days/weeks/months.”\nUse short sentences or numbered/bulleted steps.\nIf no plan is mentioned, return “-”."
+    },
+    {
+      "title": "Work disability status",
+      "key": "WDS",
+      "content": [
+        "Given back pain for work"
+      ],
+      "default": "-",
+      "instruction": "Extract the patient’s work disability status exactly as stated by the doctor. If not mentioned, return “-”. Do not infer."
+    },
+    {
+      "title": "Request for medical authorization",
+      "key": "RFMA",
+      "content": [
+        "Physical therapy referral",
+        "Back brace prescription",
+        "Medication refill"
+      ],
+      "default": "-",
+      "instruction": "Extract only the items the doctor explicitly requested for insurance or medical authorization. Return each request as a single line in the format:\n<treatment/procedure/imaging/referral>\nDo not include the overall plan, work restrictions, or explanations. If no requests are mentioned, return “-”."
+    },
+    {
+      "title": "Follow Up",
+      "key": "SOAP_FOLLOW_UP",
+      "content": [
+        "Next Appointment: Return to clinic in six weeks.",
+        "Review and Adjustments: Assess progress with physical therapy, pain levels, and functional status."
+      ],
+      "default": "No follow up",
+      "instruction": "Extract the follow-up schedule exactly as dictated. Include both:\nNext Appointment: when the patient should return (e.g., “Return to clinic in 2 weeks”).\nReview and Adjustments: what will be reviewed or adjusted at that visit, if mentioned.\nIf no follow-up is mentioned, return “No follow up.”"
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 4286,
+    "completion_tokens": 2049,
+    "total_tokens": 6335
+  },
+  "timing": {
+    "total_time_ms": 25029.566287994385,
+    "generation_time_ms": 25028.741359710693,
+    "processing_time_ms": 0.1552104949951172
+  },
+  "error_message": null
+}

@@ -1,0 +1,273 @@
+ROLE: You are an expert medical scribe.
+TASK: Extract structured medical information from a doctor-patient conversation transcript and populate a provided JSON template.
+
+CRITICAL INSTRUCTIONS:
+1.  **Output Format:** You MUST output a JSON array of objects that exactly matches the structure, keys, and order of the provided template.
+2.  **Filling the Template:** For each object in the template, you must fill the `"content"` field based *only* on the transcript, strictly following the `"instruction"` for that field.
+3.  **Source Material:** Use ONLY the information explicitly stated in the provided medical transcript. Do not infer, assume, or add any information not present in the transcript.
+4.  **Handling Missing Data:** If no relevant information is found in the transcript for a specific field, you must use the `"default"` value provided for that field in the template.
+5.  **Verbatim vs. Interpretation:**
+    - For fields requiring verbatim extraction, extract the doctor's words exactly as dictated.
+    - For fields requiring summarization, synthesize the information into a concise, professional clinical note.
+    - Use clinical judgment ONLY to correct unambiguous errors (e.g., a likely misstated joint name if the context is 100% clear). Do not change terms without strong justification.
+6.  **Final Output:** Your entire response must be ONLY the completed JSON array. Do not include any other text, explanations, or markdown code blocks.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "History of present illness",
+    "key": "HPI_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "Summarize the patient’s History of Present Illness (HPI) as a clear, professional paragraph in clinical note style. Include only details explicitly stated in the transcript: symptoms, onset, duration, location, severity, aggravating or relieving factors, treatments tried, impact on daily life, and relevant prior evaluations or consultations. Maintain chronological flow. Exclude physical exam findings, imaging results, and assessment details. Do not infer or assume information. Use full sentences and natural scribe-style narrative."
+  },
+  {
+    "title": "Vitals",
+    "key": "VITALS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all information related to the patient’s vitals. Include whether vitals were filed for the visit, whether height and weight are documented, and whether BMI is available or could be calculated. If any of these are explicitly stated as absent or not on file, include that. If no vitals are mentioned, return “-”."
+  },
+  {
+    "title": "Physical Exam",
+    "key": "PHYSICAL_EXAM",
+    "content": [],
+    "default": "No physical exam mentioned.",
+    "instruction": "Extract details of the physical examination if mentioned. Include whether an exam was performed, the date (if available), and a concise summary of the findings. If findings are described as unchanged or consistent with previous exams, include that. If no physical exam is mentioned, return “No physical exam mentioned.”"
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract the patient’s constitutional review of systems (ROS) findings exactly as stated in the transcript. If no findings are mentioned, return “Normal.” Do not add or infer details."
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract any skin examination findings exactly as dictated. If none are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Vascular",
+    "key": "ROS_VASCULAR",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract any vascular findings exactly as dictated. If no vascular findings are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Neurologic and Lumbar",
+    "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the neurologic and lumbar exam findings exactly as stated in the transcript. Organize the findings under these categories if present:\nAlignment\nSensation\nRange of Motion (flexion, extension, rotation, pain)\nStrength (with muscle groups and scores if given)\nReflexes (patellar, ankle, clonus)\nInclude laterality (left/right) where mentioned. Return only what is explicitly stated. If no findings are reported, return “-”."
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all imaging results explicitly mentioned (e.g., X-ray, MRI, CT, ultrasound). Include the type of imaging, body part, date (if given), and the findings exactly as dictated. Present the results as a bulleted list. If no imaging is mentioned, return “-”. Do not add or interpret."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT",
+    "content": [],
+    "default": "-",
+    "instruction": "Generate the Assessment as a concise list of the patient’s active diagnoses or conditions relevant to this visit.\nRules:\nInclude symptom-based problems (e.g., “back pain”) and diagnosis-based terms (e.g., “spinal stenosis”).\nExclude normal findings and negative statements.\nInclude “status post” only if it describes an ongoing issue (e.g., “stiffness after surgery”).\nKeep terms short and scribe-style, without exam details or explanations.\nReturn strictly as a list (one item per line, with dash or bullet).\nIf no active conditions are mentioned, return “-”."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [],
+    "default": "-",
+    "instruction": "Write the doctor’s plan exactly as dictated, in scribe-style summary form.\nRules:\nInclude only treatments, procedures, medications, therapies, referrals, patient education, and follow-up instructions explicitly mentioned in the transcript.\nDo not add or assume any details (e.g., do not invent follow-up times unless stated).\nIf a follow-up is specified, include it exactly as dictated, formatted as: “Return to clinic in X days/weeks/months.”\nUse short sentences or numbered/bulleted steps.\nIf no plan is mentioned, return “-”."
+  },
+  {
+    "title": "Work disability status",
+    "key": "WDS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient’s work disability status exactly as stated by the doctor. If not mentioned, return “-”. Do not infer."
+  },
+  {
+    "title": "Request for medical authorization",
+    "key": "RFMA",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only the items the doctor explicitly requested for insurance or medical authorization. Return each request as a single line in the format:\n<treatment/procedure/imaging/referral>\nDo not include the overall plan, work restrictions, or explanations. If no requests are mentioned, return “-”."
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Extract the follow-up schedule exactly as dictated. Include both:\nNext Appointment: when the patient should return (e.g., “Return to clinic in 2 weeks”).\nReview and Adjustments: what will be reviewed or adjusted at that visit, if mentioned.\nIf no follow-up is mentioned, return “No follow up.”"
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: Hello. How are you?
+Patient_1: Good. How are you?
+Doctor_1: Good. Uh, what do you think about the shot? Oh, yeah.
+Patient_1: It's good.
+Doctor_1: All right. So that's at sort of basically a good level now. You can live with that.
+Patient_1: Yeah.
+Doctor_1: You can do your ... what you need to do.
+Patient_1: Yeah. It's weird, I still get the crepitus like up here. And I mean-
+Doctor_1: Mm.
+Patient_1: I mean, I know it's not here.
+Doctor_1: Yeah, but you feel up in here, like a little cracking and creaking?
+Patient_1: No, I mean, when I, when I, when I do it-
+Doctor_1: Mm-hmm.
+Patient_1: ... I mean, right now, I can, I can feel it.
+Doctor_1: Hmm. Okay.
+Patient_1: But-
+Doctor_1: But it's not painful?
+Patient_1: No.
+Doctor_1: Okay.
+Patient_1: No.
+Doctor_1: And nothing around radiating?
+Patient_1: Nope.
+Doctor_1: Good.
+Patient_1: Everything's good in the hand all over.
+Doctor_1: Perfect.
+Patient_1: So ʼcause-
+Doctor_1: And what about the low back?
+Patient_1: Low back is better. Um, yeah. It's better. It's-
+Doctor_1: Good.
+Patient_1: ... uh, you know, it's not perfect, but I mean, I got bones in the way there, so-
+Doctor_1: Mm-hmm.
+Patient_1: You know. Yeah.
+Doctor_1: Is there any, is there any pain that goes to the butt or thighs or legs?
+Patient_1: I just have ... I have a little something right here.
+Doctor_1: Mm-hmm.
+Patient_1: But I don't have anything radiating really.
+Doctor_1: Okay. So-
+Patient_1: So I was able to um, do like a ... as well as my hips a little bit out and lift this.
+Doctor_1: Oh, okay. Wow.
+Patient_1: Yeah.
+Doctor_1: Good. And walking, standing, you can do it as much as you want to?
+Patient_1: Yeah. Yeah. And I just find it easier with the exercise stuff to kinda engage my lower abdomen to lift my leg.
+Doctor_1: Yeah.
+Patient_1: As opposed to just going like this.
+Doctor_1: Yeah. Just like this. It's ... All right. Well, good.
+Patient_1: Does it cause sweating?
+Doctor_1: The injection?
+Patient_1: Yeah.
+Doctor_1: Well, it could be a side effect 'cause, um, injecting some cortisone in there as well. And cortisone as a side effect kind of revs people up. So it's kinda like drinking too much caffeine. So, you know, you can start to sweat or you can get a racing heartbeat or kind of be revved up.
+Patient_1: But it's not like a ... It's like only at times, it's not like, all the time.
+Doctor_1: Mm. Yeah. Maybe. Yeah.
+Patient_1: So, so maybe that's the, the-
+Doctor_1: Okay.
+Patient_1: ... check too.
+Doctor_1: Uh, are you having to take any pain killers at all? Any Tylenol, Advil, anything like that?
+Patient_1: No. None.
+Doctor_1: Good. All right. And you're already d- doing yoga, it sounds like?
+Patient_1: Yes.
+Doctor_1: All right.
+Patient_1: Yeah. Doing well with twisting and whatnot.
+Doctor_1: Yeah. Hang on a little bit. Let's straighten this. I'm walking you while it works. Does that bother you?
+Patient_1: Um, it pulls here.
+Doctor_1: Mm-hmm.
+Patient_1: But it's not painful.
+Doctor_1: Good. You can relax your neck. How are your arms with this?
+Patient_1: I can't feel-
+Doctor_1: Raise up.
+Patient_1: Yeah, I have shoulder problems.
+Doctor_1: Oh, do you? Okay.
+Patient_1: But I can do it.
+Doctor_1: Okay. That's pretty good.
+Patient_1: Yeah.
+Doctor_1: How about the straight? Elbows out like that. Hold it there real strong.
+Patient_1: Okay.
+Doctor_1: Don't let it push down. Good. Move the muscle in this. Real strong. No pain, right, in the back or the ribs?
+Patient_1: No.
+Doctor_1: And we do this and that.
+Patient_1: That-
+Doctor_1: Raise it up. Hold it there real strong. Perfect. Spread your fingers out. Close them together. Good. Palms up. You can feel me touching all the fingertips?
+Patient_1: Mm-hmm.
+Doctor_1: Good. And what about the legs? Can you raise them like that? Hold it there real strong. Roll it this time. Straighten one out and pull your ankle up. Hold it there real strong. Ah, perfect. This side.
+Patient_1: I think so.
+Doctor_1: That's pretty darn good.
+Patient_1: Oh, good. I'm glad. ʻCause when I was in university, they showed us an exercise for in here.
+Doctor_1: Mm-hmm.
+Patient_1: You go like this and-
+Doctor_1: Mm-hmm.
+Patient_1: ... press.
+Doctor_1: Mm-hmm.
+Patient_1: Push hard against it.
+Doctor_1: Mm-hmm.
+Patient_1: And then reverse it.
+Doctor_1: Mm-hmm.
+Patient_1: Push hard against it. You should be able to feel-
+Doctor_1: Mm-hmm.
+Patient_1: ... the stretch in here.
+Doctor_1: Yeah. Get these muscles going, it kind of works out the nerve as well.
+Patient_1: Yeah. And you can, you can go along all four fingers with the thumb on top.
+Doctor_1: Mm-hmm. Like that?
+Patient_1: Yeah. But for the, but for the thumb on the bottom, it really works best with the index finger.
+Doctor_1: Yeah.
+Patient_1: 'Cause I have bone hum.
+Doctor_1: Mm-hmm.
+Patient_1: And it, it just helps release that.
+Doctor_1: Yeah. And it's good to strengthen this area too.
+Patient_1: Mm-hmm.
+Doctor_1: Because our thumbs get, you know, those wrist bottle caps with this grab, you know, we strengthen that area.
+Patient_1: Yeah.
+Doctor_1: It's been-
+Patient_1: Yeah.
+Doctor_1: Well, good. You basically look normal. Right? Um, if you look like this, you know, um, hopefully we never have to address o- oh, you know, your back or an- or your neck even ʻcause you're a teacher.
+Patient_1: What's the chance, um, lasting?
+Doctor_1: Well, that's the big question. We don't know.
+Patient_1: Mm-hmm.
+Doctor_1: Uh, I've seen it last for a few years in some people.
+Patient_1: Mm-hmm.
+Doctor_1: I've seen it last for a few weeks in others.
+Patient_1: Mm.
+Doctor_1: Uh, but we know that the ones that it does last tend to be healthier, they have an exercise routine, yoga, pilates, they walk regularly, they avoid heavy lifting, they avoid sitting for too long.
+Patient_1: Mm-hmm.
+Doctor_1: So those, those things we know-
+Patient_1: Mm-hmm.
+Doctor_1: ... to be the most successful factors.
+Patient_1: Yeah. I mean, I did have, I do have like a little twinge right here, but I think that's because I lifted a heavy pot.
+Doctor_1: Mm. So yeah, you gotta be conscious of that.
+Patient_1: Which, you know, sounds like, "Oh, I shouldn't have done that." Yeah.
+Doctor_1: Yeah. You can avoid it, avoid it. Um-
+Patient_1: Yeah.
+Doctor_1: So it's ... 'Cause you know you got that weak spot in your lower back. Those bones, we're trying to keep them together.
+Patient_1: Yeah, yeah, so.
+Doctor_1: All right. Well ...
+Patient_1: How are you?
+Doctor_1: Good. Yeah. It's Friday.
+Patient_1: Are you going to the ball game or are you-
+Doctor_1: No, I'm not. Everybody actually is coming, but, uh, um, my kids are off today, so they went to Knott's Berry Farm and, uh, they'll, uh, I'll probably meet them up later in the evening for dinner.
+Patient_1: Good, you're not tired.
+Doctor_1: Yeah. Exactly. All right, my dear. You're looking good. So why don't, why don't we just keep doing what you're doing and then I do want to check up on you again probably in four months. Okay?
+Patient_1: Okay.
+Doctor_1: But if there's any pain that limits your exercise or walking-
+Patient_1: Mm-hmm.
+Doctor_1: If you find that the pain's more severe, if things are getting weak or numb-
+Patient_1: Mm-hmm.
+Doctor_1: ... come back earlier.
+Patient_1: Okay. If it just returns to baseline ƒ�...
+Doctor_1: Yeah.
+Patient_1: Good.
+Doctor_1: All right.
+Patient_1: All right. Well, thank you for-
+Doctor_1: Okay.
+Patient_1: ... coming in early.
+Doctor_1: Keep go- keep up the good work.
+Patient_1: I came in a little early ƒˈsack.
+Doctor_1: Uh, yeah. We have already got a neck and back problem, so yeah. Sometimes you gotta hit them both, you know, to, to get one of it go away. Oh, no, we've been the same for the last, uh, 15, 20 years now. Where's the scrubs?
+Patient_1: Right.
+Doctor_1: Yeah, you can check out now. All right. Take care. See you in four months. Okay? All right. So let's say, 90% relief. Uh, she can walk, she can move, not taking any pain med. Has a little bit of pain in her right buttock area, but not bad. She did lift a pot. Maybe that caused it. And then her neck is fine too. No, uh, radiating pain. The exam of the neck is normal. The exam of the back, just a little tenderness on the right butt. Everything else normal. So assist patient. She had cervical radiculopathy. Uh, she's got an isthmic spine in her back. She did great with the injections. Continue exercise program. Talked to her do's and don'ts, red flags. Follow-up in four months to eliminations.
+Nurse_1: Okay, Dr. Lee. Thank you.
+Doctor_1: Thank you.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

@@ -1,0 +1,284 @@
+ROLE: You are an expert medical scribe.
+TASK: Extract structured medical information from a doctor-patient conversation transcript and populate a provided JSON template.
+
+CRITICAL INSTRUCTIONS:
+1.  **Output Format:** You MUST output a JSON array of objects that exactly matches the structure, keys, and order of the provided template.
+2.  **Filling the Template:** For each object in the template, you must fill the `"content"` field based *only* on the transcript, strictly following the `"instruction"` for that field.
+3.  **Source Material:** Use ONLY the information explicitly stated in the provided medical transcript. Do not infer, assume, or add any information not present in the transcript.
+4.  **Handling Missing Data:** If no relevant information is found in the transcript for a specific field, you must use the `"default"` value provided for that field in the template.
+5.  **Verbatim vs. Interpretation:**
+    - For fields requiring verbatim extraction, extract the doctor's words exactly as dictated.
+    - For fields requiring summarization, synthesize the information into a concise, professional clinical note.
+    - Use clinical judgment ONLY to correct unambiguous errors (e.g., a likely misstated joint name if the context is 100% clear). Do not change terms without strong justification.
+6.  **Final Output:** Your entire response must be ONLY the completed JSON array. Do not include any other text, explanations, or markdown code blocks.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "History of present illness",
+    "key": "HPI_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "Summarize the patient’s History of Present Illness (HPI) as a clear, professional paragraph in clinical note style. Include only details explicitly stated in the transcript: symptoms, onset, duration, location, severity, aggravating or relieving factors, treatments tried, impact on daily life, and relevant prior evaluations or consultations. Maintain chronological flow. Exclude physical exam findings, imaging results, and assessment details. Do not infer or assume information. Use full sentences and natural scribe-style narrative."
+  },
+  {
+    "title": "Vitals",
+    "key": "VITALS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all information related to the patient’s vitals. Include whether vitals were filed for the visit, whether height and weight are documented, and whether BMI is available or could be calculated. If any of these are explicitly stated as absent or not on file, include that. If no vitals are mentioned, return “-”."
+  },
+  {
+    "title": "Physical Exam",
+    "key": "PHYSICAL_EXAM",
+    "content": [],
+    "default": "No physical exam mentioned.",
+    "instruction": "Extract details of the physical examination if mentioned. Include whether an exam was performed, the date (if available), and a concise summary of the findings. If findings are described as unchanged or consistent with previous exams, include that. If no physical exam is mentioned, return “No physical exam mentioned.”"
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract the patient’s constitutional review of systems (ROS) findings exactly as stated in the transcript. If no findings are mentioned, return “Normal.” Do not add or infer details."
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract any skin examination findings exactly as dictated. If none are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Vascular",
+    "key": "ROS_VASCULAR",
+    "content": [],
+    "default": "Normal",
+    "instruction": "Extract any vascular findings exactly as dictated. If no vascular findings are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Neurologic and Lumbar",
+    "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the neurologic and lumbar exam findings exactly as stated in the transcript. Organize the findings under these categories if present:\nAlignment\nSensation\nRange of Motion (flexion, extension, rotation, pain)\nStrength (with muscle groups and scores if given)\nReflexes (patellar, ankle, clonus)\nInclude laterality (left/right) where mentioned. Return only what is explicitly stated. If no findings are reported, return “-”."
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all imaging results explicitly mentioned (e.g., X-ray, MRI, CT, ultrasound). Include the type of imaging, body part, date (if given), and the findings exactly as dictated. Present the results as a bulleted list. If no imaging is mentioned, return “-”. Do not add or interpret."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT",
+    "content": [],
+    "default": "-",
+    "instruction": "Generate the Assessment as a concise list of the patient’s active diagnoses or conditions relevant to this visit.\nRules:\nInclude symptom-based problems (e.g., “back pain”) and diagnosis-based terms (e.g., “spinal stenosis”).\nExclude normal findings and negative statements.\nInclude “status post” only if it describes an ongoing issue (e.g., “stiffness after surgery”).\nKeep terms short and scribe-style, without exam details or explanations.\nReturn strictly as a list (one item per line, with dash or bullet).\nIf no active conditions are mentioned, return “-”."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [],
+    "default": "-",
+    "instruction": "Write the doctor’s plan exactly as dictated, in scribe-style summary form.\nRules:\nInclude only treatments, procedures, medications, therapies, referrals, patient education, and follow-up instructions explicitly mentioned in the transcript.\nDo not add or assume any details (e.g., do not invent follow-up times unless stated).\nIf a follow-up is specified, include it exactly as dictated, formatted as: “Return to clinic in X days/weeks/months.”\nUse short sentences or numbered/bulleted steps.\nIf no plan is mentioned, return “-”."
+  },
+  {
+    "title": "Work disability status",
+    "key": "WDS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient’s work disability status exactly as stated by the doctor. If not mentioned, return “-”. Do not infer."
+  },
+  {
+    "title": "Request for medical authorization",
+    "key": "RFMA",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only the items the doctor explicitly requested for insurance or medical authorization. Return each request as a single line in the format:\n<treatment/procedure/imaging/referral>\nDo not include the overall plan, work restrictions, or explanations. If no requests are mentioned, return “-”."
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Extract the follow-up schedule exactly as dictated. Include both:\nNext Appointment: when the patient should return (e.g., “Return to clinic in 2 weeks”).\nReview and Adjustments: what will be reviewed or adjusted at that visit, if mentioned.\nIf no follow-up is mentioned, return “No follow up.”"
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Patient: ... here.
+Doctor_1: Still a lot of pain in the left leg.
+Patient: Oh, I see.
+Doctor_1: The right side is okay?
+Patient: Right side is okay.
+Doctor_1: What about walking? Can you walk and stand for a long time?
+Patient: Yeah. I walk, uh, about one hour.
+Doctor_1: Without stopping?
+Patient: No, stop- We walk together.
+Doctor_1: Okay.
+Patient: After one round-
+Doctor_1: Walk a little bit, stop, walk a little bit, stop?
+Patient: No, no. One round, and then we stop.
+Doctor_1: Mm-hmm.
+Patient: It was a while.
+Doctor_1: Okay.
+Patient: And then walk again.
+Doctor_1: So how long was one round? 20, 30 minutes?
+Patient: About an hour. 30 minutes.
+Doctor_1: 30 minutes?
+Patient: Yeah.
+Doctor_1: Okay. That's pretty good. What about at night? Does the leg hurt a lot at night?
+Patient: In the evening, if I stand up, uh-
+Doctor_1: Mm-hmm.
+Patient: ... in the kitchen-
+Doctor_1: Mm-hmm.
+Patient: ... and here, start here-
+Doctor_1: Mm-hmm.
+Patient: ... and then go to here.
+Doctor_1: Yeah. Are you taking any medications for the pain?
+Patient: Uh, no. Over there, he has some medications. Only from you, the medication from you.
+Doctor_1: Oh, yeah. The one that... the me- the nerve medication at night?
+Patient: Yeah, yeah.
+Doctor_1: You are taking that?
+Patient: Yeah.
+Doctor_1: You think it ha- has helped a little bit?
+Patient: Uh, yeah, a little bit.
+Doctor_1: A little bit. Okay, good. And no side effects from it?
+Patient: Mm-mm.
+Doctor_1: Okay, good. I want you to-
+Patient: What is the side effect?
+Doctor_1: Some people get really, uh, groggy or tired on them.
+Patient: Oh, okay.
+Doctor_1: Okay, good. Then I want you to keep taking it every day then, okay?
+Patient: Yes. Until finished?
+Doctor_1: I'll, I'll, I will have you refill it. Just keep taking it.
+Patient: Okay.
+Doctor_1: Yeah. The problem is the nerves in your spine are very, very pinched.
+Patient: Oh, no.
+Doctor_1: So this is the, the side view of your low back.
+Patient: Mm-hmm.
+Doctor_1: This is the front. This is the back here, right? These are the bones, the boxes. You see how these boxes are lined up to each other?
+Patient: Mm-hmm.
+Doctor_1: And then this one is kind of way forward here, right?
+Patient: Yeah.
+Doctor_1: You can see that step off right there? But more importantly, these are the nerves. The gray is the nerve. The white is spinal fluid protecting it. So you want a lot of white.
+Patient: Mm-hmm.
+Doctor_1: But right here, it's all squished together.
+Patient: Oh.
+Doctor_1: And here it looks good. Then right here-
+Patient: Okay.
+Doctor_1: ... it's squished together, and here it's very tight.
+Patient: Mm-hmm.
+Doctor_1: So when we go to this view to see how tight it really is, okay? So she's got severe para- paramedical stenosis in the left, L5-S1. And on the right side, it's just mild to moderate on the right, L5-S1, spiny, 4, 5, and small in 3, 4. All right, so-
+Patient: So what should, what should we do for me?
+Doctor_1: Well, let me show you how tight it is. Usually the pipe should be this big here. Okay?
+Patient: Mm-hmm.
+Doctor_1: It should be... Look how big it is. It, it's coming out just like that. It's like a big pipe.
+Patient: Mm-hmm.
+Doctor_1: Okay? The white is spinal fluid, the nerves are the dots. That's normal. As we make our way down, little tight, not bad, 5, 4, 3, 2, 1, some mild, minimal to mild stenosis at 1, 2.
+Patient: Mm-hmm.
+Doctor_1: But then we get to here, look how small it is.
+Patient: Mm-hmm.
+Doctor_1: So that's severe. So severe stenosis, L2, 3. And then, here, not too bad. Mild at L3, 4. And then we get to here, very small.
+Patient: Yeah.
+Doctor_1: Severe at 4, 5. And down here, uh, not too bad, right? So really here and here are the worst.
+Patient: Mm-hmm.
+Doctor_1: So the leg pain is nerve pain.
+Patient: Yeah.
+Doctor_1: Okay? It's the... when you, when you hit a nerve, it hurts down here. So when you hit the nerve up there, it hurts down the leg.
+Patient: Mm-hmm.
+Doctor_1: All right? Let me test the strength. Can you raise your knee up like this? Hold it there real strong. Don't push down. Okay, so still pretty strong.
+Patient: Okay.
+Doctor_1: So if that foot is still strong and you can walk for 30 minutes without stopping-
+Patient: Mm-hmm.
+Doctor_1: ... then the nerve is still working. It means it's not damaged yet.
+Patient: Okay.
+Doctor_1: Okay? If it's not damaged, then we don't have to rush into surgery.
+Patient: Okay.
+Doctor_1: You have options, all right? One option is to do physical therapy, take the medication, and we keep the nerve working.
+Patient: Okay.
+Doctor_1: The other option is to do a shot into your back. The shot takes away the pain and calms everything down, you feel better. All right? But the shot-
+Patient: How long?
+Doctor_1: We don't know. That we don't know.
+Patient: Yeah.
+Doctor_1: Sometimes it lasts for a year, sometimes it only lasts for one week. We just don't know, okay?
+Patient: Is it a steroid?
+Doctor_1: Yeah, it's a cortisone.
+Patient: Oh.
+Doctor_1: It's kind of like putting cortisone cream on a rash, it will take away the swelling. Okay? The third option actually is to do surgery. Some people don't want to wait.
+Patient: Yeah.
+Doctor_1: Some people say, "Well, if the nerve is working, I'll wait."
+Patient: Mm-hmm.
+Doctor_1: But other per- people say, "I don't want to wait. It already looks horrible. Why wait?" Because if you wait, and then the damage starts to set in, and then you do surgery, then sometimes not all of it recovers. Okay? So, but it's up to you, right? If you can walk 30 minutes, then I think you have options. If the walking falls below 30 minutes, then I would definitely recommend surgery. Okay? So...
+Patient: Are you also the one who do the something?
+Doctor_1: Yeah, I'm the surgeon.
+Patient: Mm-hmm.
+Doctor_1: Okay? What do you think?
+Patient: Physical therapy.
+Doctor_1: Start with that, right?
+Patient: Yeah.
+Doctor_1: Okay. Why don't we start with that. Keep taking the medication.
+Patient: Yeah.
+Doctor_1: And then we'll see how, how good we can get.
+Patient: So, today is the last option.
+Doctor_1: Correct. Did I give you a back brace?
+Patient: Uh, back brace?
+Doctor_1: Yeah. Let me give you one today.
+Patient: Okay.
+Doctor_1: If you're gonna do any housework, washing dishes...
+Patient: Okay.
+Doctor_1: ... cooking, any buying groceries, put the brace on.
+Patient: Oh.
+Doctor_1: To protect the back.
+Patient: Yeah.
+Doctor_1: But if you're walking or exercising, don't wear it.
+Patient: Okay.
+Doctor_1: You need the muscles to get activated, okay?
+Patient: Were you born here in the States?
+Doctor_1: Uh, I was born in Thailand.
+Patient: Thailand. Oh, so you are, uh, from Thailand?
+Doctor_1: Yeah, I'm Chinese from Vietnam and... Yeah, how about you guys?
+Patient: Hi, there.
+Doctor_1: Oh, okay. Oh, you're Chinese too?
+Patient: Yeah.
+Doctor_1: Chinese and Indonesia. Okay, nice.
+Patient: Mm-hmm. �… probably one third Chinese.
+Doctor_1: Okay. Are you a Hakka or-
+Patient: Fujian.
+Doctor_1: Fujian, okay. Yeah. Yeah, I'm Hakka and Fujian.
+Patient: Yeah.
+Doctor_1: Yeah .
+Patient: Thank you, Dr.-
+Doctor_1: All right, thank you. Okay, just wait here, okay?
+Patient: Oh, okay.
+Doctor_1: I'll have my assistant come and give you the brace order and the physical therapy, okay?
+Patient: Yeah.
+Doctor_1: And then come back and see me in six weeks, okay?
+Patient: Okay.
+Doctor_1: Uh, I'll give you the prescription.
+Patient: Okay.
+Doctor_1: Where do you live? What city? Oh, okay. That way you can-
+Patient: Pasadena.
+Doctor_1: If you wanna come here or you wanna come Pasadena to do the therapy? So just take the prescription, walk across and schedule your appointment with him.
+Patient: Yeah, but we're going to Japan first.
+Doctor_1: Oh, when?
+Patient: Next month.
+Doctor_1: Next month? Okay. October 1st, okay. Make sure you wear your brace with you through the airport and take your medication with you too, okay? And maybe when you just get on a plane, take an Advil as well. Keep the inflammation down.
+Patient: Yeah.
+Doctor_1: All right?
+Patient: Thank you.
+Doctor_1: Okay, thank you. I'll see you guys in about six weeks to two months, okay?
+Patient: Okay.
+Doctor_1: All right, travel safe. Thank you. All right. So still got LRAD, left leg, she can walk 30 minutes an hour still. Exams the same. She's, uh, you got the MRI, she's got spondys, a little scoliosis, stenosis, left leg pain, calcaneal nerve chondromalacia, we'll, uh, get her physical therapy, gave her back pain for work, give meds, talk- talk to her about dos and don'ts and then follow up in six to eight weeks.
+Patient: Okay, Dr. Li, thank you. And physical therapy is generally great.
+Doctor_1: Uh, she wants to do it here at Arcadia.
+Patient: Okay, Dr. Li, thank you.
+Doctor_1: Thank you. All right. Oh.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

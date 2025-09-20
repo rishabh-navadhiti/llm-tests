@@ -1,0 +1,160 @@
+ROLE: You are an expert medical scribe.
+TASK: Extract structured medical information from a doctor-patient conversation transcript and populate a provided JSON template.
+
+CRITICAL INSTRUCTIONS
+
+Output Format
+
+You MUST output a JSON array of objects that exactly matches the structure, keys, and order of the provided template.
+
+Do not include any other text, explanations, or markdown formatting.
+
+Filling the Template
+
+For each object in the template, fill the "content" field strictly based on the transcript, following the "instruction" for that field.
+
+Use ONLY information explicitly stated in the transcript.
+
+Handling Missing Data
+
+If no relevant information is present in the transcript for a field, return the "default" value exactly as provided in the template.
+
+Verbatim vs. Summarization
+
+For fields requiring verbatim extraction, copy the doctor’s words exactly as dictated.
+
+For fields requiring summarization, rewrite into a concise, professional clinical note.
+
+Do not infer or assume information beyond what is clearly stated.
+
+Capitalization Rules (MANDATORY)
+
+Always capitalize the first letter of any body part, anatomical structure, or specific location.
+
+Includes: Skin, Nail, Finger, Hand, Wrist, Forearm, Elbow, Shoulder, Clavicle, Chest, Abdomen, Hip, Thigh, Knee, Leg, Ankle, Foot, Toe, Neck, Back, Spine, Head, Face, Eye, Ear, Nose, Mouth, Tongue, Jaw, and all joint names.
+
+Always capitalize anatomical descriptors such as “A1 Pulley,” “Extensor Tendon,” “Flexor Tendon,” “Palmar Surface,” “Thenar Eminence,” etc.
+
+Do not lowercase these terms even if they appear mid-sentence.
+
+Formatting Rules
+
+Use concise, professional medical terminology.
+
+Correct grammar, punctuation, and obvious transcription errors while preserving clinical meaning.
+
+Findings should follow the format: Location + Body Part + Finding (e.g., “Moderate tenderness to palpation at the Left Index Finger A1 Pulley”).
+
+If multiple body parts are listed, capitalize each (e.g., “Pain in the Wrist and Elbow”).
+
+Only correct anatomy when it is clearly mis-transcribed.
+
+Final Output
+
+Output ONLY the completed JSON array.
+
+Do not include explanations, reasoning, or additional text.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Do not guess or infer, and do not return doctor names, staff names, or family members. If the patient’s name is not explicitly mentioned, return \"-\"."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient's chief complaint as a short phrase. Exclude extra details, context, or direct quotes. If no complaint is stated, return the default value."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single coherent paragraph in professional clinical note style. Include only details explicitly stated in the transcript about onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event to current status. Exclude exam findings, physical measurements, imaging, or other objective observations. Do not infer or assume information. Use full sentences, proper grammar, and clear narrative style, reflecting only what is explicitly reported."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the musculoskeletal physical examination findings exactly as dictated by the doctor. Do not modify, paraphrase, or interpret—return the text verbatim. If no musculoskeletal findings are mentioned, return the default value."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return findings exactly as dictated, without adding or interpreting. If the doctor reports imaging as normal, return it as stated (e.g., 'X-ray normal'). If imaging was not performed or not mentioned, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain') and diagnosis-based terms (e.g., 'trigger finger'). - Exclude normal findings (e.g., 'skin is intact') and negative statements (e.g., 'no tenderness'). - Include 'status post' only if it describes an ongoing issue (e.g., 'stiff finger after surgery'). - Keep terms short and scribe-style, without exam details or explanations. - Format strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, in scribe-style summary form. Rules: - Include only treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned. - Do not add or assume any details (e.g., do not invent follow-up times unless stated). - If follow-up is specified, include it exactly as dictated (e.g., 'return to clinic in 4 weeks'). - Use short sentences or numbered/bulleted steps. - If no plan is mentioned, return the default value."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: This is for Lindsay Cole, C-O-L-E. She is a 26-year-old right-hand dominant assistant at United Talent Agency who enjoys hiking and painting. Around 9-13-25, she noticed a mass on the top of her left wrist. She endorses prior issues with the wrist. She endorses discomfort and slight numbness. Typing or hyperflexion causes pain. She has tried Advil. Lindsay, hello! Nice to meet ya.
+Patient: Oh my God.
+Doctor_1: No, I play.
+Patient: It's all right.
+Doctor_1: All good, all good. Heard a little bit about ya.
+Patient: Yeah.
+Doctor_1: And this popped up out of the blue-
+Patient: Yes.
+Doctor_1: ... on Saturday, right?
+Patient: Yeah, I noticed it on Saturday.
+Doctor_1: Got it.
+Patient: I have no idea why.
+Doctor_1: But you've had some wrist pain-
+Patient: Yeah.
+Doctor_1: ... uh, prior to that?
+Patient: Yeah.
+Doctor_1: Was it with certain activities that you were having that wrist pain?
+Patient: I have had wrist pain for a while. I do a lot of, like-
+Doctor_1: Oh.
+Patient: ... Pilates and yoga.
+Doctor_1: Yeah. Yeah.
+Patient: And I just whack my wrists a lot, and they're-
+Doctor_1: Got it.
+Patient: ... not the strongest.
+Doctor_1: Good.
+Patient: Um, and then I was, like, getting lunch with my friend and I was like, "Oh, my God. Is this a bum?"
+Doctor_1: Okay.
+Patient: And now it's this. Yeah.
+Doctor_1: Got it. Um, has the pain gotten worse with the appearance of that? Or would you say the pain is kind of about the same?
+Patient: It's not even wrist pain. It-
+Doctor_1: Feels normal and the same on both sides here?
+Patient: Mm-hmm.
+Doctor_1: Normal same?
+Patient: Mm-hmm.
+Doctor_1: And normal same. Give me thumbs up. Keep your thumbs up. Don't let me push it down. Push it down. See, can't. Give me a okay sign like that. Don't let me open the circle. Good. Squeeze your fingers together like that. Don't let me pull your fingers apart. Keep that little finger next to the ring finger.
+Patient: Okay. Fine.
+Doctor_1: Uh, yeah. Sorry. How long you been at the agency?
+Patient: Three years. That was weak.
+Doctor_1: Got it. It's, it's a hard one. It's always... Patients always freak out. They're like, "Oh, my God. I have no strength." Um, it's normal. It's okay. I just want to make sure you have some strength there. Check the size of it here. All right, let's do an aspiration. I think five ccs of 1% should be plenty. Melissa, hello. At the end, we'll do a compression wrap and a, and a pop-out.
+Nurse: Okay. Um, uh, place, uh, syringe to suction.
+Doctor_1: Uh-
+Nurse: 10 cc of 8 GL.
+Doctor_1: Uh, caring for the patient, um, of her left upper extremity. Uh, skin intact. 17-by-16-millimeter raised rubbery mass over dorsal radial wrist where she is tender to palpation. Significant pain at terminal wrist flexion and extension. Negative scaphoid shift. Everything else normal. Um, for the assessment, 26-year-old female with left dorsal wrist ganglion cyst. Uh, we discussed her ganglion cyst at length and the various treatment options ranging from observation, to aspiration, to surgical excision. She elected to proceed with aspiration, uh, which was performed today. And she will continue with compression wrapping and a wrist brace for the next two weeks. She will let me know if there's any recurrence.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

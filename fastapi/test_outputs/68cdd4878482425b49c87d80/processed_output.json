@@ -1,0 +1,138 @@
+[
+  {
+    "title": "History of present illness",
+    "key": "HPI_VERBATIM",
+    "content": [
+      "The patient reports that her back pain, which began on Monday night, has improved slightly, primarily helping her sleep. She describes the pain as localized to the left side of L2, with no radiation to the legs. She notes a burning sensation and occasional quivering in her toes, particularly when bending over, which makes it difficult to straighten back up. The neck is stiff, and the shoulder is stiff, but there is no neck pain. She denies numbness in the hands and reports that her arm strength is adequate, noting she can still perform weightlifting with her right hand. She has no weakness in the legs. She has been working and performing physically demanding tasks, including handling horses, and reports that her symptoms have progressively worsened since January. She has tried ibuprofen and Tylenol, two tablets each, three times daily, and prednisolone at a lower dose months ago, which provided minimal benefit. She is currently on gabapentin, which helps slightly. The MRI shows cervical stenosis at multiple levels, including severe left-sided stenosis at C3-4, moderate central stenosis at C4-5, and severe left-sided stenosis at C5-6. There is also mild central stenosis at C6-7. Lumbar spine findings show concern at L4-5 with nerve compression. The patient is functional but notes subtle weakness and quivering in the left arm with prolonged use. She is advised to monitor for worsening symptoms, including increased weakness, difficulty walking, or reduced walking endurance."
+    ],
+    "default": "-",
+    "instruction": "Summarize the patient’s History of Present Illness (HPI) as a clear, professional paragraph in clinical note style. Include only details explicitly stated in the transcript: symptoms, onset, duration, location, severity, aggravating or relieving factors, treatments tried, impact on daily life, and relevant prior evaluations or consultations. Maintain chronological flow. Exclude physical exam findings, imaging results, and assessment details. Do not infer or assume information. Use full sentences and natural scribe-style narrative."
+  },
+  {
+    "title": "Vitals",
+    "key": "VITALS",
+    "content": [
+      "Vitals were not mentioned in the transcript. Height, weight, and BMI were not documented."
+    ],
+    "default": "-",
+    "instruction": "Extract all information related to the patient’s vitals. Include whether vitals were filed for the visit, whether height and weight are documented, and whether BMI is available or could be calculated. If any of these are explicitly stated as absent or not on file, include that. If no vitals are mentioned, return “-”."
+  },
+  {
+    "title": "Physical Exam",
+    "key": "PHYSICAL_EXAM",
+    "content": [
+      "A physical examination was performed. The patient demonstrated good strength in the arms and legs, with no significant weakness noted. She was able to raise her knee, cock her ankles upward, and look up without difficulty. Reflexes were noted to be slightly hyperactive on the right side, though the left side is more severely compressed on imaging. The exam findings were consistent with previous evaluations."
+    ],
+    "default": "No physical exam mentioned.",
+    "instruction": "Extract details of the physical examination if mentioned. Include whether an exam was performed, the date (if available), and a concise summary of the findings. If findings are described as unchanged or consistent with previous exams, include that. If no physical exam is mentioned, return “No physical exam mentioned.”"
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Extract the patient’s constitutional review of systems (ROS) findings exactly as stated in the transcript. If no findings are mentioned, return “Normal.” Do not add or infer details."
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Extract any skin examination findings exactly as dictated. If none are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Vascular",
+    "key": "ROS_VASCULAR",
+    "content": [
+      "Normal"
+    ],
+    "default": "Normal",
+    "instruction": "Extract any vascular findings exactly as dictated. If no vascular findings are mentioned, return “Normal.” Do not infer."
+  },
+  {
+    "title": "Neurologic and Lumbar",
+    "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+    "content": [
+      "Alignment: C7-T1 shows a slight forward step-off, but no significant instability. L4-5 shows nerve compression with squished nerves.",
+      "Sensation: Burning sensation and quivering in toes; no numbness reported.",
+      "Range of Motion: Limited ability to straighten back after bending over; stiffness in neck and shoulder.",
+      "Strength: No significant weakness noted on exam; patient reports subtle weakness in left arm with prolonged use.",
+      "Reflexes: Slightly hyperactive reflexes on the right side, despite left-sided stenosis being more severe.",
+      "Laterality: Left side more affected clinically and on imaging."
+    ],
+    "default": "-",
+    "instruction": "Extract the neurologic and lumbar exam findings exactly as stated in the transcript. Organize the findings under these categories if present:\nAlignment\nSensation\nRange of Motion (flexion, extension, rotation, pain)\nStrength (with muscle groups and scores if given)\nReflexes (patellar, ankle, clonus)\nInclude laterality (left/right) where mentioned. Return only what is explicitly stated. If no findings are reported, return “-”."
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [
+      "- MRI of the neck shows moderate central stenosis at C3-4, moderate central stenosis at C4-5, and severe left-sided stenosis at C5-6. Mild central stenosis at C6-7 is noted. The spinal cord is compressed, with reduced white matter around the cord.",
+      "- MRI of the lumbar spine shows concern at L4-5 with nerve compression and squished nerves."
+    ],
+    "default": "-",
+    "instruction": "Extract all imaging results explicitly mentioned (e.g., X-ray, MRI, CT, ultrasound). Include the type of imaging, body part, date (if given), and the findings exactly as dictated. Present the results as a bulleted list. If no imaging is mentioned, return “-”. Do not add or interpret."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT",
+    "content": [
+      "- Cervical stenosis with moderate central stenosis at C3-4, C4-5, and severe left-sided stenosis at C5-6",
+      "- Lumbar stenosis at L4-5 with nerve compression",
+      "- Left-sided neurological symptoms including quivering and mild weakness",
+      "- Status post progressive symptoms since January",
+      "- Functional but with declining endurance"
+    ],
+    "default": "-",
+    "instruction": "Generate the Assessment as a concise list of the patient’s active diagnoses or conditions relevant to this visit.\nRules:\nInclude symptom-based problems (e.g., “back pain”) and diagnosis-based terms (e.g., “spinal stenosis”).\nExclude normal findings and negative statements.\nInclude “status post” only if it describes an ongoing issue (e.g., “stiffness after surgery”).\nKeep terms short and scribe-style, without exam details or explanations.\nReturn strictly as a list (one item per line, with dash or bullet).\nIf no active conditions are mentioned, return “-”."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [
+      "Initiate physical therapy for both neck and back.",
+      "Prescribe diclofenac 75 mg twice daily to replace ibuprofen and Tylenol; take with food to reduce gastrointestinal side effects.",
+      "Continue gabapentin for nerve-related symptoms.",
+      "Monitor for worsening symptoms including increased weakness, difficulty walking, or reduced walking endurance.",
+      "Encourage gradual walking program: start with 10–15 minutes, increase to 20 minutes after one week, and continue to build endurance.",
+      "Return to clinic in two months for follow-up evaluation.",
+      "Consider surgical intervention or injections if symptoms worsen significantly."
+    ],
+    "default": "-",
+    "instruction": "Write the doctor’s plan exactly as dictated, in scribe-style summary form.\nRules:\nInclude only treatments, procedures, medications, therapies, referrals, patient education, and follow-up instructions explicitly mentioned in the transcript.\nDo not add or assume any details (e.g., do not invent follow-up times unless stated).\nIf a follow-up is specified, include it exactly as dictated, formatted as: “Return to clinic in X days/weeks/months.”\nUse short sentences or numbered/bulleted steps.\nIf no plan is mentioned, return “-”."
+  },
+  {
+    "title": "Work disability status",
+    "key": "WDS",
+    "content": [
+      "The patient is still working and performing physically demanding tasks, including handling horses."
+    ],
+    "default": "-",
+    "instruction": "Extract the patient’s work disability status exactly as stated by the doctor. If not mentioned, return “-”. Do not infer."
+  },
+  {
+    "title": "Request for medical authorization",
+    "key": "RFMA",
+    "content": [
+      "Physical therapy for neck and back",
+      "Diclofenac prescription",
+      "Gabapentin prescription"
+    ],
+    "default": "-",
+    "instruction": "Extract only the items the doctor explicitly requested for insurance or medical authorization. Return each request as a single line in the format:\n<treatment/procedure/imaging/referral>\nDo not include the overall plan, work restrictions, or explanations. If no requests are mentioned, return “-”."
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [
+      "Next Appointment: Return to clinic in two months.",
+      "Review and Adjustments: Review progress of care, walking endurance, and symptom progression. Consider surgery or injections if symptoms worsen."
+    ],
+    "default": "No follow up",
+    "instruction": "Extract the follow-up schedule exactly as dictated. Include both:\nNext Appointment: when the patient should return (e.g., “Return to clinic in 2 weeks”).\nReview and Adjustments: what will be reviewed or adjusted at that visit, if mentioned.\nIf no follow-up is mentioned, return “No follow up.”"
+  }
+]

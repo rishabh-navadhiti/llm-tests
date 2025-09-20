@@ -1,0 +1,349 @@
+ROLE: You are an expert medical scribe.
+TASK: Extract structured medical information from a doctor-patient conversation transcript and populate a provided JSON template.
+
+CRITICAL INSTRUCTIONS
+
+Output Format
+
+You MUST output a JSON array of objects that exactly matches the structure, keys, and order of the provided template.
+
+Do not include any other text, explanations, or markdown formatting.
+
+Filling the Template
+
+For each object in the template, fill the "content" field strictly based on the transcript, following the "instruction" for that field.
+
+Use ONLY information explicitly stated in the transcript.
+
+Handling Missing Data
+
+If no relevant information is present in the transcript for a field, return the "default" value exactly as provided in the template.
+
+Verbatim vs. Summarization
+
+For fields requiring verbatim extraction, copy the doctor’s words exactly as dictated.
+
+For fields requiring summarization, rewrite into a concise, professional clinical note.
+
+Do not infer or assume information beyond what is clearly stated.
+
+Capitalization Rules (MANDATORY)
+
+Always capitalize the first letter of any body part, anatomical structure, or specific location.
+
+Includes: Skin, Nail, Finger, Hand, Wrist, Forearm, Elbow, Shoulder, Clavicle, Chest, Abdomen, Hip, Thigh, Knee, Leg, Ankle, Foot, Toe, Neck, Back, Spine, Head, Face, Eye, Ear, Nose, Mouth, Tongue, Jaw, and all joint names.
+
+Always capitalize anatomical descriptors such as “A1 Pulley,” “Extensor Tendon,” “Flexor Tendon,” “Palmar Surface,” “Thenar Eminence,” etc.
+
+Do not lowercase these terms even if they appear mid-sentence.
+
+Formatting Rules
+
+Use concise, professional medical terminology.
+
+Correct grammar, punctuation, and obvious transcription errors while preserving clinical meaning.
+
+Findings should follow the format: Location + Body Part + Finding (e.g., “Moderate tenderness to palpation at the Left Index Finger A1 Pulley”).
+
+If multiple body parts are listed, capitalize each (e.g., “Pain in the Wrist and Elbow”).
+
+Only correct anatomy when it is clearly mis-transcribed.
+
+Final Output
+
+Output ONLY the completed JSON array.
+
+Do not include explanations, reasoning, or additional text.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient’s full name exactly as it appears in the transcript. Do not guess or infer, and do not return doctor names, staff names, or family members. If the patient’s name is not explicitly mentioned, return \"-\"."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the patient's chief complaint as a short phrase. Exclude extra details, context, or direct quotes. If no complaint is stated, return the default value."
+  },
+  {
+    "title": "HPI Spencer",
+    "key": "HPI_SPENCER",
+    "content": [],
+    "default": "-",
+    "instruction": "Summarize the History of Present Illness (HPI) as a single coherent paragraph in professional clinical note style. Include only details explicitly stated in the transcript about onset, duration, location, severity, mechanism of injury, treatments received, and progression of symptoms. Maintain chronological order from initial event to current status. Exclude exam findings, physical measurements, imaging, or other objective observations. Do not infer or assume information. Use full sentences, proper grammar, and clear narrative style, reflecting only what is explicitly reported."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the musculoskeletal physical examination findings exactly as dictated by the doctor. Do not modify, paraphrase, or interpret—return the text verbatim. If no musculoskeletal findings are mentioned, return the default value."
+  },
+  {
+    "title": "Imaging Results",
+    "key": "IMAGING_RESULTS",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only imaging results explicitly mentioned in the transcript (e.g., X-ray, MRI, ultrasound). Return findings exactly as dictated, without adding or interpreting. If the doctor reports imaging as normal, return it as stated (e.g., 'X-ray normal'). If imaging was not performed or not mentioned, return the default value."
+  },
+  {
+    "title": "Assessment",
+    "key": "ASSESSMENT_SPENCER",
+    "content": [],
+    "default": "-",
+    "instruction": "Generate the patient's Assessment as a concise list of active problems or conditions relevant to this visit. Rules: - Include both symptom-based problems (e.g., 'hand pain') and diagnosis-based terms (e.g., 'trigger finger'). - Exclude normal findings (e.g., 'skin is intact') and negative statements (e.g., 'no tenderness'). - Include 'status post' only if it describes an ongoing issue (e.g., 'stiff finger after surgery'). - Keep terms short and scribe-style, without exam details or explanations. - Format strictly as a list (one item per line, dash or bullet). - If no active conditions are present, return the default value."
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SPENCER_",
+    "content": [],
+    "default": "-",
+    "instruction": "Write the doctor's plan exactly as dictated in the transcript, in scribe-style summary form. Rules: - Include only treatments, therapies, medications, imaging, education, or follow-up instructions explicitly mentioned. - Do not add or assume any details (e.g., do not invent follow-up times unless stated). - If follow-up is specified, include it exactly as dictated (e.g., 'return to clinic in 4 weeks'). - Use short sentences or numbered/bulleted steps. - If no plan is mentioned, return the default value."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: A new patient visit for Pamela Chelin, C-H-E-L-I-N. She is a 54-year-old and ambidextrous journalist who enjoys hiking. Uh, around 7/2025, she sustained a right ring finger injury after falling down while walking her dog. She reports swelling in her right index, middle, and ring fingers. She also endorses catching of her left middle finger, and curvature of the PIP joint of the left middle finger, and some weakness in that hand. She did some home exercises and night splinting. She reports difficulty holding a pen. She underwent x-rays on 7/22/25, uh, at Kaiser, demonstrating no acute fracture or dislocation, normal bone quality, no severe degenerative changes. Hey, Pamela.
+Patient: Hi.
+Doctor_1: I'm Eugene Sides. Nice to meet you.
+Patient: Nice to meet you too.
+Doctor_1: What kind of journalism you do?
+Patient: Um, mostly like entertainment, pop culture.
+Doctor_1: Got it, got it. Cool, cool.
+Patient: Um, yeah.
+Doctor_1: And, um, both hands-
+Patient: Yeah.
+Doctor_1: ... and right ring finger-
+Patient: Like two different things.
+Doctor_1: ... was a dog injury.
+Patient: So-
+Doctor_1: Dog walking injury.
+Patient: I, uh, a bird was flying towards my face.
+Doctor_1: Yeah.
+Patient: And I had my dog in the left hand, and I fell on the pavement, and I guess I tried to, you know-
+Doctor_1: Brace yourself.
+Patient: It was like it all happened so fast.
+Doctor_1: Sure.
+Patient: Yeah. So I probably tried to brace myself, and these three... I'm not saying these three. All I knew the next day was this finger was painful and black and blue here.
+Doctor_1: Got it. Swelling and bruising there.
+Patient: Yeah, and then over time, it seems like every morning when I wake up, it's harder to un- Like this part feels stiff-
+Doctor_1: Oh.
+Patient: ... till it like connects.
+Doctor_1: Yeah, yeah, yeah.
+Patient: And these fingers do seem swollen on the bottom.
+Doctor_1: Mm-hmm.
+Patient: And then this finger was the exact same timeframe.
+Doctor_1: Yeah.
+Patient: But it was a random trigger finger.
+Doctor_1: Got it.
+Patient: The trigger resolved with like OT and doing, um, exercises.
+Doctor_1: Okay.
+Patient: But then this joint never really fully-
+Doctor_1: Stretched out.
+Patient: It started hurting-
+Doctor_1: Yeah, yeah.
+Patient: ... but now it doesn't really hurt, but it seems like it's starting to bend.
+Doctor_1: Got it, got it.
+Patient: And that's when I was getting really concerned as well as this stuff. But it's like, I felt weird filling out your paperwork because like I have zero pain.
+Doctor_1: Yeah, yeah, yeah. Yeah.
+Patient: I'm not at all hindered from doing anything.
+Doctor_1: Got it.
+Patient: But these are all problems.
+Doctor_1: Sure.
+Patient: And as a journalist, I also didn't really type for three weeks so that I could like-
+Doctor_1: The rest day.
+Patient: Yeah, I was dictating.
+Doctor_1: Yeah.
+Patient: Um, and this, even though the swelling I can see it, this hand during the day, I don't notice anything.
+Doctor_1: Got it, got it. First thing in the morning.
+Patient: So I just felt like at this point it's been two months and I did see a GP and I went for OT. I should come to a specialist.
+Doctor_1: Got it. Um, and, uh, I
+Medical_assistant: Talk to him again.
+Patient: Sure, okay.
+Doctor_1: As I examine you, I'll be describing stuff to him-
+Patient: Sure.
+Doctor_1: ... because he can't see you. Okay.
+Patient: Yeah.
+Doctor_1: Uh, Karen, we'll change, uh, we'll add that she did do some OT, needed some formal OT.
+Patient: Yeah.
+Doctor_1: Okay, got it. Okay.
+Patient: Through Kaiser, but then to be honest with you, for orthopedics, I was like-
+Doctor_1: Okay.
+Patient: ... "I'm, I'm going to Cedars." I, I was with Cedars for years and years-
+Doctor_1: Okay.
+Patient: ... and then the Blue Shield just got so expensive.
+Doctor_1: Got it.
+Patient: I switched, but I'm gonna switch back.
+Doctor_1: Got it, got it.
+Patient: But in the interim-
+Doctor_1: Sure, okay, perfect.
+Patient: ... I was like, "I'll pay out of pocket and see you."
+Doctor_1: Got it.
+Patient: Yeah.
+Doctor_1: Um, no old, old injury to these hands. Have you ever had a trigger finger before?
+Patient: No.
+Doctor_1: No? Okay.
+Patient: I did have, and I mean, I just turned 54. I know sometimes women at middle age-
+Doctor_1: Yeah.
+Patient: ... seem to get it.
+Doctor_1: Yeah.
+Patient: I do know that I was very tense for a while, and I, when I would wake up in the morning, I, I noticed my fists were clenched.
+Doctor_1: Got it.
+Patient: So I don't know if that contributed.
+Doctor_1: Got it.
+Patient: But also, um, like years and years ago I had mild carpal tunnel-
+Doctor_1: Mm-hmm.
+Patient: ... that literally just resolved once I started sitting properly.
+Doctor_1: Got it.
+Patient: Um, I did have frozen shoulder and this-
+Doctor_1: Okay.
+Patient: ... in my 40s.
+Doctor_1: Okay.
+Patient: But otherwise, no, I've been-
+Doctor_1: Okay.
+Patient: ... lucky until right now. Yeah.
+Doctor_1: Let me see both your hands here.
+Patient: Yeah.
+Doctor_1: What kind of dog do you have?
+Patient: Um, he looks like a little, he looks like a Jack Russell mix, but he's actually a Chihuahua Cocker Spaniel poodle, but just like a little terrier guy.
+Doctor_1: Yeah.
+Patient: That's the other thing. I've switched to a waist leash-
+Doctor_1: Got it.
+Patient: ... so that I don't have to clutch a leash.
+Doctor_1: For sure. Yeah, we get a lot of dog walking injuries.
+Patient: Really?
+Doctor_1: A lot of broken bone, a lot of sprained fingers.
+Patient: Really?
+Doctor_1: All, all the time.
+Patient: I'm glad it's not-
+Doctor_1: Every day.
+Patient: ... not just me.
+Doctor_1: Literally.
+Patient: Because people fall while they're... 'Cause your dog lunges or...
+Doctor_1: Or if they see something, they go after it.
+Patient: Right. In this case-
+Doctor_1: You know, you trip.
+Patient: ... a bird flew at my face.
+Doctor_1: And you just walking-
+Patient: Oh, I'm tripping all the time. Oh, so that's another thing. I did trip-
+Doctor_1: Yeah.
+Patient: ... about a month ago.
+Doctor_1: Okay.
+Patient: And both these, like this one was bleeding-
+Doctor_1: That's serious.
+Patient: ... but it didn't seem to have...
+Doctor_1: Okay.
+Patient: It feels like it's okay. My knee was all like gushing, like I was walking home pouring blood. I'm like, "This is like ridiculous."
+Doctor_1: Okay.
+Patient: Like, I'm so accident prone.
+Doctor_1: Sure. Uh, Karen, we'll start with the examination, right upper extremities. Skin intact, no severe soft tissue swelling. Your thumb is always a little red.
+Patient: Oh, I, I have a bad, like, I pick.It's a nervous habit and I've been so upset about my hands and nervous, like, not to see you but-
+Doctor_1: Sure.
+Patient: ... nervous for what-
+Doctor_1: What's going on.
+Patient: ... is gonna be needed that I started, yeah.
+Doctor_1: Feels normal and the same on both sides here?
+Patient: To me?
+Doctor_1: So yeah, yeah. No numbness?
+Patient: Oh.
+Doctor_1: Okay. Same here?
+Patient: Yeah.
+Doctor_1: And same here?
+Patient: Yeah.
+Doctor_1: Give me thumbs up. Keep your thumbs up, don't let me push them down. Give me an okay sign like that. Don't let me open that circle. Squeeze your fingers together like that. Don't let me pull your fingers apart, keep that little finger next to the ring finger.
+Patient: Okay.
+Doctor_1: Good. And relax on that side right there. If I push down here, is that tender or not too bad?
+Patient: Don't feel anything.
+Doctor_1: No? Okay.
+Patient: Abnormal.
+Doctor_1: Got it. Karen, no tenderness over A1 pulleys.
+Patient: Oh god, the A1 pulley, I'm so tired of hearing about it. It's my trigger finger research, I'm like, "That damn pulley."
+Doctor_1: Your ears are not too bad?
+Patient: Nothing.
+Doctor_1: Okay.
+Patient: Um, the reason they did the x-rays was I think that felt a little bit... I feel like there was a slight tenderness two pinches ago there, so I'm... No?
+Doctor_1: Not too bad?
+Patient: Nothing.
+Doctor_1: What about here?
+Patient: Nope.
+Doctor_1: Not too bad?
+Patient: Like, the slightest bit. Like, um, they did the x-rays wondering if maybe arthritis caused trigger fingers.
+Doctor_1: Sure.
+Patient: So that's why they had done the x-rays, but they didn't find anything. I did also bring some printouts of-
+Doctor_1: Oh, I have them.
+Patient: ... my blood work.
+Doctor_1: Oh, good.
+Patient: 'Cause they were wondering about diabetes, but then that-
+Doctor_1: Got it.
+Patient: ... you know, all the things.
+Doctor_1: Sure. Does that bother you? That's not too bad?
+Patient: Nothing.
+Doctor_1: And the little finger also not too bad?
+Patient: No.
+Doctor_1: Good. Okay.
+Patient: The only... On my right hand, I've only noticed something in the middle three fingers.
+Doctor_1: Mm-hmm.
+Patient: Yeah.
+Doctor_1: In, in these three?
+Patient: Yeah.
+Doctor_1: Okay, got it.
+Patient: And mostly when I wake up in the morning.
+Doctor_1: Mostly in the middle?
+Patient: Yeah, right when I wake up.
+Doctor_1: Uh, make a tight fist for me.
+Patient: Okay.
+Doctor_1: Okay. Do you feel a pull when you do that or not too bad?
+Patient: Nothing.
+Doctor_1: Okay, got it. Let me see that side over there. Um, and also, Karen, no tenderness, uh... Sorry, mild tenderness about the PIP joint of the...
+Patient: It was this one, right?
+Doctor_1: Of the ring-
+Patient: Oh, this one?
+Doctor_1: Yeah, I think it was. The ring finger.
+Patient: That's the one I fell on.
+Doctor_1: Yeah. Yeah, got it.
+Patient: You know what? I, I should note, when I was starting OT and she felt this hand-
+Doctor_1: Mm-hmm.
+Patient: ... she felt like this one seemed like it was starting...
+Doctor_1: And, Karen, on the left side, uh, skin intact, no soft tissue swelling, uh, no tenderness over A1 pulley of middle finger. I would say a able to get to zero degrees at PIP joint of middle finger. Can you make a full fist?
+Patient: Yeah.
+Doctor_1: I'm squeezing really tight-
+Patient: Yeah.
+Doctor_1: ... but open your thumb-
+Patient: Okay.
+Doctor_1: ... your index finger-
+Patient: Okay.
+Doctor_1: ... your little finger-
+Patient: Okay.
+Doctor_1: ... ring finger, and now the middle finger.
+Patient: It, it-
+Doctor_1: It triggered a little.
+Patient: Yeah.
+Doctor_1: Yeah. Okay, um-
+Patient: And that's the funny thing, it didn't start there. It started in this one.
+Doctor_1: Got it.
+Patient: And then that resolved-
+Doctor_1: Yeah.
+Patient: ... and it seemed to have moved.
+Doctor_1: Um, we'll see-
+Patient: It did trig- Sorry, go on. Yeah.
+Doctor_1: Uh, we'll say positive triggering of middle finger.
+Patient: It did trigger this morning-
+Doctor_1: Yeah.
+Patient: ... for the first time ever in a weird way where, when I was putting on my clothes-
+Doctor_1: Yeah.
+Patient: ... it was, like, the full weird, like, lock and snap.
+Doctor_1: Gotcha. Gotcha. Yeah.
+Patient: But it's never done that.
+Doctor_1: So, um, it is a trigger finger on this side. Now, trigger f- ... uh, trigger for sharing injection. Karen, let's do, um, assessment. Um, 54-year-old female with left middle finger trigger finger and right hand sprains. For the plan, we discussed her conditions at length. For the trigger finger, she elected to try an injection, which was performed today. In regards to the sprain of her right hand, she will continue doing stretches, but it may take a few more months to fully resolve. She will return to clinic if she has any persistent symptoms. No, how about something else?
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

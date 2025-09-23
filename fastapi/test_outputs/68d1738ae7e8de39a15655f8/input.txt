@@ -1,0 +1,267 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+When interpreting the clinical report, use clinical judgment to clarify likely errors or ambiguous abbreviations (e.g., miswritten joint names, injection types, or anatomic references), and correct them only when the context strongly supports it. Do not change terms without justification.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "History of present illness",
+    "key": "VERBATIM_HPI",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only the History of Present Illness (HPI) from the patient’s report. Include only the patient’s stated symptoms, their onset, duration, severity, progression, aggravating/relieving factors, attempted treatments, and impact on daily life. Do not include physical exam findings, assessment, or plan. Present the HPI concisely, using the patient’s words as closely as possible without adding interpretation."
+  },
+  {
+    "title": "Vitals",
+    "key": "VITALS",
+    "content": [],
+    "default": "-",
+    "instruction": "From the following conversation, extract all information pertaining to the patient's vitals, including whether vitals were filed for the visit, if height and weight measurements are on file, and whether BMI could be calculated, noting if any of these pieces of information are explicitly stated as absent or not on file."
+  },
+  {
+    "title": "Physical Exam",
+    "key": "PHYSICAL_EXAM",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract details regarding any mentioned physical exams, including whether an exam was performed, its date (if available), and a summary of its findings, specifically noting if the findings are identical to, consistent with, or unchanged from previous examinations. If no physical exam is discussed, state \"No physical exam mentioned.\" Present the extracted information as a concise summary."
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal "
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [],
+    "default": "No color changes or rashes.",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "Vascular",
+    "key": "ROS_VASCULAR",
+    "content": [],
+    "default": "-",
+    "instruction": "If not information is present return normal"
+  },
+  {
+    "title": "Gait and Posture",
+    "key": "LEE_GAIT_AND_POSTURE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all information related to the patient's gait and posture from the conversation, specifically identifying details such as whether they ambulate independently or with an aid (e.g., cane, walker, wheelchair), any observed abnormalities in their walking pattern, and a description of their general posture (e.g., normal, stooped, erect)."
+  },
+  {
+    "title": "Neurologic and Lumbar",
+    "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the Neurologic and Lumbar examination findings from the provided text, focusing on the following categories: Alignment, Sensation (including intactness, location, and type of touch), Range of Motion (noting flexion, extension, left/right rotation, presence of pain, and overall assessment), Strength (detailing individual muscle scores for Iliopsoas, Quadriceps, Tibialis, EHL, Gastrocsoleus, and the result of the Straight Leg Raise), and Reflexes (specifying scores for Patellar and Ankle reflexes, and the presence of Clonus, including laterality where applicable)."
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+  },
+  {
+    "title": "Assessment",
+    "key": "SOAP_ASSESSMENT",
+    "content": [],
+    "default": "No assessment",
+    "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SINGLE_PARAGRAPH",
+    "content": [],
+    "default": "-",
+    "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section., Provide info in a single paragraph."
+  },
+  {
+    "title": "Work disability status",
+    "key": "WDS",
+    "content": [],
+    "default": "-",
+    "instruction": "Note weather this patient has a work disability status or not.\nIt should be exactly what doctor mention if not present leave it blank."
+  },
+  {
+    "title": "Request for medical authorization",
+    "key": "RFMA",
+    "content": [],
+    "default": "-",
+    "instruction": "Note the points mentioned by the doctor that has requested medical authorization for the patients company.\n- It has to be what the doctor has spoken\n- DO NOT INCLUDE plan in this section\n- Only include what doctor requests for.\n- Be direct, give in single line for each request\n- ex <treatment/MRI/screening/injection> <referral>\n- dont mention work restrictions"
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: Hello.
+Patient_1: How you doing?
+Doctor_1: Pretty good. How are you, sir?
+Patient_1: Oh, good.
+Doctor_1: Uh-oh. All right. So, how's the, the leg feeling?
+Patient_1: You know, it's, uh, again, getting comfortable. It's just hard to find a, a better way to sit down.
+Doctor_1: Mm-hmm.
+Patient_1: All right.
+Doctor_1: Yeah. Part of put pressure on the right side, huh?
+Patient_1: Yeah. Mm-hmm.
+Doctor_1: Mm-hmm.
+Patient_1: Yeah. And it stays right here.
+Doctor_1: When you're walking, does it hurt more too?
+Patient_1: It, it... I just have to... I've learned how to walk.
+Doctor_1: Mm-hmm.
+Patient_1: And sort of twist my, my leg, uh, and my foot a little bit so the pressure's less.
+Doctor_1: Mm-hmm. Mm-hmm.
+Patient_1: Uh, but for instance, when I'm laying down at night-
+Doctor_1: Mm-hmm.
+Patient_1: ... um, what I do is, um, I put this, my foot underneath this portion-
+Doctor_1: Mm-hmm.
+Patient_1: ... and try to work with the nerve.
+Doctor_1: Mm-hmm.
+Patient_1: And...
+Doctor_1: But when you're walking, can you still walk for a long time? Can you walk for an hour without stopping?
+Patient_1: No, can't do it.
+Doctor_1: And this, this leg starts hurt more?
+Patient_1: Yeah.
+Doctor_1: Okay. Are you taking any medications for the pain?
+Patient_1: No.
+Doctor_1: Are you exercising?
+Patient_1: A little bit.
+Doctor_1: Mm-hmm.
+Patient_1: A little bit.
+Doctor_1: Okay.
+Patient_1: And stayed away from therapy until...
+Doctor_1: Mm-hmm.
+Patient_1: Last time he said we want to stay away from therapy until we get the, uh, hip MRI so then we can pinpoint-
+Doctor_1: Mm-hmm.
+Patient_1: ... what exact therapy we will need.
+Doctor_1: Yeah.
+Patient_1: Or what the next step is. So, I got the MRI. Uh, I guess at this point, I want to get your feedback.
+Doctor_1: So, Dr. Jackson thinks there is a tear in the labrum, correct?
+Patient_1: Mm-hmm.
+Doctor_1: What does he want to do about it?
+Patient_1: There's, uh... I think he pointed out three options.
+Doctor_1: Mm-hmm.
+Patient_1: Uh, one is, uh, physical therapy.
+Doctor_1: Mm-hmm.
+Patient_1: The other one is cortisone shot.
+Doctor_1: Mm-hmm.
+Patient_1: And the last option, I think it's a, uh, surgery.
+Doctor_1: Mm.
+Patient_1: And I wanted to see what your opinion was, um, on those, and see if there's a way to, um, maybe continue with a pinpoint therapy.
+Doctor_1: Mm-hmm.
+Patient_1: Physical therapy.
+Doctor_1: Yeah.
+Patient_1: Uh, for a little while, and see how that goes.
+Doctor_1: Well, let's have a look at... Can you stand? Actually, why don't you sit? Can you straighten up this leg for me? Like, ooh, is it in pain?
+Patient_1: Yeah.
+Doctor_1: Let's do this on the other side. Any pain?
+Patient_1: No.
+Doctor_1: What about crossing the leg out and over like this? That's pretty tight, huh?
+Patient_1: Yeah. It's tight.
+Doctor_1: How about the other side? Oh, this one's good. Easy, huh?
+Patient_1: Yeah.
+Doctor_1: Okay. Well, that hip area is basically... When that labrum gets torn, the whole thing gets inflamed.
+Patient_1: Mm-hmm.
+Doctor_1: And then that swelling starts to hit the sciatic nerve, and that, that's why you have pain going down. Uh, and of course, it's... When, when it becomes hard to move, um, then everything starts to get tight, weak, and then that tightness makes the nerve even worse, makes the injury even worse. And then you're, you're just in a bad cycle. So, usually for this, um, what I would recommend, if, if, uh, it was me, I would do the shot first. Have Dr. Jackson give you a shot into the hip, and then, uh, hopefully, that reduces the pain and swelling. And then, if you're in less pain, you go back to physical therapy and we'll work on this whole hip area and back area. And even though the labrum's torn, if the hip is strong, if the butt muscles are good, it protects it and the tear might heal a little bit, or just enough that it doesn't hurt as much. And then you can really keep that area strong, and maybe you might not need surgery. Right?
+Patient_1: Let's see it, the, the pros and the cons.
+Doctor_1: I don't think there's much of a, of a con, you know. Uh, it might hurt a little bit, but he does it in the office, and he gets in there pretty easily with an ultrasound machine. Gets the needle in there pretty quickly. Uh, but other than that, I don't... I, I have never heard of a shot causing any damage or infection or anything like that. Uh, the really... The big con is that we just don't know if it's gonna work.
+Patient_1: Yeah.
+Doctor_1: Right? Um, it might help, it might not. Um, it might last, it, it, it might... may not last.
+Patient_1: Yeah.
+Doctor_1: Right? But at least try it, and then if it doesn't last, then, you know, do the surgery.
+Patient_1: So, you're suggesting shot?
+Doctor_1: Mm-hmm.
+Patient_1: Um, or physical therapy?
+Doctor_1: Yeah.
+Patient_1: Uh...
+Doctor_1: Yeah, I would definitely do the shot at least. I mean, you're not walking right, you're not sitting right. You need to do, you need to do something to break this sort of picture and this cycle of inflammation and pain, you know?
+Patient_1: Um... All right. So I guess I'll do that.
+Doctor_1: Yeah.
+Patient_1: Yeah.
+Doctor_1: So, yeah, make an appointment up front. Have them make... Book you an appointment with Dr. Jackson, and then have it noted that you want the injection. Then he'll be ready to give it to you.
+Patient_1: Okay. In terms of the physical therapy-
+Doctor_1: Mm-hmm.
+Patient_1: ... he... Who will determine the type of therapy that I will need?
+Doctor_1: Uh, he would do it.
+Patient_1: Okay.
+Doctor_1: Yeah. Yeah, so now that we know it's a hip issue, he would, he would basically run the point at this point.
+Patient_1: All right. Um, I didn't get a written report-
+Doctor_1: Mm-hmm.
+Patient_1: ... you know, for, for his findings and results.
+Doctor_1: Mm-hmm.
+Patient_1: Can I get a copy of that report?
+Doctor_1: Uh, yeah. Just talk to the front desk.
+Patient_1: Okay.
+Doctor_1: Yeah, his last note, uh, is from September 2nd. So I'm, I'm seeing it too, so it's on our system.
+Patient_1: Okay.
+Doctor_1: Mm-hmm.
+Patient_1: Uh, also, can I also ask you to give me notes on her report?
+Doctor_1: Sure, yeah. All right, so just wait here. Actually, uh, you can check to, uh... Talk to the front, and they'll set you up with the appointment, and then just ask them about the notes then, okay?
+Patient_1: Okay, appreciate that.
+Doctor_1: All right. Good luck, sir.
+Patient_2: ... do you want to do it this one? 'Cause they haven't done it with this one, so...
+Doctor_1: Oh.
+Doctor_2: Yeah, I think they only put, they only put the injection and that's it.
+Doctor_1: Oh, uh-
+Doctor_2: But he still has the file, so I can't even-
+Doctor_1: Oh, can you release the file, uh, Pugu? Or, uh, Epun?
+Patient_1: Okay.
+Doctor_1: So Kenya can work on it? Thank you.
+Patient_1: Yeah, okay. Um.
+Doctor_1: Let's do this.
+Doctor_2: I thought I already did something.
+Doctor_1: Oh, the pressure- pressure cramp there?
+Doctor_2: It's like a few times when I was in the ER.
+Doctor_1: Oh.
+Doctor_2: And then two weeks apart right there.
+Doctor_1: Little spacer next week, yeah. Yeah. Yeah. That super, super sick lady, right?
+Doctor_2: Uh, yeah. But she's kinda getting out of-
+Doctor_1: Oh, okay.
+Doctor_2: ... like, "Hey, what's going on?"
+Doctor_1: Yeah. Uh, you want something?
+Doctor_2: Is that blood in my... It's blood?
+Nurse_1: Yeah.
+Doctor_2: That's the bloods. Right. Make sure it's not, uh, it's not tumor or something.
+Patient_1: Yeah, I don't think it is.
+Doctor_2: You guys are close. But you don't know. What kind of blood test? And it's like...
+Doctor_1: It's funny when we see those, like, census warnings and then they're, like, telling the surgeons to discharge their patients. And then you go up to four north, five north and you're like, these patients just sit here for weeks-
+Patient_1: Oh.
+Doctor_1: ... with nothing being done.
+Doctor_2: But it's not their fault. It's, uh, it's... You know? They're working.
+Patient_1: I know. It sucks.
+Doctor_2: They have bills to pay. People to see. We need to start going in three days instead of every week.
+Doctor_1: Yeah, exactly.
+Doctor_2: It's too full and- Yeah. I said, well...
+Doctor_1: Well, maybe they make more money on these medical patients 'cause they just sit there and they get more tests. Whereas surgical patients, like, they only get the payment for the surgery so the quicker they get 'em out. Right?
+Doctor_2: Yeah, exactly.
+Doctor_1: Whereas, like, you know, old lady gets admitted for some dialysis. Each dialysis is like probably charged five times as much as the outpatient. And then they order an MRI of the brain, they order E- EMG, EEG, Echo. They love all that, right?
+Doctor_2: Yeah, I get to do it.
+Doctor_1: Yeah.
+Doctor_2: Admits for that.
+Doctor_1: Oh, for sure, dude.
+Doctor_2: It's like double.
+Doctor_1: And then they consult to us and then we run more tests, and then the hospital bill just skyrockets. Yeah. Oh, yeah. Exactly. Yeah, it's painful, dude. All right, let's see, Octaria in three. Hello, how are you? All right. Have you been in a lot of pain?
+Patient_2: Mm-hmm. Um, for the past week I didn't go for exercise because I went for my biopsy.
+Doctor_1: Mm.
+Patient_2: And I feel, I don't feel the pain.
+Doctor_1: Okay, good.
+Patient_2: Okay, okay. I don't feel the pain.
+Doctor_1: Mm-hmm.
+Patient_2: But after that I-
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

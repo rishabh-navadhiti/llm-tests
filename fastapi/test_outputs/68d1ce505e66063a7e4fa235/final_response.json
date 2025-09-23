@@ -1,0 +1,81 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "Patient Name",
+      "key": "PATIENT_NAME",
+      "content": [
+        "Richard Frank"
+      ],
+      "default": "-",
+      "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+    },
+    {
+      "title": "Chief Complaint",
+      "key": "SPENCER_CHIEF_COMPLAINT",
+      "content": [
+        "Bilateral wrist numbness with nighttime symptoms and associated hand dysfunction"
+      ],
+      "default": "-",
+      "instruction": "What is the main complaint of the patient, give a one liner detailed note. Only include hand related surgery and issues."
+    },
+    {
+      "title": "History of present illness",
+      "key": "HPI_RYAN",
+      "content": [
+        "Richard Frank is an 82-year-old right-hand dominant male with a history of bilateral thumb CMC arthritis, bilateral carpal tunnel syndrome, and right hand digit triggering. He presents with approximately six months of bilateral wrist numbness in the distribution of wrist watches, particularly noticeable while walking and occasionally at night. He does not endorse any associated symptoms. The symptoms are predominantly present at night and during ambulation. He was last seen in June 2022 with similar complaints of bilateral carpal tunnel symptoms and right-hand triggering of the middle, index, and ring fingers. The current symptoms are likely related to his known bilateral carpal tunnel syndrome, especially given the positive nighttime symptoms."
+      ],
+      "default": "-",
+      "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nDoctors Preference:\n1) Do NOT use 'the patient', use the persons gender ex: 'he or she ...' \n2) End the sentence with a period."
+    },
+    {
+      "title": "Musculoskeletal",
+      "key": "MUSCULOSKELETAL_VERBATIM",
+      "content": [],
+      "default": "-",
+      "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim.\n\nDO NOT INCLUDE ANY EXAM FINDINGS IN THIS SECTION"
+    },
+    {
+      "title": "Imaging",
+      "key": "IMAGING_GEORGE",
+      "content": [
+        "Nerve conduction studies are being considered for further work-up of bilateral carpal tunnel syndrome symptoms during the patient's next visit to Los Angeles."
+      ],
+      "default": "-",
+      "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+    },
+    {
+      "title": "Assessment",
+      "key": "SOAP_ASSESSMENT",
+      "content": [
+        "Bilateral carpal tunnel syndrome",
+        "Right hand digit triggering",
+        "Bilateral thumb CMC arthritis"
+      ],
+      "default": "No assessment",
+      "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+    },
+    {
+      "title": "Plan",
+      "key": "PLAN_WITH_FOLLOW_UP",
+      "content": [
+        "Place patient in bilateral cock-up wrist braces to be worn at night.",
+        "Dr. Dellomajore will speak with patient's neurologist, Dr. Sykes, about scheduling nerve conduction studies during the patient's next visit to Los Angeles for further evaluation of bilateral carpal tunnel syndrome.",
+        "Return to clinic in 30 days."
+      ],
+      "default": "-",
+      "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services.\n\nAlso in the end provide the plan of action for the individual conditions. And return the follow-up duration as a number.\nWhen presenting the follow-up, format the sentence as: \"Return to clinic in X days/weeks/months.\""
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 1568,
+    "completion_tokens": 1046,
+    "total_tokens": 2614
+  },
+  "timing": {
+    "total_time_ms": 11951.500415802002,
+    "generation_time_ms": 11951.099634170532,
+    "processing_time_ms": 0.08058547973632812
+  },
+  "error_message": null
+}

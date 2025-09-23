@@ -1,0 +1,276 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+  },
+  {
+    "title": "History of present illness",
+    "key": "ROTH_HPI",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity. Discuss any changes or developments in symptoms since onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient’s daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nEnsure that no information regarding the treatment plan is included."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. \n\nplease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period."
+  },
+  {
+    "title": "Past Surgical History",
+    "key": "ROTH_PAST_SURGICAL_HISTORY",
+    "content": [],
+    "default": "",
+    "instruction": "List any previous surgeries the patient has undergone. Include only the procedure names and relevant dates if available"
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [],
+    "default": "No social history.",
+    "instruction": "Extract the patient's social history from the conversation, specifically focusing on smoking status, alcohol consumption, and illicit drug use. Clearly state whether the patient is a smoker, non-smoker, or former smoker, and provide details on alcohol and illicit drug use, if any. If the patient denies use, explicitly mention it. Present the information in a structured and concise format.\n"
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [],
+    "default": "No family history",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal "
+      },
+      {
+        "title": "HEENT",
+        "key": "HEENT",
+        "content": [],
+        "default": "Eyes: No visual loss, blurred vision, double vision.  Ears, Nose, Throat:  No hearing loss, sneezing, congestion, runny nose or sore throat.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Cardiovascular",
+        "key": "SOAP_ROS_CARDIOVASCULAR",
+        "content": [],
+        "default": "No chest pain, chest pressure or chest discomfort.  No palpitations or edema.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "RESPIRATORY",
+        "key": "SOAP_ROS_RESPIRATORY",
+        "content": [],
+        "default": "No shortness of breath, cough or sputum.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": " Gastrointestinal",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Genitourinary",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [],
+        "default": "No burning on urination, frequency, urgency, or nocturia.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [],
+        "default": "No numbness of the feet.",
+        "instruction": "If no information is present please return Normal\n"
+      },
+      {
+        "title": "Musculoskeletal",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "No knee pain.",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of System",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Vital Signs",
+        "key": "SOAP_PE_VITAL_SIGNS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "General",
+        "key": "SOAP_PE_GENERAL",
+        "content": [],
+        "default": "No acute distress, answers appropriately.  Alert and oriented.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Skin",
+        "key": "SOAP_PHYSICAL_EXAM_SKIN",
+        "content": [],
+        "default": "No color changes or rashes.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Head",
+        "key": "SOAP_PE_HEAD",
+        "content": [],
+        "default": "Atraumatic and normocephalic.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Eyes",
+        "key": "SOAP_PE_EYES",
+        "content": [],
+        "default": "Extraocular muscles were intact.  The patient was anicteric.  Pupils were equally reactive to light and accommodation.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [],
+        "default": "Canals without obstructions.  Tympanic membranes clear.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [],
+        "default": "There was no thrush, no exudate, no erythema.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PE_NECK",
+        "content": [],
+        "default": "Supple.  There was no JVD.  No bruit was heard over the carotids.  No thyroid enlargement.  No lymphadenopathy.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [],
+        "default": "Nondisplaced PMI.  No thrills noted.  S1 and S2, regular rhythm without murmurs.",
+        "instruction": "Always return the exact value present in the default key if no information is found anything related to this in the conversation."
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [],
+        "default": "Breathing is unlabored.  Clear to auscultation B/L.",
+        "instruction": "Always return the exact value present in the default key if no information is found anything related to this in the conversation."
+      },
+      {
+        "title": "Musculoskeletal",
+        "key": "SOAP_PE_MUSCULOSKELETAL",
+        "content": [],
+        "default": "-",
+        "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty."
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PE_NEUROLOGICAL",
+        "content": [],
+        "default": "Alert and oriented to person, place and time. Speech, memory and expression are within normal limits.  Deep tendon reflexes 2+ in both lower extremities.  There was no focal deficit.  Cranial nerves II through XII were intact.",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [],
+        "default": "Mood is euthymic.  Affect is calm.  Thought process is normal.  Thought content is appropriate.  Eye contact, attention, insight, concentration, and decision-making-ability are intact.",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "SOAP_ASSESSMENT",
+        "content": [],
+        "default": "No assessment",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section."
+      }
+    ],
+    "title": "Assessment and plan",
+    "instruction": "",
+    "merge": false
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: Who's coming? I think she's coming.
+Patient_1: Yeah. Is that the knee surgery she did? That's the-
+Doctor_1: Yeah, well, it's all recorded, yeah.
+Patient_1: Yeah.
+Doctor_1: I did too yesterday. I did a hip- hi. I did a hip and two knees yesterday, so-
+Patient_1: Mm-hmm.
+Doctor_1: Luckily for me, there's a lot of arthritis out there.
+Patient_1: Is that what it is then?
+Doctor_1: Oh, yeah. Thank you. All right. Let me clean this up. Yeah. Looks good. All right. Let's take a peek here. We'll take all this. So you guys did good. Is it doing okay?
+Patient_1: It's okay.
+Doctor_1: Good. Yeah, that's really good. Awesome. All right. We're gonna get all this stuff out today. So we'll get the sutures and the staples out. Let me see it straighten out all the way. Really good. All right. So probably about five degrees there. Let's see you bring it back all the way. Really good. So that's about 100. So I like where we are. Is therapy coming? They're working with you? Okay. Good. All right. I'm happy with this. This looks good. So, you know, we're looking good from an x-ray.
+Patient_1: Can you see the difference?
+Doctor_1: In the back? Yeah. That'll move around, so that's now-
+Patient_1: Oh, okay.
+Doctor_1: ... and then it'll be here and then it'll be here.
+Patient_1: Oh, okay.
+Doctor_1: So, because we're really... What are we? Two weeks plus?
+Patient_1: Three weeks.
+Doctor_1: Three weeks now. Yeah. So, you know, you're through the worst of it, but it's gonna continue to get better.
+Patient_1: Okay.
+Doctor_1: I just wanted to check because of the little wound thing that was still there.
+Patient_1: Yeah.
+Doctor_1: So we'll get all that out today. Continue physical therapy. They're still coming, right?
+Patient_1: Yes.
+Doctor_1: Okay. And then I want to see you in a month.
+Patient_1: Okay.
+Doctor_1: Are you okay on medication and everything?
+Patient_1: Mm-hmm. Yes.
+Doctor_1: All right.
+Patient_1: And then, uh, is there anything we have to do to clean it out?
+Doctor_1: No. At this point, no. Just leave it open to air. Let's see what-
+Patient_1: Need a bandage or no?
+Doctor_1: It's not draining or anything, so you're fine.
+Patient_1: Yeah. And but still keep covering in the shower?
+Doctor_1: Yeah. For the next couple weeks I would, and then after that, if it looks good, then it just... Then you don't have to. Just because we're going to take the staples and sutures out today. All right. Any questions?
+Patient_1: No. We're good. Okay.
+Doctor_1: Yeah. Good. All right. Uh, have my nurse take the staples out. I can't stand the sound of screaming. No, I'm just kidding. All right.
+Patient_1: Thank you.
+Doctor_1: Hang on a sec. We'll bring her in. So Miss Concepcion has staples and sutures to take out. Remember, that was the one we did the wound vac on.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

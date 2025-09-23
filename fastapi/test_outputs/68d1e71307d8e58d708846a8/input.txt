@@ -1,0 +1,105 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "SPENCER_CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "What is the main complaint of the patient, give a one liner detailed note. Only include hand related surgery and issues."
+  },
+  {
+    "title": "History of present illness",
+    "key": "HPI_RYAN",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nDoctors Preference:\n1) Do NOT use 'the patient', use the persons gender ex: 'he or she ...' \n2) End the sentence with a period."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim.\n\nDO NOT INCLUDE ANY EXAM FINDINGS IN THIS SECTION"
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+  },
+  {
+    "title": "Assessment",
+    "key": "SOAP_ASSESSMENT",
+    "content": [],
+    "default": "No assessment",
+    "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [],
+    "default": "-",
+    "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services.\n\nAlso in the end provide the plan of action for the individual conditions. And return the follow-up duration as a number.\nWhen presenting the follow-up, format the sentence as: \"Return to clinic in X days/weeks/months.\""
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Medical_assistant_1: Okay, doctor.
+Doctor_1: Uh, let's see. Uh, Ori Blumenfield? Blumenfeld?
+Medical_assistant_1: Okay, doctor.
+Doctor_1: Did you get a... Did you get a read from him?
+Medical_assistant_1: No, doctor.
+Doctor_1: Um, let's see. He is a 42-year-old... 47-year-old right-hand dominant corporate lawyer. Uh, next line, status post direct blow while playing soccer to the right forearm. Um, hold on. Date of injury, 9-14-2025. Diagnosis, right, um, right ulna shaft fracture-closed. He is here today for evaluation and treatment of his right forearm. Uh, he states that he was playing soccer when he collided with, uh, another player. He felt there was an immediate problem. Um, he went to an urgent care where they took X-rays that showed a fracture. He went to see Andrew Weiss, who placed him in a cast and referred him here to discuss it further. Next paragraph. Uh, he is having difficulty, uh, tolerating the cast. The cast goes above his elbow. He can't wash himself. He can't, uh, do self-care. He doesn't know if he can last this long in a long cast. Uh, he denies any... He has, uh... No, that's fine. Okay. So, on exam, skin is intact. Um, uh, there is mild bruising noted, mild soft tissue swelling, um, mild tenosol patient on the ulnar border. Um, otherwise no deformity or tenderness noted. He has good range of motion of the fingers. He can give a thumbs up, cross his fingers, make an okay, reach his thumb to his small finger. Uh, old X-rays um, taken, uh, September 15th, 2025 were reviewed with the patient, and as well as X-rays taken, uh, three... Sorry, three views of the... Two views of the right forearm were ordered, taken, reviewed with a patient that demonstrates a minimally displaced mid-shaft ulna fracture. I detect no instability noted at either ends of the... uh, at the wrist or elbow. Okay, um, .RE full, reviewed the X-rays, clinical exam findings. The fracture that he has is minimally displaced. Uh, we did talk about the fact that these can take a long time to heal, but with its really good alignment, I think it should heal just fine. Sorry. Uh, let me rephrase that. Uh, we discussed that ulnar fractures take a long time to heal, but, uh, given its minimally displaced nature, I would favor conservative treatment over surgical management at this time. I do recomme- recommend close followup with X-rays. We will place him in a short-arm splint. Uh, dash he wants, uh, waterproof so that he can take a shower, dash I think this is reasonable. We did talk about cast care... cast care and red flags. Uh, re- return to clinic in two weeks for X-rays and reevaluation.
+Medical_assistant_1: Okay, doctor. Thank you.
+Doctor_1: Um, Roberto Marin?
+Medical_assistant_1: Okay, doctor.
+Doctor_1: Uh, Spanish-speaking. Uh, he is a... seven-year-old left-hand dominant retiree. Um, diagnosis, uh, left ulnar neuropathy, uh, left carpal tunnel syndrome-mild. Uh, he is here today for evaluation and treatment of, uh, numbness and tingling with hand atrophy of the left hand. He says that his middle, ring, and small fingers are involved. He states that this has been going on for years. He says that they're always young... sorry, always numb. There's always pain, and it radiates up and down the arm. He states that this is getting worse. He was sent for a, uh, neurology evaluation. He saw, um, Gerard in Pasadena, who did nerve studies. Uh, he was referred for hand surgery, but then he went to the surgeon and no one, uh... they didn't want to do surgery. He's here for a second opinion. On exam, um, skin is intact. He has a positive Tinel's at the... Uh, sorry, good range of motion noted at the elbow and the wrist. He is able to make a good fist. He does have some clawing noted of the left hand. He also has some hand atrophy, uh, intrinsic hand atrophy noted. Uh, he has decreased sensitivity to the middle, ring, and small fingers, both dorsally and volarly. He has a positive Tinel's at the elbow and at the wrist. Uh, .PCTS, um, some mild thenar atrophy noted. Uh, okay. Impression. So, nerve study, November, um-... November 22nd, 2024 impression, um, borderline abnormal left... No. Uh, let's see. Yeah, um, left motor and sensory, um, abnormal left median motor and sensory conduction with prolonged distant, distal latency. Um, abnormal, uh, EMG left upper extremity with severe denervation of the first dorsal interosseous, consistent with ulnar neuropathy. Um... Okay, so regarding the left ulnar neuropathy, um, reviewed the, uh, EMG/clinical exam findings. He has, um, severe findings on the EMG as well as some severe findings, uh, on clinical exam. Uh, they say that it's concerning for a lower ulnar, uh, compression, but he has a positive Tinel's at the elbow, uh, and a positive elbow flexion test. I feel that I may need to... So, uh, so... And he has abnormal sensation of both volar and dorsal aspects of the, uh, ulnar nerve distribution. Um, given the involvement of the middle finger, this could be, um, an anatomic variant or maybe there's involvement of, uh, the neck component as well. Uh, he should have a spine... Recommend a spine consult. Recommend night splinting. Um, strongly consider surgical release, given severity of the symptoms. Uh, I would recommend surgery in the form of ulnar nerve external neuralysis at the elbow and the wrist. Uh, possible anterior transposition, possible, uh, nerve wrap. Next paragraph, dot RE full, uh, me- uh, carpal tunnel syndrome. Uh, review the clinical exams a- a- and findings. Uh, these appear much more mild in nature, but since we are doing surgery, I'd recommend surgery, uh, releasing this at the same time. Uh, uh, recommend, uh, open versus endoscopic carpal tunnel release. Dot PLOR, uh, we will proceed, um, in likely two months after his n- spine consult.
+Medical_assistant_1: That's it, doctor?
+Doctor_1: That's it.
+Medical_assistant_1: Okay, doctor. Uh, uh, for, uh, Grace here. Grace, doctor, diagnosis, doctor.
+Doctor_1: Um, Grace was a um, left wrist cons- left wrist fracture. Are you talking about Grace Garcia?
+Medical_assistant_1: Yes, doctor.
+Doctor_1: Yes. Um, she's a right wrist frac- no, left wrist fracture.
+Medical_assistant_1: Left. Okay, doctor.
+Doctor_1: Dash closed.
+Medical_assistant_1: And... Okay, doctor. For Richard Frank, doctor.
+Doctor_1: Yes.
+Medical_assistant_1: X-ray report, doctor.
+Doctor_1: Uh, let's see. Okay, three views... Sorry, four views of the bilateral, uh, wrists with Rolando views were ordered, come taken, reviewed with the patient that demonstrates no fracture or dislocation. There is mild to... Sorry, there is moderate degenerative changes noted at bilateral trapezium and carpal joints, as well as some mild thumb IP arthritis.
+Medical_assistant_1: Uh, for examination, doctor, he just gave me a positive Tinel's and positive Durkin's. That's it, doctor?
+Doctor_1: Um, so let's see. Bilateral upper extremity, um, skin is intact. Minimal soft tissue swelling, mild shoulder s- shoulder sign noted with minimal tenderness palpation at bilateral thumb CMC joints. Uh, good finger flexion and extension. Dot PCTS. Everything else is the same.
+Medical_assistant_1: Follow-up, doctor, for this patient?
+Doctor_1: Um, return to clinic in two months for reevaluation. Um, recommend nerve studies if symptoms persist.
+Medical_assistant_1: Okay, doctor. And for Steve Smith, doctor, x-ray report, doctor.
+Doctor_1: Steve S-... Elena, thank you so much. Um... Uh, normal shoulder. Dot XRSHNL, I think is what it is. Four views.
+Medical_assistant_1: Okay, doctor. Follow-up, doctor, for this patient?
+Doctor_1: Uh, after nerve studies.
+Medical_assistant_1: Okay, doctor. Plan is recommend nerve studies. That's it, doctor?
+Doctor_1: Recommend... Yes, recommend, uh, night splinting, recommend nerve studies.
+Medical_assistant_1: Okay, doctor. For Becky Lawrence, doctor, diagnosis and plan, doctor?
+Doctor_1: For which one?
+Medical_assistant_1: Lawrence, doctor. 330 patient.
+Doctor_1: Oh, yes, what about her?
+Medical_assistant_1: Diagnosis, doctor?
+Doctor_1: Um, let's call it right elbow dislocation.
+Medical_assistant_1: Only one diagnosis, doctor?
+Doctor_1: Yes.
+Medical_assistant_1: Okay, doctor. For plan, he gave me regarding some insurance coverage, doctor. Do I need to mention all those things?
+Doctor_1: I'll just give it to you right now. Um, "Done already full elbow dislocation. Reviewed the X-rays, old X-rays and CT scan. Um, I discussed, uh, reviewed nature..." Uh, you know, like, "We talked about, um, different treatment options. Uh, at this time I recommend an MRI for her. We talked about the risk of having recurrent instability. I did show her the increased space at the radiocapitellar joint, which indicates there may be some recurrent instability from a, uh, torn ligament that may lead to, uh, stability, uh, instability in the future." Uh, next paragraph, "Of note," uh, "there is... She currently does not have insurance and sh- this is likely going to be filed under a different kind of..." No, um, just say... Actually, just delete all that. Just say, "I told her that she needs to figure out her insurance. Um, she says that she will and we will talk about it when she returns in one week's time for reevaluation."
+Medical_assistant_1: Okay, doctor, thank you. Uh, the-
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

@@ -1,0 +1,74 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "SPENCER_CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "What is the main complaint of the patient, give a one liner detailed note. Only include hand related surgery and issues."
+  },
+  {
+    "title": "History of present illness",
+    "key": "HPI_RYAN",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nDoctors Preference:\n1) Do NOT use 'the patient', use the persons gender ex: 'he or she ...' \n2) End the sentence with a period."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim.\n\nDO NOT INCLUDE ANY EXAM FINDINGS IN THIS SECTION"
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+  },
+  {
+    "title": "Assessment",
+    "key": "SOAP_ASSESSMENT",
+    "content": [],
+    "default": "No assessment",
+    "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [],
+    "default": "-",
+    "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services.\n\nAlso in the end provide the plan of action for the individual conditions. And return the follow-up duration as a number.\nWhen presenting the follow-up, format the sentence as: \"Return to clinic in X days/weeks/months.\""
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: The patient name?
+Doctor_2: Uh, first name Richard, last name Frank.
+Doctor_1: Okay, got it. Thank you.
+Doctor_2: Ready?
+Doctor_1: Yes.
+Doctor_2: Okay. Uh, so this, uh, Mr. Frank is an 82-year-old, uh, right-hand dominant male. He is a retired wine maker. Uh, past medical history of bilateral thumb CMC arthritis, bilateral carpal tunnel syndrome, um, and right hand digit, uh, triggering. Um, he was last seen here June 2022, endorsing, uh, bilateral carpal tunnel sy- uh, symptoms, as well as right-hand triggering of, um, middle finger, index finger, and right ring finger digits. He presents today with approximately six months of bilateral wrist in the distribution of wrist wr- wrist watches, uh, numbness. Um, also endorsing symptoms of, uh, wrist numbness at night. Uh, he does not endorse any associated symptoms. He predominantly notices this, the wrist numbness, uh, while walking, but also occasionally at night as well. Um, on physical exam discussed, uh, or on physical exam has positive, uh, tena- tenal symptoms, uh, Finkelsteins and Dequenens. Uh, otherwise ... Sorry, um, not Finkelsteins. Uh, positive Tenals, Dequenens. Um, discussed with patient that symptoms are likely related to bilateral carpal tunnel syndrome, which he's already been diagnosed with, particularly in the setting of positive nighttime symptoms. Given this, uh, we will place the patient in bilateral cock-up wrist braces to be worn just at night. Um, plan to, for patient to return to clinic in approximately one month when patient is next in town as he lives out of the city. Um, Dr. Dellomajore will speak with patient's neurologist, Dr. Sykes, about possibly scheduling, uh, nerve conduction studies at the patient's next, uh, visit to Los Angeles for further work-up of these symptoms if necessary. And that's it.
+Doctor_1: Uh, follow-up?
+Doctor_2: Uh, follow-up should be around-
+Doctor_1: One month?
+Doctor_2: One month, yes.
+Doctor_1: Okay, thank you.
+Doctor_2: Thank you.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

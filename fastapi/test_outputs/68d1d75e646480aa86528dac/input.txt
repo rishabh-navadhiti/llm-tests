@@ -1,0 +1,74 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "SPENCER_CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "What is the main complaint of the patient, give a one liner detailed note. Only include hand related surgery and issues."
+  },
+  {
+    "title": "History of present illness",
+    "key": "HPI_RYAN",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nDoctors Preference:\n1) Do NOT use 'the patient', use the persons gender ex: 'he or she ...' \n2) End the sentence with a period."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim.\n\nDO NOT INCLUDE ANY EXAM FINDINGS IN THIS SECTION"
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+  },
+  {
+    "title": "Assessment",
+    "key": "SOAP_ASSESSMENT",
+    "content": [],
+    "default": "No assessment",
+    "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [],
+    "default": "-",
+    "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services.\n\nAlso in the end provide the plan of action for the individual conditions. And return the follow-up duration as a number.\nWhen presenting the follow-up, format the sentence as: \"Return to clinic in X days/weeks/months.\""
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: He is a 66-year-old male. Um, he works as a realtor. Um, he is right-hand dominant. Um, past surgical history pertinent for right carpal tunnel syndrome and cubital tunnel syndrome. He has status post-endoscopic carpel tunnel release as well as open cubital tunnel release with, um, transposition of the ulnar nerve with a fascial sling back in 2021 with Dr. Dellomargio. Um, he's presenting with approximately nine months of intermittent, um, ulnar nerve distribution, uh, weakness in, uh, motor function with an acute worsening within the past week. Endorses... Uh, unable to do certain tasks such as gardening work, um, opening bottles, using screwdrivers, um, using the gear shifter on his car, uh, without using the other hand. Um, he's also endorsed since nine months ago an occasional e- electrical shock-like pain going down his right upper extremity when looking to the right with his neck. Um, his last nerve conduction studies were back in 2019, um, had... And it has been some time since he's had a new one. On physical exam, he has mess with, uh... Or excuse me, he has a positive Froment's sign. He has atrophy of his first webspace, um, and second, third, and fourth webspaces as well as interossei. Um, paus-... Otherwise, uh, flexion and extension are intact in all fingers. Um, compression at the cubital tunnel for over one minute does not cause any numbness or tingling in the ring finger or small finger. On assessment and plan, um, we will plan to do a... Uh, we will put a referral in to doctor... Sorry, one second.
+Nurse_1: Please come in. Mr. McQueen.
+Patient_1: No, no. I just need to speak with someone.
+Doctor_1: Just try to find the name of the provider.
+Nurse_1: 0366-
+Nurse_2: Okay, no problem.
+Nurse_1: This patient's been waiting for a surgery date. He's been calling
+Nurse_3: Mm-hmm.
+Doctor_1: Dr. Catriona Vlachos for a nerve conduction study. Um, referral has been placed with Dr. Dellomargio. Plan will be for the nerve conduction study to be completed and then to return to clinic at that time.
+Nurse_2: Okay, thank you.
+Doctor_1: Thanks.
+Nurse_1: Thank you.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

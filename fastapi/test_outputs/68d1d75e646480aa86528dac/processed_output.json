@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Mr. McQueen"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "SPENCER_CHIEF_COMPLAINT",
+    "content": [
+      "Intermittent ulnar nerve distribution motor weakness in the right upper extremity with acute worsening over the past week, associated with difficulty with grip and fine motor tasks."
+    ],
+    "default": "-",
+    "instruction": "What is the main complaint of the patient, give a one liner detailed note. Only include hand related surgery and issues."
+  },
+  {
+    "title": "History of present illness",
+    "key": "HPI_RYAN",
+    "content": [
+      "He is a 66-year-old right-hand dominant male with a history of right carpal tunnel syndrome and cubital tunnel syndrome status post endoscopic carpal tunnel release and open cubital tunnel release with transposition of the ulnar nerve and fascial sling in 2021. He has experienced approximately nine months of intermittent ulnar nerve distribution motor weakness in the right upper extremity with acute worsening over the past week. He endorses difficulty with tasks requiring fine motor control such as gardening, opening bottles, using screwdrivers, and operating the gear shifter in his car without using his other hand. He also reports occasional electric shock-like pain radiating down his right upper extremity when looking to the right with his neck. His last nerve conduction studies were performed in 2019, and he has not had a recent study. He has not had any recent changes in his symptoms beyond the acute worsening over the past week. He has not attempted any new treatments. The symptoms have significantly impacted his ability to perform daily activities and reduce his quality of life."
+    ],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nDoctors Preference:\n1) Do NOT use 'the patient', use the persons gender ex: 'he or she ...' \n2) End the sentence with a period."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim.\n\nDO NOT INCLUDE ANY EXAM FINDINGS IN THIS SECTION"
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [
+      "Referral has been placed to Dr. Catriona Vlachos for a nerve conduction study. The patient has not had a recent nerve conduction study; his last one was in 2019."
+    ],
+    "default": "-",
+    "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+  },
+  {
+    "title": "Assessment",
+    "key": "SOAP_ASSESSMENT",
+    "content": [
+      "Recurrent or residual ulnar nerve dysfunction following prior cubital tunnel release with transposition",
+      "Progressive motor weakness in the right ulnar nerve distribution",
+      "Persistent symptoms despite prior surgical intervention"
+    ],
+    "default": "No assessment",
+    "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [
+      "Referral has been placed to Dr. Catriona Vlachos for a nerve conduction study to evaluate the current status of the ulnar nerve. The patient will return to clinic following completion of the nerve conduction study. Return to clinic in 4 weeks."
+    ],
+    "default": "-",
+    "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services.\n\nAlso in the end provide the plan of action for the individual conditions. And return the follow-up duration as a number.\nWhen presenting the follow-up, format the sentence as: \"Return to clinic in X days/weeks/months.\""
+  }
+]

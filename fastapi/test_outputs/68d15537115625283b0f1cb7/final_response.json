@@ -1,0 +1,350 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "Patient Name",
+      "key": "PATIENT_NAME",
+      "content": [
+        "Benjamin Posey"
+      ],
+      "default": "-",
+      "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+    },
+    {
+      "title": "Chief Complaint",
+      "key": "CHIEF_COMPLAINT",
+      "content": [
+        "Right index finger fracture"
+      ],
+      "default": "-",
+      "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+    },
+    {
+      "title": "History of Present Illness",
+      "key": "HISTORY_OF_PRESENT_ILLNESS",
+      "content": [
+        "The patient, a child, sustained a right index finger fracture, which was initially managed with a cast. He reports improved symptoms, with decreased pain and increased range of motion since cast removal. He is tired of wearing the cast and is eager to resume normal activities. The fracture is located at the proximal phalanx base and is healing well, with evidence of remodeling on imaging. There is no soft tissue swelling or tenderness on palpation. The patient is able to make a fist and has appropriate rotation. He is currently being transitioned to buddy straps for protection. The patient is concerned about resuming activities such as rollerblading, tetherball, basketball, and softball, which involve direct contact or heavy balls. The physician advised avoiding these activities for the next two weeks to minimize the risk of refracture. The patient is otherwise active and engaged in daily life, including school and writing. The family expressed concern about growth and bone age, but the physician noted that hand X-rays are not sufficient for assessing overall growth rate or bone age, and referred to pediatric orthopedic and endocrinology specialists if needed."
+      ],
+      "default": "-",
+      "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period."
+    },
+    {
+      "title": "Past Medical History",
+      "key": "PAST_MEDICAL_HISTORY",
+      "content": [
+        "No past medical history found"
+      ],
+      "default": "No past medical history found",
+      "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. \n\nplease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period."
+    },
+    {
+      "title": "Current Medications",
+      "key": "CURRENT_MEDICATIONS",
+      "content": [
+        "No current medications found"
+      ],
+      "default": "-",
+      "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+    },
+    {
+      "title": "Family History",
+      "key": "FAMILY_HISTORY",
+      "content": [
+        "No family history found"
+      ],
+      "default": "No family history",
+      "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+    },
+    {
+      "title": "Social History",
+      "key": "SOCIAL_HISTORY",
+      "content": [
+        "Non-smoker. No alcohol use. No illicit drug use."
+      ],
+      "default": "No social history.",
+      "instruction": "Extract the patient's social history from the conversation, specifically focusing on smoking status, alcohol consumption, and illicit drug use. Clearly state whether the patient is a smoker, non-smoker, or former smoker, and provide details on alcohol and illicit drug use, if any. If the patient denies use, explicitly mention it. Present the information in a structured and concise format.\n"
+    },
+    {
+      "title": "Allergies",
+      "key": "ALLERGIES",
+      "content": [
+        "No allergies"
+      ],
+      "default": "No allergies",
+      "instruction": "What is the allergies of this patient."
+    },
+    {
+      "sub-section": [
+        {
+          "title": "Constitutional",
+          "key": "SOAP_ROS_CONSTITUTIONAL",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal "
+        },
+        {
+          "title": "HEENT",
+          "key": "HEENT",
+          "content": [
+            "Eyes: No visual loss, blurred vision, double vision. Ears, Nose, Throat: No hearing loss, sneezing, congestion, runny nose or sore throat."
+          ],
+          "default": "Eyes: No visual loss, blurred vision, double vision.  Ears, Nose, Throat:  No hearing loss, sneezing, congestion, runny nose or sore throat.",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Cardiovascular",
+          "key": "SOAP_ROS_CARDIOVASCULAR",
+          "content": [
+            "No chest pain, chest pressure or chest discomfort. No palpitations or edema."
+          ],
+          "default": "No chest pain, chest pressure or chest discomfort.  No palpitations or edema.",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "RESPIRATORY",
+          "key": "SOAP_ROS_RESPIRATORY",
+          "content": [
+            "No shortness of breath, cough or sputum."
+          ],
+          "default": "No shortness of breath, cough or sputum.",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": " Gastrointestinal",
+          "key": "SOAP_ROS_GASTROINTESTINAL",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Genitourinary",
+          "key": "SOAP_ROS_GENITOURINARY",
+          "content": [
+            "No burning on urination, frequency, urgency, or nocturia."
+          ],
+          "default": "No burning on urination, frequency, urgency, or nocturia.",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Neurological",
+          "key": "SOAP_ROS_NEUROLOGICAL",
+          "content": [
+            "No numbness of the feet."
+          ],
+          "default": "No numbness of the feet.",
+          "instruction": "If no information is present please return Normal\n"
+        },
+        {
+          "title": "Musculoskeletal",
+          "key": "SOAP_ROS_MUSCULOSKELETAL",
+          "content": [
+            "No knee pain."
+          ],
+          "default": "No knee pain.",
+          "instruction": "If no information is present please return Normal"
+        }
+      ],
+      "title": "Review of System",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "sub-section": [
+        {
+          "title": "Vital Signs",
+          "key": "SOAP_PE_VITAL_SIGNS",
+          "content": [
+            "Normal"
+          ],
+          "default": "Normal",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "General",
+          "key": "SOAP_PE_GENERAL",
+          "content": [
+            "No acute distress, answers appropriately. Alert and oriented."
+          ],
+          "default": "No acute distress, answers appropriately.  Alert and oriented.",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Skin",
+          "key": "SOAP_PHYSICAL_EXAM_SKIN",
+          "content": [
+            "No color changes or rashes."
+          ],
+          "default": "No color changes or rashes.",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Head",
+          "key": "SOAP_PE_HEAD",
+          "content": [
+            "Atraumatic and normocephalic."
+          ],
+          "default": "Atraumatic and normocephalic.",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Eyes",
+          "key": "SOAP_PE_EYES",
+          "content": [
+            "Extraocular muscles were intact. The patient was anicteric. Pupils were equally reactive to light and accommodation."
+          ],
+          "default": "Extraocular muscles were intact.  The patient was anicteric.  Pupils were equally reactive to light and accommodation.",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Ears",
+          "key": "SOAP_PE_EARS",
+          "content": [
+            "Canals without obstructions. Tympanic membranes clear."
+          ],
+          "default": "Canals without obstructions.  Tympanic membranes clear.",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Throat",
+          "key": "SOAP_PE_THROAT",
+          "content": [
+            "There was no thrush, no exudate, no erythema."
+          ],
+          "default": "There was no thrush, no exudate, no erythema.",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Neck",
+          "key": "SOAP_PE_NECK",
+          "content": [
+            "Supple. There was no JVD. No bruit was heard over the carotids. No thyroid enlargement. No lymphadenopathy."
+          ],
+          "default": "Supple.  There was no JVD.  No bruit was heard over the carotids.  No thyroid enlargement.  No lymphadenopathy.",
+          "instruction": "If no information is present please return Normal"
+        },
+        {
+          "title": "Heart",
+          "key": "SOAP_PE_HEART",
+          "content": [
+            "Nondisplaced PMI. No thrills noted. S1 and S2, regular rhythm without murmurs."
+          ],
+          "default": "Nondisplaced PMI.  No thrills noted.  S1 and S2, regular rhythm without murmurs.",
+          "instruction": "Always return the exact value present in the default key if no information is found anything related to this in the conversation."
+        },
+        {
+          "title": "Lungs",
+          "key": "SOAP_PE_LUNGS",
+          "content": [
+            "Breathing is unlabored. Clear to auscultation B/L."
+          ],
+          "default": "Breathing is unlabored.  Clear to auscultation B/L.",
+          "instruction": "Always return the exact value present in the default key if no information is found anything related to this in the conversation."
+        },
+        {
+          "title": "Musculoskeletal",
+          "key": "SOAP_PE_MUSCULOSKELETAL",
+          "content": [
+            "-"
+          ],
+          "default": "-",
+          "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty."
+        },
+        {
+          "title": "Neurological",
+          "key": "SOAP_PE_NEUROLOGICAL",
+          "content": [
+            "Alert and oriented to person, place and time. Speech, memory and expression are within normal limits. Deep tendon reflexes 2+ in both lower extremities. There was no focal deficit. Cranial nerves II through XII were intact."
+          ],
+          "default": "Alert and oriented to person, place and time. Speech, memory and expression are within normal limits.  Deep tendon reflexes 2+ in both lower extremities.  There was no focal deficit.  Cranial nerves II through XII were intact.",
+          "instruction": "What is the neurologicals of this patient"
+        },
+        {
+          "title": "Psychiatric",
+          "key": "SOAP_PE_PSYCHIATRIC",
+          "content": [
+            "Mood is euthymic. Affect is calm. Thought process is normal. Thought content is appropriate. Eye contact, attention, insight, concentration, and decision-making-ability are intact."
+          ],
+          "default": "Mood is euthymic.  Affect is calm.  Thought process is normal.  Thought content is appropriate.  Eye contact, attention, insight, concentration, and decision-making-ability are intact.",
+          "instruction": "If no information is present please return Normal"
+        }
+      ],
+      "title": "Physical Exam",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "title": "Immunizations",
+      "key": "SOAP_IMMUNIZATIONS",
+      "content": [
+        "No Immunizations found"
+      ],
+      "default": "No Immunizations found",
+      "instruction": "What is the immunizations of this patient"
+    },
+    {
+      "title": "Lab Results",
+      "key": "LAB_RESULTS",
+      "content": [
+        "Three views of the right index finger were ordered, interpreted, and reviewed with the patient and father. Imaging demonstrated remodeling of the proximal phalanx base consistent with good fracture healing. The physis appears stable and intact."
+      ],
+      "default": "No lab results found",
+      "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+    },
+    {
+      "sub-section": [
+        {
+          "title": "Assessment",
+          "key": "SOAP_ASSESSMENT",
+          "content": [
+            "Right index finger proximal phalanx fracture with good healing and remodeling",
+            "Stable physis",
+            "No signs of infection or neurovascular compromise"
+          ],
+          "default": "No assessment",
+          "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+        },
+        {
+          "title": "Plan",
+          "key": "SOAP_PLAN",
+          "content": [
+            "Transition from cast to buddy straps for protection of the right index finger fracture.",
+            "Recommend use of buddy straps for two weeks, then gradual weaning.",
+            "Advise avoidance of ball sports and contact sports, including tetherball, basketball, rollerblading, and softball, for the next two weeks to minimize risk of refracture.",
+            "Educate patient and family on signs of refracture and the importance of activity modification.",
+            "Schedule follow-up in four to six weeks for repeat X-ray to evaluate physis and confirm healing.",
+            "Discuss that hand X-rays are not sufficient for assessing overall bone age or growth rate; refer to pediatric orthopedic or endocrinology specialists if growth concerns arise."
+          ],
+          "default": "No plan",
+          "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section."
+        }
+      ],
+      "title": "Assessment and plan",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "title": "Follow Up",
+      "key": "SOAP_FOLLOW_UP",
+      "content": [
+        "Next Appointment: Schedule the next appointment for four to six weeks from today. Review and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+      ],
+      "default": "No follow up",
+      "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 6208,
+    "completion_tokens": 3987,
+    "total_tokens": 10195
+  },
+  "timing": {
+    "total_time_ms": 50910.6719493866,
+    "generation_time_ms": 50908.935546875,
+    "processing_time_ms": 0.26226043701171875
+  },
+  "error_message": null
+}

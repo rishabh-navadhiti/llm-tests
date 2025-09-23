@@ -1,0 +1,421 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured brief patient visit note. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format. Make sure the note is very brief and not too detailed will ensure all information is captured.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech."
+  },
+  {
+    "title": "History of Present Illness",
+    "key": "HISTORY_OF_PRESENT_ILLNESS",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. \n\nplease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period."
+  },
+  {
+    "title": "Current Medications",
+    "key": "CURRENT_MEDICATIONS",
+    "content": [],
+    "default": "-",
+    "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\""
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [],
+    "default": "No family history",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [],
+    "default": "No social history.",
+    "instruction": "Extract the patient's social history from the conversation, specifically focusing on smoking status, alcohol consumption, and illicit drug use. Clearly state whether the patient is a smoker, non-smoker, or former smoker, and provide details on alcohol and illicit drug use, if any. If the patient denies use, explicitly mention it. Present the information in a structured and concise format.\n"
+  },
+  {
+    "title": "Allergies",
+    "key": "ALLERGIES",
+    "content": [],
+    "default": "No allergies",
+    "instruction": "What is the allergies of this patient."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal "
+      },
+      {
+        "title": "HEENT",
+        "key": "HEENT",
+        "content": [],
+        "default": "Eyes: No visual loss, blurred vision, double vision.  Ears, Nose, Throat:  No hearing loss, sneezing, congestion, runny nose or sore throat.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Cardiovascular",
+        "key": "SOAP_ROS_CARDIOVASCULAR",
+        "content": [],
+        "default": "No chest pain, chest pressure or chest discomfort.  No palpitations or edema.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "RESPIRATORY",
+        "key": "SOAP_ROS_RESPIRATORY",
+        "content": [],
+        "default": "No shortness of breath, cough or sputum.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": " Gastrointestinal",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Genitourinary",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [],
+        "default": "No burning on urination, frequency, urgency, or nocturia.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [],
+        "default": "No numbness of the feet.",
+        "instruction": "If no information is present please return Normal\n"
+      },
+      {
+        "title": "Musculoskeletal",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "No knee pain.",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of System",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Vital Signs",
+        "key": "SOAP_PE_VITAL_SIGNS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "General",
+        "key": "SOAP_PE_GENERAL",
+        "content": [],
+        "default": "No acute distress, answers appropriately.  Alert and oriented.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Skin",
+        "key": "SOAP_PHYSICAL_EXAM_SKIN",
+        "content": [],
+        "default": "No color changes or rashes.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Head",
+        "key": "SOAP_PE_HEAD",
+        "content": [],
+        "default": "Atraumatic and normocephalic.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Eyes",
+        "key": "SOAP_PE_EYES",
+        "content": [],
+        "default": "Extraocular muscles were intact.  The patient was anicteric.  Pupils were equally reactive to light and accommodation.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [],
+        "default": "Canals without obstructions.  Tympanic membranes clear.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [],
+        "default": "There was no thrush, no exudate, no erythema.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PE_NECK",
+        "content": [],
+        "default": "Supple.  There was no JVD.  No bruit was heard over the carotids.  No thyroid enlargement.  No lymphadenopathy.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [],
+        "default": "Nondisplaced PMI.  No thrills noted.  S1 and S2, regular rhythm without murmurs.",
+        "instruction": "Always return the exact value present in the default key if no information is found anything related to this in the conversation."
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [],
+        "default": "Breathing is unlabored.  Clear to auscultation B/L.",
+        "instruction": "Always return the exact value present in the default key if no information is found anything related to this in the conversation."
+      },
+      {
+        "title": "Musculoskeletal",
+        "key": "SOAP_PE_MUSCULOSKELETAL",
+        "content": [],
+        "default": "-",
+        "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty."
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PE_NEUROLOGICAL",
+        "content": [],
+        "default": "Alert and oriented to person, place and time. Speech, memory and expression are within normal limits.  Deep tendon reflexes 2+ in both lower extremities.  There was no focal deficit.  Cranial nerves II through XII were intact.",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [],
+        "default": "Mood is euthymic.  Affect is calm.  Thought process is normal.  Thought content is appropriate.  Eye contact, attention, insight, concentration, and decision-making-ability are intact.",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Immunizations",
+    "key": "SOAP_IMMUNIZATIONS",
+    "content": [],
+    "default": "No Immunizations found",
+    "instruction": "What is the immunizations of this patient"
+  },
+  {
+    "title": "Lab Results",
+    "key": "LAB_RESULTS",
+    "content": [],
+    "default": "No lab results found",
+    "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "SOAP_ASSESSMENT",
+        "content": [],
+        "default": "No assessment",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section."
+      }
+    ],
+    "title": "Assessment and plan",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: I'm just gonna assume she has off for the hips.
+Patient_1: Yeah. And then this, she wants to see, she sees Dr. Crystal for a toe fracture.
+Doctor_1: Okay.
+Patient_1: And she wants to, like, talk to you about it as well, and she also has, um, her last three toes are broken as well, but we don't know. And I asked her if she talked to Crystal because I work with her, because Connie ... And she was like, "Well, can I see Dr. Crystal while I'm here?" I'm like, "Yes, that's going to take forever."
+Doctor_1: She can't come in this one. She's Medicare, so she can't-
+Patient_1: I said, "No, you can see them the same, but further down the line."
+Doctor_1: So that question is barely ... Let's see Barbara Gordon. Whoop. She's an x-ray. All right, so she's coming back here shortly. What, what is, uh, the other lady is here, what's she here to see me for?
+Patient_1: Um, she's here for nothing more because-
+Doctor_1: Okay, is that new? A new problem? Or have I seen her before?
+Patient_1: No, you haven't.
+Doctor_1: Okay.
+Patient_1: Um, she says she feels movement in the lateral aspect of her knee. It started with a fall of the foot.
+Doctor_1: That's what I'm missing is ... Yeah, I'm coming in, coming in right behind. Coming in hot.
+Patient_1: Hello.
+Doctor_1: Hello. Coming in right behind you here. All right, so we're what, four months now on that knee, something like, right?
+Patient_1: Mm-hmm.
+Doctor_1: Okay, good. Yeah, so what's, uh ...
+Patient_1: It's the hips.
+Doctor_1: The hips are kind of intermittently giving you trouble it sounds like.
+Patient_1: Yeah, and I don't know, I'd like to do the exercise. I don't know whether the exercise, because I'm doing them diligently, whether they're causing the hip pain.
+Doctor_1: They mi- they might be. Yeah, they might be.
+Patient_1: Or a ...
+Doctor_1: 'Cause you're like, you're working your knee, but sometimes that'll irritate the hip for sure.
+Patient_1: And, and sometimes, the hip is so bad that I can't get out of it. This one. The new-
+Doctor_1: The left one?
+Patient_1: The good one. I have it-
+Doctor_1: Well, what, so which one does-
+Patient_1: ... too close together. This one.
+Doctor_1: Okay. So when, when you say hip, what do you mean? Groin. Okay, gotcha.
+Patient_1: And even if this one's great, it's still a little bit sore to me.
+Doctor_1: Okay.
+Patient_1: Um-
+Doctor_1: But that, it seems like that varies from time to time?
+Patient_1: Yep, it does.
+Doctor_1: All right. Well-
+Patient_1: And I watch from the other buildings here.
+Doctor_1: What other building? You mean this building?
+Patient_1: I'm in the wrong building.
+Doctor_1: Oh, you went to the brown building? Yeah.
+Patient_1: Yeah, so I watch from there because I was ...
+Doctor_1: So here's your, here's your hip x-ray. The right hip looks fine, by the way. Uh-
+Patient_1: It does?
+Doctor_1: Yeah.
+Patient_1: Okay, good.
+Doctor_1: It looks fine. Uh-
+Patient_1: Good.
+Doctor_1: You know, the left hip, you have some arthritis. It's not like, it's not totally bone on bone. It's a, this space here is your cartilage. It's a little thin here. It's not, it's not an 18-year-old hip. So you got a little arthritis in there.
+Patient_1: Can you move a little closer to see?
+Doctor_1: Sure. So you see this dark area here? That's your cartilage.
+Patient_1: Yeah.
+Doctor_1: That's your cartilage on the left.
+Patient_1: Oh, I see.
+Doctor_1: So it looks good there. A little thin here when you get to the medial side.
+Patient_1: Mm-hmm.
+Doctor_1: But, so, I mean, nothing.
+Patient_1: Okay, that's good.
+Doctor_1: Let's look at the knee.
+Patient_1: Oh, uh, I ...
+Doctor_1: Yeah, looks good. There you go.
+Patient_1: Which is the new one? The one with the space? Yeah.
+Doctor_1: Yeah, because, uh, it, that's plastic. That's actually not a space.
+Patient_1: Oh, so it-
+Doctor_1: Come on up here, mom.Can I get you for that?
+Patient_2: I've been busy all morning.
+Doctor_1: You were fine.
+Patient_2: What's next? I walked from the other building.
+Doctor_1: Well, yeah, you... I mean, you hiked, you hiked 10 miles today.
+Patient_2: But I have anemia.
+Doctor_1: Mm.
+Patient_2: An hemolytic anemia.
+Doctor_1: Well, yeah, so it doesn't take much of you-
+Patient_2: And my red blood cells are in the tank.
+Doctor_1: Well, that means, like, if you had surrendered that much reserve- here, roll that up for me.
+Patient_2: Yeah, that's why I wear these ugly pants.
+Doctor_1: Uh, what do you mean? They're lovely pants 'cause they're perfect for a physical exam.
+Patient_2: Here you go.
+Doctor_1: All right, it looks great. So straighten out all the way, you got good extension. Let's see you flex it back all the way now. Yeah, that's good. Let me measure you here real quick.
+Patient_2: I was up to 120 but-
+Doctor_1: Yeah, I was gonna say this looks pretty good today. Pretty happy with that. Okay, relax. So-
+Patient_2: Um, how is it?
+Doctor_1: Let me look. If I could read this, I'll tell you. Yeah, it's a little over 100 but that's old.
+Patient_2: Yeah.
+Doctor_1: Are they done with you?
+Patient_2: I'm going-
+Doctor_1: Therapy-wise?
+Patient_2: I'm going to the therapy place now.
+Doctor_1: Good.
+Patient_2: But this week-
+Doctor_1: Outpatient.
+Patient_2: ... they-
+Doctor_1: Oh, yeah.
+Patient_2: ... canceled everything 'cause it's-
+Doctor_1: Yeah, 'cause of the fires and everything.
+Patient_2: ... it was on Colorado.
+Doctor_1: So let me move your hip. So your hip actually still has pretty good motion.
+Patient_2: Okay.
+Doctor_1: That's good. So I think we've watched the hip for now.
+Patient_2: Okay.
+Doctor_1: I don't think we need to do anything. And I suspect that you're right, so maybe some of the knee stuff you're doing is aggravating the muscles around the hip. So I like where our knee is. Like you said, that's the least of our problems.
+Patient_2: The knee looks good.
+Doctor_1: Yeah.
+Patient_2: The knee's doing great.
+Doctor_1: So I'm fine with that. Maybe let me see in three months, we'll touch base. Um, you know, we'll watch the hip.
+Patient_2: Yeah.
+Doctor_1: I, I don't think it's, we're impending on anything on that.
+Patient_2: Uh, I really-
+Doctor_1: I know you better than that. Yeah, I'm not sure you're not bumping for another life or something.
+Patient_2: I was really trying to lose weight. I actually lost... Today's my birthday.
+Doctor_1: Oh, happy birthday!
+Patient_2: 183.
+Doctor_1: Oh, good for you.
+Patient_2: So-
+Doctor_1: A nice little jog for your birthday.
+Patient_2: Yeah.
+Doctor_1: Around the building, yeah.
+Patient_2: Okay, I'm feeling less shaky. Um, yeah, and so I, I really am trying because I know that's important.
+Doctor_1: Sure. That's good actually.
+Patient_2: But I had, yesterday my family took me... So today I'm going to a lunch for my birth- tomorrow I'm going for dinner-
+Doctor_1: Well-
+Patient_2: ... for my birthday-
+Doctor_1: ... your birthday's this week.
+Patient_2: Seriously I'm going spicy.
+Doctor_1: Your birthday's this week, so you can say, "This week's off. You're off this week."
+Patient_2: But then I finally got below 180. And like-
+Doctor_1: That's all right.
+Patient_2: I was so excited.
+Doctor_1: I mean, it's just one weekend a year, that's all.
+Patient_2: I know.
+Doctor_1: You gotta live life.
+Patient_2: I know, I know.
+Doctor_1: All right. See me in three months. Um-
+Patient_2: Yes.
+Doctor_1: ... you know, finish out the PPT.
+Patient_2: Yeah.
+Doctor_1: And then, when that's done, but I'm-
+Patient_2: Yeah.
+Doctor_1: I'm happy with this. It looks good. Good.
+Patient_2: I'm happy, I'm very happy with this.
+Doctor_1: Good. Well-
+Patient_2: Yeah. And I'm really happy when you tell me to do anything.
+Doctor_1: Yeah, we'll watch it. I mean, you know, but we don't have a crystal ball. But so far, so good, you know?
+Patient_2: Yeah, thank you.
+Doctor_1: Yeah, if you need to, if you need to sit for a bit, if you can, it will be down a little.
+Patient_2: Oh, this is ridiculous. Well, thank you.
+Doctor_1: Okay, do you, do you have to walk back over there?
+Patient_2: Yes. Oh.
+Doctor_1: Oh, well, definitely take your time. All right, I'll see you in three.
+Patient_2: Okay. Uh, Doctor, hip X-ray findings, Doctor?
+Doctor_1: She had right total hip in good position, left hip with moderate DJD with joint space pain.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

@@ -1,0 +1,235 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "Chief Complaint",
+      "key": "CHIEF_COMPLAINT",
+      "content": [
+        "Finger pain"
+      ],
+      "default": "-",
+      "instruction": "Please provide only the patient's chief complaint without any additional details or context. Avoid direct speech.\n\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format.\n\nEnd the sentence with period."
+    },
+    {
+      "title": "History of present illness",
+      "key": "CADRIO_HISTORY_OF_PRESENT_ILLNESS",
+      "content": [
+        "Patient reports finger pain. No avoidance of activities reported by mother. Nail shows ingrowth approximately 70% of the way with excellent consensuses to proximal 30%. Full active motion is present without limitation. No worsening or improvement noted. No prior treatments or remedies reported."
+      ],
+      "default": "-",
+      "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy.\n\nAdditionally, specify whether the patient has been recently diagnosed with any major conditions such as cancer, has undergone a kidney transplant, or is currently undergoing major surgery, chemotherapy, or cardiac clearance. These conditions are critical, as they may impact treatment plans, including adjustments to cardiac medications.\n\nDescribe how these symptoms affect the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any relevant interactions or conversations related to the illness."
+    },
+    {
+      "title": "Past Medical History",
+      "key": "PAST_MEDICAL_HISTORY",
+      "content": [
+        "No significant past medical history reported."
+      ],
+      "default": "No past medical history found",
+      "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events. Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc. Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits.\n\n\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format.\n\nEnd the sentence with period."
+    },
+    {
+      "title": "Current Medications",
+      "key": "CURRENT_MEDICATIONS",
+      "content": [
+        "No current medications found."
+      ],
+      "default": "-",
+      "instruction": "Document the patient's current medications in the following format: Begin with the full generic name of each medication, followed by the brand name in parentheses if applicable (e.g., \"Aspirin (Bayer)\"). Specify the dosage strength (e.g., \"81 mg\") and indicate the frequency of administration (e.g., \"Once daily\"). Describe the route of administration, such as oral, topical, or by injection (e.g., \"Oral Aspirin\"). Lastly, for ongoing medications, note the duration for which the patient has been taking each medication (e.g., \"on Aspirin for 3 weeks\"). If no current medications are reported, document \"No current medications found.\"\n\n\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format.\n\nEnd the sentence with period.\n"
+    },
+    {
+      "title": "Family History",
+      "key": "FAMILY_HISTORY",
+      "content": [
+        "No family history found."
+      ],
+      "default": "No family history",
+      "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found.\"\n\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format.\n\nEnd the sentence with period."
+    },
+    {
+      "title": "Social History",
+      "key": "SOCIAL_HISTORY",
+      "content": [
+        "No social history."
+      ],
+      "default": "No social history.",
+      "instruction": "What is the social history of this patient.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format.\n\nEnd the sentence with period."
+    },
+    {
+      "title": "Allergies",
+      "key": "ALLERGIES",
+      "content": [
+        "No allergies."
+      ],
+      "default": "No allergies",
+      "instruction": "What is the allergies of this patient.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format.\n\nEnd the sentence with period."
+    },
+    {
+      "sub-section": [
+        {
+          "title": "Orthopnea (shortness of breath while lying down)",
+          "key": "CARDIO_ORTHOPNEA",
+          "content": [
+            "-"
+          ],
+          "default": "-",
+          "instruction": "Extract any mentions of the patient having difficulty breathing while lying down. Capture how many pillows the patient uses to sleep or any positional adjustments they make to relieve symptoms."
+        },
+        {
+          "title": "Paroxysmal nocturnal dyspnea",
+          "key": "CARDIO_PAROXYSMAL_NOCTURNAL_DYSPNEA",
+          "content": [
+            "-"
+          ],
+          "default": "-",
+          "instruction": "Identify instances where the patient describes waking up suddenly at night due to shortness of breath. Include details about how frequently this occurs and any associated symptoms."
+        },
+        {
+          "title": "Edema (swelling, especially in the legs)",
+          "key": "EDEMA",
+          "content": [
+            "-"
+          ],
+          "default": "-",
+          "instruction": "Extract details about any swelling the patient reports, particularly in the legs or ankles. Note the severity, whether the swelling is persistent or intermittent, and any associated discomfort."
+        },
+        {
+          "title": "Syncope (fainting)",
+          "key": "CARDIO_SYNCOPE",
+          "content": [
+            "-"
+          ],
+          "default": "-",
+          "instruction": "Extract any mention of the patient experiencing fainting spells. Include details about the frequency, circumstances surrounding the episodes, and whether the patient experiences any warning signs before fainting."
+        }
+      ],
+      "title": "Review of System",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "sub-section": [
+        {
+          "title": "Heart sounds (murmurs, gallops)",
+          "key": "CARDIO_HEART_SOUNDS",
+          "content": [
+            "-"
+          ],
+          "default": "-",
+          "instruction": "Extract the doctor’s observations regarding the patient's heart sounds, specifically noting any murmurs or gallops. Include details about the characteristics of the sounds, such as their location and timing."
+        },
+        {
+          "title": "Jugular venous distention",
+          "key": "CARDIO_CHESTJUGULAR_VENOUS_DISTENTION",
+          "content": [
+            "-"
+          ],
+          "default": "-",
+          "instruction": "Extract the physician's findings on jugular venous distention. Capture any descriptions of the patient's jugular vein appearance or measurements related to distention."
+        },
+        {
+          "title": "Peripheral pulses",
+          "key": "CARDIO_PERIPHERAL_PULSES",
+          "content": [
+            "-"
+          ],
+          "default": "-",
+          "instruction": "Identify any assessment of the patient's peripheral pulses. Capture details about pulse strength, symmetry between limbs, and any abnormalities noted by the doctor."
+        },
+        {
+          "title": "Blood pressure",
+          "key": "CARDIO_BLOOD_PRESSURE",
+          "content": [
+            "-"
+          ],
+          "default": "-",
+          "instruction": "Extract the patient's blood pressure readings as reported during the examination. Include any discussion about changes or concerns related to these readings."
+        },
+        {
+          "title": "Edema assessment",
+          "key": "CARDIO_EDEMA_ASSESSMENT",
+          "content": [
+            "No edema noted."
+          ],
+          "default": "-",
+          "instruction": "Identify any assessment of edema conducted during the physical examination. Capture details such as the location, severity, and whether the edema is pitting or non-pitting."
+        },
+        {
+          "title": "Lung auscultation for rales",
+          "key": "CARDIO_LUNG_AUSCULTATION_FOR_RALES",
+          "content": [
+            "-"
+          ],
+          "default": "-",
+          "instruction": "Extract information related to the doctor’s lung auscultation findings, particularly focusing on the presence of rales. Include details about the location and characteristics of the rales."
+        }
+      ],
+      "title": "Physical Exam",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "title": "Immunizations",
+      "key": "SOAP_IMMUNIZATIONS",
+      "content": [
+        "No Immunizations found"
+      ],
+      "default": "No Immunizations found",
+      "instruction": "What is the immunizations of this patient\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format\n\nEnd the sentence with period."
+    },
+    {
+      "title": "Lab Results",
+      "key": "LAB_RESULTS",
+      "content": [
+        "No lab results found"
+      ],
+      "default": "No lab results found",
+      "instruction": "Document the patient's past lab results based on tests previously conducted, as discussed in the conversation. Include the date of each test, the type of test performed (such as blood tests, urine tests, imaging studies like X-rays or MRIs, or other diagnostic procedures), and the specific results reported by the patient. Ensure accuracy and clarity in reporting, focusing solely on tests already completed by the patient. Do not include lab tests prescribed by the doctor during the current visit.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format\n\nEnd the sentence with period."
+    },
+    {
+      "sub-section": [
+        {
+          "title": "Assessment",
+          "key": "SOAP_ASSESSMENT",
+          "content": [
+            "In-grown nail, middle finger"
+          ],
+          "default": "No assessment",
+          "instruction": "Generate a list of the patient's current medical conditions. Only include current assessments and exclude historical information. Structure the output in the following format: <condition> <body-part> <lateral>. Return in a list.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format\n\nEnd the sentence with period."
+        },
+        {
+          "title": "Plan",
+          "key": "SOAP_PLAN",
+          "content": [
+            "Advance activities, targeted advanced range of motion. No medications prescribed. Patient will return to clinic in six to eight weeks for follow-up."
+          ],
+          "default": "No plan",
+          "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format\n\nEnd the sentence with period."
+        }
+      ],
+      "title": "Assessment and plan",
+      "instruction": "",
+      "merge": false
+    },
+    {
+      "title": "Follow Up",
+      "key": "SOAP_FOLLOW_UP",
+      "content": [
+        "Next Appointment: Schedule the next appointment for six to eight weeks from today.\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+      ],
+      "default": "No follow up",
+      "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment.\n\nPlease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format\n\nEnd the sentence with period."
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 3221,
+    "completion_tokens": 2985,
+    "total_tokens": 6206
+  },
+  "timing": {
+    "total_time_ms": 35946.571350097656,
+    "generation_time_ms": 35945.4140663147,
+    "processing_time_ms": 0.270843505859375
+  },
+  "error_message": null
+}

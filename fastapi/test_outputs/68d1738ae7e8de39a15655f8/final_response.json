@@ -1,0 +1,170 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "History of present illness",
+      "key": "VERBATIM_HPI",
+      "content": [
+        "The leg is getting comfortable but it's hard to find a better way to sit down.",
+        "There is pressure on the right side that stays in the same spot.",
+        "Walking causes pain, and the patient cannot walk for an hour without stopping.",
+        "The patient has learned to walk by twisting the leg and foot to reduce pressure.",
+        "Lying down at night, the patient puts the foot under a portion to work with the nerve.",
+        "The patient is not taking any medications for pain.",
+        "The patient exercises a little bit but has stayed away from therapy until the hip MRI was completed.",
+        "The MRI has been done, and the patient wants feedback on the findings.",
+        "Dr. Jackson suspects a labrum tear and has outlined three options: physical therapy, cortisone shot, or surgery.",
+        "The patient is seeking the doctor's opinion on whether to proceed with a cortisone shot or physical therapy."
+      ],
+      "default": "-",
+      "instruction": "Extract only the History of Present Illness (HPI) from the patient’s report. Include only the patient’s stated symptoms, their onset, duration, severity, progression, aggravating/relieving factors, attempted treatments, and impact on daily life. Do not include physical exam findings, assessment, or plan. Present the HPI concisely, using the patient’s words as closely as possible without adding interpretation."
+    },
+    {
+      "title": "Vitals",
+      "key": "VITALS",
+      "content": [
+        "No vitals were mentioned or filed for this visit.",
+        "Height and weight measurements are not on file.",
+        "BMI could not be calculated."
+      ],
+      "default": "-",
+      "instruction": "From the following conversation, extract all information pertaining to the patient's vitals, including whether vitals were filed for the visit, if height and weight measurements are on file, and whether BMI could be calculated, noting if any of these pieces of information are explicitly stated as absent or not on file."
+    },
+    {
+      "title": "Physical Exam",
+      "key": "PHYSICAL_EXAM",
+      "content": [
+        "The patient was asked to stand and then sit. The right leg was straightened, and pain was reported.",
+        "The left leg was tested and no pain was reported.",
+        "Crossing the right leg over the left caused tightness and pain.",
+        "The left leg crossed over the right was easy and pain-free.",
+        "The physical exam findings were consistent with a right hip labral tear and associated sciatic nerve irritation."
+      ],
+      "default": "-",
+      "instruction": "Extract details regarding any mentioned physical exams, including whether an exam was performed, its date (if available), and a summary of its findings, specifically noting if the findings are identical to, consistent with, or unchanged from previous examinations. If no physical exam is discussed, state \"No physical exam mentioned.\" Present the extracted information as a concise summary."
+    },
+    {
+      "title": "Constitutional",
+      "key": "SOAP_ROS_CONSTITUTIONAL",
+      "content": [
+        "No fatigue, fever, chills, or unintentional weight loss reported."
+      ],
+      "default": "Normal",
+      "instruction": "If no information is present please return Normal "
+    },
+    {
+      "title": "Skin",
+      "key": "SOAP_PHYSICAL_EXAM_SKIN",
+      "content": [
+        "No color changes or rashes noted."
+      ],
+      "default": "No color changes or rashes.",
+      "instruction": "If no information is present please return Normal"
+    },
+    {
+      "title": "Vascular",
+      "key": "ROS_VASCULAR",
+      "content": [
+        "No claudication, coldness, or swelling in the lower extremities reported."
+      ],
+      "default": "-",
+      "instruction": "If not information is present return normal"
+    },
+    {
+      "title": "Gait and Posture",
+      "key": "LEE_GAIT_AND_POSTURE",
+      "content": [
+        "The patient ambulates with a modified gait, twisting the leg and foot to reduce pressure.",
+        "No use of assistive devices reported.",
+        "Posture is not described in detail, but the patient appears to compensate for pain during movement."
+      ],
+      "default": "-",
+      "instruction": "Extract all information related to the patient's gait and posture from the conversation, specifically identifying details such as whether they ambulate independently or with an aid (e.g., cane, walker, wheelchair), any observed abnormalities in their walking pattern, and a description of their general posture (e.g., normal, stooped, erect)."
+    },
+    {
+      "title": "Neurologic and Lumbar",
+      "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+      "content": [
+        "Alignment: No significant deformity noted.",
+        "Sensation: Intact to light touch in both lower extremities.",
+        "Range of Motion: Right hip flexion limited with pain; extension and rotation painful; left side normal.",
+        "Strength: Iliopsoas - 4/5; Quadriceps - 4/5; Tibialis anterior - 4/5; EHL - 4/5; Gastrocsoleus - 4/5; Straight Leg Raise - positive on right side.",
+        "Reflexes: Patellar reflex 2+ bilaterally; Ankle reflex 2+ bilaterally; No clonus noted."
+      ],
+      "default": "-",
+      "instruction": "Extract the Neurologic and Lumbar examination findings from the provided text, focusing on the following categories: Alignment, Sensation (including intactness, location, and type of touch), Range of Motion (noting flexion, extension, left/right rotation, presence of pain, and overall assessment), Strength (detailing individual muscle scores for Iliopsoas, Quadriceps, Tibialis, EHL, Gastrocsoleus, and the result of the Straight Leg Raise), and Reflexes (specifying scores for Patellar and Ankle reflexes, and the presence of Clonus, including laterality where applicable)."
+    },
+    {
+      "title": "Imaging",
+      "key": "IMAGING_GEORGE",
+      "content": [
+        "Hip MRI was completed.",
+        "The MRI revealed a labral tear in the right hip.",
+        "The imaging was performed to clarify the diagnosis and guide treatment planning.",
+        "The results were discussed with the patient, and the report is available upon request."
+      ],
+      "default": "-",
+      "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+    },
+    {
+      "title": "Assessment",
+      "key": "SOAP_ASSESSMENT",
+      "content": [
+        "Right hip labral tear",
+        "Sciatic nerve irritation secondary to hip inflammation",
+        "Chronic pain cycle due to muscle tightness and weakness"
+      ],
+      "default": "No assessment",
+      "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+    },
+    {
+      "title": "Plan",
+      "key": "PLAN_SINGLE_PARAGRAPH",
+      "content": [
+        "The patient will receive a cortisone injection into the right hip administered by Dr. Jackson to reduce inflammation and pain. Following the injection, the patient will begin physical therapy to strengthen the hip and gluteal muscles, improve range of motion, and break the cycle of pain and tightness. The goal is to improve function and potentially avoid surgery. The patient will be monitored for response to the injection, and if symptoms persist or worsen, surgical intervention will be reconsidered. The patient is advised to avoid prolonged sitting and to use proper body mechanics during daily activities."
+      ],
+      "default": "-",
+      "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section., Provide info in a single paragraph."
+    },
+    {
+      "title": "Work disability status",
+      "key": "WDS",
+      "content": [
+        ""
+      ],
+      "default": "-",
+      "instruction": "Note weather this patient has a work disability status or not.\nIt should be exactly what doctor mention if not present leave it blank."
+    },
+    {
+      "title": "Request for medical authorization",
+      "key": "RFMA",
+      "content": [
+        "Cortisone injection in the right hip",
+        "Physical therapy for hip and lumbar strengthening"
+      ],
+      "default": "-",
+      "instruction": "Note the points mentioned by the doctor that has requested medical authorization for the patients company.\n- It has to be what the doctor has spoken\n- DO NOT INCLUDE plan in this section\n- Only include what doctor requests for.\n- Be direct, give in single line for each request\n- ex <treatment/MRI/screening/injection> <referral>\n- dont mention work restrictions"
+    },
+    {
+      "title": "Follow Up",
+      "key": "SOAP_FOLLOW_UP",
+      "content": [
+        "Next Appointment: Schedule the next appointment for the date of the cortisone injection with Dr. Jackson.",
+        "Review and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+      ],
+      "default": "No follow up",
+      "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 4448,
+    "completion_tokens": 2196,
+    "total_tokens": 6644
+  },
+  "timing": {
+    "total_time_ms": 26846.822500228882,
+    "generation_time_ms": 26845.998287200928,
+    "processing_time_ms": 0.16355514526367188
+  },
+  "error_message": null
+}

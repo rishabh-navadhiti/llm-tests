@@ -1,0 +1,289 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+  },
+  {
+    "title": "History of present illness",
+    "key": "ROTH_HPI",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity. Discuss any changes or developments in symptoms since onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient’s daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nEnsure that no information regarding the treatment plan is included."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. \n\nplease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period."
+  },
+  {
+    "title": "Past Surgical History",
+    "key": "ROTH_PAST_SURGICAL_HISTORY",
+    "content": [],
+    "default": "",
+    "instruction": "List any previous surgeries the patient has undergone. Include only the procedure names and relevant dates if available"
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [],
+    "default": "No social history.",
+    "instruction": "Extract the patient's social history from the conversation, specifically focusing on smoking status, alcohol consumption, and illicit drug use. Clearly state whether the patient is a smoker, non-smoker, or former smoker, and provide details on alcohol and illicit drug use, if any. If the patient denies use, explicitly mention it. Present the information in a structured and concise format.\n"
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [],
+    "default": "No family history",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal "
+      },
+      {
+        "title": "HEENT",
+        "key": "HEENT",
+        "content": [],
+        "default": "Eyes: No visual loss, blurred vision, double vision.  Ears, Nose, Throat:  No hearing loss, sneezing, congestion, runny nose or sore throat.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Cardiovascular",
+        "key": "SOAP_ROS_CARDIOVASCULAR",
+        "content": [],
+        "default": "No chest pain, chest pressure or chest discomfort.  No palpitations or edema.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "RESPIRATORY",
+        "key": "SOAP_ROS_RESPIRATORY",
+        "content": [],
+        "default": "No shortness of breath, cough or sputum.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": " Gastrointestinal",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Genitourinary",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [],
+        "default": "No burning on urination, frequency, urgency, or nocturia.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [],
+        "default": "No numbness of the feet.",
+        "instruction": "If no information is present please return Normal\n"
+      },
+      {
+        "title": "Musculoskeletal",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "No knee pain.",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of System",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Vital Signs",
+        "key": "SOAP_PE_VITAL_SIGNS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "General",
+        "key": "SOAP_PE_GENERAL",
+        "content": [],
+        "default": "No acute distress, answers appropriately.  Alert and oriented.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Skin",
+        "key": "SOAP_PHYSICAL_EXAM_SKIN",
+        "content": [],
+        "default": "No color changes or rashes.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Head",
+        "key": "SOAP_PE_HEAD",
+        "content": [],
+        "default": "Atraumatic and normocephalic.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Eyes",
+        "key": "SOAP_PE_EYES",
+        "content": [],
+        "default": "Extraocular muscles were intact.  The patient was anicteric.  Pupils were equally reactive to light and accommodation.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [],
+        "default": "Canals without obstructions.  Tympanic membranes clear.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [],
+        "default": "There was no thrush, no exudate, no erythema.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PE_NECK",
+        "content": [],
+        "default": "Supple.  There was no JVD.  No bruit was heard over the carotids.  No thyroid enlargement.  No lymphadenopathy.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [],
+        "default": "Nondisplaced PMI.  No thrills noted.  S1 and S2, regular rhythm without murmurs.",
+        "instruction": "Always return the exact value present in the default key if no information is found anything related to this in the conversation."
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [],
+        "default": "Breathing is unlabored.  Clear to auscultation B/L.",
+        "instruction": "Always return the exact value present in the default key if no information is found anything related to this in the conversation."
+      },
+      {
+        "title": "Musculoskeletal",
+        "key": "SOAP_PE_MUSCULOSKELETAL",
+        "content": [],
+        "default": "-",
+        "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty."
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PE_NEUROLOGICAL",
+        "content": [],
+        "default": "Alert and oriented to person, place and time. Speech, memory and expression are within normal limits.  Deep tendon reflexes 2+ in both lower extremities.  There was no focal deficit.  Cranial nerves II through XII were intact.",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [],
+        "default": "Mood is euthymic.  Affect is calm.  Thought process is normal.  Thought content is appropriate.  Eye contact, attention, insight, concentration, and decision-making-ability are intact.",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "SOAP_ASSESSMENT",
+        "content": [],
+        "default": "No assessment",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section."
+      }
+    ],
+    "title": "Assessment and plan",
+    "instruction": "",
+    "merge": false
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: Hello , nice to see you . All right , so I guess this is our yearly thing , but then kind of had some symptoms a month ago , is that ?
+Patient: sound like it .
+Doctor_1: wait , no , it does sound
+Patient: it . I , you know , we got a new roof , and then I was just doing 11 thing went to another , and then I entertained . And then I am 65 . I guess I just , and then I tried to do , um , you know , the PT exercises from years ago when I found it 6 years ago . But um there's some , I , I just have gotten so weak .
+Doctor_1: do you feel the , if you feel , well , what's happening now ? she said , I
+Patient: feel pain , but let me just show you . I can't
+Doctor_1: it's that sort of , yeah , I have that lurch .
+Patient: can't put weights . So then I , I go quickly to my strongship .
+Doctor_1: , so they in the left . Well , I don't , um , it looks , it looks unchanged from last year , which is kind of what we're about . Let me show you the split screen here . So the , the things we're looking at here , those are about the same . May may blow up the right head , that's what we care about . The left looks good .
+Patient: always good to hear . It feels
+Doctor_1: . So , um , this was a year ago . This is today . And so one of the things we're like , we're just kind of looking at the cup here . And so you see these little cysts in here . Now those don't really look changed to me . The cup position doesn't look changed . If you notice there's some eccentricity where the ball sits in the cup , like it's not in the middle , and that's been a function of the wear and tear over time . But you can't see what's in there is a piece of plastic . So the plastic over time wears and obviously it's gonna wear on the top where you your weight . So so
+Patient: saying means that this doesn't have as much distance as that .
+Doctor_1: when you started , you did , and then as that thing has worn . So look , this was put in when in '99 or how long ago ? Yeah , so I mean it's , it's actually held up quite well and then the big question is , you know , so a lot of your business now , I don't necessarily because I . I'm not seeing any massive changes , but it may be this muscle here more than anything that's the abductor muscle and that causes that little lurch that you're getting ,
+Patient: I can I can I think that's the next step here . But look , at some point , if
+Doctor_1: continues to be an issue , etc . then you know the question is , are we looking at a revision right where we have to . You know , maybe not change everything up , but change the cup out or something like that . I , I'd probably send you to , there's a guy at SC that does more complicated things . I might send you to him if it comes to that , but I don't think we're at that point yet . Again , if I see some massive changes , then that's a different story . That's why we're checking this every year , right ? Just make sure there's no changes . So anyway , cause you know , these things don't last
+Patient: forever is a long time . 43 years . It happens . Um , um , I just , the , the , when I look at both sides of it , like if I wait , will I be weaker to recuperate if I wait till I'm 75 ?
+Doctor_1: know , it's a , it's a , I get this all the time , right ? Not , not just about revisions , but just in doing the joint replacements like , Well , I'm healthy now . Uh , do I , I mean , look , one thing I can give you this guy's info if you wanted to , cause what the , what they would probably do is Uh , they would talk about what it would look like with an operation , but then also , would there be a little bit of a workup , but sometimes they'll say , well , let's get a bone scan , see if it truly is loose or whatever . I mean , whether they would do that or not . They might , they might do that . But , uh , I'll give you info , but ,
+Patient: know ,
+Doctor_1: not it's
+Patient: urgent . Yeah , no , I know you're not . Well , this is
+Doctor_1: that's the question . The , the big question is , um . If anything looks like it's got a little date to it , it's the right , because we know the plastic is the thing that wears out . So one thing could be done because you want to do as little as you need to do . So a total revision would be everything comes out , new stuff goes in . It's a lot easier to revise just the cup and then this ball can be knocked off and a new ball put on . That's easy it's modular , and then , and then then a new cup put in there . That's a lot easier than having to take this sucker out because that thing's in there .
+Patient: , you
+Doctor_1: to , in terms of the femur , not necessarily . That actually looks nice and solid , so no , I mean , but , but again , and then the , the most basic revision . Would be you go in there , you leave the cup , you leave the stem , the plastic can be removed . It's modular . You put in a new , it's like , you know , a new tire , right ? You put in a new plastic and now this thing is back to where it's supposed to live and the new plastics are even better , that'll probably take you throughout the rest of your life . I'm just concerned because again , you know , when the plastic wears out , you get little particles and sometimes that can cause losing . So that would be the question is the most , if we're talking surgery , the most minimum would be . What we call head and liner change and that's and
+Patient: 
+Doctor_1: still send , I'm probably still sending him to do .
+Patient: ,
+Doctor_1: complexity . Uh , and then that would be the simplest , and then the next step would be to just do the cut part , leave the stem , and then the biggest one would be taking everything out .
+Patient: , well , I think if I , right now , I'm thinking , I do tai chi . I walk every day . If I , if I get the physical therapy , if you can prescribe
+Doctor_1: that for sure .
+Patient: see if that does the trick .
+Doctor_1: , I think so . Let me , let me write it for you . Let me see you in a couple of months . And let's , let's see where we are , um , and we'll just , you know , again , hopefully this is just a little blip and .
+Patient: I know I , you know , then when it hurt , it hurts , and then , you know , use it , it atrophies , sneaker , and then I , like I try to water a week later and then I get my foot just slipped slightly . And I felt it move . And then , and then , so then I waited another week , but now it's getting tough and stuff .
+Doctor_1: have a therapist you like ?
+Patient: , I like , um , I don't know if he's still there , Dean with Vincent . She's
+Doctor_1: 
+Patient: 
+Doctor_1: . Yeah , Dean moves on . I like Dean too . I'll give you the list . You know he might have moved out of the area , but I don't , I don't know that for sure . Um ,
+Patient: my friend likes to , uh , she said , I think she's gonna be in this
+Doctor_1: downstairs . Yeah , they're good . They're not on the list , but they're good .
+Patient: . Do you need to prescribe them or do
+Doctor_1: ? No , that , that's , this is for anybody . So if you have , you just get their info so I make an appointment , then they'll do that . And then you give them
+Patient: . Yeah ,
+Doctor_1: that's nice and convenient . So , OK ,
+Patient: I will . OK .
+Doctor_1: right , sounds like a plan .
+Patient: , yeah ,
+Doctor_1: don't see any change on the
+Patient: . And New York City or ? Yeah , nice . So I , I um getting married . So I wanna be able to walk if it's not freezing cold and , you know , really not be like this .
+Doctor_1: they walk in Manhattan ?
+Patient: don't know .
+Doctor_1: both my kids are there , so yeah , one's in Lower East Side , one in Brooklyn ,
+Patient: . Yeah .
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

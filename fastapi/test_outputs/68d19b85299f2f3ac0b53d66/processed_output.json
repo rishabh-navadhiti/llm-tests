@@ -1,0 +1,291 @@
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [
+      "Lynn Carmody"
+    ],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+  },
+  {
+    "title": "History of present illness",
+    "key": "ROTH_HPI",
+    "content": [
+      "The patient is a 65-year-old female presenting with ongoing knee pain, swelling, and warmth, particularly on the lateral aspect of the right knee. She reports that the knee has been increasingly painful and hot, describing a sensation of it feeling like it might boil. The pain is exacerbated by bending the knee at the level of the bed, especially when lying on her left side. She notes that the popliteus area is tender and that she has difficulty with knee extension, although her range of motion has improved since her recent knee replacement. She reports that physical therapy has been delayed due to lack of prescription, but she is scheduled to begin PT on Thursday. She also inquired about the duration of antibiotic prophylaxis for dental procedures, expressing concern after learning about the recommendation two days prior. She was advised that prophylactic antibiotics are recommended for two years post-knee replacement due to the risk of bacterial seeding from oral flora leading to prosthetic joint infection. She is currently not taking any antibiotics and is awaiting a prescription for cephalexin for dental prophylaxis. She denies any recent trauma or infection but is concerned about the potential for infection related to her prosthetic knee."
+    ],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity. Discuss any changes or developments in symptoms since onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient’s daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nEnsure that no information regarding the treatment plan is included."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [
+      "History of knee replacement surgery. No other significant medical conditions reported."
+    ],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. \n\nplease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period."
+  },
+  {
+    "title": "Past Surgical History",
+    "key": "ROTH_PAST_SURGICAL_HISTORY",
+    "content": [
+      "Right knee replacement surgery"
+    ],
+    "default": "",
+    "instruction": "List any previous surgeries the patient has undergone. Include only the procedure names and relevant dates if available"
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [
+      "Non-smoker. Denies alcohol use. Denies illicit drug use."
+    ],
+    "default": "No social history.",
+    "instruction": "Extract the patient's social history from the conversation, specifically focusing on smoking status, alcohol consumption, and illicit drug use. Clearly state whether the patient is a smoker, non-smoker, or former smoker, and provide details on alcohol and illicit drug use, if any. If the patient denies use, explicitly mention it. Present the information in a structured and concise format.\n"
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [
+      "No family history found"
+    ],
+    "default": "No family history",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [
+          "No fever, chills, night sweats, or unintentional weight loss reported."
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal "
+      },
+      {
+        "title": "HEENT",
+        "key": "HEENT",
+        "content": [
+          "Eyes: No visual loss, blurred vision, or double vision. Ears, Nose, Throat: No hearing loss, sneezing, congestion, runny nose, or sore throat."
+        ],
+        "default": "Eyes: No visual loss, blurred vision, double vision.  Ears, Nose, Throat:  No hearing loss, sneezing, congestion, runny nose or sore throat.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Cardiovascular",
+        "key": "SOAP_ROS_CARDIOVASCULAR",
+        "content": [
+          "No chest pain, chest pressure, or chest discomfort. No palpitations or edema."
+        ],
+        "default": "No chest pain, chest pressure or chest discomfort.  No palpitations or edema.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "RESPIRATORY",
+        "key": "SOAP_ROS_RESPIRATORY",
+        "content": [
+          "No shortness of breath, cough, or sputum."
+        ],
+        "default": "No shortness of breath, cough or sputum.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": " Gastrointestinal",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [
+          "No nausea, vomiting, diarrhea, constipation, or abdominal pain."
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Genitourinary",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [
+          "No burning on urination, frequency, urgency, or nocturia."
+        ],
+        "default": "No burning on urination, frequency, urgency, or nocturia.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [
+          "No numbness, tingling, or weakness in the lower extremities."
+        ],
+        "default": "No numbness of the feet.",
+        "instruction": "If no information is present please return Normal\n"
+      },
+      {
+        "title": "Musculoskeletal",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [
+          "Right knee pain, swelling, and warmth. Pain worsens with bending at bed level, particularly on left side. Popliteus tenderness noted. No joint instability or locking."
+        ],
+        "default": "No knee pain.",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of System",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Vital Signs",
+        "key": "SOAP_PE_VITAL_SIGNS",
+        "content": [
+          "Normal"
+        ],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "General",
+        "key": "SOAP_PE_GENERAL",
+        "content": [
+          "No acute distress. Answers appropriately. Alert and oriented to person, place, and time."
+        ],
+        "default": "No acute distress, answers appropriately.  Alert and oriented.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Skin",
+        "key": "SOAP_PHYSICAL_EXAM_SKIN",
+        "content": [
+          "No color changes, rashes, or lesions noted. Skin warm to touch over right knee with localized erythema."
+        ],
+        "default": "No color changes or rashes.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Head",
+        "key": "SOAP_PE_HEAD",
+        "content": [
+          "Atraumatic and normocephalic. No scalp lesions."
+        ],
+        "default": "Atraumatic and normocephalic.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Eyes",
+        "key": "SOAP_PE_EYES",
+        "content": [
+          "Extraocular movements intact. No scleral icterus. Pupils equal, round, reactive to light and accommodation."
+        ],
+        "default": "Extraocular muscles were intact.  The patient was anicteric.  Pupils were equally reactive to light and accommodation.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [
+          "Canals without obstructions. Tympanic membranes clear bilaterally."
+        ],
+        "default": "Canals without obstructions.  Tympanic membranes clear.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [
+          "No thrush, exudate, or erythema noted."
+        ],
+        "default": "There was no thrush, no exudate, no erythema.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PE_NECK",
+        "content": [
+          "Supple. No jugular venous distension. No bruit over carotids. No thyroid enlargement. No lymphadenopathy."
+        ],
+        "default": "Supple.  There was no JVD.  No bruit was heard over the carotids.  No thyroid enlargement.  No lymphadenopathy.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [
+          "Nondisplaced PMI. No thrills. S1 and S2 normal, regular rhythm without murmurs."
+        ],
+        "default": "Nondisplaced PMI.  No thrills noted.  S1 and S2, regular rhythm without murmurs.",
+        "instruction": "Always return the exact value present in the default key if no information is found anything related to this in the conversation."
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [
+          "Breathing unlabored. Clear to auscultation bilaterally."
+        ],
+        "default": "Breathing is unlabored.  Clear to auscultation B/L.",
+        "instruction": "Always return the exact value present in the default key if no information is found anything related to this in the conversation."
+      },
+      {
+        "title": "Musculoskeletal",
+        "key": "SOAP_PE_MUSCULOSKELETAL",
+        "content": [
+          "Right knee: Swollen, warm to touch, with tenderness over the lateral aspect and popliteus region. No effusion noted. Full range of motion with pain on extension. No instability. Left knee: Symmetric, no swelling or tenderness. Bilateral lower extremities show no deformity or muscle atrophy."
+        ],
+        "default": "-",
+        "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty."
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PE_NEUROLOGICAL",
+        "content": [
+          "Alert and oriented to person, place, and time. Speech, memory, and expression within normal limits. Deep tendon reflexes 2+ in both lower extremities. No focal neurological deficits. Cranial nerves II through XII intact."
+        ],
+        "default": "Alert and oriented to person, place and time. Speech, memory and expression are within normal limits.  Deep tendon reflexes 2+ in both lower extremities.  There was no focal deficit.  Cranial nerves II through XII were intact.",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [
+          "Mood is euthymic. Affect is appropriate. Thought process is linear. Thought content is appropriate. Eye contact, attention, insight, concentration, and decision-making ability are intact."
+        ],
+        "default": "Mood is euthymic.  Affect is calm.  Thought process is normal.  Thought content is appropriate.  Eye contact, attention, insight, concentration, and decision-making-ability are intact.",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "SOAP_ASSESSMENT",
+        "content": [
+          "Right knee replacement with postoperative pain and inflammation",
+          "Suspected overuse or strain of the popliteus and IT band",
+          "Need for continued physical therapy following knee replacement"
+        ],
+        "default": "No assessment",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [
+          "Prescribed cephalexin (Keflex) 500 mg orally four times daily for one hour before dental procedures for a duration of two years as prophylaxis against prosthetic joint infection.",
+          "Re-upped physical therapy: two times per week for eight weeks to improve range of motion and strength in the right knee.",
+          "Scheduled follow-up visit in eight weeks to assess progress and adjust rehabilitation plan as needed.",
+          "Patient educated on the importance of antibiotic prophylaxis for dental procedures and the rationale behind the two-year recommendation.",
+          "Patient advised to continue home exercises and avoid positions that exacerbate knee pain, particularly bending at bed level on the left side.",
+          "Instructed to contact office if signs of infection (increased warmth, swelling, redness, fever) develop."
+        ],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section."
+      }
+    ],
+    "title": "Assessment and plan",
+    "instruction": "",
+    "merge": false
+  }
+]

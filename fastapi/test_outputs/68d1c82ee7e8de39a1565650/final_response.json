@@ -1,0 +1,81 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "Patient Name",
+      "key": "PATIENT_NAME",
+      "content": [
+        "Christine Bobish"
+      ],
+      "default": "-",
+      "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+    },
+    {
+      "title": "Chief Complaint",
+      "key": "SPENCER_CHIEF_COMPLAINT",
+      "content": [
+        "Left wrist and elbow pain status post fall with fractures, requiring evaluation and treatment."
+      ],
+      "default": "-",
+      "instruction": "What is the main complaint of the patient, give a one liner detailed note. Only include hand related surgery and issues."
+    },
+    {
+      "title": "History of present illness",
+      "key": "HPI_RYAN",
+      "content": [
+        "Christine Bobish, a 57-year-old right-hand dominant photo editor, sustained a fall while walking on a sidewalk in Santa Monica on 9/14/2025, resulting in left wrist and elbow pain. She experienced pain and limited motion following the fall and was taken to the emergency room at UCLA. Imaging revealed a non-displaced distal radius fracture and a minimally displaced radial head fracture. She was placed in a splint and advised to follow up. She also reported a head injury during the fall, and a CT scan was performed, which reportedly missed a meningioma that she believes is compressing her optic nerve. She has mild soft tissue swelling at the left wrist and elbow, limited range of motion in both joints, and mild effusion in the left elbow. There is tenar spallation over the radial head, lunate facet, and triquetrum, but no spallation at the distal humerus. Neurovascular status is intact distally. She is able to make a fist and extend her fingers, but has pain and limited motion at extremes of flexion/extension and pronation/supination. She is currently under evaluation for fracture management and follow-up imaging."
+      ],
+      "default": "-",
+      "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nDoctors Preference:\n1) Do NOT use 'the patient', use the persons gender ex: 'he or she ...' \n2) End the sentence with a period."
+    },
+    {
+      "title": "Musculoskeletal",
+      "key": "MUSCULOSKELETAL_VERBATIM",
+      "content": [],
+      "default": "-",
+      "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim.\n\nDO NOT INCLUDE ANY EXAM FINDINGS IN THIS SECTION"
+    },
+    {
+      "title": "Imaging",
+      "key": "IMAGING_GEORGE",
+      "content": [
+        "X-rays of the left wrist (four views) were ordered, taken, and reviewed with the patient, demonstrating no displaced fractures but lucent lines along the medial column consistent with a non-displaced distal radius fracture. A scaphoid fracture cannot be excluded. X-rays of the left elbow (three views) were ordered, taken, and reviewed with the patient, demonstrating a minimally displaced radial head fracture with concentric elbow alignment. A CT scan of the head was performed in the emergency room, which reportedly missed a meningioma that the patient believes is compressing her optic nerve."
+      ],
+      "default": "-",
+      "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+    },
+    {
+      "title": "Assessment",
+      "key": "SOAP_ASSESSMENT",
+      "content": [
+        "Non-displaced distal radius fracture, left",
+        "Minimally displaced radial head fracture, left",
+        "Mild soft tissue swelling and effusion, left wrist and elbow",
+        "Tenar spallation involving radial head, lunate facet, and triquetrum",
+        "Suspected missed meningioma on head CT scan, patient concern regarding optic nerve compression"
+      ],
+      "default": "No assessment",
+      "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+    },
+    {
+      "title": "Plan",
+      "key": "PLAN_WITH_FOLLOW_UP",
+      "content": [
+        "Recommend protection with a short-arm splint for the left wrist fracture. Recommend repeat X-rays for the left wrist. For the radial head fracture, recommend protected range of motion exercises with caution for stiffness. Advise follow-up with X-rays. Return to clinic in one week for splint change. Recommend follow-up in two weeks for X-rays and reevaluation. Patient to be counseled on the importance of adherence to immobilization and activity modification. Patient to be informed of the potential for delayed complications, including stiffness and non-union. Patient to be advised to report any worsening pain, swelling, or neurovascular changes immediately. Return to clinic in 14 days for follow-up evaluation."
+      ],
+      "default": "-",
+      "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services.\n\nAlso in the end provide the plan of action for the individual conditions. And return the follow-up duration as a number.\nWhen presenting the follow-up, format the sentence as: \"Return to clinic in X days/weeks/months.\""
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 1941,
+    "completion_tokens": 1374,
+    "total_tokens": 3315
+  },
+  "timing": {
+    "total_time_ms": 15802.06823348999,
+    "generation_time_ms": 15801.689863204956,
+    "processing_time_ms": 0.03790855407714844
+  },
+  "error_message": null
+}

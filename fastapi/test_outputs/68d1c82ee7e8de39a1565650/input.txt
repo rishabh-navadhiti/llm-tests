@@ -1,0 +1,78 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+  },
+  {
+    "title": "Chief Complaint",
+    "key": "SPENCER_CHIEF_COMPLAINT",
+    "content": [],
+    "default": "-",
+    "instruction": "What is the main complaint of the patient, give a one liner detailed note. Only include hand related surgery and issues."
+  },
+  {
+    "title": "History of present illness",
+    "key": "HPI_RYAN",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nDoctors Preference:\n1) Do NOT use 'the patient', use the persons gender ex: 'he or she ...' \n2) End the sentence with a period."
+  },
+  {
+    "title": "Musculoskeletal",
+    "key": "MUSCULOSKELETAL_VERBATIM",
+    "content": [],
+    "default": "-",
+    "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim.\n\nDO NOT INCLUDE ANY EXAM FINDINGS IN THIS SECTION"
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+  },
+  {
+    "title": "Assessment",
+    "key": "SOAP_ASSESSMENT",
+    "content": [],
+    "default": "No assessment",
+    "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_WITH_FOLLOW_UP",
+    "content": [],
+    "default": "-",
+    "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services.\n\nAlso in the end provide the plan of action for the individual conditions. And return the follow-up duration as a number.\nWhen presenting the follow-up, format the sentence as: \"Return to clinic in X days/weeks/months.\""
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: Uh, married... So she got married, so it was very exciting.
+Medical_assistant_1: Oh, nice, Doctor. Actually, I also, uh, wanted to ask you, Doctor. She was on leave, right, Doctor? For one month.
+Doctor_1: Yeah, yeah.
+Medical_assistant_1: So I thought of asking you.
+Doctor_1: Yeah.
+Medical_assistant_1: Actually it's a good news, Doctor.
+Doctor_1: Yeah, good news. She got married-
+Medical_assistant_1: Congrats.
+Doctor_1: ... and now she's, she's on her honeymoon with her husband, so.
+Medical_assistant_1: Oh, so sweet, Doctor. Congratulate her from, from my side, Doctor.
+Doctor_1: I will tell her so.
+Medical_assistant_1: Okay, Doctor.
+Doctor_1: Okay. Um, Christine Bobish.
+Medical_assistant_1: Okay, Doctor.
+Doctor_1: Um, she is a 57-year-old right-hand dominant photo editor. Uh, status post trip and fall walking on a sidewalk in Santa Monica with left wrist and elbow pain. Date of injury, 9/14/2025. Diagnosis, left wrist fracture dash closed, left radial head fracture dash closed. Uh, she's here today for evaluation and treatment of her left wrist and elbow. She sustained a fall walking down the sidewalk in Santa Monica. Uh, she had pain and limited motion. She was taken to the emergency room at, uh, at, um, at UCLA. Um, she, uh... Let's see. Uh, she had X-rays and they told her that she had a fracture, and she was placed in splint. Next paragraph of note, she was also, uh... She also hit her head. They did a CT scan, but apparently they missed a meningioma that she was very concerned about, uh, that she states is compressing her optic nerve. On exam, uh, she has mild soft tissue swelling noted at the left wrist and elbow. She has limited range of motion of the wrist and elbow. There's a mild effusion noted of the left elbow. There's tenar spallation over the radial head. There is no tenar spallation at the distal humerus at the lateral or medial sides. She has good range of motion without crepitus, but she does have limited motion at extremes of flexion/extention, and some pain without bony block of pronation/supination. Uh, she's able to make a fist and extend her fingers, uh, but she does have limited wrist range of motion noted. Um, neurovasculally intact distally. X-rays, uh, four views of the left wrist were order call taken reviewed with a patient. That demonstrates no displaced fractures, but there are, um, lucent lines along the, uh, medial column that, uh, are consistent with a non-displaced distal radius fracture. I do not see a scaphoid fracture, um, but one cannot be excluded. Eh, X-rays, three views of the left, uh, elbow were order call taken reviewed with a patient. That demonstrates a minimally displaced radial head fracture. Otherwise, elbow alignment appears concentric. If you could also put under exam, uh, there is no snuff box tenar spallation. No wrist effusion is felt. There is tenar spallation over the, uh, lunate facet. There is some tenar spallation over the triquetrum. Uh, so regarding the wrist fracture, review the X-rays, clinical exam findings, recommend protection with short-arm splint. Recommend repeat X-rays. Regarding the radial head fracture, um, you can do the... Uh, just do, review the X-rays, clinical exam findings, uh, recommend, uh, protected range of motion exercises, warned about stiffness, recommend follow-up with X-rays. Uh, return to clinic in one week for a splint change, recommend follow-up in two weeks for X-rays and reevaluation.
+Medical_assistant_1: Okay, Doctor. Thank you.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

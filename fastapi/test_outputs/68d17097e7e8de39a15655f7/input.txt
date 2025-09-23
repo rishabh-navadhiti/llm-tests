@@ -1,0 +1,467 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+When interpreting the clinical report, use clinical judgment to clarify likely errors or ambiguous abbreviations (e.g., miswritten joint names, injection types, or anatomic references), and correct them only when the context strongly supports it. Do not change terms without justification.
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "History of present illness",
+    "key": "VERBATIM_HPI",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract only the History of Present Illness (HPI) from the patient’s report. Include only the patient’s stated symptoms, their onset, duration, severity, progression, aggravating/relieving factors, attempted treatments, and impact on daily life. Do not include physical exam findings, assessment, or plan. Present the HPI concisely, using the patient’s words as closely as possible without adding interpretation."
+  },
+  {
+    "title": "Vitals",
+    "key": "VITALS",
+    "content": [],
+    "default": "-",
+    "instruction": "From the following conversation, extract all information pertaining to the patient's vitals, including whether vitals were filed for the visit, if height and weight measurements are on file, and whether BMI could be calculated, noting if any of these pieces of information are explicitly stated as absent or not on file."
+  },
+  {
+    "title": "Physical Exam",
+    "key": "PHYSICAL_EXAM",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract details regarding any mentioned physical exams, including whether an exam was performed, its date (if available), and a summary of its findings, specifically noting if the findings are identical to, consistent with, or unchanged from previous examinations. If no physical exam is discussed, state \"No physical exam mentioned.\" Present the extracted information as a concise summary."
+  },
+  {
+    "title": "Constitutional",
+    "key": "SOAP_ROS_CONSTITUTIONAL",
+    "content": [],
+    "default": "Normal",
+    "instruction": "If no information is present please return Normal "
+  },
+  {
+    "title": "Skin",
+    "key": "SOAP_PHYSICAL_EXAM_SKIN",
+    "content": [],
+    "default": "No color changes or rashes.",
+    "instruction": "If no information is present please return Normal"
+  },
+  {
+    "title": "Vascular",
+    "key": "ROS_VASCULAR",
+    "content": [],
+    "default": "-",
+    "instruction": "If not information is present return normal"
+  },
+  {
+    "title": "Gait and Posture",
+    "key": "LEE_GAIT_AND_POSTURE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all information related to the patient's gait and posture from the conversation, specifically identifying details such as whether they ambulate independently or with an aid (e.g., cane, walker, wheelchair), any observed abnormalities in their walking pattern, and a description of their general posture (e.g., normal, stooped, erect)."
+  },
+  {
+    "title": "Neurologic and Lumbar",
+    "key": "LEE_NEUROLOGIC_AND_LUMBAR:",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract the Neurologic and Lumbar examination findings from the provided text, focusing on the following categories: Alignment, Sensation (including intactness, location, and type of touch), Range of Motion (noting flexion, extension, left/right rotation, presence of pain, and overall assessment), Strength (detailing individual muscle scores for Iliopsoas, Quadriceps, Tibialis, EHL, Gastrocsoleus, and the result of the Straight Leg Raise), and Reflexes (specifying scores for Patellar and Ankle reflexes, and the presence of Clonus, including laterality where applicable)."
+  },
+  {
+    "title": "Imaging",
+    "key": "IMAGING_GEORGE",
+    "content": [],
+    "default": "-",
+    "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+  },
+  {
+    "title": "Assessment",
+    "key": "SOAP_ASSESSMENT",
+    "content": [],
+    "default": "No assessment",
+    "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+  },
+  {
+    "title": "Plan",
+    "key": "PLAN_SINGLE_PARAGRAPH",
+    "content": [],
+    "default": "-",
+    "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section., Provide info in a single paragraph."
+  },
+  {
+    "title": "Work disability status",
+    "key": "WDS",
+    "content": [],
+    "default": "-",
+    "instruction": "Note weather this patient has a work disability status or not.\nIt should be exactly what doctor mention if not present leave it blank."
+  },
+  {
+    "title": "Request for medical authorization",
+    "key": "RFMA",
+    "content": [],
+    "default": "-",
+    "instruction": "Note the points mentioned by the doctor that has requested medical authorization for the patients company.\n- It has to be what the doctor has spoken\n- DO NOT INCLUDE plan in this section\n- Only include what doctor requests for.\n- Be direct, give in single line for each request\n- ex <treatment/MRI/screening/injection> <referral>\n- dont mention work restrictions"
+  },
+  {
+    "title": "Follow Up",
+    "key": "SOAP_FOLLOW_UP",
+    "content": [],
+    "default": "No follow up",
+    "instruction": "Outline the schedule for follow-up appointments based on the information gathered during the visit. Include the following details if present:\nNext Appointment: Schedule the next appointment for [date/time].\nReview and Adjustments: Plan for reviewing the patient's progress and making necessary adjustments to the treatment plan during the follow-up appointment."
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Patient: ... life is okay.
+Doctor_1: Mm-hmm.
+Patient: Okay. So far, so any illness.
+Doctor_1: Yeah.
+Patient: And after, after... If I, for example, just imagine, when I want to, for example, play golf-
+Doctor_1: Mm-hmm.
+Patient: ... maybe I feel some problem. And sometimes, if I'm very tired, you know, I feel, might be right side, I feel some numbness. That's a feeling-
+Doctor_1: Is, is there pain?
+Patient: Ah, no, no. I think numbness.
+Doctor_1: Just numbness, huh?
+Patient: Numbness means that my back... I, it's very difficult to distinguish the pain and the numbness, but, uh, usually-
+Doctor_1: But you're still, but you're still playing golf?
+Patient: No, no, no, no.
+Doctor_1: Oh, no more, then?
+Patient: No, no. At this moment, maybe over three months, uh, I didn't play.
+Doctor_1: Hmm. What about just walking?
+Patient: Walking is no problem.
+Doctor_1: Can you walk for one hour without stopping?
+Patient: I, I can. I did that before I got here.
+Doctor_1: Okay.
+Patient: So I should check it after a while.
+Doctor_1: But day in and day out, it doesn't feel like you have to sit or lean over? You're walking normal, you're getting around, day-to-day stuff?
+Patient: No, no, no.
+Doctor_1: Normal. Are you taking any pain pills at all?
+Patient: Any pain-
+Doctor_1: Any pain pills, Tylenol, Advil?
+Patient: Oh, no, no, no, no.
+Doctor_1: Nothing, right?
+Patient: I don't take it.
+Doctor_1: Okay, good. At night when there's-
+Patient: And also, I would say that, you know, I have this problem and I had a, a exam with the doctor, uh, still everything.
+Doctor_1: Yeah.
+Patient: And also, I, I have this portion. I mean, like a ball over the back.
+Doctor_1: Oh, okay.
+Patient: Okay, big toe, so and, uh, we took the cocogban?
+Doctor_1: Cocogban, Mm-hmm.
+Patient: Yeah, I, I... examples.
+Doctor_1: Or three, two, one.
+Patient: I mean, uh.
+Doctor_1: Do you ever... Do, do you ever feel clumsy? Do you ever feel not balanced?
+Patient: No.
+Doctor_1: Do you ever feel like it's hard to control your legs? I'm gonna look here, if we just relax your legs. Okay, let's see the strength and grace at this. Hold it there and don't let me push down, okay?
+Patient: Okay.
+Doctor_1: Good. How about this side? Good. What about straight? A little bit like that. Good, and this side. Good. And let's have you stand, okay, sir? Just put a hand here. Stand only on one foot.
+Patient: Mm-hmm.
+Doctor_1: And do a tippy toe five times. No problems, right?
+Patient: Mm-mm.
+Doctor_1: Do the other leg. No problem?
+Patient: Mm-hmm.
+Doctor_1: Feels normal?
+Patient: Mm-hmm.
+Doctor_1: Good. All right. You can have a seat, sir.
+Patient: Oh, okay.
+Doctor_1: Um, so-
+Patient: Hmm.
+Doctor_1: It looks, uh, you know, we had already known about the problems at L3, 4, but up at L1, 2 is very tight.
+Patient: Oh.
+Doctor_1: So this is the side view, this is the front, this is the back.
+Patient: Oh. Oh, okay.
+Doctor_1: Right? So this is the pipe where the spinal cord and spinal nerves run.
+Patient: Oh, okay.
+Doctor_1: So the spinal cord is a solid rope of nerves, right? So the spinal cord comes down and then it branches up.
+Patient: So it branches up.
+Doctor_1: It branches up into all these little strings. Right up here, it's solid.
+Patient: This portion, Doctor?
+Doctor_1: Yeah, this grayer here, right? This-
+Patient: Oh, okay.
+Doctor_1: It's a solid rope of nerves.
+Patient: Oh, okay.
+Doctor_1: Okay? But then right at the tip, it, it, uh, ends at, we call it the conus medullaris, right? It ends and then it branch up into little, all these little bunch of nerves.
+Patient: Oh.
+Doctor_1: And then these are all the little strings. Okay? You can't see them all, but all these little strings are nerves.
+Patient: Mm-hmm.
+Doctor_1: Okay? So, when the spinal cord is still solid rope, uh, it's actually more sensitive to pressure.
+Patient: Oh, okay.
+Doctor_1: And right at the conus, right where the tip is, uh, it's very sensitive.
+Patient: Oh.
+Doctor_1: Because, because the blood flow from here to here is, is not as great.
+Patient: Oh, okay.
+Doctor_1: And that's where it's very tight.
+Patient: Uh-huh.
+Doctor_1: Right? So you've got this big bone spur and bulge come out of here and it's, and it's, and it's kind of pinching right there, L1, L2.
+Patient: Oh, okay. So... Okay.
+Doctor_1: And the spinal cord should be a nice solid gray color. You see that little white spot?
+Patient: Ah-hah. I see, I see, yes.
+Doctor_1: So that's signs that there's some damage happening.
+Patient: Oh.
+Doctor_1: Just like if we were to get an MRI of somebody's brain who had a stroke, you would see little bright spots-
+Patient: Oh.
+Doctor_1: ... indicating prior neuro-
+Patient: Sensitivities.
+Doctor_1: ... neurologic damage, yeah.
+Patient: Oh.
+Doctor_1: So we call that mye- myelomalacia right at the conus, at L1, L2. Um, so we go to this view to see how tight it really is, okay?
+Patient: Hm. Excuse me. Wha- what... Could you push this? Nerves?
+Doctor_1: Mm-hmm. Sorry.
+Patient: I, I, I saw... I want to know that.
+Doctor_1: Yes, exactly.
+Patient: Okay.
+Doctor_1: So we're gonna look at it right now. So normally it should be-
+Patient: Oh, I see.
+Doctor_1: ... you know, nice and open.
+Patient: Okay, okay. Okay, okay.
+Doctor_1: As we come down lower...
+Patient: Mm-hmm. Oh.
+Doctor_1: Pretty tight.
+Patient: Pretty tight. I haven't felt that.
+Doctor_1: Yeah, I would, I would call that severe.
+Patient: Severe.
+Doctor_1: Severe at L1, L2 with a spot of myelomalacia. As we get past it, beautiful.
+Patient: Oh, okay.
+Doctor_1: No problem.
+Patient: Okay, okay.
+Doctor_1: So now it's all, all the nerve roots down, right?
+Patient: Oh.
+Doctor_1: It's, it's gotten past the cord, right? Up here it's, up here it's a solid cord, it's more solid.
+Patient: Oh, okay. Okay.
+Doctor_1: And then it branches up, all in a bunch of dots now.
+Patient: Oh.
+Doctor_1: Little strings, okay?
+Patient: Wait, wha- what? That, that is a problem.
+Doctor_1: Hmm?
+Patient: That is a problem?
+Doctor_1: No, this looks good.
+Patient: This is okay? Okay.
+Doctor_1: Yeah, now we're past the, the transition.
+Patient: Okay.
+Doctor_1: This looks good.
+Patient: Okay.
+Doctor_1: And then now we go to L3, L4.
+Patient: Oh, no, that's tight.
+Doctor_1: Oh, man. That's tight, huh?
+Patient: Mm-hmm.
+Doctor_1: So I would call that critically tight at L3, L4.
+Patient: Okay.
+Doctor_1: Critical stenosis. Still very tight.
+Patient: Oh.
+Doctor_1: And then we're in between, so it looks like it opens up.
+Patient: Mm-hmm.
+Doctor_1: Now we get to L4, 5. Again... Oh, oh, next room. And now we get to L4, 5, still very tight.
+Patient: Mm-hmm.
+Doctor_1: Okay? I would call that still severe at L4, 5.
+Patient: Oh, uh, not so damaged, but damaged, no? Uh, huh.
+Doctor_1: Yeah, and then now, L5, S1, no problem.
+Patient: No problem, okay. Okay, I see.
+Doctor_1: You're a winner. Okay, so here, here, and a little bit here.
+Patient: I see. I see. So I ... when I first found out about pain, pain , I mea- ... I compare that beginning stage and now, kind of different.
+Doctor_1: Yeah.
+Patient: Totally different. And now, it's, uh, for example, like, when, when I broke nose, for example.
+Doctor_1: Mm-hmm. Mm-hmm.
+Patient: I mean, uh, my kind of a deep side-
+Doctor_1: Mm-hmm.
+Patient: ... body all kind of feel numb.
+Doctor_1: Yeah.
+Patient: But-
+Doctor_1: So I think that's because of the higher up stenosis. At L1, L2, it's hitting the spinal cord.
+Patient: Mm-hmm.
+Doctor_1: When you compress the spinal cord, it actually doesn't hurt.
+Patient: Mm-hmm.
+Doctor_1: It's just like the brain. The brain doesn't feel pain.
+Patient: Oh.
+Doctor_1: When there's a stroke, people don't have pain in their head, they just have a stroke.
+Patient: Oh.
+Doctor_1: So when the spinal cord is being hit here, now the sensation and the awareness starts to go away. That's why... I think that's why you don't feel pain.
+Patient: Mm-hmm.
+Doctor_1: You just feel this pressure, this deep pressure that something's wrong, okay? And of course, you could feel weakness, you can feel numbness, um, and that tightness, you know. Everything's kinda trying to protect it.
+Patient: I see.
+Doctor_1: But you're not feeling the- that- that pain, uh, like a normal person would, because you're getting that, uh, tightness higher up now.
+Patient: Oh, I see.
+Doctor_1: Okay? So you're, you're getting spinal cord compression.
+Patient: Oh, not good.
+Doctor_1: Yeah, it's not good. And when you... And remember, like I said, when we see that little bright spot, that's damage.
+Patient: I see.
+Doctor_1: And that's more serious.
+Patient: Oh, okay.
+Doctor_1: So, so at this point, I think you have, uh, three options still, right?
+Patient: Okay.
+Doctor_1: The one option is to keep doing what you're doing. Stop playing golf, take it easy, do light exercises. And as long as you can keep walking, we can hold off on surgery.
+Patient: Mm-hmm.
+Doctor_1: The other option is to do the shot, right? But technically, the shot is more helpful for pain. It doesn't really help spinal cord damage or nerve damage.
+Patient: Oh, I see.
+Doctor_1: Yeah.
+Patient: Even if I, uh, ask doctor to make a shot, it does not affect my kind of a, a numbness on the deep side?
+Doctor_1: Yeah, yeah. Less so, less so.
+Patient: Oh, I see.
+Doctor_1: It's more for that inflamed pain syndrome, you know?
+Patient: Oh, I see. I see.
+Doctor_1: Okay?
+Patient: So it's very painful. So much pain.
+Doctor_1: Um, but, but, you know, I've been wrong before. Some people I inject, it takes away the swelling, and then they feel a little bit better as well.
+Patient: Mm-hmm.
+Doctor_1: Um, but the other issue is, even if it does help, it's temporary as well.
+Patient: Yeah, yeah.
+Doctor_1: But less so for, uh, uh, for, for non-pain, you know? It's really more for pain. The third option is to not worry about it all and just do surgery, right? We know this will get worse. This, this especially, will get worse.
+Patient: Oh my gosh.
+Doctor_1: Uh, and for spinal cord issues, people usually are very steady, and then all of a sudden they take a drop. It's a stepwise deterioration.
+Patient: Oh.
+Doctor_1: Right? So everybody was the same, then boom, it gets worse, and boom, gets worse.
+Patient: Oh.
+Doctor_1: It's not slowly worse like this.
+Patient: Uh-huh.
+Doctor_1: The problem is, once you take that step down, there's permanent damage, right? So you're, you're doing pretty good moving through it, and then you're, you're down. You can barely walk, move.
+Patient: Okay.
+Doctor_1: And then if we do surgery at that point, you may not get back up. Surgery keeps you there so you don't take another drop.
+Patient: Oh.
+Doctor_1: Okay? So we don't know how well nerves can heal once they sustain that damage. Uh, so that's the danger of waiting, right? Having permanent damage.
+Patient: I see.
+Doctor_1: Um, so surgery is actually safe for this, very safe.
+Patient: I see.
+Doctor_1: Surgery, I would say 95% successful, meaning 95% of the time, no complications. Being paralyzed from the surgery or having more nerve damage from the surgery, probably less than 1%, okay?
+Patient: Wow.
+Doctor_1: Uh, I've never seen it.
+Patient: Wow.
+Doctor_1: Infection is the biggest thing we worry about, but that's about 2%.
+Patient: Oh, okay.
+Doctor_1: Um, it's really just the hospital stay and the recovery. That's the challenge of surgery.
+Patient: Mm-hmm.
+Doctor_1: For this, I would open up here, open up here, you know, and here as well. I would keep you in the hospital for three nights. We try to get patients up and walking right away. Um...
+Patient: So you said sp- so three nights or?
+Doctor_1: In the hospital.
+Patient: In the hospital?
+Doctor_1: Yeah, stay in the hospital.
+Patient: Oh, I see.
+Doctor_1: Uh-
+Patient: Uh, you are u- using a kind of a microscope?
+Doctor_1: Yes. Usually we operate through a microscope, but I would open you...
+Patient: I see.
+Doctor_1: You're sort of... I would open you one inch up here.
+Patient: Oh, okay.
+Doctor_1: And then I would open you up maybe two inches down here.
+Patient: Oh, I see. I see.
+Doctor_1: Okay?
+Patient: So I see. So in that sense, yeah, I'm worried about the- my work. Still, I'm working.
+Doctor_1: I, I know, yeah .
+Patient: But, uh, you have a... I have a question.
+Doctor_1: You're a pro- you're a professor, right? You're a teacher?
+Patient: No, no, no, no.
+Doctor_1: Researcher?
+Patient: No.
+Doctor_1: Huh?
+Patient: Yeah, I used to be in business.
+Doctor_1: Oh, so a lot of sitting then? Okay.
+Patient: Yes.
+Doctor_1: Sitting is bad after surgery. After surgery, you feel better standing, walking-
+Patient: Oh.
+Doctor_1: ... and reclined.
+Patient: Oh.
+Doctor_1: But sitting in the office?
+Patient: Uh-huh.
+Doctor_1: Try to limit sitting to about 30 minutes. After surgery, your back will hurt from the scar.
+Patient: Oh.
+Doctor_1: Okay? So when you sit too long, uh, it's aching, it's tight.
+Patient: I see.
+Doctor_1: So moving is better.
+Patient: Moving is better. Or I could lay face down?
+Doctor_1: Yeah, or lay down and rest, yeah.
+Patient: Mm-hmm.
+Doctor_1: Okay. Um, so it's the recovery. I'll- I usually recommend taking six weeks off work, okay?
+Patient: Six weeks off work.
+Doctor_1: But some people, they wanna go into the office earlier, maybe a few hours here and there. That's possible.
+Patient: Oh, I see.
+Doctor_1: Yeah.
+Patient: So three nights in the hospital, and after that the six weeks? So...
+Doctor_1: Yeah. Yeah, take it easy.
+Patient: No, no activities. No, no work. Just, uh, walking.
+Doctor_1: Yeah. After six weeks, we start physical therapy. Patients start to exercise harder, go to the gym.
+Patient: Oh, okay.
+Doctor_1: And then by three months, four months, I'll let you do whatever you want.
+Patient: Okay.
+Doctor_1: You can start going playing golf again.
+Patient: Oh, I see. I see.So six weeks.
+Doctor_1: Yeah.
+Patient: Really fast. Resign a job, maybe?
+Doctor_1: Mm-hmm. Okay. Well-
+Patient: I thought it seems a normal ride, too bad. Last time it's when we go out driving maybe even four or six weeks.
+Doctor_1: No, no, maybe two, three weeks. Yeah.
+Patient: And, uh, the, the sitting work, maybe up to mostly Saturday.
+Doctor_1: Yeah.
+Patient: Then, uh, they could take it-
+Doctor_1: Recline or stand up and walk around a little bit, then he could sit down.
+Patient: And, uh, so what about the normal ride, I mean, uh, of course, uh, when I want to, uh, bathroom, of course, I can go immediately?
+Doctor_1: Yeah, you, you can walk right away. Once you leave the hospital, you're ambulatory, you're mobile.
+Patient: Mm, so you're saying-
+Doctor_1: You can get around.
+Patient: ... okay, even if I... Ooh, okay. During the three nights, by myself I go to the bathroom, or-
+Doctor_1: Uh, in the hospital? Yeah, the, it, it... While you're in the hospital, the nurses help you, the therapist helps you.
+Patient: Ah.
+Doctor_1: Yeah.
+Patient: So I cannot do it by myself?
+Doctor_1: The first night, yeah, you have to wait for the physical therapist to help you first. Yeah.
+Patient: Then how about the second night, third night?
+Doctor_1: Second night, hopefully you're a student by yourself. Third night you look okay, then you go home.
+Patient: Oh.
+Doctor_1: Yeah.
+Patient: And after that, of course, so nothing I can do about it.
+Doctor_1: Yeah.
+Patient: What about the shower, or-
+Doctor_1: Yeah, you should be able to shower by yourself once you get home from the hospital.
+Patient: Oh, I see.
+Doctor_1: Yeah.
+Patient: So even that, in three nights, yeah, for example, during the three nights stay here, after that, when I come back to my house?
+Doctor_1: Mm-hmm.
+Patient: I, I can take a bath?
+Doctor_1: Yeah.
+Patient: Shower?
+Doctor_1: Shower. You can get around the house on your own.
+Patient: Yeah. Oh, I see. And any kind of a, um, uh, for example, normally I don't know about that, you are using a kind of a, what should I say, uh, string? No, no string?
+Doctor_1: A suture? No. We, uh, put the stitching underneath the skin.
+Patient: Oh.
+Doctor_1: Yeah, so you have little strips, little white bandages on the skin by themselves, so you can shower by the third day.
+Patient: I see.
+Doctor_1: Yeah, nothing to remove. Yeah.
+Patient: So I don't have to come back and to take out that thing?
+Doctor_1: No, you come back and we check an X-ray, I check on the wound-
+Patient: I see.
+Doctor_1: ... and I check on your progress.
+Patient: I see.
+Doctor_1: So yeah, I mean, I know it's a lot to think about, so go home, talk to your family, your friends.
+Patient: Yeah.
+Doctor_1: Think it over. Um, I, I-
+Patient: But at least six weeks?
+Doctor_1: Yeah, I would-
+Patient: I don't want to-
+Doctor_1: Yeah. If you wa- if you wanted to schedule surgery, that takes about one month to schedule.
+Patient: Oh, one month?
+Doctor_1: Yeah. And then the s- the injection, the shot, like, like you had before, only one week to schedule.
+Patient: Oh, I see.
+Doctor_1: Okay?
+Patient: I see.
+Doctor_1: Yeah, once you decide, just let Laura know and she can schedule that, that for you, okay?
+Patient: So good experience.
+Doctor_1: Yeah.
+Patient: So the situation is that when I come here first-
+Doctor_1: Mm-hmm.
+Patient: ... the situation is worsening?
+Doctor_1: Mm-hmm.
+Patient: Oh.
+Doctor_1: For sure. Yeah, for sure.
+Patient: So your recommendation is the RIA is better over operation?
+Doctor_1: If I were you, I would do the surgery. Yeah.
+Patient: Yeah?
+Doctor_1: Yeah. Yeah, that's more successful.
+Patient: More successful?
+Doctor_1: Yeah. All right, sir.
+Patient: All right.
+Doctor_1: Yeah, think it over and let us know, okay?
+Patient: Thank you.
+Doctor_1: All right. Thank you, sir.
+Patient: Appreciate it.
+Doctor_1: No problem. People are... Give them Laura's card and tell her I said call.
+Patient: All right.
+Doctor_1: Okay.
+Patient: Thank you.
+Doctor_1: Give him Laura's card. A- thank you, sir. Be good. All right. So dot LSS, but he can still walk 30 minutes an hour. What he feels is some numbness in his leg sometimes. Um, some heavy sensation from his, from his abdomen down. It just doesn't feel normal. Uh, no, uh, incontinence. Exam is the same, MRI as you got. So assessment, he's got, uh, a severe stenosis, L1, 2, 3, 4 and 4, 5. At the L1, 2 level, it's at the conus and it's causing a conus medullaris syndrome. That's likely why he doesn't feel that much pain. Counselor is going to show him treatment options. We talked about injections versus surgery, risk benefit study. He's going to think about it and he'll call us to schedule when he's ready. Okay, Dr. Lee, uh, he did... He got, he get any injection like last visit? No, he didn't. No. Okay, doctor. Thank you. And follow-up as needed, right? Yeah, he's going to follow up once he decides. Okay, Dr. Lee, Thank you.
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.

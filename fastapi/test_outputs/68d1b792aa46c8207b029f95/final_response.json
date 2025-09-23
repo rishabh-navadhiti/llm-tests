@@ -1,0 +1,79 @@
+{
+  "success": true,
+  "generated_json": [
+    {
+      "title": "Patient Name",
+      "key": "PATIENT_NAME",
+      "content": [
+        "Grace Garcia"
+      ],
+      "default": "-",
+      "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+    },
+    {
+      "title": "Chief Complaint",
+      "key": "SPENCER_CHIEF_COMPLAINT",
+      "content": [
+        "New left distal radius wrist fracture sustained on September 5th while dancing on a cruise."
+      ],
+      "default": "-",
+      "instruction": "What is the main complaint of the patient, give a one liner detailed note. Only include hand related surgery and issues."
+    },
+    {
+      "title": "History of present illness",
+      "key": "HPI_RYAN",
+      "content": [
+        "Grace Garcia is a 75-year-old right-hand-dominant female who sustained a left distal radius wrist fracture on September 5th while dancing on a cruise. She was placed in a removable left wrist splint and continued with the remainder of her vacation. She presents today for initial evaluation. The fracture is minimally displaced with mild loss of radial height and radial inclination. She has a slight radial deviation of the wrist coinciding with loss of radial height and inclination, and reports ulnar wrist discomfort on supination. There is ecchymosis of the thenar eminence and radial aspect of the wrist. She is neurovascularly intact, with full motor function including the ability to make a composite fist, OK sign, thumb up, and cross the second and third digits. She has a history of diabetes mellitus and a prior right wrist fracture that was surgically repaired on June 15th. She has not had any prior treatment for this current injury. The fracture has impacted her ability to perform daily activities involving the left wrist, particularly those requiring weight-bearing or movement. She discussed treatment options with her provider and agreed to non-operative management with a short arm cast. She is seeking evaluation and management for her acute injury."
+      ],
+      "default": "-",
+      "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity or intensity. Discuss any changes or developments in symptoms since their onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient's daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nDoctors Preference:\n1) Do NOT use 'the patient', use the persons gender ex: 'he or she ...' \n2) End the sentence with a period."
+    },
+    {
+      "title": "Musculoskeletal",
+      "key": "MUSCULOSKELETAL_VERBATIM",
+      "content": [],
+      "default": "-",
+      "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty.\nMust be extract what doctor has dictated, Do not change/modify any thing. must be verbatim.\n\nDO NOT INCLUDE ANY EXAM FINDINGS IN THIS SECTION"
+    },
+    {
+      "title": "Imaging",
+      "key": "IMAGING_GEORGE",
+      "content": [
+        "New X-rays show a minimally displaced left distal radius fracture with mild loss of radial height and radial inclination. The wrist on lateral view is neutral to slightly palmar variation."
+      ],
+      "default": "-",
+      "instruction": "Extract all mentions of imaging studies (such as X-rays, MRIs, CT scans, or ultrasound) from the following doctor-patient conversation. Include details like the type of imaging, body part involved, whether the imaging was completed or recommended, and any findings discussed. Present the extracted information in a structured format."
+    },
+    {
+      "title": "Assessment",
+      "key": "SOAP_ASSESSMENT",
+      "content": [
+        "Minimally displaced left distal radius fracture",
+        "History of diabetes mellitus",
+        "Status post prior right wrist fracture with surgical repair"
+      ],
+      "default": "No assessment",
+      "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+    },
+    {
+      "title": "Plan",
+      "key": "PLAN_WITH_FOLLOW_UP",
+      "content": [
+        "Non-operative management with a short arm cast for the left arm. Patient agreed to cast management after discussion of surgical versus non-operative options. Repeat X-rays scheduled in 10 days. Return to clinic in 10 days."
+      ],
+      "default": "-",
+      "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services.\n\nAlso in the end provide the plan of action for the individual conditions. And return the follow-up duration as a number.\nWhen presenting the follow-up, format the sentence as: \"Return to clinic in X days/weeks/months.\""
+    }
+  ],
+  "token_usage": {
+    "prompt_tokens": 1496,
+    "completion_tokens": 1153,
+    "total_tokens": 2649
+  },
+  "timing": {
+    "total_time_ms": 13084.703207015991,
+    "generation_time_ms": 13084.309816360474,
+    "processing_time_ms": 0.06413459777832031
+  },
+  "error_message": null
+}

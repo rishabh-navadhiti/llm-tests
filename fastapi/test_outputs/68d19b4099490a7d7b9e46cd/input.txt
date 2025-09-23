@@ -1,0 +1,368 @@
+As a seasoned medical scribe specializing in the SOAP template, your task is to transform the transcription of the doctor-patient conversation into a structured patient visit note. This note must adhere to the doctor's preferred format, ensuring that all crucial details are captured without the doctor needing to personally document them. Your expertise lies in understanding medical terminology and effectively conveying information in a professional tone. Each section of the patient visit note, such as History of Present Illness and Past Medical History, corresponds to a specific object in the JSON template provided by the doctor. If specific information is absent from the conversation, you will incorporate the default value specified in each template section. Ensure that the final output is formatted as a JSON array of objects, maintaining the same exact order and format as the given doctor’s preferred template. Be meticulous in avoiding any grammatical errors and ensure all sentences are correctly punctuated. This will allow for seamless integration for further processing, such as parsing into an array of objects using Python programming language. Please recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format
+
+### JSON TEMPLATE TO POPULATE:
+[
+  {
+    "title": "Patient Name",
+    "key": "PATIENT_NAME",
+    "content": [],
+    "default": "-",
+    "instruction": "Only return the patients name and not the doctors name or anyone else's name."
+  },
+  {
+    "title": "History of present illness",
+    "key": "ROTH_HPI",
+    "content": [],
+    "default": "-",
+    "instruction": "Provide a detailed summary of the patient's current illness based on their report. Include a thorough description of symptoms, noting their onset, duration, and severity. Discuss any changes or developments in symptoms since onset and identify factors that may exacerbate or relate to these symptoms, such as specific activities, foods, or medications. Document any prior treatments or remedies the patient has attempted, noting their efficacy. Describe how these symptoms impact the patient’s daily activities, overall well-being, and quality of life. Capture information about any individuals mentioned by the patient, specifying their relationship and any pertinent interactions or conversations related to the illness.\n\nEnsure that no information regarding the treatment plan is included."
+  },
+  {
+    "title": "Past Medical History",
+    "key": "PAST_MEDICAL_HISTORY",
+    "content": [],
+    "default": "No past medical history found",
+    "instruction": "Should include a comprehensive overview of the patient's previous medical conditions, surgeries, and significant health events.Any chronic or significant medical conditions the patient has been diagnosed with in the past, such as diabetes, hypertension, asthma, heart disease, etc.Any previous surgeries the patient has undergone in the past, including the type of surgery, date, and outcomes. Any previous hospital admissions, not related to the present illness, including the reason for admission, dates, and outcomes. Do not include current visits doctors assessment and plan in this section. This can include the assessments and plans of the previous doctors visits. \n\nplease recheck the sentence and correct any grammatical errors in the following medical-related template. Ensure clarity, professionalism, and proper medical terminology while maintaining a concise and structured format \n\nEnd the sentence with period."
+  },
+  {
+    "title": "Past Surgical History",
+    "key": "ROTH_PAST_SURGICAL_HISTORY",
+    "content": [],
+    "default": "",
+    "instruction": "List any previous surgeries the patient has undergone. Include only the procedure names and relevant dates if available"
+  },
+  {
+    "title": "Social History",
+    "key": "SOCIAL_HISTORY",
+    "content": [],
+    "default": "No social history.",
+    "instruction": "Extract the patient's social history from the conversation, specifically focusing on smoking status, alcohol consumption, and illicit drug use. Clearly state whether the patient is a smoker, non-smoker, or former smoker, and provide details on alcohol and illicit drug use, if any. If the patient denies use, explicitly mention it. Present the information in a structured and concise format.\n"
+  },
+  {
+    "title": "Family History",
+    "key": "FAMILY_HISTORY",
+    "content": [],
+    "default": "No family history",
+    "instruction": "Extract the family history details shared by the patient. Focus on documenting any relevant medical conditions, hereditary diseases, mental health issues, or notable health events in the patient's immediate and extended family. Specify the relation of the family members to the patient and include the age at diagnosis or occurrence of any significant health issues if mentioned. If no relevant family history is provided, default to \"No family history found."
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Constitutional",
+        "key": "SOAP_ROS_CONSTITUTIONAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal "
+      },
+      {
+        "title": "HEENT",
+        "key": "HEENT",
+        "content": [],
+        "default": "Eyes: No visual loss, blurred vision, double vision.  Ears, Nose, Throat:  No hearing loss, sneezing, congestion, runny nose or sore throat.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Cardiovascular",
+        "key": "SOAP_ROS_CARDIOVASCULAR",
+        "content": [],
+        "default": "No chest pain, chest pressure or chest discomfort.  No palpitations or edema.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "RESPIRATORY",
+        "key": "SOAP_ROS_RESPIRATORY",
+        "content": [],
+        "default": "No shortness of breath, cough or sputum.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": " Gastrointestinal",
+        "key": "SOAP_ROS_GASTROINTESTINAL",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Genitourinary",
+        "key": "SOAP_ROS_GENITOURINARY",
+        "content": [],
+        "default": "No burning on urination, frequency, urgency, or nocturia.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_ROS_NEUROLOGICAL",
+        "content": [],
+        "default": "No numbness of the feet.",
+        "instruction": "If no information is present please return Normal\n"
+      },
+      {
+        "title": "Musculoskeletal",
+        "key": "SOAP_ROS_MUSCULOSKELETAL",
+        "content": [],
+        "default": "No knee pain.",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Review of System",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Vital Signs",
+        "key": "SOAP_PE_VITAL_SIGNS",
+        "content": [],
+        "default": "Normal",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "General",
+        "key": "SOAP_PE_GENERAL",
+        "content": [],
+        "default": "No acute distress, answers appropriately.  Alert and oriented.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Skin",
+        "key": "SOAP_PHYSICAL_EXAM_SKIN",
+        "content": [],
+        "default": "No color changes or rashes.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Head",
+        "key": "SOAP_PE_HEAD",
+        "content": [],
+        "default": "Atraumatic and normocephalic.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Eyes",
+        "key": "SOAP_PE_EYES",
+        "content": [],
+        "default": "Extraocular muscles were intact.  The patient was anicteric.  Pupils were equally reactive to light and accommodation.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Ears",
+        "key": "SOAP_PE_EARS",
+        "content": [],
+        "default": "Canals without obstructions.  Tympanic membranes clear.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Throat",
+        "key": "SOAP_PE_THROAT",
+        "content": [],
+        "default": "There was no thrush, no exudate, no erythema.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Neck",
+        "key": "SOAP_PE_NECK",
+        "content": [],
+        "default": "Supple.  There was no JVD.  No bruit was heard over the carotids.  No thyroid enlargement.  No lymphadenopathy.",
+        "instruction": "If no information is present please return Normal"
+      },
+      {
+        "title": "Heart",
+        "key": "SOAP_PE_HEART",
+        "content": [],
+        "default": "Nondisplaced PMI.  No thrills noted.  S1 and S2, regular rhythm without murmurs.",
+        "instruction": "Always return the exact value present in the default key if no information is found anything related to this in the conversation."
+      },
+      {
+        "title": "Lungs",
+        "key": "SOAP_PE_LUNGS",
+        "content": [],
+        "default": "Breathing is unlabored.  Clear to auscultation B/L.",
+        "instruction": "Always return the exact value present in the default key if no information is found anything related to this in the conversation."
+      },
+      {
+        "title": "Musculoskeletal",
+        "key": "SOAP_PE_MUSCULOSKELETAL",
+        "content": [],
+        "default": "-",
+        "instruction": "What is the physical examination finding of this patient related to Musculoskeletal. If not information is found, please return empty."
+      },
+      {
+        "title": "Neurological",
+        "key": "SOAP_PE_NEUROLOGICAL",
+        "content": [],
+        "default": "Alert and oriented to person, place and time. Speech, memory and expression are within normal limits.  Deep tendon reflexes 2+ in both lower extremities.  There was no focal deficit.  Cranial nerves II through XII were intact.",
+        "instruction": "What is the neurologicals of this patient"
+      },
+      {
+        "title": "Psychiatric",
+        "key": "SOAP_PE_PSYCHIATRIC",
+        "content": [],
+        "default": "Mood is euthymic.  Affect is calm.  Thought process is normal.  Thought content is appropriate.  Eye contact, attention, insight, concentration, and decision-making-ability are intact.",
+        "instruction": "If no information is present please return Normal"
+      }
+    ],
+    "title": "Physical Exam",
+    "instruction": "",
+    "merge": false
+  },
+  {
+    "sub-section": [
+      {
+        "title": "Assessment",
+        "key": "SOAP_ASSESSMENT",
+        "content": [],
+        "default": "No assessment",
+        "instruction": "Generate a list of the patient's current medical conditions, Only give me current assessment and not historical information return it in a list"
+      },
+      {
+        "title": "Plan",
+        "key": "SOAP_PLAN",
+        "content": [],
+        "default": "No plan",
+        "instruction": "Detail the healthcare provider's plan of action to manage the patient's condition, specifying treatments, medications (include ongoing medications briefly), procedures, therapies, lifestyle modifications, referrals to specialists, patient education on condition and medications, and recommendations for counselings or support services. Dont provide any follow up details in this section."
+      }
+    ],
+    "title": "Assessment and plan",
+    "instruction": "",
+    "merge": false
+  }
+]
+
+### INSTRUCTIONS:
+Extract information from the medical transcript below and populate the JSON template. Be precise and only include information that is explicitly mentioned in the transcript. Do not add any information that is not present in the transcript.
+
+### MEDICAL TRANSCRIPT:
+Doctor_1: Hello, everybody. How are you doing?
+Patient_1: Hello. This is Venisha. I'm doctor Lee.
+Doctor_1: Nice to meet you. All right, tomorrow's the day.
+Patient_1: Sorry?
+Doctor_1: Tomorrow is the day.
+Patient_1: Oh . With the doctor?
+Doctor_1: We'll see. I don't think it's going to be a problem. Your heart rate's up a little bit already. I'll, I'm gonna text, in fact, let me text my anesthesia guy now. Um...
+Patient_1: Mm-hmm. My big problem seems to be with my normal irritable bowel. I'm, I'm just about okay, so I guess, but this, you know, with the hours, I wish the surgery were later in the day .
+Doctor_1: Why? Because most people want to get done sooner.
+Patient_1: Right. And, and, but you do them all day, right? The surgery.
+Doctor_1: Uh, yeah.
+Patient_1: You don't just do them in the morning .
+Doctor_1: No, that's right. But usually it's like, because you can't eat or drink anything, the longer you wait, it's got a name.
+Patient_1: Yeah, oh, at this point I'm having trouble eating anyways. They, they did say that I could have simple water for the last...
+Doctor_1: Yeah, whatever they tell you.
+Patient_1: Yeah.
+Doctor_1: Yeah, whatever they tell you. Let me just, let me text my anesthesia friend here.
+Patient_1: It's so cold, too . And I can't... Do they give an enema before you have surgery?
+Doctor_1: No. No, you won't need that, yeah.
+Patient_1: I'm just so worried I'll have an absolute... Oh, but it's 10:10 already.
+Doctor_1: What is your last sodium? 132? 133?
+Patient_1: My, my what?
+Doctor_1: Last sodium.
+Patient_1: Oh.
+Doctor_1: I think it was 132, wasn't it?
+Patient_1: You know, I don't really know. But I don't...
+Doctor_1: I think that's what I saw. Actually I can look at it here. Hey, look, I have a computer here. Let me look it up.
+Patient_1: 132, doctor.
+Doctor_1: 132. Okay. I have my scribe here, too.
+Patient_1: So how much should it have been normally? Normal blood sugar.
+Doctor_1: Uh, normal would be like 136, 137. But a little low sodium, we, if it's... Because it's really about anesthesia. If they're cool with it, I'm cool with it.
+Patient_1: Mm-hmm.
+Doctor_1: Otherwise we push it off and then, you know, we gotta wait till they give you some salty pretzels.
+Patient_1: What about if I'm taking so many?
+Doctor_1: Because they can do some, they can put you on medication.
+Patient_1: Oh.
+Doctor_1: What, um, what did your primary say about it?
+Patient_1: He's the one that's worried about it. Yeah.
+Doctor_1: He is worried about it?
+Patient_1: Well, that's why he had me take, was decided, retake the test.
+Doctor_1: And how about because it's up now, is he happy now or no?
+Patient_1: I don't know. You know, I haven't heard from him. I haven't heard from him.
+Doctor_1: Okay.
+Patient_1: What could happen if it's bad? You could have complications.
+Doctor_1: Yeah, but, I mean, you know, you worry about, um, if your sodium's too low, you get, um, you get fatigue. There's some, I mean, there's nothing super dangerous, but...
+Patient_1: Yeah. And, and they said you're, you're slightly, um, low on iron. And I said, "Well, should I take something for that?" He said no. And, and, um, he said, "You might have to have a transfusion." And I've got all these things, you know, to worry about .
+Doctor_1: Well, I mean, this is the thing with surgery, right? I mean, there's, uh, there's always these risks that...
+Patient_1: Well, you just said, but I haven't really heard any bad reports. Um, you know, with knee replacements, yes, I've heard of some people that had problems.
+Doctor_1: Well, I mean, it's surgery, right? There's always risks. So what, let's talk about kind of the process, though. Two-hour operation, in the hospital overnight. Who's at home with you?
+Patient_1: Well, I'm going to have professional... I, I contacted the social worker at, um, Huntington, and there's an agency called New Wave or something, and, um, I'm gonna have somebody, and also my neighbor, and a, a friend. I'll be with the dog. So for a few days, I won't have-
+Doctor_1: So you want to go home-home, though, right?
+Patient_1: Well, I can...
+Doctor_1: Not to a place.
+Patient_1: I guess.
+Doctor_1: Okay. I mean, I'd prefer to send you home. That's... Most people are happier at home.
+Patient_1: Yeah, because I, I do want to have a little bit of help.
+Doctor_1: So usually home the next day.
+Patient_1: And some people go home the first day, but I-
+Doctor_1: No, we won't do that.
+Patient_1: But some people do, right?
+Doctor_1: Sure.
+Patient_1: Maybe young...
+Doctor_1: Yeah.
+Patient_1: ... athletic people. You're thinking a specific time, like 2:00? Oh.
+Doctor_1: Uh, you can have, yeah, early afternoon on Saturday. Are you going to be helping out the bed?
+Patient_1: Yeah.
+Doctor_1: Okay. Okay, perfect.
+Patient_1: And also the, the social situation that I haven't had.
+Doctor_1: Yeah, they'll, and that, that's exactly right. They'll come see you. So, all right, surgery is two hours. Uh, in the hospital overnight, home the next day. When you go home, therapy comes to the house, just as we talked about. Um, I will check you back in two weeks, post-op. At that point, still on walker, crutches, cane, something. By six weeks, the expectation is you're off that stuff. So somewhere between week two and week six is that turn-the-corner moment. How's your, uh... I got to tell you about the horrible things that can happen to you. Bleeding, infection, blood clots, fractures, dislocation. That's the big five. They're low, but they're not zero. There's a nerve that feeds a patch of skin on the outside part of the thigh that's near where we're doing stuff. Some people will get numbness there. Most people don't, and if you do, it's usually temporary.
+Patient_1: And there's a lot of information in, in the folder.
+Doctor_1: Yeah, it's, it's all repeat from that, yeah.
+Patient_1: And, and, and people who, who don't know they say, "You have to relocate. You can't have surgery." I said, "No, they show you how."
+Doctor_1: No, you don't have to. You can, but you don't have to.
+Patient_1: They haven't been cheating. Um...
+Doctor_1: My anesthesia friend said it'd be fine.
+Patient_1: I told him.
+Doctor_1: Anesthesia said it was fine, that sodium, so I think we're okay.
+Patient_1: Anesthesia?
+Doctor_1: Yeah, because they're the ones who are, who, who will be concerned in that regard. Because they give you saline. They can, they can give you extra salty saline.
+Patient_1: Well, I really, um, with, with all my valve opening, I just can't achieve it, but the pain has gotten so bad.
+Doctor_1: Well, that's just it, right? Everything is a risk versus madoc.
+Patient_1: And, um, you know , you can't... And, and also the fact that you can't do much of anything.
+Doctor_1: It's affecting the quality of your life. That's right.
+Patient_1: It's... Yes.
+Doctor_1: Yeah.
+Patient_1: I'm just so hoping that... An- and then if, if I survive .
+Doctor_1: Do you have any allergies?
+Patient_1: Not that I know of.
+Doctor_1: Did you, any history of blood clots?
+Patient_1: No.
+Doctor_1: Are you taking any blood thinners?
+Patient_1: No.
+Doctor_1: All right, I'm gonna write you a couple things today. One is a pain pill, Norco, and then I'm gonna put you on a baby aspirin twice a day for 30 days, for afterwards-
+Patient_1: Yeah, the Norco would be afterwards?
+Doctor_1: Both. Both would be afterwards.
+Patient_1: I- if I need.
+Doctor_1: If you need it.
+Patient_1: Do some people not need pain-
+Doctor_1: Some people don't.
+Patient_1: Yeah, that's what I'm- and, and-
+Doctor_1: Most people take Tylenol, right? They don't... yeah.
+Patient_1: Yeah, and when I'm there, I'll have some-
+Doctor_1: Yeah, we'll take care of everything while you're there. That's right.
+Patient_1: And, uh, and I'm a little concerned about the pain medicine causing more constipation.
+Doctor_1: Yes. Exactly. I mean, that's why people don't take them. Like, "You know what, I'll just take Tylenol 'cause the pain's not so bad and I don't like the side effects. Let me see a pain killer." So, I mean, that's... Pain is very subjective, right? Everybody's different with that.
+Patient_1: Yeah. And, and what's interesting is the pain is, uh, mainly in here.
+Doctor_1: But don't you... That, that's referred? That's where you call-
+Patient_1: I'm the one who has this pain that I really need.
+Doctor_1: No, that's what, that's what is wrong. Feeling's okay down there, sensation-wise?
+Patient_1: Mm-hmm. ƒor many years I've had this, you know, this...
+Doctor_1: Yeah, so hip pain, groin, thigh, even knee, even shin sometimes.
+Patient_1: No. My knees have been great.
+Doctor_1: Good, good.
+Patient_1: I can, I can actually abra- bathe 'cause I like Japanese style. I get down on my knees and then this nice little thing to hold on. And, and so there's all this thing going, "Hey."
+Doctor_1: Okay, so I think after, a good review are involved in here. Okay, so Doctor Liu's good, anesthesia's good. I think we're fine.
+Patient_1: Okay. Well, I'll be brave.
+Doctor_1: Now it's just up to you.
+Patient_1: Yeah, yeah, what about... I was thinking sleeping pill if, if tonight... Like, I was thinking, uh, I'm having somebody... My, my friend's coming to help the dog out, and she's gonna get me up in the morning, and then she's taking me to-
+Doctor_1: I wouldn't do it tonight 'cause we don't want to have anything on board. They're gonna give you anesthesia in the morning. Uh, look, you could do Benadryl if you want. That's an over-the-counter version.
+Patient_1: Oh.
+Doctor_1: Or melatonin people will use, but I wouldn't, I wouldn't put you on anything more than that.
+Patient_1: Not at all?
+Doctor_1: No, I wouldn't.
+Patient_1: Not that really.
+Doctor_1: I guess, yeah, I wouldn't...
+Patient_1: Because actually this pain has kept me awake between frequent urination and-
+Doctor_1: Well, well, we're gonna take care of that.
+Patient_1: Yeah. And I thought... Well, it, it hurts and I, I, I've been taking a little ibuprofen and, and Tylenol, but I don't really... I still have been in a lot of pain, you know. Um-
+Doctor_1: Well, that's why we're here.
+Patient_1: Well, you're quite wonderful.
+Doctor_1: So all right, I will-
+
+### OUTPUT:
+Return ONLY valid JSON that matches the template structure above. Do not include any explanations, commentary, or additional text outside the JSON structure.
